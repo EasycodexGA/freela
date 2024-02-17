@@ -18,7 +18,7 @@ header('Access-Control-Allow-Headers: *');
 $__EMAIL__ = $_SESSION["email"];
 $__PASSWORD__ = $_SESSION["password"];
 
-$_query_ = mysqli_query($__CONEXAO__, "select * from users where email='$__EMAIL__' and password='$__PASSWORD__'");
+$_query_ = mysqli_query($__CONEXAO__, "select * from users where email='$__EMAIL__' and password='$__PASSWORD__'")or die("aa");
 
 if(mysqli_num_rows($_query_) < 1){
     session_destroy();
