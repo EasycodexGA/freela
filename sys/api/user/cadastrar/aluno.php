@@ -18,8 +18,10 @@ if(!$cpf or !$nome or !$turma or !$email or !$nascimento){
     endCode("Algum dado está faltando", false);
 }
 
+$cpf        = setNum($cpf);
 $nome       = setUser($nome);
 $email      = setEmail($email);
+$nascimento = setNum($nascimento);
 
 if(!$email){
     endCode("Email inválido", false);
@@ -27,9 +29,10 @@ if(!$email){
 
 stopUserExist($__CONEXAO__, $email);
 
-$senha = password_hash(bin2hex(random_bytes(3)), PASSWORD_DEFAULT);
+$senha = bin2hex(random_bytes(3);
+$senhaH = password_hash(), PASSWORD_DEFAULT);
 
-mysqli_query($__CONEXAO__, "insert into users (nome, email, senha, lastModify) values ('$nome', '$email', '$senha', '$__TIME__')")  or die("erro insert");
+mysqli_query($__CONEXAO__, "insert into users (nome, email, senha, cpf, nascimento, lastModify) values ('$nome', '$email', '$senhaH', '$__TIME__')")  or die("erro insert");
 
 $subject = "Sua senha provisória é $senha";
 $message = "
@@ -42,7 +45,7 @@ $message = "
     </head>
     <body>
         <div style='background-color:#269C72; color:white; text-align:center; padding: 5px; border-radius: 5px'>
-            <h2 style='color:white;'>Senha provisório</h2>
+            <h2 style='color:white;'>Senha provisória</h2>
         </div>
         <div style='text-align:center; padding: 5px'>
             <p style='color:black;'>Sua senha provisória</p>

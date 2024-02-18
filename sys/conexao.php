@@ -38,7 +38,6 @@ $__METHOD__ = $_SERVER["REQUEST_METHOD"];
 $__STATUS__ = $_SERVER["REDIRECT_STATUS"];
 $__URL__ = $_SERVER["HTTP_HOST"];
 
-$__MAIN_WEB__ = "https://freela.anizero.cc/";
 $__WEB__ = $_SERVER['REQUEST_SCHEME'] . "://" . $_SERVER['HTTP_HOST'];
 
 $__TIME__ = time();
@@ -51,7 +50,7 @@ $__CODE__ = bin2hex(random_bytes(3));
 
 $__HEADERS__[] = 'MIME-Version: 1.0';
 $__HEADERS__[] = 'Content-type: text/html; charset=iso-8859-1';
-$__HEADERS__[] = "From: DiplomaPay <contato_$__CODE__@$__URL__>";
+$__HEADERS__[] = "From: Voleibol <contato_$__CODE__@$__URL__>";
 $__HEADERS__[] = "no-reply";
 $__HEADERS__[] = 'X-Mailer: PHP/' . phpversion();
 
@@ -83,10 +82,15 @@ function setEmail($string){
     return encrypt($string);
 }
 
+function setNum($string){
+    $string = preg_replace('/[^0-9]+/', '-', $string);
+    return encrypt($string);
+}
+
 
 function cantLog($__EMAIL__){
     if($__EMAIL__){
-        header("Location: $__MAIN_WEB__");
+        header("Location: $__URL__");
         exit;
     }
 }
@@ -94,12 +98,12 @@ function cantLog($__EMAIL__){
 function justLog($__EMAIL__, $__TYPE__, $type){
     
     if(!$__EMAIL__){
-        header("Location: $__MAIN_WEB__");
+        header("Location: $__URL__");
         exit;
     }
 
     if($__TYPE__ < $type){
-        header("Location: $__MAIN_WEB__");
+        header("Location: $__URL__");
         exit;
     }
 }
