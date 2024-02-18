@@ -30,7 +30,7 @@ justLog($__EMAIL__, $__TYPE__, 2);
 
     <div id='addNew'>
         <div id='addProfessor' class='add-container'>
-            <h1 class='title-add'>Geral - Professores</h1>
+            <h1 class='title-add'>Novo professor</h1>
         </div>
     </div>
 

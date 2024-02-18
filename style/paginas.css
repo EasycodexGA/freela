@@ -74,16 +74,20 @@ header, .extra{
     border-radius: 3px;
     background: white;
     max-width: calc(650px - 40px);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .title-add{
     position: relative;
+    width: fit-content;
 }
 
 .title-add:before{
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -3px;
     width: 70%;
     height: 2px;
     background: var(--contraste);
