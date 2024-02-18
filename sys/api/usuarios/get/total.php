@@ -37,7 +37,7 @@ if(!in_array($type, $pode)){
 }
 
 $query = mysqli_query($__CONEXAO__, "select active from $type $adicional");
-
+// asdsdasdasd
 $active = 0;
 $inactive = 0;
 
