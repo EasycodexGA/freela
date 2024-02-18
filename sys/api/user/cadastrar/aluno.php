@@ -9,7 +9,7 @@ $request = file_get_contents('php://input');
 $json = json_decode($request);
 
 $cpf        = scapeString($__CONEXAO__, $json->cpf);
-$nome       = scapeString($__CONEXAO__, $json->email);
+$nome       = scapeString($__CONEXAO__, $json->nome);
 $turma      = scapeString($__CONEXAO__, $json->turma);
 $email      = scapeString($__CONEXAO__, $json->email);
 $nascimento = scapeString($__CONEXAO__, $json->nascimento);

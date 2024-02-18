@@ -32,7 +32,6 @@ if(mysqli_num_rows($_query_) < 1){
     $__TYPE__ = $__ASSOC__['typeC'];
 }
 
-echo $__TYPE__;
 
 // SERVER
 $__METHOD__ = $_SERVER["REQUEST_METHOD"];
