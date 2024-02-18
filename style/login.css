@@ -44,10 +44,6 @@ body {
     font-size: 0.8rem;
 }
 
-iframe {
-    width: 100%;
-}
-
 #loginBox {
     width: calc(100% - 20px);
     min-height: 300px;
