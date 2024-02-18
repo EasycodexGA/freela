@@ -72,7 +72,6 @@ header, .extra{
     width: calc(100% - 80px);
     border-radius: 3px;
     background: white;
-    max-width: calc(650px - 40px);
     display: flex;
     flex-direction: column;
     gap: 50px;

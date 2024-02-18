@@ -35,26 +35,32 @@ justLog($__EMAIL__, $__TYPE__, 2);
             <div class='inps-add'>
                 <div class='inp-add-out'>
                     <h3>Nome</h3>
-                    <input type='text' placeholder='Fulano da silva'/>
+                    <input id='nomeAdd' type='text' placeholder='Fulano da silva'/>
                 </div>
                 <div class='inp-add-out'>
                     <h3>Titularidade</h3>
-                    <input type='text' placeholder='Professor'/>
+                    <input id='titularidadeAdd' type='text' placeholder='Professor'/>
                 </div>
                 <div class='inp-add-out'>
                     <h3>Nascimento</h3>
-                    <input type='date'/>
+                    <input id='nascimentoAdd' type='date'/>
                 </div>
                 <div class='inp-add-out'>
                     <h3>Email</h3>
-                    <input type='text' placeholder='exemplo@gmail.com'/>
+                    <input id='emailAdd' type='text' placeholder='exemplo@gmail.com'/>
                 </div>
                 <div class='inp-add-out'>
                     <h3>CPF</h3>
-                    <input type='text' placeholder='000.000.000-00'/>
+                    <input id='cpfAdd' type='text' placeholder='12345678900'/>
                 </div>
             </div>
-            <button onclick='closeAdd()' class='btn-add'>Salvar</button>
+            <button onclick='addProfessor({
+                nome: nomeAdd.value,
+                titularidade: titularidadeAdd.value,
+                nascimento: (nascimentoAdd.valueAsNumber / 1000),
+                email: emailAdd.value,
+                cpf: cpfAdd.value
+            })' class='btn-add'>Salvar</button>
         </div>
     </div>
 
