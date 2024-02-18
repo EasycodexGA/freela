@@ -11,7 +11,7 @@ header, .extra{
     gap: 15px;
 }
 
-.title-header{
+.title-header, .title-add{
     font-size: 20px;
     color: #525252;
 }
@@ -42,6 +42,7 @@ header, .extra{
     background: white;
     border: 1px solid #E7E7E7;
     box-shadow: 0 0 20px 0 #0000000f;
+    cursor: pointer;
 }
 
 #addNew{
@@ -67,9 +68,23 @@ header, .extra{
 
 .add-container{
     margin-top: 30px;
+    padding: 20px;
     min-height: 300px;
-    width: calc(100% - 40px);
+    width: calc(100% - 80px);
     border-radius: 3px;
     background: white;
-    max-width: 650px;
+    max-width: calc(650px - 40px);
+}
+
+.title-add{
+    position: relative;
+}
+
+.title-add:before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 70%;
+    height: 2px;
+    background: var(--contraste);
 }
