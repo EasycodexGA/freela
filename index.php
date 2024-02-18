@@ -19,7 +19,7 @@ justLog($__EMAIL__, $__TYPE__, 0);
             <div class="left-top">
                 <div class="logo">
                     <div class="img-div">
-                        <img src="img/prefeitura.jpg">
+                        <img src="img/prefeitura.png">
                     </div>
                     <p class="title-p1">Voleibol</p>
                     <p class="title-p2">Escolinhas</p>
