@@ -6,7 +6,7 @@ body {
 
 #outBox {
     width: 100%;
-    min-height: calc(100svh - 150px);
+    min-height: calc(100svh - 100px);
     background: #FAFAFA;
     padding: 50px 0;
     display: flex;
@@ -53,7 +53,7 @@ body {
     align-items: center;
     gap: 15px;
     max-width: 400px;
-    margin: auto;
+    margin: 30px 0;
 }
 
 .inputDiv {

@@ -85,3 +85,9 @@ function justLog($__EMAIL__){
         exit;
     }
 }
+
+
+// types user
+// type 0 - aluno
+// type 1 - Professor
+// type 2 - Admin
