@@ -11,6 +11,10 @@ $json       = json_decode($request);
 $email = scapeString($__CONEXAO__, $json->$email);
 $email = setEmail($email);
 
+if(!$email){
+    endCode("Email inválido");
+}
+
 if(!stopUserExistnt($__CONEXAO__, $email)){
     endCode('Usuário não existe', false);
 }
