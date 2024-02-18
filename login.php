@@ -17,7 +17,7 @@ cantLog($__EMAIL__);
     <div id="outBox">
         <div class="logo">
             <div class="img-div">
-                <img src="prefeitura.png">
+                <img src="img/prefeitura.png">
             </div>
             <p class="title-p1">Voleibol</p>
             <p class="title-p2">Escolinhas</p>
