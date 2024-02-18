@@ -69,7 +69,6 @@ header, .extra{
 .add-container{
     margin-top: 30px;
     padding: 20px;
-    min-height: 300px;
     width: calc(100% - 80px);
     border-radius: 3px;
     background: white;
@@ -77,6 +76,8 @@ header, .extra{
     display: flex;
     flex-direction: column;
     gap: 20px;
+    max-height: calc(100svh - 100px);
+    overflow-y: scroll;
 }
 
 .title-add{
