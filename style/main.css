@@ -20,9 +20,8 @@
     min-height: 50vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
-    gap: 30px;
+    gap: 50px;
 }
 
 .logo {
@@ -64,6 +63,14 @@
     color: #FFF;
     background: none;
     font-size: 1.1rem;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.link-active {
+    background: #FFF;
+    color: #333;
+    width: 100%;
 }
 
 .left-bottom {
@@ -75,6 +82,7 @@
 .left-bottom button {
     background: none;
     color: #FFF;
+    cursor: pointer;
 }
 
 .right{

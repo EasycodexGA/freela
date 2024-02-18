@@ -28,7 +28,7 @@ if(mysqli_num_rows($_query_) < 1){
     $__PASSWORD__ = $_SESSION["password"];
 } else {
     $__ID__ = mysqli_fetch_assoc($_query_)['id'];
-    $__TYPE__ = mysqli_fetch_assoc($_query_)['type'];
+    $__TYPE__ = mysqli_fetch_assoc($_query_)['typeC'];
 }
 
 

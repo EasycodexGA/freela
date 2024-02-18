@@ -24,7 +24,7 @@ justLog($__EMAIL__);
                     <p class="title-p2">Escolinhas</p>
                 </div>
                 <div class="links">
-                    <button id="professoresBt">Professores</button>
+                    <button id="professoresBt" class="link-active">Professores</button>
                     <button id="alunosBt">Alunos</button>
                     <button id="turmasBt">Turmas</button>
                     <button id="eventosBt">Eventos</button>
