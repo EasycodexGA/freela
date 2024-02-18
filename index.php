@@ -12,8 +12,11 @@ justLog($__EMAIL__, $__TYPE__, 0);
     <link rel="stylesheet" href="style/main.css">
     <link rel="shortcut icon" href="img/prefeitura.png" type="image/x-icon">
     <title>Voleibol escolinhas - Dashboard</title>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/ring2.js"></script>
+
 </head>
 <body>
+
     <div class="int-main">
         <div class="left">
             <div class="left-top">
@@ -35,9 +38,22 @@ justLog($__EMAIL__, $__TYPE__, 0);
                 <button onclick='openPage(`configuracoes`)' id="config">Configurações</button>
             </div>
         </div>
-        <iframe src='./paginas/inicio' id='iframePage' class="right">
-
-        </iframe>
+        <div class="right">
+            <div id="loading">
+                <l-ring-2
+                size="40"
+                stroke="5"
+                stroke-length="0.25"
+                bg-opacity="0.1"
+                speed="0.8"
+                color="black" 
+                ></l-ring-2>
+                <!-- https://uiball.com/ldrs/ -->
+            </div>
+            <iframe src='./paginas/inicio' id='iframePage' class="right">
+            
+            </iframe>
+        </div>
     </div>
 
     <script>
