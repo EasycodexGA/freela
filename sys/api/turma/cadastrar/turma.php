@@ -21,10 +21,10 @@ if(!$nome or !$categoria){
 $getTurma = mysqli_query($__CONEXAO__, "select * from turmas where nome='$nome' and categoria='$categoria'");
 
 if(mysqli_num_rows($getTurma) > 0){
-    endCode("Já existe uma turma com esses dados.");
+    endCode("Já existe uma turma com esses dados.", false);
 }
 
 mysqli_query($__CONEXAO__, "insert into turmas (nome, categoria, data) values ('$nome', '$categoria', '$__TIME__')");
 
 
-endCode("Sala criada com sucesso", false);
+endCode("Sala criada com sucesso", true);
