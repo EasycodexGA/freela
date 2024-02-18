@@ -32,6 +32,7 @@ justLog($__EMAIL__, $__TYPE__, 2);
 
     </div>
 
-    <script src="../func.js"></script>
+    <script src="../js/func.js"></script>
+    
 </body>
 </html>
