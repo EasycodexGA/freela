@@ -120,7 +120,7 @@ function stopUserExist($__CONEXAO__, $string){
     $tryConnect = mysqli_query($__CONEXAO__, "select * from users where email='$string'") or die("erro select");
 
     if(mysqli_num_rows($tryConnect) > 0){
-        header("Location: $__URL__");
+        endCode("Usuário já existe", false);
         exit;
     }
 }
