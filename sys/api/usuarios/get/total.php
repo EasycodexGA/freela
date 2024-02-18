@@ -5,10 +5,12 @@ justLog($__EMAIL__, $__TYPE__, 1);
 
 header('Content-Type: application/json; charset=utf-8');
 
-$request = file_get_contents('php://input');
-$json = json_decode($request);
+$request    = file_get_contents('php://input');
+$json       = json_decode($request);
 
-$type  = scapeString($__CONEXAO__, $json->type);
+$type       = scapeString($__CONEXAO__, $json->type);
+
+$type       = setString($type);
 
 checkMissing(
     array(
@@ -18,12 +20,12 @@ checkMissing(
 
 $pode = array("users", "turmas", "categorias", "eventos");
 
-if($type == "users-professor"){
+if($type == "usersprofessor"){
     $type = "users";
     $adicional = "where typeC='1'";
 }
 
-if($type == "users-alunos"){
+if($type == "usersalunos"){
     $type = "users";
     $adicional = "where typeC='0'";
 }

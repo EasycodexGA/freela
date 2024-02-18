@@ -12,7 +12,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
     <link rel="stylesheet" href="../style/paginas.css">
     <link rel="shortcut icon" href="../img/prefeitura.png" type="image/x-icon">
 </head>
-<body onload="getActInact('users-alunos')">
+<body onload="getActInact('usersalunos')">
     <header>
         <h1 class='title-header'>Geral - Alunos</h1>
         <div class='header-in'>
