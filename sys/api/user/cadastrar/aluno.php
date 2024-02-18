@@ -27,9 +27,9 @@ if(!$email){
 
 stopUserExist($__CONEXAO__, $email);
 
-$senha = bin2hex(random_bytes(3));
+$senha = password_hash(bin2hex(random_bytes(3)), PASSWORD_DEFAULT);
 
-mysqli_query($__CONEXAO__, "insert into users (nome, email, senha, lastModify) values ('$user', '$email', '$senha', '$__TIME__')")  or die("erro insert");
+mysqli_query($__CONEXAO__, "insert into users (nome, email, senha, lastModify) values ('$nome', '$email', '$senha', '$__TIME__')")  or die("erro insert");
 
 $subject = "Sua senha provisória é $senha";
 $message = "
@@ -55,6 +55,7 @@ $message = "
 ";
 
 
-$sendEmail = mail($email, $subject, $message, implode("\r\n", $__HEADERS__));
+$sendEmail = mail(decrypt($email), $subject, $message, implode("\r\n", $__HEADERS__));
 
-endCode("Sucesso", true);
+$dec = decrypt($email);
+endCode("Sucesso $dec", true);
