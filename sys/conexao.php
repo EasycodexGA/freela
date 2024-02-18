@@ -99,7 +99,7 @@ function justLog($__EMAIL__, $__TYPE__, $type){
         exit;
     }
 
-    if($__TYPE__ != $type && $__TYPE__ < $type){
+    if($__TYPE__ < $type){
         header("Location: $__MAIN_WEB__");
         exit;
     }
