@@ -25,7 +25,7 @@ if(!$email){
     endCode("Email inválido", false);
 }
 
-stopUserExist($__CONEXAO__, $getUserByEmail);
+stopUserExist($__CONEXAO__, $email);
 
 $senha = bin2hex(random_bytes(3));
 
