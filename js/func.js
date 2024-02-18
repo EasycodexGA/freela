@@ -9,7 +9,7 @@ function closeAdd(){
     addNew.classList.remove("add-active");
 }
 
-function addProfessor(){
+function addProfessor(data){
     fetch("https://freela.anizero.cc/sys/api/usuarios/cadastrar/professor",{
         method: "POST",
         body: JSON.stringify(data)
