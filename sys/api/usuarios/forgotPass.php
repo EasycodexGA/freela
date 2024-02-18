@@ -11,7 +11,9 @@ $json       = json_decode($request);
 $email = scapeString($__CONEXAO__, $json->$email);
 $email = setEmail($email);
 
-stopUserExistnt($__CONEXAO__, $email);
+if(!stopUserExistnt($__CONEXAO__, $email)){
+    endCode('Usuário não existe', false);
+}
 
 $subject = "Seu código de verificação para entrar no Voleibol Escolinha";
 $message = "
