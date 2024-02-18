@@ -36,7 +36,7 @@ if(mysqli_num_rows($tryConnect2) < 1){
 
 $newPass = password_hash($newPass, PASSWORD_DEFAULT);
 
-mysqli_query($__CONEXAO__, "update users set lastModify='$__TIME__', senha='$newPass', codeDate='',  where email='$checkEmail'");
+mysqli_query($__CONEXAO__, "update users set lastModify='$__TIME__', senha='$newPass', codeDate='' where email='$checkEmail'");
 
 $_SESSION['email'] = $checkEmail;
 $_SESSION['password'] = $newPass;
