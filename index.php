@@ -28,7 +28,7 @@ justLog($__EMAIL__, $__TYPE__, 0);
                     <p class="title-p2">Escolinhas</p>
                 </div>
                 <div class="links">
-                    <button onclick='openPage(`professores`, this)' id="professoresBt" class="link-active btn">Professores</button>
+                    <button onclick='openPage(`professores`, this)' id="professoresBt" class="btn">Professores</button>
                     <button onclick='openPage(`alunos`, this)' id="alunosBt" class='btn'>Alunos</button>
                     <button onclick='openPage(`turmas`, this)' id="turmasBt" class='btn'>Turmas</button>
                     <button onclick='openPage(`eventos`, this)' id="eventosBt" class='btn'>Eventos</button>
