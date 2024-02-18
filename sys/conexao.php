@@ -28,6 +28,7 @@ if(mysqli_num_rows($_query_) < 1){
     $__PASSWORD__ = $_SESSION["password"];
 } else {
     $__ID__ = mysqli_fetch_assoc($_query_)['id'];
+    $__TYPE__ = mysqli_fetch_assoc($_query_)['type'];
 }
 
 
@@ -89,8 +90,14 @@ function cantLog($__EMAIL__){
     }
 }
 
-function justLog($__EMAIL__){
+function justLog($__EMAIL__, $__TYPE__, $type){
+    
     if(!$__EMAIL__){
+        header("Location: $__MAIN_WEB__");
+        exit;
+    }
+
+    if($__TYPE__ != $type){
         header("Location: $__MAIN_WEB__");
         exit;
     }

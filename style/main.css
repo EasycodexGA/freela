@@ -20,8 +20,9 @@
     min-height: 50vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    gap: 30px;
 }
 
 .logo {
@@ -41,7 +42,6 @@
 
 .title-p1 {
     text-transform: uppercase;
-    font-weight: 600;
     font-size: 1.3rem;
     color: #FFF;
 }
@@ -57,15 +57,24 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 15px;
 }
 
 .links button {
     color: #FFF;
     background: none;
+    font-size: 1.1rem;
 }
 
 .left-bottom {
     width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.left-bottom button {
+    background: none;
+    color: #FFF;
 }
 
 .right{
