@@ -24,20 +24,7 @@ cantLog($__EMAIL__);
             <p class="title-p1">Voleibol</p>
             <p class="title-p2">Escolinhas</p>
         </div>
-        <div id="loginBox">
-            <div class="inputDiv">
-                <p class="spanlog">Email</p>
-                <input name="email" id="email">
-            </div>
-            <div class="inputDiv">
-                <p class="spanlog">Senha</p>
-                <input type="password" name="password" id="password">
-            </div>
-            <div class="loginBot">
-                <button id="sendData">Enviar</button>
-                <button id="forgotPass">Esqueceu sua senha?</button>
-            </div>
-        </div>
+        <iframe src='./paginas/login' id='iframePage'>
     </div>
 
     <script>
@@ -55,6 +42,7 @@ cantLog($__EMAIL__);
                 }
             })
         })
+
         forgotPass.addEventListener('click', ()=>{
             let data = {email: email.value}
             fetch('./sys/api/usuarios/forgotPass',{
@@ -69,6 +57,10 @@ cantLog($__EMAIL__);
                 }
             })
         })
+        
+        const openPage = (e) => {
+            iframePage.src = `./paginas/${e}`;
+        }
     </script>
 
 </body>
