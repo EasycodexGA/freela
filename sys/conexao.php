@@ -57,6 +57,7 @@ $__HEADERS__[] = 'X-Mailer: PHP/' . phpversion();
 // FUNÇÕES
 
 function endCode($msg, $status){
+    header('Content-Type: application/json; charset=utf-8');
     echo json_encode(array("mensagem"=>$msg, "response"=>$status));
     exit;
 }
