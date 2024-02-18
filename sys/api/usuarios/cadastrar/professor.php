@@ -62,5 +62,4 @@ $message = "
 
 $sendEmail = mail(decrypt($email), $subject, $message, implode("\r\n", $__HEADERS__));
 
-$dec = decrypt($email);
-endCode("Sucesso $dec", true);
+endCode("Sucesso, email enviado!", true);
