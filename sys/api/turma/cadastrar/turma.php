@@ -11,7 +11,7 @@ $json = json_decode($request);
 $nome       = scapeString($__CONEXAO__, $json->nome);
 $categoria  = scapeString($__CONEXAO__, $json->email);
 
-if(!$nome or !$email){
+if(!$nome or !$categoria){
     endCode("Algum dado está faltando", false);
 }
 
