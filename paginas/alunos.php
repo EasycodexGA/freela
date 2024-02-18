@@ -39,9 +39,8 @@ justLog($__EMAIL__, $__TYPE__, 1);
                 </div>
                 <div class='inp-add-out'>
                     <h3>Turma</h3>
-                    <!-- trocar input para select depois ->  -->
                     <select id='turmaAdd'>
-                        <option>Nenhuma sala</option>
+                        <option>Nenhuma turma</option>
                     </select>
                 </div>
                 <div class='inp-add-out'>
@@ -57,7 +56,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
                     <input id='cpfAdd' type='text' placeholder='12345678900'/>
                 </div>
             </div>
-            <button onclick='addNewData("usuarios/cadastrar/professor", {
+            <button onclick='addNewData("usuarios/cadastrar/aluno", {
                 nome: nomeAdd.value,
                 turma: turmaAdd.value,
                 nascimento: (nascimentoAdd.valueAsNumber / 1000),

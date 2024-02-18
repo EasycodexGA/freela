@@ -10,7 +10,7 @@ function closeAdd(){
 }
 
 function addNewData(local, data){
-    fetch(`https://freela.anizero.cc/sys/api/${local}`,{
+    fetch(`../sys/api/${local}`,{
         method: "POST",
         body: JSON.stringify(data)
     })
