@@ -24,12 +24,14 @@ justLog($__EMAIL__, $__TYPE__, 2);
     <div class='extra'>
         <h1 class='title-header'>Funções</h1>
         <div class='header-in'>
-            <button onclick='openAdd()' class='funcBt'>+ Adicionar professor</button>
+            <button onclick='openAdd(addProfessor)' class='funcBt'>+ Adicionar professor</button>
         </div>
     </div>
 
     <div id='addNew'>
+        <div id='addProfessor' class='add-container'>
 
+        </div>
     </div>
 
     <script src="../js/func.js"></script>

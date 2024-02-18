@@ -48,10 +48,12 @@ header, .extra{
     width: 100%;
     height: 100%;
     position: fixed;
-    background: #00000090;
-    backdrop-filter: blur(3px);
+    background: #000000db;
+    backdrop-filter: blur(2px);
     display: flex;
     align-items: center;
+    flex-direction: column;
+    left: 0;
     top: 0;
     opacity: 0;
     pointer-events: none;
@@ -61,4 +63,13 @@ header, .extra{
 .add-active{
     opacity: 1!important;
     pointer-events: auto!important;
+}
+
+.add-container{
+    margin-top: 30px;
+    min-height: 300px;
+    width: calc(100% - 40px);
+    border-radius: 3px;
+    background: white;
+    max-width: 650px;
 }
