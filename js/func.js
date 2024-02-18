@@ -25,10 +25,19 @@ function addProfessor(data){
 
         if(e.response){
             closeAdd();
+            cleanInps();
         }
-        
+
         setTimeout(()=>{
             msg.remove();
         },2000)
     })
+}
+
+function cleanInps(){
+    let inpsAdd = document.querySelectorAll('#addNew input');
+
+    for(let i of inpsAdd){
+        i.value = '';
+    }
 }
