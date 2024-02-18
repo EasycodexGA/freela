@@ -30,7 +30,7 @@ if($type == "usersalunos"){
     $adicional = "where typeC='0'";
 }
 
-if(!in_array($pode, $type)){
+if(!in_array($type, $pode)){
     endCode("Pesquisa inválida.", false);
 }
 

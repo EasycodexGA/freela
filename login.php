@@ -72,6 +72,21 @@ cantLog($__EMAIL__);
             })
         })
 
+        sendNewPass.addEventListener('click', ()=>{
+            let data = {email: email.value, password: password.value}
+            fetch('./sys/api/usuarios/loginApi',{
+                method: "POST",
+                body: JSON.stringify(data)
+            })
+            .then(e=>e.json())
+            .then(e=>{
+                console.log(e)
+                if(e.response){
+                    window.location.href="../";
+                }
+            })
+        })
+
         forgotPass.addEventListener('click', ()=>{
             let data = {email: email.value}
             fetch('./sys/api/usuarios/forgotPass',{
