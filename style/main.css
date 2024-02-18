@@ -86,8 +86,7 @@
 
 .right{
     width: 80%;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    overflow: hidden;
     /* padding-bottom: 100px; */
     position: relative;
 }
@@ -110,4 +109,8 @@
 .load-active{
     opacity: 1!important;
     pointer-events: auto!important;
+}
+
+#iframePage{
+    width: 100%!important;
 }
