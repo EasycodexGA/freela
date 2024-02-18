@@ -147,10 +147,10 @@
     0%{
         transform: translateY(calc(100% + 20px));
     }
-    20%{
+    10%{
         transform: translateY(0);
     }
-    80%{
+    90%{
         transform: translateY(0);
     }
     100%{
