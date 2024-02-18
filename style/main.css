@@ -4,7 +4,7 @@
 }
 
 .left{
-    width: 30%;
+    width: 20%;
     background: var(--contraste2);
     display: flex;
     flex-direction: column;
@@ -85,7 +85,7 @@
 }
 
 .right{
-    width: 70%;
+    width: 80%;
     overflow-y: scroll;
     overflow-x: hidden;
     /* padding-bottom: 100px; */
@@ -94,7 +94,7 @@
 
 #loading{
     position: fixed;
-    width: 70%;
+    width: 80%;
     height: 100svh;
     background: #ffffff;
     z-index: 10;
