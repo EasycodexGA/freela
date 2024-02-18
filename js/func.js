@@ -17,7 +17,7 @@ function addProfessor(data){
     .then(e=>e.json())
     .then(e=>{
         let msg = document.createElement("div");
-        let color = e.response ? "sucess-add" : "erro-add";
+        let color = e.response ? "sucesso-add" : "erro-add";
         msg.classList.add(`msg-add`);
         msg.classList.add(color);
         msg.innerText = e.mensagem;
