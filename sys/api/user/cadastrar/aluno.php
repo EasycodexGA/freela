@@ -14,15 +14,15 @@ $turma      = scapeString($__CONEXAO__, $json->turma);
 $email      = scapeString($__CONEXAO__, $json->email);
 $nascimento = scapeString($__CONEXAO__, $json->nascimento);
 
-if(!$cpf or !$nome or !$turma or !$email or !$nascimento){
-    endCode("Algum dado está faltando", false);
-}
-
 $cpf        = setNum($cpf);
 $nome       = setString($nome);
 $turma      = setString($turma);
 $email      = setEmail($email);
 $nascimento = setNum($nascimento);
+
+if(!$cpf or !$nome or !$turma or !$email or !$nascimento){
+    endCode("Algum dado está faltando", false);
+}
 
 if(!$email){
     endCode("Email inválido", false);

@@ -12,7 +12,7 @@ $nome       = scapeString($__CONEXAO__, $json->nome);
 $categoria  = scapeString($__CONEXAO__, $json->categoria);
 
 $nome       = setNoXss($nome);
-$categoria  = setNum($email);
+$categoria  = setNum($categoria);
 
 if(!$nome or !$categoria){
     endCode("Algum dado está faltando", false);
