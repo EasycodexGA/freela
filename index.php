@@ -28,10 +28,10 @@ justLog($__EMAIL__, $__TYPE__, 0);
                     <p class="title-p2">Escolinhas</p>
                 </div>
                 <div class="links">
-                    <button onclick='openPage(`professores`)' id="professoresBt" class="link-active">Professores</button>
-                    <button onclick='openPage(`alunos`)' id="alunosBt">Alunos</button>
-                    <button onclick='openPage(`turmas`)' id="turmasBt">Turmas</button>
-                    <button onclick='openPage(`eventos`)' id="eventosBt">Eventos</button>
+                    <button onclick='openPage(`professores`, this)' id="professoresBt" class="link-active btn">Professores</button>
+                    <button onclick='openPage(`alunos`, this)' id="alunosBt" class='btn'>Alunos</button>
+                    <button onclick='openPage(`turmas`, this)' id="turmasBt" class='btn'>Turmas</button>
+                    <button onclick='openPage(`eventos`, this)' id="eventosBt" class='btn'>Eventos</button>
                 </div>
             </div>
             <div class="left-bottom">
@@ -57,13 +57,21 @@ justLog($__EMAIL__, $__TYPE__, 0);
     </div>
 
     <script>
-        const openPage = (e) => {
+        const btns = document.querySelectorAll(".btn");
+
+        const openPage = (e, el) => {
             loading.classList.add("load-active");
 
             iframePage.src = `./paginas/${e}`;
             iframePage.onload = () => {
                 loading.classList.remove("load-active");
             }
+
+            for(let i of btns){
+                i.classList.remove("link-active")
+            }
+
+            el.classList.add("link-active")
         }
     </script>
 </body>

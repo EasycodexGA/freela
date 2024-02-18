@@ -64,12 +64,13 @@
     font-size: 1.1rem;
     cursor: pointer;
     padding: 10px;
+    width: 100%;
+    transition: all .3s;
 }
 
 .link-active {
-    background: #FFF;
-    color: #333;
-    width: 100%;
+    background: #FFF!important;
+    color: #333!important;
 }
 
 .left-bottom {
