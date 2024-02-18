@@ -43,6 +43,16 @@ $__TIME__ = time();
 
 $__YEAR__ = date("Y");
 
+$__CODE__ = bin2hex(random_bytes(3));
+
+// EMAIL 
+
+$__HEADERS__[] = 'MIME-Version: 1.0';
+$__HEADERS__[] = 'Content-type: text/html; charset=iso-8859-1';
+$__HEADERS__[] = "From: DiplomaPay <contato_$__CODE__@$__URL__>";
+$__HEADERS__[] = "no-reply";
+$__HEADERS__[] = 'X-Mailer: PHP/' . phpversion();
+
 // FUNÇÕES
 
 function endCode($msg, $status){
@@ -86,9 +96,17 @@ function justLog($__EMAIL__){
     }
 }
 
-function scapeString($string){
+function scapeString($__CONEXAO__, $string){
     $string = mysqli_real_escape_string($__CONEXAO__, $string);
     return $string;
+}
+
+function stopUserExist($string){
+    $tryConnect = mysqli_query($__CONEXAO__, "select * from users where email='$string'") or die("erro select");
+
+    if(mysqli_num_rows($tryConnect) > 0){
+        endCode("Usuário já existe", false);
+    }
 }
 
 

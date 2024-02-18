@@ -15,15 +15,23 @@ justLog($__EMAIL__);
 <body>
     <div class="int-main">
         <div class="left">
-            <div class="logo">
-                <div class="img-div">
-                    <img src="img/prefeitura.jpg">
+            <div class="left-top">
+                <div class="logo">
+                    <div class="img-div">
+                        <img src="img/prefeitura.jpg">
+                    </div>
+                    <p class="title-p1">Voleibol</p>
+                    <p class="title-p2">Escolinhas</p>
                 </div>
-                <p class="title-p1">Voleibol</p>
-                <p class="title-p2">Escolinhas</p>
+                <div class="links">
+                    <button id="professoresBt">Professores</button>
+                    <button id="alunosBt">Alunos</button>
+                    <button id="turmasBt">Turmas</button>
+                    <button id="eventosBt">Eventos</button>
+                </div>
             </div>
-            <div class="links">
-                <button>Professores</button>
+            <div class="left-bottom">
+                <button id="config">Configurações</button>
             </div>
         </div>
         <div class="right">
