@@ -59,12 +59,14 @@ body {
 .inputDiv {
     position: relative;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .spanlog{
-    color: #333;
-    font-size: 1.2rem;
-    margin-left: 10px;
+    color: #929292;
+    font-size: 16px;
 }
 
 .inputDiv input {
@@ -99,6 +101,7 @@ body {
     cursor: pointer;
     transition: all .3s;
     width: 100%;
+    font-size: 14px;
 }
 
 #sendData:hover{

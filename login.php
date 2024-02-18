@@ -53,6 +53,20 @@ cantLog($__EMAIL__);
                 }
             })
         })
+        forgotPass.addEventListener('click', ()=>{
+            let data = {email: email.value}
+            fetch('./sys/api/forgotPass',{
+                method: "POST",
+                body: JSON.stringify(data)
+            })
+            .then(e=>e.json())
+            .then(e=>{
+                console.log(e)
+                if(e.response){
+                    window.location.href="../";
+                }
+            })
+        })
     </script>
 
 </body>
