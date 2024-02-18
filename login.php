@@ -24,6 +24,7 @@ cantLog($__EMAIL__);
             <p class="title-p1">Voleibol</p>
             <p class="title-p2">Escolinhas</p>
         </div>
+
         <div id="loginBox" class="login-box">
             <div class="inputDiv">
                 <p class="spanlog">Email</p>
@@ -38,11 +39,12 @@ cantLog($__EMAIL__);
                 <button id="forgotPass" class="sub-bt">Esqueceu sua senha?</button>
             </div>
         </div>
+
         <div id="verifyDiv" class="login-box">
             <div class="inputDiv">
-                <p class="spanLog">Foi enviado um código de verificação para seu email - Ensira-o abaixo para trocar sua senha</p>
+                <p class="spanLog" id="responseVerify"></p>
                 <input id="verifyCode" name="verifyCode">
-            <div>
+            </div>
             <div class="inputDiv">
                 <p class="spanLog">Nova senha</p>
                 <input id="newPass" name="newPass" type="password">
@@ -80,6 +82,7 @@ cantLog($__EMAIL__);
             .then(e=>{
                 console.log(e)
                 if(e.response){
+                    responseVerify.innerHTML = e.mensagem.text;
                     verifyDiv.style.display = 'flex';
                     loginBox.style.display = 'none';
                 }

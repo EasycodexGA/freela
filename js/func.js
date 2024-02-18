@@ -41,3 +41,17 @@ function cleanInps(){
         i.value = '';
     }
 }
+
+
+function getActInact(e){
+    fetch(`../sys/api/usuarios/get/total`,{
+        method: "POST",
+        body: JSON.stringify({
+            type: e
+        })
+    })
+    .then(e=>e.json())
+    .then(e=>{
+        console.log(e)
+    })
+}

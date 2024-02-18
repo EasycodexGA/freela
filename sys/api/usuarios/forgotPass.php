@@ -15,6 +15,14 @@ if(stopUserExistnt($__CONEXAO__, $email)){
     endCode('Usuário não existe', false);
 }
 
+$_query_ = mysqli_query($__CONEXAO__, "select * from users where email='$email'");
+$__query__ = mysqli_fetch_assoc($_query_);
+$codeDate = $__query__['codeDate'];
+$codigo = $__query__['verifycode'];
+if($__TIME__ - 600 < $codeDate){
+    endCode(array("text" => "Já foi enviado um código para seu email recentemente", "code" => $codigo), true);
+}
+
 $subject = "Seu código de verificação para entrar no Voleibol Escolinha";
 $message = "
     <html>
@@ -41,5 +49,5 @@ $message = "
 $codigo = encrypt($__CODE__);
 
 $sendEmail = mail(decrypt($email), $subject, $message, implode("\r\n", $__HEADERS__));
-mysqli_query($__CONEXAO__, "update users set verifycode='$codigo' where email='$email'");
-endCode(array("text" => "Sucesso!", "code" => $codigo), true);
+mysqli_query($__CONEXAO__, "update users set verifycode='$codigo', codeDate='$__TIME__' where email='$email'");
+endCode(array("text" => "Um código de verificação foi enviado para seu email", "code" => $codigo), true);

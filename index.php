@@ -70,7 +70,6 @@ justLog($__EMAIL__, $__TYPE__, 0);
                 loading.classList.remove("load-active");
                 el.classList.add("link-active")
             }
-            
         }
     </script>
 </body>

@@ -12,12 +12,12 @@ justLog($__EMAIL__, $__TYPE__, 0);
     <link rel="stylesheet" href="../style/paginas.css">
     <link rel="shortcut icon" href="../img/prefeitura.png" type="image/x-icon">
 </head>
-<body>
+<body onload="getActInact('turmas')">
     <header>
         <h1 class='title-header'>Geral - Turmas</h1>
         <div class='header-in'>
-            <h2 class='sub-header'><span>0</span> Ativos</h2>
-            <h2 class='sub-header'><span>0</span> Inativos</h2>
+        <h2 class='sub-header'><span id="active">0</span> Ativos</h2>
+            <h2 class='sub-header'><span id="inactive">0</span> Inativos</h2>
         </div>
     </header>
 
