@@ -81,9 +81,14 @@ function cantLog($__EMAIL__){
 
 function justLog($__EMAIL__){
     if(!$__EMAIL__){
-        header("Location: $__MAIN_WEB__/login");
+        header("Location: $__MAIN_WEB__");
         exit;
     }
+}
+
+function scapeString($string){
+    $string = mysqli_real_escape_string($__CONEXAO__, $string);
+    return $string;
 }
 
 
