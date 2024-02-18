@@ -24,8 +24,48 @@ justLog($__EMAIL__, $__TYPE__, 1);
     <div class='extra'>
         <h1 class='title-header'>Funções</h1>
         <div class='header-in'>
-            <button class='funcBt'>+ Adicionar aluno</button>
+            <button onclick='openAdd(addAluno)' class='funcBt'>+ Adicionar aluno</button>
         </div>
     </div>
+
+    <div id='addNew'>
+        <div id='addAluno' class='add-container'>
+            <h1 class='title-add'>Novo aluno</h1>
+
+            <div class='inps-add'>
+                <div class='inp-add-out'>
+                    <h3>Nome</h3>
+                    <input id='nomeAdd' type='text' placeholder='Fulano da silva'/>
+                </div>
+                <div class='inp-add-out'>
+                    <h3>Turma</h3>
+                    <!-- trocar input para select depois ->  -->
+                    <input id='turmaAdd' type='text' placeholder='Turma'/>
+                </div>
+                <div class='inp-add-out'>
+                    <h3>Nascimento</h3>
+                    <input id='nascimentoAdd' type='date'/>
+                </div>
+                <div class='inp-add-out'>
+                    <h3>Email</h3>
+                    <input id='emailAdd' type='text' placeholder='exemplo@gmail.com'/>
+                </div>
+                <div class='inp-add-out'>
+                    <h3>CPF</h3>
+                    <input id='cpfAdd' type='text' placeholder='12345678900'/>
+                </div>
+            </div>
+            <button onclick='addNewData("usuarios/cadastrar/professor", {
+                nome: nomeAdd.value,
+                turma: turmaAdd.value,
+                nascimento: (nascimentoAdd.valueAsNumber / 1000),
+                email: emailAdd.value,
+                cpf: cpfAdd.value
+            })' class='btn-add'>Salvar</button>
+        </div>
+    </div>
+
+    <script src="../js/func.js"></script>
+    
 </body>
 </html>
