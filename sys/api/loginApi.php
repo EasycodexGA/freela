@@ -30,7 +30,7 @@ if(mysqli_num_rows($tryConnect) < 1){
     endCode("Usuário não encontrado $checkEmail", false);
 }
 
-$passUser   = mysqli_fetch_assoc($tryConnect)["password"];
+$passUser   = mysqli_fetch_assoc($tryConnect)["senha"];
 
 $passwordV  = password_verify($password, $passUser);
 
