@@ -8,8 +8,8 @@ header('Content-Type: application/json; charset=utf-8');
 $request = file_get_contents('php://input');
 $json = json_decode($request);
 
-$email      = scapeString($__CONEXAO__, $json->$email);
-$password   = scapeString($__CONEXAO__, $json->$password);
+$email      = scapeString($__CONEXAO__, $json->email);
+$password   = scapeString($__CONEXAO__, $json->password);
 
 if(!$email or !$password){
     endCode("Algum dado está faltando", false);

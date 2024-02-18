@@ -8,7 +8,7 @@ header('Content-Type: application/json; charset=utf-8');
 $request    = file_get_contents('php://input');
 $json       = json_decode($request);
 
-$email = scapeString($__CONEXAO__, $json->$email);
+$email = scapeString($__CONEXAO__, $json->email);
 $email = setEmail($email);
 
 if(stopUserExistnt($__CONEXAO__, $email)){
