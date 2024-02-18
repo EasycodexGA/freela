@@ -54,7 +54,7 @@ justLog($__EMAIL__, $__TYPE__, 2);
                     <input id='cpfAdd' type='text' placeholder='12345678900'/>
                 </div>
             </div>
-            <button onclick='addProfessor({
+            <button onclick='addNewData("usuarios/cadastrar/professor", {
                 nome: nomeAdd.value,
                 titularidade: titularidadeAdd.value,
                 nascimento: (nascimentoAdd.valueAsNumber / 1000),

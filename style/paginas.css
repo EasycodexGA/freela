@@ -129,3 +129,41 @@ header, .extra{
     margin-left: auto;
     cursor: pointer;
 }
+
+
+.msg-add{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 100;
+    padding: 15px 20px;
+    border-radius: 3px;
+    color: white;
+    font-size: 13px;
+    animation: msgAdd 2s ease-in-out forwards;
+}
+
+.sucesso-add{
+    background: #4fbe60;
+    border: 2px solid #6ed26d;
+}
+
+.erro-add{
+    background: #ff6565;
+    border: 2px solid #fc8686;
+}
+
+@keyframes msgAdd{
+    0%{
+        transform: translateY(calc(100% + 20px));
+    }
+    10%{
+        transform: translateY(0);
+    }
+    90%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(calc(100% + 20px));
+    }
+}
