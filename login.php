@@ -34,8 +34,8 @@ cantLog($__EMAIL__);
                 <input type="password" name="password" id="password">
             </div>
             <div class="loginBot">
-                <button id="sendData">Enviar</button>
-                <button id="forgotPass">Esqueceu sua senha?</button>
+                <button id="sendData" class="send-bt">Enviar</button>
+                <button id="forgotPass" class="sub-bt">Esqueceu sua senha?</button>
             </div>
         </div>
         <div id="verifyDiv" class="login-box">
@@ -48,8 +48,8 @@ cantLog($__EMAIL__);
                 <input id="newPass" name="newPass" type="password">
             </div>
             <div class="loginBot">
-                <button id="sendNewPass">Enviar</button>
-                <button id="backLogin">Voltar</button>
+                <button id="sendNewPass" class="send-bt">Enviar</button>
+                <button id="backLogin" class="sub-bt">Voltar</button>
             </div>
         </div>
     </div>
