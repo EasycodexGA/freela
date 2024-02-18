@@ -54,7 +54,7 @@ justLog($__EMAIL__, $__TYPE__, 2);
                     <input type='text' placeholder='000.000.000-00'/>
                 </div>
             </div>
-            <button class='btn-add'>Salvar</button>
+            <button onclick='closeAdd()' class='btn-add'>Salvar</button>
         </div>
     </div>
 

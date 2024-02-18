@@ -4,3 +4,7 @@ function openAdd(e){
 
     console.log(e)
 }
+
+function closeAdd(){
+    addNew.classList.remove("add-active");
+}
