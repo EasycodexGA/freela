@@ -20,7 +20,7 @@ $email          = setEmail($email);
 $nascimento     = setNum($nascimento);
 $titularidade   = setString($titularidade);
 
-if(!decrypt($cpf) or !decrypt($nome) or !decrypt($titularidade) or !decrypt($email) or !decrypt($nascimento)){
+if(!$cpf or !$nome or !$titularidade or !$email or !$nascimento){
     endCode("Algum dado está faltando", false);
 }
 

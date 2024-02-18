@@ -63,6 +63,9 @@ function endCode($msg, $status){
 }
 
 function urlAmigavel($string) {
+    if(!$string){
+        return null;
+    }
     $string = mb_strtolower($string, 'UTF-8');
     $string = preg_replace('/[^A-Za-z0-9-]+/', '-', $string);
     $string = preg_replace('/-+/', '-', $string);
@@ -71,13 +74,16 @@ function urlAmigavel($string) {
 }
 
 function setNoXss($string) {
+    if(!$string){
+        return null;
+    }
     $string = preg_replace('/[^A-Za-z0-9-]+/', ' ', $string);
     return encrypt($string);
 }
 
 function setString($string){
     if(!$string){
-        return $string;
+        return null;
     }
     $string = preg_replace('/[^A-Za-z]+/', ' ', $string);
     return encrypt($string);
@@ -85,11 +91,17 @@ function setString($string){
 
 
 function setEmail($string){
+    if(!$string){
+        return null;
+    }
     $string = filter_var($string, FILTER_VALIDATE_EMAIL);
     return encrypt($string);
 }
 
 function setNum($string){
+    if(!$string){
+        return null;
+    }
     $string = preg_replace('/[^0-9]+/', '', $string);
     return encrypt($string);
 }

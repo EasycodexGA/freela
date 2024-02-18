@@ -20,7 +20,7 @@ $turma      = setString($turma);
 $email      = setEmail($email);
 $nascimento = setNum($nascimento);
 
-if(!decrypt($cpf) or !decrypt($nome) or !decrypt($turma) or !decrypt($email) or !decrypt($nascimento)){
+if(!$cpf or $cpf or !$nome or !$turma or !$email or !$nascimento){
     endCode("Algum dado está faltando", false);
 }
 
