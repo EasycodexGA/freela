@@ -1,0 +1,34 @@
+<?php
+include '../../conexao.php';
+
+justLog($__EMAIL__, $__TYPE__, 2);
+
+header('Content-Type: application/json; charset=utf-8');
+
+$request = file_get_contents('php://input');
+$json = json_decode($request);
+
+$nome       = scapeString($__CONEXAO__, $json->nome);
+$categoria  = scapeString($__CONEXAO__, $json->email);
+
+if(!$nome or !$email){
+    endCode("Algum dado está faltando", false);
+}
+
+$nome       = setNoXss($nome);
+$categoria  = setNum($email);
+
+if(!$email){
+    endCode("Email inválido", false);
+}
+
+$getTurma = mysqli_query($__CONEXAO__, "select * from turmas where nome='$nome' and categoria='$categoria'");
+
+if(mysqli_num_rows($getTurma) > 0){
+    endCode("Já existe uma turma com esses dados.");
+}
+
+mysqli_query($__CONEXAO__, "insert into turmas (nome, categoria, data) values ('$nome', '$categoria', '$__TIME__')");
+
+
+endCode("Sala criada com sucesso", false);

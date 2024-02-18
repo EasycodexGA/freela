@@ -70,9 +70,12 @@ function urlAmigavel($string) {
     return $string;
 }
 
+function setNoXss($string) {
+    $string = preg_replace('/[^A-Za-z0-9-]+/', ' ', $string);
+    return encrypt($string);
+}
+
 function setString($string){
-    $string = trim($string);
-    $string = preg_replace('/\s+/', ' ', $string);
     $string = preg_replace('/[^A-Za-z]+/', ' ', $string);
     return encrypt($string);
 }

@@ -10,7 +10,8 @@ justLog($__EMAIL__, $__TYPE__, 0);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/root.css">
     <link rel="stylesheet" href="style/main.css">
-    <title>Vôlei</title>
+    <link rel="shortcut icon" href="img/prefeitura.png" type="image/x-icon">
+    <title>Voleibol escolinhas - Dashboard</title>
 </head>
 <body>
     <div class="int-main">
