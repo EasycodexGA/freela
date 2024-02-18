@@ -94,15 +94,14 @@ function setNum($string){
 
 function cantLog($__EMAIL__){
     if($__EMAIL__){
-        header("Location: $__URL__/login");
+        header("Location: $__URL__");
         exit;
     }
 }
 
 function justLog($__EMAIL__, $__TYPE__, $type){
-    
     if(!$__EMAIL__){
-        header("Location: $__URL__");
+        header("Location: $__URL__/login");
         exit;
     }
 
