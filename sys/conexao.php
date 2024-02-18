@@ -70,7 +70,7 @@ function urlAmigavel($string) {
     return $string;
 }
 
-function setUser($string){
+function setString($string){
     $string = trim($string);
     $string = preg_replace('/\s+/', ' ', $string);
     $string = preg_replace('/[^A-Za-z]+/', ' ', $string);

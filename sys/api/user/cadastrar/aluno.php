@@ -19,7 +19,8 @@ if(!$cpf or !$nome or !$turma or !$email or !$nascimento){
 }
 
 $cpf        = setNum($cpf);
-$nome       = setUser($nome);
+$nome       = setString($nome);
+$turma      = setString($turma);
 $email      = setEmail($email);
 $nascimento = setNum($nascimento);
 
@@ -45,7 +46,7 @@ $message = "
     </head>
     <body>
         <div style='background-color:#114494; color:white; text-align:center; padding: 5px; border-radius: 5px'>
-            <h2 style='color:white;'>Senha provisória</h2>
+            <h2 style='color:white;'>Senha provisória - Aluno</h2>
         </div>
         <div style='text-align:center; padding: 5px'>
             <p style='color:black;'>Sua senha provisória</p>
