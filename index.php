@@ -32,7 +32,7 @@ justLog($__EMAIL__, $__TYPE__, 0);
                 </div>
             </div>
             <div class="left-bottom">
-                <button onclick='open(`configuracoes`)' id="config">Configurações</button>
+                <button onclick='openPage(`configuracoes`)' id="config">Configurações</button>
             </div>
         </div>
         <iframe src='./paginas/inicio' id='iframePage' class="right">
