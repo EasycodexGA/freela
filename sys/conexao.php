@@ -83,7 +83,7 @@ function setEmail($string){
 }
 
 function setNum($string){
-    $string = preg_replace('/[^0-9]+/', '-', $string);
+    $string = preg_replace('/[^0-9]+/', '', $string);
     return encrypt($string);
 }
 
@@ -113,11 +113,12 @@ function scapeString($__CONEXAO__, $string){
     return $string;
 }
 
-function stopUserExist($string){
+function stopUserExist($__CONEXAO__, $string){
     $tryConnect = mysqli_query($__CONEXAO__, "select * from users where email='$string'") or die("erro select");
 
     if(mysqli_num_rows($tryConnect) > 0){
-        endCode("Usuário já existe", false);
+        header("Location: $__URL__");
+        exit;
     }
 }
 
