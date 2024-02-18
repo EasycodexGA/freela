@@ -26,4 +26,5 @@ header{
 .sub-header span{
     color: #FF9900;
     font-size: 25px;
+    align-items: center;
 }
