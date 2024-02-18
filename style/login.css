@@ -44,7 +44,7 @@ body {
     font-size: 0.8rem;
 }
 
-#loginBox {
+.login-box {
     width: calc(100% - 20px);
     min-height: 300px;
     display: flex;

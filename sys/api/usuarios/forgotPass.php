@@ -42,4 +42,4 @@ $codigo = encrypt($__CODE__);
 
 $sendEmail = mail(decrypt($email), $subject, $message, implode("\r\n", $__HEADERS__));
 mysqli_query($__CONEXAO__, "update users set verifycode='$codigo' where email='$email'");
-endCode("Sucesso!", true);
+endCode({text: "Sucesso!", code: $codigo}, true);

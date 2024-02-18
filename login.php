@@ -24,7 +24,7 @@ cantLog($__EMAIL__);
             <p class="title-p1">Voleibol</p>
             <p class="title-p2">Escolinhas</p>
         </div>
-        <div id="loginBox">
+        <div id="loginBox" class="login-box">
             <div class="inputDiv">
                 <p class="spanlog">Email</p>
                 <input name="email" id="email">
@@ -35,7 +35,21 @@ cantLog($__EMAIL__);
             </div>
             <div class="loginBot">
                 <button id="sendData">Enviar</button>
-                <button id="forgotPass" onclick='openPage(`forgotPass.html`)'>Esqueceu sua senha?</button>
+                <button id="forgotPass">Esqueceu sua senha?</button>
+            </div>
+        </div>
+        <div id="verifyDiv" class="login-box">
+            <div class="inputDiv">
+                <p class="spanLog">Foi enviado um código de verificação para seu email - Ensira-o abaixo para trocar sua senha</p>
+                <input id="verifyCode" name="verifyCode">
+            <div>
+            <div class="inputDiv">
+                <p class="spanLog">Nova senha</p>
+                <input id="newPass" name="newPass" type="password">
+            </div>
+            <div class="loginBot">
+                <button id="sendNewPass">Enviar</button>
+                <button id="backLogin">Voltar</button>
             </div>
         </div>
     </div>
@@ -65,10 +79,17 @@ cantLog($__EMAIL__);
             .then(e=>e.json())
             .then(e=>{
                 console.log(e)
-                if(e.response){
-                    window.location.href="../";
+                if(!e.response){
+                    break
                 }
+                verifyDiv.style.display = 'block';
+                loginBox.style.display = 'none';
             })
+        })
+
+        backLogin.addEventListener('click', ()=>{
+            verifyDiv.style.display = 'none';
+            loginBox.style.display = 'block';
         })
     </script>
 
