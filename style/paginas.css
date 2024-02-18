@@ -111,7 +111,7 @@ header, .extra{
     color: #929292;
 }
 
-.inp-add-out input {
+.inp-add-out input, .inp-add-out select {
     padding: 12px;
     background: white;
     border: 2px solid #ededed;

@@ -40,7 +40,9 @@ justLog($__EMAIL__, $__TYPE__, 1);
                 <div class='inp-add-out'>
                     <h3>Turma</h3>
                     <!-- trocar input para select depois ->  -->
-                    <input id='turmaAdd' type='text' placeholder='Turma'/>
+                    <select id='turmaAdd'>
+                        <option>Nenhuma sala</option>
+                    </select>
                 </div>
                 <div class='inp-add-out'>
                     <h3>Nascimento</h3>
