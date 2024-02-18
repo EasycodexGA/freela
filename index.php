@@ -58,7 +58,12 @@ justLog($__EMAIL__, $__TYPE__, 0);
 
     <script>
         const openPage = (e) => {
+            loading.classList.add("load-active");
+
             iframePage.src = `./paginas/${e}`;
+            iframePage.onload = () => {
+                loadingPage.classList.remove("load-active");
+            }
         }
     </script>
 </body>
