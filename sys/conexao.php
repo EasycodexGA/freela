@@ -93,6 +93,15 @@ function setNum($string){
     return encrypt($string);
 }
 
+function checkMissing($array){
+    for($i = 0; $i < count($array); $i++){
+        $item = decrypt($array[$i]);
+        if(!$item or $item == "" or $item == " "){
+            endCode("Algum dado está faltando.", false);
+        }
+    }
+}
+
 
 function cantLog($__EMAIL__){
     if($__EMAIL__){
