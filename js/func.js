@@ -23,6 +23,10 @@ function addProfessor(data){
         msg.innerText = e.mensagem;
         document.body.appendChild(msg);
 
+        if(e.response){
+            closeAdd();
+        }
+        
         setTimeout(()=>{
             msg.remove();
         },2000)
