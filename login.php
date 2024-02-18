@@ -73,7 +73,7 @@ cantLog($__EMAIL__);
         })
 
         sendNewPass.addEventListener('click', ()=>{
-            let data = {code: verifyCode.value, password: newPass.value}
+            let data = {email: email.value, code: verifyCode.value, password: newPass.value}
             fetch('./sys/api/usuarios/verifyCode',{
                 method: "POST",
                 body: JSON.stringify(data)

@@ -41,7 +41,7 @@ $query = mysqli_query($__CONEXAO, "select active from $type $adicional");
 $active = 0;
 $inactive = 0;
 
-while($dados = mysqli_num_rows($query)){
+while($dados = mysqli_fetch_array($query)){
     $act = $dados['active'];
 
     if($act == 0){

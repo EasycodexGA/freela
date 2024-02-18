@@ -10,12 +10,17 @@ $json = json_decode($request);
 
 $code      = scapeString($__CONEXAO__, $json->code);
 $newPass   = scapeString($__CONEXAO__, $json->password);
+$email   = scapeString($__CONEXAO__, $json->email);
 
-if(!$code or !$newPass){
+if(!$code or !$newPass or !$email){
     endCode("Algum dado está faltando", false); 
 }
 
+$checkEmail = setEmail($email);
 
+if(!$checkEmail){
+    endCode("Email inválido", false);
+}
 
 $tryConnect = mysqli_query($__CONEXAO__, "select * from users where email='$checkEmail'");
 
