@@ -62,16 +62,16 @@ justLog($__EMAIL__, $__TYPE__, 0);
         const openPage = (e, el) => {
             loading.classList.add("load-active");
 
-            iframePage.src = `./paginas/${e}`;
-            iframePage.onload = () => {
-                loading.classList.remove("load-active");
-            }
-
             for(let i of btns){
                 i.classList.remove("link-active")
             }
 
-            el.classList.add("link-active")
+            iframePage.src = `./paginas/${e}`;
+            iframePage.onload = () => {
+                loading.classList.remove("load-active");
+                el.classList.add("link-active")
+            }
+            
         }
     </script>
 </body>
