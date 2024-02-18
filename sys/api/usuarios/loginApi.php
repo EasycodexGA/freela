@@ -12,7 +12,7 @@ $email      = scapeString($__CONEXAO__, $json->email);
 $password   = scapeString($__CONEXAO__, $json->password);
 
 if(!$email or !$password){
-    endCode("Algum dado está faltando", false);
+    endCode("Algum dado está faltando", false); 
 }
 
 $checkEmail = setEmail($email);
