@@ -43,7 +43,7 @@ justLog($__EMAIL__, $__TYPE__, 2);
                 </div>
                 <div class='inp-add-out'>
                     <h3>Nascimento</h3>
-                    <input type='data'/>
+                    <input type='date'/>
                 </div>
                 <div class='inp-add-out'>
                     <h3>Email</h3>
@@ -54,6 +54,7 @@ justLog($__EMAIL__, $__TYPE__, 2);
                     <input type='text' placeholder='000.000.000-00'/>
                 </div>
             </div>
+            <button class='btn-add'>Salvar</button>
         </div>
     </div>
 
