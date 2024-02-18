@@ -79,11 +79,11 @@ cantLog($__EMAIL__);
             .then(e=>e.json())
             .then(e=>{
                 console.log(e)
-                if(!e.response){
-                    break
+                if(e.response){
+                    verifyDiv.style.display = 'block';
+                    loginBox.style.display = 'none';
                 }
-                verifyDiv.style.display = 'block';
-                loginBox.style.display = 'none';
+                
             })
         })
 
