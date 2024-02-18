@@ -18,6 +18,8 @@ checkMissing(
     )
 );
 
+$type = decrypt($type);
+
 $pode = array("users", "turmas", "categorias", "eventos");
 
 if($type == "usersprofessor"){
