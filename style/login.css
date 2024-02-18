@@ -117,3 +117,8 @@ body {
 #verifyDiv {
     display: none;
 }
+
+#responseFalse {
+    color: #e66161;
+    font-size: 0.9rem;
+}

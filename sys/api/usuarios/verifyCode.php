@@ -17,6 +17,7 @@ if(!$code or !$newPass or !$email){
 }
 
 $checkEmail = setEmail($email);
+$code = encrypt($code);
 
 if(!$checkEmail){
     endCode("Email inválido", false);
@@ -25,20 +26,19 @@ if(!$checkEmail){
 $tryConnect = mysqli_query($__CONEXAO__, "select * from users where email='$checkEmail'");
 
 if(mysqli_num_rows($tryConnect) < 1){
-    endCode("Usuário não encontrado $checkEmail", false);
+    endCode("Usuário não encontrado", false);
 }
 
-$passUser   = mysqli_fetch_assoc($tryConnect)["senha"];
-
-$passwordV  = password_verify($password, $passUser);
-
-if(!$passwordV){
-    endCode("Senha incorreta", false);
+$tryConnect2 = mysqli_query($__CONEXAO__, "select * from users where email='$checkEmail' and verifycode='$code'");
+if(mysqli_num_rows($tryConnect) < 1){
+    endCode("Código incorreto", false);
 }
 
-mysqli_query($__CONEXAO__, "update users set lastModify='$__TIME__' where email='$checkEmail'");
+$newPass = password_hash($newPass, PASSWORD_DEFAULT);
+
+mysqli_query($__CONEXAO__, "update users set lastModify='$__TIME__', senha='$newPass', codeDate='',  where email='$checkEmail'");
 
 $_SESSION['email'] = $checkEmail;
-$_SESSION['password'] = $passUser;
+$_SESSION['password'] = $newPass;
 
 endCode("Sucesso!", true);

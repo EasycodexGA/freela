@@ -52,6 +52,7 @@ cantLog($__EMAIL__);
             <div class="loginBot">
                 <button id="sendNewPass" class="send-bt">Enviar</button>
                 <button id="backLogin" class="sub-bt">Voltar</button>
+                <p id="responseFalse"></p>
             </div>
         </div>
     </div>
@@ -83,6 +84,8 @@ cantLog($__EMAIL__);
                 console.log(e)
                 if(e.response){
                     window.location.href="../";
+                } else {
+                    responseFalse.innerHTML = e.mensagem;
                 }
             })
         })
@@ -97,15 +100,16 @@ cantLog($__EMAIL__);
             .then(e=>{
                 console.log(e)
                 if(e.response){
+                    responseFalse.innerHTML = '';
                     responseVerify.innerHTML = e.mensagem.text;
                     verifyDiv.style.display = 'flex';
                     loginBox.style.display = 'none';
                 }
-                
             })
         })
 
         backLogin.addEventListener('click', ()=>{
+            responseFalse.innerHTML = '';
             verifyDiv.style.display = 'none';
             loginBox.style.display = 'flex';
         })
