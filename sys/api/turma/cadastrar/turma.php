@@ -9,17 +9,13 @@ $request = file_get_contents('php://input');
 $json = json_decode($request);
 
 $nome       = scapeString($__CONEXAO__, $json->nome);
-$categoria  = scapeString($__CONEXAO__, $json->email);
-
-if(!$nome or !$categoria){
-    endCode("Algum dado está faltando", false);
-}
+$categoria  = scapeString($__CONEXAO__, $json->categoria);
 
 $nome       = setNoXss($nome);
 $categoria  = setNum($email);
 
-if(!$email){
-    endCode("Email inválido", false);
+if(!$nome or !$categoria){
+    endCode("Algum dado está faltando", false);
 }
 
 $getTurma = mysqli_query($__CONEXAO__, "select * from turmas where nome='$nome' and categoria='$categoria'");
