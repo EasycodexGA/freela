@@ -97,13 +97,13 @@ header, .extra{
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
-    width: calc(100% / 3 - 20px);
 }
 
 .inp-add-out {
     gap: 10px;
     display: flex;
     flex-direction: column;
+    width: calc(100% / 3 - 20px);
 }
 
 .inp-add-out h3 {
