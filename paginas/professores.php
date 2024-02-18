@@ -31,6 +31,29 @@ justLog($__EMAIL__, $__TYPE__, 2);
     <div id='addNew'>
         <div id='addProfessor' class='add-container'>
             <h1 class='title-add'>Novo professor</h1>
+
+            <div class='inps-add'>
+                <div class='inp-add-out'>
+                    <h3>Nome</h3>
+                    <input type='text' placeholder='Fulano da silva'/>
+                </div>
+                <div class='inp-add-out'>
+                    <h3>Titularidade</h3>
+                    <input type='text' placeholder='Professor'/>
+                </div>
+                <div class='inp-add-out'>
+                    <h3>Nascimento</h3>
+                    <input type='data'/>
+                </div>
+                <div class='inp-add-out'>
+                    <h3>Email</h3>
+                    <input type='text' placeholder='exemplo@gmail.com'/>
+                </div>
+                <div class='inp-add-out'>
+                    <h3>CPF</h3>
+                    <input type='text' placeholder='000.000.000-00'/>
+                </div>
+            </div>
         </div>
     </div>
 
