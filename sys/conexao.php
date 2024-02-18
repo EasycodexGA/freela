@@ -97,7 +97,7 @@ function checkMissing($array){
     for($i = 0; $i < count($array); $i++){
         $item = decrypt($array[$i]);
         if(!$item or $item == "" or $item == " "){
-            endCode("Algum dado está faltando.", false);
+            endCode("Algum dado está faltando. $item - $i", false);
         }
     }
 }

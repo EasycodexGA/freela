@@ -24,7 +24,6 @@ checkMissing(
     array(
         $cpf, 
         $nome, 
-        $email, 
         $nascimento, 
         $titularidade
     )
