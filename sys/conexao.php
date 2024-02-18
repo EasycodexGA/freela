@@ -16,9 +16,9 @@ header('Access-Control-Allow-Headers: *');
 // USER 
 
 $__EMAIL__ = $_SESSION["email"];
-// $__PASSWORD__ = $_SESSION["password"];
+$__PASSWORD__ = $_SESSION["password"];
 
-$_query_ = mysqli_query($__CONEXAO__, "select * from users where email='$__EMAIL__'")or die("aa");
+$_query_ = mysqli_query($__CONEXAO__, "select * from users where email='$__EMAIL__' and senha='$__PASSWORD__'");
 
 if(mysqli_num_rows($_query_) < 1){
     session_destroy();
@@ -34,7 +34,7 @@ if(mysqli_num_rows($_query_) < 1){
 // SERVER
 $__METHOD__ = $_SERVER["REQUEST_METHOD"];
 $__STATUS__ = $_SERVER["REDIRECT_STATUS"];
-$__URL__ = $_SERVER["HTTP_HOST"];    
+$__URL__ = $_SERVER["HTTP_HOST"];
 
 $__MAIN_WEB__ = "https://freela.anizero.cc/";
 $__WEB__ = $_SERVER['REQUEST_SCHEME'] . "://" . $_SERVER['HTTP_HOST'];
