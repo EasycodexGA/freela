@@ -23,5 +23,5 @@ if(!in_array($pode, $type)){
 }
 
 if($type == "users"){
-    $query = mysqli_query($__CONEXAO)
+    $query = mysqli_query($__CONEXAO, "select active from $type");
 }

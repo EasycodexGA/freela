@@ -80,7 +80,7 @@ cantLog($__EMAIL__);
             .then(e=>{
                 console.log(e)
                 if(e.response){
-                    verifyDiv.style.display = 'block';
+                    verifyDiv.style.display = 'flex';
                     loginBox.style.display = 'none';
                 }
                 
@@ -89,7 +89,7 @@ cantLog($__EMAIL__);
 
         backLogin.addEventListener('click', ()=>{
             verifyDiv.style.display = 'none';
-            loginBox.style.display = 'block';
+            loginBox.style.display = 'flex';
         })
     </script>
 
