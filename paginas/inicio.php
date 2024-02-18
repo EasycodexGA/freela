@@ -16,5 +16,7 @@ justLog($__EMAIL__, $__TYPE__, 0);
     <header>
         <h1 class='title-header'>Inicio</h1>
     </header>
+
+    
 </body>
 </html>

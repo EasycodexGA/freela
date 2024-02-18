@@ -20,5 +20,13 @@ justLog($__EMAIL__, $__TYPE__, 0);
             <h2 class='sub-header'><span>0</span> Inativos</h2>
         </div>
     </header>
+
+    <div class='extra'>
+        <h1 class='title-header'>Funções</h1>
+        <div class='header-in'>
+            <button class='funcBt'>+ Adicionar turma</button>
+            <button class='funcBt'>+ Nova aula</button>
+        </div>
+    </div>
 </body>
 </html>

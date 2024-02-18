@@ -1,7 +1,11 @@
 body{
     padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    background: #FAFAFA;
 }
-header{
+header, .extra{
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -28,4 +32,14 @@ header{
 .sub-header span{
     color: #FF9900;
     font-size: 25px;
+}
+
+.funcBt{
+    padding: 15px 30px;
+    width: fit-content;
+    border-radius: 3px;
+    color: #B1B1B1;
+    background: white;
+    border: 1px solid #E7E7E7;
+    box-shadow: 0 0 20px 0 #0000000f;
 }

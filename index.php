@@ -34,8 +34,8 @@ justLog($__EMAIL__, $__TYPE__, 0);
                     <button onclick='openPage(`eventos`, this)' id="eventosBt" class='btn'>Eventos</button>
                 </div>
             </div>
-            <div class="left-bottom">
-                <button onclick='openPage(`configuracoes`)' id="config">Configurações</button>
+            <div class="links">
+                <button onclick='openPage(`configuracoes`, this)' id="config" class='btn'>Configurações</button>
             </div>
         </div>
         <div class="right">

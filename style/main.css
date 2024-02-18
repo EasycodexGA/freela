@@ -117,3 +117,7 @@
     width: 100%!important;
     height: 100svh!important;
 }
+
+#config{
+    font-size: 14px;
+}
