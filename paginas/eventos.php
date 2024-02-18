@@ -1,6 +1,6 @@
 <?php
 include "../sys/conexao.php";
-justLog($__EMAIL__, $__TYPE__, 1);
+justLog($__EMAIL__, $__TYPE__, 0);
 ?>
 <!DOCTYPE html>
 <html lang="en">
