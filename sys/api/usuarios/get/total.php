@@ -36,7 +36,7 @@ if(!in_array($type, $pode)){
     endCode("Pesquisa inválida.", false);
 }
 
-$query = mysqli_query($__CONEXAO, "select active from $type $adicional");
+$query = mysqli_query($__CONEXAO__, "select active from $type $adicional");
 
 $active = 0;
 $inactive = 0;

@@ -30,7 +30,7 @@ if(mysqli_num_rows($tryConnect) < 1){
 }
 
 $tryConnect2 = mysqli_query($__CONEXAO__, "select * from users where email='$checkEmail' and verifycode='$code'");
-if(mysqli_num_rows($tryConnect) < 1){
+if(mysqli_num_rows($tryConnect2) < 1){
     endCode("Código incorreto", false);
 }
 
