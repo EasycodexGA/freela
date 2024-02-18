@@ -25,19 +25,25 @@ justLog($__EMAIL__, $__TYPE__, 0);
                     <p class="title-p2">Escolinhas</p>
                 </div>
                 <div class="links">
-                    <button id="professoresBt" class="link-active">Professores</button>
-                    <button id="alunosBt">Alunos</button>
-                    <button id="turmasBt">Turmas</button>
-                    <button id="eventosBt">Eventos</button>
+                    <button onclick='open(`professores`)' id="professoresBt" class="link-active">Professores</button>
+                    <button onclick='open(`alunos`)' id="alunosBt">Alunos</button>
+                    <button onclick='open(`turmas`)' id="turmasBt">Turmas</button>
+                    <button onclick='open(`eventos`)' id="eventosBt">Eventos</button>
                 </div>
             </div>
             <div class="left-bottom">
-                <button id="config">Configurações</button>
+                <button onclick='open(`configuracoes`)' id="config">Configurações</button>
             </div>
         </div>
-        <div class="right">
+        <iframe id='iframePage' class="right">
 
-        </div>
+        </iframe>
     </div>
+
+    <script>
+        const open = (e) => {
+            iframePage.src = e;
+        }
+    </script>
 </body>
 </html>

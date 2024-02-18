@@ -43,7 +43,7 @@ cantLog($__EMAIL__);
     <script>
         sendData.addEventListener('click', ()=>{
             let data = {email: email.value, password: password.value}
-            fetch('./sys/api/user/loginApi',{
+            fetch('./sys/api/usuarios/loginApi',{
                 method: "POST",
                 body: JSON.stringify(data)
             })
@@ -57,7 +57,7 @@ cantLog($__EMAIL__);
         })
         forgotPass.addEventListener('click', ()=>{
             let data = {email: email.value}
-            fetch('./sys/api/user/forgotPass',{
+            fetch('./sys/api/usuarios/forgotPass',{
                 method: "POST",
                 body: JSON.stringify(data)
             })
