@@ -14,7 +14,7 @@ justLog($__EMAIL__, $__TYPE__, 2);
 </head>
 <body>
     <header>
-        <h1 class='title-header'>Geral</h1>
+        <h1 class='title-header'>Geral - Professores</h1>
         <div class='header-in'>
             <h2 class='sub-header'><span>0</span> Ativos</h2>
             <h2 class='sub-header'><span>0</span> Inativos</h2>
