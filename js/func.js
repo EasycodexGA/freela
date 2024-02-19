@@ -50,16 +50,15 @@ async function getActInact(e){
             type: e
         })
     })
-    .then(e=>e.json())
-    .then(e=>{
-        if(e.response){
-            inactive.innerText = e.mensagem.inactive;
-            active.innerText = e.mensagem.active;
-        }
-        return e;
-    })
 
-    return get;
+    let data = await get.json();
+    
+    if(data.response){
+        inactive.innerText = data.mensagem.inactive;
+        active.innerText = data.mensagem.active;
+    }
+
+    return data;
 }
 
 
