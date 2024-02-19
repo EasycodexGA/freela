@@ -51,7 +51,28 @@ justLog($__EMAIL__, $__TYPE__, 0);
             })' class='btn-add'>Salvar</button>
         </div>
     </div>
+    <div class="list">
+        <div class="header-list-out">
+            <h1 class="title-header">Categorias</h1>
+            <input id="searchBar" name="searchBar" placeholder="Pesquisar..">
+        </div>
+        <table class="content-list">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Categoria</th>
+                    <th>Profissionais</th>
+                    <th>Alunos</th>
+                    <th></th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id='tabList'>
+             
+            </tbody>
+        </table>
 
+    </div>
     <script>
         fetch("../sys/api/usuarios/get/categorias")
         .then(e=>e.json())

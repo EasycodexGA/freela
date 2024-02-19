@@ -78,6 +78,25 @@ function getCategorias(){
 }
 
 
+function getTurmas(){
+    return fetch(`../sys/api/turmas/get/turmas`)
+    .then(e=>e.json())
+    .then(e=>{
+        for(let i of e.mensagem){
+            tabList.innerHTML += `
+                <tr>
+                    <td>${i.nome}</td>
+                    <td>${i.categoria}</td>
+                    <td>${i.alunos}</td>
+                    <td>Ver detalhes</td>
+                    <td>${i.status}</td>
+                </tr>
+            `;
+        }
+    })
+}
+
+
 
 searchBar.addEventListener('keyup', ()=>{
     console.log(searchBar.value);
