@@ -73,10 +73,30 @@ justLog($__EMAIL__, $__TYPE__, 2);
             <thead>
                 <tr>
                     <th>
-                    
+                        Nome
+                    </th>
+                    <th>
+                        Titularidade
+                    </th>
+                    <th>
+                        Alunos
+                    </th>
+                    <th>
+                        Turmas
+                    </th>
+                    <th>
+                        
+                    </th>
+                    <th>
+                        Status
                     </th>
                 </tr>
             </thead>
+            <tbody>
+                <tr>
+
+                <
+            </tbody>
         </table>
 
     </div>
