@@ -28,11 +28,16 @@ justLog($__EMAIL__, $__TYPE__, 0);
                     <p class="title-p2">Escolinhas</p>
                 </div>
                 <div class="links">
-                    <button onclick='openPage(`professores`, this)' id="professoresBt" class="btn">Professores</button>
-                    <button onclick='openPage(`alunos`, this)' id="alunosBt" class='btn'>Alunos</button>
+                    <?php if(requireLevel($__TYPE__, 2)){ ?>
+                        <button onclick='openPage(`professores`, this)' id="professoresBt" class="btn">Professores</button>
+                    <?php } ?>
+                    <?php if(requireLevel($__TYPE__, 1)){ ?>
+                        <button onclick='openPage(`alunos`, this)' id="alunosBt" class='btn'>Alunos</button>
+                        <button onclick='openPage(`categorias`, this)' id="eventosBt" class='btn'>Categorias</button>
+                    <?php } ?>
                     <button onclick='openPage(`turmas`, this)' id="turmasBt" class='btn'>Turmas</button>
                     <button onclick='openPage(`eventos`, this)' id="eventosBt" class='btn'>Eventos</button>
-                    <button onclick='openPage(`categorias`, this)' id="eventosBt" class='btn'>Categorias</button>
+                    
                 </div>
             </div>
             <div class="links">

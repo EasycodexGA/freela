@@ -79,9 +79,7 @@ justLog($__EMAIL__, $__TYPE__, 2);
                     <th>Status</th>
                 </tr>
             </thead>
-            <tbody id='tabList'>
-             
-            </tbody>
+            <tbody id='tabList'></tbody>
         </table>
 
     </div>
