@@ -13,7 +13,7 @@ $password   = scapeString($__CONEXAO__, $json->password);
 
 $checkEmail = setEmail($email);
 
-checkMissing(array($checkEmail))
+checkMissing(array($checkEmail));
 
 if(!$checkEmail){
     endCode("Email inválido", false);
