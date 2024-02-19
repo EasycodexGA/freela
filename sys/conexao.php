@@ -30,6 +30,11 @@ if(mysqli_num_rows($_query_) < 1){
     $__ASSOC__ = mysqli_fetch_assoc($_query_);
     $__ID__ = $__ASSOC__['id'];
     $__TYPE__ = $__ASSOC__['typeC'];
+    $__ACTIVE__ = $__ASSOC__['active'];
+
+    if($__ACTIVE__ == "0"){
+        endCode("Sua conta está inativa, peça para um administrador reativar", false);
+    };
 }
 
 
