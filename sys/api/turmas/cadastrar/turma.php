@@ -12,11 +12,18 @@ $nome       = scapeString($__CONEXAO__, $json->nome);
 $categoria  = scapeString($__CONEXAO__, $json->categoria);
 
 $nome       = setNoXss($nome);
-$categoria  = setNum($categoria);
+$categoria  = setNoXss($categoria);
 
 if(!$nome or !$categoria){
     endCode("Algum dado está faltando", false);
 }
+
+$getCat = mysqli_query($__CONEXAO__, "select * from categorias where nome='$categoria'");
+
+if(mysqli_num_rows($getCat) < 1){
+    endCode("Categoria inválida.", false);
+}
+
 
 $getTurma = mysqli_query($__CONEXAO__, "select * from turmas where nome='$nome' and categoria='$categoria'");
 

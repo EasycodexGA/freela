@@ -66,6 +66,20 @@ justLog($__EMAIL__, $__TYPE__, 1);
         </div>
     </div>
 
+    <script>
+        fetch("../sys/api/turmas/get/turmas")
+        .then(e=>e.json())
+        .then(e=>{
+            console.log(e)
+            
+            for(let i of e.mensagem){
+                categoriaAdd.innerHTML += `
+                    <option value='${i.id}'>${i.nome} - ${i.categoria}</option>
+                `;
+            }
+        })
+    </script>
+
     <script src="../js/func.js"></script>
     
 </body>

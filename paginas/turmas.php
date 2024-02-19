@@ -60,7 +60,7 @@ justLog($__EMAIL__, $__TYPE__, 0);
             
             for(let i of e.mensagem){
                 categoriaAdd.innerHTML += `
-                    <option value='${i.id}'>${i.nome}</option>
+                    <option value='${i.nome}'>${i.nome}</option>
                 `;
             }
         })
