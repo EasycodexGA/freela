@@ -35,7 +35,7 @@ if(!$email){
 
 stopUserExist($__CONEXAO__, $email);
 
-$tid = decrypr($turma);
+$tid = decrypt($turma);
 
 $queryRoom = mysqli_query($__CONEXAO__, "select * from turmas where id='$tid '");
 
