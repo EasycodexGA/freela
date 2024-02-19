@@ -1,7 +1,7 @@
 <?php
 include '../../../conexao.php';
 
-justLog($__EMAIL__, $__TYPE__, 1);
+justLog($__EMAIL__, $__TYPE__, 0);
 
 header('Content-Type: application/json; charset=utf-8');
 
@@ -19,6 +19,16 @@ checkMissing(
 );
 
 $type = decrypt($type);
+
+// if($__TYPE__ < 2){
+//     $table = 'alunos';
+//     if($__TYPE__ == 1){
+//         $table = 'professores';
+//     }
+//     $query = mysqli_query($__CONEXAO__, "select * from $table where email='$__EMAIL__'");
+//     $getQuery = mysqli_fetch_assoc($query);
+//     $turmas = $getQuery['turmas'];
+// }
 
 $pode = array("users", "turmas", "categorias", "eventos");
 

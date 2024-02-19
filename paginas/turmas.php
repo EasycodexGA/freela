@@ -21,6 +21,7 @@ justLog($__EMAIL__, $__TYPE__, 0);
         </div>
     </header>
 
+    <?php if(requireLevel($__TYPE__, 2)){ ?>
     <div class='extra'>
         <h1 class='title-header'>Funções</h1>
         <div class='header-in'>
@@ -28,7 +29,7 @@ justLog($__EMAIL__, $__TYPE__, 0);
             <!-- <button onclick='openAdd(addAula)' class='funcBt'>+ Adicionar aula</button> -->
         </div>
     </div>
-
+    
     <div id='addNew'>
         <div id='addTurma' class='add-container'>
             <h1 class='title-add'>Nova turma</h1>
@@ -51,6 +52,9 @@ justLog($__EMAIL__, $__TYPE__, 0);
             })' class='btn-add'>Salvar</button>
         </div>
     </div>
+    
+    <?php } ?>
+    
     <div class="list">
         <div class="header-list-out">
             <h1 class="title-header">Turmas</h1>
