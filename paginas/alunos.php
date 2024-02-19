@@ -73,7 +73,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
             console.log(e)
             
             for(let i of e.mensagem){
-                categoriaAdd.innerHTML += `
+                turmaAdd.innerHTML += `
                     <option value='${i.id}'>${i.nome} - ${i.categoria}</option>
                 `;
             }
