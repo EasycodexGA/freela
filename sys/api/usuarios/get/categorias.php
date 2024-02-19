@@ -1,7 +1,7 @@
 <?php
 include '../../../conexao.php';
 
-justLog($__EMAIL__, $__TYPE__, 1);
+justLog($__EMAIL__, $__TYPE__, 2);
 
 $_query_ = mysqli_query($__CONEXAO__, "select * from categorias");
 
