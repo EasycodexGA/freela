@@ -58,3 +58,8 @@ function getActInact(e){
         }
     })
 }
+
+
+searchBar.addEventListener('keyup', ()=>{
+    console.log(searchBar.value);
+})

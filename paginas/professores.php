@@ -67,7 +67,18 @@ justLog($__EMAIL__, $__TYPE__, 2);
     <div class="list">
         <div class="header-list-out">
             <h1 class="title-header">Professores</h1>
-            <input id="search" name="search" placeholder="Pesquisar..">
+            <input id="searchBar" name="searchBar" placeholder="Pesquisar..">
+        </div>
+        <div class="content-list">
+            <div class="header-list">
+                
+            </div>
+            <div class="item-list">
+
+            </div>
+            <div class="item-list">
+
+            </div>
         </div>
 
     </div>

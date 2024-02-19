@@ -31,12 +31,12 @@ justLog($__EMAIL__, $__TYPE__, 0);
 
     <div id='addNew'>
         <div id='addTurma' class='add-container'>
-            <h1 class='title-add'>Novo professor</h1>
+            <h1 class='title-add'>Nova turma</h1>
 
             <div class='inps-add'>
                 <div class='inp-add-out'>
                     <h3>Nome</h3>
-                    <input id='nomeAdd' type='text' placeholder='Fulano da silva'/>
+                    <input id='nomeAdd' type='text' placeholder='Vôlei de praia'/>
                 </div>
                 <div class='inp-add-out'>
                     <h3>Categorias</h3>
