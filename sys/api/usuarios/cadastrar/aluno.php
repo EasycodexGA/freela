@@ -35,6 +35,14 @@ if(!$email){
 
 stopUserExist($__CONEXAO__, $email);
 
+$tid = decrypr($turma);
+
+$queryRoom = mysqli_query($__CONEXAO__, "select * from turmas where id='$tid '");
+
+if(mysqli_num_rows($queryRoom) < 1){
+    endCode("Turma inexistente", false);
+}
+
 $senha = bin2hex(random_bytes(3));
 $senhaH = password_hash($senha, PASSWORD_DEFAULT);
 
