@@ -203,6 +203,7 @@ header, .extra{
     table-layout: fixed;
     border-spacing: 0 5px;
     text-align: left;
+    margin-top: 30px;
 }
 
 .content-list thead {

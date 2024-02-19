@@ -72,25 +72,23 @@ justLog($__EMAIL__, $__TYPE__, 2);
         <table class="content-list">
             <thead>
                 <tr>
-                    <th>
-                        Nome
-                    </th>
-                    <th>
+                    <th>Nome</th>
+                                        <th>
                         Titularidade
                     </th>
-                    <th>
-                        Alunos
-                    </th>
-                    <th>
-                        Turmas
-                    </th>
+                                    <th>
+                             Alunos
+                        </th>
+                     <th>
+                             Turmas
+                                                                </th>
                     <th>
                         
-                    </th>
-                    <th>
+                            </th>
+                                           <th>
                         Status
-                    </th>
-                </tr>
+                     </th>
+                             </tr>
             </thead>
             <tbody>
                 <tr>
