@@ -49,7 +49,7 @@ justLog($__EMAIL__, $__TYPE__, 0);
                 </div>
                 <div class='inp-add-out' style="width: calc(100%)">
                     <h3>Descrição</h3>
-                    <input id='descricaoAdd' type='text' placeholder='Ex: Campeonato de vôlei estadual, apenas jogadores Sub x, trazer '/>
+                    <input id='descricaoAdd' type='text' placeholder='Ex: Campeonato de vôlei estadual, apenas jogadores Sub x, trazer autorização assinada.'/>
                 </div>
             </div>
             <button onclick='addNewData("turmas/cadastrar/turma", {

@@ -85,7 +85,7 @@ justLog($__EMAIL__, $__TYPE__, 2);
                         Turmas
                     </th>
                     <th>
-                        a
+                        
                     </th>
                     <th>
                         Status
