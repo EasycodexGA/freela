@@ -8,9 +8,20 @@ $_query_ = mysqli_query($__CONEXAO__, "select * from categorias");
 $array = array();
 
 while($dados = mysqli_fetch_array($_query_)){
-    $nome = decrypt($dados["nome"]);
+    $nome = $dados["nome"];
+    $status = $dados["active"];
 
-    $arr = array("id"=>$dados["id"], "nome"=>$nome);
+    $status = $status == '1' ? "active" : "inactive";
+
+    $query = mysqli_query($__CONEXAO__, "select id from turmas where categoria='$nome'");
+
+    $arr = array(
+        "id"        => $dados["id"], 
+        "nome"      => decrypt($nome), 
+        "status"    => $status,
+        "turmas"    => mysqli_num_rows($query)
+    );
+
     array_push($array, $arr);
 }
 

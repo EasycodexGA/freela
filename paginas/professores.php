@@ -12,7 +12,7 @@ justLog($__EMAIL__, $__TYPE__, 2);
     <link rel="stylesheet" href="../style/paginas.css">
     <link rel="shortcut icon" href="../img/prefeitura.png" type="image/x-icon">
 </head>
-<body onload="getActInact('usersprofessor')">
+<body>
     <header>
         <h1 class='title-header'>Geral - Professores</h1>
         <div class='header-in'>
@@ -135,7 +135,9 @@ justLog($__EMAIL__, $__TYPE__, 2);
         </table>
 
     </div>
-
+    <script>
+        getActInact('usersprofessor');
+    </script>
     <script src="../js/func.js"></script>
     
 </body>

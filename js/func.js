@@ -56,6 +56,7 @@ function getActInact(e){
             inactive.innerText = e.mensagem.inactive;
             active.innerText = e.mensagem.active;
         }
+        return e;
     })
 }
 

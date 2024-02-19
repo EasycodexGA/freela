@@ -12,7 +12,7 @@ justLog($__EMAIL__, $__TYPE__, 2);
     <link rel="stylesheet" href="../style/paginas.css">
     <link rel="shortcut icon" href="../img/prefeitura.png" type="image/x-icon">
 </head>
-<body onload="getActInact('categorias')">
+<body >
     <header>
         <h1 class='title-header'>Geral - Categorias</h1>
         <div class='header-in'>
@@ -44,6 +44,31 @@ justLog($__EMAIL__, $__TYPE__, 2);
         </div>
     </div>
 
+    <div class="list">
+        <div class="header-list-out">
+            <h1 class="title-header">Professores</h1>
+            <input id="searchBar" name="searchBar" placeholder="Pesquisar..">
+        </div>
+        <table class="content-list">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Turmas</th>
+                    <th></th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id='tabList'>
+             
+            </tbody>
+        </table>
+
+    </div>
+    <script>
+        let resp = getActInact('categorias');
+
+        console.log(`resp: ${resp}`)
+    </script>
     <script src="../js/func.js"></script>
     
 </body>
