@@ -83,7 +83,7 @@ cantLog($__EMAIL__);
             .then(e=>{
                 console.log(e)
                 if(e.response){
-                    // window.location.href="../";
+                    window.location.href="../";
                 } else {
                     responseFalse.innerHTML = e.mensagem;
                 }

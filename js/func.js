@@ -52,6 +52,9 @@ function getActInact(e){
     })
     .then(e=>e.json())
     .then(e=>{
-        console.log(e)
+        if(e.response){
+            inactive.innerText = e.mensagem.inactive;
+            active.innerText = e.mensagem.active;
+        }
     })
 }
