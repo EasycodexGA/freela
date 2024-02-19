@@ -233,7 +233,7 @@ header, .extra{
     border-color: var(--contraste);
     background-color: #FFF;
     color: #808080;
-    padding: 10px 15px;
+    padding: 12px 15px;
 }
 
 .content-list td:first-child {
