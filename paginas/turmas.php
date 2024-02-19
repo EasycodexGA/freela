@@ -53,7 +53,7 @@ justLog($__EMAIL__, $__TYPE__, 0);
     </div>
     <div class="list">
         <div class="header-list-out">
-            <h1 class="title-header">Categorias</h1>
+            <h1 class="title-header">Turmas</h1>
             <input id="searchBar" name="searchBar" placeholder="Pesquisar..">
         </div>
         <table class="content-list">

@@ -12,7 +12,7 @@ justLog($__EMAIL__, $__TYPE__, 0);
     <link rel="stylesheet" href="../style/paginas.css">
     <link rel="shortcut icon" href="../img/prefeitura.png" type="image/x-icon">
 </head>
-<body onload="getActInact('turmas')">
+<body onload="getActInact('eventos')">
     <header>
         <h1 class='title-header'>Geral - Eventos</h1>
         <div class='header-in'>

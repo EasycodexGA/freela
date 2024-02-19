@@ -97,6 +97,24 @@ function getTurmas(){
     })
 }
 
+function getAlunos(){
+    return fetch(`../sys/api/usuarios/get/alunos`)
+    .then(e=>e.json())
+    .then(e=>{
+        for(let i of e.mensagem){
+            tabList.innerHTML += `
+                <tr>
+                    <td>${i.nome}</td>
+                    <td>${i.turma}</td>
+                    <td>${i.categoria}</td>
+                    <td>Ver detalhes</td>
+                    <td>${i.status}</td>
+                </tr>
+            `;
+        }
+    })
+}
+
 
 
 searchBar.addEventListener('keyup', ()=>{

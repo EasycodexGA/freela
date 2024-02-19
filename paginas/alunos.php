@@ -66,6 +66,28 @@ justLog($__EMAIL__, $__TYPE__, 1);
         </div>
     </div>
 
+    <div class="list">
+        <div class="header-list-out">
+            <h1 class="title-header">Alunos</h1>
+            <input id="searchBar" name="searchBar" placeholder="Pesquisar..">
+        </div>
+        <table class="content-list">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Turma</th>
+                    <th>Categoria</th>
+                    <th></th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id='tabList'>
+             
+            </tbody>
+        </table>
+
+    </div>
+
     <script>
         fetch("../sys/api/turmas/get/turmas")
         .then(e=>e.json())
@@ -81,6 +103,10 @@ justLog($__EMAIL__, $__TYPE__, 1);
     </script>
 
     <script src="../js/func.js"></script>
+
+    <script>
+
+    </script>
     
 </body>
 </html>
