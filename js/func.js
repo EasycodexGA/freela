@@ -26,6 +26,7 @@ function addNewData(local, data){
         if(e.response){
             closeAdd();
             cleanInps();
+            window.location.reload()
         }
 
         setTimeout(()=>{
