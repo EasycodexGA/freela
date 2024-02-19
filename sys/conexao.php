@@ -1,56 +1,151 @@
 <?php
-include '../../../conexao.php';
+include"auth.php";
+session_start();
+$__CONEXAO__ = mysqli_connect(
+    LOG_DB_LOCAL,
+    LOG_DB_USER,
+    LOG_DB_PASSWORD,
+    LOG_DB_USER
+) or die ("Atualize a página e tente novamente!");
 
-justLog($__EMAIL__, $__TYPE__, 1);
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: *');
+header('Access-Control-Allow-Headers: *');
 
-header('Content-Type: application/json; charset=utf-8');
 
-$request    = file_get_contents('php://input');
-$json       = json_decode($request);
+// USER 
 
-$type       = scapeString($__CONEXAO__, $json->type);
+$__EMAIL__ = $_SESSION["email"];
+$__PASSWORD__ = $_SESSION["password"];
 
-$type       = setString($type);
+$_query_ = mysqli_query($__CONEXAO__, "select * from users where email='$__EMAIL__' and senha='$__PASSWORD__'");
 
-checkMissing(
-    array(
-        $type
-    )
-);
+if(mysqli_num_rows($_query_) < 1){
+    session_destroy();
+    session_start();
 
-$type = decrypt($type);
-
-$pode = array("users", "turmas", "categorias", "eventos");
-
-if($type == "usersprofessor"){
-    $type = "users";
-    $adicional = "where typeC='1'";
+    $__EMAIL__ = $_SESSION["email"];
+    $__PASSWORD__ = $_SESSION["password"];
+} else {
+    $__ASSOC__ = mysqli_fetch_assoc($_query_);
+    $__ID__ = $__ASSOC__['id'];
+    $__TYPE__ = $__ASSOC__['typeC'];
 }
 
-if($type == "usersalunos"){
-    $type = "users";
-    $adicional = "where typeC='0'";
+
+// SERVER
+$__METHOD__ = $_SERVER["REQUEST_METHOD"];
+$__STATUS__ = $_SERVER["REDIRECT_STATUS"];
+$__URL__ = $_SERVER["HTTP_HOST"];
+
+$__WEB__ = $_SERVER['REQUEST_SCHEME'] . "://" . $_SERVER['HTTP_HOST'];
+
+$__TIME__ = time();
+
+$__YEAR__ = date("Y");
+
+$__CODE__ = bin2hex(random_bytes(3));
+
+// EMAIL 
+
+$__HEADERS__[] = 'MIME-Version: 1.0';
+$__HEADERS__[] = 'Content-type: text/html; charset=iso-8859-1';
+$__HEADERS__[] = "From: Voleibol <contato_$__CODE__@$__URL__>";
+$__HEADERS__[] = "Reply-to: no-reply";
+$__HEADERS__[] = 'X-Mailer: PHP/' . phpversion();
+
+// FUNÇÕES
+
+function endCode($msg, $status){
+    header('Content-Type: application/json; charset=utf-8');
+    echo json_encode(array("mensagem"=>$msg, "response"=>$status));
+    exit;
 }
 
-if(!in_array($type, $pode)){
-    endCode("Pesquisa inválida.", false);
+function urlAmigavel($string) {
+    $string = mb_strtolower($string, 'UTF-8');
+    $string = preg_replace('/[^A-Za-z0-9-]+/', '-', $string);
+    $string = preg_replace('/-+/', '-', $string);
+    $string = trim($string, '-');
+    return $string;
 }
 
-$query = mysqli_query($__CONEXAO__, "select active from $type $adicional") or die("erro");
-// asdsdasdasd
-$active = 0;
-$inactive = 0;
+function setNoXss($string) {
+    $string = preg_replace('/[^A-Za-z0-9-]+/', ' ', $string);
+    return encrypt($string);
+}
 
-while($dados = mysqli_fetch_array($query)){
-    $act = $dados['active'];
 
-    if($act == 0){
-        $active++;
-        return;
+function setString($string){
+    
+    $string = preg_replace('/[^A-Za-z]+/', ' ', $string);
+    return encrypt($string);
+}
+
+
+function setEmail($string){
+    $string = filter_var($string, FILTER_VALIDATE_EMAIL);
+    return encrypt($string);
+}
+
+function setNum($string){
+    $string = preg_replace('/[^0-9]+/', '', $string);
+    return encrypt($string);
+}
+
+function checkMissing($array){
+    for($i = 0; $i < count($array); $i++){
+        $item = decrypt($array[$i]);
+        if(!$item or $item == "" or $item == " "){
+            endCode("Algum dado está faltando.", false);
+        }
+    }
+}
+
+
+function cantLog($__EMAIL__){
+    if($__EMAIL__){
+        header("Location: $__URL__");
+        exit;
+    }
+}
+
+function justLog($__EMAIL__, $__TYPE__, $type){
+    if(!$__EMAIL__){
+        header("Location: $__URL__/login");
+        exit;
     }
 
-    $inactive++;
-    return;
+    if($__TYPE__ < $type){
+        endCode("Sem permissão", false);
+        exit;
+    }
 }
 
-endCode(array("active"=>$active, "inactive"=>$inactive), true);
+function scapeString($__CONEXAO__, $string){
+    $string = mysqli_real_escape_string($__CONEXAO__, $string);
+    return $string;
+}
+
+function stopUserExist($__CONEXAO__, $string){
+    $tryConnect = mysqli_query($__CONEXAO__, "select * from users where email='$string'") or die("erro select");
+
+    if(mysqli_num_rows($tryConnect) > 0){
+        endCode("Email já está em uso", false);
+        exit;
+    }
+}
+
+function stopUserExistnt($__CONEXAO__, $string){
+    $tryConnect = mysqli_query($__CONEXAO__, "select * from users where email='$string'") or die("erro select");
+
+    if(mysqli_num_rows($tryConnect) < 1){
+        return true;
+    }
+}
+
+
+// types user
+// type 0 - aluno
+// type 1 - Professor
+// type 2 - Admin

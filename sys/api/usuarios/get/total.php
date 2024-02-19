@@ -36,14 +36,14 @@ if(!in_array($type, $pode)){
     endCode("Pesquisa inválida.", false);
 }
 
-$query = mysqli_query($__CONEXAO__, "select active from $type $adicional");
+$query = mysqli_query($__CONEXAO__, "select active from $type $adicional") or die("erro");
 // asdsdasdasd
 $active = 0;
 $inactive = 0;
 
 while($dados = mysqli_fetch_array($query)){
     $act = $dados['active'];
-    
+
     if($act == '1'){
         $active++;
         return;
