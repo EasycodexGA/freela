@@ -183,11 +183,12 @@ header, .extra{
 
 #search {
     width: 50%;
-    max-width: 300px;
+    max-width: 200px;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #E7E7E7;
     background: #FFF;
+    transition: all .2s ease-in-out;
 }
 
 #search:focus {
