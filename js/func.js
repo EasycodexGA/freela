@@ -43,8 +43,8 @@ function cleanInps(){
 }
 
 
-function getActInact(e){
-    fetch(`../sys/api/usuarios/get/total`,{
+async function getActInact(e){
+    let get = await fetch(`../sys/api/usuarios/get/total`,{
         method: "POST",
         body: JSON.stringify({
             type: e
@@ -58,6 +58,8 @@ function getActInact(e){
         }
         return e;
     })
+
+    return get;
 }
 
 
