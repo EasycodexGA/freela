@@ -46,7 +46,7 @@ justLog($__EMAIL__, $__TYPE__, 2);
 
     <div class="list">
         <div class="header-list-out">
-            <h1 class="title-header">Professores</h1>
+            <h1 class="title-header">Categorias</h1>
             <input id="searchBar" name="searchBar" placeholder="Pesquisar..">
         </div>
         <table class="content-list">
@@ -64,12 +64,12 @@ justLog($__EMAIL__, $__TYPE__, 2);
         </table>
 
     </div>
+    
+    <script src="../js/func.js"></script>
     <script>
         let resp = getActInact('categorias');
 
         console.log(`resp: ${resp}`)
     </script>
-    <script src="../js/func.js"></script>
-    
 </body>
 </html>
