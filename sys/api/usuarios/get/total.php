@@ -43,13 +43,12 @@ $inactive = 0;
 
 while($dados = mysqli_fetch_array($query)){
     $act = $dados['active'];
-
+    
     if($act == '1'){
         $active++;
-        return;
+    } else {
+        $inactive++;
     }
-
-    $inactive++;
 }
 
 endCode(array("active"=>$active, "inactive"=>$inactive), true);
