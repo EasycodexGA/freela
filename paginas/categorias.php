@@ -69,7 +69,6 @@ justLog($__EMAIL__, $__TYPE__, 2);
     <script>
         getActInact('categorias')
         getCategorias()
-        
     </script>
 </body>
 </html>

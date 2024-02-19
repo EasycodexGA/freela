@@ -64,7 +64,16 @@ function getCategorias(){
     return fetch(`../sys/api/usuarios/get/categorias`)
     .then(e=>e.json())
     .then(e=>{
-        console.log(e)
+        for(let i of e.mensagem){
+            tabList.innerHTML += `
+                <tr>
+                    <td>${i.nome}</td>
+                    <td>${i.turmas}</td>
+                    <td>Ver detalhes</td>
+                    <td>${i.status}</td>
+                </tr>
+            `;
+        }
     })
 }
 
