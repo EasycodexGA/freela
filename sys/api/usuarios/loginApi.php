@@ -11,10 +11,9 @@ $json = json_decode($request);
 $email      = scapeString($__CONEXAO__, $json->email);
 $password   = scapeString($__CONEXAO__, $json->password);
 
-
 $checkEmail = setEmail($email);
 
-checkMissing(array($email))
+checkMissing(array($checkEmail))
 
 if(!$checkEmail){
     endCode("Email inválido", false);
