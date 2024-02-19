@@ -69,7 +69,7 @@ justLog($__EMAIL__, $__TYPE__, 2);
     <script>
         let resp = getActInact('categorias');
 
-        console.log(`resp: ${resp}`)
+        console.log(`resp: ${}`, resp)
     </script>
 </body>
 </html>
