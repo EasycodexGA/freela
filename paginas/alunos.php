@@ -105,7 +105,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
     <script src="../js/func.js"></script>
 
     <script>
-
+        getAlunos();
     </script>
     
 </body>
