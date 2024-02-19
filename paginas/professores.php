@@ -94,8 +94,25 @@ justLog($__EMAIL__, $__TYPE__, 2);
             </thead>
             <tbody>
                 <tr>
-
-                <
+                    <td>
+                        Renato
+                    </td>
+                    <td>
+                        Professor
+                    </td>
+                    <td>
+                        28
+                    </td>
+                    <td>
+                        2
+                    </td>
+                    <td>
+                        Ver detalhes
+                    </td>
+                    <td>
+                        Ativo
+                    </td>
+                </tr>
             </tbody>
         </table>
 

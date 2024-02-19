@@ -47,9 +47,9 @@ justLog($__EMAIL__, $__TYPE__, 0);
                     <h3>Nascimento</h3>
                     <input id='nascimentoAdd' type='date'/>
                 </div>
-                <div class='inp-add-out' style="width: calc(100% - 20px)">
+                <div class='inp-add-out' style="width: calc(100%)">
                     <h3>Descrição</h3>
-                    <input id='descricaoAdd' type='text' placeholder='Vôlei de praia'/>
+                    <input id='descricaoAdd' type='text' placeholder='Ex: Campeonato de vôlei estadual'/>
                 </div>
             </div>
             <button onclick='addNewData("turmas/cadastrar/turma", {
