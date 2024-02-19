@@ -195,3 +195,49 @@ header, .extra{
 #searchBar:focus {
     border: 1px solid var(--contraste2);
 }
+
+.content-list {
+    border-collapse: separate;
+    width: 80%;
+    table-layout: fixed;
+    border-spacing: 0 5px;
+}
+
+.content-list thead {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.content-list tbody {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    border-spacing: 0 10px;
+}
+
+.content-list th {
+    text-align: center;
+    padding: 5px 15px;
+    color: #929292;
+}
+
+.content-list td {
+    text-align: left;
+    border-width: 1px 0;
+    border-style: solid;
+    border-color: var(--contraste);
+    background-color: #FFF;
+    color: #808080;
+    padding: 5px 15px;
+}
+
+.content-list td:first-child {
+    border-left-width: 1px;
+    border-radius: 5px 0 0 5px;
+}
+
+.content-list td:last-child {
+    border-left-width: 1px;
+    border-radius: 0 5px 5px 0;
+}
