@@ -39,32 +39,32 @@ justLog($__EMAIL__, $__TYPE__, 0);
                     <input id='nomeAdd' type='text' placeholder='Fulano da silva'/>
                 </div>
                 <div class='inp-add-out'>
-                    <h3>Titularidade</h3>
-                    <input id='titularidadeAdd' type='text' placeholder='Professor'/>
-                </div>
-                <div class='inp-add-out'>
-                    <h3>Nascimento</h3>
-                    <input id='nascimentoAdd' type='date'/>
-                </div>
-                <div class='inp-add-out'>
-                    <h3>Email</h3>
-                    <input id='emailAdd' type='text' placeholder='exemplo@gmail.com'/>
-                </div>
-                <div class='inp-add-out'>
-                    <h3>CPF</h3>
-                    <input id='cpfAdd' type='text' placeholder='12345678900'/>
+                    <h3>Categorias</h3>
+                    <select id='categoriaAdd'>
+                        <option value=''>Nenhuma turma</option>
+                    </select>
                 </div>
             </div>
-            <button onclick='addNewData("usuarios/cadastrar/professor", {
+            <button onclick='addNewData("turmas/cadastrar/turma", {
                 nome: nomeAdd.value,
-                titularidade: titularidadeAdd.value,
-                nascimento: (nascimentoAdd.valueAsNumber / 1000),
-                email: emailAdd.value,
-                cpf: cpfAdd.value
+                categoria: categoriaAdd.value,
             })' class='btn-add'>Salvar</button>
         </div>
     </div>
 
+    <script>
+        fetch("../sys/api/usuarios/get/categorias")
+        .then(e=>e.json())
+        .then(e=>{
+            console.log(e)
+            
+            for(let i of e.mensagem){
+                categoriaAdd.innerHTML += `
+                    <option value='${i.id}'>${i.nome}</option>
+                `;
+            }
+        })
+    </script>
     <script src="../js/func.js"></script>
     
 </body>

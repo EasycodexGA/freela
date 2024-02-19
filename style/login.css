@@ -72,9 +72,8 @@ body {
     border: 1px solid #E7E7E7;
     width: calc(100% - 32px);
     height: calc(100% - 22px);
-    padding: 15px 15px;
+    padding: 15px;
     border-radius: 5px;
-    background: transparent;
     color: #333;
     background: #FFF;
     transition: all .2s ease-in-out;
