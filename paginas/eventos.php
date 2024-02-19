@@ -27,5 +27,6 @@ justLog($__EMAIL__, $__TYPE__, 0);
             <button class='funcBt'>+ Adicionar evento</button>
         </div>
     </div>
+    <script src="../js/func.js"></script>
 </body>
 </html>
