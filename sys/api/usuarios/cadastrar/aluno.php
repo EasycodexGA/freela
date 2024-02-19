@@ -16,7 +16,7 @@ $nascimento = scapeString($__CONEXAO__, $json->nascimento);
 
 $cpf        = setNum($cpf);
 $nome       = setString($nome);
-$turma      = setString($turma);
+$turma      = setNum($turma);
 $email      = setEmail($email);
 $nascimento = setNum($nascimento);
 

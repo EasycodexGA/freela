@@ -70,17 +70,13 @@ justLog($__EMAIL__, $__TYPE__, 2);
             <input id="searchBar" name="searchBar" placeholder="Pesquisar..">
         </div>
         <table class="content-list">
-            <tr class="header-list">
+            <thead>
                 <tr>
-                
+                    <th>
+                    
+                    </th>
                 </tr>
-            </tr>
-            <div class="item-list">
-
-            </div>
-            <div class="item-list">
-
-            </div>
+            </thead>
         </table>
 
     </div>
