@@ -43,23 +43,23 @@ function cleanInps(){
 }
 
 
-async function getActInact(e){
-    let get = await fetch(`../sys/api/usuarios/get/total`,{
+function getActInact(e){
+    return fetch(`../sys/api/usuarios/get/total`,{
         method: "POST",
         body: JSON.stringify({
             type: e
         })
     })
-
-    let data = await get.json();
-    
-    if(data.response){
-        inactive.innerText = data.mensagem.inactive;
-        active.innerText = data.mensagem.active;
-    }
-
-    return data;
+    .then(e=>e.json())
+    .then(e=>{
+        if(e.response){
+            inactive.innerText = e.mensagem.inactive;
+            active.innerText = e.mensagem.active;
+        }
+        return e;
+    })
 }
+
 
 
 searchBar.addEventListener('keyup', ()=>{

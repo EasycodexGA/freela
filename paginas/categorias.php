@@ -67,12 +67,11 @@ justLog($__EMAIL__, $__TYPE__, 2);
     
     <script src="../js/func.js"></script>
     <script>
-        let resp = await getActInact('categorias');
+        getActInact('categorias')
         .then(e=>{
-            console.log("sa",e);
+            console.log(e)
         })
 
-        console.log(`resp:`, resp)
     </script>
 </body>
 </html>
