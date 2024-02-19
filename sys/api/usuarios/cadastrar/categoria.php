@@ -8,7 +8,7 @@ header('Content-Type: application/json; charset=utf-8');
 $request = file_get_contents('php://input');
 $json = json_decode($request);
 
-$nome = $json->$nome;
+$nome = $json->nome;
 $nome = strtolower($nome);
 $nome = scapeString($__CONEXAO__, $nome);
 $nome = setNoXss($nome);
