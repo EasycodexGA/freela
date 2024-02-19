@@ -68,10 +68,8 @@ justLog($__EMAIL__, $__TYPE__, 2);
     <script src="../js/func.js"></script>
     <script>
         getActInact('categorias')
-        .then(e=>{
-            console.log(e)
-        })
-
+        getCategorias()
+        
     </script>
 </body>
 </html>

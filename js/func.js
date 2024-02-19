@@ -60,6 +60,14 @@ function getActInact(e){
     })
 }
 
+function getCategorias(){
+    return fetch(`../sys/api/usuarios/get/categorias`)
+    .then(e=>e.json())
+    .then(e=>{
+        console.log(e)
+    })
+}
+
 
 
 searchBar.addEventListener('keyup', ()=>{
