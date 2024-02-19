@@ -20,15 +20,17 @@ checkMissing(
 
 $type = decrypt($type);
 
-// if($__TYPE__ < 2){
-//     $table = 'alunos';
-//     if($__TYPE__ == 1){
-//         $table = 'professores';
-//     }
-//     $query = mysqli_query($__CONEXAO__, "select * from $table where email='$__EMAIL__'");
-//     $getQuery = mysqli_fetch_assoc($query);
-//     $turmas = $getQuery['turmas'];
-// }
+$turmas = array();
+if($__TYPE__ < 2){
+    $table = 'alunos';
+    if($__TYPE__ == 1){
+        $table = 'professores';
+    }
+    $query = mysqli_query($__CONEXAO__, "select * from $table where email='$__EMAIL__'");
+    while($getQuery = mysqli_fetch_array($query)){
+        $turmas[] = $getQuery['turma'];
+    }
+}
 
 $pode = array("users", "turmas", "categorias", "eventos");
 
@@ -46,18 +48,29 @@ if(!in_array($type, $pode)){
     endCode("Pesquisa inválida.", false);
 }
 
-$query = mysqli_query($__CONEXAO__, "select active from $type $adicional") or die("erro");
+$query = mysqli_query($__CONEXAO__, "select active, id from $type $adicional") or die("erro");
 // asdsdasdasd
 $active = 0;
 $inactive = 0;
 
 while($dados = mysqli_fetch_array($query)){
     $act = $dados['active'];
-    
-    if($act == '1'){
-        $active++;
+    $id = $dados['id'];
+
+    if($turmas){
+        if(in_array($id, $turmas)){
+            if($act == '1'){
+                $active++;
+            } else {
+                $inactive++;
+            }
+        }
     } else {
-        $inactive++;
+        if($act == '1'){
+            $active++;
+        } else {
+            $inactive++;
+        }
     }
 }
 
