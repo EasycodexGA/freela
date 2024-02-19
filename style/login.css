@@ -117,7 +117,7 @@ body {
     display: none;
 }
 
-#responseFalse {
+.loginBot p {
     color: #e66161;
     font-size: 0.9rem;
 }

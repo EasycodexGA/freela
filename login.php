@@ -37,6 +37,7 @@ cantLog($__EMAIL__);
             <div class="loginBot">
                 <button id="sendData" class="send-bt">Enviar</button>
                 <button id="forgotPass" class="sub-bt">Esqueceu sua senha?</button>
+                <p id="responseFalse"></p>
             </div>
         </div>
 
@@ -52,7 +53,7 @@ cantLog($__EMAIL__);
             <div class="loginBot">
                 <button id="sendNewPass" class="send-bt">Enviar</button>
                 <button id="backLogin" class="sub-bt">Voltar</button>
-                <p id="responseFalse"></p>
+                <p id="responseFalseVerify"></p>
             </div>
         </div>
     </div>
@@ -69,6 +70,8 @@ cantLog($__EMAIL__);
                 console.log(e)
                 if(e.response){
                     window.location.href="../";
+                } else {
+                    responseFalse.innerHTML = e.mensagem;
                 }
             })
         })
@@ -85,7 +88,7 @@ cantLog($__EMAIL__);
                 if(e.response){
                     window.location.href="../";
                 } else {
-                    responseFalse.innerHTML = e.mensagem;
+                    responseFalseVerify.innerHTML = e.mensagem;
                 }
             })
         })
@@ -100,8 +103,7 @@ cantLog($__EMAIL__);
             .then(e=>{
                 console.log(e)
                 if(e.response){
-                    responseFalse.innerHTML = '';
-                    responseVerify.innerHTML = e.mensagem.text;
+                    responseFalseVerify.innerHTML = e.mensagem.text;
                     verifyDiv.style.display = 'flex';
                     loginBox.style.display = 'none';
                 }
@@ -110,6 +112,7 @@ cantLog($__EMAIL__);
 
         backLogin.addEventListener('click', ()=>{
             responseFalse.innerHTML = '';
+            responseFalseVerify.innerHTML = '';
             verifyDiv.style.display = 'none';
             loginBox.style.display = 'flex';
         })
