@@ -179,6 +179,7 @@ header, .extra{
     flex-direction: row;
     gap: 20px;
     width: 100%;
+    align-items: center;
 }
 
 #searchBar {
@@ -244,4 +245,9 @@ header, .extra{
     border-right-width: 1px;
     border-radius: 0 5px 5px 0;
     text-align: right;
+}
+
+.content-list td:nth-last-child(1){
+    text-align: right;
+    color: var(--contraste);
 }
