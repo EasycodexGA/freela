@@ -198,9 +198,10 @@ header, .extra{
 
 .content-list {
     border-collapse: separate;
-    width: 80%;
+    width: 100%;
     table-layout: fixed;
     border-spacing: 0 5px;
+    text-align: left;
 }
 
 .content-list thead {
@@ -217,13 +218,15 @@ header, .extra{
 }
 
 .content-list th {
-    text-align: center;
     padding: 5px 15px;
     color: #929292;
 }
 
+.content-list th:last-child {
+    text-align: right;
+}
+
 .content-list td {
-    text-align: left;
     border-width: 1px 0;
     border-style: solid;
     border-color: var(--contraste);
@@ -240,4 +243,5 @@ header, .extra{
 .content-list td:last-child {
     border-right-width: 1px;
     border-radius: 0 5px 5px 0;
+    text-align: right;
 }
