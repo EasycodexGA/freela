@@ -16,7 +16,7 @@ justLog($__EMAIL__, $__TYPE__, 0);
     <header>
         <h1 class='title-header'>Geral - Turmas</h1>
         <div class='header-in'>
-        <h2 class='sub-header'><span id="active">0</span> Ativos</h2>
+            <h2 class='sub-header'><span id="active">0</span> Ativos</h2>
             <h2 class='sub-header'><span id="inactive">0</span> Inativos</h2>
         </div>
     </header>
@@ -24,10 +24,48 @@ justLog($__EMAIL__, $__TYPE__, 0);
     <div class='extra'>
         <h1 class='title-header'>Funções</h1>
         <div class='header-in'>
-            <button class='funcBt'>+ Adicionar turma</button>
-            <button class='funcBt'>+ Nova aula</button>
+            <button onclick='openAdd(addTurma)' class='funcBt'>+ Adicionar turma</button>
+            <!-- <button onclick='openAdd(addAula)' class='funcBt'>+ Adicionar aula</button> -->
         </div>
     </div>
+
+    <div id='addNew'>
+        <div id='addTurma' class='add-container'>
+            <h1 class='title-add'>Novo professor</h1>
+
+            <div class='inps-add'>
+                <div class='inp-add-out'>
+                    <h3>Nome</h3>
+                    <input id='nomeAdd' type='text' placeholder='Fulano da silva'/>
+                </div>
+                <div class='inp-add-out'>
+                    <h3>Titularidade</h3>
+                    <input id='titularidadeAdd' type='text' placeholder='Professor'/>
+                </div>
+                <div class='inp-add-out'>
+                    <h3>Nascimento</h3>
+                    <input id='nascimentoAdd' type='date'/>
+                </div>
+                <div class='inp-add-out'>
+                    <h3>Email</h3>
+                    <input id='emailAdd' type='text' placeholder='exemplo@gmail.com'/>
+                </div>
+                <div class='inp-add-out'>
+                    <h3>CPF</h3>
+                    <input id='cpfAdd' type='text' placeholder='12345678900'/>
+                </div>
+            </div>
+            <button onclick='addNewData("usuarios/cadastrar/professor", {
+                nome: nomeAdd.value,
+                titularidade: titularidadeAdd.value,
+                nascimento: (nascimentoAdd.valueAsNumber / 1000),
+                email: emailAdd.value,
+                cpf: cpfAdd.value
+            })' class='btn-add'>Salvar</button>
+        </div>
+    </div>
+
     <script src="../js/func.js"></script>
+    
 </body>
 </html>
