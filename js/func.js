@@ -87,6 +87,7 @@ function getTurmas(){
                 <tr>
                     <td>${i.nome}</td>
                     <td>${i.categoria}</td>
+                    <td>${i.profissionais}</td>
                     <td>${i.alunos}</td>
                     <td>Ver detalhes</td>
                     <td>${i.status}</td>
