@@ -73,72 +73,24 @@ justLog($__EMAIL__, $__TYPE__, 2);
             <thead>
                 <tr>
                     <th>Nome</th>
-                                        <th>
-                        Titularidade
-                    </th>
-                                    <th>
-                             Alunos
-                        </th>
-                     <th>
-                             Turmas
-                                                                </th>
-                    <th>
-                        
-                            </th>
-                                           <th>
-                        Status
-                     </th>
-                             </tr>
+                    <th>Titularidade</th>
+                    <th>Turmas</th>
+                    <th></th>
+                    <th>Status</th>
+                </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        Renato
-                    </td>
-                    <td>
-                        Professor
-                    </td>
-                    <td>
-                        28
-                    </td>
-                    <td>
-                        2
-                    </td>
-                    <td>
-                        Ver detalhes
-                    </td>
-                    <td>
-                        Ativo
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Renato
-                    </td>
-                    <td>
-                        Professor
-                    </td>
-                    <td>
-                        28
-                    </td>
-                    <td>
-                        2
-                    </td>
-                    <td>
-                        Ver detalhes
-                    </td>
-                    <td>
-                        Ativo
-                    </td>
-                </tr>
+            <tbody id='tabList'>
+             
             </tbody>
         </table>
 
     </div>
+    
+    <script src="../js/func.js"></script>
     <script>
         getActInact('usersprofessor');
+        getProfessores();
     </script>
-    <script src="../js/func.js"></script>
     
 </body>
 </html>

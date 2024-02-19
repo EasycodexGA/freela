@@ -115,6 +115,24 @@ function getAlunos(){
     })
 }
 
+function getProfessores(){
+    return fetch(`../sys/api/usuarios/get/professores`)
+    .then(e=>e.json())
+    .then(e=>{
+        for(let i of e.mensagem){
+            tabList.innerHTML += `
+                <tr>
+                    <td>${i.nome}</td>
+                    <td>${i.titularidade}</td>
+                    <td>${i.turmas}</td>
+                    <td>Ver detalhes</td>
+                    <td>${i.status}</td>
+                </tr>
+            `;
+        }
+    })
+}
+
 
 
 searchBar.addEventListener('keyup', ()=>{
