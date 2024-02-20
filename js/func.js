@@ -108,7 +108,7 @@ function getAlunos(){
     .then(e=>{
         allbgl = e.mensagem;
         for(let i of e.mensagem){
-            let date = new Date((i.nascimento + 86400) * 1000);
+            let date = new Date(i.nascimento * 1000  + 86400);
             tabList.innerHTML += `
                 <tr id='key${i.id}'>
                     <td>${i.nome}</td>
@@ -128,7 +128,7 @@ function getProfessores(){
     .then(e=>{
         allbgl = e.mensagem;
         for(let i of e.mensagem){
-            let date = new Date((i.nascimento + 86400) * 1000);
+            let date = new Date(i.nascimento * 1000 + 86400);
             tabList.innerHTML += `
                 <tr id='key${i.id}'>
                     <td>${i.nome}</td>
