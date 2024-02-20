@@ -11,7 +11,7 @@ while($dados = mysqli_fetch_array($_query_)){
 
     $emailuser  = decrypt($dados["email"]);
     $nome       = decrypt($dados["nome"]);
-    $nome       = decrypt($dados["nome"]);
+    $nascimento = decrypt($dados["nascimento"]);
     $status     = $dados["active"];
     
     $status     = $status == '1' ? "active" : "inactive";
@@ -19,11 +19,11 @@ while($dados = mysqli_fetch_array($_query_)){
     $query = mysqli_query($__CONEXAO__, "select id from turmas where categoria='$nome'");
 
     $arr = array(
-        "id"        => $dados["id"], 
-        "nome"      => $nome, 
-        "turma"     => $nomeTurma,
-        "status"    => $status,
-        "categoria" => $categoriaTurma,
+        "id"            => $dados["id"], 
+        "nome"          => $nome, 
+        "email"         => $emailuser,
+        "status"        => $status,
+        "nascimento"    => $nascimento,
     );
 
     array_push($array, $arr);

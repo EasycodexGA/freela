@@ -75,8 +75,8 @@ justLog($__EMAIL__, $__TYPE__, 1);
             <thead>
                 <tr>
                     <th>Nome</th>
-                    <th>Turma</th>
-                    <th>Categoria</th>
+                    <th>email</th>
+                    <th>Nascimento</th>
                     <th></th>
                     <th>Status</th>
                 </tr>
