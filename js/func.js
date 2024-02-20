@@ -78,7 +78,7 @@ function getCategorias(){
                 </tr>
             `;
         }
-        tabList.innerHTML += "<tr class='empty-line table-line id='notData'><td></td><td style='text-align: center'>Nenhum dado encontrado</td><td></td></tr>";
+        tabList.innerHTML += "<tr class='empty-line table-line' id='notData'><td></td><td style='text-align: center'>Nenhum dado encontrado</td><td></td></tr>";
         if(tabList.querySelectorAll('tr').length > 0){
             notData.classList.remove('table-line');
         }
@@ -103,7 +103,7 @@ function getTurmas(){
                 </tr>
             `;
         }
-        tabList.innerHTML += "<tr class='empty-line table-line id='notData'><td></td><td style='text-align: center'>Nenhum dado encontrado</td><td></td></tr>";
+        tabList.innerHTML += "<tr class='empty-line table-line' id='notData'><td></td><td style='text-align: center'>Nenhum dado encontrado</td><td></td></tr>";
         if(tabList.querySelectorAll('tr').length > 0){
             notData.classList.remove('table-line');
         }
@@ -127,7 +127,7 @@ function getAlunos(){
                 </tr>
             `;
         }
-        tabList.innerHTML += "<tr class='empty-line table-line id='notData'><td></td><td style='text-align: center'>Nenhum dado encontrado</td><td></td></tr>";
+        tabList.innerHTML += "<tr class='empty-line table-line' id='notData'><td></td><td style='text-align: center'>Nenhum dado encontrado</td><td></td></tr>";
         if(tabList.querySelectorAll('tr').length > 0){
             notData.classList.remove('table-line');
         }
@@ -151,7 +151,7 @@ function getProfessores(){
                 </tr>
             `;
         }
-        tabList.innerHTML += "<tr class='empty-line table-line id='notData'><td></td><td style='text-align: center'>Nenhum dado encontrado</td><td></td></tr>";
+        tabList.innerHTML += "<tr class='empty-line table-line' id='notData'><td></td><td style='text-align: center'>Nenhum dado encontrado</td><td></td></tr>";
         if(tabList.querySelectorAll('tr').length > 0){
             notData.classList.remove('table-line');
         }
