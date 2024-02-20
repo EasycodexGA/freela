@@ -86,7 +86,7 @@ justLog($__EMAIL__, $__TYPE__, 2);
     
     <script src="../js/func.js"></script>
     <script>
-        startPage('getProfessores', 'usersprofessor');
+        startPage(getProfessores, 'usersprofessor');
     </script>
     
 </body>

@@ -64,7 +64,7 @@ justLog($__EMAIL__, $__TYPE__, 2);
     
     <script src="../js/func.js"></script>
     <script>
-        startPage('getCategorias', 'categorias');
+        startPage(getCategorias, 'categorias');
     </script>
 </body>
 </html>
