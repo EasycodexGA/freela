@@ -236,6 +236,10 @@ header, .extra{
     display: table-row !important;
 }
 
+.table-line2 {
+    display: table-row !important;
+}
+
 .content-list td {
     border-width: 1px 0;
     border-style: solid;
