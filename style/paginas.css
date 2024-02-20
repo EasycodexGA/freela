@@ -228,6 +228,14 @@ header, .extra{
     text-align: right;
 }
 
+.empty-line {
+    display: none;
+}
+
+.table-line {
+    display: table-row !important;
+}
+
 .content-list td {
     border-width: 1px 0;
     border-style: solid;

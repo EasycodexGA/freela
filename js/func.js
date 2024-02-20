@@ -70,7 +70,7 @@ function getCategorias(){
         allbgl = e.mensagem;
         for(let i of e.mensagem){
             tabList.innerHTML += `
-                <tr id='key${i.id}'>
+                <tr class="empty-line table-line" id='key${i.id}'>
                     <td>${i.nome}</td>
                     <td>${i.turmas}</td>
                     <td>Ver detalhes</td>
@@ -92,7 +92,7 @@ function getTurmas(){
         allbgl = e.mensagem;
         for(let i of e.mensagem){
             tabList.innerHTML += `
-                <tr id='key${i.id}'>
+                <tr class="empty-line table-line" id='key${i.id}'>
                     <td>${i.nome}</td>
                     <td>${i.categoria}</td>
                     <td>${i.profissionais}</td>
@@ -116,7 +116,7 @@ function getAlunos(){
         for(let i of e.mensagem){
             let date = new Date(i.nascimento * 1000  + 86400000);
             tabList.innerHTML += `
-                <tr id='key${i.id}'>
+                <tr class="empty-line table-line" id='key${i.id}'>
                     <td>${i.nome}</td>
                     <td>${i.email}</td>
                     <td>${date.toLocaleDateString("pt-BR")}</td>
@@ -139,7 +139,7 @@ function getProfessores(){
         for(let i of e.mensagem){
             let date = new Date(i.nascimento * 1000 + 86400000);
             tabList.innerHTML += `
-                <tr id='key${i.id}'>
+                <tr class="empty-line table-line" id='key${i.id}'>
                     <td>${i.nome}</td>
                     <td>${i.email}</td>
                     <td>${date.toLocaleDateString("pt-BR")}</td>
@@ -148,7 +148,7 @@ function getProfessores(){
                 </tr>
             `;
         }
-        if(tabList.querySelectorAll('tr').length == 0){
+        if(tabList.querySelectorAll('.table-line').length == 0){
             tabList.innerHTML += "<tr><td></td><td style='text-align: center'>Nenhum dado encontrado</td><td></td></tr>";
         }
     })
@@ -160,9 +160,9 @@ searchBar.addEventListener('keyup', ()=>{
     for(let i of allbgl){
         let name = i.nome.toLowerCase();
         if(name.includes(val)){
-            document.getElementById(`key${i.id}`).style.display = 'table-row';
+            document.getElementById(`key${i.id}`).classList.add('table-line');
         } else {
-            document.getElementById(`key${i.id}`).style.display = 'none';
+            document.getElementById(`key${i.id}`).classList.remove('table-line');
         }
     }
 })
