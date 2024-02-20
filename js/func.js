@@ -140,14 +140,9 @@ searchBar.addEventListener('keyup', ()=>{
     console.log(searchBar.value);
 })
 
+const callFunc = (func) => func();
 
 function startPage(func, e){
-    functions = {
-        professores: getProfessores(),
-        alunos: getAlunos(),
-        categorias: getCategorias(),
-        turmas: getTurmas()
-    }
-    functions[`${func}`]();
+    callFunc(func);
     getActInact(e);
 }

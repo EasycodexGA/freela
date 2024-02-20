@@ -90,7 +90,7 @@ justLog($__EMAIL__, $__TYPE__, 0);
     </script>
     <script src="../js/func.js"></script>
     <script>
-        startPage('turmas', 'turmas');
+        startPage('getTurmas', 'turmas');
     </script>
     
 </body>
