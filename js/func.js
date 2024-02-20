@@ -108,11 +108,12 @@ function getAlunos(){
     .then(e=>{
         allbgl = e.mensagem;
         for(let i of e.mensagem){
+            let date = new Date(i.nascimento * 1000);
             tabList.innerHTML += `
                 <tr id='key${i.id}'>
                     <td>${i.nome}</td>
                     <td>${i.email}</td>
-                    <td>${(i.nascimento).toLocaleDateString("pt-BR")}</td>
+                    <td>${date.toLocaleDateString("pt-BR")}</td>
                     <td>Ver detalhes</td>
                     <td>${i.status}</td>
                 </tr>
@@ -127,11 +128,12 @@ function getProfessores(){
     .then(e=>{
         allbgl = e.mensagem;
         for(let i of e.mensagem){
+            let date = new Date(i.nascimento * 1000);
             tabList.innerHTML += `
                 <tr id='key${i.id}'>
                     <td>${i.nome}</td>
                     <td>${i.email}</td>
-                    <td>${(i.nascimento).toLocaleDateString("pt-BR")}</td>
+                    <td>${date.toLocaleDateString("pt-BR")}</td>
                     <td>Ver detalhes</td>
                     <td>${i.status}</td>
                 </tr>
