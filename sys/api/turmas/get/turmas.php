@@ -12,18 +12,18 @@ if($__TYPE__ < 2){
     if($__TYPE__ == 1){
         $table = 'professores';
     }
-    echo 'Table: ' . $table . ' ';
+    echo 'Table: ' . $table;
     $query = mysqli_query($__CONEXAO__, "select * from $table where email='$__EMAIL__'");
     $turmas = '';
     while($getQuery = mysqli_fetch_array($query)){
         $value = $getQuery['turma'];
-        echo 'Value: ' . $value . ' ';
+        echo ' Value: ' . $value;
         $valuedec = decrypt($value);
-        echo 'Valuedec: ' . $valuedec . ' ';
+        echo ' Valuedec: ' . $valuedec;
         $turmas .= $valuedec . ' , ';
     }
     $turmas = substr($turmas, 0, -3);
-    echo 'Turmas: ' . $turmas . ' ';
+    echo ' Turmas: ' . $turmas;
     $complemento = 'where id in ($turmas) order by field(id, $turmas)';
     $_query_ = mysqli_query($__CONEXAO__, "select * from turmas $complemento");
 }
@@ -32,6 +32,7 @@ $array = array();
 
 while($dados = mysqli_fetch_array($_query_)){
     $nome = decrypt($dados["nome"]);
+    echo ' Nome: ' . $nome;
     $categoria = decrypt($dados["categoria"]);
 
     $status = $dados["active"];
