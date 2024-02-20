@@ -41,13 +41,14 @@ while($dados = mysqli_fetch_array($_query_)){
     $idC = encrypt($dados["id"]);
 
     $query = mysqli_query($__CONEXAO__, "select id from alunos where turma='$idC'");
-    
+    $query2 = mysqli_query($__CONEXAO__, "select id from professores where turma='$idC'");
+
     $arr = array(
         "id"            => $dados["id"], 
         "nome"          => $nome, 
         "categoria"     => $categoria,
         "alunos"        => mysqli_num_rows($query),
-        "profissionais" => 0,
+        "profissionais" => mysqli_num_rows($query2),
         "status"        => $status
     );
     array_push($array, $arr);
