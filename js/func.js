@@ -112,7 +112,7 @@ function getAlunos(){
                 <tr id='key${i.id}'>
                     <td>${i.nome}</td>
                     <td>${i.email}</td>
-                    <td>${i.nascimento}</td>
+                    <td>${(i.nascimento).toLocaleDateString("pt-BR")}</td>
                     <td>Ver detalhes</td>
                     <td>${i.status}</td>
                 </tr>
@@ -131,7 +131,7 @@ function getProfessores(){
                 <tr id='key${i.id}'>
                     <td>${i.nome}</td>
                     <td>${i.email}</td>
-                    <td>${i.nascimento}</td>
+                    <td>${(i.nascimento).toLocaleDateString("pt-BR")}</td>
                     <td>Ver detalhes</td>
                     <td>${i.status}</td>
                 </tr>

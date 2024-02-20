@@ -235,6 +235,7 @@ header, .extra{
     background-color: #FFF;
     color: #808080;
     padding: 12px 15px;
+    overflow-x: hidden;
 }
 
 .content-list td:first-child {
