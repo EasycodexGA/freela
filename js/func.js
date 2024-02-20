@@ -79,7 +79,7 @@ function getCategorias(){
             `;
         }
         if(e.mensagem.length == 0){
-            tabList.innerHTML += "<tr><td>Nenhuma turma encontrada</td></tr>";
+            tabList.innerHTML += "<tr><td></td><td>Nenhuma turma encontrada</td><td></td></tr>";
         }
     })
 }
@@ -103,7 +103,7 @@ function getTurmas(){
             `;
         }
         if(e.mensagem.length == 0){
-            tabList.innerHTML += "<tr><td>Nenhuma turma encontrada</td></tr>";
+            tabList.innerHTML += "<tr><td></td><td>Nenhuma turma encontrada</td><td></td></tr>";
         }
     })
 }
@@ -126,7 +126,7 @@ function getAlunos(){
             `;
         }
         if(e.mensagem.length == 0){
-            tabList.innerHTML += "<tr><td>Nenhuma turma encontrada</td></tr>";
+            tabList.innerHTML += "<tr><td></td><td>Nenhuma turma encontrada</td><td></td></tr>";
         }
     })
 }
@@ -149,7 +149,7 @@ function getProfessores(){
             `;
         }
         if(e.mensagem.length == 0){
-            tabList.innerHTML += "<tr><td>Nenhuma turma encontrada</td></tr>";
+            tabList.innerHTML += "<tr><td></td><td>Nenhuma turma encontrada</td><td></td></tr>";
         }
     })
 }
