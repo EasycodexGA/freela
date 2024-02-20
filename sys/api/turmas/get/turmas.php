@@ -12,11 +12,17 @@ if($__TYPE__ < 2){
     if($__TYPE__ == 1){
         $table = 'professores';
     }
+    echo 'Table: ' . $table;
     $query = mysqli_query($__CONEXAO__, "select * from $table where email='$__EMAIL__'");
     $turmas = '';
     while($getQuery = mysqli_fetch_array($query)){
-        $turmas .= decrypt($getQuery['turma']) . ' , ';
+        $value = $getQuery['turma'];
+        echo 'Value: ' . $value;
+        $valuedec = decrypt($value);
+        echo 'Valuedec: ' . $valuedec;
+        $turmas .= $valuedec . ' , ';
     }
+    echo 'Turmas: ' . $turmas;
     $complemento = 'where id in ($turmas) order by field(id, $turmas)';
     $_query_ = mysqli_query($__CONEXAO__, "select * from turmas $complemento");
 }
