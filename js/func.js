@@ -139,3 +139,15 @@ function getProfessores(){
 searchBar.addEventListener('keyup', ()=>{
     console.log(searchBar.value);
 })
+
+
+function startPage(func, e){
+    functions = {
+        professores: getProfessores(),
+        alunos: getAlunos(),
+        categorias: getCategorias(),
+        turmas: getTurmas()
+    }
+    functions[func]();
+    getActInact(e);
+}

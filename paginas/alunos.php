@@ -81,9 +81,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
                     <th>Status</th>
                 </tr>
             </thead>
-            <tbody id='tabList'>
-             
-            </tbody>
+            <tbody id='tabList'></tbody>
         </table>
 
     </div>
@@ -105,7 +103,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
     <script src="../js/func.js"></script>
 
     <script>
-        getAlunos();
+        startPage('alunos', 'usersalunos');
     </script>
     
 </body>

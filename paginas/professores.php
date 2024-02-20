@@ -86,9 +86,7 @@ justLog($__EMAIL__, $__TYPE__, 2);
     
     <script src="../js/func.js"></script>
     <script>
-        getActInact('usersprofessor');
-        getProfessores();
-        
+        startPage('professores', 'usersprofessor');
     </script>
     
 </body>
