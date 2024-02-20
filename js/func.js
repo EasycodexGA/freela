@@ -116,13 +116,16 @@ function getAlunos(){
     })
 }
 
+let allbgl = [];
+
 function getProfessores(){
     return fetch(`../sys/api/usuarios/get/professores`)
     .then(e=>e.json())
     .then(e=>{
+        allbgl.push(e);
         for(let i of e.mensagem){
             tabList.innerHTML += `
-                <tr>
+                <tr id='key${i.id}'>
                     <td>${i.nome}</td>
                     <td>${i.titularidade}</td>
                     <td>${i.turmas}</td>
@@ -135,9 +138,9 @@ function getProfessores(){
 }
 
 
-
 searchBar.addEventListener('keyup', ()=>{
     console.log(searchBar.value);
+    console.log(allbgl);
 })
 
 const callFunc = (func) => func();
