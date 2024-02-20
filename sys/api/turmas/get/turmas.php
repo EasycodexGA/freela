@@ -6,24 +6,19 @@ justLog($__EMAIL__, $__TYPE__, 0);
 $complemento = '';
 
 $_query_ = mysqli_query($__CONEXAO__, "select * from turmas");
-
 if($__TYPE__ < 2){
     $table = 'alunos';
     if($__TYPE__ == 1){
         $table = 'professores';
     }
-    echo 'Table: ' . $table;
     $query = mysqli_query($__CONEXAO__, "select * from $table where email='$__EMAIL__'");
     $turmas = '';
     while($getQuery = mysqli_fetch_array($query)){
         $value = $getQuery['turma'];
-        echo ' Value: ' . $value;
         $valuedec = decrypt($value);
-        echo ' Valuedec: ' . $valuedec;
         $turmas .= $valuedec . ' , ';
     }
     $turmas = substr($turmas, 0, -3);
-    echo ' Turmas: ' . $turmas;
     $_query_ = mysqli_query($__CONEXAO__, "select * from turmas where id in ($turmas)");
 }
 
@@ -31,7 +26,6 @@ $array = array();
 
 while($dados = mysqli_fetch_array($_query_)){
     $nome = decrypt($dados["nome"]);
-    echo ' Nome: ' . $nome;
     $categoria = decrypt($dados["categoria"]);
 
     $status = $dados["active"];
