@@ -78,8 +78,9 @@ function getCategorias(){
                 </tr>
             `;
         }
-        if(tabList.querySelectorAll('tr').length == 0){
-            tabList.innerHTML += "<tr><td></td><td style='text-align: center'>Nenhum dado encontrado</td><td></td></tr>";
+        tabList.innerHTML += "<tr class='empty-line table-line id='notData'><td></td><td style='text-align: center'>Nenhum dado encontrado</td><td></td></tr>";
+        if(tabList.querySelectorAll('tr').length > 0){
+            notData.classList.remove('table-line');
         }
     })
 }
@@ -102,8 +103,9 @@ function getTurmas(){
                 </tr>
             `;
         }
-        if(tabList.querySelectorAll('tr').length == 0){
-            tabList.innerHTML += "<tr><td></td><td style='text-align: center'>Nenhum dado encontrado</td><td></td></tr>";
+        tabList.innerHTML += "<tr class='empty-line table-line id='notData'><td></td><td style='text-align: center'>Nenhum dado encontrado</td><td></td></tr>";
+        if(tabList.querySelectorAll('tr').length > 0){
+            notData.classList.remove('table-line');
         }
     })
 }
@@ -125,8 +127,9 @@ function getAlunos(){
                 </tr>
             `;
         }
-        if(tabList.querySelectorAll('tr').length == 0){
-            tabList.innerHTML += "<tr><td></td><td style='text-align: center'>Nenhum dado encontrado</td><td></td></tr>";
+        tabList.innerHTML += "<tr class='empty-line table-line id='notData'><td></td><td style='text-align: center'>Nenhum dado encontrado</td><td></td></tr>";
+        if(tabList.querySelectorAll('tr').length > 0){
+            notData.classList.remove('table-line');
         }
     })
 }
@@ -148,8 +151,9 @@ function getProfessores(){
                 </tr>
             `;
         }
-        if(tabList.querySelectorAll('.table-line').length == 0){
-            tabList.innerHTML += "<tr><td></td><td style='text-align: center'>Nenhum dado encontrado</td><td></td></tr>";
+        tabList.innerHTML += "<tr class='empty-line table-line id='notData'><td></td><td style='text-align: center'>Nenhum dado encontrado</td><td></td></tr>";
+        if(tabList.querySelectorAll('tr').length > 0){
+            notData.classList.remove('table-line');
         }
     })
 }
@@ -163,6 +167,11 @@ searchBar.addEventListener('keyup', ()=>{
             document.getElementById(`key${i.id}`).classList.add('table-line');
         } else {
             document.getElementById(`key${i.id}`).classList.remove('table-line');
+        }
+        if(tabList.querySelectorAll('tr').length == 0){
+            notData.classList.add('table-line');
+        } else {
+            notData.classList.remove('table-line');
         }
     }
 })
