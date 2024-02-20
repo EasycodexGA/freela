@@ -27,7 +27,7 @@ if($__TYPE__ < 2){
     $complemento = 'where id in ($turmas) order by field(id, $turmas)';
     $_query_ = mysqli_query($__CONEXAO__, "select * from turmas where id in ($turmas) order by field(id, $turmas)");
 }
-echo ' Query: ' . $_query_;
+
 $array = array();
 
 while($dados = mysqli_fetch_array($_query_)){
