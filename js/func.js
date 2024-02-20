@@ -71,7 +71,7 @@ function getCategorias(){
         for(let i of e.mensagem){
             tabList.innerHTML += `
                 <tr class="empty-line table-line" id='key${i.id}'>
-                    <td>${i.nome}</td>
+                    <td class='td-nome'>${i.nome}</td>
                     <td>${i.turmas}</td>
                     <td>Ver detalhes</td>
                     <td>${i.status}</td>
@@ -79,7 +79,7 @@ function getCategorias(){
             `;
         }
         tabList.innerHTML += "<tr class='empty-line table-line2' id='notData'><td></td><td style='text-align: center'>Nenhum dado encontrado</td><td></td></tr>";
-        if(tabList.querySelectorAll('tr').length > 0){
+        if(tabList.querySelectorAll('.table-line').length > 0){
             notData.classList.remove('table-line2');
         }
     })
@@ -94,7 +94,7 @@ function getTurmas(){
         for(let i of e.mensagem){
             tabList.innerHTML += `
                 <tr class="empty-line table-line" id='key${i.id}'>
-                    <td>${i.nome}</td>
+                    <td class='td-nome'>${i.nome}</td>
                     <td>${i.categoria}</td>
                     <td>${i.profissionais}</td>
                     <td>${i.alunos}</td>
@@ -104,7 +104,7 @@ function getTurmas(){
             `;
         }
         tabList.innerHTML += "<tr class='empty-line table-line2' id='notData'><td></td><td style='text-align: center'>Nenhum dado encontrado</td><td></td></tr>";
-        if(tabList.querySelectorAll('tr').length > 0){
+        if(tabList.querySelectorAll('.table-line').length > 0){
             notData.classList.remove('table-line2');
         }
     })
@@ -119,7 +119,7 @@ function getAlunos(){
             let date = new Date(i.nascimento * 1000  + 86400000);
             tabList.innerHTML += `
                 <tr class="empty-line table-line" id='key${i.id}'>
-                    <td>${i.nome}</td>
+                    <td class='td-nome'>${i.nome}</td>
                     <td>${i.email}</td>
                     <td>${date.toLocaleDateString("pt-BR")}</td>
                     <td>Ver detalhes</td>
@@ -128,7 +128,7 @@ function getAlunos(){
             `;
         }
         tabList.innerHTML += "<tr class='empty-line table-line2' id='notData'><td></td><td style='text-align: center'>Nenhum dado encontrado</td><td></td></tr>";
-        if(tabList.querySelectorAll('tr').length > 0){
+        if(tabList.querySelectorAll('.table-line').length > 0){
             notData.classList.remove('table-line2');
         }
     })
@@ -143,7 +143,7 @@ function getProfessores(){
             let date = new Date(i.nascimento * 1000 + 86400000);
             tabList.innerHTML += `
                 <tr class="empty-line table-line" id='key${i.id}'>
-                    <td>${i.nome}</td>
+                    <td class='td-nome'>${i.nome}</td>
                     <td>${i.email}</td>
                     <td>${date.toLocaleDateString("pt-BR")}</td>
                     <td>Ver detalhes</td>
@@ -152,7 +152,7 @@ function getProfessores(){
             `;
         }
         tabList.innerHTML += "<tr class='empty-line table-line2' id='notData'><td></td><td style='text-align: center'>Nenhum dado encontrado</td><td></td></tr>";
-        if(tabList.querySelectorAll('tr').length > 0){
+        if(tabList.querySelectorAll('.table-line').length > 0){
             notData.classList.remove('table-line2');
         }
     })

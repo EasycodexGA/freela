@@ -250,6 +250,14 @@ header, .extra{
     overflow-x: hidden;
 }
 
+.content-list td::first-letter {
+    text-transform: capitalize;
+}
+
+.td-nome {
+    text-transform: capitalize;
+}
+
 .content-list td:first-child {
     border-left-width: 1px;
     border-radius: 5px 0 0 5px;
