@@ -148,6 +148,6 @@ function startPage(func, e){
         categorias: getCategorias(),
         turmas: getTurmas()
     }
-    functions[func]();
+    functions[`${func}`]();
     getActInact(e);
 }
