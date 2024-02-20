@@ -61,13 +61,16 @@ function getActInact(e){
     })
 }
 
+let allbgl;
+
 function getCategorias(){
     return fetch(`../sys/api/usuarios/get/categorias`)
     .then(e=>e.json())
     .then(e=>{
+        allbgl = e.mensagem;
         for(let i of e.mensagem){
             tabList.innerHTML += `
-                <tr>
+                <tr id='key${i.id}'>
                     <td>${i.nome}</td>
                     <td>${i.turmas}</td>
                     <td>Ver detalhes</td>
@@ -83,9 +86,10 @@ function getTurmas(){
     return fetch(`../sys/api/turmas/get/turmas`)
     .then(e=>e.json())
     .then(e=>{
+        allbgl = e.mensagem;
         for(let i of e.mensagem){
             tabList.innerHTML += `
-                <tr>
+                <tr id='key${i.id}'>
                     <td>${i.nome}</td>
                     <td>${i.categoria}</td>
                     <td>${i.profissionais}</td>
@@ -102,9 +106,10 @@ function getAlunos(){
     return fetch(`../sys/api/usuarios/get/alunos`)
     .then(e=>e.json())
     .then(e=>{
+        allbgl = e.mensagem;
         for(let i of e.mensagem){
             tabList.innerHTML += `
-                <tr>
+                <tr id='key${i.id}'>
                     <td>${i.nome}</td>
                     <td>${i.turma}</td>
                     <td>${i.categoria}</td>
@@ -116,13 +121,11 @@ function getAlunos(){
     })
 }
 
-let allbgl = [];
-
 function getProfessores(){
     return fetch(`../sys/api/usuarios/get/professores`)
     .then(e=>e.json())
     .then(e=>{
-        allbgl.push(e);
+        allbgl = e.mensagem;
         for(let i of e.mensagem){
             tabList.innerHTML += `
                 <tr id='key${i.id}'>
@@ -139,8 +142,15 @@ function getProfessores(){
 
 
 searchBar.addEventListener('keyup', ()=>{
-    console.log(searchBar.value);
-    console.log(allbgl);
+    let val = searchBar.value;
+    for(let i of allbgl){
+        let name = i.nome.toLowerCase();
+        if(name.includes(val)){
+            document.getElementById(`key${i.id}`).style.display = 'table-row';
+        } else {
+            document.getElementById(`key${i.id}`).style.display = 'none';
+        }
+    }
 })
 
 const callFunc = (func) => func();
