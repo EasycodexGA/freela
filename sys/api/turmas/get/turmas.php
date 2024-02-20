@@ -24,8 +24,7 @@ if($__TYPE__ < 2){
     }
     $turmas = substr($turmas, 0, -3);
     echo ' Turmas: ' . $turmas;
-    $complemento = 'where id in ($turmas) order by field(id, $turmas)';
-    $_query_ = mysqli_query($__CONEXAO__, "select * from turmas where id in ($turmas) order by field(id, $turmas)");
+    $_query_ = mysqli_query($__CONEXAO__, "select * from turmas where id in ($turmas)");
 }
 
 $array = array();
