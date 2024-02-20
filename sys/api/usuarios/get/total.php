@@ -20,15 +20,17 @@ checkMissing(
 
 $type = decrypt($type);
 
-$turmas = array();
-if($__TYPE__ < 2){
-    $table = 'alunos';
-    if($__TYPE__ == 1){
-        $table = 'professores';
-    }
-    $query = mysqli_query($__CONEXAO__, "select * from $table where email='$__EMAIL__'");
-    while($getQuery = mysqli_fetch_array($query)){
-        $turmas[] = decrypt($getQuery['turma']);
+if($type == 'turmas'){
+    $turmas = array();
+    if($__TYPE__ < 2){
+        $table = 'alunos';
+        if($__TYPE__ == 1){
+            $table = 'professores';
+        }
+        $query = mysqli_query($__CONEXAO__, "select * from $table where email='$__EMAIL__'");
+        while($getQuery = mysqli_fetch_array($query)){
+            $turmas[] = decrypt($getQuery['turma']);
+        }
     }
 }
 
