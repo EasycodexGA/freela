@@ -168,7 +168,7 @@ searchBar.addEventListener('keyup', ()=>{
         } else {
             document.getElementById(`key${i.id}`).classList.remove('table-line');
         }
-        if(tabList.querySelectorAll('tr').length == 0){
+        if(tabList.querySelectorAll('.table-line').length == 0){
             notData.classList.add('table-line');
         } else {
             notData.classList.remove('table-line');
