@@ -3,7 +3,7 @@ include '../../../conexao.php';
 
 justLog($__EMAIL__, $__TYPE__, 1);
 
-$_query_ = mysqli_query($__CONEXAO__, "select nome, active, email from users where typeC='0'");
+$_query_ = mysqli_query($__CONEXAO__, "select nome, active, email, nascimento from users where typeC='0'");
 
 $array = array();
 
@@ -15,8 +15,6 @@ while($dados = mysqli_fetch_array($_query_)){
     $status     = $dados["active"];
     
     $status     = $status == '1' ? "active" : "inactive";
-
-    $query = mysqli_query($__CONEXAO__, "select id from turmas where categoria='$nome'");
 
     $arr = array(
         "id"            => $dados["id"], 

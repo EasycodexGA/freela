@@ -73,8 +73,8 @@ justLog($__EMAIL__, $__TYPE__, 2);
             <thead>
                 <tr>
                     <th>Nome</th>
-                    <th>Titularidade</th>
-                    <th>Turmas</th>
+                    <th>email</th>
+                    <th>Nascimento</th>
                     <th></th>
                     <th>Status</th>
                 </tr>

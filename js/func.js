@@ -112,7 +112,7 @@ function getAlunos(){
                 <tr id='key${i.id}'>
                     <td>${i.nome}</td>
                     <td>${i.email}</td>
-                    <td>${(i.nascimento * 1000).toLocaleDateString("pt-BR")}</td>
+                    <td>${i.nascimento}</td>
                     <td>Ver detalhes</td>
                     <td>${i.status}</td>
                 </tr>
@@ -130,8 +130,8 @@ function getProfessores(){
             tabList.innerHTML += `
                 <tr id='key${i.id}'>
                     <td>${i.nome}</td>
-                    <td>${i.titularidade}</td>
-                    <td>${i.turmas}</td>
+                    <td>${i.email}</td>
+                    <td>${i.nascimento}</td>
                     <td>Ver detalhes</td>
                     <td>${i.status}</td>
                 </tr>
