@@ -78,6 +78,9 @@ function getCategorias(){
                 </tr>
             `;
         }
+        if(e.mensagem.length == 0){
+            tabList.innerHTML += "<tr><td>Nenhuma turma encontrada</td></tr>";
+        }
     })
 }
 
@@ -99,6 +102,9 @@ function getTurmas(){
                 </tr>
             `;
         }
+        if(e.mensagem.length == 0){
+            tabList.innerHTML += "<tr><td>Nenhuma turma encontrada</td></tr>";
+        }
     })
 }
 
@@ -119,6 +125,9 @@ function getAlunos(){
                 </tr>
             `;
         }
+        if(e.mensagem.length == 0){
+            tabList.innerHTML += "<tr><td>Nenhuma turma encontrada</td></tr>";
+        }
     })
 }
 
@@ -138,6 +147,9 @@ function getProfessores(){
                     <td>${i.status}</td>
                 </tr>
             `;
+        }
+        if(e.mensagem.length == 0){
+            tabList.innerHTML += "<tr><td>Nenhuma turma encontrada</td></tr>";
         }
     })
 }
