@@ -74,4 +74,4 @@ while($dados = mysqli_fetch_array($query)){
     }
 }
 
-endCode(array("active"=>$active, "inactive"=>$inactive), true);
+endCode(array("active"=>$active, "inactive"=>$inactive, "turmas"=>$turmas), true);
