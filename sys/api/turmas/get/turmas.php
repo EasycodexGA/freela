@@ -3,7 +3,22 @@ include '../../../conexao.php';
 
 justLog($__EMAIL__, $__TYPE__, 0);
 
-$_query_ = mysqli_query($__CONEXAO__, "select * from turmas");
+$complemento = '';
+
+if($__TYPE__ < 2){
+    $table = 'alunos';
+    if($__TYPE__ == 1){
+        $table = 'professores';
+    }
+    $query = mysqli_query($__CONEXAO__, "select * from $table where email='$__EMAIL__'");
+    $turmas = '';
+    while($getQuery = mysqli_fetch_array($query)){
+        $turmas .= decrypt($getQuery['turma']) . ' , ';
+    }
+    $complemento = 'where id in ($turmas) order by field(id, $turmas)';
+}
+
+$_query_ = mysqli_query($__CONEXAO__, "select * from turmas $complemento");
 
 $array = array();
 

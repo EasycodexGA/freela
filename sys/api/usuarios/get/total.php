@@ -28,7 +28,7 @@ if($__TYPE__ < 2){
     }
     $query = mysqli_query($__CONEXAO__, "select * from $table where email='$__EMAIL__'");
     while($getQuery = mysqli_fetch_array($query)){
-        $turmas[] = $getQuery['turma'];
+        $turmas[] = decrypt($getQuery['turma']);
     }
 }
 
