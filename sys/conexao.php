@@ -91,6 +91,7 @@ function setString($string){
 
 function setEmail($string){
     $string = filter_var($string, FILTER_VALIDATE_EMAIL);
+    $string = strtolower($string);
     return encrypt($string);
 }
 

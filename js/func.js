@@ -78,7 +78,7 @@ function getCategorias(){
                 </tr>
             `;
         }
-        if(e.mensagem.length == 0){
+        if(tabList.querySelectorAll('tr').length == 0){
             tabList.innerHTML += "<tr><td></td><td style='text-align: center'>Nenhum dado encontrado</td><td></td></tr>";
         }
     })
@@ -102,7 +102,7 @@ function getTurmas(){
                 </tr>
             `;
         }
-        if(e.mensagem.length == 0){
+        if(tabList.querySelectorAll('tr').length == 0){
             tabList.innerHTML += "<tr><td></td><td style='text-align: center'>Nenhum dado encontrado</td><td></td></tr>";
         }
     })
@@ -125,7 +125,7 @@ function getAlunos(){
                 </tr>
             `;
         }
-        if(e.mensagem.length == 0){
+        if(tabList.querySelectorAll('tr').length == 0){
             tabList.innerHTML += "<tr><td></td><td style='text-align: center'>Nenhum dado encontrado</td><td></td></tr>";
         }
     })
@@ -148,7 +148,7 @@ function getProfessores(){
                 </tr>
             `;
         }
-        if(e.mensagem.length == 0){
+        if(tabList.querySelectorAll('tr').length == 0){
             tabList.innerHTML += "<tr><td></td><td style='text-align: center'>Nenhum dado encontrado</td><td></td></tr>";
         }
     })
