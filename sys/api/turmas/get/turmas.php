@@ -5,8 +5,9 @@ justLog($__EMAIL__, $__TYPE__, 0);
 
 $complemento = '';
 
-$_query_ = mysqli_query($__CONEXAO__, "select * from turmas");
-if($__TYPE__ < 2){
+if($__TYPE__ == 2){
+    $_query_ = mysqli_query($__CONEXAO__, "select * from turmas");
+} else {
     $table = 'alunos';
     if($__TYPE__ == 1){
         $table = 'professores';

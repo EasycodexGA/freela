@@ -5,47 +5,49 @@ justLog($__EMAIL__, $__TYPE__, 0);
 
 $complemento = '';
 
-// $_query_ = mysqli_query($__CONEXAO__, "select * from turmas");
-// if($__TYPE__ < 2){
-//     $table = 'alunos';
-//     if($__TYPE__ == 1){
-//         $table = 'professores';
-//     }
-//     $query = mysqli_query($__CONEXAO__, "select * from $table where email='$__EMAIL__'");
-//     $turmas = '';
-//     while($getQuery = mysqli_fetch_array($query)){
-//         $value = $getQuery['turma'];
-//         $valuedec = decrypt($value);
-//         $turmas .= $valuedec . ' , ';
-//     }
-//     $turmas = substr($turmas, 0, -3);
-//     $_query_ = mysqli_query($__CONEXAO__, "select * from turmas where id in ($turmas)");
-// }
-
-$_query_ = mysqli_query($__CONEXAO__, "select * from eventos");
+if($__TYPE__ == 2){
+    $_query_ = mysqli_query($__CONEXAO__, "select * from eventos");
+} else {
+    $table = 'alunos';
+    if($__TYPE__ == 1){
+        $table = 'professores';
+    }
+    $query = mysqli_query($__CONEXAO__, "select * from $table where email='$__EMAIL__'");
+    $turmas = '';
+    while($getQuery = mysqli_fetch_array($query)){
+        $value = $getQuery['turma'];
+        $valuedec = decrypt($value);
+        $turmas .= $valuedec . ' , ';
+    }
+    $turmas = substr($turmas, 0, -3);
+    $_query_ = mysqli_query($__CONEXAO__, "select * from eventos where turma in ($turmas)");
+}
 
 $array = array();
 
 while($dados = mysqli_fetch_array($_query_)){
     $nome = decrypt($dados["nome"]);
-    $categoria = decrypt($dados["categoria"]);
+    $turmaId = decrypt($dados["turma"]);
 
-    $status = $dados["active"];
+    $data = $dados["data"];
+
+    $status = $dados["active"]; 
 
     $status = $status == '1' ? "active" : "inactive";
 
+    $queryT = mysqli_query($__CONEXAO__, "select nome from turma where id='$turmaId'");
+
+    $turma = mysqli_fetch_assoc($queryT)["nome"];
+
     $idC = encrypt($dados["id"]);
 
-    $query = mysqli_query($__CONEXAO__, "select id from alunos where turma='$idC'");
-    $query2 = mysqli_query($__CONEXAO__, "select id from professores where turma='$idC'");
-
     $arr = array(
-        "id"            => $dados["id"], 
-        "nome"          => $nome, 
-        "categoria"     => $categoria,
-        "alunos"        => mysqli_num_rows($query),
-        "profissionais" => mysqli_num_rows($query2),
-        "status"        => $status
+        "id"        => $dados["id"], 
+        "nome"      => $nome,
+        "data"      => $data,
+        "turma"     => $turma,
+        // "turmas"        => mysqli_num_rows($_query_),
+        "status"    => $status
     );
     array_push($array, $arr);
 }
