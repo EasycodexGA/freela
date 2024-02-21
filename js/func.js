@@ -179,7 +179,7 @@ function getData(link){
                         td2.innerHTML = 'Ver detalhes';
                         tr.appendChild(td2);
                     }
-                    if(key == nascimento){
+                    if(key == 'nascimento'){
                         td.innerHTML = date;
                     } else {
                         td.innerHTML = value;
