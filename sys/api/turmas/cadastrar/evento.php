@@ -29,6 +29,10 @@ checkMissing(
 
 $data = decrypt($data);
 
+if($data < time()){
+    endCode("Essa data já passou!");
+}
+
 $turmaDec = decrypt($turma);
 
 $getTurma = mysqli_query($__CONEXAO__, "select * from turmas where id='$turmaDec'");
