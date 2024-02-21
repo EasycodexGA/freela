@@ -30,7 +30,7 @@ checkMissing(
 $data = decrypt($data);
 
 if($data < time()){
-    endCode("Essa data já passou!");
+    endCode("Essa data já passou!", false);
 }
 
 $turmaDec = decrypt($turma);
