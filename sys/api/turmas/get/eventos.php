@@ -35,7 +35,7 @@ while($dados = mysqli_fetch_array($_query_)){
 
     $status = $status == '1' ? "active" : "inactive";
 
-    $queryT = mysqli_query($__CONEXAO__, "select nome from turma where id='$turmaId'");
+    $queryT = mysqli_query($__CONEXAO__, "select nome from turmas where id='$turmaId'");
 
     $turma = mysqli_fetch_assoc($queryT)["nome"];
 
@@ -44,8 +44,8 @@ while($dados = mysqli_fetch_array($_query_)){
     $arr = array(
         "id"        => $dados["id"], 
         "nome"      => $nome,
-        "data"      => $data,
         "turma"     => $turma,
+        "data"      => $data,
         // "turmas"        => mysqli_num_rows($_query_),
         "status"    => $status
     );
