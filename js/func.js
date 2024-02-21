@@ -84,7 +84,7 @@ function getData(link){
                         td2.innerHTML = 'Ver detalhes';
                         tr.appendChild(td2);
                     }
-                    if(key == 'nascimento'){
+                    if(key == 'nascimento' || key == 'data'){
                         td.innerHTML = date;
                     } else {
                         td.innerHTML = value;
