@@ -174,7 +174,7 @@ function getData(link){
                 if(key != 'id'){
                     let td = document.createElement('td');
                     td.classList.add(`td-${key}`);
-                    if(key == status){
+                    if(key == 'status'){
                         let td2 = document.createElement('td');
                         td2.innerHTML = 'Ver detalhes';
                         tr.appendChild(td2);
