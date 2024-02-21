@@ -69,7 +69,7 @@ function getData(link){
     .then(e=>{
         allbgl = e.mensagem;
         for(let i of e.mensagem){
-            let date = new Date(i.nascimento * 1000 + 86400000);
+            let date = new Date(i.data * 1000 + 86400000);
             date = date.toLocaleDateString("pt-BR");
             let tr = document.createElement('tr');
             tr.classList.add('empty-line');
@@ -84,7 +84,7 @@ function getData(link){
                         td2.innerHTML = 'Ver detalhes';
                         tr.appendChild(td2);
                     }
-                    if(key == 'nascimento' || key == 'data'){
+                    if(key == 'data'){
                         td.innerHTML = date;
                     } else {
                         td.innerHTML = value;
