@@ -76,7 +76,7 @@ function urlAmigavel($string) {
 }
 
 function setNoXss($string) {
-    $string = preg_replace('/[^A-Za-zÀ-ÿ0-9-\s]+/', ' ', $string);
+    $string = preg_replace('/[^A-Za-zÀ-ÿ0-9,#-\s]+/', ' ', $string);
     $string = strtolower($string);
     return encrypt($string);
 }

@@ -12,7 +12,7 @@ justLog($__EMAIL__, $__TYPE__, 0);
     <link rel="stylesheet" href="../style/paginas.css">
     <link rel="shortcut icon" href="../img/prefeitura.png" type="image/x-icon">
 </head>
-<body onload="getActInact('eventos')">
+<body>
     <header>
         <h1 class='title-header'>Geral - Eventos</h1>
         <div class='header-in'>
@@ -44,19 +44,41 @@ justLog($__EMAIL__, $__TYPE__, 0);
                     </select>
                 </div>
                 <div class='inp-add-out'>
-                    <h3>Nascimento</h3>
-                    <input id='nascimentoAdd' type='date'/>
+                    <h3>Data</h3>
+                    <input id='dataAdd' type='date'/>
                 </div>
                 <div class='inp-add-out' style="width: calc(100%)">
                     <h3>Descrição</h3>
                     <input id='descricaoAdd' type='text' placeholder='Ex: Campeonato de vôlei estadual, apenas jogadores Sub x, trazer autorização assinada.'/>
                 </div>
             </div>
-            <button onclick='addNewData("turmas/cadastrar/turma", {
+            <button onclick='addNewData("turmas/cadastrar/evento", {
                 nome: nomeAdd.value,
-                categoria: categoriaAdd.value,
+                turma: turmaAdd.value,
+                data: (dataAdd.valueAsNumber / 1000),
+                descricao: descricaoAdd.value
+
             })' class='btn-add'>Salvar</button>
         </div>
+    </div>
+<div class="list">
+        <div class="header-list-out">
+            <h1 class="title-header">Eventos</h1>
+            <input id="searchBar" name="searchBar" placeholder="Pesquisar..">
+        </div>
+        <table class="content-list">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Turma</th>
+                    <th>Data</th>
+                    <th></th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id='tabList'></tbody>
+        </table>
+
     </div>
 
     <script>
@@ -72,7 +94,12 @@ justLog($__EMAIL__, $__TYPE__, 0);
             }
         })
     </script>
+
     <script src="../js/func.js"></script>
+
+    <script>
+        startPage("turmas/get/eventos", 'eventos');
+    </script>
     
 </body>
 </html>

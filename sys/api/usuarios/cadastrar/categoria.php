@@ -12,6 +12,7 @@ $nome = $json->nome;
 $nome = strtolower($nome);
 $nome = scapeString($__CONEXAO__, $nome);
 $nome = setNoXss($nome);
+
 checkMissing(array($nome));
 
 $_query_ = mysqli_query($__CONEXAO__, "select * from categorias where nome='$nome'");
