@@ -15,7 +15,7 @@ $descricao  = scapeString($__CONEXAO__, $json->descricao);
 
 $nome       = setNoXss($nome);
 $data       = setNum($data);
-$turma      = setNoXss($turma);
+$turma      = setNum($turma);
 $descricao  = setNoXss($descricao);
 
 checkMissing(
