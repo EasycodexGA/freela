@@ -20,8 +20,8 @@ while($dados = mysqli_fetch_array($_query_)){
         "id"            => $dados["id"], 
         "nome"          => $nome, 
         "email"         => $emailuser,
-        "status"        => $status,
         "nascimento"    => $nascimento,
+        "status"        => $status,
     );
 
     array_push($array, $arr);
