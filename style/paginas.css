@@ -258,6 +258,10 @@ header, .extra{
     text-transform: capitalize;
 }
 
+.td-email {
+    text-transform: lowercase;
+}
+
 .content-list td:first-child {
     border-left-width: 1px;
     border-radius: 5px 0 0 5px;
