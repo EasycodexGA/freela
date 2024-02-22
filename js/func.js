@@ -162,9 +162,10 @@ searchBar.addEventListener('keyup', ()=>{
         if(Number(name)){
             name = Number(name);
             name = new Date((name * 1000) + 86400000).toLocaleDateString('pt-br');
+        } else {
+            name = name.toString().toLowerCase();
         }
         console.log("name ", name);
-        name = name.toString().toLowerCase();
         if(name.includes(val)){
             document.getElementById(`key${i.id}`).classList.add('table-line');
         } else {
