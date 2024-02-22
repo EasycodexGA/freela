@@ -14,7 +14,7 @@ justLog($__EMAIL__, $__TYPE__, 2);
 </head>
 <body>
     <header>
-        <h1 class='title-header'>Geral - Professores</h1>
+        <h1 class='title-header'>Geral - Profissionais</h1>
         <div class='header-in'>
             <h2 class='sub-header'><span id="active">0</span> Ativos</h2>
             <h2 class='sub-header'><span id="inactive">0</span> Inativos</h2>
@@ -24,13 +24,13 @@ justLog($__EMAIL__, $__TYPE__, 2);
     <div class='extra'>
         <h1 class='title-header'>Funções</h1>
         <div class='header-in'>
-            <button onclick='openAdd(addProfessor)' class='funcBt'>+ Adicionar professor</button>
+            <button onclick='openAdd(addProfessor)' class='funcBt'>+ Adicionar profissional</button>
         </div>
     </div>
 
     <div id='addNew'>
         <div id='addProfessor' class='add-container'>
-            <h1 class='title-add'>Novo professor</h1>
+            <h1 class='title-add'>Novo profissional</h1>
 
             <div class='inps-add'>
                 <div class='inp-add-out'>
@@ -66,7 +66,7 @@ justLog($__EMAIL__, $__TYPE__, 2);
 
     <div class="list">
         <div class="header-list-out">
-            <h1 class="title-header">Professores</h1>
+            <h1 class="title-header">Profissionais</h1>
             <input id="searchBar" name="searchBar" placeholder="Pesquisar..">
         </div>
         <table class="content-list">
@@ -86,7 +86,7 @@ justLog($__EMAIL__, $__TYPE__, 2);
     
     <script src="../js/func.js"></script>
     <script>
-        startPage(getProfessores, 'usersprofessor');
+        startPage('usuarios/get/professores', 'usersprofessor');
     </script>
     
 </body>

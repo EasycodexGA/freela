@@ -103,7 +103,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
     <script src="../js/func.js"></script>
 
     <script>
-        startPage(getAlunos, 'usersalunos');
+        startPage('usuarios/get/alunos', 'usersalunos');
     </script>
     
 </body>

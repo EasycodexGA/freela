@@ -18,8 +18,8 @@ while($dados = mysqli_fetch_array($_query_)){
     $arr = array(
         "id"        => $dados["id"], 
         "nome"      => decrypt($nome), 
-        "status"    => $status,
-        "turmas"    => mysqli_num_rows($query)
+        "turmas"    => mysqli_num_rows($query),
+        "status"    => $status
     );
 
     array_push($array, $arr);

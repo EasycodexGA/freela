@@ -20,7 +20,7 @@ justLog($__EMAIL__, $__TYPE__, 0);
     <div class="int-main">
         <div class="left">
             <div class="left-top">
-                <div class="logo">
+                <div class="logo" onclick='openPage(`inicio`, this)'>
                     <div class="img-div">
                         <img src="img/prefeitura.png">
                     </div>
@@ -30,14 +30,16 @@ justLog($__EMAIL__, $__TYPE__, 0);
                 <div class="links">
                     <?php if(requireLevel($__TYPE__, 2)){ ?>
                         <button onclick='openPage(`categorias`, this)' id="eventosBt" class='btn'>Categorias</button>
-                        <button onclick='openPage(`professores`, this)' id="professoresBt" class="btn">Professores</button>
+                        <button onclick='openPage(`profissionais`, this)' id="professoresBt" class="btn">Profissionais</button>
                     <?php } ?>
                     <?php if(requireLevel($__TYPE__, 1)){ ?>
                         <button onclick='openPage(`alunos`, this)' id="alunosBt" class='btn'>Alunos</button>
                     <?php } ?>
                     <button onclick='openPage(`turmas`, this)' id="turmasBt" class='btn'>Turmas</button>
                     <button onclick='openPage(`eventos`, this)' id="eventosBt" class='btn'>Eventos</button>
-                    
+                    <div class='patrocinadores-div'>
+                        <!-- adicionar patrocinadores aqui -->
+                    </div>
                 </div>
             </div>
             <div class="links">
