@@ -158,7 +158,10 @@ searchBar.addEventListener('keyup', ()=>{
     let filter = selectFilter.value;
     for(let i of allbgl){
         let name = i[filter];
-
+        
+        if(Number(name)){
+            name = Number(name);
+        }
         console.log("name " + name);
         name = name.toString().toLowerCase();
         if(name.includes(val)){
