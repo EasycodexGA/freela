@@ -137,6 +137,10 @@ function createTh(arr){
     select.id = 'selectFilter';
 
     for(i of arr){
+        if(i == 'status'){
+            th2 = document.createElement('th');
+            tr.appendChild(th2);
+        }
         th = document.createElement('th');
         th.innerHTML = i;
         tr.appendChild(th);

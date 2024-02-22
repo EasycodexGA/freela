@@ -222,6 +222,7 @@ header, .extra{
 .content-list th {
     padding: 5px 15px;
     color: #929292;
+    text-transform: capitalize;
 }
 
 .content-list th:last-child {
