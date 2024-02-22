@@ -38,9 +38,12 @@ justLog($__EMAIL__, $__TYPE__, 2);
                     <input id='nomeAdd' type='text' placeholder='Sub n'/>
                 </div>
             </div>
-            <button onclick='addNewData("usuarios/cadastrar/categoria", {
-                nome: nomeAdd.value
-            })' class='btn-add'>Salvar</button>
+            <div class='out-bt-sv'>
+                <button class='btn-close' onclick='closeAdd()'>Fechar</button>
+                <button onclick='addNewData("usuarios/cadastrar/categoria", {
+                    nome: nomeAdd.value
+                })' class='btn-add'>Salvar</button>
+            </div>
         </div>
     </div>
 

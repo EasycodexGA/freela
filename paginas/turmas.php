@@ -46,10 +46,13 @@ justLog($__EMAIL__, $__TYPE__, 0);
                     </select>
                 </div>
             </div>
-            <button onclick='addNewData("turmas/cadastrar/turma", {
-                nome: nomeAdd.value,
-                categoria: categoriaAdd.value,
-            })' class='btn-add'>Salvar</button>
+            <div class='out-bt-sv'>
+                <button class='btn-close' onclick='closeAdd()'>Fechar</button>
+                <button onclick='addNewData("turmas/cadastrar/turma", {
+                    nome: nomeAdd.value,
+                    categoria: categoriaAdd.value,
+                })' class='btn-add'>Salvar</button>
+            </div>
         </div>
     </div>
     

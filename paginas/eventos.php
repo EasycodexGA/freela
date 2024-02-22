@@ -52,13 +52,16 @@ justLog($__EMAIL__, $__TYPE__, 0);
                     <input id='descricaoAdd' type='text' placeholder='Ex: Campeonato de vôlei estadual, apenas jogadores Sub x, trazer autorização assinada.'/>
                 </div>
             </div>
-            <button onclick='addNewData("turmas/cadastrar/evento", {
-                nome: nomeAdd.value,
-                turma: turmaAdd.value,
-                data: (dataAdd.valueAsNumber / 1000),
-                descricao: descricaoAdd.value
+            <div class='out-bt-sv'>
+                <button class='btn-close' onclick='closeAdd()'>Fechar</button>
+                <button onclick='addNewData("turmas/cadastrar/evento", {
+                    nome: nomeAdd.value,
+                    turma: turmaAdd.value,
+                    data: (dataAdd.valueAsNumber / 1000),
+                    descricao: descricaoAdd.value
 
-            })' class='btn-add'>Salvar</button>
+                })' class='btn-add'>Salvar</button>
+            </div>
         </div>
     </div>
 <div class="list">

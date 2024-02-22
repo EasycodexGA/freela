@@ -56,13 +56,16 @@ justLog($__EMAIL__, $__TYPE__, 1);
                     <input id='cpfAdd' type='text' placeholder='12345678900'/>
                 </div>
             </div>
-            <button onclick='addNewData("usuarios/cadastrar/aluno", {
-                nome: nomeAdd.value,
-                turma: turmaAdd.value,
-                nascimento: (nascimentoAdd.valueAsNumber / 1000),
-                email: emailAdd.value,
-                cpf: cpfAdd.value
-            })' class='btn-add'>Salvar</button>
+            <div class='out-bt-sv'>
+                <button class='btn-close' onclick='closeAdd()'>Fechar</button>
+                <button onclick='addNewData("usuarios/cadastrar/aluno", {
+                    nome: nomeAdd.value,
+                    turma: turmaAdd.value,
+                    nascimento: (nascimentoAdd.valueAsNumber / 1000),
+                    email: emailAdd.value,
+                    cpf: cpfAdd.value
+                })' class='btn-add'>Salvar</button>
+            </div>
         </div>
     </div>
 

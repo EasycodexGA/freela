@@ -126,7 +126,14 @@ header, .extra{
     background: var(--contraste2);
     border-radius: 3px;
     width: fit-content;
-    margin-left: auto;
+    cursor: pointer;
+}
+
+.btn-close{
+    padding: 5px;
+    color: var(--contraste2);
+    background: none;
+    font-size: 16px;
     cursor: pointer;
 }
 
@@ -277,4 +284,11 @@ header, .extra{
 .content-list td:nth-last-child(2){
     text-align: right;
     color: var(--contraste);
+}
+
+.out-bt-sv{
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    justify-content: flex-end;
 }
