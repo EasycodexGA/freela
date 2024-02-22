@@ -43,7 +43,6 @@ function cleanInps(){
     }
 }
 
-
 function getActInact(e){
     return fetch(`../sys/api/usuarios/get/total`,{
         method: "POST",

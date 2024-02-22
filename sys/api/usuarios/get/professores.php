@@ -3,7 +3,7 @@ include '../../../conexao.php';
 
 justLog($__EMAIL__, $__TYPE__, 1);
 
-$_query_ = mysqli_query($__CONEXAO__, "select nome, active, email, nascimento from users where typeC='1'");
+$_query_ = mysqli_query($__CONEXAO__, "select nome, active, email, nascimento, id from users where typeC='1'");
 
 $array = array();
 

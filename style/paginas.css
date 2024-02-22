@@ -259,8 +259,8 @@ header, .extra{
     text-transform: capitalize;
 }
 
-.td-email {
-    text-transform: lowercase;
+.td-email::first-letter {
+    text-transform: lowercase !important;
 }
 
 .content-list td:first-child {
