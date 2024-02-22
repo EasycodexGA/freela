@@ -161,6 +161,7 @@ searchBar.addEventListener('keyup', ()=>{
         
         if(Number(name)){
             name = Number(name);
+            name = new Date((name * 1000) + 86400000).toLocaleDateString('pt-br');
         }
         console.log("name ", name);
         name = name.toString().toLowerCase();
