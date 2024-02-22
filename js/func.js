@@ -158,7 +158,7 @@ searchBar.addEventListener('keyup', ()=>{
     let val = searchBar.value;
     let filter = selectFilter.value;
     for(let i of allbgl){
-        console.log(i[`${filter}`]);
+        console.log(i);
         let name = i[`${filter}`].toLowerCase();
         if(name.includes(val)){
             document.getElementById(`key${i.id}`).classList.add('table-line');
