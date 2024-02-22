@@ -72,15 +72,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
             <input id="searchBar" name="searchBar" placeholder="Pesquisar..">
         </div>
         <table class="content-list">
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>email</th>
-                    <th>Nascimento</th>
-                    <th></th>
-                    <th>Status</th>
-                </tr>
-            </thead>
+            <thead id='headList'></thead>
             <tbody id='tabList'></tbody>
         </table>
 
@@ -103,7 +95,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
     <script src="../js/func.js"></script>
 
     <script>
-        startPage('usuarios/get/alunos', 'usersalunos');
+        startPage('alunos');
     </script>
     
 </body>

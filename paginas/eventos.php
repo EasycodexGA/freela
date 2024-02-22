@@ -67,15 +67,7 @@ justLog($__EMAIL__, $__TYPE__, 0);
             <input id="searchBar" name="searchBar" placeholder="Pesquisar..">
         </div>
         <table class="content-list">
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Turma</th>
-                    <th>Data</th>
-                    <th></th>
-                    <th>Status</th>
-                </tr>
-            </thead>
+            <thead id='headList'></thead>
             <tbody id='tabList'></tbody>
         </table>
 
@@ -98,7 +90,7 @@ justLog($__EMAIL__, $__TYPE__, 0);
     <script src="../js/func.js"></script>
 
     <script>
-        startPage("turmas/get/eventos", 'eventos');
+        startPage('eventos');
     </script>
     
 </body>

@@ -61,6 +61,34 @@ function getActInact(e){
     })
 }
 
+const preSets = {
+    'profissionais': {
+        'link': '../sys/api/usuarios/get/professores',
+        'data': 'usersprofessor',
+        'th': ['nome', 'email', 'nascimento', 'status']
+    },
+    'alunos': {
+        'link': '../sys/api/usuarios/get/alunos',
+        'data': 'usersalunos',
+        'th': ['nome', 'email', 'nascimento', 'status']
+    },
+    'categorias': {
+        'link': '../sys/api/usuarios/get/categorias',
+        'data': 'categorias',
+        'th': ['nome', 'turmas', 'status']
+    },
+    'eventos': {
+        'link': '../sys/api/turmas/get/eventos',
+        'data': 'eventos',
+        'th': ['nome', 'turma', 'data', 'status']
+    },
+    'turmas': {
+        'link': '../sys/api/turmas/get/turmas',
+        'data': 'turmas',
+        'th': ['nome', 'categoria', 'profissionais', 'alunos', 'status']
+    }
+}
+
 let allbgl;
 
 function getData(link){
@@ -101,10 +129,32 @@ function getData(link){
     })
 }
 
+function createTh(arr){
+    tr = document.createElement('tr');
+
+    hlo = document.querySelector('.header-list-out');
+    select = document.createElement('select');
+    select.id = 'selectFilter';
+
+    for(i of arr){
+        th = document.createElement('th');
+        th.innerHTML = i;
+        tr.appendChild(th);
+
+        option = document.createElement('option');
+        option.value = i;
+        option.innerHTML = i;
+        select.appendChild(option);
+    }
+    headList.appendChild(tr);
+    hlo.appendChild(select);
+}
+
 searchBar.addEventListener('keyup', ()=>{
     let val = searchBar.value;
+    let filter = selectFilter.value;
     for(let i of allbgl){
-        let name = i.nome.toLowerCase();
+        let name = i[`${filter}`].toLowerCase();
         if(name.includes(val)){
             document.getElementById(`key${i.id}`).classList.add('table-line');
         } else {
@@ -120,8 +170,10 @@ searchBar.addEventListener('keyup', ()=>{
 
 const callFunc = (func) => func();
 
-function startPage(link, e){
+function startPage(e){
     // callFunc(func);
-    getData(link);
-    getActInact(e);
+    preset = preSets[`${e}`];
+    createTh(preset.th);
+    getData(preset.link);
+    getActInact(preset.data);
 }

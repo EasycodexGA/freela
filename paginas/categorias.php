@@ -50,21 +50,14 @@ justLog($__EMAIL__, $__TYPE__, 2);
             <input id="searchBar" name="searchBar" placeholder="Pesquisar..">
         </div>
         <table class="content-list">
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Turmas</th>
-                    <th></th>
-                    <th>Status</th>
-                </tr>
-            </thead>
+            <thead id='headList'></thead>
             <tbody id='tabList'></tbody>
         </table>
     </div>
     
     <script src="../js/func.js"></script>
     <script>
-        startPage('usuarios/get/categorias', 'categorias');
+        startPage('categorias');
     </script>
 </body>
 </html>
