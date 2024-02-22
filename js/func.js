@@ -160,7 +160,7 @@ searchBar.addEventListener('keyup', ()=>{
         console.log(i);
         let name = i[`${filter}`];
         if(i.data){
-            name == i.data ? new Date(Number(name) + 86400000).toLocaleDateString('pt-br') : name;
+            name == i.data ? new Date((Number(name) * 1000) + 86400000).toLocaleDateString('pt-br') : name;
         }
         console.log(name);
         name = name.toString().toLowerCase();
