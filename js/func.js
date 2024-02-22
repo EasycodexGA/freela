@@ -92,7 +92,7 @@ const preSets = {
 let allbgl;
 
 function getData(link){
-    return fetch(`../sys/api/${link}`)
+    return fetch(`${link}`)
     .then(e=>e.json())
     .then(e=>{
         allbgl = e.mensagem;
