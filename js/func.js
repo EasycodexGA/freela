@@ -162,7 +162,7 @@ searchBar.addEventListener('keyup', ()=>{
         if(Number(name)){
             name = Number(name);
         }
-        console.log("name " + name);
+        console.log("name ", name);
         name = name.toString().toLowerCase();
         if(name.includes(val)){
             document.getElementById(`key${i.id}`).classList.add('table-line');
