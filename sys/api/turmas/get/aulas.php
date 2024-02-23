@@ -31,6 +31,7 @@ while($dados = mysqli_fetch_array($_query_)){
     $data       = $dados["data"];
     $status     = $dados["status"];
     $categoria  = $dados["categoria"];
+    endCode($categoria, false);
 
     $status = $status == '1' ? "active" : "inactive";
 

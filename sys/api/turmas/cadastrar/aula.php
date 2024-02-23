@@ -31,8 +31,6 @@ checkMissing(
     )
 );
 
-endCode($categoria, false);
-
 $checkCat = mysqli_query($__CONEXAO__, "select id from categorias where nome='$categoria'");
 
 if(mysqli_num_rows($checkCat) == 0){
