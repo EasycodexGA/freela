@@ -6,7 +6,7 @@ justLog($__EMAIL__, $__TYPE__, 0);
 $complemento = '';
 
 if($__TYPE__ == 2){
-    $_query_ = mysqli_query($__CONEXAO__, "select * from aulas");
+    $_query_ = mysqli_query($__CONEXAO__, "select * from aulas") or die("erro");
 } else {
     $table = 'alunos';
     if($__TYPE__ == 1){
