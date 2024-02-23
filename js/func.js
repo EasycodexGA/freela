@@ -90,6 +90,10 @@ const preSets = {
         'link': '../sys/api/turmas/get/turmas',
         'data': 'turmas',
         'th': ['nome', 'categoria', 'profissionais', 'alunos', 'status']
+    },
+    'aulas': {
+        'link': '../sys/api/turmas/get/aulas',
+        'th': ['turma', 'data', 'status']
     }
 }
 

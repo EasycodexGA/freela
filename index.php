@@ -36,6 +36,7 @@ justLog($__EMAIL__, $__TYPE__, 0);
                         <button onclick='openPage(`alunos`, this)' id="alunosBt" class='btn'>Alunos</button>
                     <?php } ?>
                     <button onclick='openPage(`turmas`, this)' id="turmasBt" class='btn'>Turmas</button>
+                    <button onclick='openPage(`aulas`, this)' id="eventosBt" class='btn'>Aulas</button>
                     <button onclick='openPage(`eventos`, this)' id="eventosBt" class='btn'>Eventos</button>
                     <div class='patrocinadores-div'>
                         <!-- adicionar patrocinadores aqui -->
