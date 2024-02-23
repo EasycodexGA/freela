@@ -33,10 +33,10 @@ include "sys/conexao.php";
                     <?php } if(requireLevel($__TYPE__, 1)){ ?>
                         <button onclick='openPage(`alunos`, this)' id="alunosBt" class='btn'>Alunos</button>
                     <?php } if(requireLevel($__TYPE__, 0)){ ?>
-                    <button onclick='openPage(`turmas`, this)' id="turmasBt" class='btn'>Turmas</button>
-                    <button onclick='openPage(`aulas`, this)' id="eventosBt" class='btn'>Aulas</button>
-                    <button onclick='openPage(`eventos`, this)' id="eventosBt" class='btn'>Eventos</button>
-                    <button onclick='openPage(`configuracoes`, this)' id="config" class='btn'>Configurações</button>
+                        <button onclick='openPage(`turmas`, this)' id="turmasBt" class='btn'>Turmas</button>
+                        <button onclick='openPage(`aulas`, this)' id="eventosBt" class='btn'>Aulas</button>
+                        <button onclick='openPage(`eventos`, this)' id="eventosBt" class='btn'>Eventos</button>
+                        <button onclick='openPage(`configuracoes`, this)' id="config" class='btn'>Configurações</button>
                     <?php } else { ?>
                         <a href='login'>Login</a>
                     <?php } ?>
