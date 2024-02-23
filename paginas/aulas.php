@@ -28,15 +28,13 @@ justLog($__EMAIL__, $__TYPE__, 0);
         </div>
     </div>
 
-    <?php if(requireLevel($__TYPE__, 2)){ ?>
+    <?php if(requireLevel($__TYPE__, 1)){ ?>
     <div class='extra'>
         <h1 class='title-header'>Funções</h1>
         <div class='header-in'>
             <button onclick='openAdd(addAula)' class='funcBt'>+ Adicionar aula</button>
         </div>
     </div>
-
-    <div id='details'></div>
 
     <div id='addNew'>
         <div id='addAula' class='add-container'>
