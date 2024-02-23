@@ -93,7 +93,7 @@ const preSets = {
     },
     'aulas': {
         'link': '../sys/api/turmas/get/aulas',
-        'th': ['turma', 'data', 'status']
+        'th': ['turma', 'data']
     }
 }
 
