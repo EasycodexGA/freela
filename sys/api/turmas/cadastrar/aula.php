@@ -16,7 +16,7 @@ $turma      = setNoXss($turma);
 $descricao  = setNoXss($descricao);
 $data       = setNum($data);
 
-if(!$nome or !$descricao or $data){
+if(!$nome or !$descricao or !$data){
     endCode("Algum dado está faltando", false);
 }
 

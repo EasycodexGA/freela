@@ -61,7 +61,7 @@ justLog($__EMAIL__, $__TYPE__, 0);
                 <button onclick='addNewData("turmas/cadastrar/aula", {
                     turma: turmaAdd.value,
                     descricao: descricaoAdd.value,
-                    data: dataAdd.value
+                    data: (dataAdd.valueAsNumber / 1000)
                 })' class='btn-add'>Salvar</button>
             </div>
         </div>
