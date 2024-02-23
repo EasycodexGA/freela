@@ -11,6 +11,7 @@ justLog($__EMAIL__, $__TYPE__, 0);
     <link rel="stylesheet" href="../style/main.css">
     <link rel="stylesheet" href="../style/paginas.css">
     <link rel="shortcut icon" href="../img/prefeitura.png" type="image/x-icon">
+    <script src="../js/func.js"></script>
 </head>
 <body>
     <header>
@@ -79,7 +80,9 @@ justLog($__EMAIL__, $__TYPE__, 0);
         </table>
 
     </div>
-
+    
+    
+        
     <script>
         fetch("../sys/api/turmas/get/turmas")
         .then(e=>e.json())
@@ -95,6 +98,5 @@ justLog($__EMAIL__, $__TYPE__, 0);
 
         startPage('aulas');
     </script>
-    <script src="../js/func.js"></script>
 </body>
 </html>
