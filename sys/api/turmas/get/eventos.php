@@ -39,14 +39,11 @@ while($dados = mysqli_fetch_array($_query_)){
 
     $turma = mysqli_fetch_assoc($queryT)["nome"];
 
-    $idC = encrypt($dados["id"]);
-
     $arr = array(
         "id"        => $dados["id"], 
         "nome"      => $nome,
         "turma"     => decrypt($turma),
         "data"      => $data,
-        // "turmas"        => mysqli_num_rows($_query_),
         "status"    => $status
     );
     array_push($array, $arr);

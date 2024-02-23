@@ -24,7 +24,7 @@ if($__TYPE__ == 2){
 }
 
 $array = array();
-
+var_dump($dados);
 while($dados = mysqli_fetch_array($_query_)){
     $turmaId = decrypt($dados["turma"]);
 
@@ -33,8 +33,6 @@ while($dados = mysqli_fetch_array($_query_)){
     $queryT = mysqli_query($__CONEXAO__, "select nome from turmas where id='$turmaId'");
 
     $turma = mysqli_fetch_assoc($queryT)["nome"];
-
-    $idC = encrypt($dados["id"]);
 
     $arr = array(
         "id"        => $dados["id"], 
