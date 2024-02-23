@@ -38,6 +38,10 @@ if(mysqli_num_rows($checkCat) == 0){
 
 $data = decrypt($data);
 
+if($data > time() + (86400 * 7) or $data < time() - (86400 * 28)){
+    endCode("Data superior a 7 dias ou inferior a 28.", false);
+}
+
 $getDatas = mysqli_query($__CONEXAO__, "select id from aulas where turma='$turma' and data='$data'");
 
 if(mysqli_num_rows($getDatas) > 0){
