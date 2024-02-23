@@ -34,7 +34,6 @@ include "sys/conexao.php";
                         <button onclick='openPage(`alunos`, this)' id="alunosBt" class='btn'>Alunos</button>
                     <?php } if(requireLevel($__TYPE__, 0)){ ?>
                         <button onclick='openPage(`turmas`, this)' id="turmasBt" class='btn'>Turmas</button>
-                        <button onclick='openPage(`aulas`, this)' id="eventosBt" class='btn'>Aulas</button>
                         <button onclick='openPage(`eventos`, this)' id="eventosBt" class='btn'>Eventos</button>
                         <button onclick='openPage(`configuracoes`, this)' id="configBt" class='btn'>Configurações</button>
                     <?php } else { ?>
@@ -66,7 +65,7 @@ include "sys/conexao.php";
     </div>
 
     <script>
-        const btns = document.querySelectorAll(".btn");
+        const btns = document.querySelectorAll("button.btn");
 
         const openPage = (e, el) => {
             loading.classList.add("load-active");
