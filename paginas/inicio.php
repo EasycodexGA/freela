@@ -26,14 +26,12 @@ include "../sys/conexao.php";
         <h1 class='title-header'>Patrocinadores</h1>
 
         <div class='patrocinadores'>
+            <img src='https://www.cieesc.org.br/site/wp-content/uploads/2018/10/pomerode.jpg.webp'/>
+            <img src='https://cursostecnicostocantins.com.br/wp-content/uploads/2019/11/Logotipo-SENAI-Slogan.png'/>
+            <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Logo_Banrisul.svg/2560px-Logo_Banrisul.svg.png'/>
             <img src='https://logosmarcas.net/wp-content/uploads/2020/09/Google-Logo.png'/>
-            <img src='https://logosmarcas.net/wp-content/uploads/2020/09/Google-Logo.png'/>
-            <img src='https://logosmarcas.net/wp-content/uploads/2020/09/Google-Logo.png'/>
-            <img src='https://logosmarcas.net/wp-content/uploads/2020/09/Google-Logo.png'/>
-            <img src='https://logosmarcas.net/wp-content/uploads/2020/09/Google-Logo.png'/>
-            <img src='https://logosmarcas.net/wp-content/uploads/2020/09/Google-Logo.png'/>
-            <img src='https://logosmarcas.net/wp-content/uploads/2020/09/Google-Logo.png'/>
-            <img src='https://logosmarcas.net/wp-content/uploads/2020/09/Google-Logo.png'/>
+            <img src='https://logosmarcas.net/wp-content/uploads/2020/04/Facebook-Logo.png'/>
+            <img src='https://upload.wikimedia.org/wikipedia/commons/9/93/Flamengo-RJ_%28BRA%29.png'/>
         </div>
     </div>
 

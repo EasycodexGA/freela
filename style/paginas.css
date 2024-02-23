@@ -321,9 +321,9 @@ header, .extra{
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 15px;
+    gap: 40px;
 }
 
 .patrocinadores img{
-    width: calc(100% / 5);
+    width: calc(100% / 7);
 }
