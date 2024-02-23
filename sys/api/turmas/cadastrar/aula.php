@@ -8,16 +8,32 @@ header('Content-Type: application/json; charset=utf-8');
 $request = file_get_contents('php://input');
 $json = json_decode($request);
 
-$turma      = scapeString($__CONEXAO__, $json->turma);
+$turmaicat  = scapeString($__CONEXAO__, $json->turma);
 $descricao  = scapeString($__CONEXAO__, $json->descricao);
 $data       = scapeString($__CONEXAO__, $json->data);
 
+$turmaicat  = explode("#", $turmaicat);
+$turma      = $turmaicat[0];
+$categoria  = $turmaicat[1];
+
 $turma      = setNoXss($turma);
+$categoria  = setNoXss($categoria);
 $descricao  = setNoXss($descricao);
 $data       = setNum($data);
 
-if(!$turma or !$descricao or !$data){
-    endCode("Algum dado está faltando", false);
+checkMissing(
+    array(
+        $turma,
+        $categoria,
+        $data,
+        $descricao
+    )
+);
+
+$checkCat = mysqli_query($__CONEXAO__, "select id from categorias where nome='$categoria'");
+
+if(mysqli_num_rows($checkCat) == 0){
+    endCode("Não existe essa categoria.", false);
 }
 
 $data = decrypt($data);

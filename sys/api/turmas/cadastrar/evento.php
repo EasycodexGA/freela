@@ -10,10 +10,15 @@ $json = json_decode($request);
 
 $nome       = scapeString($__CONEXAO__, $json->nome);
 $data       = scapeString($__CONEXAO__, $json->data);
-$turma      = scapeString($__CONEXAO__, $json->turma);
+$turmaicat      = scapeString($__CONEXAO__, $json->turma);
 $descricao  = scapeString($__CONEXAO__, $json->descricao);
 
+$turmaicat  = explode("#", $turmaicat);
+$turma      = $turmaicat[0];
+$categoria  = $turmaicat[1];
+
 $nome       = setNoXss($nome);
+$categoria  = setNoXss($categoria);
 $data       = setNum($data);
 $turma      = setNum($turma);
 $descricao  = setNoXss($descricao);
@@ -21,11 +26,18 @@ $descricao  = setNoXss($descricao);
 checkMissing(
     array(
         $nome,
+        $categoria,
         $data,
         $turma,
         $descricao
     )
 );
+
+$checkCat = mysqli_query($__CONEXAO__, "select id from categorias where nome='$categoria'");
+
+if(mysqli_num_rows($checkCat) == 0){
+    endCode("Não existe essa categoria.", false);
+}
 
 $data = decrypt($data);
 

@@ -90,7 +90,7 @@ justLog($__EMAIL__, $__TYPE__, 0);
             
             for(let i of e.mensagem){
                 turmaAdd.innerHTML += `
-                    <option value='${i.id}'>${i.nome} - ${i.categoria}</option>
+                    <option value='${i.id}#${i.categoria}'>${i.nome} - ${i.categoria}</option>
                 `;
             }
         })

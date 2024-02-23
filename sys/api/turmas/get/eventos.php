@@ -29,9 +29,9 @@ while($dados = mysqli_fetch_array($_query_)){
     $nome = decrypt($dados["nome"]);
     $turmaId = decrypt($dados["turma"]);
 
-    $data = $dados["data"];
-
-    $status = $dados["active"]; 
+    $data       = $dados["data"];
+    $categoria  = $dados["categoria"];
+    $status     = $dados["active"]; 
 
     $status = $status == '1' ? "active" : "inactive";
 
@@ -43,6 +43,7 @@ while($dados = mysqli_fetch_array($_query_)){
         "id"        => $dados["id"], 
         "nome"      => $nome,
         "turma"     => decrypt($turma),
+        "categoria" => decrypt($categoria),
         "data"      => $data,
         "status"    => $status
     );
