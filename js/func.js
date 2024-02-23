@@ -84,7 +84,7 @@ const preSets = {
     'eventos': {
         'link': '../sys/api/turmas/get/eventos',
         'data': 'eventos',
-        'th': ['nome', 'turma', 'data', 'status']
+        'th': ['nome', 'turma','categoria', 'data', 'status']
     },
     'turmas': {
         'link': '../sys/api/turmas/get/turmas',
@@ -93,7 +93,7 @@ const preSets = {
     },
     'aulas': {
         'link': '../sys/api/turmas/get/aulas',
-        'th': ['turma', 'data', 'status']
+        'th': ['turma', 'categoria', 'data', 'status']
     }
 }
 

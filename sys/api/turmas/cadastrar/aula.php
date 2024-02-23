@@ -44,6 +44,6 @@ if(mysqli_num_rows($getDatas) > 0){
     endCode("Já existe uma aula para este dia.", false);
 }
 
-mysqli_query($__CONEXAO__, "insert into aulas (turma, descricao, data) values ('$turma', '$descricao', '$data')");
+mysqli_query($__CONEXAO__, "insert into aulas (turma, descricao, data, categoria) values ('$turma', '$descricao', '$data', '$categoria')");
 
 endCode("Aula criada com sucesso", true);
