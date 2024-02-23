@@ -36,9 +36,9 @@ include "sys/conexao.php";
                         <button onclick='openPage(`turmas`, this)' id="turmasBt" class='btn'>Turmas</button>
                         <button onclick='openPage(`aulas`, this)' id="eventosBt" class='btn'>Aulas</button>
                         <button onclick='openPage(`eventos`, this)' id="eventosBt" class='btn'>Eventos</button>
-                        <button onclick='openPage(`configuracoes`, this)' id="config" class='btn'>Configurações</button>
+                        <button onclick='openPage(`configuracoes`, this)' id="configBt" class='btn'>Configurações</button>
                     <?php } else { ?>
-                        <a href='login' class='btn'>Login</a>
+                        <button onclick="location.href='login'" class='btn'>Login</button>
                     <?php } ?>
                     <div class='patrocinadores-div'>
                         <!-- adicionar patrocinadores aqui -->
