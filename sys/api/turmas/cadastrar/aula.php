@@ -20,9 +20,9 @@ if(!$nome or !$descricao or $data){
     endCode("Algum dado está faltando", false);
 }
 
-$decData = decrypt($data);
+$data = decrypt($data);
 
-$getDatas = mysqli_query($__CONEXAO__, "select id from aulas where turma='$turma' and data='$decData'");
+$getDatas = mysqli_query($__CONEXAO__, "select id from aulas where turma='$turma' and data='$data'");
 
 if(mysqli_num_rows($getDatas) > 0){
     endCode("Já existe uma aula para este dia.", false);
