@@ -15,7 +15,7 @@ $data       = scapeString($__CONEXAO__, $json->data);
 $turmaicat  = explode("#", $turmaicat);
 $turma      = $turmaicat[0];
 $categoria  = $turmaicat[1];
-endCode($categoria, false);
+
 
 $turma      = setNoXss($turma);
 $categoria  = setNoXss($categoria);
@@ -30,6 +30,8 @@ checkMissing(
         $descricao
     )
 );
+
+endCode($categoria, false);
 
 $checkCat = mysqli_query($__CONEXAO__, "select id from categorias where nome='$categoria'");
 
