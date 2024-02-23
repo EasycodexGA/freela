@@ -16,7 +16,6 @@ $turmaicat  = explode("#", $turmaicat);
 $turma      = $turmaicat[0];
 $categoria  = $turmaicat[1];
 
-
 $turma      = setNoXss($turma);
 $categoria  = setNoXss($categoria);
 $descricao  = setNoXss($descricao);
@@ -36,6 +35,8 @@ $checkCat = mysqli_query($__CONEXAO__, "select id from categorias where nome='$c
 if(mysqli_num_rows($checkCat) == 0){
     endCode("Não existe essa categoria.", false);
 }
+
+endCode($categoria, false);
 
 $data = decrypt($data);
 
