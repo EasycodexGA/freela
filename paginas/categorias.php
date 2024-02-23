@@ -21,12 +21,23 @@ justLog($__EMAIL__, $__TYPE__, 2);
         </div>
     </header>
 
+    <div id='details'>
+        <div class='add-container'>
+            <div class='out-bt-sv'>
+                <button class='btn-close' onclick='closeAdd()'>Fechar</button>
+                <button onclick='javascript:void(0)' class='btn-add'>Salvar</button>
+            </div>
+        </div>
+    </div>
+
     <div class='extra'>
         <h1 class='title-header'>Funções</h1>
         <div class='header-in'>
             <button onclick='openAdd(addCategoria)' class='funcBt'>+ Adicionar Categoria</button>
         </div>
     </div>
+
+    
 
     <div id='addNew'>
         <div id='addCategoria' class='add-container'>

@@ -14,11 +14,7 @@ justLog($__EMAIL__, $__TYPE__, 0);
 </head>
 <body>
     <header>
-        <h1 class='title-header'>Geral - Turmas</h1>
-        <div class='header-in'>
-            <h2 class='sub-header'><span id="active">0</span> Ativos</h2>
-            <h2 class='sub-header'><span id="inactive">0</span> Inativos</h2>
-        </div>
+        <h1 class='title-header'>Geral - Aulas</h1>
     </header>
 
     <div id='details'>
@@ -34,42 +30,47 @@ justLog($__EMAIL__, $__TYPE__, 0);
     <div class='extra'>
         <h1 class='title-header'>Funções</h1>
         <div class='header-in'>
-            <button onclick='openAdd(addTurma)' class='funcBt'>+ Adicionar turma</button>
-            <!-- <button onclick='openAdd(addAula)' class='funcBt'>+ Adicionar aula</button> -->
+            <button onclick='openAdd(addAula)' class='funcBt'>+ Adicionar aula</button>
         </div>
     </div>
 
+    <div id='details'></div>
+
     <div id='addNew'>
-        <div id='addTurma' class='add-container'>
-            <h1 class='title-add'>Nova turma</h1>
+        <div id='addAula' class='add-container'>
+            <h1 class='title-add'>Nova aula</h1>
 
             <div class='inps-add'>
                 <div class='inp-add-out'>
-                    <h3>Nome</h3>
-                    <input id='nomeAdd' type='text' placeholder='Vôlei de praia'/>
-                </div>
-                <div class='inp-add-out'>
-                    <h3>Categorias</h3>
-                    <select id='categoriaAdd'>
+                    <h3>Turma</h3>
+                    <select id='turmaAdd'>
                         <option value=''>Nenhuma turma</option>
                     </select>
+                </div>
+                <div class='inp-add-out'>
+                    <h3>Descrição</h3>
+                    <input id='descricaoAdd'/>
+                </div>
+                <div class='inp-add-out'>
+                    <h3>Data</h3>
+                    <input id='dataAdd' type='date'/>
                 </div>
             </div>
             <div class='out-bt-sv'>
                 <button class='btn-close' onclick='closeAdd()'>Fechar</button>
-                <button onclick='addNewData("turmas/cadastrar/turma", {
-                    nome: nomeAdd.value,
-                    categoria: categoriaAdd.value,
+                <button onclick='addNewData("turmas/cadastrar/aula", {
+                    turma: turmaAdd.value,
+                    descricao: descricaoAdd.value,
+                    data: dataAdd.value
                 })' class='btn-add'>Salvar</button>
             </div>
         </div>
     </div>
-    
     <?php } ?>
-    
+
     <div class="list">
         <div class="header-list-out">
-            <h1 class="title-header">Turmas</h1>
+            <h1 class="title-header">Aulas</h1>
             <input id="searchBar" name="searchBar" placeholder="Pesquisar..">
         </div>
         <table class="content-list">
@@ -78,20 +79,21 @@ justLog($__EMAIL__, $__TYPE__, 0);
         </table>
 
     </div>
+
     <script>
-        fetch("../sys/api/usuarios/get/categorias")
+        fetch("../sys/api/turmas/get/turmas")
         .then(e=>e.json())
         .then(e=>{
             console.log(e)
             
             for(let i of e.mensagem){
-                categoriaAdd.innerHTML += `
-                    <option value='${i.nome}'>${i.nome}</option>
+                turmaAdd.innerHTML += `
+                    <option value='${i.id}'>${i.nome} - ${i.categoria}</option>
                 `;
             }
         })
 
-        startPage('turmas');
+        startPage('aulas');
     </script>
     <script src="../js/func.js"></script>
 </body>

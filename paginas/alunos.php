@@ -21,13 +21,22 @@ justLog($__EMAIL__, $__TYPE__, 1);
         </div>
     </header>
 
+    <div id='details'>
+        <div class='add-container'>
+            <div class='out-bt-sv'>
+                <button class='btn-close' onclick='closeAdd()'>Fechar</button>
+                <button onclick='javascript:void(0)' class='btn-add'>Salvar</button>
+            </div>
+        </div>
+    </div>
+
     <div class='extra'>
         <h1 class='title-header'>Funções</h1>
         <div class='header-in'>
             <button onclick='openAdd(addAluno)' class='funcBt'>+ Adicionar aluno</button>
         </div>
     </div>
-
+    
     <div id='addNew'>
         <div id='addAluno' class='add-container'>
             <h1 class='title-add'>Novo aluno</h1>
@@ -93,13 +102,9 @@ justLog($__EMAIL__, $__TYPE__, 1);
                 `;
             }
         })
-    </script>
 
-    <script src="../js/func.js"></script>
-
-    <script>
         startPage('alunos');
     </script>
-    
+    <script src="../js/func.js"></script>
 </body>
 </html>

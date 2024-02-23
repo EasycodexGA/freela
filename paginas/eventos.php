@@ -20,6 +20,15 @@ justLog($__EMAIL__, $__TYPE__, 0);
             <h2 class='sub-header'><span id="inactive">0</span> Inativos</h2>
         </div>
     </header>
+    
+    <div id='details'>
+        <div class='add-container'>
+            <div class='out-bt-sv'>
+                <button class='btn-close' onclick='closeAdd()'>Fechar</button>
+                <button onclick='javascript:void(0)' class='btn-add'>Salvar</button>
+            </div>
+        </div>
+    </div>
 
     <div class='extra'>
         <h1 class='title-header'>Funções</h1>
@@ -27,6 +36,8 @@ justLog($__EMAIL__, $__TYPE__, 0);
             <button onclick='openAdd(addEvento)' class='funcBt'>+ Adicionar evento</button>
         </div>
     </div>
+
+    
 
     <div id='addNew'>
         <div id='addEvento' class='add-container'>
@@ -91,7 +102,6 @@ justLog($__EMAIL__, $__TYPE__, 0);
     </script>
 
     <script src="../js/func.js"></script>
-
     <script>
         startPage('eventos');
     </script>

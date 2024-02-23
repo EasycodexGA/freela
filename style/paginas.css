@@ -45,7 +45,7 @@ header, .extra{
     cursor: pointer;
 }
 
-#addNew{
+#addNew, #details{
     width: 100%;
     height: 100%;
     position: fixed;
@@ -137,6 +137,11 @@ header, .extra{
     cursor: pointer;
 }
 
+.ver-detalhes{
+    color: var(--contraste);
+    cursor: pointer;
+    background: none;
+}
 
 .msg-add{
     position: fixed;

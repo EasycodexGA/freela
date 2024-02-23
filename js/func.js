@@ -1,12 +1,17 @@
 
 function openAdd(e){
+    closeAdd();
     addNew.classList.add("add-active");
+}
 
-    console.log(e)
+function openDetail(id){
+    closeAdd();
+    details.classList.add("add-active");
 }
 
 function closeAdd(){
     addNew.classList.remove("add-active");
+    details.classList.remove("add-active");
 }
 
 function addNewData(local, data){
@@ -108,7 +113,7 @@ function getData(link){
                     td.classList.add(`td-${key}`);
                     if(key == 'status'){
                         let td2 = document.createElement('td');
-                        td2.innerHTML = 'Ver detalhes';
+                        td2.innerHTML = `<button class="ver-detalhes" onclick="openDetail(${i.id})">Ver detalhes</button>`;
                         tr.appendChild(td2);
                     }
                     if(key == 'data'){
@@ -188,3 +193,4 @@ function startPage(e){
     getData(preset.link);
     getActInact(preset.data);
 }
+
