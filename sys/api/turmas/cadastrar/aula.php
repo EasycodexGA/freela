@@ -8,11 +8,11 @@ header('Content-Type: application/json; charset=utf-8');
 $request = file_get_contents('php://input');
 $json = json_decode($request);
 
-$turma       = scapeString($__CONEXAO__, $json->turma);
+$turma      = scapeString($__CONEXAO__, $json->turma);
 $descricao  = scapeString($__CONEXAO__, $json->descricao);
 $data       = scapeString($__CONEXAO__, $json->data);
 
-$turma       = setNoXss($turma);
+$turma      = setNoXss($turma);
 $descricao  = setNoXss($descricao);
 $data       = setNum($data);
 
