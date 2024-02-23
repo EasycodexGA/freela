@@ -303,3 +303,15 @@ header, .extra{
     flex-direction: row;
     justify-content: flex-end;
 }
+
+.infos{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.infos p{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
