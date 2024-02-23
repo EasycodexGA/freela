@@ -24,7 +24,7 @@ if($__TYPE__ == 2){
 }
 
 $array = array();
-var_dump($dados);
+
 while($dados = mysqli_fetch_array($_query_)){
     $turmaId = decrypt($dados["turma"]);
 
