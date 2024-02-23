@@ -23,6 +23,21 @@ include "../sys/conexao.php";
     </div>
 
     <div class='infos'>
+        <h1 class='title-header'>Patrocinadores</h1>
+
+        <div class='patrocinadores'>
+            <img src='https://logosmarcas.net/wp-content/uploads/2020/09/Google-Logo.png'/>
+            <img src='https://logosmarcas.net/wp-content/uploads/2020/09/Google-Logo.png'/>
+            <img src='https://logosmarcas.net/wp-content/uploads/2020/09/Google-Logo.png'/>
+            <img src='https://logosmarcas.net/wp-content/uploads/2020/09/Google-Logo.png'/>
+            <img src='https://logosmarcas.net/wp-content/uploads/2020/09/Google-Logo.png'/>
+            <img src='https://logosmarcas.net/wp-content/uploads/2020/09/Google-Logo.png'/>
+            <img src='https://logosmarcas.net/wp-content/uploads/2020/09/Google-Logo.png'/>
+            <img src='https://logosmarcas.net/wp-content/uploads/2020/09/Google-Logo.png'/>
+        </div>
+    </div>
+
+    <div class='infos'>
         <h1 class='title-header'>Endereço</h1>
         <p>
             <span>Secretaria de Eventos, Esporte e Lazer</span>
@@ -42,12 +57,6 @@ include "../sys/conexao.php";
         </p>
     </div>
 
-    <div class='infos'>
-        <h1 class='title-header'>Patrocinadores</h1>
-
-        <div class='patrocinadores'>
-        
-        </div>
-    </div>
+    
 </body>
 </html>

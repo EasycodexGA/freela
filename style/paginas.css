@@ -315,3 +315,15 @@ header, .extra{
     flex-direction: column;
     gap: 5px;
 }
+
+.patrocinadores{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.patrocinadores img{
+    width: calc(100% / 5);
+}
