@@ -36,8 +36,6 @@ if(mysqli_num_rows($checkCat) == 0){
     endCode("Não existe essa categoria.", false);
 }
 
-endCode($categoria, false);
-
 $data = decrypt($data);
 
 $getDatas = mysqli_query($__CONEXAO__, "select id from aulas where turma='$turma' and data='$data'");
