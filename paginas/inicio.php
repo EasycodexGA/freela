@@ -31,7 +31,6 @@ include "../sys/conexao.php";
             <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Logo_Banrisul.svg/2560px-Logo_Banrisul.svg.png'/>
             <img src='https://logosmarcas.net/wp-content/uploads/2020/09/Google-Logo.png'/>
             <img src='https://logosmarcas.net/wp-content/uploads/2020/04/Facebook-Logo.png'/>
-            <img src='https://upload.wikimedia.org/wikipedia/commons/9/93/Flamengo-RJ_%28BRA%29.png'/>
         </div>
     </div>
 
