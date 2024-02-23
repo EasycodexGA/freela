@@ -29,6 +29,9 @@ while($dados = mysqli_fetch_array($_query_)){
     $turmaId = decrypt($dados["turma"]);
 
     $data = $dados["data"];
+    $status = $dados["status"];
+
+    $status = $status == '1' ? "active" : "inactive";
 
     $queryT = mysqli_query($__CONEXAO__, "select nome from turmas where id='$turmaId'");
 
@@ -37,7 +40,8 @@ while($dados = mysqli_fetch_array($_query_)){
     $arr = array(
         "id"        => $dados["id"], 
         "turma"     => decrypt($turma),
-        "data"      => $data
+        "data"      => $data,
+        "status"    => $status
     );
     array_push($array, $arr);
 }
