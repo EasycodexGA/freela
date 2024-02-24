@@ -25,6 +25,20 @@ justLog($__EMAIL__, $__TYPE__, 0);
     <div id='details'>
         <div class='add-container'>
             <h1 class='title-add'>Detalhes</h1>
+            <div class='inps-add'>
+                <div class='inp-add-out'>
+                    <h3>Nome</h3>
+                    <p id='nomeGet' type='text'>-- -- --</p>
+                </div>
+                <div class='inp-add-out'>
+                    <h3>Data</h3>
+                    <p id='dataGet' type='text'>-- -- --</p>
+                </div>
+            </div>
+            <div class='inps-add'>
+                <h3>Descrição</h3>
+                <p id='descGet' type='text'>-- -- --</p>
+            </div>
             <div class='out-bt-sv'>
                 <button class='btn-close' onclick='closeAdd()'>Fechar</button>
                 <button onclick='javascript:void(0)' class='btn-add'>Salvar</button>

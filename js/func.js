@@ -4,9 +4,10 @@ function openAdd(e){
     addNew.classList.add("add-active");
 }
 
-function openDetail(id){
+function openDetail(cat, id){
     closeAdd();
     details.classList.add("add-active");
+    getDetails(cat, id);
 }
 
 function closeAdd(){
@@ -198,3 +199,6 @@ function startPage(e){
     getActInact(preset.data);
 }
 
+function getDetails(cat, id){
+    console.log(cat, id)
+}
