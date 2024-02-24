@@ -117,7 +117,7 @@ function getData(link){
                     td.classList.add(`td-${key}`);
                     if(key == 'status'){
                         let td2 = document.createElement('td');
-                        td2.innerHTML = `<button class="ver-detalhes" onclick="openDetail(${i._name}, ${i.id})">Ver detalhes</button>`;
+                        td2.innerHTML = `<button class="ver-detalhes" onclick="openDetail('${i._name}', ${i.id})">Ver detalhes</button>`;
                         tr.appendChild(td2);
                     }
                     if(key == 'data'){
