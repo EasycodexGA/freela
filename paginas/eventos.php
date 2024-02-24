@@ -35,7 +35,7 @@ justLog($__EMAIL__, $__TYPE__, 0);
                     <p id='dataGet' type='text'>-- -- --</p>
                 </div>
             </div>
-            <div class='inps-add'>
+            <div class="inp-add-out" style="width: calc(100%)">
                 <h3>Descrição</h3>
                 <p id='descGet' type='text'>-- -- --</p>
             </div>
