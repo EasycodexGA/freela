@@ -46,6 +46,13 @@ justLog($__EMAIL__, $__TYPE__, 2);
                     <h3>CPF</h3>
                     <p id='cpfGet' type='text'>-- -- --</p>
                 </div>
+                <div class="inp-add-out" style="width: calc(100%)">
+                    <h3>Foto</h3>
+                    <div class='img-out-dt'>
+                        <img src=''>
+                    </div>
+                    <span>Clique na foto para alterar</span>
+                </div>
             </div>
             <div class='out-bt-sv'>
                 <button class='btn-close' onclick='closeAdd()'>Fechar</button>
