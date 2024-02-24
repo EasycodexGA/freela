@@ -19,7 +19,7 @@ include "sys/conexao.php";
     <div class="int-main">
         <div class="left">
             <div class="left-top">
-                <div class="logo" onclick='openPage(`inicio`, this)'>
+                <div class="logo" style='background: none!important' onclick='openPage(`inicio`, this)'>
                     <div class="img-div">
                         <img src="img/prefeitura.png">
                     </div>
