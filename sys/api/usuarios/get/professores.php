@@ -22,7 +22,7 @@ while($dados = mysqli_fetch_array($_query_)){
         "email"         => $emailuser,
         "data"          => $nascimento,
         "status"        => $status,
-        "_name"         => "professores"
+        "_name"         => "profissionais"
     );
 
     array_push($array, $arr);
