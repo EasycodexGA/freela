@@ -49,7 +49,7 @@ justLog($__EMAIL__, $__TYPE__, 2);
                 <div class="inp-add-out" style="width: calc(100%)">
                     <h3>Foto</h3>
                     <div class='img-out-dt'>
-                        <img src=''>
+                        <img src='../img/default.webp'>
                     </div>
                     <h3>Clique na foto acima para alterar</h3>
                 </div>
