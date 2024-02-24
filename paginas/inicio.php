@@ -41,7 +41,8 @@ include "../sys/conexao.php";
             <button onclick='openAdd(addProfessor)' class='funcBt'>+ Adicionar patrocinador</button>
         </div>
     </div>
-
+    <div id='details'>
+    </div>
     <div id='addNew'>
         <div id='addProfessor' class='add-container'>
             <h1 class='title-add'>Novo patrocinador</h1>

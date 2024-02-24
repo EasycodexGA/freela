@@ -11,8 +11,8 @@ function openDetail(cat, id){
 }
 
 function closeAdd(){
-    if(addNew) addNew.classList.remove("add-active");
-    if(details) details.classList.remove("add-active");
+    addNew.classList.remove("add-active");
+    details.classList.remove("add-active");
 }
 
 function addNewData(local, data){
