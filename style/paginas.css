@@ -338,7 +338,7 @@ header, .extra{
     cursor: pointer;
 }
 
-.img-out-dt:hover .img-out-dt img{
+.img-out-dt:hover > img{
     opacity: .8;
 }
 
