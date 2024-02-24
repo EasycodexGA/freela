@@ -28,6 +28,7 @@
     flex-direction: column;
     align-items: center;
     gap: 5px;
+    background: none!important;
 }
 
 .img-div {
@@ -70,8 +71,8 @@
 }
 
 .link-active {
-    background: #FFF!important;
-    color: #333!important;
+    background: #FFF;
+    color: #333;
 }
 
 .left-bottom {
