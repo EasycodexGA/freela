@@ -43,7 +43,7 @@ cantLog($__EMAIL__);
 
         <div id="verifyDiv" class="login-box">
             <div class="inputDiv">
-                <p class="spanLog" id="responseVerify"></p>
+                <p class="spanLog" id="responseVerify">Código de verificação</p>
                 <input id="verifyCode" name="verifyCode">
             </div>
             <div class="inputDiv">

@@ -311,6 +311,10 @@ header, .extra{
 }
 
 .infos p{
+    max-width: 1000px;
+}
+
+.infos p{
     display: flex;
     flex-direction: column;
     gap: 5px;

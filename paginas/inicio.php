@@ -10,6 +10,7 @@ include "../sys/conexao.php";
     <link rel="stylesheet" href="../style/main.css">
     <link rel="stylesheet" href="../style/paginas.css">
     <link rel="shortcut icon" href="../img/prefeitura.png" type="image/x-icon">
+    <script src="../js/func.js"></script>
 </head>
 <body>
     <header>
@@ -34,16 +35,38 @@ include "../sys/conexao.php";
         </div>
     </div>
 
-    <div class='infos'>
-        <h1 class='title-header'>Endereço</h1>
-        <p>
-            <span>Secretaria de Eventos, Esporte e Lazer</span>
-            <span>Endereço: Av. 21 de Janeiro - 2700</span>
-            <span>Pomerode - SC</span>
-            <span>Telefone(s): (47) 3387-2612</span>
-            <span>E-mail: seel@pomerode.sc.gov.br</span>
-        </p>
+    <?php if(requireLevel($__TYPE__, 2)){ ?>
+    <div class='extra'>
+        <div class='header-in'>
+            <button onclick='openAdd(addProfessor)' class='funcBt'>+ Adicionar patrocinador</button>
+        </div>
     </div>
+
+    <div id='addNew'>
+        <div id='addProfessor' class='add-container'>
+            <h1 class='title-add'>Novo patrocinador</h1>
+
+            <div class='inps-add'>
+                <div class='inp-add-out'>
+                    <h3>Nome</h3>
+                    <input id='nomeAdd' type='text' placeholder='Fulano da silva'/>
+                </div>
+                <div class='inp-add-out'>
+                    <h3>Imagem</h3>
+                    <input id='imagemAdd' type='file' placeholder='Nova imagem' accept="image/png, image/jpeg"/>
+                </div>
+                
+            </div>
+            <div class='out-bt-sv'>
+                <button class='btn-close' onclick='closeAdd()'>Fechar</button>
+                <button onclick='addNewData("", {
+
+                })' class='btn-add'>Salvar</button>
+            </div>
+        </div>
+    </div>
+
+    <?php } ?>
 
     <div class='infos'>
         <h1 class='title-header'>Contato</h1>
@@ -53,6 +76,20 @@ include "../sys/conexao.php";
             <span>lucianor.menegaz@gmail.com</span>
         </p>
     </div>
+
+    <div class='infos'>
+        <h1 class='title-header'>Endereço</h1>
+        <p>
+            <span>Ginasio Ralf Knaesel</span>
+            <span>Secretaria de Eventos, Esporte e Lazer</span>
+            <span>Endereço: Av. 21 de Janeiro - 2700</span>
+            <span>Pomerode - SC</span>
+            <span>Telefone(s): (47) 3387-2612</span>
+            <span>E-mail: seel@pomerode.sc.gov.br</span>
+        </p>
+    </div>
+
+    
 
     
 </body>
