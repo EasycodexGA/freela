@@ -21,6 +21,7 @@ while($dados = mysqli_fetch_array($_query_)){
     $arr = array(
         "id"        => $dados["id"], 
         "data"      => $data,
+        "_name"     => "aulas"
     );
     array_push($array, $arr);
 }

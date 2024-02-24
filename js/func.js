@@ -112,12 +112,12 @@ function getData(link){
             tr.classList.add('table-line');
             tr.id = `key${i.id}`;
             for(const [key, value] of Object.entries(i)){
-                if(key != 'id'){
+                if(key != 'id' && key != '_name'){
                     let td = document.createElement('td');
                     td.classList.add(`td-${key}`);
                     if(key == 'status'){
                         let td2 = document.createElement('td');
-                        td2.innerHTML = `<button class="ver-detalhes" onclick="openDetail(${i.id})">Ver detalhes</button>`;
+                        td2.innerHTML = `<button class="ver-detalhes" onclick="openDetail(${i._name}, ${i.id})">Ver detalhes</button>`;
                         tr.appendChild(td2);
                     }
                     if(key == 'data'){

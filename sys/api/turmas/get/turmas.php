@@ -44,7 +44,8 @@ while($dados = mysqli_fetch_array($_query_)){
         "categoria"     => $categoria,
         "profissionais" => mysqli_num_rows($query2),
         "alunos"        => mysqli_num_rows($query),
-        "status"        => $status
+        "status"        => $status,
+        "_name"         => "turmas"
     );
     array_push($array, $arr);
 }

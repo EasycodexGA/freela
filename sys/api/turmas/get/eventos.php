@@ -45,7 +45,8 @@ while($dados = mysqli_fetch_array($_query_)){
         "turma"     => decrypt($turma),
         "categoria" => decrypt($categoria),
         "data"      => $data,
-        "status"    => $status
+        "status"    => $status,
+        "_name"     => "eventos"
     );
     array_push($array, $arr);
 }
