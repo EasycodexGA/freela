@@ -31,11 +31,24 @@ while($dados = mysqli_fetch_array($_query_)){
 
     $arrTurmas = array();
 
-    while($dados2 = mysqli_fetch_array($query)){
+    while($dados2 = mysqli_fetch_array($query2)){
         $turmaId    = decrypt($dados2['turma']);
         $query3     = mysqli_query($__CONEXAO__, "select * from turmas where id='$turmaId'");
         $turma      = mysqli_fetch_assoc($query3)['nome'];
         array_push($arrTurmas, array("nome"=>decrypt($turma), "id"=>$turmaId));
+    }
+
+    $query3 = mysqli_query($__CONEXAO__, "select * from chamada where aluno='$aluno'");
+
+    $presencaArr = array("v"=>0, "f"=>0);
+    
+    while($dados3 = mysqli_fetch_array($query3)){
+        $presenca = $dados3["presenca"];
+        if($presenca == 0){
+            $presencaArr=>f = $presencaArr=>f + 1;
+        } else {
+            $presencaArr=>v = $presencaArr=>v + 1;
+        }
     }
     
     $query  = mysqli_query($__CONEXAO__, "select * from eventos where nome='$nome'");
@@ -46,6 +59,7 @@ while($dados = mysqli_fetch_array($_query_)){
         "cpf"           => $cpf,
         "nascimento"    => $nascimento,
         "turmas"        => $arrTurmas,
+        "presenca"      => $presencaArr,
         "status"        => $status
     );
     array_push($array, $arr);

@@ -33,7 +33,7 @@ while($dados = mysqli_fetch_array($_query_)){
 
     $arrTurmas = array();
 
-    while($dados2 = mysqli_fetch_array($query)){
+    while($dados2 = mysqli_fetch_array($query2)){
         $turmaId    = decrypt($dados2['turma']);
         $query3     = mysqli_query($__CONEXAO__, "select * from turmas where id='$turmaId'");
         $turma      = mysqli_fetch_assoc($query3)['nome'];
