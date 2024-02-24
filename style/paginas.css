@@ -326,3 +326,11 @@ header, .extra{
 .patrocinadores img{
     width: calc(100% / 7);
 }
+
+.img-out-dt{
+    width: 30%;
+    aspect-ratio: 1;
+    background: #c7c7c7;
+    border-radius: 100%;
+    max-width: 180px;
+}
