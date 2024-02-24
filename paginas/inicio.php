@@ -50,7 +50,7 @@ include "../sys/conexao.php";
             <div class='inps-add'>
                 <div class='inp-add-out'>
                     <h3>Nome</h3>
-                    <input id='nomeAdd' type='text' placeholder='Fulano da silva'/>
+                    <input id='nomeAdd' type='text' placeholder='Marca patrocinadora'/>
                 </div>
                 <div class='inp-add-out'>
                     <h3>Imagem</h3>
