@@ -41,7 +41,7 @@ if(mysqli_num_rows($checkCat) == 0){
 
 $data = decrypt($data);
 
-if($data < time()){
+if($data < time() - (86400 * 2)){
     endCode("Essa data já passou!", false);
 }
 
