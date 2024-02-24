@@ -39,6 +39,14 @@ justLog($__EMAIL__, $__TYPE__, 0);
                 <h3>Descrição</h3>
                 <p id='descGet' type='text'>-- -- --</p>
             </div>
+            <div class="inp-add-out" style="width: calc(100%)">
+                <h3>Turmas</h3>
+                <div id='turmasGet' type='text'>
+                    <p type='text'>-- -- --</p>
+                    <p type='text'>-- -- --</p>
+                    <p type='text'>-- -- --</p>
+                </div>
+            </div>
             <div class='out-bt-sv'>
                 <button class='btn-close' onclick='closeAdd()'>Fechar</button>
                 <button onclick='javascript:void(0)' class='btn-add'>Salvar</button>

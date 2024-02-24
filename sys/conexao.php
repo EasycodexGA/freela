@@ -160,6 +160,25 @@ function stopUserExistnt($__CONEXAO__, $string){
 }
 
 
+function checkTurma($idTurma, $string, $add){
+    $table = 'alunos';
+    if($__TYPE__ == 1){
+        $table = 'professores';
+    }
+    $query = mysqli_query($__CONEXAO__, "select * from $table where email='$__EMAIL__'");
+    $turmas = array();
+    while($getQuery = mysqli_fetch_array($query)){
+        $value = $getQuery['turma'];
+        $valuedec = decrypt($value);
+        array_push($turmas, $valuedec);
+    }
+    if(!in_array($idTurma, $turmas)){
+        endCode($string, false);
+    }
+    $_query_ = mysqli_query($__CONEXAO__, "select * from $add");
+}
+
+
 // types user
 // type 0 - aluno
 // type 1 - Professor

@@ -13,10 +13,10 @@ justLog($__EMAIL__, $__TYPE__, 0);
     <link rel="shortcut icon" href="../img/prefeitura.png" type="image/x-icon">
 </head>
 <body>
-    <header>
-        <h1 class='title-header'>Configurações</h1>
-    </header>
-
+    <h1 class='title-header'>Sua foto</h1>
+    <div class=''>
+        
+    </div>
     
 </body>
 </html>

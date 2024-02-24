@@ -51,7 +51,6 @@ justLog($__EMAIL__, $__TYPE__, 2);
                     <div class='img-out-dt'>
                         <img src='../img/default.webp'>
                     </div>
-                    <h3>Clique na foto acima para alterar</h3>
                 </div>
             </div>
             <div class='out-bt-sv'>
