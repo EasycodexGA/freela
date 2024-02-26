@@ -1,5 +1,3 @@
-addNew = false;
-
 function openAdd(e){
     closeAdd();
     addNew.classList.add("add-active");
