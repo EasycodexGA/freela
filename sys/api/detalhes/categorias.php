@@ -18,6 +18,7 @@ $array = array();
 
 while($dados = mysqli_fetch_array($_query_)){
     $nome   = $dados["nome"];
+    echo $nome;
     $status = $dados["active"];
 
     $status = $status == '1' ? "active" : "inactive";
