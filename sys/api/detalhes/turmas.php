@@ -39,6 +39,7 @@ while($_dados_ = mysqli_fetch_array($_query_)){
     $arrProf = array();
 
     while($dados = mysqli_fetch_array($query)){
+        echo $dados['nome'];
         $nomeA = decrypt($dados['nome']);
         array_push($arrAlunos, array("nome"=>$nomeA));
     }
