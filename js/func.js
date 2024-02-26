@@ -207,8 +207,10 @@ function getDetails(cat, id){
     .then(e=>e.json())
     .then(e=>{
         i = e.mensagem[0];
-        let date = new Date(i.data * 1000 + 86400000);
-        i.data = date.toLocaleDateString("pt-BR");
+        if(i.data){
+            let date = new Date(i.data * 1000 + 86400000);
+            i.data = date.toLocaleDateString("pt-BR");
+        }
         for(const [key, value] of Object.entries(i)){
         console.log(key, value);
         }
