@@ -7,21 +7,11 @@ $turma  = scapeString($__CONEXAO__, $_GET['id']);
 $turma = setNum($turma);
 $decTurma = decrypt($turma);
 
-if($__TYPE__ == 2){
+if($__TYPE__ == 3){
     $_query_ = mysqli_query($__CONEXAO__, "select * from turmas where id='$decTurma'");
 } else {
-    $complement = $__TYPE__ == 1 ? 'alunos' : 'professores';
-    $check = mysqli_connect($__CONEXAO__, "select * from $complement where email='$__EMAIL__ and turma='$turma'");
-    if(mysqli_num_rows($check) > 0){
-        $_query_ = mysqli_query($__CONEXAO__, "select * from turmas where id='$decTurma'");
-    } else {
-        endCode('Você não está nessa turma.', false);
-    }
+    checkTurma($decTurma, "Você não está nessa turma.", "turmas where id='$decTurma'");
 }
-
-// else {
-//     checkTurma($decTurma, "Você não está nessa turma.", "turmas where id='$decTurma'");
-// }
 
 $array = array();
 
