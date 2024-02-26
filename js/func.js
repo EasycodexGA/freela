@@ -203,7 +203,7 @@ function startPage(e){
 }
 
 function getDetails(cat, id){
-    jump = ['id', 'turmas', 'status', 'imagem', 'presenca'];
+    jump = ['id', 'turmas', 'status', 'imagem'];
     return fetch(`../sys/api/detalhes/${cat}?id=${id}`)
     .then(e=>e.json())
     .then(e=>{
@@ -215,10 +215,6 @@ function getDetails(cat, id){
         for(const [key, value] of Object.entries(i)){
             if(!jump.includes(key)){
                 document.getElementById(`${key}Get`).innerHTML = value;
-            }
-            if(key == 'presenca'){
-                presencasGet.innerHTML = value.v
-                faltasGet.innerHTML = value.f
             }
         }
     })
