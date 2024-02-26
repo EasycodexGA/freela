@@ -25,17 +25,14 @@ while($_dados_ = mysqli_fetch_array($_query_)){
 
     $email = decrypt($email);
 
-    $imagem         = mysqli_fetch_assoc($query)["imagem"];
-    $titularidade   = mysqli_fetch_assoc($query)["titularidade"];
-    $imagem         = decrypt($imagem);
-    $titularidade   = decrypt($titularidade);
-
     $arrTurmas = array();
 
     while($dados = mysqli_fetch_array($query)){
-        $turmaId    = decrypt($dados['turma']);
-        $query2     = mysqli_query($__CONEXAO__, "select * from turmas where id='$turmaId'");
-        $turma      = mysqli_fetch_assoc($query2)['nome'];
+        $titularidade   = decrypt($dados['titularidade']);
+        $imagem         = decrypt($dados['imagem']);
+        $turmaId        = decrypt($dados['turma']);
+        $query2         = mysqli_query($__CONEXAO__, "select * from turmas where id='$turmaId'");
+        $turma          = mysqli_fetch_assoc($query2)['nome'];
         array_push($arrTurmas, array("nome"=>decrypt($turma), "id"=>$turmaId));
     }
 
