@@ -134,7 +134,7 @@ function getData(link){
             tabList.appendChild(tr)
         }
         tabList.innerHTML += "<tr class='empty-line table-line2' id='notData'><td></td><td style='text-align: center'>Nenhum dado encontrado</td><td></td></tr>";
-        
+
         if(tabList.querySelectorAll('.table-line').length > 0){
             notData.classList.remove('table-line2');
         }
@@ -207,11 +207,12 @@ function getDetails(cat, id){
     return fetch(`../sys/api/detalhes/${cat}`)
     .then(e=>e.json())
     .then(e=>{
+        console.log(e.mensagem);
         i = e.mensagem[0];
-            let date = new Date(i.data * 1000 + 86400000);
-            i.data = date.toLocaleDateString("pt-BR");
-            for(const [key, value] of Object.entries(i)){
-            console.log(key, value);
-        }
+        // let date = new Date(i.data * 1000 + 86400000);
+        // i.data = date.toLocaleDateString("pt-BR");
+        // for(const [key, value] of Object.entries(i)){
+        // console.log(key, value);
+        // }
     })
 }
