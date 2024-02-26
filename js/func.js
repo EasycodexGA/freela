@@ -204,7 +204,7 @@ function startPage(e){
 
 function getDetails(cat, id){
     console.log(cat, id)
-    return fetch(`../sys/api/detalhes/${cat}`)
+    return fetch(`../sys/api/detalhes/${cat}?id=${id}`)
     .then(e=>e.json())
     .then(e=>{
         console.log(e.mensagem);
