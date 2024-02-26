@@ -31,7 +31,6 @@ if(mysqli_num_rows($_query_) < 1){
     $__ID__ = $__ASSOC__['id'];
     $__TYPE__ = $__ASSOC__['typeC'];
     $__ACTIVE__ = $__ASSOC__['active'];
-    echo $__TYPE__;
 
     if($__ACTIVE__ == "0"){
         endCode("Sua conta está inativa, peça para um administrador reativar", false);
@@ -132,7 +131,7 @@ function justLog($__EMAIL__, $__TYPE__, $type){
 
 
 function requireLevel($__TYPE__, $type){
-    if($__TYPE__ < $type or !$__TYPE__){
+    if($__TYPE__ < $type){
         echo $__TYPE__, $type;
         return false;
     }
