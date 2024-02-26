@@ -49,13 +49,13 @@ while($dados = mysqli_fetch_array($_query_)){
     $query  = mysqli_query($__CONEXAO__, "select * from eventos where nome='$nome'");
 
     $arr = array(
-        "id"            => $decAluno,
-        "nome"          => $nome, 
-        "cpf"           => $cpf,
-        "nascimento"    => $nascimento,
-        "turmas"        => $arrTurmas,
-        "presenca"      => $presencaArr,
-        "status"        => $status
+        "id"        => $decAluno,
+        "nome"      => $nome, 
+        "cpf"       => $cpf,
+        "data"      => $nascimento,
+        "turmas"    => $arrTurmas,
+        "presenca"  => $presencaArr,
+        "status"    => $status
     );
     array_push($array, $arr);
 }

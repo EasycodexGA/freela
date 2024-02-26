@@ -23,8 +23,10 @@ while($_dados_ = mysqli_fetch_array($_query_)){
 
     $dados = mysqli_fetch_assoc($query);
 
-    $imagem         = decrypt($dados["imagem"]);
-    $titularidade   = decrypt($dados["titularidade"]);
+    $imagem         = mysqli_fetch_assoc($query)["imagem"];
+    $titularidade   = mysqli_fetch_assoc($query)["titularidade"];
+    $imagem         = decrypt($imagem);
+    $titularidade   = decrypt($titularidade);
 
     $arrTurmas = array();
 
@@ -42,7 +44,7 @@ while($_dados_ = mysqli_fetch_array($_query_)){
         "email"         => $email,
         "cpf"           => $cpf,
         "imagem"        => $imagem,
-        "nascimento"    => $nascimento,
+        "data"          => $nascimento,
         "turmas"        => $arrTurmas,
         "status"        => $status
     );
