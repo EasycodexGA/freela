@@ -38,16 +38,16 @@ while($_dados_ = mysqli_fetch_array($_query_)){
     $arrAlunos = array();
     $arrProf = array();
 
-    while($dados = mysqli_fetch_array($query)){
-        $nomeA = decrypt($dados['nome']);
-        array_push($arrAlunos, array("nome"=>$nomeA));
-    }
+    // while($dados = mysqli_fetch_array($query)){
+    //     $nomeA = decrypt($dados['nome']);
+    //     array_push($arrAlunos, array("nome"=>$nomeA));
+    // }
 
-    while($dados2 = mysqli_fetch_array($query2)){
-        $nomeP = decrypt($dados2['nome']);
-        $imagem = decrypt($dados2['imagem']);
-        array_push($arrProf, array("nome"=>$nomeP, "imagem"=>$imagem));
-    }
+    // while($dados2 = mysqli_fetch_array($query2)){
+    //     $nomeP = decrypt($dados2['nome']);
+    //     $imagem = decrypt($dados2['imagem']);
+    //     array_push($arrProf, array("nome"=>$nomeP, "imagem"=>$imagem));
+    // }
 
     $arr = array(
         "id"                => $decTurma,
