@@ -44,7 +44,7 @@ justLog($__EMAIL__, $__TYPE__, 0);
                 </div>
                 <div class='inp-add-out'>
                     <h3>Horário</h3>
-                    <p id='horarioGet' type='text'>-- -- --</p>
+                    <p id='dataGet' type='text'>-- -- --</p>
                 </div>
             </div>
             <div class='out-bt-sv'>
