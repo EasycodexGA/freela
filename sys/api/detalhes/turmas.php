@@ -7,36 +7,46 @@ $turma  = scapeString($__CONEXAO__, $_GET['id']);
 $turma = setNum($turma);
 $decTurma = decrypt($turma);
 
+
+
 if($__TYPE__ == 2){
     $_query_ = mysqli_query($__CONEXAO__, "select * from turmas where id='$decTurma'");
 } else {
-    checkTurma($decTurma, "Você não está nessa turma.", "turmas where id='$decTurma'");
+    $complement = $__TYPE__ == 0 ? 'alunos' : 'professores'
+    $check = mysqli_connect($__CONEXAO__, "select * from $complement where email='$__EMAIL__ and turma='$turma'");
+    if(mysqli_num_rows($check) > 0){
+        $_query_ = mysqli_query($__CONEXAO__, "select * from turmas where id='$decTurma'");
+    } else {
+        endCode('Você não está nessa turma.', false);
+    }
 }
+
+// else {
+//     checkTurma($decTurma, "Você não está nessa turma.", "turmas where id='$decTurma'");
+// }
 
 $array = array();
 
-while($dados = mysqli_fetch_array($_query_)){
-    $nome       = decrypt($dados["nome"]);
-    $categoria  = decrypt($dados["categoria"]);
-    $idC        = encrypt($dados["id"]);
-    $status     = $dados["active"];
-
-    $status = $status == '1' ? "active" : "inactive";
+while($_dados_ = mysqli_fetch_array($_query_)){
+    $nome       = decrypt($_dados_["nome"]);
+    $categoria  = decrypt($_dados_["categoria"]);
+    $status     = $_dados_["active"];
+    $status     = $status == '1' ? "active" : "inactive";
     
-    $query = mysqli_query($__CONEXAO__, "select * from alunos where turma='$idC'");
-    $query2 = mysqli_query($__CONEXAO__, "select * from professores where turma='$idC'");
+    $query = mysqli_query($__CONEXAO__, "select * from alunos where turma='$turma'");
+    $query2 = mysqli_query($__CONEXAO__, "select * from professores where turma='$turma'");
 
     $arrAlunos = array();
     $arrProf = array();
 
-    while($dados2 = mysqli_fetch_array($query)){
-        $nome = decrypt($dados2['nome']);
+    while($dados = mysqli_fetch_array($query)){
+        $nome = decrypt($dados['nome']);
         array_push($arrAlunos, array("nome"=>$nome));
     }
 
-    while($dados3 = mysqli_fetch_array($query2)){
-        $nome = decrypt($dados3['nome']);
-        $imagem = decrypt($dados3['imagem']);
+    while($dados2 = mysqli_fetch_array($query2)){
+        $nome = decrypt($dados2['nome']);
+        $imagem = decrypt($dados2['imagem']);
         array_push($arrProf, array("nome"=>$nome, "imagem"=>$imagem));
     }
 
