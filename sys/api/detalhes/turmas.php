@@ -7,8 +7,6 @@ $turma  = scapeString($__CONEXAO__, $_GET['id']);
 $turma = setNum($turma);
 $decTurma = decrypt($turma);
 
-
-
 if($__TYPE__ == 2){
     $_query_ = mysqli_query($__CONEXAO__, "select * from turmas where id='$decTurma'");
 } else {
@@ -41,14 +39,14 @@ while($_dados_ = mysqli_fetch_array($_query_)){
     $arrProf = array();
 
     while($dados = mysqli_fetch_array($query)){
-        $nome = decrypt($dados['nome']);
-        array_push($arrAlunos, array("nome"=>$nome));
+        $nomeA = decrypt($dados['nome']);
+        array_push($arrAlunos, array("nome"=>$nomeA));
     }
 
     while($dados2 = mysqli_fetch_array($query2)){
-        $nome = decrypt($dados2['nome']);
+        $nomeP = decrypt($dados2['nome']);
         $imagem = decrypt($dados2['imagem']);
-        array_push($arrProf, array("nome"=>$nome, "imagem"=>$imagem));
+        array_push($arrProf, array("nome"=>$nomeP, "imagem"=>$imagem));
     }
 
     $arr = array(
