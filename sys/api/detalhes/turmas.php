@@ -46,7 +46,7 @@ while($_dados_ = mysqli_fetch_array($_query_)){
     }
 
     while($dados2 = mysqli_fetch_array($query2)){
-        $emailP = $dados['email'];
+        $emailP = $dados2['email'];
         $prof_users = mysqli_query($__CONEXAO__, "select * from users where email='$emailP'");
         $nomeP = mysqli_fetch_assoc($prof_users)['nome'];
         $imagem = mysqli_fetch_assoc($prof_users)['imagem'];
