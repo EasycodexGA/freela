@@ -212,7 +212,7 @@ function getDetails(cat, id){
             i.data = date.toLocaleDateString("pt-BR");
         }
         for(const [key, value] of Object.entries(i)){
-        console.log(key, value);
+            document.getElementById(`${key}Get`).innerHTML = value;
         }
     })
 }
