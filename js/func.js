@@ -107,7 +107,7 @@ function getData(link){
         allbgl = e.mensagem;
         for(let i of e.mensagem){
             let date = new Date(i.data * 1000 + 86400000);
-            date = date.toLocaleDateString("pt-BR");
+            i.data = date.toLocaleDateString("pt-BR");
             let tr = document.createElement('tr');
             tr.classList.add('empty-line');
             tr.classList.add('table-line');
@@ -121,11 +121,7 @@ function getData(link){
                         td2.innerHTML = `<button class="ver-detalhes" onclick="openDetail('${i._name}', ${i.id})">Ver detalhes</button>`;
                         tr.appendChild(td2);
                     }
-                    if(key == 'data'){
-                        td.innerHTML = date;
-                    } else {
-                        td.innerHTML = value;
-                    }
+                    td.innerHTML = value;
                     tr.appendChild(td);
                 }
             }
@@ -201,4 +197,14 @@ function startPage(e){
 
 function getDetails(cat, id){
     console.log(cat, id)
+    return fetch(`../sys/api/detalhes/${cat}`)
+    .then(e=>e.json())
+    .then(e=>{
+        i = e.mensagem[0];
+            let date = new Date(i.data * 1000 + 86400000);
+            i.data = date.toLocaleDateString("pt-BR");
+            for(const [key, value] of Object.entries(i)){
+            console.log(key, value);
+        }
+    })
 }
