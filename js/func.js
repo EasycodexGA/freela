@@ -1,3 +1,4 @@
+addNew = false;
 
 function openAdd(e){
     closeAdd();
