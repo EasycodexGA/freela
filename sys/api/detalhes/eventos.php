@@ -1,7 +1,7 @@
 <?php
 include '../../conexao.php';
 
-justLog($__EMAIL__, $__TYPE__, 0);
+justLog($__EMAIL__, $__TYPE__, 1);
 
 $evento  = scapeString($__CONEXAO__, $_GET['id']);
 $evento = setNum($evento);
@@ -11,7 +11,7 @@ $_query_ = mysqli_query($__CONEXAO__, "select * from eventos where id='$decEvent
 $turmaEvento = mysqli_fetch_assoc($_query_)['turma'];
 $turmaEvento = decrypt($turmaEvento);
 
-if($__TYPE__ < 2) {
+if($__TYPE__ < 3) {
     checkTurma($turmaEvento, "Você não está participando deste evento.", "eventos where id='$decEvento'");
 }
 

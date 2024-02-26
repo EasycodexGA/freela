@@ -161,14 +161,18 @@ function stopUserExistnt($__CONEXAO__, $string){
 
 
 function checkTurma($idTurma, $string, $add){
-    $table = $__TYPE__ == 0 ? 'alunos' : 'professores';
-    $check = mysqli_connect($__CONEXAO__, "select * from $table where email='$__EMAIL__ and turma='$idTurma'");
-    $decTurma = decrypt($idTurma);
-    if(mysqli_num_rows($check) > 0){
-        $_query_ = mysqli_query($__CONEXAO__, "select * from turmas where id='$decTurma'");
-    } else {
+    $table = $__TYPE__ == 2 ? 'professores' : 'alunos';
+    $query = mysqli_query($__CONEXAO__, "select * from $table where email='$__EMAIL__'");
+    $turmas = array();
+    while($getQuery = mysqli_fetch_array($query)){
+        $value = $getQuery['turma'];
+        $valuedec = decrypt($value);
+        array_push($turmas, $valuedec);
+    }
+    if(!in_array($idTurma, $turmas)){
         endCode($string, false);
     }
+    $_query_ = mysqli_query($__CONEXAO__, "select * from $add");
 }
 
 

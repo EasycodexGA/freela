@@ -1,7 +1,7 @@
 <?php
 include '../../../conexao.php';
 
-justLog($__EMAIL__, $__TYPE__, 0);
+justLog($__EMAIL__, $__TYPE__, 1);
 
 header('Content-Type: application/json; charset=utf-8');
 

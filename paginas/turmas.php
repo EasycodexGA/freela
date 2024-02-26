@@ -1,6 +1,6 @@
 <?php
 include "../sys/conexao.php";
-justLog($__EMAIL__, $__TYPE__, 0);
+justLog($__EMAIL__, $__TYPE__, 1);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -54,7 +54,7 @@ justLog($__EMAIL__, $__TYPE__, 0);
         </div>
     </div>
 
-    <?php if(requireLevel($__TYPE__, 2)){ ?>
+    <?php if(requireLevel($__TYPE__, 3)){ ?>
     <div class='extra'>
         <h1 class='title-header'>Funções</h1>
         <div class='header-in'>

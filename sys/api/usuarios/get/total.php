@@ -1,7 +1,7 @@
 <?php
 include '../../../conexao.php';
 
-justLog($__EMAIL__, $__TYPE__, 0);
+justLog($__EMAIL__, $__TYPE__, 1);
 
 header('Content-Type: application/json; charset=utf-8');
 
@@ -22,11 +22,8 @@ $type = decrypt($type);
 
 if($type == 'turmas'){
     $turmas = array();
-    if($__TYPE__ < 2){
-        $table = 'alunos';
-        if($__TYPE__ == 1){
-            $table = 'professores';
-        }
+    if($__TYPE__ < 3){
+        $table = $__TYPE__ == 2 ? 'professores' : 'alunos';
         $query = mysqli_query($__CONEXAO__, "select * from $table where email='$__EMAIL__'");
         while($getQuery = mysqli_fetch_array($query)){
             $turmas[] = decrypt($getQuery['turma']);
@@ -38,12 +35,12 @@ $pode = array("users", "turmas", "categorias", "eventos");
 
 if($type == "usersprofessor"){
     $type = "users";
-    $adicional = "where typeC='1'";
+    $adicional = "where typeC='2'";
 }
 
 if($type == "usersalunos"){
     $type = "users";
-    $adicional = "where typeC='0'";
+    $adicional = "where typeC='1'";
 }
 
 if(!in_array($type, $pode)){

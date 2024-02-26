@@ -1,9 +1,9 @@
 <?php
 include '../../../conexao.php';
 
-justLog($__EMAIL__, $__TYPE__, 1);
+justLog($__EMAIL__, $__TYPE__, 2);
 
-$_query_ = mysqli_query($__CONEXAO__, "select nome, active, email, nascimento, id from users where typeC='0'");
+$_query_ = mysqli_query($__CONEXAO__, "select nome, active, email, nascimento, id from users where typeC='1'");
 
 $array = array();
 

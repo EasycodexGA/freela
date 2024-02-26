@@ -35,7 +35,7 @@ include "../sys/conexao.php";
         </div>
     </div>
 
-    <?php if(requireLevel($__TYPE__, 2)){ ?>
+    <?php if(requireLevel($__TYPE__, 3)){ ?>
     <div class='extra'>
         <div class='header-in'>
             <button onclick='openAdd(addProfessor)' class='funcBt'>+ Adicionar patrocinador</button>

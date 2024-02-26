@@ -12,8 +12,6 @@ cantLog($__EMAIL__);
     <link rel="stylesheet" href="style/root.css">
     <link rel="shortcut icon" href="img/prefeitura.png" type="image/x-icon">
     <title>Voleibol escolinhas - Login</title>
-
-
 </head>
 <body>
     <div id="outBox">

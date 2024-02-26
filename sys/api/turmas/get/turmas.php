@@ -1,17 +1,14 @@
 <?php
 include '../../../conexao.php';
 
-justLog($__EMAIL__, $__TYPE__, 0);
+justLog($__EMAIL__, $__TYPE__, 1);
 
 $complemento = '';
 
-if($__TYPE__ == 2){
+if($__TYPE__ == 3){
     $_query_ = mysqli_query($__CONEXAO__, "select * from turmas");
 } else {
-    $table = 'alunos';
-    if($__TYPE__ == 1){
-        $table = 'professores';
-    }
+    $table = $__TYPE__ == 2 ? 'professores' : 'alunos';
     $query = mysqli_query($__CONEXAO__, "select * from $table where email='$__EMAIL__'");
     $turmas = '';
     while($getQuery = mysqli_fetch_array($query)){

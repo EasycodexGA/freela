@@ -1,7 +1,7 @@
 <?php
 include '../../conexao.php';
 
-justLog($__EMAIL__, $__TYPE__, 0);
+justLog($__EMAIL__, $__TYPE__, 1);
 
 $turma  = scapeString($__CONEXAO__, $_GET['id']);
 $turma = setNum($turma);
@@ -10,7 +10,7 @@ $decTurma = decrypt($turma);
 if($__TYPE__ == 2){
     $_query_ = mysqli_query($__CONEXAO__, "select * from turmas where id='$decTurma'");
 } else {
-    $complement = $__TYPE__ == 0 ? 'alunos' : 'professores';
+    $complement = $__TYPE__ == 1 ? 'alunos' : 'professores';
     $check = mysqli_connect($__CONEXAO__, "select * from $complement where email='$__EMAIL__ and turma='$turma'");
     if(mysqli_num_rows($check) > 0){
         $_query_ = mysqli_query($__CONEXAO__, "select * from turmas where id='$decTurma'");
