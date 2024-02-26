@@ -19,6 +19,7 @@ $array = array();
 
 while($dados = mysqli_fetch_array($_query_)){
     $nome       = decrypt($dados["nome"]);
+    echo $nome;
     $turma      = decrypt($dados["turma"]);
     $categoria  = decrypt($dados["categoria"]);
     $idC        = encrypt($dados["id"]);
