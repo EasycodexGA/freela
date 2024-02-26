@@ -107,7 +107,7 @@ function getData(link){
         allbgl = e.mensagem;
         for(let i of e.mensagem){
             let date = new Date(i.data * 1000 + 86400000);
-            i.data = date.toLocaleDateString("pt-BR");
+            i.data = i.data ? date.toLocaleDateString("pt-BR") : false;
             let tr = document.createElement('tr');
             tr.classList.add('empty-line');
             tr.classList.add('table-line');
