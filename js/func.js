@@ -203,16 +203,14 @@ function startPage(e){
 }
 
 function getDetails(cat, id){
-    console.log(cat, id)
     return fetch(`../sys/api/detalhes/${cat}?id=${id}`)
     .then(e=>e.json())
     .then(e=>{
-        console.log(e.mensagem);
         i = e.mensagem[0];
-        // let date = new Date(i.data * 1000 + 86400000);
-        // i.data = date.toLocaleDateString("pt-BR");
-        // for(const [key, value] of Object.entries(i)){
-        // console.log(key, value);
-        // }
+        let date = new Date(i.data * 1000 + 86400000);
+        i.data = date.toLocaleDateString("pt-BR");
+        for(const [key, value] of Object.entries(i)){
+        console.log(key, value);
+        }
     })
 }
