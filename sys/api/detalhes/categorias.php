@@ -3,8 +3,6 @@ include '../../conexao.php';
 
 justLog($__EMAIL__, $__TYPE__, 2);
 
-header('Content-Type: application/json; charset=utf-8');
-
 $categorias  = scapeString($__CONEXAO__, $_GET['id']);
 $categorias = setNum($categorias);
 $decCategorias = decrypt($categorias);

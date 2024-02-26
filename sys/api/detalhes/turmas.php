@@ -3,12 +3,7 @@ include '../../conexao.php';
 
 justLog($__EMAIL__, $__TYPE__, 0);
 
-header('Content-Type: application/json; charset=utf-8');
-
-$request = file_get_contents('php://input');
-$json = json_decode($request);
-
-$turma  = scapeString($__CONEXAO__, $json->turma);
+$turma  = scapeString($__CONEXAO__, $_GET['id']);
 $turma = setNum($turma);
 $decTurma = decrypt($turma);
 
