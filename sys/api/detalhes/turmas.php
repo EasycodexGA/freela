@@ -39,14 +39,14 @@ while($_dados_ = mysqli_fetch_array($_query_)){
     $arrProf = array();
 
     while($dados = mysqli_fetch_array($query)){
-        $emailA = decrypt($dados['email']);
+        $emailA = $dados['email'];
         $alunos_users = mysqli_query($__CONEXAO__, "select * from users where email='$emailA'");
         $nomeA = mysqli_fetch_assoc($alunos_users)['nome'];
         array_push($arrAlunos, array("nome"=>decrypt($nomeA)));
     }
 
     while($dados2 = mysqli_fetch_array($query2)){
-        $emailP = decrypt($dados['email']);
+        $emailP = $dados['email'];
         $prof_users = mysqli_query($__CONEXAO__, "select * from users where email='$emailP'");
         $nomeP = mysqli_fetch_assoc($prof_users)['nome'];
         $imagem = mysqli_fetch_assoc($prof_users)['imagem'];
