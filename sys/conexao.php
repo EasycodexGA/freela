@@ -133,7 +133,7 @@ function justLog($__EMAIL__, $__TYPE__, $type){
 
 function requireLevel($__TYPE__, $type){
     if($__TYPE__ < $type or !$__TYPE__){
-        echo $__TYPE__, $type
+        echo $__TYPE__, $type;
         return false;
     }
     return true;
