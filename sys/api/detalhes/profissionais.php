@@ -12,8 +12,10 @@ $_query_ = mysqli_query($__CONEXAO__, "select * from users where id='$decProfiss
 $array = array();
 
 while($_dados_ = mysqli_fetch_array($_query_)){
+    $nome       = decrypt($_dados_["nome"]);
     $cpf        = decrypt($_dados_["cpf"]);
     $nascimento = decrypt($_dados_["nascimento"]);
+    $email      = decrypt($_dados_["email"]);
     $status     = $_dados_["active"];
     $status     = $status == '1' ? "active" : "inactive";
 
@@ -21,7 +23,6 @@ while($_dados_ = mysqli_fetch_array($_query_)){
 
     $dados = mysqli_fetch_assoc($query);
 
-    $email          = decrypt($dados["email"]);
     $imagem         = decrypt($dados["imagem"]);
     $titularidade   = decrypt($dados["titularidade"]);
 
@@ -38,7 +39,9 @@ while($_dados_ = mysqli_fetch_array($_query_)){
         "id"            => $decProfissional,
         "nome"          => $nome, 
         "titularidade"  => $titularidade,
+        "email"         => $email,
         "cpf"           => $cpf,
+        "imagem"        => $imagem,
         "nascimento"    => $nascimento,
         "turmas"        => $arrTurmas,
         "status"        => $status
