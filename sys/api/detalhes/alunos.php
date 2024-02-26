@@ -36,14 +36,14 @@ while($_dados_ = mysqli_fetch_array($_query_)){
 
     $presencaArr = array("v"=>0, "f"=>0);
     
-    while($dados2 = mysqli_fetch_array($query3)){
-        $presenca = $dados2["presenca"];
-        if($presenca == 0){
-            $presencaArr=>f = $presencaArr=>f + 1;
-        } else {
-            $presencaArr=>v = $presencaArr=>v + 1;
-        }
-    }
+    // while($dados2 = mysqli_fetch_array($query3)){
+    //     $presenca = $dados2["presenca"];
+    //     if($presenca == 0){
+    //         $presencaArr=>f = $presencaArr=>f + 1;
+    //     } else {
+    //         $presencaArr=>v = $presencaArr=>v + 1;
+    //     }
+    // }
 
     $arr = array(
         "id"        => $decAluno,
