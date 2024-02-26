@@ -17,6 +17,7 @@ if($__TYPE__ < 3) {
 
 $array = array();
 
+$turmas = array();
 while($_dados_ = mysqli_fetch_array($_query_)){
     $nome       = decrypt($_dados_["nome"]);
     $categoria  = decrypt($_dados_["categoria"]);
