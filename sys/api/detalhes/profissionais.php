@@ -21,8 +21,6 @@ while($_dados_ = mysqli_fetch_array($_query_)){
 
     $query  = mysqli_query($__CONEXAO__, "select * from professores where email='$email'");
 
-    echo mysqli_num_rows($query);
-
     $email = decrypt($email);
 
     $arrTurmas = array();
