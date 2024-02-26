@@ -17,13 +17,11 @@ if($__TYPE__ < 3) {
 
 $array = array();
 
-while($dados = mysqli_fetch_array($_query_)){
-    $nome       = decrypt($dados["nome"]);
-    echo $nome;
-    $turma      = decrypt($dados["turma"]);
-    $categoria  = decrypt($dados["categoria"]);
-    $idC        = encrypt($dados["id"]);
-    $status     = $dados["active"];
+while($_dados_ = mysqli_fetch_array($_query_)){
+    $nome       = decrypt($_dados_["nome"]);
+    $categoria  = decrypt($_dados_["categoria"]);
+    $idC        = encrypt($_dados_["id"]);
+    $status     = $_dados_["active"];
 
     $status = $status == '1' ? "active" : "inactive";
     

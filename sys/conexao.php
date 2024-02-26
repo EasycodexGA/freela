@@ -177,6 +177,6 @@ function checkTurma($idTurma, $string, $add){
 
 
 // types user
-// type 0 - aluno
-// type 1 - Professor
-// type 2 - Admin
+// type 1 - Aluno
+// type 2 - Professor
+// type 3 - Admin
