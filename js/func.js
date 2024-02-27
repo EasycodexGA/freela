@@ -214,17 +214,17 @@ function getDetails(cat, id){
     .then(e=>{
         if(!e.response){
             newMsg(e);
-            return;
-        }
-        details.classList.add("add-active");
-        i = e.mensagem[0];
-        if(i.data){
-            let date = new Date(i.data * 1000 + 86400000);
-            i.data = date.toLocaleDateString("pt-BR");
-        }
-        for(const [key, value] of Object.entries(i)){
-            if(!jump.includes(key)){
-                document.getElementById(`${key}Get`).innerHTML = value;
+        } else {
+            details.classList.add("add-active");
+            i = e.mensagem[0];
+            if(i.data){
+                let date = new Date(i.data * 1000 + 86400000);
+                i.data = date.toLocaleDateString("pt-BR");
+            }
+            for(const [key, value] of Object.entries(i)){
+                if(!jump.includes(key)){
+                    document.getElementById(`${key}Get`).innerHTML = value;
+                }
             }
         }
     })
