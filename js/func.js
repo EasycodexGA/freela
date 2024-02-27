@@ -23,12 +23,7 @@ function addNewData(local, data){
     })
     .then(e=>e.json())
     .then(e=>{
-        let msg = document.createElement("div");
-        let color = e.response ? "sucesso-add" : "erro-add";
-        msg.classList.add(`msg-add`);
-        msg.classList.add(color);
-        msg.innerText = e.mensagem;
-        document.body.appendChild(msg);
+        newMsg(e.mensagem);
 
         if(e.response){
             closeAdd();
@@ -36,10 +31,20 @@ function addNewData(local, data){
             window.location.reload()
         }
 
-        setTimeout(()=>{
-            msg.remove();
-        },2000)
+        
     })
+}
+
+function newMsg(mensagem){
+    let msg = document.createElement("div");
+    let color = e.response ? "sucesso-add" : "erro-add";
+    msg.classList.add(`msg-add`);
+    msg.classList.add(color);
+    msg.innerText = mensagem;
+    document.body.appendChild(msg);
+    setTimeout(()=>{
+        msg.remove();
+    },2000)
 }
 
 function cleanInps(){
@@ -208,6 +213,10 @@ function getDetails(cat, id){
     return fetch(`../sys/api/detalhes/${cat}?id=${id}`)
     .then(e=>e.json())
     .then(e=>{
+        if(!e.response){
+            newMsg(e.mensagem);
+            return;
+        }
         i = e.mensagem[0];
         if(i.data){
             let date = new Date(i.data * 1000 + 86400000);
