@@ -15,9 +15,8 @@ $profissional   = scapeString($__CONEXAO__, $json->profissional);
 
 $nome           = setNoXss($nome);
 $horario        = setNum($horario);
-// não sei pq nao ta pegando categoria (ctz que é categoria)
 $categoria      = setNoXss($categoria);
-$profissional   = setNum($responsavel);
+$profissional   = setNum($profissional);
 
 
 checkMissing(
