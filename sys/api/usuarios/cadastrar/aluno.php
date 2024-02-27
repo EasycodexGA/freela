@@ -14,7 +14,7 @@ $turma      = scapeString($__CONEXAO__, $json->turma);
 $email      = scapeString($__CONEXAO__, $json->email);
 $nascimento = scapeString($__CONEXAO__, $json->nascimento);
 
-$cpf        = setNum($cpf);
+$cpf        = setCpf($cpf);
 $nome       = setString($nome);
 $turma      = setNum($turma);
 $email      = setEmail($email);

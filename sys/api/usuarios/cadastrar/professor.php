@@ -14,7 +14,7 @@ $email          = scapeString($__CONEXAO__, $json->email);
 $nascimento     = scapeString($__CONEXAO__, $json->nascimento);
 $titularidade   = scapeString($__CONEXAO__, $json->titularidade);
 
-$cpf            = setNum($cpf);
+$cpf            = setCpf($cpf);
 $nome           = setString($nome);
 $email          = setEmail($email);
 $nascimento     = setNum($nascimento);
