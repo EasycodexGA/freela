@@ -208,7 +208,7 @@ function startPage(e){
 }
 
 function getDetails(cat, id){
-    let jump = ['id', 'turmas', 'status', 'imagem'];
+    let jump = ['id', 'turmas', 'status', 'imagem', 'data'];
     return fetch(`../sys/api/detalhes/${cat}?id=${id}`)
     .then(e=>e.json())
     .then(e=>{
