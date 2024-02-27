@@ -78,6 +78,16 @@ justLog($__EMAIL__, $__TYPE__, 1);
                         <option value=''>Nenhuma turma</option>
                     </select>
                 </div>
+                <div class='inp-add-out'>
+                    <h3>Responsável</h3>
+                    <select id='profissionalAdd'>
+                        <option value=''>Nenhum profissional</option>
+                    </select>
+                </div>
+                <div class='inp-add-out'>
+                    <h3>Horário</h3>
+                    <input id='horarioAdd' type='time'/>
+                </div>
             </div>
             <div class='out-bt-sv'>
                 <button class='btn-close' onclick='closeAdd()'>Fechar</button>
