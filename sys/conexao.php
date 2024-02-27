@@ -198,6 +198,11 @@ function setCpf($cpf) {
     return encrypt($cpf);
 }
 
+function converterHora($time){
+    $time = decrypt($time);
+    $time = date("H:i", $time);
+    return $time;
+}
 // types user
 // type 1 - Aluno
 // type 2 - Professor

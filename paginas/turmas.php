@@ -134,7 +134,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
             
             for(let i of e.mensagem){
                 profissionalAdd.innerHTML += `
-                    <option value='${i.nome}'>${i.nome} - ${i.titularidade}</option>
+                    <option value='${i.id}'>${i.nome} - ${i.titularidade}</option>
                 `;
             }
         })

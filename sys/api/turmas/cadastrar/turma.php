@@ -8,15 +8,25 @@ header('Content-Type: application/json; charset=utf-8');
 $request = file_get_contents('php://input');
 $json = json_decode($request);
 
-$nome       = scapeString($__CONEXAO__, $json->nome);
-$categoria  = scapeString($__CONEXAO__, $json->categoria);
+$nome           = scapeString($__CONEXAO__, $json->nome);
+$horario        = scapeString($__CONEXAO__, $json->horario);
+$categoria      = scapeString($__CONEXAO__, $json->categoria);
+$responsavel    = scapeString($__CONEXAO__, $json->responsavel);
 
-$nome       = setNoXss($nome);
-$categoria  = setNoXss($categoria);
+$nome           = setNoXss($nome);
+$horario        = setNum($horario);
+$categoria      = setNoXss($categoria);
+$responsavel    = setNum($responsavel);
 
-if(!$nome or !$categoria){
-    endCode("Algum dado está faltando", false);
-}
+
+checkMissing(
+    array(
+        $nome,
+        $horario,
+        $categoria,
+        $responsavel
+    )
+);
 
 $getCat = mysqli_query($__CONEXAO__, "select * from categorias where nome='$categoria'");
 
