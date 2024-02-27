@@ -22,7 +22,7 @@ function addNewData(local, data){
     })
     .then(e=>e.json())
     .then(e=>{
-        newMsg(e.mensagem);
+        newMsg(e);
 
         if(e.response){
             closeAdd();
@@ -34,12 +34,12 @@ function addNewData(local, data){
     })
 }
 
-function newMsg(mensagem){
+function newMsg(e){
     let msg = document.createElement("div");
     let color = e.response ? "sucesso-add" : "erro-add";
     msg.classList.add(`msg-add`);
     msg.classList.add(color);
-    msg.innerText = mensagem;
+    msg.innerText = e.mensagem;
     document.body.appendChild(msg);
     setTimeout(()=>{
         msg.remove();
@@ -212,8 +212,8 @@ function getDetails(cat, id){
     return fetch(`../sys/api/detalhes/${cat}?id=${id}`)
     .then(e=>e.json())
     .then(e=>{
-        if(e.response == false){
-            newMsg(e.mensagem);
+        if(!e.response){
+            newMsg(e);
             return;
         }
         details.classList.add("add-active");
