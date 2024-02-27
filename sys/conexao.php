@@ -160,19 +160,19 @@ function stopUserExistnt($__CONEXAO__, $string){
 }
 
 
-function checkTurma($idTurma, $string, $add){
+function checkTurma($idTurma){
     $table = $__TYPE__ == 2 ? 'professores' : 'alunos';
-    $query = mysqli_query($__CONEXAO__, "select * from $table where email='$__EMAIL__'");
-    $turmas = array();
+    $query = mysqli_query($__CONEXAO__, "select * from $table where email='$__EMAIL__' and turma like '%,$idTurma,%'") or endCode("Você não está nessa turma.", false);
+    $turmas = '';
     while($getQuery = mysqli_fetch_array($query)){
         $value = $getQuery['turma'];
-        $valuedec = decrypt($value);
-        array_push($turmas, $valuedec);
+        $turmasb = explode(",", $value);
+        for($i=0;$i < count($turmasb);$i++){
+            $t = $turmasb[$i];
+            $turmas .= "or id='$t'";
+        }
     }
-    if(!in_array($idTurma, $turmas)){
-        endCode($string, false);
-    }
-    $_query_ = mysqli_query($__CONEXAO__, "select * from $add");
+    $_query_ = mysqli_query($__CONEXAO__, "select * from turmas where id='qualquercoisa' $turmas");
 }
 
 function setCpf($cpf) {

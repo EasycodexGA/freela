@@ -10,7 +10,7 @@ $decTurma = decrypt($turma);
 if($__TYPE__ == 3){
     $_query_ = mysqli_query($__CONEXAO__, "select * from turmas where id='$decTurma'");
 } else {
-    checkTurma($decTurma, "Você não está nessa turma.", "turmas where id='$decTurma'");
+    checkTurma($decTurma);
 }
 
 $array = array();
