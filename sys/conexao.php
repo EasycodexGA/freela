@@ -167,17 +167,8 @@ function checkTurma($__CONEXAO__, $__TYPE__, $__EMAIL__, $idTurma){
     if(mysqli_num_rows($query) < 1){
         endCode("Você não está nessa turma", false);
     }
-    
-    $turmas = '';
-    while($getQuery = mysqli_fetch_array($query)){
-        $value = $getQuery['turma'];
-        $turmasb = explode(",", $value);
-        for($i=0;$i < count($turmasb);$i++){
-            $t = $turmasb[$i];
-            $turmas .= "or id='$t'";
-        }
-    }
-    $_query_ = mysqli_query($__CONEXAO__, "select * from turmas where id='qualquercoisa' $turmas");
+
+    $_query_ = mysqli_query($__CONEXAO__, "select * from turmas where id='$idTurma'");
     return $_query_;
 }
 
