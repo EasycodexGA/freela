@@ -160,7 +160,7 @@ function stopUserExistnt($__CONEXAO__, $string){
 }
 
 
-function checkTurma($idTurma){
+function checkTurma($__CONEXAO__, $__TYPE__, $idTurma){
     $table = $__TYPE__ == 2 ? 'professores' : 'alunos';
     $query = mysqli_query($__CONEXAO__, "select * from $table where email='$__EMAIL__' and turma like '%,$idTurma,%'") or endCode("Você não está nessa turma.", false);
     $turmas = '';
