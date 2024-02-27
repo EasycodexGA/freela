@@ -42,7 +42,8 @@ if(mysqli_num_rows($getProf) < 1){
     endCode("Responsável inválido.", false);
 }
 
-$respEmail = mysqli_fetch_assoc($getProf)["email"];
+$respEmail  = mysqli_fetch_assoc($getProf)["email"];
+$respTurmas = mysqli_fetch_assoc($getProf)["turma"];
 
 $getCat = mysqli_query($__CONEXAO__, "select id from categorias where nome='$categoria'");
 
@@ -61,7 +62,12 @@ mysqli_query($__CONEXAO__, "insert into turmas (nome, categoria, horario, data) 
 $idTurma = mysqli_insert_id($__CONEXAO__);
 
 // fazer aqui para entrar em várias salas
-mysqli_query($__CONEXAO__, "update professores set turma='$idTurma' where email='$respEmail'");
+if(!$respTurmas or $respTurmas == ""){
+    $newT = $idTurma;
+} else {
+    $newT = "$respTurmas, $idTurma";
+}
+mysqli_query($__CONEXAO__, "update professores set turma='$newT' where email='$respEmail'");
 
 
 endCode("Sala criada com sucesso", true);
