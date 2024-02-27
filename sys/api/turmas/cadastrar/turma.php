@@ -64,9 +64,11 @@ $getTurmas = mysqli_query($__CONEXAO__, "select turma from professores where ema
 $respTurmas  = mysqli_fetch_assoc($getTurmas)["turma"];
 
 // fazer aqui para entrar em várias salas
-
-$newT = "$respTurmas,$idTurma";
-
+if(!$respTurmas or $respTurmas == ""){
+    $newT = ",$idTurma,";
+} else {
+    $newT = $respTurmas."$idTurma,";
+}
 mysqli_query($__CONEXAO__, "update professores set turma='$newT' where email='$respEmail'");
 
 
