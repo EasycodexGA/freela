@@ -1,5 +1,7 @@
 <?php
 include"auth.php";
+date_default_timezone_set('America/Sao_Paulo');
+
 session_start();
 $__CONEXAO__ = mysqli_connect(
     LOG_DB_LOCAL,
