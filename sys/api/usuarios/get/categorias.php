@@ -3,7 +3,7 @@ include '../../../conexao.php';
 
 justLog($__EMAIL__, $__TYPE__, 3);
 
-$_query_ = mysqli_query($__CONEXAO__, "select * from categorias order by name desc");
+$_query_ = mysqli_query($__CONEXAO__, "select * from categorias order by nome desc");
 
 $array = array();
 
