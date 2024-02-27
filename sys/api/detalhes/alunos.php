@@ -15,7 +15,7 @@ while($_dados_ = mysqli_fetch_array($_query_)){
     $nome       = decrypt($_dados_["nome"]);
     $cpf        = decrypt($_dados_["cpf"]);
     $nascimento = decrypt($_dados_["nascimento"]);
-    $email      = $_dados_["nome"];
+    $email      = $_dados_["email"];
     $status     = $_dados_["active"];
     $status     = $status == '1' ? "active" : "inactive";
 
