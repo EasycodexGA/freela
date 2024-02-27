@@ -31,7 +31,7 @@ while($_dados_ = mysqli_fetch_array($_query_)){
     while($dados = mysqli_fetch_array($query)){
         $emailA = $dados['email'];
         $alunos_users = mysqli_query($__CONEXAO__, "select * from users where email='$emailA'");
-        $nomeA = mysqli_fetch_assoc($alunos_users)['nome'];
+        $nomeA = mysqli_fetch_assoc($alunos_users)['nome']; 
         array_push($arrAlunos, array("nome"=>decrypt($nomeA)));
     }
 
