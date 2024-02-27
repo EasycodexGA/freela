@@ -95,7 +95,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
                     nome: nomeAdd.value,
                     categoria: categoriaAdd.value,
                     horario: horarioAdd.value,
-                    profissional: profissional.value,
+                    profissional: profissionalAdd.value,
                 })' class='btn-add'>Salvar</button>
             </div>
         </div>
