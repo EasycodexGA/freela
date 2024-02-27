@@ -7,7 +7,7 @@ $evento  = scapeString($__CONEXAO__, $_GET['id']);
 $evento = setNum($evento);
 $decEvento = decrypt($evento);
 
-$_query_ = mysqli_query($__CONEXAO__, "select * from eventos where id='$decEvento'");
+$_query_ = mysqli_query($__CONEXAO__, "select nome, categoria, status, turma from eventos where id='$decEvento'");
 $turmaEvento = mysqli_fetch_assoc($_query_)['turma'];
 $turmaEvento = decrypt($turmaEvento);
 
@@ -21,12 +21,11 @@ $turmas = array();
 while($_dados_ = mysqli_fetch_array($_query_)){
     $nome       = decrypt($_dados_["nome"]);
     $categoria  = decrypt($_dados_["categoria"]);
-    $idC        = encrypt($_dados_["id"]);
     $status     = $_dados_["active"];
 
     $status = $status == '1' ? "active" : "inactive";
     
-    $query  = mysqli_query($__CONEXAO__, "select * from eventos where nome='$nome'");
+    $query  = mysqli_query($__CONEXAO__, "select id from eventos where nome='$nome'");
 
     $arr = array(
         "id"        => $decEvento,

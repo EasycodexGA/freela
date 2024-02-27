@@ -29,7 +29,7 @@ while($_dados_ = mysqli_fetch_array($_query_)){
         $titularidade   = decrypt($dados['titularidade']);
         $imagem         = decrypt($dados['imagem']);
         $turmaId        = decrypt($dados['turma']);
-        $query2         = mysqli_query($__CONEXAO__, "select * from turmas where id='$turmaId'");
+        $query2         = mysqli_query($__CONEXAO__, "select nome from turmas where id='$turmaId'");
         $turma          = mysqli_fetch_assoc($query2)['nome'];
         array_push($arrTurmas, array("nome"=>decrypt($turma), "id"=>$turmaId));
     }
