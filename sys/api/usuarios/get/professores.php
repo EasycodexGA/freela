@@ -9,10 +9,17 @@ $array = array();
 
 while($dados = mysqli_fetch_array($_query_)){
 
-    $emailuser  = decrypt($dados["email"]);
+    $email = $dados["email"];
+    $emailuser  = decrypt($email);
     $nome       = decrypt($dados["nome"]);
     $nascimento = decrypt($dados["nascimento"]);
+    $titularidade = decrypt($dados["titularidade"]);
     $status     = $dados["active"];
+
+    $q2 = mysqli_query($__CONEXAO__, "select titularidade from professores where email='$email'");
+
+    $titularidade = mysqli_fetch_assoc($q2)['titularidade'];
+    $titularidade = decrypt($titularidade);
     
     $status     = $status == '1' ? "active" : "inactive";
 
@@ -22,6 +29,7 @@ while($dados = mysqli_fetch_array($_query_)){
         "email"         => $emailuser,
         "data"          => $nascimento,
         "status"        => $status,
+        "titularidade"  => $titularidade,
         "_name"         => "profissionais"
     );
 
