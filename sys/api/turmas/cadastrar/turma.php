@@ -63,7 +63,6 @@ $idTurma = mysqli_insert_id($__CONEXAO__);
 $getTurmas = mysqli_query($__CONEXAO__, "select turma from professores where email='$respEmail'");
 $respTurmas  = mysqli_fetch_assoc($getTurmas)["turma"];
 
-// fazer aqui para entrar em várias salas
 if(!$respTurmas or $respTurmas == ""){
     $newT = ",$idTurma,";
 } else {
