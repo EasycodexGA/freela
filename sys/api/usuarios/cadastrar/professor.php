@@ -18,7 +18,7 @@ $cpf            = setCpf($cpf);
 $nome           = setString($nome);
 $email          = setEmail($email);
 $nascimento     = setNum($nascimento);
-$titularidade   = setString($titularidade);
+$titularidade   = setNoXss($titularidade);
 
 checkMissing(
     array(
