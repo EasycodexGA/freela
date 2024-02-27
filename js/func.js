@@ -147,22 +147,22 @@ function getData(link){
 }
 
 function createTh(arr){
-    tr = document.createElement('tr');
+    let tr = document.createElement('tr');
 
-    hlo = document.querySelector('.header-list-out');
-    select = document.createElement('select');
+    let hlo = document.querySelector('.header-list-out');
+    let select = document.createElement('select');
     select.id = 'selectFilter';
 
-    for(i of arr){
+    for(let i of arr){
         if(i == 'status'){
-            th2 = document.createElement('th');
+            let th2 = document.createElement('th');
             tr.appendChild(th2);
         }
-        th = document.createElement('th');
+        let th = document.createElement('th');
         th.innerHTML = i;
         tr.appendChild(th);
 
-        option = document.createElement('option');
+        let option = document.createElement('option');
         option.value = i;
         option.innerHTML = i;
         select.appendChild(option);
@@ -201,20 +201,22 @@ const callFunc = (func) => func();
 
 function startPage(e){
     // callFunc(func);
-    preset = preSets[`${e}`];
+    let preset = preSets[`${e}`];
     createTh(preset.th);
     getData(preset.link);
     getActInact(preset.data);
 }
 
 function getDetails(cat, id){
-    jump = ['id', 'turmas', 'status', 'imagem'];
+    let jump = ['id', 'turmas', 'status', 'imagem'];
     return fetch(`../sys/api/detalhes/${cat}?id=${id}`)
     .then(e=>e.json())
     .then(e=>{
         if(!e.response){
             newMsg(e);
-        } else {
+        }
+
+        if(e.response){
             details.classList.add("add-active");
             i = e.mensagem[0];
             if(i.data){
