@@ -89,7 +89,9 @@ justLog($__EMAIL__, $__TYPE__, 1);
         </div>
     </div>
     
-    <?php } ?>
+    <?php } else { ?>
+        <div id='addNew'></div>
+    <?php }?>
     
     <div class="list">
         <div class="header-list-out">
