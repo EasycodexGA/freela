@@ -199,7 +199,7 @@ function setCpf($cpf) {
 
 function converterHora($time){
     $time = decrypt($time);
-    $time = date("H:i", ($time / 1000 + 10800));
+    $time = date("H:i", ($time / 1000 + 10800 //10800 = +3h timezone));
     return $time;
 }
 // types user
