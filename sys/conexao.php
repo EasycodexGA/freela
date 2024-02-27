@@ -120,12 +120,7 @@ function cantLog($__EMAIL__){
 }
 
 function justLog($__EMAIL__, $__TYPE__, $type){
-    if(!$__EMAIL__){
-        endCode("Sem permissão", false);
-        exit;
-    }
-
-    if($__TYPE__ < $type){
+    if($__TYPE__ < $type or !$__EMAIL__){
         endCode("Sem permissão", false);
         exit;
     }
