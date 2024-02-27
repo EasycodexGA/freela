@@ -11,12 +11,12 @@ $json = json_decode($request);
 $nome           = scapeString($__CONEXAO__, $json->nome);
 $horario        = scapeString($__CONEXAO__, $json->horario);
 $categoria      = scapeString($__CONEXAO__, $json->categoria);
-$responsavel    = scapeString($__CONEXAO__, $json->responsavel);
+$profissional   = scapeString($__CONEXAO__, $json->profissional);
 
 $nome           = setNoXss($nome);
 $horario        = setNum($horario);
 $categoria      = setNoXss($categoria);
-$responsavel    = setNum($responsavel);
+$profissional   = setNum($responsavel);
 
 
 checkMissing(
@@ -24,24 +24,44 @@ checkMissing(
         $nome,
         $horario,
         $categoria,
-        $responsavel
+        $profissional
     )
 );
 
-$getCat = mysqli_query($__CONEXAO__, "select * from categorias where nome='$categoria'");
+$horarioDec         = decrypt($horario);
+
+if($horarioDec > 86340000 or $horarioDec < 0){
+    endCode("Horário inválido.", false);
+}
+
+$profissionalDec    = decrypt($profissional);
+
+$getProf = mysqli_query($__CONEXAO__, "select email from users where id='$profissionalDec' and typeC='2'");
+
+if(mysqli_num_rows($getProf) < 1){
+    endCode("Responsável inválido.", false);
+}
+
+$respEmail = mysqli_fetch_assoc($getProf)["email"];
+
+$getCat = mysqli_query($__CONEXAO__, "select id from categorias where nome='$categoria'");
 
 if(mysqli_num_rows($getCat) < 1){
     endCode("Categoria inválida.", false);
 }
 
 
-$getTurma = mysqli_query($__CONEXAO__, "select * from turmas where nome='$nome' and categoria='$categoria'");
+$getTurma = mysqli_query($__CONEXAO__, "select id from turmas where nome='$nome' and categoria='$categoria'");
 
 if(mysqli_num_rows($getTurma) > 0){
     endCode("Já existe uma turma com esses dados.", false);
 }
 
-mysqli_query($__CONEXAO__, "insert into turmas (nome, categoria, data) values ('$nome', '$categoria', '$__TIME__')");
+mysqli_query($__CONEXAO__, "insert into turmas (nome, categoria, horario, data) values ('$nome', '$categoria', '$horario','$__TIME__')");
+$idTurma = mysqli_insert_id($__CONEXAO__);
+
+// fazer aqui para entrar em várias salas
+mysqli_query($__CONEXAO__, "update professores set turma='$idTurma' where email='$respEmail'");
 
 
 endCode("Sala criada com sucesso", true);

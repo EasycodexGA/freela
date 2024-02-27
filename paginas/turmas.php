@@ -94,6 +94,8 @@ justLog($__EMAIL__, $__TYPE__, 1);
                 <button onclick='addNewData("turmas/cadastrar/turma", {
                     nome: nomeAdd.value,
                     categoria: categoriaAdd.value,
+                    horario: horarioAdd.value,
+                    profissional: profissional.value,
                 })' class='btn-add'>Salvar</button>
             </div>
         </div>
