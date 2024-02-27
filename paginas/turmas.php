@@ -127,6 +127,18 @@ justLog($__EMAIL__, $__TYPE__, 1);
             }
         })
 
+        fetch("../sys/api/usuarios/get/professores")
+        .then(e=>e.json())
+        .then(e=>{
+            console.log(e)
+            
+            for(let i of e.mensagem){
+                profissionalAdd.innerHTML += `
+                    <option value='${i.nome}'>${i.nome}</option>
+                `;
+            }
+        })
+
         startPage('turmas');
     </script>
 </body>
