@@ -173,6 +173,7 @@ function checkTurma($__CONEXAO__, $__TYPE__, $idTurma){
         }
     }
     $_query_ = mysqli_query($__CONEXAO__, "select * from turmas where id='qualquercoisa' $turmas");
+    return $_query_;
 }
 
 function setCpf($cpf) {
