@@ -13,11 +13,13 @@ if($__TYPE__ == 3){
     $turmas = '';
     while($getQuery = mysqli_fetch_array($query)){
         $value = $getQuery['turma'];
-        // $valuedec = decrypt($value);
-        // $turmas .= $valuedec . ' , ';
+        $turmasb = explode(",", $value);
+        for($i=0;$i < count($turmasb);$i++){
+            $t = $turmasb[$i];
+            $turmas .= "or id='$t'";
+        }
     }
-    $turmas = substr($turmas, 0, -3);
-    $_query_ = mysqli_query($__CONEXAO__, "select * from turmas where id in ($value)");
+    $_query_ = mysqli_query($__CONEXAO__, "select * from turmas where id='qualquercoisa' $turmas");
 }
 
 $array = array();
