@@ -5,7 +5,6 @@ function openAdd(e){
 
 function openDetail(cat, id){
     closeAdd();
-    details.classList.add("add-active");
     getDetails(cat, id);
 }
 
@@ -213,10 +212,11 @@ function getDetails(cat, id){
     return fetch(`../sys/api/detalhes/${cat}?id=${id}`)
     .then(e=>e.json())
     .then(e=>{
-        if(!e.response){
+        if(e.response == false){
             newMsg(e.mensagem);
             return;
         }
+        details.classList.add("add-active");
         i = e.mensagem[0];
         if(i.data){
             let date = new Date(i.data * 1000 + 86400000);
