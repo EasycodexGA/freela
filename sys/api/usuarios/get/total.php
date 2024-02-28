@@ -31,7 +31,7 @@ if($type == 'turmas'){
     }
 }
 
-if($type == 'turmas'){
+if($type == 'eventos'){
     $turmass = '';
     if($__TYPE__ < 3){
         $table = $__TYPE__ == 2 ? 'professores' : 'alunos';
