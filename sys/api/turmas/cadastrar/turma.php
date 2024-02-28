@@ -55,8 +55,8 @@ if(mysqli_num_rows($getTurma) > 0){
     endCode("Já existe uma turma com esses dados.", false);
 }
 
-mysqli_query($__CONEXAO__, "insert into turmas (nome, categoria, horario, data) values ('$nome', '$categoria', '$horario','$__TIME__')");
-$idTurma = mysqli_insert_id($__CONEXAO__);
+$query = mysqli_query($__CONEXAO__, "insert into turmas (nome, categoria, horario, data) values ('$nome', '$categoria', '$horario','$__TIME__')");
+$idTurma = mysqli_insert_id($query);
 $idTurma = encrypt($idTurma);
 
 mysqli_query($__CONEXAO__, "insert into professores (email, turma) values ('$respEmail', '$idTurma')");
