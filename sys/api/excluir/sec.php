@@ -40,17 +40,17 @@ if($local == "turmas"){
 
 function deletarAluno($__CONEXAO__, $local, $id){
     if($__TYPE__ < 3){
-        $checkQuery = mysqli_query($__CONEXAO__, "select email from users where typeC='1' and id='$id'");
+        $checkQuery = mysqli_query($__CONEXAO__, "select email from users where typeC='1' and id='$id'") or die("a");
         checkQuery('Usuário não encontrado.', $checkQuery);
 
         $assoc = mysqli_fetch_assoc($checkQuery);
         $email = $assoc["email"];
 
-        $checkAluno = mysqli_query($__CONEXAO__, "select id from alunos where turma in (select turma from professores)");
-        checkQuery('Esse aluno não pertence a você.', $checkQuery);
+        $checkAluno = mysqli_query($__CONEXAO__, "select id from alunos where turma in (select turma from professores)") or die("b");
+        checkQuery('Esse aluno não pertence a você.', $checkAluno);
     }
 
-    mysqli_query($__CONEXAO__, "delete users, alunos from users left join alunos on users.email = alunos.email where users.email = '$email'");
+    mysqli_query($__CONEXAO__, "delete users, alunos from users left join alunos on users.email = alunos.email where users.email = '$email'") or die("c");
     endCode("Aluno deletado com sucesso", true);
 
     return;
