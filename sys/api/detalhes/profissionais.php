@@ -12,22 +12,22 @@ $_query_ = mysqli_query($__CONEXAO__, "select * from users where id='$decProfiss
 $array = array();
 
 while($_dados_ = mysqli_fetch_array($_query_)){
-    $nome       = decrypt($_dados_["nome"]);
-    $cpf        = decrypt($_dados_["cpf"]);
-    $nascimento = decrypt($_dados_["nascimento"]);
-    $email      = $_dados_["email"];
-    $status     = $_dados_["active"];
-    $status     = $status == '1' ? "active" : "inactive";
+    $nome           = decrypt($_dados_["nome"]);
+    $cpf            = decrypt($_dados_["cpf"]);
+    $nascimento     = decrypt($_dados_["nascimento"]);
+    $titularidade   = decrypt($_dados_["titularidade"]);
+    $imagem         = decrypt($_dados_["imagem"]);
+    $email          = $_dados_["email"];
+    $status         = $_dados_["active"];
+    $status         = $status == '1' ? "active" : "inactive";
 
-    $query  = mysqli_query($__CONEXAO__, "select * from professores where email='$email'");
+    $query  = mysqli_query($__CONEXAO__, "select turma from professores where email='$email'");
 
     $email = decrypt($email);
 
     $arrTurmas = array();
 
     while($dados = mysqli_fetch_array($query)){
-        $titularidade   = decrypt($dados['titularidade']);
-        $imagem         = decrypt($dados['imagem']);
         $turmaId        = decrypt($dados['turma']);
         $query2         = mysqli_query($__CONEXAO__, "select nome from turmas where id='$turmaId'");
         $turma          = mysqli_fetch_assoc($query2)['nome'];

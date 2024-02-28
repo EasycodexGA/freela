@@ -160,15 +160,15 @@ function stopUserExistnt($__CONEXAO__, $string){
 }
 
 
-function checkTurma($__CONEXAO__, $__TYPE__, $__EMAIL__, $idTurma){
+function checkTurma($__CONEXAO__, $__TYPE__, $__EMAIL__, $idTurma, $string, $complement){
     $table = $__TYPE__ == 2 ? 'professores' : 'alunos';
-    $query = mysqli_query($__CONEXAO__, "select * from $table where email='$__EMAIL__' and turma like '%,$idTurma,%'");
+    $query = mysqli_query($__CONEXAO__, "select * from $table where email='$__EMAIL__' and turma='$idTurma'");
 
     if(mysqli_num_rows($query) < 1){
-        endCode("Você não está nessa turma", false);
+        endCode($string, false);
     }
 
-    $_query_ = mysqli_query($__CONEXAO__, "select * from turmas where id='$idTurma'");
+    $_query_ = mysqli_query($__CONEXAO__, "select * from $complement");
     return $_query_;
 }
 

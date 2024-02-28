@@ -3,33 +3,27 @@ include '../../../conexao.php';
 
 justLog($__EMAIL__, $__TYPE__, 3);
 
-$_query_ = mysqli_query($__CONEXAO__, "select nome, active, email, nascimento, id from users where typeC='2'");
+$_query_ = mysqli_query($__CONEXAO__, "select nome, active, email, nascimento, id, titularidade from users where typeC='2'");
 
 $array = array();
 
-while($dados = mysqli_fetch_array($_query_)){
+while($_dados_ = mysqli_fetch_array($_query_)){
 
-    $email = $dados["email"];
-    $emailuser  = decrypt($email);
-    $nome       = decrypt($dados["nome"]);
-    $nascimento = decrypt($dados["nascimento"]);
-    $titularidade = decrypt($dados["titularidade"]);
-    $status     = $dados["active"];
-
-    $q2 = mysqli_query($__CONEXAO__, "select titularidade from professores where email='$email'");
-
-    $titularidade = mysqli_fetch_assoc($q2)['titularidade'];
-    $titularidade = decrypt($titularidade);
-    
-    $status     = $status == '1' ? "active" : "inactive";
+    $email          = $_dados_["email"];
+    $emailuser      = decrypt($email);
+    $nome           = decrypt($_dados_["nome"]);
+    $nascimento     = decrypt($_dados_["nascimento"]);
+    $titularidade   = decrypt($_dados_["titularidade"]);
+    $status         = $_dados_["active"];
+    $status         = $status == '1' ? "active" : "inactive";
 
     $arr = array(
-        "id"            => $dados["id"], 
+        "id"            => $_dados_["id"], 
         "nome"          => $nome, 
         "email"         => $emailuser,
         "data"          => $nascimento,
-        "status"        => $status,
         "titularidade"  => $titularidade,
+        "status"        => $status,
         "_name"         => "profissionais"
     );
 

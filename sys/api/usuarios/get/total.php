@@ -34,20 +34,18 @@ if($type == 'turmas'){
 $pode = array("users", "turmas", "categorias", "eventos");
 
 if($type == "usersprofessor"){
-    $type = "users";
-    $adicional = "where typeC='2'";
+    $type = "users where typeC='2'";
 }
 
 if($type == "usersalunos"){
-    $type = "users";
-    $adicional = "where typeC='1'";
+    $type = "users where typeC='1'";
 }
 
 if(!in_array($type, $pode)){
     endCode("Pesquisa inválida.", false);
 }
 
-$query = mysqli_query($__CONEXAO__, "select active, id from $type $adicional") or die("erro");
+$query = mysqli_query($__CONEXAO__, "select active, id from $type") or die("erro");
 // asdsdasdasd
 $active = 0;
 $inactive = 0;
