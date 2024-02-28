@@ -59,6 +59,6 @@ mysqli_query($__CONEXAO__, "insert into turmas (nome, categoria, horario, data) 
 $idTurma = mysqli_insert_id($__CONEXAO__);
 $idTurma = encrypt($idTurma);
 
-mysqli_query($__CONEXAO__, "insert into professores (email, turma) values ('$respEmail', '$idTurma'");
+mysqli_query($__CONEXAO__, "insert into professores (email, turma) values ('$respEmail', '$idTurma')");
 
 endCode("Sala criada com sucesso", true);
