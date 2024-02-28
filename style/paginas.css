@@ -29,6 +29,10 @@ header, .extra{
 
 }
 
+#btnRemove{
+    background: #ff5e52!important;
+}
+
 .sub-header span{
     color: #FF9900;
     font-size: 25px;

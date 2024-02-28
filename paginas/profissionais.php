@@ -54,6 +54,7 @@ justLog($__EMAIL__, $__TYPE__, 3);
             </div>
             <div class='out-bt-sv'>
                 <button class='btn-close' onclick='closeAdd()'>Fechar</button>
+                <button id='btnRemove' class='btn-add'>Excluir</button>
                 <button onclick='javascript:void(0)' class='btn-add'>Salvar</button>
             </div>
         </div>

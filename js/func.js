@@ -217,6 +217,9 @@ function getDetails(cat, id){
             return;
         }
         details.classList.add("add-active");
+        btnRemove.onclick = () => {
+            removeSec(cat, id);
+        }
         i = e.mensagem[0];
         if(i.data){
             let date = new Date(i.data * 1000 + 86400000);
@@ -228,4 +231,8 @@ function getDetails(cat, id){
             }
         }
     })
+}
+
+function removeSec(local, id){
+    console.log(local, id, "remove")
 }
