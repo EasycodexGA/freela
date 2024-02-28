@@ -1,3 +1,7 @@
+body {
+    overflow: hidden;
+}
+
 .int-main {
     display: flex;
     height: 100svh;
