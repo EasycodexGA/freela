@@ -40,6 +40,7 @@ if($type == 'turmas'){
             $turmass .= ',' . decrypt($getQuery['turma']) . ',';
         }
     }
+    endCode($turmass, false);
     $eventos = array();
     $query = mysqli_query($__CONEXAO__, "select id from eventos where turma in $turmass");
     while($getQuery = mysqli_fetch_array($query)){
