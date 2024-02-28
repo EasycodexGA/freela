@@ -24,10 +24,26 @@ if($type == 'turmas'){
     $turmas = array();
     if($__TYPE__ < 3){
         $table = $__TYPE__ == 2 ? 'professores' : 'alunos';
-        $query = mysqli_query($__CONEXAO__, "select * from $table where email='$__EMAIL__'");
+        $query = mysqli_query($__CONEXAO__, "select turma from $table where email='$__EMAIL__'");
         while($getQuery = mysqli_fetch_array($query)){
-            $turmas[] = decrypt($getQuery['turma']);
+            array_push($turmas, decrypt($getQuery['turma']));
         }
+    }
+}
+
+if($type == 'turmas'){
+    $turmass = '';
+    if($__TYPE__ < 3){
+        $table = $__TYPE__ == 2 ? 'professores' : 'alunos';
+        $query = mysqli_query($__CONEXAO__, "select turma from $table where email='$__EMAIL__'");
+        while($getQuery = mysqli_fetch_array($query)){
+            $turmass .= ',' . decrypt($getQuery['turma']) . ',';
+        }
+    }
+    $eventos = array();
+    $query = mysqli_query($__CONEXAO__, "select id from eventos where turma in $turmass");
+    while($getQuery = mysqli_fetch_array($query)){
+        array_push($eventos, $getQuery['id']);
     }
 }
 
@@ -46,7 +62,6 @@ if(!in_array($type, $pode)){
 }
 
 $query = mysqli_query($__CONEXAO__, "select active, id from $type") or die("erro");
-// asdsdasdasd
 $active = 0;
 $inactive = 0;
 

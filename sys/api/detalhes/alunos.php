@@ -47,15 +47,15 @@ while($_dados_ = mysqli_fetch_array($_query_)){
     }
 
     $arr = array(
-        "id"        => $decAluno,
-        "nome"      => $nome, 
-        "email"     => $email,
-        "cpf"       => $cpf,
-        "data"      => $nascimento,
-        "turmas"    => $arrTurmas,
-        "presencas" => $presencas,
-        "faltas"    => $faltas,
-        "status"    => $status
+        "id"            => $decAluno,
+        "nome"          => $nome, 
+        "email"         => $email,
+        "cpf"           => $cpf,
+        "nascimento"    => $nascimento,
+        "turmas"        => $arrTurmas,
+        "presencas"     => $presencas,
+        "faltas"        => $faltas,
+        "status"        => $status
     );
     array_push($array, $arr);
 }

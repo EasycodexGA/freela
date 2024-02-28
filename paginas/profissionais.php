@@ -36,7 +36,7 @@ justLog($__EMAIL__, $__TYPE__, 3);
                 </div>
                 <div class='inp-add-out'>
                     <h3>Nascimento</h3>
-                    <p id='dataGet' type='text'>-- -- --</p>
+                    <p id='nascimentoGet' type='text'>-- -- --</p>
                 </div>
                 <div class='inp-add-out'>
                     <h3>Email</h3>

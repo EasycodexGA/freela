@@ -41,7 +41,7 @@ while($_dados_ = mysqli_fetch_array($_query_)){
         "email"         => $email,
         "cpf"           => $cpf,
         "imagem"        => $imagem,
-        "data"          => $nascimento,
+        "nascimento"    => $nascimento,
         "turmas"        => $arrTurmas,
         "status"        => $status
     );
