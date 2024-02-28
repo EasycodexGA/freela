@@ -234,5 +234,10 @@ function getDetails(cat, id){
 }
 
 function removeSec(local, id){
-    console.log(local, id, "remove")
+    fetch(`../sys/api/excluir/sec?local=${local}?id=${id}`)
+    .then(e=>e.json())
+    .then(e=>{
+        
+    })
+
 }
