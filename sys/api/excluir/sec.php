@@ -11,23 +11,29 @@ $local  = scapeString($__CONEXAO__, $_GET['local']);
 $local  = setString($local);
 $local  = decrypt($local);
 
+echo "a-";
+
 if($local == "alunos"){
-    deletarAluno($__CONEXAO__, $local, $id);
+echo "b-";
+    
+    deletarAluno($__CONEXAO__, $id);
+echo "c-";
+
 }
 
 
 if($local == "categorias"){
-    deletarCategoria($__CONEXAO__, $local, $id);
+    deletarCategoria($__CONEXAO__, $id);
 }
 
 
 if($local == "eventos"){
-    deletarEventos($__CONEXAO__, $local, $id);
+    deletarEventos($__CONEXAO__, $id);
 }
 
 
 if($local == "professores"){
-    deletarProfessor($__CONEXAO__, $local, $id);
+    deletarProfessor($__CONEXAO__, $id);
 }
 
 
@@ -38,20 +44,26 @@ if($local == "turmas"){
 
 // FUNCTIONS
 
-function deletarAluno($__CONEXAO__, $local, $id){
+function deletarAluno($__CONEXAO__, $id){
+echo "d-";
+
     if($__TYPE__ < 3){
         $checkQuery = mysqli_query($__CONEXAO__, "select email from users where typeC='1' and id='$id'") or die("a");
-        checkQuery('Usuário não encontrado.', $checkQuery);
+        checkQuery('Usuário não encontrado.', $checkQuery, false);
 
         $assoc = mysqli_fetch_assoc($checkQuery);
         $email = $assoc["email"];
+        echo "e-";
 
         $checkAluno = mysqli_query($__CONEXAO__, "select id from alunos where turma in (select turma from professores)") or die("b");
-        checkQuery('Esse aluno não pertence a você.', $checkAluno);
-    }
+        checkQuery('Esse aluno não pertence a você.', $checkAluno, true);
+echo "f-";
 
+    }
+    echo "g-";
     mysqli_query($__CONEXAO__, "delete users, alunos from users left join alunos on users.email = alunos.email where users.email = '$email'") or die("c");
     endCode("Aluno deletado com sucesso", true);
+    echo "h-";
 
     return;
     exit;
