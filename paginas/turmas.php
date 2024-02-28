@@ -74,7 +74,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
                 <div class='inp-add-out'>
                     <h3>Categorias</h3>
                     <select id='categoriaAdd'>
-                        <option value=''>Nenhuma turma</option>
+                        <option value=''>Nenhuma categoria</option>
                     </select>
                 </div>
                 <div class='inp-add-out'>
