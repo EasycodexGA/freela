@@ -75,12 +75,12 @@ const preSets = {
     'profissionais': {
         'link': '../sys/api/usuarios/get/professores',
         'data': 'usersprofessor',
-        'th': ['nome', 'email', 'data', 'status']
+        'th': ['nome', 'email', 'nascimento', 'titularidade', 'status']
     },
     'alunos': {
         'link': '../sys/api/usuarios/get/alunos',
         'data': 'usersalunos',
-        'th': ['nome', 'email', 'data', 'status']
+        'th': ['nome', 'email', 'nascimento', 'status']
     },
     'categorias': {
         'link': '../sys/api/usuarios/get/categorias',
