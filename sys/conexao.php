@@ -3,7 +3,7 @@ include"auth.php";
 date_default_timezone_set('America/Sao_Paulo');
 header('Content-Type: text/html; charset=utf-8');
 
-echo decrypt(1);
+echo encrypt('1');
 
 session_start();
 $__CONEXAO__ = mysqli_connect(
