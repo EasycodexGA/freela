@@ -26,7 +26,7 @@ checkMissing(
         $profissional
     )
 );
-
+endCode($categoria, false);
 $horarioDec = decrypt($horario);
 
 if($horarioDec > 86340000 or $horarioDec < 0){
