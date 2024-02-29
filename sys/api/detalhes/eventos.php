@@ -9,10 +9,10 @@ $decEvento = decrypt($evento);
 
 $_query_ = mysqli_query($__CONEXAO__, "select nome, categoria, status, turma from eventos where id='$decEvento'");
 $turmaEvento = mysqli_fetch_assoc($_query_)['turma'];
-$turmaEvento = decrypt($turmaEvento);
+$turmaEventoDec = decrypt($turmaEvento);
 
 if($__TYPE__ < 3) {
-    checkTurma($turmaEvento, "Você não está participando deste evento.", "eventos where id='$decEvento'");
+    checkTurma($__CONEXAO__, $__TYPE__, $__EMAIL__, $turmaEvento, "Você não está nessa turma.", "turmas where id='$turmaEventoDec'");
 }
 
 $array = array();
