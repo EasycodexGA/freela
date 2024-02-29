@@ -10,8 +10,9 @@ $decTurma = decrypt($turma);
 if($__TYPE__ == 3){
     $_query_ = mysqli_query($__CONEXAO__, "select * from turmas where id='$decTurma'");
 } else {
-    endCode(var_dump(checkTurma($__CONEXAO__, $__TYPE__, $__EMAIL__, $turma, "Você não está nessa turma.", "turmas where id='$decTurma'")), false);
+    checkTurma($__CONEXAO__, $__TYPE__, $__EMAIL__, $turma, "Você não está nessa turma.", "turmas where id='$decTurma'");
 }
+var_dump($_query_);
 
 $array = array();
 while($_dados_ = mysqli_fetch_array($_query_)){
