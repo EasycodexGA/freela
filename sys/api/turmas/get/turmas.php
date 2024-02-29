@@ -17,7 +17,7 @@ $array = array();
 
 while($dados = mysqli_fetch_array($_query_)){
     $nome = decrypt($dados["nome"]);
-    $categoria = decrypt($dados["categoria"]);
+    $categoria = $dados["categoria"];
 
     $status = $dados["active"];
 
