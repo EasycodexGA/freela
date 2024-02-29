@@ -104,11 +104,6 @@ function setNum($string){
     return encrypt($string);
 }
 
-function removeSpace($string){
-    $string = preg_replace(' ', '', $string);
-    return $string;
-}
-
 function checkMissing($array){
     for($i = 0; $i < count($array); $i++){
         $item = decrypt($array[$i]);

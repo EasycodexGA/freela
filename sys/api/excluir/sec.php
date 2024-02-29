@@ -54,7 +54,7 @@ echo "d-";
     $email = $assoc["email"];
     echo "e-";
 
-    $checkAluno = mysqli_query($__CONEXAO__, "select id from alunos where turma in (select turma from professores where email='$__EMAIL__')") or die("b");
+    $checkAluno = mysqli_query($__CONEXAO__, "select id from users where typeC='1' and id='$id' and turma in (select turma from professores where email='$__EMAIL__')") or die("b");
     echo $__EMAIL__;
     checkQuery($__TYPE__, 'Esse aluno não pertence a você.', $checkAluno, true);
     echo "f-";
