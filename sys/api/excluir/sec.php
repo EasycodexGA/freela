@@ -92,7 +92,7 @@ function deletarProfessor($__CONEXAO__, $__TYPE__, $__EMAIL__, $id){
     exit;
 }
 
-function deletarTurma($__CONEXAO__, $local, $id){
+function deletarTurma($__CONEXAO__, $__TYPE__, $__EMAIL__, $id){
     justLog($__EMAIL__, $__TYPE__, 3);
 
     $checkQuery = mysqli_query($__CONEXAO__, "select id from turmas where id='$id'") or die("a");
