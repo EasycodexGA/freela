@@ -52,7 +52,7 @@ function deletarAluno($__CONEXAO__, $__TYPE__, $__EMAIL__, $id){
 
     mysqli_query($__CONEXAO__, "delete from users where email='$email'") or die("c");
     mysqli_query($__CONEXAO__, "delete from alunos where email='$email'") or die("c");
-    endCode("Aluno deletado com sucesso $email", true);
+    endCode("Aluno deletado com sucesso", true);
 
     return;
     exit;
@@ -65,6 +65,7 @@ function deletarCategoria($__CONEXAO__, $__TYPE__, $__EMAIL__, $id){
     checkQuery($__TYPE__, 'Categoria não encontrada.', $checkQuery, false);
 
     mysqli_query($__CONEXAO__, "delete from categorias where id='$id'") or die("c");
+    endCode("Categoria deletada com sucesso", true);
     return;
     exit;
 }

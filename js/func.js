@@ -237,7 +237,7 @@ function removeSec(local, id){
     fetch(`../sys/api/excluir/sec?local=${local}&id=${id}`)
     .then(e=>e.json())
     .then(e=>{
-        
+        newMsg(e);
     })
 
 }
