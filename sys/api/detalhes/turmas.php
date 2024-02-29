@@ -14,10 +14,9 @@ if($__TYPE__ == 3){
 }
 
 $array = array();
-
 while($_dados_ = mysqli_fetch_array($_query_)){
     $nome       = decrypt($_dados_["nome"]);
-    endCode($nome, false);
+    endCode($decTurma, false);
     $categoria  = decrypt($_dados_["categoria"]);
     $horario    = $_dados_["horario"];
     $data       = $_dados_['data'];
