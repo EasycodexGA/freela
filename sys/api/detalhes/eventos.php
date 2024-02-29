@@ -44,7 +44,7 @@ while($_dados_ = mysqli_fetch_array($_query_)){
         "nome"      => decrypt($nome),
         "turmas"    => $turmas,
         "descricao" => $descricao,
-        "turmasQt"  => mysqli_num_rows($query),
+        "turmasQt"  => mysqli_num_rows($getTurmas),
         "status"    => $status,
         "created"   => $created
     );
