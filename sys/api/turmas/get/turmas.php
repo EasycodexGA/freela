@@ -9,17 +9,7 @@ if($__TYPE__ == 3){
     $_query_ = mysqli_query($__CONEXAO__, "select * from turmas");
 } else {
     $table = $__TYPE__ == 2 ? 'professores' : 'alunos';
-    $query = mysqli_query($__CONEXAO__, "select * from $table where email='$__EMAIL__'");
-    $turmas = '';
-    while($getQuery = mysqli_fetch_array($query)){
-        $value = $getQuery['turma'];
-        $valuedec = decrypt($value);
-        $turmas .= $valuedec . ' , ';
-    }
-    $turmas = substr($turmas, 0, -3);
-    $_query_ = mysqli_query($__CONEXAO__, "select * from turmas where id in ($turmas)");
-    
-
+    $_query_ = mysqli_query($__CONEXAO__, "select * from eventos where turma in (select turma from $table where email='$__EMAIL__')");
 }
 
 $array = array();

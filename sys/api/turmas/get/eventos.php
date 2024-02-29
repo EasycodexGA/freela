@@ -10,10 +10,6 @@ if($__TYPE__ == 3){
 } else {
     $table = $__TYPE__ == 2 ? 'professores' : 'alunos';
     $_query_ = mysqli_query($__CONEXAO__, "select * from eventos where turma in (select turma from $table where email='$__EMAIL__')");
-    // tenta fazer algo assim:
-    // select * from eventos where turma in (select turma from professores where email='$__EMAIL__');
-    // assim ja pega todos os eventos do professor 
-    // para alunos é só trocar a tabela professores para alunos 
 }
 
 $array = array();
