@@ -94,7 +94,7 @@ justLog($__EMAIL__, $__TYPE__, 2);
                 </div>
             </div>
             <div class='out-bt-sv'>
-                <button class='btn-add btn-close' data-id='0' onclick='remove()'>Fechar</button>
+                <button class='btn-close' onclick='closeAdd()'>Fechar</button>
                 <button onclick='addNewData("usuarios/cadastrar/aluno", {
                     nome: nomeAdd.value,
                     turma: turmaAdd.value,
