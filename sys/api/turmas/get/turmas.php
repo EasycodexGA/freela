@@ -16,8 +16,11 @@ if($__TYPE__ == 3){
 $array = array();
 
 while($dados = mysqli_fetch_array($_query_)){
-    $nome = decrypt($dados["nome"]);
-    $categoria = $dados["categoria"];
+    $nome   = decrypt($dados["nome"]);
+    $catId  = $dados["categoria"];
+
+    $getCat = mysqli_query($__CONEXAO__, "select nome from categoria where id='$catId'");
+    $categoria  = mysqli_fetch_assoc($getCat)["nome"];
 
     $status = $dados["active"];
 
