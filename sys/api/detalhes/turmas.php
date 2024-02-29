@@ -10,12 +10,19 @@ $decTurma = decrypt($turma);
 if($__TYPE__ == 3){
     $_query_ = mysqli_query($__CONEXAO__, "select * from turmas where id='$decTurma'");
 } else {
-    checkTurma($__CONEXAO__, $__TYPE__, $__EMAIL__, $turma, "Você não está nessa turma.", "turmas where id='$decTurma'");
+    $table = $__TYPE__ == 2 ? 'professores' : 'alunos';
+    $query = mysqli_query($__CONEXAO__, "select * from $table where email='$__EMAIL__' and turma='$turma'");
+
+    if(mysqli_num_rows($query) < 1){
+        endCode("Você não está nessa turma", false);
+    }
+
+    $_query_ = mysqli_query($__CONEXAO__, "select * from turmas where id='$decTurma'");
+    return $_query_;
 }
 
 $array = array();
 while($_dados_ = mysqli_fetch_array($_query_)){
-    var_dump($_dados_);
     $nome       = decrypt($_dados_["nome"]);
     $categoria  = decrypt($_dados_["categoria"]);
     $horario    = $_dados_["horario"];
