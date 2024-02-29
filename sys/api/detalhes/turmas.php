@@ -26,8 +26,6 @@ while($_dados_ = mysqli_fetch_array($_query_)){
     $data       = $_dados_['data'];
     $status     = $_dados_["active"];
     $status     = $status == '1' ? "active" : "inactive";
-    
-    endCode($decTurma, false);
 
     $query = mysqli_query($__CONEXAO__, "select nome from users where email in (select email from alunos where turma='$decTurma'");
     $query2 = mysqli_query($__CONEXAO__, "select nome, imagem from users where email in (select email from professores where turma='$decTurma')");
