@@ -80,14 +80,14 @@ function deletarProfessor($__CONEXAO__, $local, $id){
     justLog($__EMAIL__, $__TYPE__, 3);
 
     $checkQuery = mysqli_query($__CONEXAO__, "select email from users where typeC='2' and id='$id'") or die("a");
-    checkQuery($__TYPE__, 'Professor não encontrado.', $checkQuery, false);
+    checkQuery($__TYPE__, 'Profissional não encontrado.', $checkQuery, false);
 
     $assoc = mysqli_fetch_assoc($checkQuery);
     $email = $assoc["email"];
 
     mysqli_query($__CONEXAO__, "delete from users where email='$email'") or die("c");
     mysqli_query($__CONEXAO__, "delete from professores where email='$email'") or die("c");
-    endCode("Professor deletado com sucesso", true);
+    endCode("Profissional deletado com sucesso", true);
     return;
     exit;
 }
