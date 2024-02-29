@@ -26,7 +26,7 @@ while($_dados_ = mysqli_fetch_array($_query_)){
     $arrTurmas = array();
 
     while($dados = mysqli_fetch_array($query)){
-        $turmaId    = decrypt($dados['turma']);
+        $turmaId    = $dados['turma'];
         $query2     = mysqli_query($__CONEXAO__, "select nome from turmas where id='$turmaId'");
         $turma      = mysqli_fetch_assoc($query2)['nome'];
         array_push($arrTurmas, array("nome"=>decrypt($turma), "id"=>$turmaId));
