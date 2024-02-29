@@ -9,10 +9,16 @@ $decEvento = decrypt($evento);
 
 $_query_ = mysqli_query($__CONEXAO__, "select nome, categoria, status, turma from eventos where id='$decEvento'");
 $turmaEvento = mysqli_fetch_assoc($_query_)['turma'];
-$turmaEventoDec = decrypt($turmaEvento);
 
 if($__TYPE__ < 3) {
-    checkTurma($__CONEXAO__, $__TYPE__, $__EMAIL__, $turmaEvento, "Você não está nessa turma.", "turmas where id='$turmaEventoDec'");
+    $table = $__TYPE__ == 2 ? 'professores' : 'alunos';
+    $query = mysqli_query($__CONEXAO__, "select * from $table where email='$__EMAIL__' and turma='$turmaEvento'");
+
+    if(mysqli_num_rows($query) < 1){
+        endCode("Você não está participando desse evento", false);
+    }
+
+    $_query_ = mysqli_query($__CONEXAO__, "select * from eventos where turma='$turmaEvento'");
 }
 
 $array = array();

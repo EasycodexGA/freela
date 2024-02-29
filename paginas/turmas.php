@@ -124,7 +124,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
             
             for(let i of e.mensagem){
                 categoriaAdd.innerHTML += `
-                    <option value='${i.nome}'>${i.nome}</option>
+                    <option value='${i.id}'>${i.nome}</option>
                 `;
             }
         })

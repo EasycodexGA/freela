@@ -47,20 +47,18 @@ if($data < time() - (86400 * 2)){
 
 $turmaDec = decrypt($turma);
 
-$getTurma = mysqli_query($__CONEXAO__, "select * from turmas where id='$turmaDec'");
+$getTurma = mysqli_query($__CONEXAO__, "select id from turmas where id='$turmaDec'");
 
 if(mysqli_num_rows($getTurma) < 1){
     endCode("Turma inválida.", false);
 }
 
-
-$getEvento = mysqli_query($__CONEXAO__, "select * from eventos where nome='$nome' and turma='$turma' and categoria='$categoria' and data='$data'");
+$getEvento = mysqli_query($__CONEXAO__, "select id from eventos where nome='$nome' and turma='$turma' and categoria='$categoria' and data='$data'");
 
 if(mysqli_num_rows($getEvento) > 0){
     endCode("Já existe um evento com esses dados.", false);
 }
 
-mysqli_query($__CONEXAO__, "insert into eventos (nome, turma, data, descricao, categoria) values ('$nome', '$turma','$data', '$descricao', '$categoria')");
-
+mysqli_query($__CONEXAO__, "insert into eventos (nome, turma, data, descricao, categoria) values ('$nome', '$turmaDec','$data', '$descricao', '$categoria')");
 
 endCode("Sala criada com sucesso", true);

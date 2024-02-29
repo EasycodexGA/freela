@@ -11,6 +11,8 @@ $json = json_decode($request);
 $turma = scapeString($__CONEXAO__, $json->turma);
 $turma = setNum($turma);
 
+$turma = decrypt($turma);
+
 $_query_ = mysqli_query($__CONEXAO__, "select * from aulas where turma=$turma");
 
 $array = array();

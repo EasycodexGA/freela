@@ -30,7 +30,9 @@ checkMissing(
     )
 );
 
-$checkCat = mysqli_query($__CONEXAO__, "select id from categorias where nome='$categoria'");
+$categoria = decrypt($categoria);
+
+$checkCat = mysqli_query($__CONEXAO__, "select id from categorias where id='$categoria'");
 
 if(mysqli_num_rows($checkCat) == 0){
     endCode("Não existe essa categoria.", false);

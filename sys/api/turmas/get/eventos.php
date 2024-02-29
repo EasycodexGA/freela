@@ -16,7 +16,7 @@ $array = array();
 
 while($dados = mysqli_fetch_array($_query_)){
     $nome = decrypt($dados["nome"]);
-    $turmaId = decrypt($dados["turma"]);
+    $turmaId = $dados["turma"];
 
     $data       = $dados["data"];
     $categoria  = $dados["categoria"];
