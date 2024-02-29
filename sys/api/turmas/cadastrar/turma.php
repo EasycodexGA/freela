@@ -58,7 +58,7 @@ if(mysqli_num_rows($getTurma) > 0){
 mysqli_query($__CONEXAO__, "insert into turmas (nome, categoria, horario, data) values ('$nome', '$categoria', '$horario','$__TIME__')");
 $idTurma = mysqli_insert_id($__CONEXAO__);
 $idTurmaEnc = setNum($idTurma);
-mysqli_query($__CONEXAO__, "update turmas set idEnc='$idTurma' where id='$idTurma'");
+mysqli_query($__CONEXAO__, "update turmas set idEnc='$idTurmaEnc' where id='$idTurma'");
 
 mysqli_query($__CONEXAO__, "insert into professores (email, turma) values ('$respEmail', '$idTurmaEnc')");
 
