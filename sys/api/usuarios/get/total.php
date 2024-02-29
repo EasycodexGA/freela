@@ -28,9 +28,9 @@ if(!in_array($type, $pode)){
 
 if($__TYPE__ < 3){
     $table = $__TYPE__ == 2 ? 'professores' : 'alunos';
-    
+
     if($type == "usersalunos"){
-        $type = "users where typeC='1' and turma in (select turma from professor where email='$__EMAIL__')";
+        $type = "users where typeC='1' and email in (select email from alunos where turma in (select turma from professores where email='$__EMAIL__'))";
     }
     
     if($type == 'eventos'){
