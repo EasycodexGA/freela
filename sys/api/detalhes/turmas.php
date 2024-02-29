@@ -15,7 +15,7 @@ if($__TYPE__ == 3){
 
 $array = array();
 while($_dados_ = mysqli_fetch_array($_query_)){
-    echo "Check";
+    var_dump($_dados_);
     $nome       = decrypt($_dados_["nome"]);
     $categoria  = decrypt($_dados_["categoria"]);
     $horario    = $_dados_["horario"];
