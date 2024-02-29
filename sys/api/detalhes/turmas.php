@@ -18,7 +18,6 @@ if($__TYPE__ == 3){
     }
 
     $_query_ = mysqli_query($__CONEXAO__, "select * from turmas where id='$decTurma'");
-    return $_query_;
 }
 
 $array = array();
