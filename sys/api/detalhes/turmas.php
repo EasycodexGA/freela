@@ -12,11 +12,11 @@ if($__TYPE__ == 3){
 } else {
     checkTurma($__CONEXAO__, $__TYPE__, $__EMAIL__, $turma, "Você não está nessa turma.", "turmas where id='$decTurma'");
 }
+endCode($decTurma, false);
 
 $array = array();
 while($_dados_ = mysqli_fetch_array($_query_)){
     $nome       = decrypt($_dados_["nome"]);
-    endCode($decTurma, false);
     $categoria  = decrypt($_dados_["categoria"]);
     $horario    = $_dados_["horario"];
     $data       = $_dados_['data'];
