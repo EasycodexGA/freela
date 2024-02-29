@@ -205,7 +205,9 @@ function startPage(e){
 }
 
 function getDetails(cat, id){
-    let jump = ['id', 'turmas', 'status', 'imagem', 'data'];
+    let jump = ['id', 'turmas', 'status', 'imagem'];
+    let nums = ['data', 'nascimento', 'created'];
+    
     return fetch(`../sys/api/detalhes/${cat}?id=${id}`)
     .then(e=>e.json())
     .then(e=>{
@@ -217,12 +219,14 @@ function getDetails(cat, id){
         btnRemove.onclick = () => {
             removeSec(cat, id);
         }
+
         i = e.mensagem[0];
-        if(i.nascimento){
-            let date = new Date(i.nascimento * 1000 + 86400000);
-            i.nascimento = date.toLocaleDateString("pt-BR");
-        }
+
         for(const [key, value] of Object.entries(i)){
+            if(nums.includes(key)){
+                let date = new Date(value * 1000 + 86400000);
+                value = date.toLocaleDateString("pt-BR");
+            }
             if(!jump.includes(key)){
                 document.getElementById(`${key}Get`).innerHTML = value;
             }
