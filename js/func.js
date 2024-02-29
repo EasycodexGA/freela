@@ -23,14 +23,6 @@ function addNewData(local, data){
     .then(e=>e.json())
     .then(e=>{
         newMsg(e);
-
-        if(e.response){
-            closeAdd();
-            cleanInps();
-            window.location.reload()
-        }
-
-        
     })
 }
 
@@ -41,6 +33,11 @@ function newMsg(e){
     msg.classList.add(color);
     msg.innerText = e.mensagem;
     document.body.appendChild(msg);
+    if(e.response){
+        closeAdd();
+        cleanInps();
+        window.location.reload()
+    }
     setTimeout(()=>{
         msg.remove();
     },2000)
