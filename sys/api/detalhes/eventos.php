@@ -24,15 +24,11 @@ $array = array();
 $turmas = array();
 while($_dados_ = mysqli_fetch_array($_query_)){
     $nome       = $_dados_["nome"];
-    $descricao  = $_dados_['descricao'];
+    $descricao  = decrypt($_dados_['descricao']);
     $data       = $_dados_['data'];
     $status     = $_dados_["active"];
     $status     = $status == '1' ? "active" : "inactive";
     $crated     = $_dados_['created'];
-
-
-    $getCat     = mysqli_query($__CONEXAO__, "select categoria from turma where id='$turma'");
-    $categoria  = mysqli_fetch_assoc($getCat)["categoria"];
 
     $turmas = array();
     $getTurmas = mysqli_query($__CONEXAO__, "select id, nome, categoria from turma where (select turma from eventos where nome='$nome' and data='$data')");
@@ -47,7 +43,6 @@ while($_dados_ = mysqli_fetch_array($_query_)){
         "id"        => $decEvento,
         "nome"      => decrypt($nome),
         "turmas"    => $turmas,
-        "categoria" => $categoria,
         "descricao" => $descricao,
         "turmasQt"  => mysqli_num_rows($query),
         "status"    => $status,
