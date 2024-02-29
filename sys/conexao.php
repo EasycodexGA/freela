@@ -161,6 +161,7 @@ function stopUserExistnt($__CONEXAO__, $string){
 
 function checkTurma($__CONEXAO__, $__TYPE__, $__EMAIL__, $idTurma, $string, $complement){
     $table = $__TYPE__ == 2 ? 'professores' : 'alunos';
+    endCode($idTurma, false);
     $query = mysqli_query($__CONEXAO__, "select * from $table where email='$__EMAIL__' and turma='$idTurma'");
 
     if(mysqli_num_rows($query) < 1){
