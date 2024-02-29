@@ -18,22 +18,22 @@ if($local == "alunos"){
 
 
 if($local == "categorias"){
-    deletarCategoria($__CONEXAO__, $__TYPE__, $id);
+    deletarCategoria($__CONEXAO__, $__TYPE__, $__EMAIL__, $id);
 }
 
 
 if($local == "eventos"){
-    deletarEventos($__CONEXAO__, $__TYPE__, $id);
+    deletarEventos($__CONEXAO__, $__TYPE__, $__EMAIL__, $id);
 }
 
 
 if($local == "professores"){
-    deletarProfessor($__CONEXAO__, $__TYPE__, $id);
+    deletarProfessor($__CONEXAO__, $__TYPE__, $__EMAIL__, $id);
 }
 
 
 if($local == "turmas"){
-    deletarTurma($__CONEXAO__, $__TYPE__, $id);
+    deletarTurma($__CONEXAO__, $__TYPE__, $__EMAIL__, $id);
 }
 
 
@@ -58,8 +58,13 @@ function deletarAluno($__CONEXAO__, $__TYPE__, $__EMAIL__, $id){
     exit;
 }
 
-function deletarCategoria($__CONEXAO__, $local, $id){
- 
+function deletarCategoria($__CONEXAO__, $__TYPE__, $__EMAIL__, $id){
+    justLog($__EMAIL__, $__TYPE__, 3);
+
+    $checkQuery = mysqli_query($__CONEXAO__, "select id from categorias where id='$id'") or die("a");
+    checkQuery($__TYPE__, 'Categoria não encontrada.', $checkQuery, false);
+
+    mysqli_query($__CONEXAO__, "delete from categorias where id='$id'") or die("c");
     return;
     exit;
 }
@@ -84,7 +89,6 @@ function deletarTurma($__CONEXAO__, $local, $id){
 
 function checkQuery($__TYPE__, $res, $response, $status){
     if($status and $__TYPE__ == 3){
-        echo "asd";
         return;
     }
 
