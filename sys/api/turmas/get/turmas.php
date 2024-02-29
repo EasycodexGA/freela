@@ -19,8 +19,9 @@ while($dados = mysqli_fetch_array($_query_)){
     $nome   = decrypt($dados["nome"]);
     $catId  = $dados["categoria"];  
 
-    $getCat = mysqli_query($__CONEXAO__, "select nome from categorias where id='$catId'");
+    $getCat     = mysqli_query($__CONEXAO__, "select nome from categorias where id='$catId'");
     $categoria  = mysqli_fetch_assoc($getCat)["nome"];
+    $categoria  = decrypt($categoria);
 
     $status = $dados["active"];
 
