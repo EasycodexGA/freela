@@ -33,9 +33,12 @@ while($_dados_ = mysqli_fetch_array($_query_)){
     $turmas = array();
     $getTurmas = mysqli_query($__CONEXAO__, "select id, nome, categoria from turmas where id in (select turma from eventos where nome='$nome' and data='$data')");
     while($dadosTurmas = mysqli_fetch_array($getTurmas)){
-        $nomeT      = $dadosTurmas['nome'];
+        $nomeT      = decrypt($dadosTurmas['nome']);
         $idT        = $dadosTurmas['id'];
-        $categoriaT = $dadosTurmas['categoria'];
+        $catId = $dadosTurmas['categoria'];
+        $getCat     = mysqli_query($__CONEXAO__, "select nome from categorias where id='$catId'");
+        $categoriaT  = mysqli_fetch_assoc($getCat)["nome"];
+        $categoriaT  = decrypt($categoria);
         array_push($turmas, {"id"=> $idT, "nome"=> $nomeT, "categoria"=> $categoriaT})
     }
 
