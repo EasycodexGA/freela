@@ -71,7 +71,11 @@ function deletarCategoria($__CONEXAO__, $__TYPE__, $__EMAIL__, $id){
 }
 
 function deletarEventos($__CONEXAO__, $local, $id){
+    $checkQuery = mysqli_query($__CONEXAO__, "select id from eventos where turma in (select turma from professores where email='$__EMAIL__') and id='$id'") or die("a");
+    checkQuery($__TYPE__, 'Evento não encontrado.', $checkQuery, false);
 
+    mysqli_query($__CONEXAO__, "delete from eventos where id='$id'") or die("c");
+    endCode("Evento deletado com sucesso", true);
     return;
     exit;
 }
