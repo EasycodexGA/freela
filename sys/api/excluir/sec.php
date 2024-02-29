@@ -93,7 +93,13 @@ function deletarProfessor($__CONEXAO__, $__TYPE__, $__EMAIL__, $id){
 }
 
 function deletarTurma($__CONEXAO__, $local, $id){
+    justLog($__EMAIL__, $__TYPE__, 3);
 
+    $checkQuery = mysqli_query($__CONEXAO__, "select id from turmas where id='$id'") or die("a");
+    checkQuery($__TYPE__, 'Turma não encontrada.', $checkQuery, false);
+
+    mysqli_query($__CONEXAO__, "delete from turmas where id='$id'") or die("c");
+    endCode("Turma deletada com sucesso", true);
     return;
     exit;
 }
