@@ -48,7 +48,6 @@ function deletarAluno($__CONEXAO__, $__TYPE__, $__EMAIL__, $id){
     $email = $assoc["email"];
 
     $checkAluno = mysqli_query($__CONEXAO__, "select id from alunos where turma in (select turma from professores where email='$__EMAIL__') and email in (select email from users where typeC='1' and id='$id' )") or die("b");
-    echo $__EMAIL__;
     checkQuery($__TYPE__, 'Esse aluno não pertence a você.', $checkAluno, true);
 
     mysqli_query($__CONEXAO__, "delete from users where email='$email'") or die("c");
@@ -84,7 +83,6 @@ function deletarTurma($__CONEXAO__, $local, $id){
 }
 
 function checkQuery($__TYPE__, $res, $response, $status){
-    echo $status . " " . $__TYPE__;
     if($status and $__TYPE__ == 3){
         echo "asd";
         return;
