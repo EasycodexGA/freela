@@ -15,14 +15,14 @@ if($__TYPE__ == 3){
 $array = array();
 
 while($dados = mysqli_fetch_array($_query_)){
-    $nome = decrypt($dados["nome"]);
-    $turmaId = $dados["turma"];
-
+    $nome       = decrypt($dados["nome"]);
     $data       = $dados["data"];
-    $categoria  = $dados["categoria"];
     $status     = $dados["active"]; 
+    $status     = $status == '1' ? "active" : "inactive";
+    $turmaId    = $dados["turma"];
 
-    $status = $status == '1' ? "active" : "inactive";
+    $getCat     = mysqli_query($__CONEXAO__, "select categoria from turma where id='$turma'");
+    $categoria  = mysqli_fetch_assoc($getCat)["categoria"];
 
     $queryT = mysqli_query($__CONEXAO__, "select nome from turmas where id='$turmaId'");
 

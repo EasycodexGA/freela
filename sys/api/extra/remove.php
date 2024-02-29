@@ -64,6 +64,9 @@ function deletarCategoria($__CONEXAO__, $__TYPE__, $__EMAIL__, $id){
     $checkQuery = mysqli_query($__CONEXAO__, "select id from categorias where id='$id'") or die("a");
     checkQuery($__TYPE__, 'Categoria não encontrada.', $checkQuery, false);
 
+    $preDelete = mysqli_query($__CONEXAO__, "select id from turmas where categoria='$id'");
+    checkQueryM('Ainda existem turmas com essa categoria.', $preDelete);
+    
     mysqli_query($__CONEXAO__, "delete from categorias where id='$id'") or die("c");
     endCode("Categoria deletada com sucesso", true);
     return;
@@ -117,6 +120,12 @@ function checkQuery($__TYPE__, $res, $response, $status){
     }
 
     if(mysqli_num_rows($response) < 1){
+        endCode($res, false);
+    }
+}
+
+function checkQueryM($res, $response){
+    if(mysqli_num_rows($response) > 0){
         endCode($res, false);
     }
 }
