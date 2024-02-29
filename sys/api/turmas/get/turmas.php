@@ -18,6 +18,7 @@ if($__TYPE__ == 3){
     }
     $turmas = substr($turmas, 0, -3);
     $_query_ = mysqli_query($__CONEXAO__, "select * from turmas where id in ($turmas)");
+
 }
 
 $array = array();

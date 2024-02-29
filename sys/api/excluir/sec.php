@@ -47,7 +47,7 @@ function deletarAluno($__CONEXAO__, $__TYPE__, $__EMAIL__, $id){
     $assoc = mysqli_fetch_assoc($checkQuery);
     $email = $assoc["email"];
 
-    $checkAluno = mysqli_query($__CONEXAO__, "select id from alunos where turma in (select turma from professores where email='$__EMAIL__') and email in (select email from users where typeC='1' and id='$id' )") or die("b");
+    $checkAluno = mysqli_query($__CONEXAO__, "select id from alunos where turma in (select turma from professores where email='$__EMAIL__') and email in (select email from users where typeC='1' and id='$id')") or die("b");
     checkQuery($__TYPE__, 'Esse aluno não pertence a você.', $checkAluno, true);
 
     mysqli_query($__CONEXAO__, "delete from users where email='$email'") or die("c");

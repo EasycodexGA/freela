@@ -3,7 +3,11 @@ include '../../../conexao.php';
 
 justLog($__EMAIL__, $__TYPE__, 2);
 
-$_query_ = mysqli_query($__CONEXAO__, "select nome, active, email, nascimento, id from users where typeC='1'");
+if($__TYPE__ == 3){
+    $_query_ = mysqli_query($__CONEXAO__, "select nome, active, email, nascimento, id from users where typeC='1'");
+} else {
+    $_query_ = mysqli_query($__CONEXAO__, "select nome, active, email, nascimento, id from alunos where turma in (select turma from professores where email='$__EMAIL__')");
+}
 
 $array = array();
 
