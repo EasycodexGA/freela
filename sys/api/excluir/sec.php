@@ -74,7 +74,7 @@ function deletarEventos($__CONEXAO__, $__TYPE__, $__EMAIL__, $id){
     $checkQuery = mysqli_query($__CONEXAO__, "select id from eventos where id='$id'") or die("a");
     checkQuery($__TYPE__, 'Evento não encontrado.', $checkQuery, false);
 
-    $checkEvt = mysqli_num_rows($__CONEXAO__, "select id from eventos where turma in (select turma from professores where email='$__EMAIL__') and id='$id'")
+    $checkEvt = mysqli_num_rows($__CONEXAO__, "select id from eventos where turma in (select turma from professores where email='$__EMAIL__') and id='$id'");
     checkQuery($__TYPE__, 'Evento não é da sua turma.', $checkQuery, true);
 
     mysqli_query($__CONEXAO__, "delete from eventos where id='$id'") or die("c");
