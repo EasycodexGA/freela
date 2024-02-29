@@ -41,7 +41,7 @@ while($_dados_ = mysqli_fetch_array($_query_)){
         $categoriaT = mysqli_fetch_assoc($getCat)["nome"];
         $categoriaT = decrypt($categoriaT);
 
-        array_push($turmas, {"id"=> $idT, "nome"=> $nomeT, "categoria"=> $categoriaT})
+        array_push($turmas, array("id"=> $idT, "nome"=> $nomeT, "categoria"=> $categoriaT));
     }
 
     $arr = array(
