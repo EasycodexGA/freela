@@ -76,7 +76,7 @@ function deletarEventos($__CONEXAO__, $local, $id){
     exit;
 }
 
-function deletarProfessor($__CONEXAO__, $local, $id){
+function deletarProfessor($__CONEXAO__, $__TYPE__, $__EMAIL__, $id){
     justLog($__EMAIL__, $__TYPE__, 3);
 
     $checkQuery = mysqli_query($__CONEXAO__, "select email from users where typeC='2' and id='$id'") or die("a");
