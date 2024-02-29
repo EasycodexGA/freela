@@ -31,7 +31,7 @@ while($_dados_ = mysqli_fetch_array($_query_)){
     $crated     = $_dados_['created'];
 
     $turmas = array();
-    $getTurmas = mysqli_query($__CONEXAO__, "select id, nome, categoria from turma where (select turma from eventos where nome='$nome' and data='$data')");
+    $getTurmas = mysqli_query($__CONEXAO__, "select id, nome, categoria from turma where id in (select turma from eventos where nome='$nome' and data='$data')");
     while($dadosTurmas = mysqli_fetch_array($getTurmas)){
         $nomeT      = $dadosTurmas['nome'];
         $idT        = $dadosTurmas['id'];
