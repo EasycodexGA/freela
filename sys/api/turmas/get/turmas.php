@@ -9,8 +9,7 @@ if($__TYPE__ == 3){
     $_query_ = mysqli_query($__CONEXAO__, "select * from turmas");
 } else {
     $table = $__TYPE__ == 2 ? 'professores' : 'alunos';
-    $_query_ = mysqli_query($__CONEXAO__, "select * from turmas where idEnc in (select turma from $table where email='$__EMAIL__')");
-    // coloquei um idEnc na tabela turma, mas é mais facil tirar o encrypt dos outros lugares, outra hora faço isso
+    $_query_ = mysqli_query($__CONEXAO__, "select * from turmas where id in (select turma from $table where email='$__EMAIL__')");
 }
 
 $array = array();
