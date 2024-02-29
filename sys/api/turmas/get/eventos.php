@@ -9,15 +9,11 @@ if($__TYPE__ == 3){
     $_query_ = mysqli_query($__CONEXAO__, "select * from eventos");
 } else {
     $table = $__TYPE__ == 2 ? 'professores' : 'alunos';
-    $query = mysqli_query($__CONEXAO__, "select * from $table where email='$__EMAIL__'");
-    $turmas = '';
-    while($getQuery = mysqli_fetch_array($query)){
-        $value = $getQuery['turma'];
-        $valuedec = decrypt($value);
-        $turmas .= $valuedec . ' , ';
-    }
-    $turmas = substr($turmas, 0, -3);
-    $_query_ = mysqli_query($__CONEXAO__, "select * from eventos where turma in ($turmas)");
+    $_query_ = mysqli_query($__CONEXAO__, "select * from eventos where turma in (select turma from $table where email='$__EMAIL__')");
+    // tenta fazer algo assim:
+    // select * from eventos where turma in (select turma from professores where email='$__EMAIL__');
+    // assim ja pega todos os eventos do professor 
+    // para alunos é só trocar a tabela professores para alunos 
 }
 
 $array = array();
