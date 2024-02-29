@@ -41,12 +41,12 @@ if(mysqli_num_rows($getTurma) < 1){
     endCode("Turma inválida.", false);
 }
 
-$getEvento = mysqli_query($__CONEXAO__, "select id from eventos where nome='$nome' and turma='$turma' and categoria='$categoria' and data='$data'");
+$getEvento = mysqli_query($__CONEXAO__, "select id from eventos where nome='$nome' and turma='$turma' and data='$data'");
 
 if(mysqli_num_rows($getEvento) > 0){
     endCode("Já existe um evento com esses dados.", false);
 }
 
-mysqli_query($__CONEXAO__, "insert into eventos (nome, turma, data, descricao, categoria) values ('$nome', '$turmaDec','$data', '$descricao', '$categoria')");
+mysqli_query($__CONEXAO__, "insert into eventos (nome, turma, data, descricao) values ('$nome', '$turmaDec','$data', '$descricao')");
 
 endCode("Sala criada com sucesso", true);
