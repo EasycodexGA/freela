@@ -1,5 +1,5 @@
 <?php
-include '../../conexao.php';
+include '../conexao.php';
 
 justLog($__EMAIL__, $__TYPE__, 2);
 
@@ -91,7 +91,7 @@ function deletarTurma($__CONEXAO__, $local, $id){
 
     return;
     exit;
-}9
+}
 
 function checkQuery($res, $response, $status){
     if($status and $__TYPE__ == 3){
