@@ -27,7 +27,7 @@ if($local == "eventos"){
 }
 
 
-if($local == "professores"){
+if($local == "profissionais"){
     deletarProfessor($__CONEXAO__, $__TYPE__, $__EMAIL__, $id);
 }
 
