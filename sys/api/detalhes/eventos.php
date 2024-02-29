@@ -35,10 +35,10 @@ while($_dados_ = mysqli_fetch_array($_query_)){
     while($dadosTurmas = mysqli_fetch_array($getTurmas)){
         $nomeT      = decrypt($dadosTurmas['nome']);
         $idT        = $dadosTurmas['id'];
-        $catId = $dadosTurmas['categoria'];
+        $catId      = $dadosTurmas['categoria'];
         $getCat     = mysqli_query($__CONEXAO__, "select nome from categorias where id='$catId'");
-        $categoriaT  = mysqli_fetch_assoc($getCat)["nome"];
-        $categoriaT  = decrypt($categoria);
+        $categoriaT = mysqli_fetch_assoc($getCat)["nome"];
+        $categoriaT = decrypt($categoria);
         array_push($turmas, {"id"=> $idT, "nome"=> $nomeT, "categoria"=> $categoriaT})
     }
 
