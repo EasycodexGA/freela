@@ -218,9 +218,9 @@ function getDetails(cat, id){
             removeSec(cat, id);
         }
         i = e.mensagem[0];
-        if(i.data){
-            let date = new Date(i.data * 1000 + 86400000);
-            i.data = date.toLocaleDateString("pt-BR");
+        if(i.nascimento){
+            let date = new Date(i.nascimento * 1000 + 86400000);
+            i.nascimento = date.toLocaleDateString("pt-BR");
         }
         for(const [key, value] of Object.entries(i)){
             if(!jump.includes(key)){

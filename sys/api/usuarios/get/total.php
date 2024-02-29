@@ -59,7 +59,7 @@ if($__TYPE__ < 3){
 }
 
 $query = mysqli_query($__CONEXAO__, "select active, id from $type") or die("erro");
-$active = 0;
+$active = 0; //dei truncate em tudo      
 $inactive = 0;
 
 while($dados = mysqli_fetch_array($query)){
@@ -72,5 +72,5 @@ while($dados = mysqli_fetch_array($query)){
         $inactive++;
     }
 }
-
+// call
 endCode(array("active"=>$active, "inactive"=>$inactive, "turmas"=>$turmas, "id"=> $id), true);
