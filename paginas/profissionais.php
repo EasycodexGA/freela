@@ -92,6 +92,10 @@ justLog($__EMAIL__, $__TYPE__, 3);
                     <h3>CPF</h3>
                     <input id='cpfAdd' type='text' placeholder='12345678900'/>
                 </div>
+                <div class='inp-add-out'>
+                    <h3>Lista de espera?</h3>
+                    <input id='esperaAdd' type='checkbox'>
+                </div>
             </div>
             <div class='out-bt-sv'>
                 <button class='btn-close' onclick='closeAdd()'>Fechar</button>
@@ -100,7 +104,8 @@ justLog($__EMAIL__, $__TYPE__, 3);
                     titularidade: titularidadeAdd.value,
                     nascimento: (nascimentoAdd.valueAsNumber / 1000),
                     email: emailAdd.value,
-                    cpf: cpfAdd.value
+                    cpf: cpfAdd.value,
+                    espera: esperaAdd.value
                 })' class='btn-add'>Salvar</button>
             </div>
         </div>

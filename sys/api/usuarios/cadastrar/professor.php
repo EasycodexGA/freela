@@ -13,6 +13,7 @@ $nome           = scapeString($__CONEXAO__, $json->nome);
 $email          = scapeString($__CONEXAO__, $json->email);
 $nascimento     = scapeString($__CONEXAO__, $json->nascimento);
 $titularidade   = scapeString($__CONEXAO__, $json->titularidade);
+$espera         = $json->espera;
 
 $cpf            = setCpf($cpf);
 $nome           = setString($nome);
@@ -34,6 +35,10 @@ if(!$email){
 }
 
 stopUserExist($__CONEXAO__, $email);
+
+if(!$espera){
+    
+}
 
 $senha = bin2hex(random_bytes(3));
 $senhaH = password_hash($senha, PASSWORD_DEFAULT);

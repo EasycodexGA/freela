@@ -8,15 +8,20 @@ header('Content-Type: application/json; charset=utf-8');
 $request = file_get_contents('php://input');
 $json = json_decode($request);
 
+$espera     = $json->espera;
+
+if(gettype($espera) !== boolean){
+    endCode('Erro.', false);
+}
+
+
 $cpf        = scapeString($__CONEXAO__, $json->cpf);
 $nome       = scapeString($__CONEXAO__, $json->nome);
-$turma      = scapeString($__CONEXAO__, $json->turma);
 $email      = scapeString($__CONEXAO__, $json->email);
 $nascimento = scapeString($__CONEXAO__, $json->nascimento);
 
 $cpf        = setCpf($cpf);
 $nome       = setString($nome);
-$turma      = setNum($turma);
 $email      = setEmail($email);
 $nascimento = setNum($nascimento);
 
@@ -24,8 +29,7 @@ checkMissing(
     array(
         $cpf, 
         $nome, 
-        $nascimento, 
-        $turma
+        $nascimento
     )
 );
 
@@ -35,6 +39,14 @@ if(!$email){
 
 stopUserExist($__CONEXAO__, $email);
 
+if($espera){
+    mysqli_query($__CONEXAO__, "insert into listaespera (nome, email, cpf, nascimento) values ('$nome', '$email', '$cpf', '$nascimento')")
+    endCode("Sucesso! Usuário adicionado na lista de espera.", true);
+}
+
+$turma  = scapeString($__CONEXAO__, $json->turma);
+$turma  = setNum($turma);
+checkMissing(array($turma));
 $tid = decrypt($turma);
 
 $queryRoom = mysqli_query($__CONEXAO__, "select * from turmas where id='$tid '");
@@ -72,8 +84,8 @@ $message = "
 </html>
 ";
 
-
 $sendEmail = mail(decrypt($email), $subject, $message, implode("\r\n", $__HEADERS__));
 
 $dec = decrypt($email);
+
 endCode("Sucesso $dec", true);
