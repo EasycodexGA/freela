@@ -131,6 +131,16 @@ header, .extra{
     font-size: 14px;
 }
 
+.inp-add-out2 input {
+    background-color: #fff;
+    margin: 0;
+    border-radius: 0.3em;
+    border: 1px solid var(--contraste2);
+    color: var(--contraste2);
+    width: 1.15em;
+    height: 1.15em;
+}
+
 .btn-add{
     padding: 7px 14px;
     color: white;
