@@ -92,7 +92,7 @@ justLog($__EMAIL__, $__TYPE__, 2);
                     <h3>CPF</h3>
                     <input id='cpfAdd' type='text' placeholder='12345678900'/>
                 </div>
-                <div class='inp-add-out'>
+                <div class='inp-add-out2'>
                     <h3>Lista de espera?</h3>
                     <input id='esperaAdd' type='checkbox'>
                 </div>
