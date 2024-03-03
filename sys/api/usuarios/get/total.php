@@ -22,7 +22,7 @@ $type = decrypt($type);
 
 endCode($type, false);
 
-$pode = array("users", "turmas", "categorias", "eventos");
+$pode = array("usersalunos", "turmas", "categorias", "eventos", "usersprofessor");
 
 if(!in_array($type, $pode)){
     endCode("Pesquisa inválida.", false);
