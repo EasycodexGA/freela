@@ -8,12 +8,16 @@ header('Content-Type: application/json; charset=utf-8');
 $request = file_get_contents('php://input');
 $json = json_decode($request);
 
+$espera         = $json->espera;
+if(gettype($espera) !== boolean){
+    endCode('Erro.', false);
+}
+
 $cpf            = scapeString($__CONEXAO__, $json->cpf);
 $nome           = scapeString($__CONEXAO__, $json->nome);
 $email          = scapeString($__CONEXAO__, $json->email);
 $nascimento     = scapeString($__CONEXAO__, $json->nascimento);
 $titularidade   = scapeString($__CONEXAO__, $json->titularidade);
-$espera         = $json->espera;
 
 $cpf            = setCpf($cpf);
 $nome           = setString($nome);
