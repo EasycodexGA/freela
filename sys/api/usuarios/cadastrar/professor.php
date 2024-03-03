@@ -27,9 +27,10 @@ $titularidade   = setNoXss($titularidade);
 
 checkMissing(
     array(
-        $cpf, 
-        $nome, 
-        $nascimento, 
+        $cpf,
+        $nome,
+        $email,
+        $nascimento,
         $titularidade
     )
 );
@@ -41,7 +42,8 @@ if(!$email){
 stopUserExist($__CONEXAO__, $email);
 
 if(!$espera){
-    
+    mysqli_query($__CONEXAO__, "insert into listaespera (nome, email, cpf, nascimento, titularidade, typeC) values ('$nome', '$email', '$cpf', '$nascimento', '$titularidade', '2')") or die("erro insert");
+    endCode("Sucesso! Usuário adicionado na lista de espera.", true);
 }
 
 $senha = bin2hex(random_bytes(3));

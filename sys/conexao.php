@@ -15,7 +15,6 @@ header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: *');
 header('Access-Control-Allow-Headers: *');
 
-endCode(decrypt("0y+tOn13bg=="), false);
 // USER 
 
 $__EMAIL__ = $_SESSION["email"];

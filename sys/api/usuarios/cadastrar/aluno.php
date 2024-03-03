@@ -14,7 +14,6 @@ if(gettype($espera) !== boolean){
     endCode('Erro.', false);
 }
 
-
 $cpf        = scapeString($__CONEXAO__, $json->cpf);
 $nome       = scapeString($__CONEXAO__, $json->nome);
 $email      = scapeString($__CONEXAO__, $json->email);
