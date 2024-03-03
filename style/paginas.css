@@ -132,11 +132,20 @@ header, .extra{
 }
 
 .inp-add-out2 input {
-    padding: 12px;
     border: 2px solid #ededed;
     border-radius: 3px;
-    box-shadow: 0 0 20px 0 #00000010;
+    background-color: #fff;
 }
+
+.inp-add-out2 input:hover {
+    background-color: #929292;
+}
+
+.inp-add-out2 input:checked {
+    background-color: var(--contraste2);
+}
+
+
 
 .btn-add{
     padding: 7px 14px;
