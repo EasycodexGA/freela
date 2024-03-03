@@ -16,6 +16,7 @@ function closeAdd(){
 }
 
 function addNewData(local, data){
+    console.log(data);
     fetch(`../sys/api/${local}`,{
         method: "POST",
         body: JSON.stringify(data)
