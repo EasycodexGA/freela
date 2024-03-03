@@ -95,6 +95,7 @@ justLog($__EMAIL__, $__TYPE__, 2);
                 <div class='inp-add-out'>
                     <h3>Lista de espera?</h3>
                     <input id='esperaAdd' type='checkbox'>
+                </div>
             </div>
             <div class='out-bt-sv'>
                 <button class='btn-close' onclick='closeAdd()'>Fechar</button>
