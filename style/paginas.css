@@ -155,7 +155,7 @@ header, .extra{
 }
 
 .inp-add-out2 input:focus {
-    outline: max(2px, 0.15em) solid currentColor;
+    outline: max(2px, 0.15em) solid var(--contraste2);
     outline-offset: max(2px, 0.15em);
 }
 
