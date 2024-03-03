@@ -141,6 +141,8 @@ header, .extra{
     color: var(--contraste2);
     width: 1.15em;
     height: 1.15em;
+    display: grid;
+    place-content: center;
 }
 
 .inp-add-out2 input::before {
