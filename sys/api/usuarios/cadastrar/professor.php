@@ -42,6 +42,10 @@ if(!$email){
 stopUserExist($__CONEXAO__, $email);
 
 if(!$espera){
+    $checkEmailEspera = mysqli_query($__CONEXAO__, "select id from listaespera where email='$email'");
+    if(mysqli_num_rows($checkEmailEspera) > 0){
+        endCode('Já existe alguém na lista de espera com esse email.', false);
+    }
     mysqli_query($__CONEXAO__, "insert into listaespera (nome, email, cpf, nascimento, titularidade, typeC) values ('$nome', '$email', '$cpf', '$nascimento', '$titularidade', '2')") or die("erro insert");
     endCode("Sucesso! Usuário adicionado na lista de espera.", true);
 }
