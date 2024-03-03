@@ -41,7 +41,7 @@ if(!$email){
 stopUserExist($__CONEXAO__, $email);
 
 if($espera){
-    mysqli_query($__CONEXAO__, "insert into listaespera (nome, email, cpf, nascimento) values ('$nome', '$email', '$cpf', '$nascimento')")
+    mysqli_query($__CONEXAO__, "insert into listaespera (nome, email, cpf, nascimento) values ('$nome', '$email', '$cpf', '$nascimento')") or die("erro insert");
     endCode("Sucesso! Usuário adicionado na lista de espera.", true);
 }
 
