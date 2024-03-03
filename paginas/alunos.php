@@ -105,7 +105,7 @@ justLog($__EMAIL__, $__TYPE__, 2);
                     nascimento: (nascimentoAdd.valueAsNumber / 1000),
                     email: emailAdd.value,
                     cpf: cpfAdd.value,
-                    espera: esperaAdd.checked,
+                    espera: esperaAdd.checked
                 })' class='btn-add'>Salvar</button>
             </div>
         </div>
