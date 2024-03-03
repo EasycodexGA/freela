@@ -20,8 +20,6 @@ checkMissing(
 
 $type = decrypt($type);
 
-endCode($type, false);
-
 $pode = array("usersalunos", "turmas", "categorias", "eventos", "usersprofessor");
 
 if(!in_array($type, $pode)){
