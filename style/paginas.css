@@ -152,16 +152,14 @@ header, .extra{
     transform: scale(0);
     transition: 120ms transform ease-in-out;
     box-shadow: inset 1em 1em var(--form-control-color);
-    transform-origin: bottom left;
-    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    /* transform-origin: bottom left;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%); */
 }
 
 .inp-add-out2 input:focus {
     outline: max(2px, 0.15em) solid var(--contraste2);
     outline-offset: max(2px, 0.15em);
 }
-
-
 
 .btn-add{
     padding: 7px 14px;
