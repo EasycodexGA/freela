@@ -135,6 +135,7 @@ header, .extra{
     border: 2px solid #ededed;
     border-radius: 3px;
     background-color: #fff;
+    width: auto;
 }
 
 .inp-add-out2 input:hover {
