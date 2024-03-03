@@ -39,8 +39,6 @@ if(!$email){
 
 stopUserExist($__CONEXAO__, $email);
 
-endCode(var_dump($espera), false);
-
 if($espera){
     $checkEmailEspera = mysqli_query($__CONEXAO__, "select id from listaespera where email='$email'");
     if(mysqli_num_rows($checkEmailEspera) > 0){

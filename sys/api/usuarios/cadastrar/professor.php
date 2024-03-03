@@ -41,7 +41,7 @@ if(!$email){
 
 stopUserExist($__CONEXAO__, $email);
 
-if(!$espera){
+if($espera){
     $checkEmailEspera = mysqli_query($__CONEXAO__, "select id from listaespera where email='$email'");
     if(mysqli_num_rows($checkEmailEspera) > 0){
         endCode('Já existe alguém na lista de espera com esse email.', false);
