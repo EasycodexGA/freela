@@ -236,6 +236,8 @@ function getDetails(cat, id){
                 document.getElementById(`${key}Get`).innerHTML = value;
             }
         }
+        console.log(i.id);
+        console.log(btnAddAula);
         btnAddAula.addEventListener('click', openAddAula(i.id));
     })
 }
