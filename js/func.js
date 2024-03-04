@@ -236,7 +236,7 @@ function getDetails(cat, id){
                 document.getElementById(`${key}Get`).innerHTML = value;
             }
         }
-        btnAddAula.addEventListener('onclick', openAddAula(i.id));
+        btnAddAula.addEventListener('click', openAddAula(i.id));
     })
 }
 
