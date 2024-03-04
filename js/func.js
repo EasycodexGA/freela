@@ -232,6 +232,7 @@ function getDetails(cat, id){
                 document.getElementById(`${key}Get`).innerHTML = value;
             }
         }
+        btnAddAula.onclick = openAdd(addAula, i.id);
     })
 }
 
