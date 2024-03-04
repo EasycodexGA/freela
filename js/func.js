@@ -5,7 +5,7 @@ function openAdd(e){
 
 function openAddAula(id){
     closeAdd();
-    addNewAula.classList.add("add-active");
+    // addNewAula.classList.add("add-active");
     idTurma.value = id;
 }
 
