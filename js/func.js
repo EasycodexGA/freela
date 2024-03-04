@@ -238,7 +238,7 @@ function getDetails(cat, id){
         }
         console.log(i.id);
         console.log(btnAddAula);
-        btnAddAula.addEventListener('click', openAddAula(i.id));
+        btnAddAula.addEventListener('onclick', openAddAula(i.id));
     })
 }
 
