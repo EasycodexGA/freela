@@ -60,7 +60,6 @@ justLog($__EMAIL__, $__TYPE__, 1);
         <h1 class='title-header'>Funções</h1>
         <div class='header-in'>
             <button onclick='openAdd(addTurma)' class='funcBt'>+ Adicionar turma</button>
-            <!-- <button onclick='openAdd(addAula)' class='funcBt'>+ Adicionar aula</button> -->
         </div>
     </div>
 
@@ -101,9 +100,39 @@ justLog($__EMAIL__, $__TYPE__, 1);
             </div>
         </div>
     </div>
+
+    <div id='addNewAula'>
+        <div id='addTurma' class='add-container'>
+            <h1 class='title-add'>Nova aula</h1>
+
+            <div class='inps-add'>
+                <div class='inp-add-out'>
+                    <h3>Descrição</h3>
+                    <input id='nomeAdd' type='text' placeholder='Vôlei de praia'/>
+                </div>
+                <div class='inp-add-out'>
+                    <h3>Presença</h3>
+                    <input type='text' id='presencaAdd'>
+                </div>
+                <div class='inp-add-out'>
+                    <h3>Horário</h3>
+                    <input id='horarioAdd' type='time'/>
+                </div>
+            </div>
+            <div class='out-bt-sv'>
+                <button class='btn-close' onclick='closeAdd()'>Fechar</button>
+                <button onclick='addNewData("turmas/cadastrar/aula", {
+                    descricao: descricaoAdd.value,
+                    presenca: presencaAdd.value,
+                    horario: horarioAdd.valueAsNumber,
+                })' class='btn-add'>Salvar</button>
+            </div>
+        </div>
+    </div>
     
     <?php } else { ?>
         <div id='addNew'></div>
+        <div id='addNewAula'></div>
     <?php }?>
     
     <div class="list">

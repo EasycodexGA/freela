@@ -3,15 +3,19 @@ function openAdd(e){
     addNew.classList.add("add-active");
 }
 
+function openAddAula(){
+    closeAdd();
+    addNewAula.classList.add("add-active");
+}
+
 function openDetail(cat, id){
     closeAdd();
     getDetails(cat, id);
 }
 
 function closeAdd(){
-    if(addNew){
-        addNew.classList.remove("add-active");
-    }
+    addNewAula.classList.remove('add-active');
+    addNew.classList.remove("add-active");
     details.classList.remove("add-active");
 }
 

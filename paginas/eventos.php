@@ -61,7 +61,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
         </div>
     </div>
 
-    
+    <?php if(requireLevel($__TYPE__, 2)){ ?>
 
     <div id='addNew'>
         <div id='addEvento' class='add-container'>
@@ -99,7 +99,11 @@ justLog($__EMAIL__, $__TYPE__, 1);
             </div>
         </div>
     </div>
-<div class="list">
+    <?php } else { ?>
+    <div id='addNew'></div>
+    <?php } ?>
+
+    <div class="list">
         <div class="header-list-out">
             <h1 class="title-header">Eventos</h1>
             <input id="searchBar" name="searchBar" placeholder="Pesquisar..">
