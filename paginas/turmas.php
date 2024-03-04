@@ -116,7 +116,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
                 </div>
                 <div class='inp-add-out'>
                     <h3>Horário</h3>
-                    <input id='horarioAdd' type='time'/>
+                    <input id='horarioAddAula' type='time'/>
                 </div>
             </div>
             <span id='idTurma'></span>
@@ -125,7 +125,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
                 <button onclick='addNewData("turmas/cadastrar/aula", {
                     descricao: descricaoAdd.value,
                     presenca: presencaAdd.value,
-                    horario: horarioAdd.valueAsNumber,
+                    horario: horarioAddAula.valueAsNumber,
                     idTurma: idTurma.value
                 })' class='btn-add'>Salvar</button>
             </div>
