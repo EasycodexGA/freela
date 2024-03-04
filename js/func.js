@@ -3,9 +3,10 @@ function openAdd(e){
     addNew.classList.add("add-active");
 }
 
-function openAddAula(){
+function openAddAula(id){
     closeAdd();
     addNewAula.classList.add("add-active");
+    idTurma.value = id;
 }
 
 function openDetail(cat, id){
@@ -236,7 +237,7 @@ function getDetails(cat, id){
                 document.getElementById(`${key}Get`).innerHTML = value;
             }
         }
-        btnAddAula.onclick = openAdd(addAula, i.id);
+        btnAddAula.onclick = openAddAula(i.id);
     })
 }
 

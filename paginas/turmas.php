@@ -119,12 +119,14 @@ justLog($__EMAIL__, $__TYPE__, 1);
                     <input id='horarioAdd' type='time'/>
                 </div>
             </div>
+            <span id='idTurma'></span>
             <div class='out-bt-sv'>
                 <button class='btn-close' onclick='closeAdd()'>Fechar</button>
                 <button onclick='addNewData("turmas/cadastrar/aula", {
                     descricao: descricaoAdd.value,
                     presenca: presencaAdd.value,
                     horario: horarioAdd.valueAsNumber,
+                    idTurma: idTurma.value
                 })' class='btn-add'>Salvar</button>
             </div>
         </div>
