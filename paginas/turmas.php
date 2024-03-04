@@ -108,7 +108,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
             <div class='inps-add'>
                 <div class='inp-add-out'>
                     <h3>Descrição</h3>
-                    <input id='nomeAdd' type='text' placeholder='Vôlei de praia'/>
+                    <input id='descricaoAdd' type='text' placeholder='Vôlei de praia'/>
                 </div>
                 <div class='inp-add-out'>
                     <h3>Presença</h3>
