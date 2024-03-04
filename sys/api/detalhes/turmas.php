@@ -23,7 +23,6 @@ while($_dados_ = mysqli_fetch_array($_query_)){
     $nome       = decrypt($_dados_["nome"]);
     $categoria  = $_dados_["categoria"];
     $horario    = $_dados_["horario"];
-    $data       = $_dados_['data'];
     $status     = $_dados_["active"];
     $status     = $status == '1' ? "active" : "inactive";
 
@@ -49,7 +48,6 @@ while($_dados_ = mysqli_fetch_array($_query_)){
         "nome"              => $nome, 
         "categoria"         => $categoria,
         "alunos"            => $arrAlunos,
-        "data"              => $data,
         "horario"           => converterHora($horario),
         "profissionais"     => $arrProf,
         "profissionaisQt"   => mysqli_num_rows($query2),
