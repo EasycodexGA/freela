@@ -26,21 +26,23 @@ while($_dados_ = mysqli_fetch_array($_query_)){
     $status     = $_dados_["active"];
     $status     = $status == '1' ? "active" : "inactive";
 
-    $query = mysqli_query($__CONEXAO__, "select nome from users where email in (select email from alunos where turma='$decTurma'");
-    $query2 = mysqli_query($__CONEXAO__, "select nome, imagem from users where email in (select email from professores where turma='$decTurma')");
+    $query = mysqli_query($__CONEXAO__, "select id, nome from users where email in (select email from alunos where turma='$decTurma'");
+    $query2 = mysqli_query($__CONEXAO__, "select id, nome, imagem from users where email in (select email from professores where turma='$decTurma')");
 
     $arrAlunos = array();
     $arrProf = array();
 
     while($dados = mysqli_fetch_array($query)){
-        $nomeA = decrypt($dados['nome']);
-        array_push($arrAlunos, array("nome"=>$nomeA));
+        $idA    = decrypt($dados['id']);
+        $nomeA  = decrypt($dados['nome']);
+        array_push($arrAlunos, array("id"=>$idA, "nome"=>$nomeA));
     }
 
     while($dados2 = mysqli_fetch_array($query2)){
-        $nomeP = decrypt($dados2['nome']);
+        $idP    = decrypt($dados2['id']);
+        $nomeP  = decrypt($dados2['nome']);
         $imagem = decrypt($dados2['imagem']);
-        array_push($arrProf, array("nome"=>$nomeP, "imagem"=>$imagem));
+        array_push($arrProf, array("id"=>$idP, "nome"=>$nomeP, "imagem"=>$imagem));
     }
 
     $arr = array(
