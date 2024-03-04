@@ -230,8 +230,7 @@ function getDetails(cat, id){
 
         for(const [key, value] of Object.entries(i)){
             if(nums.includes(key)){
-                let date = new Date(value * 1000 + 86400000);
-                value = date.toLocaleDateString("pt-BR");
+                value = (new Date(value * 1000 + 86400000)).toLocaleDateString("pt-BR");
             }
             if(!jump.includes(key)){
                 document.getElementById(`${key}Get`).innerHTML = value;
