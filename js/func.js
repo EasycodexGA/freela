@@ -62,7 +62,6 @@ function getActInact(e){
     let inactivevar = 0;
 
     for(i of statusDiv){
-        console.log(i);
         let statusI = i.getAttribute("status");
         if(statusI){
             activevar++;
