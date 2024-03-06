@@ -218,8 +218,9 @@ function startPage(e){
     // callFunc(func);
     let preset = preSets[`${e}`];
     createTh(preset.th);
-    getData(preset.link)
+    new Promise(getData(preset.link))
     .then(getActInact());
+    
 }
 
 function getDetails(cat, id){
