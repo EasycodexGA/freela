@@ -58,7 +58,6 @@ function cleanInps(){
 
 function getActInact(e){
     const statusDiv = document.querySelectorAll(".td-status");
-    console.log(statusDiv);
     let activevar = 0;
     let inactivevar = 0;
 
@@ -73,20 +72,6 @@ function getActInact(e){
     }
     inactive.innerText = inactivevar;
     active.innerText = activevar;
-    // return fetch(`../sys/api/usuarios/get/total`,{
-    //     method: "POST",
-    //     body: JSON.stringify({
-    //         type: e
-    //     })
-    // })
-    // .then(e=>e.json())
-    // .then(e=>{
-    //     if(e.response){
-    //         inactive.innerText = e.mensagem.inactive;
-    //         active.innerText = e.mensagem.active;
-    //     }
-    //     return e;
-    // })
 }
 
 const preSets = {
@@ -220,7 +205,6 @@ async function startPage(e){
     createTh(preset.th);
     await getData(preset.link);
     getActInact();
-    
 }
 
 function getDetails(cat, id){
