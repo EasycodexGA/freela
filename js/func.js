@@ -231,7 +231,7 @@ function getDetails(cat, id){
                 let div = document.createElement("div");
                 for(i of value){
                     let p = document.createElement("p");
-                    p.innerHTML = value.nome;
+                    p.innerHTML = i.nome;
                     div.append(p);
                 }
                 console.log(div);
