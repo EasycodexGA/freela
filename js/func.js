@@ -58,6 +58,7 @@ function cleanInps(){
 
 function getActInact(e){
     const statusDiv = document.querySelectorAll(".td-status");
+    console.log(statusDiv);
     let activevar = 0;
     let inactivevar = 0;
 
