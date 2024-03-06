@@ -205,7 +205,7 @@ async function startPage(e){
 }
 
 function getDetails(cat, id){
-    let jump = ['id', 'turmas', 'status', 'imagem'];
+    let jump = ['id', 'turmas', 'status', 'imagem', 'alunos', 'profissionais'];
     let nums = ['data', 'nascimento', 'created'];
     let arrays = ['alunos', 'profissionais'];
     
@@ -234,7 +234,7 @@ function getDetails(cat, id){
                     p.innerHTML = i.nome;
                     div.append(p);
                 }
-                console.log(div);
+                document.getElementById(`${key}Get`).append(div);
             }
             if(!jump.includes(key)){
                 document.getElementById(`${key}Get`).innerHTML = value;
