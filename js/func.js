@@ -57,46 +57,55 @@ function cleanInps(){
 }
 
 function getActInact(e){
-    return fetch(`../sys/api/usuarios/get/total`,{
-        method: "POST",
-        body: JSON.stringify({
-            type: e
-        })
-    })
-    .then(e=>e.json())
-    .then(e=>{
-        if(e.response){
-            inactive.innerText = e.mensagem.inactive;
-            active.innerText = e.mensagem.active;
+    const statusDiv = document.querySelectorAll(".td-status");
+    let activevar = 0;
+    let inactivevar = 0;
+
+    for(i of statusDiv){
+        let statusI = i.getAttribute("status");
+        if(statusI){
+            activevar++;
+        } else {
+            inactivevar++;
         }
-        return e;
-    })
+    }
+    inactive.innerText = inactivevar;
+    active.innerText = activevar;
+    // return fetch(`../sys/api/usuarios/get/total`,{
+    //     method: "POST",
+    //     body: JSON.stringify({
+    //         type: e
+    //     })
+    // })
+    // .then(e=>e.json())
+    // .then(e=>{
+    //     if(e.response){
+    //         inactive.innerText = e.mensagem.inactive;
+    //         active.innerText = e.mensagem.active;
+    //     }
+    //     return e;
+    // })
 }
 
 const preSets = {
     'profissionais': {
         'link': '../sys/api/usuarios/get/professores',
-        'data': 'usersprofessor',
         'th': ['nome', 'email', 'nascimento', 'titularidade', 'status']
     },
     'alunos': {
         'link': '../sys/api/usuarios/get/alunos',
-        'data': 'usersalunos',
         'th': ['nome', 'email', 'nascimento', 'status']
     },
     'categorias': {
         'link': '../sys/api/usuarios/get/categorias',
-        'data': 'categorias',
         'th': ['nome', 'turmas', 'status']
     },
     'eventos': {
         'link': '../sys/api/turmas/get/eventos',
-        'data': 'eventos',
         'th': ['nome', 'turma','categoria', 'data', 'status']
     },
     'turmas': {
         'link': '../sys/api/turmas/get/turmas',
-        'data': 'turmas',
         'th': ['nome', 'categoria', 'profissionais', 'alunos', 'status']
     },
     'aulas': {
@@ -129,6 +138,8 @@ function getData(link){
                     td.classList.add(`td-${key}`);
 
                     if(key == 'status'){
+                        let preStatus = value == 'active' ? true : false;
+                        td.setAttribute("status", preStatus);
                         let td2 = document.createElement('td');
                         td2.innerHTML = `<button class="ver-detalhes" onclick="openDetail('${i._name}', ${i.id})">Ver detalhes</button>`;
                         tr.appendChild(td2);
@@ -205,8 +216,8 @@ function startPage(e){
     // callFunc(func);
     let preset = preSets[`${e}`];
     createTh(preset.th);
-    getData(preset.link);
-    getActInact(preset.data);
+    getData(preset.link)
+    .then(getActInact());
 }
 
 function getDetails(cat, id){
