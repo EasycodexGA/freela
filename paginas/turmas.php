@@ -34,11 +34,11 @@ justLog($__EMAIL__, $__TYPE__, 1);
                     <p id='categoriaGet'>-- -- --</p>
                 </div>
                 <div class='inp-add-out'>
-                    <h3>Profissionais - <span id='profissionaisQtGet'></span></h3>
+                    <h3>Profissionais - <span id='profissionaisQtGet'>0</span></h3>
                     <p id='profissionaisGet'>-- -- --</p>
                 </div>
                 <div class='inp-add-out'>
-                    <h3>Alunos - <span id='alunosQtGet'></span></h3>
+                    <h3>Alunos - <span id='alunosQtGet'>0</span></h3>
                     <p id='alunosGet'>-- -- --</p>
                 </div>
                 <div class='inp-add-out'>
