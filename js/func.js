@@ -20,7 +20,6 @@ function closeAdd(){
 }
 
 function addNewData(local, data){
-    console.log(data);
     fetch(`../sys/api/${local}`,{
         method: "POST",
         body: JSON.stringify(data)
@@ -182,7 +181,6 @@ searchBar.addEventListener('keyup', ()=>{
         } else {
             name = name.toString().toLowerCase();
         }
-        console.log("name ", name);
         if(name.includes(val)){
             document.getElementById(`key${i.id}`).classList.add('table-line');
         } else {
