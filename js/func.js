@@ -237,7 +237,6 @@ function getDetails(cat, id){
                     div.append(p);
                 }
                 console.log(div);
-                value = div;
             }
             if(!jump.includes(key)){
                 document.getElementById(`${key}Get`).innerHTML = value;
