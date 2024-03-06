@@ -27,23 +27,23 @@ justLog($__EMAIL__, $__TYPE__, 1);
             <div class='inps-add'>
                 <div class='inp-add-out'>
                     <h3>Nome</h3>
-                    <p id='nomeGet' type='text'>-- -- --</p>
+                    <p id='nomeGet'>-- -- --</p>
                 </div>
                 <div class='inp-add-out'>
                     <h3>Categoria</h3>
-                    <p id='categoriaGet' type='text'>-- -- --</p>
+                    <p id='categoriaGet'>-- -- --</p>
                 </div>
                 <div class='inp-add-out'>
                     <h3>Profissionais - <span id='profissionaisQtGet'></span></h3>
-                    <p id='profissionaisGet' type='text'>-- -- --</p>
+                    <p id='profissionaisGet'>-- -- --</p>
                 </div>
                 <div class='inp-add-out'>
                     <h3>Alunos - <span id='alunosQtGet'></span></h3>
-                    <p id='alunosGet' type='text'>-- -- --</p>
+                    <p id='alunosGet'>-- -- --</p>
                 </div>
                 <div class='inp-add-out'>
                     <h3>Horário</h3>
-                    <p id='horarioGet' type='text'>-- -- --</p>
+                    <p id='horarioGet'>-- -- --</p>
                 </div>
             </div>
             <div class='out-bt-sv'>

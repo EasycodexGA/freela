@@ -234,6 +234,7 @@ function getDetails(cat, id){
                     p.innerHTML = i.nome;
                     div.append(p);
                 }
+                document.getElementById(`${key}Get`).innerHTML = "";
                 document.getElementById(`${key}Get`).append(div);
             }
             if(!jump.includes(key)){
