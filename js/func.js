@@ -230,7 +230,14 @@ function getDetails(cat, id){
                 value = (new Date(value * 1000 + 86400000)).toLocaleDateString("pt-BR");
             }
             if(arrays.includes(key)){
-                console.log(value);
+                let div = document.createElement("div");
+                for(i of value){
+                    let p = document.createElement("p");
+                    p.innerHTML = value.nome;
+                    div.append(p);
+                }
+                console.log(div);
+                value = div;
             }
             if(!jump.includes(key)){
                 document.getElementById(`${key}Get`).innerHTML = value;
