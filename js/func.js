@@ -214,12 +214,12 @@ searchBar.addEventListener('keyup', ()=>{
 
 const callFunc = (func) => func();
 
-function startPage(e){
+async function startPage(e){
     // callFunc(func);
     let preset = preSets[`${e}`];
     createTh(preset.th);
-    new Promise(getData(preset.link))
-    .then(getActInact());
+    await getData(preset.link);
+    getActInact();
     
 }
 
