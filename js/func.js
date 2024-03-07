@@ -243,7 +243,7 @@ function getDetails(cat, id){
                 divstring = div.outerHTML;
                 value = `<button onclick='verMais(${divstring})'>Ver ${key}</button>`;
                 if(key == 'alunos'){
-                    idTurma.addAttribute('alunos', div);
+                    idTurma.setAttribute('alunos', div);
                 }
             }
             if(!jump.includes(key)){
