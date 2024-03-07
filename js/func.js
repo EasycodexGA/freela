@@ -38,7 +38,7 @@ function verMais(me){
         divOut.append(div);
     }
     closeBt = document.createElement("button");
-    closeBt.setAttribute("onclick", closeVerMais());
+    closeBt.setAttribute("onclick", 'closeVerMais()');
     divOut.append(closeBt);
     verMaisDiv.append(divOut);
     verMaisDiv.classList.add('add-active');
