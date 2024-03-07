@@ -241,6 +241,7 @@ function getDetails(cat, id){
                 value = (new Date(value * 1000 + 86400000)).toLocaleDateString("pt-BR");
             }
             if(arrays.includes(key)){
+                console.log(value);
                 for(i in value){
                     value[i] = JSON.stringify(value[i]);
                     console.log(value[i]);
