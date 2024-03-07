@@ -242,6 +242,7 @@ function getDetails(cat, id){
                     p.innerHTML = i.nome;
                     div.append(p);
                 }
+                div.classList.add('add-container');
                 divstring = div.outerHTML;
                 value = `<button onclick='verMais("${divstring}")'>Ver ${key}</button>`;
                 if(key == 'alunos'){
