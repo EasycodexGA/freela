@@ -242,6 +242,11 @@ function getDetails(cat, id){
             }
             if(arrays.includes(key)){
                 console.log(value);
+                for(i in value){
+                    value[i] = JSON.stringify(value[i]);
+                }
+                value = value.toString();
+                console.log(value);
                 if(key == 'alunos'){
                     verPresencaBt.setAttribute('onclick', `verMais(${value})`);
                 }
