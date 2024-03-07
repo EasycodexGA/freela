@@ -280,7 +280,7 @@ function getDetails(cat, id){
                 }
                 value = value.join("#");
                 if(key == 'alunos'){
-                    verPresencaBt.setAttribute('onclick', `verMais(this, 1, Chamada)`);
+                    verPresencaBt.setAttribute('onclick', `verMais(this, 1, "Chamada")`);
                     verPresencaBt.setAttribute("data-array", `${value}`);
                 }
                 value = `<button data-array='${value}' onclick='verMais(this, 0, "${key}")'>Ver ${key}</button>`;
