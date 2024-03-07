@@ -240,6 +240,9 @@ function getDetails(cat, id){
                     p.innerHTML = i.nome;
                     div.append(p);
                 }
+                if(key == 'alunos'){
+                    idTurma.addAttribute('alunos', div);
+                }
                 value = `<button onclick='verMais(${div})'>Ver ${key}</button>`;
             }
             if(!jump.includes(key)){
@@ -247,7 +250,6 @@ function getDetails(cat, id){
             }
         }
         idTurma.value = id;
-        idTurma.addAttribute('alunos', div);
     })
 }
 
