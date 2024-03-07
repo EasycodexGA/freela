@@ -245,7 +245,7 @@ function getDetails(cat, id){
                 div.classList.add('add-container');
                 divstring = div.outerHTML;
                 console.log(divstring);
-                value = `<button onclick='verMais("${divstring}")'>Ver ${key}</button>`;
+                value = `<button onclick=´verMais("${divstring}")´>Ver ${key}</button>`;
                 if(key == 'alunos'){
                     idTurma.setAttribute('alunos', `"${divstring}"`);
                 }
