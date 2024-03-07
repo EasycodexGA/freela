@@ -241,10 +241,10 @@ function getDetails(cat, id){
                 value = (new Date(value * 1000 + 86400000)).toLocaleDateString("pt-BR");
             }
             if(arrays.includes(key)){
-                value = `<button onclick="verMais(${value})">Ver ${key}</button>`;
                 if(key == 'alunos'){
                     verPresencaBt.setAttribute('onclick', `verMais(${value})`);
                 }
+                value = `<button onclick="verMais(${value})">Ver ${key}</button>`;
             }
             if(!jump.includes(key)){
                 document.getElementById(`${key}Get`).innerHTML = value;
