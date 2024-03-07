@@ -23,7 +23,7 @@ function closeAddAula(){
 
 function verMais(obj){
     console.log(obj);
-    verMaisDiv.appendChild = div;
+    // verMaisDiv.appendChild = div;
     verMaisDiv.classList.add('add-active');
 }
 
