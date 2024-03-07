@@ -55,7 +55,7 @@ header, .extra{
     border-radius: 5px;
     cursor: pointer;
 }
-#addNew, #details, #addNewAula{
+#addNew, #details, #addNewAula, #verMaisDiv{
     width: 100%;
     height: 100%;
     position: fixed;

@@ -49,11 +49,11 @@ while($_dados_ = mysqli_fetch_array($_query_)){
         "id"                => $decTurma,
         "nome"              => $nome, 
         "categoria"         => $categoria,
-        "alunos"            => $arrAlunos,
         "horario"           => converterHora($horario),
         "profissionais"     => $arrProf,
         "profissionaisQt"   => mysqli_num_rows($query2),
         "alunosQt"          => mysqli_num_rows($query),
+        "alunos"            => $arrAlunos,
         "status"            => $status
     );
     array_push($array, $arr);

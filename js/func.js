@@ -3,14 +3,20 @@ function openAdd(e){
     addNew.classList.add("add-active");
 }
 
-function openAddAula(){
+function openAddAula(div){
     closeAdd();
     addNewAula.classList.add("add-active");
+    console.log(div);
+    verPresencaBt.addAttribute('onclick', `verMais(${div})`);
 }
 
 function openDetail(cat, id){
     closeAdd();
     getDetails(cat, id);
+}
+
+function verMais(){
+    verMaisDiv.classList.add('add-active');
 }
 
 function closeAdd(){
@@ -234,14 +240,14 @@ function getDetails(cat, id){
                     p.innerHTML = i.nome;
                     div.append(p);
                 }
-                document.getElementById(`${key}Get`).innerHTML = "";
-                document.getElementById(`${key}Get`).append(div);
+                value = `<button onclick='verMais(${div})'>Ver ${key}</button>`;
             }
             if(!jump.includes(key)){
                 document.getElementById(`${key}Get`).innerHTML = value;
             }
         }
         idTurma.value = id;
+        idTurma.addAttribute('alunos', div);
     })
 }
 
