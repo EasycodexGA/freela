@@ -241,6 +241,7 @@ function getDetails(cat, id){
                 value = (new Date(value * 1000 + 86400000)).toLocaleDateString("pt-BR");
             }
             if(arrays.includes(key)){
+                console.log(value);
                 if(key == 'alunos'){
                     verPresencaBt.setAttribute('onclick', `verMais(${value})`);
                 }
