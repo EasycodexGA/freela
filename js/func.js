@@ -1,7 +1,3 @@
-if(!addNewAula){
-    addNewAula = document.createElement('div');
-}
-
 function openAdd(e){
     closeAdd();
     addNew.classList.add("add-active");

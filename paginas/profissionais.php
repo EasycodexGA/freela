@@ -66,6 +66,7 @@ justLog($__EMAIL__, $__TYPE__, 3);
             <button onclick='openAdd(addProfessor)' class='funcBt'>+ Adicionar profissional</button>
         </div>
     </div>
+    <div id='addNewAula'></div>
 
     <div id='addNew'>
         <div id='addProfessor' class='add-container'>
