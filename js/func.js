@@ -224,6 +224,7 @@ function getDetails(cat, id){
         i = e.mensagem[0];
 
         for(const [key, value] of Object.entries(i)){
+            console.log(key);
             if(nums.includes(key)){
                 value = (new Date(value * 1000 + 86400000)).toLocaleDateString("pt-BR");
             }
@@ -238,7 +239,6 @@ function getDetails(cat, id){
                 document.getElementById(`${key}Get`).append(div);
             }
             if(!jump.includes(key)){
-                console.log(key);
                 document.getElementById(`${key}Get`).innerHTML = value;
             }
         }
