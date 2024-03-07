@@ -8,7 +8,7 @@ function openAddAula(){
     addNewAula.classList.add("add-active");
     div = idTurma.getAttribute('alunos');
     console.log(div);
-    verPresencaBt.setAttribute('onclick', `verMais("${div}")`);
+    verPresencaBt.setAttribute('onclick', `verMais(${div})`);
 }
 
 function openDetail(cat, id){
@@ -242,7 +242,7 @@ function getDetails(cat, id){
                     p.innerHTML = i.nome;
                     div.append(p);
                 }
-                divstring = div.outerHTML;
+                divstring = div.outerHTML.toString();
                 value = `<button onclick='verMais(${divstring})'>Ver ${key}</button>`;
                 if(key == 'alunos'){
                     idTurma.setAttribute('alunos', divstring);
