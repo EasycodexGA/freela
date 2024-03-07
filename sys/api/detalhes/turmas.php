@@ -30,6 +30,7 @@ while($_dados_ = mysqli_fetch_array($_query_)){
     $query2 = mysqli_query($__CONEXAO__, "select id, nome, imagem from users where email in (select email from professores where turma='$decTurma')");
 
     echo mysqli_num_rows($query);
+    echo "a";
     $arrAlunos = array();
     $arrProf = array();
 
