@@ -3,6 +3,16 @@ function openAdd(e){
     addNew.classList.add("add-active");
 }
 
+function openDetail(cat, id){
+    closeAdd();
+    getDetails(cat, id);
+}
+
+function closeAdd(){
+    addNew.classList.remove("add-active");
+    details.classList.remove("add-active");
+}
+
 function openAddAula(){
     addNewAula.classList.add("add-active");
 }
@@ -11,14 +21,9 @@ function closeAddAula(){
     addNewAula.classList.remove('add-active');
 }
 
-function openDetail(cat, id){
-    closeAdd();
-    getDetails(cat, id);
-}
-
-function verMais(div){
-    console.log(typeof div);
-    verMaisDiv.innerHTML = div;
+function verMais(obj){
+    console.log(obj);
+    verMaisDiv.appendChild = div;
     verMaisDiv.classList.add('add-active');
 }
 
@@ -26,10 +31,6 @@ function closeVerMais(){
     verMaisDiv.classList.remove('add-active');
 }
 
-function closeAdd(){
-    addNew.classList.remove("add-active");
-    details.classList.remove("add-active");
-}
 
 function addNewData(local, data){
     fetch(`../sys/api/${local}`,{
