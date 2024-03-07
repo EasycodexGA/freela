@@ -248,7 +248,7 @@ function getDetails(cat, id){
                 if(key == 'alunos'){
                     verPresencaBt.setAttribute('onclick', `verMais('${value}')`);
                 }
-                value = `<button onclick=´verMais('${value}')´>Ver ${key}</button>`;
+                value = `<button onclick='verMais(´${value}´)'>Ver ${key}</button>`;
                 console.log(value);
             }
             if(!jump.includes(key)){
