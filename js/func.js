@@ -22,9 +22,20 @@ function closeAddAula(){
 }
 
 function verMais(me){
-    let obj = me.getAttribute('data-array');
-    console.log(obj);
-    // verMaisDiv.appendChild = div;
+    let string = me.getAttribute('data-array');
+    let array = string.split('#');
+
+    let divOut = document.createElement('div');
+    divOut.classList.add('add-container');
+
+    for(i of array){
+        let div = document.createElement('div');
+        let p = document.createElement("p");
+        p.innerHTML = i.nome;
+        div.append(p);
+        divOut.append(div);
+    }
+    verMaisDiv.append(divOut);
     verMaisDiv.classList.add('add-active');
 }
 
