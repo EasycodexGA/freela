@@ -8,7 +8,7 @@ function openAddAula(){
     addNewAula.classList.add("add-active");
     div = idTurma.getAttribute('alunos');
     console.log(div);
-    verPresencaBt.setAttribute('onclick', verMais(div));
+    verPresencaBt.setAttribute('onclick', `verMais(${div})`);
 }
 
 function openDetail(cat, id){
