@@ -29,6 +29,7 @@ while($_dados_ = mysqli_fetch_array($_query_)){
     $query = mysqli_query($__CONEXAO__, "select id, nome from users where email in (select email from alunos where turma='$decTurma'");
     $query2 = mysqli_query($__CONEXAO__, "select id, nome, imagem from users where email in (select email from professores where turma='$decTurma')");
 
+    echo mysqli_num_rows($query);
     $arrAlunos = array();
     $arrProf = array();
 
@@ -44,8 +45,6 @@ while($_dados_ = mysqli_fetch_array($_query_)){
         $imagem = decrypt($dados2['imagem']);
         array_push($arrProf, array("id"=>$idP, "nome"=>$nomeP, "imagem"=>$imagem));
     }
-
-    var_dump($arrAlunos);
 
     $arr = array(
         "id"                => $decTurma,
