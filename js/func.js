@@ -21,12 +21,16 @@ function closeAddAula(){
     addNewAula.classList.remove('add-active');
 }
 
-function verMais(me){
+function verMais(me, type, titleStr){
     let string = me.getAttribute('data-array');
     let array = string.split('#');
 
     let divOut = document.createElement('div');
     divOut.classList.add('add-container');
+
+    let title = document.createElement("h1");
+    title.classList.add("title-add");
+    title.innerHTML = titleStr;
 
     for(i of array){
         i = JSON.parse(i);
@@ -40,6 +44,7 @@ function verMais(me){
     closeBt = document.createElement("button");
     closeBt.setAttribute("onclick", 'closeVerMais()');
     closeBt.innerHTML = 'Fechar';
+    closeBt.classList.add("btn-close");
     divOut.append(closeBt);
     verMaisDiv.append(divOut);
     verMaisDiv.classList.add('add-active');
@@ -264,10 +269,10 @@ function getDetails(cat, id){
                 }
                 value = value.join("#");
                 if(key == 'alunos'){
-                    verPresencaBt.setAttribute('onclick', `verMais(this, 1)`);
+                    verPresencaBt.setAttribute('onclick', `verMais(this, 1, Chamada)`);
                     verPresencaBt.setAttribute("data-array", `${value}`);
                 }
-                value = `<button data-array='${value}' onclick='verMais(this, 0)'>Ver ${key}</button>`;
+                value = `<button data-array='${value}' onclick='verMais(this, 0, "${key}")'>Ver ${key}</button>`;
             }
             if(!jump.includes(key)){
                 document.getElementById(`${key}Get`).innerHTML = value;
