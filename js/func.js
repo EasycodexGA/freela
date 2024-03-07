@@ -245,7 +245,7 @@ function getDetails(cat, id){
                 for(i in value){
                     value[i] = JSON.stringify(value[i]);
                 }
-                value = value.toString("#");
+                value = value.join("#");
                 console.log(value);
                 if(key == 'alunos'){
                     verPresencaBt.setAttribute('onclick', `verMais(${value})`);
