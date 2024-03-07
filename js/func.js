@@ -3,9 +3,10 @@ function openAdd(e){
     addNew.classList.add("add-active");
 }
 
-function openAddAula(div){
+function openAddAula(){
     closeAdd();
     addNewAula.classList.add("add-active");
+    div = idTurma.getAttribute('alunos');
     console.log(div);
     verPresencaBt.onclick = verMais(div);
 }
@@ -15,7 +16,8 @@ function openDetail(cat, id){
     getDetails(cat, id);
 }
 
-function verMais(){
+function verMais(div){
+    verMaisDiv.innerHTML = div;
     verMaisDiv.classList.add('add-active');
 }
 
@@ -243,7 +245,7 @@ function getDetails(cat, id){
                 divstring = div.outerHTML;
                 value = `<button onclick='verMais(${divstring})'>Ver ${key}</button>`;
                 if(key == 'alunos'){
-                    idTurma.setAttribute('alunos', div);
+                    idTurma.setAttribute('alunos', divstring);
                 }
             }
             if(!jump.includes(key)){
