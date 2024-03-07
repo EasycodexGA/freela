@@ -28,27 +28,27 @@ justLog($__EMAIL__, $__TYPE__, 2);
             <div class='inps-add'>
                 <div class='inp-add-out'>
                     <h3>Nome</h3>
-                    <p id='nomeGet' type='text'>-- -- --</p>
+                    <p id='nomeGet'>-- -- --</p>
                 </div>
                 <div class='inp-add-out'>
                     <h3>Email</h3>
-                    <p id='emailGet' type='text'>-- -- --</p>
+                    <p id='emailGet'>-- -- --</p>
                 </div>
                 <div class='inp-add-out'>
                     <h3>CPF</h3>
-                    <p id='cpfGet' type='text'>-- -- --</p>
+                    <p id='cpfGet'>-- -- --</p>
                 </div>
                 <div class='inp-add-out'>
                     <h3>Nascimento</h3>
-                    <p id='nascimentoGet' type='text'>-- -- --</p>
+                    <p id='nascimentoGet'>-- -- --</p>
                 </div>
                 <div class='inp-add-out'>
                     <h3>Presenças</h3>
-                    <p id='presencasGet' type='text'>-- -- --</p>
+                    <p id='presencasGet'>-- -- --</p>
                 </div>
                 <div class='inp-add-out'>
                     <h3>Faltas</h3>
-                    <p id='faltasGet' type='text'>-- -- --</p>
+                    <p id='faltasGet'>-- -- --</p>
                 </div>
             </div>
             <div class='out-bt-sv'>
