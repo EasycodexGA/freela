@@ -241,7 +241,7 @@ function getDetails(cat, id){
                     div.append(p);
                 }
                 divstring = JSON.stringify(div);
-                console.log(div);
+                console.log(div.toString());
                 value = `<button onclick='verMais(${divstring})'>Ver ${key}</button>`;
                 if(key == 'alunos'){
                     idTurma.addAttribute('alunos', div);
