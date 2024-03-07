@@ -20,7 +20,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
             <h2 class='sub-header'><span id="inactive">0</span> Inativos</h2>
         </div>
     </header>
-    <div id='verMais'></div>
+    <div id='verMaisDiv'></div>
 
     <div id='details'>
         <div class='add-container'>
