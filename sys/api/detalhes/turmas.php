@@ -45,6 +45,8 @@ while($_dados_ = mysqli_fetch_array($_query_)){
         array_push($arrProf, array("id"=>$idP, "nome"=>$nomeP, "imagem"=>$imagem));
     }
 
+    var_dump($arrAlunos);
+
     $arr = array(
         "id"                => $decTurma,
         "nome"              => $nome, 
