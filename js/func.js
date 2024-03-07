@@ -250,7 +250,6 @@ function getDetails(cat, id){
                     verPresencaBt.setAttribute('onclick', `verMais('${value}')`);
                 }
                 value = `<button data-array='${value}' onclick='verMais(this)'>Ver ${key}</button>`;
-                console.log(value);
             }
             if(!jump.includes(key)){
                 document.getElementById(`${key}Get`).innerHTML = value;
