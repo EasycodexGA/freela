@@ -243,6 +243,7 @@ function getDetails(cat, id){
             if(arrays.includes(key)){
                 for(i in value){
                     value[i] = JSON.stringify(value[i]);
+                    console.log(value[i]);
                 }
                 value = value.join("#");
                 if(key == 'alunos'){
