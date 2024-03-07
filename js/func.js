@@ -240,10 +240,11 @@ function getDetails(cat, id){
                     p.innerHTML = i.nome;
                     div.append(p);
                 }
+                divstring = JSON.stringify(div);
+                value = `<button onclick='verMais(${divstring})'>Ver ${key}</button>`;
                 if(key == 'alunos'){
                     idTurma.addAttribute('alunos', div);
                 }
-                value = `<button onclick='verMais(${div})'>Ver ${key}</button>`;
             }
             if(!jump.includes(key)){
                 document.getElementById(`${key}Get`).innerHTML = value;
