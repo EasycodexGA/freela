@@ -29,7 +29,7 @@ function verMais(me){
     divOut.classList.add('add-container');
 
     for(i of array){
-        console.log(i);
+        console.log(i.nome);
         let div = document.createElement('div');
         let p = document.createElement("p");
         p.innerHTML = i.nome;
