@@ -213,7 +213,7 @@ async function startPage(e){
 }
 
 function getDetails(cat, id){
-    let jump = ['id', 'turmas', 'status', 'imagem', 'alunos', 'profissionais'];
+    let jump = ['id', 'turmas', 'status', 'imagem'];
     let nums = ['data', 'nascimento', 'created'];
     let arrays = ['alunos', 'profissionais'];
     
