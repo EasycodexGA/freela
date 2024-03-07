@@ -218,9 +218,9 @@ async function startPage(e){
 }
 
 function getDetails(cat, id){
-    let jump = ['id', 'turmas', 'status', 'imagem'];
+    let jump = ['id', 'status', 'imagem'];
     let nums = ['data', 'nascimento', 'created'];
-    let arrays = ['alunos', 'profissionais'];
+    let arrays = ['alunos', 'profissionais', 'turmas'];
     
     return fetch(`../sys/api/detalhes/${cat}?id=${id}`)
     .then(e=>e.json())
@@ -241,16 +241,15 @@ function getDetails(cat, id){
                 value = (new Date(value * 1000 + 86400000)).toLocaleDateString("pt-BR");
             }
             if(arrays.includes(key)){
-                console.log(value);
                 for(i in value){
                     value[i] = JSON.stringify(value[i]);
                 }
                 value = value.join("#");
-                // console.log(value);
                 if(key == 'alunos'){
                     verPresencaBt.setAttribute('onclick', `verMais('${value}')`);
                 }
                 value = `<button onclick=´verMais('${value}')´>Ver ${key}</button>`;
+                console.log(value);
             }
             if(!jump.includes(key)){
                 document.getElementById(`${key}Get`).innerHTML = value;
