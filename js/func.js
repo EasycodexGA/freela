@@ -247,9 +247,9 @@ function getDetails(cat, id){
                 }
                 value = value.join("#");
                 if(key == 'alunos'){
-                    verPresencaBt.setAttribute('onclick', `verMais(${value})`);
+                    verPresencaBt.setAttribute('onclick', `verMais('${value}')`);
                 }
-                value = `<button onclick='verMais(${value})'>Ver ${key}</button>`;
+                value = `<button onclick=´verMais('${value}')´>Ver ${key}</button>`;
             }
             if(!jump.includes(key)){
                 document.getElementById(`${key}Get`).innerHTML = value;
