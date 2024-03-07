@@ -7,7 +7,7 @@ function openAddAula(div){
     closeAdd();
     addNewAula.classList.add("add-active");
     console.log(div);
-    verPresencaBt.addAttribute('onclick', `verMais(${div})`);
+    verPresencaBt.onclick = verMais(div);
 }
 
 function openDetail(cat, id){
