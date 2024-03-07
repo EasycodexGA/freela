@@ -22,6 +22,7 @@ function closeAddAula(){
 }
 
 function verMais(me, type, titleStr){
+    verMaisDiv.innerHTML = '';
     let string = me.getAttribute('data-array');
     let array = string.split('#');
 
@@ -32,6 +33,8 @@ function verMais(me, type, titleStr){
     title.classList.add("title-add");
     title.innerHTML = titleStr;
 
+    let divMid = document.createElement("div");
+
     for(i of array){
         i = JSON.parse(i);
         console.log(i.nome);
@@ -39,13 +42,21 @@ function verMais(me, type, titleStr){
         let p = document.createElement("p");
         p.innerHTML = i.nome;
         div.append(p);
-        divOut.append(div);
+        divMid.append(div);
     }
+
+    outBt = document.createElement("div");
+    outBt.classList.add("out-bt-sv");
+
     closeBt = document.createElement("button");
     closeBt.setAttribute("onclick", 'closeVerMais()');
     closeBt.innerHTML = 'Fechar';
     closeBt.classList.add("btn-close");
-    divOut.append(closeBt);
+    outBt.append(closeBt);
+
+    divOut.append(title);
+    divOut.append(divMid);
+    divOut.append(outBt);
     verMaisDiv.append(divOut);
     verMaisDiv.classList.add('add-active');
 }
