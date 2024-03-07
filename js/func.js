@@ -21,7 +21,8 @@ function closeAddAula(){
     addNewAula.classList.remove('add-active');
 }
 
-function verMais(obj){
+function verMais(me){
+    let obj = me.getAttribute('data-array');
     console.log(obj);
     // verMaisDiv.appendChild = div;
     verMaisDiv.classList.add('add-active');
@@ -248,7 +249,7 @@ function getDetails(cat, id){
                 if(key == 'alunos'){
                     verPresencaBt.setAttribute('onclick', `verMais('${value}')`);
                 }
-                value = `<button onclick='verMais(´${value}´)'>Ver ${key}</button>`;
+                value = `<button data-array='${value}' onclick='verMais(this)'>Ver ${key}</button>`;
                 console.log(value);
             }
             if(!jump.includes(key)){
