@@ -263,9 +263,10 @@ function getDetails(cat, id){
                 }
                 value = value.join("#");
                 if(key == 'alunos'){
-                    verPresencaBt.setAttribute('onclick', `verMais('${value}')`);
+                    verPresencaBt.setAttribute('onclick', `verMais(this, 1)`);
+                    verPresencaBt.setAttribute("data-array", `${value}`);
                 }
-                value = `<button data-array='${value}' onclick='verMais(this)'>Ver ${key}</button>`;
+                value = `<button data-array='${value}' onclick='verMais(this, 0)'>Ver ${key}</button>`;
             }
             if(!jump.includes(key)){
                 document.getElementById(`${key}Get`).innerHTML = value;
