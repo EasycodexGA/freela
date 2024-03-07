@@ -37,6 +37,9 @@ function verMais(me){
         div.append(p);
         divOut.append(div);
     }
+    closeBt = document.createElement("button");
+    closeBt.setAttribute("onclick", closeVerMais());
+    divOut.append(closeBt);
     verMaisDiv.append(divOut);
     verMaisDiv.classList.add('add-active');
 }
