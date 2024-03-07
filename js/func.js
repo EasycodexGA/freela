@@ -4,10 +4,11 @@ function openAdd(e){
 }
 
 function openAddAula(){
-    closeAdd();
     addNewAula.classList.add("add-active");
-    div = idTurma.getAttribute('alunos');
-    verPresencaBt.setAttribute('onclick', `verMais(${div})`);
+}
+
+function closeAddAula(){
+    addNewAula.classList.remove('add-active');
 }
 
 function openDetail(cat, id){
@@ -21,8 +22,11 @@ function verMais(div){
     verMaisDiv.classList.add('add-active');
 }
 
+function closeVerMais(){
+    verMaisDiv.classList.remove('add-active');
+}
+
 function closeAdd(){
-    addNewAula.classList.remove('add-active');
     addNew.classList.remove("add-active");
     details.classList.remove("add-active");
 }
@@ -236,18 +240,9 @@ function getDetails(cat, id){
                 value = (new Date(value * 1000 + 86400000)).toLocaleDateString("pt-BR");
             }
             if(arrays.includes(key)){
-                let div = document.createElement("div");
-                for(i of value){
-                    let p = document.createElement("p");
-                    p.innerHTML = i.nome;
-                    div.append(p);
-                }
-                div.classList.add('add-container');
-                divstring = div.outerHTML;
-                console.log(divstring);
-                value = `<button onclick=´verMais('${divstring}')´>Ver ${key}</button>`;
+                value = `<button onclick="verMais(${value})">Ver ${key}</button>`;
                 if(key == 'alunos'){
-                    idTurma.setAttribute('alunos', `"${divstring}"`);
+                    verPresencaBt.setAttribute('onclick', `verMais(${value})`);
                 }
             }
             if(!jump.includes(key)){
