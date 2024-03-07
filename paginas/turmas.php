@@ -153,8 +153,6 @@ justLog($__EMAIL__, $__TYPE__, 1);
         fetch("../sys/api/usuarios/get/categorias")
         .then(e=>e.json())
         .then(e=>{
-            console.log(e)
-            
             for(let i of e.mensagem){
                 categoriaAdd.innerHTML += `
                     <option value='${i.id}'>${i.nome}</option>
@@ -165,8 +163,6 @@ justLog($__EMAIL__, $__TYPE__, 1);
         fetch("../sys/api/usuarios/get/professores")
         .then(e=>e.json())
         .then(e=>{
-            console.log(e)
-            
             for(let i of e.mensagem){
                 profissionalAdd.innerHTML += `
                     <option value='${i.id}'>${i.nome} - ${i.titularidade}</option>

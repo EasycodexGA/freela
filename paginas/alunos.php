@@ -127,9 +127,7 @@ justLog($__EMAIL__, $__TYPE__, 2);
     <script>
         fetch("../sys/api/turmas/get/turmas")
         .then(e=>e.json())
-        .then(e=>{
-            console.log(e)
-            
+        .then(e=>{     
             for(let i of e.mensagem){
                 turmaAdd.innerHTML += `
                     <option value='${i.id}'>${i.nome} - ${i.categoria}</option>
