@@ -39,6 +39,7 @@ function verMais(me){
     }
     closeBt = document.createElement("button");
     closeBt.setAttribute("onclick", 'closeVerMais()');
+    closeBt.innerHTML = 'Fechar';
     divOut.append(closeBt);
     verMaisDiv.append(divOut);
     verMaisDiv.classList.add('add-active');
