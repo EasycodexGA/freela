@@ -16,7 +16,7 @@ function openDetail(cat, id){
 }
 
 function verMais(div){
-    console.log(div);
+    console.log(typeof div);
     verMaisDiv.innerHTML = div;
     verMaisDiv.classList.add('add-active');
 }
