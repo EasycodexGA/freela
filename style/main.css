@@ -2,6 +2,27 @@ body {
     overflow: hidden;
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    padding: 2px;
+    background: #00000010;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #989898; 
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar-track:hover{
+    background: #00000015; 
+}
+  
+
 .int-main {
     display: flex;
     height: 100svh;
@@ -16,6 +37,7 @@ body {
     align-items: center;
     min-height: calc(100svh - 40px);
     padding: 20px 0;
+    overflow-y: scroll;
 }
 
 .left-top {
