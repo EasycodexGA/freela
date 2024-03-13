@@ -20,7 +20,6 @@ justLog($__EMAIL__, $__TYPE__, 1);
             <h2 class='sub-header'><span id="inactive">0</span> Inativos</h2>
         </div>
     </header>
-    <div id='verMaisDiv'></div>
 
     <div id='details'>
         <div class='add-container'>
@@ -55,6 +54,9 @@ justLog($__EMAIL__, $__TYPE__, 1);
             </div>
         </div>
     </div>
+
+    <div id='verMaisDiv'></div>
+
 
     <?php if(requireLevel($__TYPE__, 3)){ ?>
     <div class='extra'>
