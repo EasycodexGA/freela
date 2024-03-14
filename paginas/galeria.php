@@ -21,7 +21,7 @@ include "../sys/conexao.php";
         <h1 class='title-header'>Funções</h1>
         <div class='header-in'>
             <button onclick='openAdd(addGaleria)' class='funcBt'>+ Criar pasta</button>
-            <button onclick='' class='funcBt'>+ Enviar imagens</button>
+            <button onclick='openAdd(addImages)' class='funcBt'>+ Enviar imagens</button>
         </div>
     </div>
 
