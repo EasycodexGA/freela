@@ -314,3 +314,22 @@ function removeSec(local, id){
     })
 
 }
+
+const convert64 = async () => {
+    let file = imageAdd.files[0];
+    if(!file) return;
+    let base64 = await getBase64(file);
+
+    addNewData("extra/patrocinadores/add", {
+        nome: nomeAdd.value,
+        image: base64
+    })
+}
+
+const getBase64 = (e) => {
+    return new Promise((res) => {
+        const reader = new FileReader();
+        reader.onload = () => res(reader.result);
+        reader.readAsDataURL(e);
+    });
+}

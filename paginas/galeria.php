@@ -58,6 +58,7 @@ include "../sys/conexao.php";
                 </div>
             </div>
             <div id='outShowImgs' class='inps-add'></div>
+            <div id='countOut' class='inps-add'></div>
             <div class='out-bt-sv'>
                 <button class='btn-close' onclick='closeAdd()'>Fechar</button>
                 <button onclick='sendImgs()' class='btn-add'>Salvar</button>
@@ -79,9 +80,10 @@ include "../sys/conexao.php";
                             <p class='nameImgShow'>Pronto</p>
                         </div>
                     `;
-                    outShowImgs.scrollTo(0, 10 * time)
+                    outShowImgs.scrollTo(0, 9999999)
+                    countOut.innerHTML = `${i} de ${getAll.length}`;
                 },time)
-                time += 50;
+                time += 100;
             }
         })
     </script>

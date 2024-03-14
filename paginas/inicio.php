@@ -96,32 +96,5 @@ while($dados = mysqli_fetch_array($getPat)){
             <span>E-mail: seel@pomerode.sc.gov.br</span>
         </p>
     </div>
-
-    
-
-    <?php if(requireLevel($__TYPE__, 3)){ ?>
-        <script>
-
-            const convert64 = async () => {
-                let file = imageAdd.files[0];
-                if(!file) return;
-                let base64 = await getBase64(file);
-
-                addNewData("extra/patrocinadores/add", {
-                    nome: nomeAdd.value,
-                    image: base64
-                })
-            }
-
-            const getBase64 = (e) => {
-                return new Promise((res) => {
-                    const reader = new FileReader();
-                    reader.onload = () => res(reader.result);
-                    reader.readAsDataURL(e);
-                });
-            }
-        </script>
-    <?php } ?>
-    
 </body>
 </html>
