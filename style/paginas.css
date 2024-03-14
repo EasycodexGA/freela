@@ -375,7 +375,7 @@ header, .extra{
     /* faz bonito aqui */
 }
 
-.excluir-pat:hover .excluir-pat{
+.excluir-pat:hover{
     opacity: 0.8!important;
     background: #000000;
 }
