@@ -22,7 +22,7 @@ checkMissing(
 
 $caminho = "../../../../imagens/patrocinadores";
 
-// Verifique se o caminho existe antes de tentar criar o diretório
+
 if (!file_exists($caminho)) {
     if (!mkdir($caminho, 0777, true)) {
         endCode("Erro ao criar o diretório", false);
@@ -30,32 +30,32 @@ if (!file_exists($caminho)) {
     }
 }
 
-if (substr($base64Image, 0, 5) === 'data:') {
-    $pos  = strpos($base64Image, ';base64,');
-    if ($pos === false) {
-        endCode("Código de imagem inválido", false);
-        return;
-    } else {
-        $type = substr($base64Image, 5, $pos - 5);
-        if (!in_array($type, ['image/jpeg', 'image/jpg', 'image/gif', 'image/png'])) {
-            endCode("Formato de imagem inválido", false);
-            return;
-        }
-
-        $imageData = substr($base64Image, $pos + 8);
-        $imageData = base64_decode($imageData);
-
-        if (!$imageData) {
-            endCode("Decodificação de base64 falhou", false);
-            return;
-        }
-    }
-} else {
+$parts = explode(',', $base64Image);
+if (count($parts) !== 2) {
     endCode("Código de imagem inválido", false);
     return;
 }
 
-$novoNome   = "i$__TIME__$__CODE__." . ($type === 'image/jpeg' ? 'jpg' : substr($type, 6));
+$formatPart = $parts[0];
+$imageData = base64_decode($parts[1]);
+
+if ($imageData === false) {
+    endCode("Decodificação de base64 falhou", false);
+    return;
+}
+
+$format = str_replace(['data:image/', ';base64'], '', $formatPart);
+if (!in_array($format, ['jpeg', 'jpg', 'gif', 'png'])) {
+    endCode("Formato de imagem inválido", false);
+    return;
+}
+
+if ($format === 'jpeg') {
+    $format = 'jpg';
+}
+
+
+$novoNome   = "i$__TIME__$__CODE__.$format";
 
 $completo = "$caminho/$novoNome";
 
