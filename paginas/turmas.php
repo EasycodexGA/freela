@@ -106,7 +106,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
     </div>
 
     <div id='addNewAula'>
-        <div id='addTurma' class='add-container'>
+        <div id='addAula' class='add-container'>
             <h1 class='title-add'>Nova aula</h1>
 
             <div class='inps-add'>

@@ -1,13 +1,12 @@
 function openAdd(e){
     closeAdd();
 
-    let allT =  e.parentElement.children;
+    let allT =  addNew.children;
 
     for(let i = 0; i < allT.length; i++){
         allT[i].style.display = "none";
     }
     e.style.display = "flex";
-    
     addNew.classList.add("add-active");
    
 }
