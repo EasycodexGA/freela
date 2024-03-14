@@ -131,11 +131,11 @@ justLog($__EMAIL__, $__TYPE__, 2);
                 </div>
                 <div class='inp-add-out'>
                     <h3>De</h3>
-                    <input id='horario1Add' type='time'/>
+                    <input id='horario1Add' type='date'/>
                 </div>
                 <div class='inp-add-out'>
                     <h3>Até</h3>
-                    <input id='horario2Add' type='time'/>
+                    <input id='horario2Add' type='date'/>
                 </div>
             </div>
             <div class='out-bt-sv'>
