@@ -14,7 +14,7 @@ include "../sys/conexao.php";
 <body>
     <h1 class='title-header'>Galeria</h1>
 
-    <?php if(requireLevel($__TYPE__, 3)){ ?>
+    <?php if(requireLevel($__TYPE__, 2)){ ?>
     <div id='details'></div>
     <div id='verMaisDiv'></div>
     <div class='extra'>
