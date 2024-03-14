@@ -9,21 +9,24 @@ include "../sys/conexao.php";
     <link rel="stylesheet" href="../style/root.css">
     <link rel="stylesheet" href="../style/paginas.css">
     <link rel="shortcut icon" href="../img/prefeitura.png" type="image/x-icon">
+    <script src="../js/func.js"></script>
 </head>
 <body>
     <h1 class='title-header'>Galeria</h1>
 
     <?php if(requireLevel($__TYPE__, 3)){ ?>
+    <div id='details'></div>
+    <div id='verMaisDiv'></div>
     <div class='extra'>
         <h1 class='title-header'>Funções</h1>
         <div class='header-in'>
-            <button onclick='openAdd(addTurma)' class='funcBt'>+ Adicionar turma</button>
+            <button onclick='openAdd(addGaleria)' class='funcBt'>+ Adicionar turma</button>
             <button onclick='' class='funcBt'>+ Novo recado</button>
         </div>
     </div>
 
     <div id='addNew'>
-        <div id='addTurma' class='add-container'>
+        <div id='addGaleria' class='add-container'>
             <h1 class='title-add'>Nova turma</h1>
 
             <div class='inps-add'>
