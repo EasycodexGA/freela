@@ -227,30 +227,32 @@ function createTh(arr){
     hlo.appendChild(select);
 }
 
-searchBar.addEventListener('keyup', ()=>{
-    let val = searchBar.value;
-    let filter = selectFilter.value;
-    for(let i of allbgl){
-        let name = i[filter];
-        
-        if(Number(name)){
-            name = Number(name);
-            name = new Date((name * 1000) + 86400000).toLocaleDateString('pt-br');
-        } else {
-            name = name.toString().toLowerCase();
+if (typeof searchBar !== "undefined"){
+    searchBar.addEventListener('keyup', ()=>{
+        let val = searchBar.value;
+        let filter = selectFilter.value;
+        for(let i of allbgl){
+            let name = i[filter];
+            
+            if(Number(name)){
+                name = Number(name);
+                name = new Date((name * 1000) + 86400000).toLocaleDateString('pt-br');
+            } else {
+                name = name.toString().toLowerCase();
+            }
+            if(name.includes(val)){
+                document.getElementById(`key${i.id}`).classList.add('table-line');
+            } else {
+                document.getElementById(`key${i.id}`).classList.remove('table-line');
+            }
+            if(tabList.querySelectorAll('.table-line').length == 0){
+                notData.classList.add('table-line2');
+            } else {
+                notData.classList.remove('table-line2');
+            }
         }
-        if(name.includes(val)){
-            document.getElementById(`key${i.id}`).classList.add('table-line');
-        } else {
-            document.getElementById(`key${i.id}`).classList.remove('table-line');
-        }
-        if(tabList.querySelectorAll('.table-line').length == 0){
-            notData.classList.add('table-line2');
-        } else {
-            notData.classList.remove('table-line2');
-        }
-    }
-})
+    })
+}
 
 const callFunc = (func) => func();
 
