@@ -59,8 +59,10 @@ $novoNome   = "i$__TIME__$__CODE__.$format";
 
 $completo = "$caminho/$novoNome";
 
-// Verifique se a imagem foi salva corretamente
+$novoNomeEnc = encrypt($novoNome);
+
 if (file_put_contents($completo, $imageData)) {
+    mysqli_query($__CONEXAO__, "insert into patrocinadores (nome) values ('$novoNomeEnc')") or endCode("Erro ao salvar imagem", false);;
     endCode("Sucesso no upload! $completo", true);
 } else {
     endCode("Erro ao salvar imagem", false);
