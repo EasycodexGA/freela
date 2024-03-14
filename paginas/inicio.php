@@ -5,11 +5,14 @@ $patrocinadores = "";
 $getPat = mysqli_query($__CONEXAO__, "select * from patrocinadores");
 
 while($dados = mysqli_fetch_array($getPat)){
+    $id   = $dados["id"];
     $nome   = $dados["nome"];
     $img    = $dados["img"];
     $nome   = decrypt($nome);
     $img    = decrypt($img);
-    $patrocinadores .= "<img src='$__WEB__/imagens/patrocinadores/$img' alt='$nome' />";
+
+    $extra = $__TYPE__ == 3 ? "onclick='addNewData(`turmas/cadastrar/evento`,{id:$id})' class='excluir-pat'";
+    $patrocinadores .= "<img src='$__WEB__/imagens/patrocinadores/$img' alt='$nome'/>";
 }
 ?>
 <!DOCTYPE html>
