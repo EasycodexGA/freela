@@ -72,6 +72,7 @@ include "../sys/conexao.php";
         imageAdd.addEventListener("change", e=>{
             let getAll = imageAdd.files;
             let time = 0;
+            outShowImgs.innerHTML = "";
             for(let i in getAll){
                 setTimeout(()=>{
                     outShowImgs.innerHTML += `
