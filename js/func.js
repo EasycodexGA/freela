@@ -65,14 +65,16 @@ function closeVerMais(){
     verMaisDiv.classList.remove('add-active');
 }
 
-
+isActive = false;
 function addNewData(local, data){
+    if(isActive) return;
     fetch(`../sys/api/${local}`,{
         method: "POST",
         body: JSON.stringify(data)
     })
     .then(e=>e.json())
     .then(e=>{
+        isActive = true;
         newMsg(e);
     })
 }
@@ -88,6 +90,7 @@ function newMsg(e){
         closeAdd();
         cleanInps();
         window.location.reload()
+        isActive = false;
     }
     setTimeout(()=>{
         msg.remove();
