@@ -98,9 +98,9 @@ include "../sys/conexao.php";
 
                 let img = new FormData();
                 img.append('imagem', file);
+                img.append('nome', nomeAdd.value);
 
                 addNewData("extra/patrocinadores/add", {
-                    nome: nomeAdd.value,
                     img
                 })
             }
