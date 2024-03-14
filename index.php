@@ -27,6 +27,7 @@ include "sys/conexao.php";
                     <p class="title-p2">Escolinhas</p>
                 </div>
                 <div class="links">
+                    <button onclick='openPage(`galeria`, this)' id="eventosBt" class='btn'>Galeria</button>
                     <?php if(requireLevel($__TYPE__, 3)){ ?>
                         <button onclick='openPage(`categorias`, this)' id="eventosBt" class='btn'>Categorias</button>
                         <button onclick='openPage(`profissionais`, this)' id="professoresBt" class="btn">Profissionais</button>
@@ -37,9 +38,9 @@ include "sys/conexao.php";
                         <button onclick='openPage(`eventos`, this)' id="eventosBt" class='btn'>Eventos</button>
                         <button onclick='openPage(`configuracoes`, this)' id="configBt" class='btn'>Configurações</button>
                     <?php } else { ?>
-                        <button onclick='openPage(`galeria`, this)' id="eventosBt" class='btn'>Galeria</button>
                         <button onclick="location.href='login'" class='btn'>Login</button>
                     <?php } ?>
+
                     <div class='patrocinadores-div'>
                         <!-- adicionar patrocinadores aqui -->
                     </div>
