@@ -55,7 +55,7 @@ include "../sys/conexao.php";
             </div>
             <div class='inps-add'>
                 <div class='inp-add-out'>
-                    <h3>Pasta</h3>
+                    <h3>Imagens</h3>
                     <input id='imageAdd' multiple type='file' placeholder='Nova imagem' accept="image/png, image/jpeg"/>
                 </div>
             </div>
