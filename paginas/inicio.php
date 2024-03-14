@@ -61,7 +61,7 @@ include "../sys/conexao.php";
                 <button class='btn-close' onclick='closeAdd()'>Fechar</button>
                 <button onclick='addNewData("extra/patrocinadores/add", {
                     nome: nomeAdd.value,
-                    image: await convert64(imageAdd)
+                    image: convert64(imageAdd)
                 })' class='btn-add'>Salvar</button>
             </div>
         </div>
@@ -95,13 +95,19 @@ include "../sys/conexao.php";
     <?php if(requireLevel($__TYPE__, 3)){ ?>
         <script>
 
-            const convert64 = (e) => {
-                const file = e.files[0];
+            const convert64 = async (e) => {
+                let file = e.files[0];
                 console.log(`file: ${file}`)
+                let base64 = await getBase64(file);
+                console.log(`base: ${base64}`)
+                return base64;
+            }
+
+            const getBase64 = (e) => {
                 return new Promise((res) => {
                     const reader = new FileReader();
                     reader.onload = () => res(reader.result);
-                    reader.readAsDataURL(file);
+                    reader.readAsDataURL(e);
                 });
             }
         </script>
