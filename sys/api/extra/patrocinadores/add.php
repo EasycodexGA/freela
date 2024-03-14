@@ -58,11 +58,10 @@ if ($format === 'jpeg') {
 $novoNome   = "i$__TIME__$__CODE__.$format";
 
 $completo = "$caminho/$novoNome";
-
 $novoNomeEnc = encrypt($novoNome);
 
 if (file_put_contents($completo, $imageData)) {
-    mysqli_query($__CONEXAO__, "insert into patrocinadores (nome) values ('$novoNomeEnc')") or endCode("Erro ao salvar imagem", false);;
+    mysqli_query($__CONEXAO__, "insert into patrocinadores (nome, img) values ('$nome', '$novoNomeEnc')") or endCode("Erro ao salvar imagem", false);;
     endCode("Sucesso no upload! $completo", true);
 } else {
     endCode("Erro ao salvar imagem", false);
