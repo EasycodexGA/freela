@@ -122,8 +122,12 @@ justLog($__EMAIL__, $__TYPE__, 1);
                     </select>
                 </div>
                 <div class='inp-add-out'>
+                    <h3>De</h3>
+                    <input id='horario1Add' type='time'/>
+                </div>
+                <div class='inp-add-out'>
                     <h3>Até</h3>
-                    <input id='horarioAdd' type='time'/>
+                    <input id='horario2Add' type='time'/>
                 </div>
             </div>
             <div class='out-bt-sv'>

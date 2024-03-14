@@ -63,7 +63,7 @@ justLog($__EMAIL__, $__TYPE__, 2);
         <h1 class='title-header'>Funções</h1>
         <div class='header-in'>
             <button onclick='openAdd(addAluno)' class='funcBt'>+ Adicionar aluno</button>
-            <button onclick='' class='funcBt'>+ Novo recado</button>
+            <button onclick='openAdd(addRecado)' class='funcBt'>+ Novo recado</button>
         </div>
     </div>
     
@@ -108,6 +108,40 @@ justLog($__EMAIL__, $__TYPE__, 2);
                     email: emailAdd.value,
                     cpf: cpfAdd.value,
                     espera: esperaAdd.checked ? true : false
+                })' class='btn-add'>Salvar</button>
+            </div>
+        </div>
+        <div id='addRecado' class='add-container'>
+            <h1 class='title-add'>Novo reacado</h1>
+
+            <div class='inps-add'>
+                <div class='inp-add-out'>
+                    <h3>Título</h3>
+                    <input id='nomeAdd' type='text' placeholder='Assinaturas'/>
+                </div>
+                <div class='inp-add-out'>
+                    <h3>Descrição</h3>
+                    <input id='descricaoAdd' type='text' placeholder='Trazer assinatura...'/>
+                </div>
+                <div class='inp-add-out'>
+                    <h3>Aluno</h3>
+                    <select id='turmaAdd'>
+                        <option>Nenhum aluno selecionado</option>
+                    </select>
+                </div>
+                <div class='inp-add-out'>
+                    <h3>De</h3>
+                    <input id='horario1Add' type='time'/>
+                </div>
+                <div class='inp-add-out'>
+                    <h3>Até</h3>
+                    <input id='horario2Add' type='time'/>
+                </div>
+            </div>
+            <div class='out-bt-sv'>
+                <button class='btn-close' onclick='closeAdd()'>Fechar</button>
+                <button onclick='addNewData("", {
+                    
                 })' class='btn-add'>Salvar</button>
             </div>
         </div>
