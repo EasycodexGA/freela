@@ -20,23 +20,41 @@ checkMissing(
     )
 );
 
-$caminho    = "../../../../imagens/patrocinadores";
+$caminho = "../../../../imagens/patrocinadores";
 
-if(!file_exists($caminho)) {
-    mkdir($caminho, 0777, true);
+// Verifique se o caminho existe antes de tentar criar o diretório
+if (!file_exists($caminho)) {
+    if (!mkdir($caminho, 0777, true)) {
+        endCode("Erro ao criar o diretório", false);
+        return;
+    }
 }
 
-$extensao = 'jpg';
-if (strpos($base64Image, 'image/png') !== false) {
-    $extensao = 'png';
+// Verifique se a imagem está no formato base64
+if (preg_match('/^data:image\/(\w+);base64,/', $base64Image, $type)) {
+    $imageData = substr($base64Image, strpos($base64Image, ',') + 1);
+    $type = strtolower($type[1]); // jpg, png, gif
+
+    if (!in_array($type, ['jpg', 'jpeg', 'gif', 'png'])) {
+        endCode("Formato de imagem inválido", false);
+        return;
+    }
+
+    $imageData = base64_decode($imageData);
+
+    if ($imageData === false) {
+        endCode("Decodificação de base64 falhou", false);
+        return;
+    }
+} else {
+    endCode("Código de imagem inválido", false);
+    return;
 }
+$novoNome   = "i$__TIME__$__CODE__.$type";
 
-$imageData  = str_replace("data:image/$extensao;base64,", '', $base64Image);
-$imageData  = base64_decode($imageData);
+$completo = "$caminho/$novoNome";
 
-$novoNome   = "i$__TIME__$__CODE__.$extensao";
-$completo   = "$caminho/$novoNome";
-
+// Verifique se a imagem foi salva corretamente
 if (file_put_contents($completo, $imageData)) {
     endCode("Sucesso no upload! $completo", true);
 } else {
