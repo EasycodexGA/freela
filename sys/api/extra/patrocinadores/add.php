@@ -24,8 +24,8 @@ $imageData  = base64_decode($base64Image);
 
 $caminho    = "../../../../imagens/patrocinadores";
 
-if(!file_exists(dirname($caminho))) {
-    mkdir(dirname($caminho), 0777, true);
+if(!file_exists($caminho)) {
+    mkdir($caminho, 0777, true);
 }
 
 $extensao = 'jpg';
@@ -34,6 +34,10 @@ if (strpos($base64Image, 'image/png') !== false) {
 }
 
 $novoNome   = "i$__TIME__$__CODE__.$extensao";
+$completo   = "$caminho/$novoNome";
 
-file_put_contents("$caminho/$novoNome", $imageData);
-endCode("Sucesso no upload! $caminho$novoNome", true);
+if (file_put_contents($completo, $imageData)) {
+    endCode("Sucesso no upload! $completo", true);
+} else {
+    endCode("Erro ao salvar imagem", false);
+}
