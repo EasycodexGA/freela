@@ -59,10 +59,7 @@ include "../sys/conexao.php";
             </div>
             <div class='out-bt-sv'>
                 <button class='btn-close' onclick='closeAdd()'>Fechar</button>
-                <button onclick='addNewData("extra/patrocinadores/add", {
-                    nome: nomeAdd.value,
-                    image: convert64(imageAdd)
-                })' class='btn-add'>Salvar</button>
+                <button onclick='convert64()' class='btn-add'>Salvar</button>
             </div>
         </div>
     </div>
@@ -97,10 +94,12 @@ include "../sys/conexao.php";
 
             const convert64 = async (e) => {
                 let file = e.files[0];
-                console.log(`file: ${file}`)
                 let base64 = await getBase64(file);
-                console.log(`base: ${base64}`)
-                return base64;
+
+                addNewData("extra/patrocinadores/add", {
+                    nome: nomeAdd.value,
+                    image: base64
+                })
             }
 
             const getBase64 = (e) => {
