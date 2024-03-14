@@ -81,7 +81,7 @@ include "../sys/conexao.php";
                         </div>
                     `;
                     outShowImgs.scrollTo(0, 9999999)
-                    countOut.innerHTML = `${i} de ${getAll.length}`;
+                    countOut.innerHTML = `${i + 1} de ${getAll.length}`;
                 },time)
                 time += 100;
             }
