@@ -22,7 +22,7 @@ $id = decrypt($id);
 
 $check = mysqli_query($__CONEXAO__, "select id from patrocinadores where id='$id'");
 
-if(mysqli_num_rows($check) > 0){
+if(mysqli_num_rows($check) < 1){
     endCode("Imagem inexistente", false);
 }
 
