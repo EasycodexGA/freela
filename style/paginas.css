@@ -378,3 +378,28 @@ header, .extra{
 .excluir-pat:hover{
     opacity: 0.6!important;
 }
+
+#outShowImgs {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+    max-height: 200px;
+    overflow-y: scroll;
+    flex-wrap: nowrap;
+}
+
+.imgShowUp {
+    width: calc(100% - 30px);
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px;
+    flex-wrap: nowrap;
+    border: 2px solid #cce0ff;
+    border-radius: 3px;
+}
+
+.nameImgShow {
+    font-size: 15px;
+    color: #585858;
+}

@@ -73,7 +73,7 @@ include "../sys/conexao.php";
             let getAll = imageAdd.files;
             let time = 0;
             outShowImgs.innerHTML = "";
-            for(let i in getAll){
+            for(let i = 0; i < getAll.length; i++){
                 setTimeout(()=>{
                     outShowImgs.innerHTML += `
                         <div id='showgp${i}' class='imgShowUp'>
@@ -82,7 +82,7 @@ include "../sys/conexao.php";
                         </div>
                     `;
                 },time)
-                time += 200;
+                time += 100;
             }
         })
     </script>
