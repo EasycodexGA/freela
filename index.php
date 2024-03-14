@@ -37,6 +37,7 @@ include "sys/conexao.php";
                         <button onclick='openPage(`eventos`, this)' id="eventosBt" class='btn'>Eventos</button>
                         <button onclick='openPage(`configuracoes`, this)' id="configBt" class='btn'>Configurações</button>
                     <?php } else { ?>
+                        <button onclick='openPage(`galeria`, this)' id="eventosBt" class='btn'>Galeria</button>
                         <button onclick="location.href='login'" class='btn'>Login</button>
                     <?php } ?>
                     <div class='patrocinadores-div'>
