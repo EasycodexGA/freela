@@ -30,31 +30,32 @@ if (!file_exists($caminho)) {
     }
 }
 
-if (preg_match('/^data:image\/(\w+);base64,/', $base64Image, $type)) {
-    $imageData = substr($base64Image, strpos($base64Image, ',') + 1);
-    $type = strtolower($type[1]); // jpg, jpeg, gif, png
-
-    if (!in_array($type, ['jpg', 'jpeg', 'gif', 'png'])) {
-        endCode("Formato de imagem inválido", false);
+if (substr($base64Image, 0, 5) === 'data:') {
+    $pos  = strpos($base64Image, ';base64,');
+    if ($pos === false) {
+        endCode("Código de imagem inválido", false);
         return;
-    }
+    } else {
+        $type = substr($base64Image, 5, $pos - 5);
+        if (!in_array($type, ['image/jpeg', 'image/jpg', 'image/gif', 'image/png'])) {
+            endCode("Formato de imagem inválido", false);
+            return;
+        }
 
-    if ($type === 'jpeg') {
-        $type = 'jpg';
-    }
+        $imageData = substr($base64Image, $pos + 8);
+        $imageData = base64_decode($imageData);
 
-    $imageData = base64_decode($imageData);
-
-    if ($imageData === false) {
-        endCode("Decodificação de base64 falhou", false);
-        return;
+        if (!$imageData) {
+            endCode("Decodificação de base64 falhou", false);
+            return;
+        }
     }
 } else {
     endCode("Código de imagem inválido", false);
     return;
 }
 
-$novoNome   = "i$__TIME__$__CODE__.$type";
+$novoNome   = "i$__TIME__$__CODE__." . ($type === 'image/jpeg' ? 'jpg' : substr($type, 6));
 
 $completo = "$caminho/$novoNome";
 
