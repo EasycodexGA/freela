@@ -30,8 +30,7 @@ if (!file_exists($caminho)) {
     }
 }
 
-$parts = explode(',', $base64Image);
-var_dump($parts);
+$parts = explode(',', $image);
 if (count($parts) !== 2) {
     endCode("Código de imagem inválido", false);
     return;
