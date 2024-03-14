@@ -63,7 +63,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
         <h1 class='title-header'>Funções</h1>
         <div class='header-in'>
             <button onclick='openAdd(addTurma)' class='funcBt'>+ Adicionar turma</button>
-            <button onclick='' class='funcBt'>+ Novo recado</button>
+            <button onclick='openAdd(addRecado)' class='funcBt'>+ Novo recado</button>
         </div>
     </div>
 
@@ -100,6 +100,36 @@ justLog($__EMAIL__, $__TYPE__, 1);
                     categoria: categoriaAdd.value,
                     horario: horarioAdd.valueAsNumber,
                     profissional: profissionalAdd.value,
+                })' class='btn-add'>Salvar</button>
+            </div>
+        </div>
+        <div id='addRecado' class='add-container'>
+            <h1 class='title-add'>Novo reacado</h1>
+
+            <div class='inps-add'>
+                <div class='inp-add-out'>
+                    <h3>Título</h3>
+                    <input id='nomeAdd' type='text' placeholder='Assinaturas'/>
+                </div>
+                <div class='inp-add-out'>
+                    <h3>Descrição</h3>
+                    <input id='descricaoAdd' type='text' placeholder='Trazer assinatura...'/>
+                </div>
+                <div class='inp-add-out'>
+                    <h3>Turma</h3>
+                    <select id='turmaAdd'>
+                        <option>Nenhuma turma selecionada</option>
+                    </select>
+                </div>
+                <div class='inp-add-out'>
+                    <h3>Até</h3>
+                    <input id='horarioAdd' type='time'/>
+                </div>
+            </div>
+            <div class='out-bt-sv'>
+                <button class='btn-close' onclick='closeAdd()'>Fechar</button>
+                <button onclick='addNewData("", {
+                    
                 })' class='btn-add'>Salvar</button>
             </div>
         </div>
