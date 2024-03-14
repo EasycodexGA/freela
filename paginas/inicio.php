@@ -1,5 +1,16 @@
 <?php
 include "../sys/conexao.php";
+$patrocinadores = "";
+
+$getPat = mysqli_query($__CONEXAO__, "select * from patrocinadores");
+
+while($dados = mysqli_fetch_array($getPat)){
+    $nome   = $dados["nome"];
+    $img    = $dados["img"];
+    $nome   = decrypt($nome);
+    $img    = decrypt($img);
+    $patrocinadores .= "<img src='$__WEB__/imagens/patrocinadores/$img' alt='$nome' />";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,11 +37,7 @@ include "../sys/conexao.php";
         <h1 class='title-header'>Patrocinadores</h1>
 
         <div class='patrocinadores'>
-            <img src='https://www.cieesc.org.br/site/wp-content/uploads/2018/10/pomerode.jpg.webp'/>
-            <img src='https://cursostecnicostocantins.com.br/wp-content/uploads/2019/11/Logotipo-SENAI-Slogan.png'/>
-            <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Logo_Banrisul.svg/2560px-Logo_Banrisul.svg.png'/>
-            <img src='https://logosmarcas.net/wp-content/uploads/2020/09/Google-Logo.png'/>
-            <img src='https://logosmarcas.net/wp-content/uploads/2020/04/Facebook-Logo.png'/>
+            <?php echo ($patrocinadores ? $patrocinadores : "Ainda não há patrocinadores"); ?>
         </div>
     </div>
 
