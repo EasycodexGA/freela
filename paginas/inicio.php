@@ -92,8 +92,8 @@ include "../sys/conexao.php";
     <?php if(requireLevel($__TYPE__, 3)){ ?>
         <script>
 
-            const convert64 = async (e) => {
-                let file = e.files[0];
+            const convert64 = async () => {
+                let file = imageAdd.files[0];
                 let base64 = await getBase64(file);
 
                 addNewData("extra/patrocinadores/add", {
