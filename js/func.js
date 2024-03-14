@@ -68,13 +68,14 @@ function closeVerMais(){
 isActive = false;
 function addNewData(local, data){
     if(isActive) return;
+    isActive = true;
     fetch(`../sys/api/${local}`,{
         method: "POST",
         body: JSON.stringify(data)
     })
     .then(e=>e.json())
     .then(e=>{
-        isActive = true;
+        isActive = false;
         newMsg(e);
     })
 }
@@ -90,7 +91,6 @@ function newMsg(e){
         closeAdd();
         cleanInps();
         window.location.reload()
-        isActive = false;
     }
     setTimeout(()=>{
         msg.remove();
