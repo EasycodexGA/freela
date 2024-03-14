@@ -96,7 +96,7 @@ include "../sys/conexao.php";
         <script>
 
             const convert64 = (e) => {
-                const file = e.target.files[0];
+                const file = e.files[0];
                 return new Promise((res) => {
                     const reader = new FileReader();
                     reader.onload = () => res(reader.result);
