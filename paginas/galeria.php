@@ -48,7 +48,7 @@ include "../sys/conexao.php";
             <div class='inps-add'>
                 <div class='inp-add-out'>
                     <h3>Pasta</h3>
-                    <select id='pasta'>
+                    <select id='pastaAdd'>
                         <option>Nenhuma pasta selecionada</option>
                     </select>
                 </div>
@@ -70,11 +70,20 @@ include "../sys/conexao.php";
 
     <?php } ?>
 
+    <div id="gpOut">
+
+    </div>
+
     <script>
         fetch("../sys/api/galeria/grupo/get")
         .then(e=>e.json())
         .then(e=>{
             console.log(e)
+            for(let i of e.mensagem){
+                pastaAdd.innerHTML += `
+                    <option value='${i.id}'>${i.nome}</option>
+                `;
+            }
         })
     </script>
 </body>
