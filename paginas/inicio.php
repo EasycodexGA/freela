@@ -103,21 +103,6 @@ include "../sys/conexao.php";
                     reader.readAsDataURL(file);
                 });
             }
-
-            const addNewPat = () => {
-                fetch(, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json', 
-                    },
-                    body: JSON.stringify({ image: base64Image }),
-                })
-                .then((response) => response.json())
-                .then((data) => {
-                    // Lida com a resposta do servidor
-                    console.log(data);
-                })
-            }
         </script>
     <?php } ?>
     
