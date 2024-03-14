@@ -60,9 +60,7 @@ include "../sys/conexao.php";
             <div id='outShowImgs' class='inps-add'></div>
             <div class='out-bt-sv'>
                 <button class='btn-close' onclick='closeAdd()'>Fechar</button>
-                <button onclick='addNewData("galeria/grupo/add", {
-                    nome: nomeAdd.value
-                })' class='btn-add'>Salvar</button>
+                <button onclick='sendImgs()' class='btn-add'>Salvar</button>
             </div>
         </div>
     </div>
@@ -83,7 +81,7 @@ include "../sys/conexao.php";
                     `;
                     outShowImgs.scrollTo(0, 10 * time)
                 },time)
-                time += 100;
+                time += 50;
             }
         })
     </script>
