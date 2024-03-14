@@ -69,5 +69,13 @@ include "../sys/conexao.php";
     </div>
 
     <?php } ?>
+
+    <script>
+        fetch("../sys/api/galeria/grupo/get")
+        .then(e=>e.json())
+        .then(e=>{
+            console.log(e)
+        })
+    </script>
 </body>
 </html>
