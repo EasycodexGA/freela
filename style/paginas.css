@@ -376,6 +376,5 @@ header, .extra{
 }
 
 .excluir-pat:hover{
-    opacity: 0.8!important;
-    background: #000000;
+    opacity: 0.6!important;
 }
