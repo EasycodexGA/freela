@@ -63,6 +63,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
         <h1 class='title-header'>Funções</h1>
         <div class='header-in'>
             <button onclick='openAdd(addTurma)' class='funcBt'>+ Adicionar turma</button>
+            <button onclick='' class='funcBt'>+ Novo recado</button>
         </div>
     </div>
 
