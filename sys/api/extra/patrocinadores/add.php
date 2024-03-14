@@ -22,7 +22,7 @@ checkMissing(
 
 $imageData  = base64_decode($base64Image);
 
-$caminho    = "../../../../imagens/patrocinadores";
+$caminho    = "../../../../imagens/patrocinadores/";
 
 if(!file_exists(dirname($caminho))) {
     mkdir(dirname($caminho), 0777, true);
