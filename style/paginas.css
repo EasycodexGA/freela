@@ -367,23 +367,15 @@ header, .extra{
 }
 
 .excluir-pat{
-    position: relative;
     cursor: pointer;
+    transition: all .3s;
 }
 
 .excluir-pat::before{
-    content: "Excluir";
-    display: block;
-    width: 100%;
-    height: 100%;
-    background: #00000070;
-    color: white;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
+    /* faz bonito aqui */
 }
 
-.excluir-pat:hover .excluir-pat::before{
-    opacity: 1!important;
+.excluir-pat:hover .excluir-pat{
+    opacity: 0.8!important;
+    background: #000000;
 }

@@ -11,7 +11,7 @@ while($dados = mysqli_fetch_array($getPat)){
     $nome   = decrypt($nome);
     $img    = decrypt($img);
 
-    $extra = $__TYPE__ == 3 ? "onclick='addNewData(`turmas/cadastrar/evento`,{id:$id})' class='excluir-pat'" : "";
+    $extra = $__TYPE__ == 3 ? "onclick='addNewData(`extra/patrocinadores/remove`,{id:$id})' class='excluir-pat'" : "";
     $patrocinadores .= "<img $extra src='$__WEB__/imagens/patrocinadores/$img' alt='$nome'/>";
 }
 ?>

@@ -12,4 +12,25 @@ $id  = scapeString($__CONEXAO__, $json->id);
 
 $id = setNum($id);
 
+checkMissing(
+    array(
+        $id
+    )
+);
 
+$id = decrypt($id);
+
+$check = mysqli_query($__CONEXAO__, "select id from patrocinadores where id='$id'");
+
+if(mysqli_num_rows($check) > 0){
+    endCode("Imagem inexistente", false);
+}
+
+$img = mysqli_fetch_assoc($check)["img"];
+$img = decrypt($img);
+
+$caminho = "../../../../imagens/patrocinadores";
+
+unlink("$caminho/$img");
+mysqli_query($__CONEXAO__, "delete from patrocinadores where id='$id'");
+endCode("Imagem excluida", true);
