@@ -12,8 +12,8 @@ while($dados = mysqli_fetch_array($getAll)){
     $nomeGp = decrypt($dados["nome"]);
 
     array_push(
-        array("id"=>$id, "nome"=>$nomeGp), 
-        $nomeGp
+        $nomes, 
+        array("id"=>$id, "nome"=>$nomeGp)
     );
 }
 
