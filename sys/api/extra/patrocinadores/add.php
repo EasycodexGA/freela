@@ -33,7 +33,7 @@ if (strpos($base64Image, 'image/png') !== false) {
     $extensao = 'png';
 }
 
-$novoNome   = "$__TIME__$__CODE__.$extensao";
+$novoNome   = "i$__TIME__$__CODE__.$extensao";
 
 file_put_contents($caminho.$novoNome, $imageData);
 endCode("Sucesso no upload! $caminho$novoNome", true);
