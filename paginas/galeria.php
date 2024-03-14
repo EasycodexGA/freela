@@ -81,6 +81,7 @@ include "../sys/conexao.php";
                             <p class='nameImgShow'>Pronto</p>
                         </div>
                     `;
+                    outShowImgs.scrollTo(0, 10 * time)
                 },time)
                 time += 100;
             }
