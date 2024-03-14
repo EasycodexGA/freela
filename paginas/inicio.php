@@ -61,7 +61,7 @@ include "../sys/conexao.php";
                 <button class='btn-close' onclick='closeAdd()'>Fechar</button>
                 <button onclick='addNewData("extra/patrocinadores/add", {
                     nome: nomeAdd.value,
-                    image: convert64(imageAdd)
+                    image: await convert64(imageAdd)
                 })' class='btn-add'>Salvar</button>
             </div>
         </div>
@@ -97,6 +97,7 @@ include "../sys/conexao.php";
 
             const convert64 = (e) => {
                 const file = e.files[0];
+                console.log(`file: ${file}`)
                 return new Promise((res) => {
                     const reader = new FileReader();
                     reader.onload = () => res(reader.result);
