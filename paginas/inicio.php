@@ -61,7 +61,7 @@ include "../sys/conexao.php";
                 <button class='btn-close' onclick='closeAdd()'>Fechar</button>
                 <button onclick='addNewData("extra/patrocinadores/add", {
                     nome: nomeAdd.value,
-                    image: imageAdd.value
+                    image: convert64(imageAdd)
                 })' class='btn-add'>Salvar</button>
             </div>
         </div>
@@ -94,18 +94,29 @@ include "../sys/conexao.php";
 
     <?php if(requireLevel($__TYPE__, 3)){ ?>
         <script>
-            imageAdd.addEventListener('change', async (e) => {
-                const file = e.target.files[0];
-                const base64Image = await convert64(file);
-                console.log(base64Image)
-            });
 
             const convert64 = (e) => {
+                const file = e.target.files[0];
                 return new Promise((res) => {
                     const reader = new FileReader();
                     reader.onload = () => res(reader.result);
-                    reader.readAsDataURL(e);
+                    reader.readAsDataURL(file);
                 });
+            }
+
+            const addNewPat = () => {
+                fetch(, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json', 
+                    },
+                    body: JSON.stringify({ image: base64Image }),
+                })
+                .then((response) => response.json())
+                .then((data) => {
+                    // Lida com a resposta do servidor
+                    console.log(data);
+                })
             }
         </script>
     <?php } ?>
