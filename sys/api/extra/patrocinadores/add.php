@@ -30,14 +30,17 @@ if (!file_exists($caminho)) {
     }
 }
 
-// Verifique se a imagem está no formato base64
 if (preg_match('/^data:image\/(\w+);base64,/', $base64Image, $type)) {
     $imageData = substr($base64Image, strpos($base64Image, ',') + 1);
-    $type = strtolower($type[1]); // jpg, png, gif
+    $type = strtolower($type[1]); // jpg, jpeg, gif, png
 
     if (!in_array($type, ['jpg', 'jpeg', 'gif', 'png'])) {
         endCode("Formato de imagem inválido", false);
         return;
+    }
+
+    if ($type === 'jpeg') {
+        $type = 'jpg';
     }
 
     $imageData = base64_decode($imageData);
@@ -50,6 +53,7 @@ if (preg_match('/^data:image\/(\w+);base64,/', $base64Image, $type)) {
     endCode("Código de imagem inválido", false);
     return;
 }
+
 $novoNome   = "i$__TIME__$__CODE__.$type";
 
 $completo = "$caminho/$novoNome";
