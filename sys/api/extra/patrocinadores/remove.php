@@ -20,7 +20,7 @@ checkMissing(
 
 $id = decrypt($id);
 
-$check = mysqli_query($__CONEXAO__, "select id from patrocinadores where id='$id'");
+$check = mysqli_query($__CONEXAO__, "select id, img from patrocinadores where id='$id'");
 
 if(mysqli_num_rows($check) < 1){
     endCode("Imagem inexistente", false);
@@ -35,6 +35,6 @@ if(unlink("$caminho/$img")){
     mysqli_query($__CONEXAO__, "delete from patrocinadores where id='$id'");
     endCode("Imagem excluida", true);
 } else {
-    endCode("Erro ao excluir imagem / caminho/$img", false);
+    endCode("Erro ao excluir imagem / $caminho/$img", false);
 
 };
