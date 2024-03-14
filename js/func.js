@@ -326,6 +326,27 @@ const convert64 = async () => {
     })
 }
 
+const sendImgs = async () => {
+    let files = imageAdd.files;
+    let grupoFixo = pastaAdd.value;
+    if(!files) return;
+
+    for(let i of files){
+        let base64 = await getBase64(files[i]);
+
+        let data = {
+            image: base64,
+            grupo: grupoFixo
+        }
+
+        fetch("../sys/api/galeria/foto/add",{
+            method: "POST",
+            body: JSON.stringify(data)
+        })
+    }
+    
+}
+
 const getBase64 = (e) => {
     return new Promise((res) => {
         const reader = new FileReader();
