@@ -29,11 +29,11 @@ if(!file_exists(dirname($caminho))) {
 }
 
 $extensao = 'jpg';
-if (strpos($base64Image, 'image/png')) {
+if (strpos($base64Image, 'image/png') !== false) {
     $extensao = 'png';
 }
 
 $novoNome   = "$__TIME__$__CODE__.$extensao";
 
 file_put_contents($caminho.$novoNome, $imageData);
-endCode("Sucesso no upload! $caminho.$novoNome", true);
+endCode("Sucesso no upload! $caminho$novoNome", true);
