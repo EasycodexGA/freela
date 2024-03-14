@@ -20,8 +20,6 @@ checkMissing(
     )
 );
 
-$imageData  = base64_decode($base64Image);
-
 $caminho    = "../../../../imagens/patrocinadores";
 
 if(!file_exists($caminho)) {
@@ -32,6 +30,9 @@ $extensao = 'jpg';
 if (strpos($base64Image, 'image/png') !== false) {
     $extensao = 'png';
 }
+
+$imageData  = str_replace("data:image/$extensao;base64,", '', $base64Image);
+$imageData  = base64_decode($imageData);
 
 $novoNome   = "i$__TIME__$__CODE__.$extensao";
 $completo   = "$caminho/$novoNome";
