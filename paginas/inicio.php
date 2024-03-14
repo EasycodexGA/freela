@@ -95,13 +95,11 @@ include "../sys/conexao.php";
             const convert64 = async () => {
                 let file = imageAdd.files[0];
                 if(!file) return;
-
-                let img = new FormData();
-                img.append('imagem', file);
-                img.append('nome', nomeAdd.value);
+                let base64 = await getBase64(file);
 
                 addNewData("extra/patrocinadores/add", {
-                    img
+                    nome: nomeAdd.value,
+                    image: base64
                 })
             }
 
