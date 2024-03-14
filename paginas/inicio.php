@@ -37,13 +37,13 @@ include "../sys/conexao.php";
     <?php if(requireLevel($__TYPE__, 3)){ ?>
     <div class='extra'>
         <div class='header-in'>
-            <button onclick='openAdd(addProfessor)' class='funcBt'>+ Adicionar patrocinador</button>
+            <button onclick='openAdd(addPatrocinador)' class='funcBt'>+ Adicionar patrocinador</button>
         </div>
     </div>
     <div id='details'>
     </div>
     <div id='addNew'>
-        <div id='addProfessor' class='add-container'>
+        <div id='addPatrocinador' class='add-container'>
             <h1 class='title-add'>Novo patrocinador</h1>
 
             <div class='inps-add'>
@@ -53,14 +53,15 @@ include "../sys/conexao.php";
                 </div>
                 <div class='inp-add-out'>
                     <h3>Imagem</h3>
-                    <input id='imagemAdd' type='file' placeholder='Nova imagem' accept="image/png, image/jpeg"/>
+                    <input id='imageAdd' type='file' placeholder='Nova imagem' accept="image/png, image/jpeg"/>
                 </div>
                 
             </div>
             <div class='out-bt-sv'>
                 <button class='btn-close' onclick='closeAdd()'>Fechar</button>
-                <button onclick='addNewData("", {
-
+                <button onclick='addNewData("extra/patrocinadores/add", {
+                    nome: nomeAdd.value,
+                    image: imageAdd.value
                 })' class='btn-add'>Salvar</button>
             </div>
         </div>
@@ -91,6 +92,23 @@ include "../sys/conexao.php";
 
     
 
+    <?php if(requireLevel($__TYPE__, 3)){ ?>
+        <script>
+            imageAdd.addEventListener('change', async (e) => {
+                const file = e.target.files[0];
+                const base64Image = await convert64(file);
+                console.log(base64Image)
+            });
+
+            const convert64 = (e) => {
+                return new Promise((res) => {
+                    const reader = new FileReader();
+                    reader.onload = () => res(reader.result);
+                    reader.readAsDataURL(e);
+                });
+            }
+        </script>
+    <?php } ?>
     
 </body>
 </html>
