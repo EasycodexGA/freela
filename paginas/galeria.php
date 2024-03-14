@@ -52,13 +52,12 @@ include "../sys/conexao.php";
                         <option>Nenhuma pasta selecionada</option>
                     </select>
                 </div>
-            </div>
-            <div class='inps-add'>
                 <div class='inp-add-out'>
                     <h3>Imagens</h3>
                     <input id='imageAdd' multiple type='file' placeholder='Nova imagem' accept="image/png, image/jpeg"/>
                 </div>
             </div>
+            <div id='outShowImgs' class='inps-add'></div>
             <div class='out-bt-sv'>
                 <button class='btn-close' onclick='closeAdd()'>Fechar</button>
                 <button onclick='addNewData("galeria/grupo/add", {
@@ -68,6 +67,24 @@ include "../sys/conexao.php";
         </div>
     </div>
 
+    <!-- script só para adm/professor  -->
+    <script>
+        imageAdd.addEventListener("change", e=>{
+            let getAll = imageAdd.files;
+            let time = 0;
+            for(let i in getAll){
+                setTimeout(()=>{
+                    outShowImgs.innerHTML += `
+                        <div id='showgp${i}' class='imgShowUp'>
+                            <p class='nameImgShow'>${getAll[i].name}</p>
+                            <p class='nameImgShow'>Pronto</p>
+                        </div>
+                    `;
+                },time)
+                time += 200;
+            }
+        })
+    </script>
     <?php } ?>
 
     <div id="gpOut">

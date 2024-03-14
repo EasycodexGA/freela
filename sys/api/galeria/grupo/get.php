@@ -3,7 +3,7 @@ include '../../../conexao.php';
 
 header('Content-Type: application/json; charset=utf-8');
 
-$getAll = mysqli_query($__CONEXAO__, "select nome from grupoimagem");
+$getAll = mysqli_query($__CONEXAO__, "select * from grupoimagem");
 
 $nomes = array();
 
