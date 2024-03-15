@@ -49,7 +49,7 @@ include "../sys/conexao.php";
                 <div class='inp-add-out'>
                     <h3>Pasta</h3>
                     <select id='pastaAdd'>
-                        <option>Nenhuma pasta selecionada</option>
+                        <option value=''>Nenhuma pasta selecionada</option>
                     </select>
                 </div>
                 <div class='inp-add-out'>

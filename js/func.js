@@ -328,7 +328,7 @@ const convert64 = async () => {
 
 const sendImgs = async () => {
     let files = imageAdd.files;
-    let grupoFixo = pastaAdd.value;
+    let grupoFixo = Number(pastaAdd.value);
     if(!files) return;
 
     for(let i of files){
@@ -343,6 +343,8 @@ const sendImgs = async () => {
             method: "POST",
             body: JSON.stringify(data)
         })
+        .then(e=>e.json())
+        .then(e=>console.log(e))
     }
     
 }
