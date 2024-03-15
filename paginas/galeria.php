@@ -103,7 +103,7 @@ include "../sys/conexao.php";
         fetch("../sys/api/galeria/grupo/get")
         .then(e=>e.json())
         .then(e=>{
-            let galeriasTT = e.mensagens.length;
+            let galeriasTT = e.mensagem.length;
             let imagensTT = 0;
             console.log(e)
             <?php if(requireLevel($__TYPE__, 2)){ ?>
