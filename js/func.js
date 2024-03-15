@@ -325,8 +325,12 @@ const convert64 = async () => {
         image: base64
     })
 }
+let sendActive = false;
 
 const sendImgs = async () => {
+    if(sendActive) return;
+    sendActive = true;
+    
     let files = imageAdd.files;
     let grupoFixo = Number(pastaAdd.value);
     if(!files) return;
