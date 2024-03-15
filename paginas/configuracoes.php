@@ -17,6 +17,33 @@ justLog($__EMAIL__, $__TYPE__, 1);
     <?php if(requireLevel($__TYPE__, 2)){ ?>
         <!-- Enviar CV -->
         <!-- trocar imagem  -->
+        <input type='file' id='imageAdd' accept="image/png, image/jpeg"/>
+        <button onclick='trocarImg()'>Trocar imagem</button>
+ 
+        <input type='file' id='arquivoAdd' accept="application/pdf"/>
+        <button onclick='novocv()'>Enviar curriculo</button>
+
+        <script>
+            const trocarImg = () => {
+                let file = imageAdd.files[0];
+                if(!file) return;
+                let base64 = await getBase64(file);
+
+                addNewData("usuarios/perfil/trocarImg", {
+                    image: base64
+                })
+            }
+
+            const novocv = () => {
+                let file = arquivoAdd.files[0];
+                if(!file) return;
+                let base64 = await getBase64(file);
+
+                addNewData("usuarios/perfil/novoCV", {
+                    arquivo: base64
+                })
+            }
+        </script>
     <?php } ?>
 </body>
 </html>
