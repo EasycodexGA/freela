@@ -331,6 +331,7 @@ const sendImgs = async () => {
     let grupoFixo = Number(pastaAdd.value);
     if(!files) return;
     let foram = 0;
+    let total = 0;
     let erro = false;
 
     for(let i in files){
@@ -352,12 +353,17 @@ const sendImgs = async () => {
             if(e.response){
                 document.getElementById(`showgp${i}`).remove();
                 foram++;
+                total++;
                 countOut.innerHTML = "";
                 countOut.innerHTML += `${foram} de ${files.length}`;
 
             }
             if(!e.response){
                 erro = true;
+            }
+
+            if(total == files.length){
+                window.location.reload();
             }
             console.log(e);
         })
