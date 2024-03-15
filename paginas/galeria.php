@@ -84,8 +84,9 @@ include "../sys/conexao.php";
             countOut.innerHTML = "";
             outShowImgs.innerHTML = "";
             for(let i = 0; i < getAll.length; i++){
+                let img64 = await getBase64(getAll[i]);
+
                 setTimeout(()=>{
-                    let img64 = await getBase64(getAll[i]);
                     outShowImgs.innerHTML += `
                         <div id='showgp${i}' class='imgShowUp'>
                             <div class='infos-out'>
