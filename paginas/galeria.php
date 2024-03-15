@@ -74,23 +74,29 @@ include "../sys/conexao.php";
 
     <!-- script só para adm/professor  -->
     <script>
-        imageAdd.addEventListener("change", e=>{
+        imageAdd.addEventListener("change", async e=>{
             let getAll = imageAdd.files;
             let time = 0;
             countOut.innerHTML = "";
             outShowImgs.innerHTML = "";
             for(let i = 0; i < getAll.length; i++){
                 setTimeout(()=>{
+                    let img64 = await getBase64(getAll[i]);
                     outShowImgs.innerHTML += `
                         <div id='showgp${i}' class='imgShowUp'>
-                            <p class='nameImgShow'>${getAll[i].name}</p>
+                            <div class='infos-out'>
+                                <div class='preimg'>
+                                    <img src='${img64}'/>
+                                </div>
+                                <p class='nameImgShow'>${getAll[i].name}</p>
+                            </div>
                             <p class='nameImgShow'>Pronto</p>
                         </div>
                     `;
                     outShowImgs.scrollTo(0, 9999999)
                     countOut.innerHTML = `${i + 1} de ${getAll.length}`;
                 },time)
-                time += 25;
+                time += 10;
             }
         })
     </script>
