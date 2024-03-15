@@ -13,7 +13,7 @@ while($dados = mysqli_fetch_array($getAll)){
 
     $allImgs = array();
 
-    $getImgs = mysqli_query($__CONEXAO__, "select id,img from imagensgp where id='$id'");
+    $getImgs = mysqli_query($__CONEXAO__, "select id,img from imagensgp where grupo='$id'");
 
     while($d = mysqli_fetch_array($getImgs)){
         $idD    = $d['id'];
