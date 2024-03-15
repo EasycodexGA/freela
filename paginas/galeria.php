@@ -86,22 +86,18 @@ include "../sys/conexao.php";
             for(let i = 0; i < getAll.length; i++){
                 let img64 = await getBase64(getAll[i]);
 
-                setTimeout(()=>{
-                    outShowImgs.innerHTML += `
-                        <div id='showgp${i}' class='imgShowUp'>
-                            <div class='infos-out'>
-                                <div class='preimg'>
-                                    <img src='${img64}'/>
-                                </div>
-                                <p class='nameImgShow'>${getAll[i].name}</p>
+                outShowImgs.innerHTML += `
+                    <div id='showgp${i}' class='imgShowUp'>
+                        <div class='infos-out'>
+                            <div class='preimg'>
+                                <img src='${img64}'/>
                             </div>
-                            <p class='nameImgShow'>Pronto</p>
+                            <p class='nameImgShow'>${getAll[i].name}</p>
                         </div>
-                    `;
-                    outShowImgs.scrollTo(0, 9999999)
-                    countOut.innerHTML = `${i + 1} de ${getAll.length}`;
-                },time)
-                time += 10;
+                        <p class='nameImgShow'>Pronto</p>
+                    </div>
+                `;
+                countOut.innerHTML = `${i + 1} de ${getAll.length}`;
             }
         }
     </script>
