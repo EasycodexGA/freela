@@ -96,7 +96,7 @@ include "../sys/conexao.php";
                 return;
             } else if(tamanhoT > 250){
                 newMsg({
-                    mensagem: "Total mais pesado que 250MB",
+                    mensagem: `Total mais pesado que 250MB - ${Math.floor(tamanhoT)}MB`,
                     response: false
                 })
 
