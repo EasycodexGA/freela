@@ -98,11 +98,13 @@ include "../sys/conexao.php";
         .then(e=>e.json())
         .then(e=>{
             console.log(e)
-            for(let i of e.mensagem){
-                pastaAdd.innerHTML += `
-                    <option value='${i.id}'>${i.nome}</option>
-                `;
-            }
+            <?php if(requireLevel($__TYPE__, 2)){ ?>
+                for(let i of e.mensagem){
+                    pastaAdd.innerHTML += `
+                        <option value='${i.id}'>${i.nome}</option>
+                    `;
+                }
+            <?php } ?>
 
             for(let i of e.mensagem){
                 let nomeGp = i.nome;
