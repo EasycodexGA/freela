@@ -332,8 +332,8 @@ const sendImgs = async () => {
     if(!files) return;
     let foram = 0;
 
-    for(let i of files){
-        let base64 = await getBase64(i);
+    for(let i in files){
+        let base64 = await getBase64(files[i]);
 
         let data = {
             image: base64,
