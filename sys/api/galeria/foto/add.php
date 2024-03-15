@@ -19,6 +19,7 @@ checkMissing(
     )
 );
 
+$grupo = decrypt($grupo);
 $caminho = "../../../../imagens/galeria";
 
 
