@@ -81,9 +81,22 @@ include "../sys/conexao.php";
         const generatePreview = async () => {
             let getAll = imageAdd.files;
 
-            if(getAll.length > 50){
+            let tamanhoT = 0;
+
+            for(let i = 0; i < getAll.length; i++){
+                tamanhoT += getAll[i].size / 10000;
+            }
+
+            if(getAll.length > 100){
                 newMsg({
-                    mensagem: "Mais de 50 arquivos",
+                    mensagem: "Mais de 100 arquivos",
+                    response: false
+                })
+
+                return;
+            } else if(tamanhoT > 250){
+                newMsg({
+                    mensagem: "Total mais pesado que 250MB",
                     response: false
                 })
 
