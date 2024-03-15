@@ -108,6 +108,10 @@ include "../sys/conexao.php";
                 let nomeGp = i.nome;
                 let imgs = "";
 
+                if(i.imagens.length == 0){
+                    imgs = "<p>Nenhuma imagem nessa galeria</p>"
+                }
+
                 for(let o of i.imagens){
                     imgs += `
                         <img id='img${i.id}${o.id}' src='${o.imagem}'>
@@ -116,7 +120,10 @@ include "../sys/conexao.php";
 
                 gpOut.innerHTML += `
                     <div class='contGp'>
-                        ${imgs}
+                        <h1 class='titleGp'>${nomeGp}</h1>
+                        <div class='contImgGp'>
+                            ${imgs}
+                        </div>
                     </div>
                 `;
                 

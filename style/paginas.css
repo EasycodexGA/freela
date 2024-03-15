@@ -403,3 +403,27 @@ header, .extra{
     font-size: 15px;
     color: #585858;
 }
+
+.contGp img {
+    max-width: 150px;
+    border-radius: 3px;
+}
+
+.contGp{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.titleGp{
+    font-size: 18px;
+    color: #525252;
+}
+
+.contImgGp {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: flex-start;
+}
