@@ -81,9 +81,9 @@ include "../sys/conexao.php";
         const generatePreview = async () => {
             let getAll = imageAdd.files;
 
-            if(getAll.length > 150){
+            if(getAll.length > 50){
                 newMsg({
-                    mensagem: "Mais de 150 arquivos",
+                    mensagem: "Mais de 50 arquivos",
                     response: false
                 })
 
@@ -106,7 +106,7 @@ include "../sys/conexao.php";
                 `;
                 countOut.innerHTML = `${i + 1} de ${getAll.length}`;
             }
-
+            outShowImgs.scrollTo(0, 9999999);
             showpreimg();
         }
 
