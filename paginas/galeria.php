@@ -108,7 +108,7 @@ include "../sys/conexao.php";
                 let nomeGp = i.nome;
                 let imgs = "";
 
-                for(let o of imagens){
+                for(let o of i.imagens){
                     imgs += `
                         <img id='img${i.id}${o.id}' src='${o.imagem}'>
                     `;
