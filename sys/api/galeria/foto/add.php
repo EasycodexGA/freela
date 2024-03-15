@@ -11,13 +11,11 @@ $json = json_decode($request);
 $image  = scapeString($__CONEXAO__, $json->image);
 $grupo  = scapeString($__CONEXAO__, $json->grupo);
 
-$image   = setNoXss($image);
 $grupo   = setNum($grupo);
 
 checkMissing(
     array(
-        $image,
-        $grupo,
+        $grupo
     )
 );
 
