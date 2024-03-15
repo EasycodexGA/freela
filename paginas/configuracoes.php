@@ -10,9 +10,11 @@ justLog($__EMAIL__, $__TYPE__, 1);
     <link rel="stylesheet" href="../style/root.css">
     <link rel="stylesheet" href="../style/paginas.css">
     <link rel="shortcut icon" href="../img/prefeitura.png" type="image/x-icon">
+    <script src="../js/func.js"></script>
+
 </head>
 <body>
-    <h1 class='title-header'>Sua foto</h1>
+    <h1 class='title-header'>Configurações</h1>
     
     <?php if(requireLevel($__TYPE__, 2)){ ?>
         <!-- Enviar CV -->
