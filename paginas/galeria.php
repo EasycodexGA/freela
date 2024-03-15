@@ -84,7 +84,7 @@ include "../sys/conexao.php";
             let tamanhoT = 0;
 
             for(let i = 0; i < getAll.length; i++){
-                tamanhoT += getAll[i].size / 10000;
+                tamanhoT += getAll[i].size / 1000000;
             }
 
             if(getAll.length > 100){

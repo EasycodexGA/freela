@@ -336,7 +336,7 @@ const sendImgs = async () => {
     let tamanhoT = 0;
 
     for(let i = 0; i < files.length; i++){
-        tamanhoT += files[i].size / 10000;
+        tamanhoT += files[i].size / 1000000;
     }
 
     if(files.length > 100){
