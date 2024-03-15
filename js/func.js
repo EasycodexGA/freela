@@ -95,7 +95,7 @@ function newMsg(e){
     msg.classList.add(color);
     msg.innerText = e.mensagem;
     document.body.appendChild(msg);
-    if(e.response){
+    if(e.response === true){
         closeAdd();
         cleanInps();
         window.location.reload()
@@ -330,6 +330,7 @@ const sendImgs = async () => {
     let files = imageAdd.files;
     let grupoFixo = Number(pastaAdd.value);
     if(!files) return;
+    let foram = 0;
 
     for(let i of files){
         let base64 = await getBase64(i);
@@ -344,7 +345,17 @@ const sendImgs = async () => {
             body: JSON.stringify(data)
         })
         .then(e=>e.json())
-        .then(e=>console.log(e))
+        .then(e=>{
+            newMsg(e);
+            if(e.response){
+                document.getElementById(`showgp${i}`).remove();
+                foram++;
+                countOut.innerHTML = "";
+                countOut.innerHTML += `${foram} de ${files.length}`;
+
+            }
+            console.log(e);
+        })
     }
     
 }
