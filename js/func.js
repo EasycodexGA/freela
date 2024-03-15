@@ -354,6 +354,10 @@ const sendImgs = async () => {
                 countOut.innerHTML += `${foram} de ${files.length}`;
 
             }
+
+            if(!e.response){
+                return;
+            }
             console.log(e);
         })
     }
