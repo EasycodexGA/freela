@@ -411,9 +411,15 @@ header, .extra{
 }
 
 .contGp img {
-    max-width: 150px;
+    max-width: 200px;
     border-radius: 3px;
     box-shadow: 0 0 20px 0 #00000010;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.contGp img:hover{
+    opacity: 0.6;
 }
 
 .contGp{
