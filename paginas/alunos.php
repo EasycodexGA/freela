@@ -125,7 +125,7 @@ justLog($__EMAIL__, $__TYPE__, 2);
                 </div>
                 <div class='inp-add-out'>
                     <h3>Aluno</h3>
-                    <select id='turmaAdd'>
+                    <select id='alunoAdd'>
                         <option>Nenhum aluno selecionado</option>
                     </select>
                 </div>

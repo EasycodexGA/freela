@@ -58,16 +58,20 @@ justLog($__EMAIL__, $__TYPE__, 1);
     <div id='verMaisDiv'></div>
 
 
-    <?php if(requireLevel($__TYPE__, 3)){ ?>
+    <?php if(requireLevel($__TYPE__, 2)){ ?>
     <div class='extra'>
         <h1 class='title-header'>Funções</h1>
         <div class='header-in'>
+        <?php if(requireLevel($__TYPE__, 3)){ ?>
             <button onclick='openAdd(addTurma)' class='funcBt'>+ Adicionar turma</button>
+        <?php } ?>
             <button onclick='openAdd(addRecado)' class='funcBt'>+ Novo recado</button>
         </div>
     </div>
 
     <div id='addNew'>
+    <?php if(requireLevel($__TYPE__, 3)){ ?>
+
         <div id='addTurma' class='add-container'>
             <h1 class='title-add'>Nova turma</h1>
 
@@ -103,6 +107,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
                 })' class='btn-add'>Salvar</button>
             </div>
         </div>
+        <?php } ?>
         <div id='addRecado' class='add-container'>
             <h1 class='title-add'>Novo reacado</h1>
 
