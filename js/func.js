@@ -328,15 +328,18 @@ const convert64 = async () => {
 let sendActive = false;
 
 const sendImgs = async () => {
-    if(sendActive) return;
-    sendActive = true;
     
     let files = imageAdd.files;
     let grupoFixo = Number(pastaAdd.value);
     if(!files) return;
+
     let foram = 0;
     let total = 0;
     let erro = false;
+
+    if(sendActive) return;
+    sendActive = true;
+
 
     for(let i in files){
         if(erro) break;
@@ -364,10 +367,13 @@ const sendImgs = async () => {
             }
             if(!e.response){
                 erro = true;
+                sendActive = false;
             }
 
             if(total == files.length){
                 window.location.reload();
+                sendActive = false;
+
             }
             console.log(e);
         })
