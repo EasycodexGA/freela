@@ -80,17 +80,24 @@ include "../sys/conexao.php";
 
         const generatePreview = async () => {
             let getAll = imageAdd.files;
+
+            if(getAll.length >= 150){
+                newMsg({
+                    mensagem: "Mais de 150 arquivos",
+                    response: false
+                })
+
+                return;
+            }
             let time = 0;
             countOut.innerHTML = "";
             outShowImgs.innerHTML = "";
             for(let i = 0; i < getAll.length; i++){
-                let img64 = getBase64(getAll[i]);
-
                 outShowImgs.innerHTML += `
                     <div id='showgp${i}' class='imgShowUp'>
                         <div class='infos-out'>
                             <div class='preimg'>
-                                <img src='${img64}'/>
+                                <img id='preimgshow${i}' src=''/>
                             </div>
                             <p class='nameImgShow'>${getAll[i].name}</p>
                         </div>
@@ -98,6 +105,18 @@ include "../sys/conexao.php";
                     </div>
                 `;
                 countOut.innerHTML = `${i + 1} de ${getAll.length}`;
+            }
+
+            showpreimg();
+        }
+
+        async function showpreimg(){
+            let getAll = imageAdd.files;
+            for(let i = 0; i < getAll.length; i++){
+                let img64 = await getBase64(getAll[i]);
+
+                document.getElementById(`preimgshow${i}`).src = img64;
+
             }
         }
     </script>
