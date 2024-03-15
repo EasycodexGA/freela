@@ -87,16 +87,16 @@ include "../sys/conexao.php";
                 tamanhoT += getAll[i].size / 1000000;
             }
 
-            if(getAll.length > 100){
+            if(files.length > 300){
                 newMsg({
-                    mensagem: "Mais de 100 arquivos",
+                    mensagem: "Mais de 300 arquivos",
                     response: false
                 })
 
                 return;
-            } else if(tamanhoT > 250){
+            } else if(tamanhoT > 1000){
                 newMsg({
-                    mensagem: `Total mais pesado que 250MB - ${Math.floor(tamanhoT)}MB`,
+                    mensagem: "Total mais pesado que 1GB",
                     response: false
                 })
 

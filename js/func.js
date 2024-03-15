@@ -339,16 +339,16 @@ const sendImgs = async () => {
         tamanhoT += files[i].size / 1000000;
     }
 
-    if(files.length > 100){
+    if(files.length > 300){
         newMsg({
-            mensagem: "Mais de 100 arquivos",
+            mensagem: "Mais de 300 arquivos",
             response: false
         })
 
         return;
-    } else if(tamanhoT > 250){
+    } else if(tamanhoT > 1000){
         newMsg({
-            mensagem: "Total mais pesado que 250MB",
+            mensagem: "Total mais pesado que 1GB",
             response: false
         })
 
