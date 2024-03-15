@@ -407,7 +407,7 @@ header, .extra{
 #gpOut{
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 60px;
 }
 
 .contGp img {
@@ -431,4 +431,8 @@ header, .extra{
     flex-wrap: wrap;
     gap: 10px;
     align-items: flex-start;
+}
+
+.contImgGp p{
+    color: #7a7a7a;
 }
