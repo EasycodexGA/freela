@@ -2,7 +2,7 @@ body{
     padding: 40px;
     display: flex;
     flex-direction: column;
-    gap: 80px;
+    gap: 60px;
     background: #FAFAFA;
 }
 header, .extra{

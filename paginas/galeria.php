@@ -12,7 +12,13 @@ include "../sys/conexao.php";
     <script src="../js/func.js"></script>
 </head>
 <body>
-    <h1 class='title-header'>Galeria</h1>
+    <header>
+        <h1 class='title-header'>Galeria</h1>
+        <div class='header-in'>
+            <h2 class='sub-header'><span id="imagensT">0</span> Imagens</h2>
+            <h2 class='sub-header'><span id="galeriasT">0</span> Galerias</h2>
+        </div>
+    </header>
 
     <?php if(requireLevel($__TYPE__, 2)){ ?>
     <div id='details'></div>
@@ -97,6 +103,8 @@ include "../sys/conexao.php";
         fetch("../sys/api/galeria/grupo/get")
         .then(e=>e.json())
         .then(e=>{
+            let galeriasTT = e.mensagens.length;
+            let imagensTT = 0;
             console.log(e)
             <?php if(requireLevel($__TYPE__, 2)){ ?>
                 for(let i of e.mensagem){
@@ -115,6 +123,7 @@ include "../sys/conexao.php";
                 }
 
                 for(let o of i.imagens){
+                    imagensTT++;
                     imgs += `
                         <img id='img${i.id}${o.id}' src='${o.imagem}'>
                     `;
@@ -128,8 +137,12 @@ include "../sys/conexao.php";
                         </div>
                     </div>
                 `;
+
+                imagensT.innerText = imagensTT;
+                galeriasT.innerText = galeriasTT;
                 
             }
+
         })
     </script>
 </body>
