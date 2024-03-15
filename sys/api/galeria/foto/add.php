@@ -22,7 +22,6 @@ checkMissing(
 $grupo = decrypt($grupo);
 $caminho = "../../../../imagens/galeria";
 
-
 if (!file_exists($caminho)) {
     if (!mkdir($caminho, 0777, true)) {
         endCode("Erro ao criar o diretório", false);
@@ -54,14 +53,21 @@ if ($format === 'jpeg') {
     $format = 'jpg';
 }
 
-
 $novoNome   = "i$__TIME__$__CODE__.$format";
-
 $completo = "$caminho/$novoNome";
 $novoNomeEnc = encrypt($novoNome);
 
+// Limit the transfer rate to 512KB per second
+$bytesPerSecond = 512 * 512; // 512KB
+$startTime = microtime(true);
+
 if (file_put_contents($completo, $imageData)) {
-    mysqli_query($__CONEXAO__, "insert into imagensgp (img, grupo, time) values ('$novoNomeEnc', '$grupo', '$__TIME__')") or endCode("Erro ao salvar imagem", false);;
+    $endTime = microtime(true);
+    $elapsedTime = $endTime - $startTime;
+    $remainingTime = max(0, 1 - $elapsedTime); // Ensure positive remaining time
+    usleep($remainingTime * 1000000); // Sleep for the remaining time
+
+    mysqli_query($__CONEXAO__, "insert into imagensgp (img, grupo, time) values ('$novoNomeEnc', '$grupo', '$__TIME__')") or endCode("Erro ao salvar imagem", false);
     endCode("Sucesso no upload!", "enviado");
 } else {
     endCode("Erro ao salvar imagem", false);
