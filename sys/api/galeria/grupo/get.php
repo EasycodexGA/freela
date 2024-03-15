@@ -19,7 +19,7 @@ while($dados = mysqli_fetch_array($getAll)){
         $idD    = $d['id'];
         $imgD   = decrypt($d['img']);
 
-        array_push($allImgs, array("id"=>$idD, "imagem"=>$imgD));
+        array_push($allImgs, array("id"=>$idD, "imagem"=>"$__WEB__/imagens/galeria/$img$imgD"));
     }
 
     array_push(

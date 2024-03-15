@@ -103,6 +103,24 @@ include "../sys/conexao.php";
                     <option value='${i.id}'>${i.nome}</option>
                 `;
             }
+
+            for(let i of e.mensagem){
+                let nomeGp = i.nome;
+                let imgs = "";
+
+                for(let o of imagens){
+                    imgs += `
+                        <img id='img${i.id}${o.id}' src='${o.imagem}'>
+                    `;
+                }
+
+                gpOut.innerHTML += `
+                    <div class='contGp'>
+                        ${imgs}
+                    </div>
+                `;
+                
+            }
         })
     </script>
 </body>
