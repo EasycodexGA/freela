@@ -331,8 +331,10 @@ const sendImgs = async () => {
     let grupoFixo = Number(pastaAdd.value);
     if(!files) return;
     let foram = 0;
+    let erro = false;
 
     for(let i in files){
+        if(erro) break;
         let base64 = await getBase64(files[i]);
 
         let data = {
@@ -354,9 +356,8 @@ const sendImgs = async () => {
                 countOut.innerHTML += `${foram} de ${files.length}`;
 
             }
-
             if(!e.response){
-                return;
+                erro = true;
             }
             console.log(e);
         })
