@@ -87,7 +87,7 @@ include "../sys/conexao.php";
                 tamanhoT += getAll[i].size / 1000000;
             }
 
-            if(files.length > 300){
+            if(getAll.length > 300){
                 newMsg({
                     mensagem: "Mais de 300 arquivos",
                     response: false
