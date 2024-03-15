@@ -333,6 +333,15 @@ const sendImgs = async () => {
     let grupoFixo = Number(pastaAdd.value);
     if(!files) return;
 
+    if(getAll.length >= 150){
+        newMsg({
+            mensagem: "Mais de 150 arquivos",
+            response: false
+        })
+
+        return;
+    }
+
     let foram = 0;
     let total = 0;
     let erro = false;
