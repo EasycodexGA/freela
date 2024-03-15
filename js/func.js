@@ -339,7 +339,7 @@ const sendImgs = async () => {
             grupo: grupoFixo
         }
 
-        fetch("../sys/api/galeria/foto/add",{
+        await fetch("../sys/api/galeria/foto/add",{
             method: "POST",
             body: JSON.stringify(data)
         })
