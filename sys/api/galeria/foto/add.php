@@ -57,8 +57,8 @@ $novoNome   = "i$__TIME__$__CODE__.$format";
 $completo = "$caminho/$novoNome";
 $novoNomeEnc = encrypt($novoNome);
 
-// Limit the transfer rate to 512KB per second
-$bytesPerSecond = 512 * 512; // 512KB
+// Limit the transfer rate to 1MB per second
+$bytesPerSecond = 1024 * 1024; // 1MB
 $startTime = microtime(true);
 
 if (file_put_contents($completo, $imageData)) {
