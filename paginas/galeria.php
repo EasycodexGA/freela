@@ -90,7 +90,7 @@ include "../sys/conexao.php";
                     outShowImgs.scrollTo(0, 9999999)
                     countOut.innerHTML = `${i + 1} de ${getAll.length}`;
                 },time)
-                time += 100;
+                time += 25;
             }
         })
     </script>
