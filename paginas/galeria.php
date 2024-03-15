@@ -74,7 +74,11 @@ include "../sys/conexao.php";
 
     <!-- script só para adm/professor  -->
     <script>
-        imageAdd.addEventListener("change", async e=>{
+        imageAdd.addEventListener("change", e=>{
+            generatePreview();
+        })
+
+        const generatePreview = async () => {
             let getAll = imageAdd.files;
             let time = 0;
             countOut.innerHTML = "";
@@ -98,7 +102,7 @@ include "../sys/conexao.php";
                 },time)
                 time += 10;
             }
-        })
+        }
     </script>
     <?php } ?>
 
