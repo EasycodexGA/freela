@@ -24,7 +24,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
         <button onclick='novocv()'>Enviar curriculo</button>
 
         <script>
-            const trocarImg = () => {
+            const trocarImg = async () => {
                 let file = imageAdd.files[0];
                 if(!file) return;
                 let base64 = await getBase64(file);
@@ -34,7 +34,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
                 })
             }
 
-            const novocv = () => {
+            const novocv = async () => {
                 let file = arquivoAdd.files[0];
                 if(!file) return;
                 let base64 = await getBase64(file);
