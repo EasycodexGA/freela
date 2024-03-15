@@ -61,7 +61,7 @@ $completo = "$caminho/$novoNome";
 $novoNomeEnc = encrypt($novoNome);
 
 if (file_put_contents($completo, $imageData)) {
-    mysqli_query($__CONEXAO__, "insert into imagensgp (img, grupo) values ('$novoNomeEnc', '$grupo')") or endCode("Erro ao salvar imagem", false);;
+    mysqli_query($__CONEXAO__, "insert into imagensgp (img, grupo, time) values ('$novoNomeEnc', '$grupo', '$__TIME__')") or endCode("Erro ao salvar imagem", false);;
     endCode("Sucesso no upload!", true);
 } else {
     endCode("Erro ao salvar imagem", false);
