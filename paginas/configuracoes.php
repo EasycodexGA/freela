@@ -13,9 +13,10 @@ justLog($__EMAIL__, $__TYPE__, 1);
 </head>
 <body>
     <h1 class='title-header'>Sua foto</h1>
-    <div class=''>
-        
-    </div>
     
+    <?php if(requireLevel($__TYPE__, 2)){ ?>
+        <!-- Enviar CV -->
+        <!-- trocar imagem  -->
+    <?php } ?>
 </body>
 </html>
