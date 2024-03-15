@@ -365,6 +365,9 @@ const sendImgs = async () => {
 
     for(let i in files){
         if(erro) break;
+
+
+
         if(!files[i]) {
             sendActive = false;
             return;
@@ -376,33 +379,57 @@ const sendImgs = async () => {
             grupo: grupoFixo
         }
 
-        await fetch("../sys/api/galeria/foto/add",{
-            method: "POST",
-            body: JSON.stringify(data)
-        })
-        .then(e=>e.json())
-        .then(e=>{
-            newMsg(e);
-            if(e.response){
-                document.getElementById(`showgp${i}`).remove();
-                foram++;
-                total++;
-                countOut.innerHTML = "";
-                countOut.innerHTML += `${foram} de ${files.length}`;
+        let progressBar = document.createElement("progress");
+        progressBar.value = 0;
+        progressBar.max = 100;
+        document.body.appendChild(progressBar);
 
-            }
-            if(!e.response){
-                erro = true;
-                sendActive = false;
-            }
-
-            if(total == files.length){
-                window.location.reload();
-                sendActive = false;
-
-            }
-            console.log(e);
-        })
+        const saveData = async () => {
+            return new Promise((resolve) => {
+                fetch("../sys/api/galeria/foto/add",{
+                    method: "POST",
+                    body: JSON.stringify(data)
+                })
+                .then(e=>e.json())
+                .then(e=>{
+                    resolve();
+                    newMsg(e);
+                    if(e.response){
+                        document.getElementById(`showgp${i}`).remove();
+                        foram++;
+                        total++;
+                        countOut.innerHTML = "";
+                        countOut.innerHTML += `${foram} de ${files.length}`;
+        
+                    }
+                    if(!e.response){
+                        erro = true;
+                        sendActive = false;
+                    }
+        
+                    if(total == files.length){
+                        window.location.reload();
+                        sendActive = false;
+        
+                    }
+                    console.log(e);
+                })
+            });
+        };
+        try {
+            // Save the base64 data
+            await saveData();
+    
+            // Update the progress bar
+            progressBar.value = 100;
+            console.log("Data saved successfully!");
+        } catch (error) {
+            console.error("Error saving data:", error);
+        } finally {
+            // Remove the progress bar
+            document.body.removeChild(progressBar);
+        }
+        
     }
     
 }
