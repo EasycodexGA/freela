@@ -404,6 +404,12 @@ header, .extra{
     color: #585858;
 }
 
+#gpOut{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
 .contGp img {
     max-width: 150px;
     border-radius: 3px;
