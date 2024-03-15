@@ -15,8 +15,8 @@ include "../sys/conexao.php";
     <header>
         <h1 class='title-header'>Galeria</h1>
         <div class='header-in'>
-            <h2 class='sub-header'><span id="imagensT">0</span> Imagens</h2>
             <h2 class='sub-header'><span id="galeriasT">0</span> Galerias</h2>
+            <h2 class='sub-header'><span id="imagensT">0</span> Imagens</h2>
         </div>
     </header>
 
