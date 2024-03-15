@@ -430,6 +430,5 @@ header, .extra{
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    justify-content: center;
     align-items: flex-start;
 }
