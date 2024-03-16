@@ -386,6 +386,8 @@ const sendImgs = async () => {
             grupo: grupoFixo
         }
 
+        document.querySelectorAll(`#showgp${i} p`).innerText = "Carregando";
+
         await fetch("../sys/api/galeria/foto/add",{
             method: "POST",
             body: JSON.stringify(data)

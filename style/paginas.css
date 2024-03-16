@@ -393,6 +393,7 @@ header, .extra{
     width: calc(100% - 30px);
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 5px 10px;
     flex-wrap: nowrap;
     border: 2px solid var(--contraste);
