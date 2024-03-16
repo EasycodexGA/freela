@@ -60,7 +60,8 @@ include "../sys/conexao.php";
                 </div>
                 <div class='inp-add-out'>
                     <h3>Imagens</h3>
-                    <input id='imageAdd' multiple type='file' placeholder='Nova imagem' accept="image/png, image/jpeg, image/webp"/>
+                    <label for='imageAdd'>Escolher imagens</lavel>
+                    <input id='imageAdd' multiple type='file' hidden placeholder='Nova imagem' accept="image/png, image/jpeg, image/webp"/>
                 </div>
             </div>
             <div id='outShowImgs' class='inps-add'></div>

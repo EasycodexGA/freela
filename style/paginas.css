@@ -464,3 +464,21 @@ header, .extra{
     height: 100%;
     object-fit: cover;
 }
+
+.inp-add-out label {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 135px;
+    padding: 13px 10px;
+    background: var(--contraste2);
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+    transition: all .3s;
+}
+.inp-add-out label {
+    opacity: .6;
+}
+
