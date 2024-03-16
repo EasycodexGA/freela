@@ -64,7 +64,7 @@ $startTime = microtime(true);
 $imageS = imagecreatefromstring($imageData);
 
 
-if (imagejpeg($imageS, $completo, 80)) {
+if (imagejpeg($imageS, $completo, 60)) {
     mysqli_query($__CONEXAO__, "insert into imagensgp (img, grupo, time) values ('$novoNomeEnc', '$grupo', '$__TIME__')") or endCode("Erro ao salvar imagem", false);
     endCode("Sucesso no upload!", "enviado");
 } else {
