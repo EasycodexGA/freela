@@ -12,6 +12,12 @@ include "../sys/conexao.php";
     <script src="../js/func.js"></script>
 </head>
 <body>
+    <div id="seeImg" bis_skin_checked="1">
+        <img id='seeInImg' src="">
+        <div class="seeBtns">
+            <button onclick='seeImg.style.display=`none`' class="seeFechar">Fechar</button>
+        </div>
+    </div>
     <header>
         <h1 class='title-header'>Galeria</h1>
         <div class='header-in'>
@@ -175,7 +181,7 @@ include "../sys/conexao.php";
                 for(let o of i.imagens){
                     imagensTT++;
                     imgs += `
-                        <img id='img${i.id}${o.id}' src='${o.imagem}'>
+                        <img onclick="openImgGal('${o.imagem}, ${o.id}')" id='img${i.id}${o.id}' src='${o.imagem}'>
                     `;
                 }
 
@@ -194,6 +200,11 @@ include "../sys/conexao.php";
             }
 
         })
+
+        const openImgGal = (src, id) => {
+            seeInImg.src = src;
+            seeImg.sytle.display = "flex";
+        }
     </script>
 </body>
 </html>
