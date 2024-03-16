@@ -478,7 +478,7 @@ header, .extra{
     cursor: pointer;
     transition: all .3s;
 }
-.inp-add-out label {
-    opacity: .6;
+.inp-add-out label:hover {
+    opacity: .8;
 }
 
