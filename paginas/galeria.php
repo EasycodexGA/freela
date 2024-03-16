@@ -126,7 +126,7 @@ include "../sys/conexao.php";
                         <p class='nameImgShow'>Pronto</p>
                     </div>
                 `;
-                countOut.innerHTML = `${i + 1} de ${getAll.length} - ${tamanhoT}MB`;
+                countOut.innerHTML = `${i + 1} de ${getAll.length} - ${tamanhoT.toFixed(2)}MB`;
             }
             outShowImgs.scrollTo(0, 9999999);
             showpreimg();
