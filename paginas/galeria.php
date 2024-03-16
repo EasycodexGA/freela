@@ -87,6 +87,13 @@ include "../sys/conexao.php";
 
             for(let i = 0; i < getAll.length; i++){
                 tamanhoT += getAll[i].size / 1000000;
+                if((getAll[i].size / 1000000) > 2.5){
+                    newMsg({
+                        mensagem: "Tamanho máximo de imagem: 2.5MB.",
+                        response: false,
+                    })
+                    return;
+                }
             }
 
             if(getAll.length > 300){
