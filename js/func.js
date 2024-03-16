@@ -397,7 +397,7 @@ const sendImgs = async () => {
                 foram++;
                 total++;
                 countOut.innerHTML = "";
-                countOut.innerHTML += `${foram} de ${files.length}`;
+                countOut.innerHTML += `${foram} de ${files.length} - ${tamanhoT}MB`;
 
             }
             if(!e.response){
