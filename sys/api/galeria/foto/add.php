@@ -44,7 +44,7 @@ if ($imageData === false) {
 }
 
 $format = str_replace(['data:image/', ';base64'], '', $formatPart);
-if (!in_array($format, ['jpeg', 'jpg', 'gif', 'png'])) {
+if (!in_array($format, ['jpeg', 'jpg', 'gif', 'png', 'webp'])) {
     endCode("Formato de imagem inválido", false);
     return;
 }
