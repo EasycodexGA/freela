@@ -58,7 +58,6 @@ $completo = "$caminho/$novoNome";
 $novoNomeEnc = encrypt($novoNome);
 
 // Limit the transfer rate to 600KB per second
-$bytesPerSecond = 600 * 600; // 600KB
 $startTime = microtime(true);
 
 // Cria uma imagem a partir dos dados decodificados
@@ -66,11 +65,6 @@ $imageS = imagecreatefromstring($imageData);
 
 
 if (imagejpeg($imageS, $completo, 80)) {
-    $endTime = microtime(true);
-    $elapsedTime = $endTime - $startTime;
-    $remainingTime = max(0, 1 - $elapsedTime); // Ensure positive remaining time
-    usleep($remainingTime * 1000000); // Sleep for the remaining time
-
     mysqli_query($__CONEXAO__, "insert into imagensgp (img, grupo, time) values ('$novoNomeEnc', '$grupo', '$__TIME__')") or endCode("Erro ao salvar imagem", false);
     endCode("Sucesso no upload!", "enviado");
 } else {
