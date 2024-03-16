@@ -181,7 +181,7 @@ include "../sys/conexao.php";
                 for(let o of i.imagens){
                     imagensTT++;
                     imgs += `
-                        <img onclick="openImgGal('${o.imagem}, ${o.id}')" id='img${i.id}${o.id}' src='${o.imagem}'>
+                        <img onclick="openImgGal('${o.imagem}', ${o.id})" id='img${i.id}${o.id}' src='${o.imagem}'>
                     `;
                 }
 
@@ -203,7 +203,7 @@ include "../sys/conexao.php";
 
         const openImgGal = (src, id) => {
             seeInImg.src = src;
-            seeImg.sytle.display = "flex";
+            seeImg.style.display = "flex";
         }
     </script>
 </body>
