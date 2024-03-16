@@ -81,6 +81,8 @@ include "../sys/conexao.php";
         const generatePreview = async () => {
             let getAll = imageAdd.files;
 
+            console.log(getAll)
+
             let tamanhoT = 0;
 
             for(let i = 0; i < getAll.length; i++){
