@@ -371,7 +371,7 @@ const sendImgs = async () => {
     if(sendActive) return;
     sendActive = true;
 
-
+    outShowImgs.scrollTo(0, 0);
     for(let i in files){
         if(erro) break;
 
