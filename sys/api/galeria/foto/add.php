@@ -61,7 +61,11 @@ $novoNomeEnc = encrypt($novoNome);
 $bytesPerSecond = 600 * 600; // 600KB
 $startTime = microtime(true);
 
-if (file_put_contents($completo, $imageData)) {
+// Cria uma imagem a partir dos dados decodificados
+$imageS = imagecreatefromstring($imageData);
+
+
+if (imagejpeg($imageS, $completo, 80)) {
     $endTime = microtime(true);
     $elapsedTime = $endTime - $startTime;
     $remainingTime = max(0, 1 - $elapsedTime); // Ensure positive remaining time

@@ -338,9 +338,9 @@ const sendImgs = async () => {
     for(let i = 0; i < files.length; i++){
         tamanhoT += files[i].size / 1000000;
 
-        if((files[i].size / 1000000) > 2.5){
+        if((files[i].size / 1000000) > 5){
             newMsg({
-                mensagem: "Tamanho máximo de imagem: 2.5MB.",
+                mensagem: "Tamanho máximo de imagem: 5MB.",
                 response: false,
             })
             return;
