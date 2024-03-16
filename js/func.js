@@ -334,6 +334,7 @@ const sendImgs = async () => {
     if(!files) return;
 
     let tamanhoT = 0;
+    let totalT = 0;
 
     for(let i = 0; i < files.length; i++){
         tamanhoT += files[i].size / 1000000;
@@ -391,13 +392,14 @@ const sendImgs = async () => {
         })
         .then(e=>e.json())
         .then(e=>{
+            totalT += files[i].size / 1000000;
             newMsg(e);
             if(e.response){
                 document.getElementById(`showgp${i}`).remove();
                 foram++;
                 total++;
                 countOut.innerHTML = "";
-                countOut.innerHTML += `${foram} de ${files.length} - ${tamanhoT.toFixed(2)}MB`;
+                countOut.innerHTML += `${foram} de ${files.length} - ${tamanhoT.toFixed(2) - totalT.toFixed(2)}MB`;
 
             }
             if(!e.response){
