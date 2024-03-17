@@ -33,13 +33,13 @@ while($_dados_ = mysqli_fetch_array($_query_)){
     $arrProf = array();
 
     while($dados = mysqli_fetch_array($query)){
-        $idA    = decrypt($dados['id']);
+        $idA    = $dados['id'];
         $nomeA  = decrypt($dados['nome']);
         array_push($arrAlunos, array("id"=>$idA, "nome"=>$nomeA));
     }
 
     while($dados2 = mysqli_fetch_array($query2)){
-        $idP    = decrypt($dados2['id']);
+        $idP    = $dados2['id'];
         $nomeP  = decrypt($dados2['nome']);
         $imagem = decrypt($dados2['imagem']);
         array_push($arrProf, array("id"=>$idP, "nome"=>$nomeP, "imagem"=>$imagem));
