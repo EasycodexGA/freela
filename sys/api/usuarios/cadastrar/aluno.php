@@ -53,7 +53,7 @@ $turma  = setNum($turma);
 checkMissing(array($turma));
 $tid = decrypt($turma);
 
-$queryRoom = mysqli_query($__CONEXAO__, "select id from turmas where id='$tid '");
+$queryRoom = mysqli_query($__CONEXAO__, "select id from turmas where id='$tid'");
 
 if(mysqli_num_rows($queryRoom) < 1){
     endCode("Turma inexistente", false);
