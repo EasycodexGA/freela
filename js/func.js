@@ -32,6 +32,7 @@ function closeAddAula(){
 function verMais(me, type, titleStr){
     verMaisDiv.innerHTML = '';
     let string = me.getAttribute('data-array');
+    console.log(string);
     let array = string.split('#');
 
     let divOut = document.createElement('div');
@@ -49,6 +50,9 @@ function verMais(me, type, titleStr){
         let div = document.createElement('div');
         let p = document.createElement("p");
         p.innerHTML = i.nome;
+        if(type == 1){
+            // criar botao de presenca bool
+        }
         div.append(p);
         divMid.append(div);
     }
@@ -60,6 +64,9 @@ function verMais(me, type, titleStr){
     closeBt.setAttribute("onclick", 'closeVerMais()');
     closeBt.innerHTML = 'Fechar';
     closeBt.classList.add("btn-close");
+    if(type == 1){
+        // criar botao de salvar
+    }
     outBt.append(closeBt);
 
     divOut.append(title);
