@@ -299,6 +299,7 @@ function getDetails(cat, id){
                     value[i] = JSON.stringify(value[i]);
                 }
                 value = value.join("#");
+                console.log(value);
                 if(key == 'alunos'){
                     verPresencaBt.setAttribute('onclick', `verMais(this, 1, "Chamada")`);
                     verPresencaBt.setAttribute("data-array", `${value}`);
