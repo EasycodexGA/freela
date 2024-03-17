@@ -8,34 +8,32 @@ header('Content-Type: application/json; charset=utf-8');
 $request = file_get_contents('php://input');
 $json = json_decode($request);
 
-$turmaicat  = scapeString($__CONEXAO__, $json->turma);
+$turma      = scapeString($__CONEXAO__, $json->turma);
 $descricao  = scapeString($__CONEXAO__, $json->descricao);
 $data       = scapeString($__CONEXAO__, $json->data);
+$presenca   = scapeString($__CONEXAO__, $json->presenca);
 
-$turmaicat  = explode("#", $turmaicat);
-$turma      = $turmaicat[0];
-$categoria  = $turmaicat[1];
-
-$turma      = setNoXss($turma);
-$categoria  = setNoXss($categoria);
+$turma      = setNum($turma);
 $descricao  = setNoXss($descricao);
 $data       = setNum($data);
+$presenca   = setNoXss($presenca);
+
 
 checkMissing(
     array(
         $turma,
-        $categoria,
         $data,
-        $descricao
+        $descricao,
+        $presenca
     )
 );
 
-$categoria = decrypt($categoria);
+$turma = decrypt($turma);
 
-$checkCat = mysqli_query($__CONEXAO__, "select id from categorias where id='$categoria'");
+$getTurma = mysqli_query($__CONEXAO__, "select id from turmas where id='$turma'");
 
-if(mysqli_num_rows($checkCat) == 0){
-    endCode("Não existe essa categoria.", false);
+if(mysqli_num_rows($getTurma) < 1){
+    endCode("Turma inválida.", false);
 }
 
 $data = decrypt($data);
@@ -50,6 +48,6 @@ if(mysqli_num_rows($getDatas) > 0){
     endCode("Já existe uma aula para este dia.", false);
 }
 
-mysqli_query($__CONEXAO__, "insert into aulas (turma, descricao, data, categoria) values ('$turma', '$descricao', '$data', '$categoria')");
+mysqli_query($__CONEXAO__, "insert into aulas (turma, descricao, data) values ('$turma', '$descricao', '$data')");
 
 endCode("Aula criada com sucesso", true);

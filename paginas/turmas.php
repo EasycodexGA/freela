@@ -21,6 +21,8 @@ justLog($__EMAIL__, $__TYPE__, 1);
         </div>
     </header>
 
+    <div id='verMaisDiv'></div>
+
     <div id='details'>
         <div class='add-container'>
             <h1 class='title-add'>Detalhes</h1>
@@ -54,8 +56,6 @@ justLog($__EMAIL__, $__TYPE__, 1);
             </div>
         </div>
     </div>
-
-    <div id='verMaisDiv'></div>
 
 
     <?php if(requireLevel($__TYPE__, 2)){ ?>
@@ -169,7 +169,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
                     descricao: descricaoAdd.value,
                     presenca: presencaAdd.value,
                     horario: horarioAddAula.valueAsNumber,
-                    idTurma: idTurma.value
+                    turma: idTurma.value
                 })' class='btn-add'>Salvar</button>
             </div>
         </div>
