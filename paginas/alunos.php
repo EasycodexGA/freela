@@ -117,7 +117,7 @@ justLog($__EMAIL__, $__TYPE__, 2);
             <div class='inps-add'>
                 <div class='inp-add-out'>
                     <h3>Título</h3>
-                    <input id='nomeAdd' type='text' placeholder='Assinaturas'/>
+                    <input id='nomeAssAdd' type='text' placeholder='Assinaturas'/>
                 </div>
                 <div class='inp-add-out'>
                     <h3>Descrição</h3>
