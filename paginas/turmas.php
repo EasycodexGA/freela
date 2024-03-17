@@ -21,8 +21,6 @@ justLog($__EMAIL__, $__TYPE__, 1);
         </div>
     </header>
 
-    <div id='verMaisDiv'></div>
-
     <div id='details'>
         <div class='add-container'>
             <h1 class='title-add'>Detalhes</h1>
@@ -174,6 +172,8 @@ justLog($__EMAIL__, $__TYPE__, 1);
             </div>
         </div>
     </div>
+
+    <div id='verMaisDiv'></div>
     
     <?php } else { ?>
         <div id='addNew'></div>
