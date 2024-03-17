@@ -295,8 +295,10 @@ function getDetails(cat, id){
                 value = (new Date(value * 1000 + 86400000)).toLocaleDateString("pt-BR");
             }
             if(arrays.includes(key)){
-                console.log(value);
                 for(i in value){
+                    if(key == 'alunos'){
+                        value[i].presenca = 0;
+                    }
                     value[i] = JSON.stringify(value[i]);
                 }
                 value = value.join("#");
