@@ -548,10 +548,10 @@ header, .extra{
 }
 
 .checkbox-presenca:checked + .toggle-switch:after {
-	left: calc(100% - 5px);
+	left: calc(100% - 2.5px);
 	transform: translateX(-100%);
 }
 
 .toggle-switch:active:after {
-	width: 130px;
+	width: 65px;
 }
