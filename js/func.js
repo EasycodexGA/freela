@@ -8,7 +8,6 @@ function openAdd(e){
     }
     e.style.display = "flex";
     addNew.classList.add("add-active");
-   
 }
 
 function openDetail(cat, id){
@@ -50,10 +49,20 @@ function verMais(me, type, titleStr){
         let div = document.createElement('div');
         let p = document.createElement("p");
         p.innerHTML = i.nome;
-        if(type == 1){
-            // criar botao de presenca bool
-        }
         div.append(p);
+        if(type == 1){
+            divBt = document.createElement("div");
+            input = document.createElement("input");
+            input.type = 'checkbox';
+            input.classList.add("checkbox-presenca");
+            input.id = 'checkId-' + i.id;
+            label = document.createElement("label");
+            label.for = 'checkId-' + i.id;
+            label.classList.add('toggle-switch');
+            divBt.append(input);
+            divBt.append(label);
+            div.append(divBt);
+        }
         divMid.append(div);
     }
 
@@ -65,7 +74,10 @@ function verMais(me, type, titleStr){
     closeBt.innerHTML = 'Fechar';
     closeBt.classList.add("btn-close");
     if(type == 1){
-        // criar botao de salvar
+        saveBt = document.createElement("button");
+        saveBt.setAttribute("onclick", 'salvarPresenca()');
+        saveBt.innerHTML = 'Salvar';
+        closeBt.classList.add("btn-add");
     }
     outBt.append(closeBt);
 
@@ -78,6 +90,10 @@ function verMais(me, type, titleStr){
 
 function closeVerMais(){
     verMaisDiv.classList.remove('add-active');
+}
+
+function salvarPresenca(){
+
 }
 
 isActive = false;
