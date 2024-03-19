@@ -166,7 +166,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
                 <button onclick='addNewData("turmas/cadastrar/aula", {
                     descricao: descricaoAdd.value,
                     presenca: verPresencaBt.dataset.array,
-                    data: dataAddAula.valueAsNumber,
+                    data: (dataAddAula.valueAsNumber / 1000),
                     turma: idTurma.value
                 })' class='btn-add'>Salvar</button>
             </div>

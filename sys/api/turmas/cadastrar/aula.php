@@ -37,7 +37,6 @@ if(mysqli_num_rows($getTurma) < 1){
 }
 
 $data = decrypt($data);
-endCode($data, false);
 
 if($data > time() + (86400 * 7) or $data < time() - (86400 * 28)){
     endCode("Data superior a 7 dias ou inferior a 28.", false);
