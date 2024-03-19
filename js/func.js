@@ -99,15 +99,19 @@ function closeVerMais(){
 function salvarPresenca(){
     string = verPresencaBt.getAttribute('data-array');
     let array = string.split('#');
+    console.log(array);
 
     allBts = document.querySelectorAll('.checkbox-presenca');
     for(i in allBts){
         bool = allBts[i].checked ? 1 : 0 ;
         array[i] = JSON.parse(array[i]);
+        console.log(array[i]);
         array[i].presenca = bool;
         array[i] = JSON.stringify(array[i]);
+        console.log(array[i]);
     }
     value = array.join('#');
+    console.log(value);
     verPresencaBt.setAttribute("data-array", `${value}`);
     closeVerMais();
 }
