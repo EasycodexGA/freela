@@ -73,6 +73,7 @@ function verMais(me, type, titleStr){
     closeBt.setAttribute("onclick", 'closeVerMais()');
     closeBt.innerHTML = 'Fechar';
     closeBt.classList.add("btn-close");
+    outBt.append(closeBt);
     if(type == 1){
         saveBt = document.createElement("button");
         saveBt.setAttribute("onclick", 'salvarPresenca()');
@@ -80,7 +81,6 @@ function verMais(me, type, titleStr){
         saveBt.classList.add("btn-add");
         outBt.append(saveBt);
     }
-    outBt.append(closeBt);
 
     divOut.append(title);
     divOut.append(divMid);
