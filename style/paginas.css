@@ -371,10 +371,6 @@ header, .extra{
     transition: all .3s;
 }
 
-.excluir-pat::before{
-    /* faz bonito aqui */
-}
-
 .excluir-pat:hover{
     opacity: 0.6!important;
 }
