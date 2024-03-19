@@ -165,7 +165,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
                 <button class='btn-close' onclick='closeAddAula()'>Fechar</button>
                 <button onclick='addNewData("turmas/cadastrar/aula", {
                     descricao: descricaoAdd.value,
-                    presenca: verPresencaBt.dataset.array,
+                    presenca: getPresenca(),
                     data: (dataAddAula.valueAsNumber / 1000),
                     turma: idTurma.value
                 })' class='btn-add'>Salvar</button>
