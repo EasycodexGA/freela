@@ -77,7 +77,8 @@ function verMais(me, type, titleStr){
         saveBt = document.createElement("button");
         saveBt.setAttribute("onclick", 'salvarPresenca()');
         saveBt.innerHTML = 'Salvar';
-        closeBt.classList.add("btn-add");
+        saveBt.classList.add("btn-add");
+        outBt.append(saveBt);
     }
     outBt.append(closeBt);
 
