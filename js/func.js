@@ -56,6 +56,9 @@ function verMais(me, type, titleStr){
             input.type = 'checkbox';
             input.classList.add("checkbox-presenca");
             input.id = 'checkId-' + i.id;
+            if(i.presenca == 1){
+                input.checked = true;
+            }
             label = document.createElement("label");
             label.setAttribute('for','checkId-' + i.id);
             label.classList.add('toggle-switch');
@@ -94,7 +97,19 @@ function closeVerMais(){
 }
 
 function salvarPresenca(){
+    string = verPresencaBt.getAttribute('data-array');
+    let array = string.split('#');
 
+    allBts = document.querySelectorAll('.checkbox-presenca');
+    for(i in allBts){
+        bool = allBts[i].checked ? 1 : 0 ;
+        array[i] = JSON.parse(array[i]);
+        array[i].presenca = bool;
+        array[i] = JSON.stringify(array[i]);
+    }
+    value = array.join('#');
+    verPresencaBt.setAttribute("data-array", `${value}`);
+    closeVerMais();
 }
 
 isActive = false;
