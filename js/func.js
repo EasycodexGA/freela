@@ -323,7 +323,7 @@ function getDetails(cat, id){
                     verPresencaBt.setAttribute('onclick', `verMais(this, 1, "Chamada")`);
                     verPresencaBt.setAttribute("data-array", `${value}`);
                 }
-                value = `<button data-array='${value}' onclick='verMais(this, 0, "${key}")'>Ver ${key}</button>`;
+                value = `<button class='bt-open' data-array='${value}' onclick='verMais(this, 0, "${key}")'>Ver ${key}</button>`;
             }
             if(!jump.includes(key)){
                 document.getElementById(`${key}Get`).innerHTML = value;

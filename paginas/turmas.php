@@ -153,7 +153,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
                 </div>
                 <div class='inp-add-out'>
                     <h3>Presença</h3>
-                    <button id='verPresencaBt'>Ver presença</button>
+                    <button id='verPresencaBt' class='bt-open'>Ver presença</button>
                 </div>
                 <div class='inp-add-out'>
                     <h3>Horário</h3>
