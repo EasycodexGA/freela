@@ -102,7 +102,7 @@ function salvarPresenca(){
     console.log(array);
 
     allBts = document.querySelectorAll('.checkbox-presenca');
-    for(i in allBts){
+    for(i = 0; i < allBts.length; i++){
         bool = allBts[i].checked ? 1 : 0 ;
         array[i] = JSON.parse(array[i]);
         console.log(array[i]);
