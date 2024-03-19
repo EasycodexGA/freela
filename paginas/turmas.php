@@ -156,8 +156,8 @@ justLog($__EMAIL__, $__TYPE__, 1);
                     <button id='verPresencaBt' class='bt-open'>Ver presença</button>
                 </div>
                 <div class='inp-add-out'>
-                    <h3>Horário</h3>
-                    <input id='horarioAddAula' type='time'/>
+                    <h3>Data</h3>
+                    <input id='dataAddAula' type='date'/>
                 </div>
             </div>
             <span id='idTurma'></span>
@@ -165,8 +165,8 @@ justLog($__EMAIL__, $__TYPE__, 1);
                 <button class='btn-close' onclick='closeAddAula()'>Fechar</button>
                 <button onclick='addNewData("turmas/cadastrar/aula", {
                     descricao: descricaoAdd.value,
-                    presenca: presencaAdd.value,
-                    horario: horarioAddAula.valueAsNumber,
+                    presenca: verPresencaBt.dataset.array,
+                    data: dataAddAula.valueAsNumber,
                     turma: idTurma.value
                 })' class='btn-add'>Salvar</button>
             </div>

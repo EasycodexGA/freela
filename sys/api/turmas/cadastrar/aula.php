@@ -49,5 +49,15 @@ if(mysqli_num_rows($getDatas) > 0){
 }
 
 mysqli_query($__CONEXAO__, "insert into aulas (turma, descricao, data) values ('$turma', '$descricao', '$data')");
+$aulaId = mysqli_insert_id($__CONEXAO__);
+endCode($aulaId, false);
+
+$presenca = explode('#', $presenca);
+for($i = 0; $i < count($presenca); $i++){
+    $presenca[$i] = json_decode($presenca[$i]);
+    $idAluno = $presenca[$i]->id;
+    $bool = $presenca[$i]->presenca;
+    mysqli_query($__CONEXAO__, "insert into chamada (aula, aluno, presenca) values ('$aulaId','$idAluno','$bool')")
+}
 
 endCode("Aula criada com sucesso", true);
