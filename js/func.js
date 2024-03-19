@@ -57,7 +57,7 @@ function verMais(me, type, titleStr){
             input.classList.add("checkbox-presenca");
             input.id = 'checkId-' + i.id;
             label = document.createElement("label");
-            label.for = 'checkId-' + i.id;
+            label.setAttribute('for','checkId-' + i.id);
             label.classList.add('toggle-switch');
             divBt.append(input);
             divBt.append(label);
