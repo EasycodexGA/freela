@@ -11,7 +11,7 @@ $json = json_decode($request);
 $turma      = scapeString($__CONEXAO__, $json->turma);
 $descricao  = scapeString($__CONEXAO__, $json->descricao);
 $data       = scapeString($__CONEXAO__, $json->data);
-$presenca   = scapeString($__CONEXAO__, $json->presenca);
+$presenca   = $json->presenca;
 
 $turma      = setNum($turma);
 $descricao  = setNoXss($descricao);
