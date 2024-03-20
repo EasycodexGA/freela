@@ -19,7 +19,7 @@ checkMissing(
 
 $id = decrypt($id);
 
-$check = mysqli_query($__CONEXAO__, "select img from grupoimagem where id='$id'");
+$check = mysqli_query($__CONEXAO__, "select id from grupoimagem where id='$id'");
 
 if(mysqli_num_rows($check) < 1){
     endCode("Esse grupo não existe.", false);
