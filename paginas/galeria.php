@@ -158,11 +158,6 @@ include "../sys/conexao.php";
             let id = seeExcluir.dataset.idfoto;
             if(!id) return;
 
-            newMsg({
-                mensagem: "Aguardando",
-                response: "aguardando"
-            })
-
             fetch(`../sys/api/galeria/foto/remove`,{
                 method: "POST",
                 body: JSON.stringify({
@@ -175,15 +170,19 @@ include "../sys/conexao.php";
             })
         }
 
-        const excluirGp = (e) => {
+        const excluirGp = (el, e) => {
             let xx = confirm("Deseja continuar?");
             if(!xx) return;
 
+            el.innerHTML = `
+                <l-ring-2 size="10" stroke="5" stroke-length="0.25" bg-opacity="0.1" speed="0.8" color="white"></l-ring-2>
+            `;
+
             newMsg({
-                mensagem: "Aguardando",
+                mensagem: "Isso pode demorar um pouco, não atualize a página",
                 response: "aguardando"
             })
-            
+
             fetch(`../sys/api/galeria/grupo/remove`,{
                 method: "POST",
                 body: JSON.stringify({
@@ -240,7 +239,7 @@ include "../sys/conexao.php";
                         <div style='display: flex; gap: 10px'
                             <h1 class='titleGp'>${nomeGp}</h1>
                             <?php if(requireLevel($__TYPE__, 2)){ ?>
-                                <button onclick='excluirGp(${i.id})' id="excGp">Excluir</button>
+                                <button onclick='excluirGp(this, ${i.id})' id="excGp">Excluir</button>
                             <?php } ?>
                         </div>
                         <div class='contImgGp'>
