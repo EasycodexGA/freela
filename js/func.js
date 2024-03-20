@@ -487,11 +487,11 @@ const excluirSee = () => {
     fetch(`../sys/api/galeria/foto/remove`,{
         method: "POST",
         body: JSON.stringify({
-            id: id
+            id: Number(id)
         })
     })
     .then(e=>e.json())
     .then(e=>{
-        newMsg(e.mensagem);
+        newMsg(e);
     })
 }
