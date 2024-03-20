@@ -16,7 +16,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
 <body>
     <h1 class='title-header'>Configurações</h1>
     
-    <?php if(requireLevel($__TYPE__, 2)){ ?>
+    <?php if(uniqueLevel($__TYPE__, 2)){ ?>
         <!-- Enviar CV -->
         <!-- trocar imagem  -->
         <input type='file' id='imageAdd' accept="image/png, image/jpeg"/>
