@@ -25,5 +25,15 @@ if(mysqli_num_rows($check) < 1){
     endCode("Essa imagem não existe.", false);
 }
 
+$caminho = "../../../../imagens/galeria";
+
+if(unlink("$caminho/$img")){
+    mysqli_query($__CONEXAO__, "delete from patrocinadores where id='$id'");
+    endCode("Imagem excluida", true);
+} else {
+    endCode("Erro ao excluir imagem / $caminho/$img", false);
+
+};
+
 $delete = mysqli_query($__CONEXAO__, "delete from imagensgp where id='$id'");
 endCode("Imagem deletada", true);
