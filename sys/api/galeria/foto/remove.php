@@ -8,13 +8,16 @@ header('Content-Type: application/json; charset=utf-8');
 $request = file_get_contents('php://input');
 $json = json_decode($request);
 
-$image  = scapeString($__CONEXAO__, $json->image);
-$grupo  = scapeString($__CONEXAO__, $json->grupo);
-
-$id   = setNum($id);
+$id = scapeString($__CONEXAO__, $json->id);
+$id = setNum($id);
 
 checkMissing(
     array(
         $id
     )
 );
+
+$id = decrypt($id);
+
+$delete = mysqli_query($__CONEXAO__, "delete from imagensgp where id='$id'");
+
