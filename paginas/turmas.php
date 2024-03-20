@@ -63,7 +63,6 @@ justLog($__EMAIL__, $__TYPE__, 1);
         <?php if(requireLevel($__TYPE__, 3)){ ?>
             <button onclick='openAdd(addTurma)' class='funcBt'>+ Adicionar turma</button>
         <?php } ?>
-            <button onclick='openAdd(addRecado)' class='funcBt'>+ Novo recado</button>
         </div>
     </div>
 
@@ -106,40 +105,6 @@ justLog($__EMAIL__, $__TYPE__, 1);
             </div>
         </div>
         <?php } ?>
-        <div id='addRecado' class='add-container'>
-            <h1 class='title-add'>Novo reacado</h1>
-
-            <div class='inps-add'>
-                <div class='inp-add-out'>
-                    <h3>Título</h3>
-                    <input id='nomeAssAdd' type='text' placeholder='Assinaturas'/>
-                </div>
-                <div class='inp-add-out'>
-                    <h3>Descrição</h3>
-                    <input id='descricaoAssAdd' type='text' placeholder='Trazer assinatura...'/>
-                </div>
-                <div class='inp-add-out'>
-                    <h3>Turma</h3>
-                    <select id='turmaAdd'>
-                        <option>Nenhuma turma selecionada</option>
-                    </select>
-                </div>
-                <div class='inp-add-out'>
-                    <h3>De</h3>
-                    <input id='horario1Add' type='date'/>
-                </div>
-                <div class='inp-add-out'>
-                    <h3>Até</h3>
-                    <input id='horario2Add' type='date'/>
-                </div>
-            </div>
-            <div class='out-bt-sv'>
-                <button class='btn-close' onclick='closeAdd()'>Fechar</button>
-                <button onclick='addNewData("", {
-                    
-                })' class='btn-add'>Salvar</button>
-            </div>
-        </div>
     </div>
 
     <div id='addNewAula'>
