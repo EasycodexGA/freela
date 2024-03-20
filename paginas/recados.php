@@ -26,6 +26,7 @@ justLog($__EMAIL__, $__TYPE__, 2);
     <div class='extra'>
         <h1 class='title-header'>Funções</h1>
         <div class='header-in'>
+            <button onclick='openAdd(addRecadoGeral)' class='funcBt'>+ Novo recado - Todos</button>
             <button onclick='openAdd(addRecadoTurma)' class='funcBt'>+ Novo recado - Turma</button>
             <button onclick='openAdd(addRecadoAluno)' class='funcBt'>+ Novo recado - Aluno</button>
         </div>
@@ -81,6 +82,33 @@ justLog($__EMAIL__, $__TYPE__, 2);
                     <select id='turmaAdd'>
                         <option>Nenhum aluno selecionado</option>
                     </select>
+                </div>
+                <div class='inp-add-out'>
+                    <h3>De</h3>
+                    <input id='horario1Add' type='date'/>
+                </div>
+                <div class='inp-add-out'>
+                    <h3>Até</h3>
+                    <input id='horario2Add' type='date'/>
+                </div>
+            </div>
+            <div class='out-bt-sv'>
+                <button class='btn-close' onclick='closeAdd()'>Fechar</button>
+                <button onclick='addNewData("", {
+                    
+                })' class='btn-add'>Salvar</button>
+            </div>
+        </div>
+        <div id='addRecadoGeral' class='add-container'>
+            <h1 class='title-add'>Novo reacado - Geral</h1>
+            <div class='inps-add'>
+                <div class='inp-add-out'>
+                    <h3>Título</h3>
+                    <input id='nomeAssAdd' type='text' placeholder='Assinaturas'/>
+                </div>
+                <div class='inp-add-out'>
+                    <h3>Descrição</h3>
+                    <input id='descricaoAdd' type='text' placeholder='Trazer assinatura...'/>
                 </div>
                 <div class='inp-add-out'>
                     <h3>De</h3>
