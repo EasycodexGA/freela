@@ -256,8 +256,8 @@ include "../sys/conexao.php";
 
                 gpOut.innerHTML += `
                     <div class='contGp'>
-                        <div style='display: flex; gap: 10px'
-                            <h1 class='titleGp'>${nomeGp}</h1>
+                        <div style='display: flex; gap: 10px'>
+                            <h1 class='titleGp'>${nomeGp}</h1> - <h4 class='titleGp'>${i.imagens.length} Imagens</h4>
                             <?php if(requireLevel($__TYPE__, 2)){ ?>
                                 <button onclick='excluirGp(this, ${i.id}, ${i.imagens.length})' id="excGp">Excluir</button>
                                 <span id='estimativa${i.id}'></span>
