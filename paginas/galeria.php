@@ -188,6 +188,11 @@ include "../sys/conexao.php";
             let intervalTimer = setInterval(() => {
                 timerLoc.innerText = `Estimativa: ${times} segundos`;
                 times--;
+
+                if(times <= 0){
+                    timerLoc.innerText = `Finalizando...`;
+                    clearInterval(intervalTimer);
+                }
             }, 1000);
 
             newMsg({
