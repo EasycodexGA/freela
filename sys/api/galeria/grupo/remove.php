@@ -25,6 +25,20 @@ if(mysqli_num_rows($check) < 1){
     endCode("Esse grupo não existe.", false);
 }
 
+$getAllImgs = mysqli_query($__CONEXAO__, "select img from imagensgp where grupo='$id'");
+
+$caminho = "../../../../imagens/galeria";
+
+while($dados = mysqli_fetch_array($getAllImgs)){
+    $img = decrypt($dados["img"]);
+
+    if(!unlink("$caminho/$img")){ 
+        endCode("Erro ao excluir: $img", false);
+    }   
+}
+
+
+mysqli_query($__CONEXAO__, "delete from imagensgp where grupo='$id'");
 mysqli_query($__CONEXAO__, "delete from grupoimagem where id='$id'");
 
 endCode("Sucesso ao excluir!", true);
