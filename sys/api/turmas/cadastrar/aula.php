@@ -25,7 +25,6 @@ checkMissing(
     )
 );
 
-endCode($presenca, false);
 $turma = decrypt($turma);
 
 $getTurma = mysqli_query($__CONEXAO__, "select id from turmas where id='$turma'");
@@ -53,8 +52,7 @@ for($i = 0; $i < count($presenca); $i++){
     $presenca[$i] = json_decode($presenca[$i]);
     $idAluno = $presenca[$i][$id];
     $bool = $presenca[$i][$presenca];
-    // mysqli_query($__CONEXAO__, "insert into chamada (aula, aluno, presenca) values ('$aulaId','$idAluno','$bool')");
+    mysqli_query($__CONEXAO__, "insert into chamada (aula, aluno, presenca) values ('$aulaId','$idAluno','$bool')");
 }
-endCode($presenca, false);
 
 endCode("Aula criada com sucesso", true);
