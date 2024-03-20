@@ -479,3 +479,8 @@ const getBase64 = (e) => {
         reader.readAsDataURL(e);
     });
 }
+
+const excluirSee = () => {
+    let id = seeExcluir.dataset.idfoto;
+    if(!id) return;
+}
