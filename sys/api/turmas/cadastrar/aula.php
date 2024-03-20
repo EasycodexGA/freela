@@ -21,8 +21,7 @@ checkMissing(
     array(
         $turma,
         $data,
-        $descricao,
-        $presenca
+        $descricao
     )
 );
 
