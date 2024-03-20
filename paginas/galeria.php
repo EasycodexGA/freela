@@ -176,7 +176,7 @@ include "../sys/conexao.php";
             if(!xx) return;
 
             el.innerHTML = `
-                <l-ring-2 size="10" stroke="5" stroke-length="0.25" bg-opacity="0.1" speed="0.8" color="white"></l-ring-2>
+                <l-ring-2 size="15" stroke="3" stroke-length="0.25" bg-opacity="0.1" speed="0.8" color="white"></l-ring-2>
             `;
 
             newMsg({
