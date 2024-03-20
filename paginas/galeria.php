@@ -17,7 +17,7 @@ include "../sys/conexao.php";
         <img id='seeInImg' src="">
         <div class="seeBtns">
             <button onclick='seeImg.style.display=`none`' class="seeFechar">Fechar</button>
-            <?php if(requireLevel($__TYPE__, 3)){ ?>
+            <?php if(requireLevel($__TYPE__, 2)){ ?>
             <button onclick='excluirSee()' id="seeExcluir">Excluir</button>
             <?php } ?>
         </div>
