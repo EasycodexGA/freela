@@ -16,6 +16,7 @@ include "../sys/conexao.php";
         <img id='seeInImg' src="">
         <div class="seeBtns">
             <button onclick='seeImg.style.display=`none`' class="seeFechar">Fechar</button>
+            <button onclick='seeImg.style.display=`none`' id="seeExcluir">Excluir</button>
         </div>
     </div>
     <header>

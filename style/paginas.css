@@ -501,13 +501,17 @@ header, .extra{
     right: 20px;
 }
 
-.seeFechar{
+.seeFechar, #seeExcluir{
     padding: 5px 15px;
     font-size: 13px;
     color: white;
     background: var(--contraste2);
     border-radius: 3px;
     cursor: pointer;
+}
+
+#seeExcluir{
+    background:#ff5e52!important;
 }
 
 .checkbox-presenca{
