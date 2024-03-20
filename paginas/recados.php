@@ -77,7 +77,7 @@ justLog($__EMAIL__, $__TYPE__, 2);
                     <input id='descricaoAdd' type='text' placeholder='Trazer assinatura...'/>
                 </div>
                 <div class='inp-add-out'>
-                    <h3>Aluno</h3>
+                    <h3>Turma</h3>
                     <select id='turmaAdd'>
                         <option>Nenhum aluno selecionado</option>
                     </select>
@@ -102,7 +102,7 @@ justLog($__EMAIL__, $__TYPE__, 2);
 
     <div class="list">
         <div class="header-list-out">
-            <h1 class="title-header">Alunos</h1>
+            <h1 class="title-header">Recados</h1>
             <input id="searchBar" name="searchBar" placeholder="Pesquisar..">
         </div>
         <table class="content-list">
