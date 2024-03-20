@@ -137,9 +137,20 @@ function addNewData(local, data){
     })
 }
 
+function defineColor(e){
+    let color = "sucesso-add";
+
+    if(e == "aguardando"){
+        color = "aguardando-add";
+    } else if(!e){
+        color = "erro-add";
+    }
+}
+
 function newMsg(e){
     let msg = document.createElement("div");
-    let color = e.response ? "sucesso-add" : "erro-add";
+    let color = defineColor(e.response);
+
     msg.classList.add(`msg-add`);
     msg.classList.add(color);
     msg.innerText = e.mensagem;
