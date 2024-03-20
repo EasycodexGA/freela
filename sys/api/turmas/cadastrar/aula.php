@@ -16,8 +16,6 @@ $presenca   = scapeString($__CONEXAO__, $json->presenca);
 $turma      = setNum($turma);
 $descricao  = setNoXss($descricao);
 $data       = setNum($data);
-$presenca   = setNoXss($presenca);
-
 
 checkMissing(
     array(
