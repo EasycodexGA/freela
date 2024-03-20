@@ -171,13 +171,24 @@ include "../sys/conexao.php";
             })
         }
 
-        const excluirGp = (el, e) => {
+        const excluirGp = (el, e, imgs) => {
             let xx = confirm("Deseja continuar?");
             if(!xx) return;
+
+            let timerLoc = document.getElementById(`estimativa${e}`);
 
             el.innerHTML = `
                 <l-ring-2 size="15" stroke="3" stroke-length="0.25" bg-opacity="0.1" speed="0.8" color="white"></l-ring-2>
             `;
+
+            let times = Math.floor(imgs * 0.05);
+
+            timerLoc.innerText = `Aguardando estimativa`;
+
+            let intervalTimer = setInterval(() => {
+                timerLoc.innerText = `Estimativa: ${times} segundos`;
+                times--;
+            }, 1000);
 
             newMsg({
                 mensagem: "Isso pode demorar um pouco, não atualize a página",
@@ -193,6 +204,8 @@ include "../sys/conexao.php";
             .then(e=>e.json())
             .then(e=>{
                 el.innerHTML = "Excluir";
+                clearInterval(intervalTimer);
+                timerLoc.innerText = ""
                 newMsg(e);
             })
         }
@@ -241,7 +254,8 @@ include "../sys/conexao.php";
                         <div style='display: flex; gap: 10px'
                             <h1 class='titleGp'>${nomeGp}</h1>
                             <?php if(requireLevel($__TYPE__, 2)){ ?>
-                                <button onclick='excluirGp(this, ${i.id})' id="excGp">Excluir</button>
+                                <button onclick='excluirGp(this, ${i.id}, ${i.imagens.length})' id="excGp">Excluir</button>
+                                <span id='estimativa${i.id}'></span>
                             <?php } ?>
                         </div>
                         <div class='contImgGp'>
