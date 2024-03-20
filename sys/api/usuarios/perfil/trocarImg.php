@@ -59,10 +59,8 @@ $imageS = imagecreatefromstring($imageData);
 
 $getImgFromUser = mysqli_query($__CONEXAO__, "select imagem from users where id='$__ID__'");
 
-if(mysqli_num_rows($getImgFromUser) > 0){
-    $assoc = mysqli_fetch_assoc($getImgFromUser);
-    $imgUser = decrypt($assoc["imagem"]);
-}
+$assoc = mysqli_fetch_assoc($getImgFromUser);
+$imgUser = decrypt($assoc["imagem"]);
 
 if (imagejpeg($imageS, $completo, 60)) {
     unlink("$caminho/$imgUser");
