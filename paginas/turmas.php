@@ -117,12 +117,12 @@ justLog($__EMAIL__, $__TYPE__, 1);
                     <input id='descricaoAdd' type='text' placeholder='Vôlei de praia'/>
                 </div>
                 <div class='inp-add-out'>
-                    <h3>Presença</h3>
-                    <button id='verPresencaBt' class='btn-add'>Ver presença</button>
-                </div>
-                <div class='inp-add-out'>
                     <h3>Data</h3>
                     <input id='dataAddAula' type='date'/>
+                </div>
+                <div class='inp-add-out'>
+                    <h3>Chamada</h3>
+                    <button id='verPresencaBt' class='btn-add'>Ver chamada</button>
                 </div>
             </div>
             <span id='idTurma'></span>
