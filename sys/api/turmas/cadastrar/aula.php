@@ -55,7 +55,7 @@ for($i = 0; $i < count($presenca); $i++){
     endCode($presenca[$i], false);
     $idAluno = $presenca[$i][$id];
     $bool = $presenca[$i][$presenca];
-    mysqli_query($__CONEXAO__, "insert into chamada (aula, aluno, presenca) values ('$aulaId','$idAluno','$bool')");
+    // mysqli_query($__CONEXAO__, "insert into chamada (aula, aluno, presenca) values ('$aulaId','$idAluno','$bool')");
 }
 
 endCode("Aula criada com sucesso", true);
