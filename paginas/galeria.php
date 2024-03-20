@@ -205,6 +205,7 @@ include "../sys/conexao.php";
         const openImgGal = (src, id) => {
             seeInImg.src = src;
             seeImg.style.display = "flex";
+            seeExcluir.dataset.idfoto = id;
         }
     </script>
 </body>
