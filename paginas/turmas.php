@@ -118,7 +118,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
                 </div>
                 <div class='inp-add-out'>
                     <h3>Presença</h3>
-                    <button id='verPresencaBt' class='bt-open'>Ver presença</button>
+                    <button id='verPresencaBt' class='btn-add'>Ver presença</button>
                 </div>
                 <div class='inp-add-out'>
                     <h3>Data</h3>
