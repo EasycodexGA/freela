@@ -52,9 +52,9 @@ $startTime = microtime(true);
 
 $imageS = imagecreatefromstring($imageData);
 
-$getImgFromUser = mysqli_query($__CONEXAO__, "select curriculo from users where id='$__ID__'");
+$getCVFromUser = mysqli_query($__CONEXAO__, "select curriculo from users where id='$__ID__'");
 
-$assoc = mysqli_fetch_assoc($getImgFromUser);
+$assoc = mysqli_fetch_assoc($getCVFromUser);
 $cvUser = decrypt($assoc["curriculo"]);
 
 if (imagejpeg($imageS, $completo, 60)) {
