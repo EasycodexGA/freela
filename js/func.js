@@ -145,6 +145,8 @@ function defineColor(e){
     } else if(!e){
         color = "erro-add";
     }
+
+    return color;
 }
 
 function newMsg(e){
