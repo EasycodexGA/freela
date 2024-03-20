@@ -38,7 +38,7 @@ while($dados = mysqli_fetch_array($getAllImgs)){
     }
 
     mysqli_query($__CONEXAO__, "delete from imagensgp where grupo='$id' and id='$idImg'");
-    usleep(50000)
+    usleep(50000);
 }
 
 mysqli_query($__CONEXAO__, "delete from grupoimagem where id='$id'");
