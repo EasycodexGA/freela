@@ -13,7 +13,7 @@ header('Content-Type: application/json; charset=utf-8');
 $request = file_get_contents('php://input');
 $json = json_decode($request);
 
-$image  = scapeString($__CONEXAO__, $json->image);
+$arquivo  = scapeString($__CONEXAO__, $json->arquivo);
 
 $caminho = "../../../../arquivos/curriculos";
 
@@ -24,16 +24,16 @@ if (!file_exists($caminho)) {
     }
 }
 
-$parts = explode(',', $image);
+$parts = explode(',', $arquivo);
 if (count($parts) !== 2) {
-    endCode("Código de imagem inválido - " . count($parts), false);
+    endCode("Código de arquivo inválido", false);
     return;
 }
 
 $formatPart = $parts[0];
-$imageData = base64_decode($parts[1]);
+$arquivoData = base64_decode($parts[1]);
 
-if ($imageData === false) {
+if ($arquivoData === false) {
     endCode("Decodificação de base64 falhou", false);
     return;
 }
@@ -50,14 +50,12 @@ $novoNomeEnc = encrypt($novoNome);
 
 $startTime = microtime(true);
 
-$imageS = imagecreatefromstring($imageData);
-
 $getCVFromUser = mysqli_query($__CONEXAO__, "select curriculo from users where id='$__ID__'");
 
 $assoc = mysqli_fetch_assoc($getCVFromUser);
 $cvUser = decrypt($assoc["curriculo"]);
 
-if (imagejpeg($imageS, $completo, 60)) {
+if (file_put_contents($completo, $arquivoData)) {
     unlink("$caminho/$cvUser");
     mysqli_query($__CONEXAO__, "update users set imagem='$novoNomeEnc' where id='$__ID__'") or endCode("Erro ao salvar imagem", false);
     endCode("Sucesso no upload!", "enviado");
