@@ -51,10 +51,6 @@ justLog($__EMAIL__, $__TYPE__, 2);
                     </select>
                 </div>
                 <div class='inp-add-out'>
-                    <h3>De</h3>
-                    <input id='horario1Add' type='date'/>
-                </div>
-                <div class='inp-add-out'>
                     <h3>Até</h3>
                     <input id='horario2Add' type='date'/>
                 </div>
@@ -84,10 +80,6 @@ justLog($__EMAIL__, $__TYPE__, 2);
                     </select>
                 </div>
                 <div class='inp-add-out'>
-                    <h3>De</h3>
-                    <input id='horario1Add' type='date'/>
-                </div>
-                <div class='inp-add-out'>
                     <h3>Até</h3>
                     <input id='horario2Add' type='date'/>
                 </div>
@@ -109,10 +101,6 @@ justLog($__EMAIL__, $__TYPE__, 2);
                 <div class='inp-add-out'>
                     <h3>Descrição</h3>
                     <input id='descricaoAdd' type='text' placeholder='Trazer assinatura...'/>
-                </div>
-                <div class='inp-add-out'>
-                    <h3>De</h3>
-                    <input id='horario1Add' type='date'/>
                 </div>
                 <div class='inp-add-out'>
                     <h3>Até</h3>
