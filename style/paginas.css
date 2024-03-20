@@ -510,7 +510,7 @@ header, .extra{
     cursor: pointer;
 }
 
-#seeExcluir{
+#seeExcluir, #excGp{
     background:#ff5e52!important;
 }
 

@@ -167,11 +167,11 @@ include "../sys/conexao.php";
             })
         }
 
-        const excluirGp = (id) => {
+        const excluirGp = (e) => {
             fetch(`../sys/api/galeria/grupo/remove`,{
                 method: "POST",
                 body: JSON.stringify({
-                    id: Number(id)
+                    id: Number(e)
                 })
             })
             .then(e=>e.json())
@@ -221,10 +221,12 @@ include "../sys/conexao.php";
 
                 gpOut.innerHTML += `
                     <div class='contGp'>
-                        <h1 class='titleGp'>${nomeGp}</h1>
-                        <?php if(requireLevel($__TYPE__, 2)){ ?>
-                            <button onclick='excluirGp(${i.id})' id="excGp">Excluir</button>
-                        <?php } ?>
+                        <div style='display: flex; gap: 10px'
+                            <h1 class='titleGp'>${nomeGp}</h1>
+                            <?php if(requireLevel($__TYPE__, 2)){ ?>
+                                <button onclick='excluirGp(${i.id})' id="excGp">Excluir</button>
+                            <?php } ?>
+                        </div>
                         <div class='contImgGp'>
                             ${imgs}
                         </div>
