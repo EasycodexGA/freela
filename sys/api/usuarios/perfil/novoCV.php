@@ -57,7 +57,7 @@ $cvUser = decrypt($assoc["curriculo"]);
 
 if (file_put_contents($completo, $arquivoData)) {
     unlink("$caminho/$cvUser");
-    mysqli_query($__CONEXAO__, "update users set imagem='$novoNomeEnc' where id='$__ID__'") or endCode("Erro ao salvar imagem", false);
+    mysqli_query($__CONEXAO__, "update users set curriculo='$novoNomeEnc' where id='$__ID__'") or endCode("Erro ao salvar imagem", false);
     endCode("Sucesso no upload!", "enviado");
 } else {
     endCode("Erro ao salvar imagem", false);
