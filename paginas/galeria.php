@@ -107,7 +107,7 @@ include "../sys/conexao.php";
                 }
             }
 
-            if(getAll.length > 300){
+            if(getAll.length > 3000){
                 newMsg({
                     mensagem: "Mais de 300 arquivos",
                     response: false
