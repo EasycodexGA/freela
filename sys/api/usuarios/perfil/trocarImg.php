@@ -5,6 +5,8 @@ justLog($__EMAIL__, $__TYPE__, 2);
 
 if(!requireLevel($__TYPE__, 2)){
     exit;
+} else {
+    endCode("Você não pode alterar a foto de perfil.", false);
 }
 
 header('Content-Type: application/json; charset=utf-8');
