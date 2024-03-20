@@ -181,17 +181,17 @@ include "../sys/conexao.php";
                 <l-ring-2 size="15" stroke="3" stroke-length="0.25" bg-opacity="0.1" speed="0.8" color="white"></l-ring-2>
             `;
 
-            if(imgs > 225){
-                imgs = 225;
+            if(imgs >= 500){
+                imgse = 500;
                 newMsg({
-                    mensagem: `Limite de exclusão: ${imgs} por vez`,
+                    mensagem: `Limite de exclusão: ${imgse} por vez`,
                     response: "aguardando"
                 })
                 await sleep(2000);
             }
 
             
-            let times = Math.floor(imgs * 0.035);
+            let times = Math.floor(imgse * 0.035);
 
             timerLoc.innerText = `Aguardando estimativa`;
 
