@@ -33,7 +33,7 @@ $timeRem = 0;
 
 while($dados = mysqli_fetch_array($getAllImgs)){
 
-    if($timeRem > 500){
+    if($timeRem >= 500){
         endCode("Limite atingido, clique para excluir novamente", "ag");
     }
     $timeRem++;
