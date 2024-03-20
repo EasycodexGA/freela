@@ -118,8 +118,8 @@ function getPresenca(){
     for(i = 0; i < array.length; i++){
         array[i] = JSON.parse(array[i]);
     }
-    
-    return value;
+
+    return array;
 }
 
 isActive = false;
