@@ -19,5 +19,11 @@ checkMissing(
 
 $id = decrypt($id);
 
-$delete = mysqli_query($__CONEXAO__, "delete from imagensgp where id='$id'");
+$check = mysqli_query($__CONEXAO__, "select id from imagensgp where id='$id'");
 
+if(mysqli_num_rows($check) < 1){
+    endCode("Essa imagem não existe.", false);
+}
+
+$delete = mysqli_query($__CONEXAO__, "delete from imagensgp where id='$id'");
+endCode("Imagem deletada", true);
