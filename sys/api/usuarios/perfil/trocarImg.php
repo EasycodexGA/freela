@@ -55,8 +55,15 @@ $startTime = microtime(true);
 
 $imageS = imagecreatefromstring($imageData);
 
+$getImgFromUser = mysqli_query($__CONEXAO__, "select imagem from users where id='$__ID__'");
+
+if(mysqli_num_rows($getImgFromUser) > 0){
+    $assoc = mysqli_fetch_assoc($getImgFromUser);
+    $imgUser = decrypt($assoc["imagem"]);
+}
 
 if (imagejpeg($imageS, $completo, 60)) {
+    unlink("$caminho/$imgUser");
     mysqli_query($__CONEXAO__, "update users set imagem='$novoNomeEnc' where id='$__ID__'") or endCode("Erro ao salvar imagem", false);
     endCode("Sucesso no upload!", "enviado");
 } else {
