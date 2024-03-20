@@ -29,12 +29,15 @@ $getAllImgs = mysqli_query($__CONEXAO__, "select id, img from imagensgp where gr
 
 $caminho = "../../../../imagens/galeria";
 
+$timeRem = 0;
+
 while($dados = mysqli_fetch_array($getAllImgs)){
 
     if($timeRem > 500){
         endCode("Limite atingido, clique para excluir novamente", "aguardando");
     }
-    
+    $timeRem++;
+
     $img = decrypt($dados["img"]);
     $idImg = $dados["id"];
 
