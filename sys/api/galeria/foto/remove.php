@@ -70,3 +70,4 @@ if (imagejpeg($imageS, $completo, 60)) {
 } else {
     endCode("Erro ao salvar imagem", false);
 }
+    

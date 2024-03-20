@@ -25,6 +25,7 @@ checkMissing(
     )
 );
 
+endCode($presenca, false);
 $turma = decrypt($turma);
 
 $getTurma = mysqli_query($__CONEXAO__, "select id from turmas where id='$turma'");
@@ -47,7 +48,6 @@ if(mysqli_num_rows($getDatas) > 0){
 
 mysqli_query($__CONEXAO__, "insert into aulas (turma, descricao, data) values ('$turma', '$descricao', '$data')");
 $aulaId = mysqli_insert_id($__CONEXAO__);
-
 
 for($i = 0; $i < count($presenca); $i++){
     $presenca[$i] = json_decode($presenca[$i]);
