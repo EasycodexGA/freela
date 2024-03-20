@@ -501,7 +501,7 @@ header, .extra{
     right: 20px;
 }
 
-.seeFechar, #seeExcluir{
+.seeFechar, #seeExcluir, #excGp{
     padding: 5px 15px;
     font-size: 13px;
     color: white;

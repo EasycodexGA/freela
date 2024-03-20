@@ -166,6 +166,19 @@ include "../sys/conexao.php";
                 newMsg(e);
             })
         }
+
+        const excluirGp = () => {
+            fetch(`../sys/api/galeria/grupo/remove`,{
+                method: "POST",
+                body: JSON.stringify({
+                    id: Number(id)
+                })
+            })
+            .then(e=>e.json())
+            .then(e=>{
+                newMsg(e);
+            })
+        }
     </script>
     <?php } ?>
 
@@ -179,6 +192,7 @@ include "../sys/conexao.php";
         .then(e=>{
             let galeriasTT = e.mensagem.length;
             let imagensTT = 0;
+            
             console.log(e)
             <?php if(requireLevel($__TYPE__, 2)){ ?>
                 for(let i of e.mensagem){
@@ -202,10 +216,15 @@ include "../sys/conexao.php";
                         <img onclick="openImgGal('${o.imagem}', ${o.id})" id='img${i.id}${o.id}' src='${o.imagem}'>
                     `;
                 }
+                
+
 
                 gpOut.innerHTML += `
                     <div class='contGp'>
                         <h1 class='titleGp'>${nomeGp}</h1>
+                        <?php if(requireLevel($__TYPE__, 2)){ ?>
+                            <button onclick='excluirGp(${i.id})' id="excGp">Excluir</button>
+                        <?php } ?>
                         <div class='contImgGp'>
                             ${imgs}
                         </div>
