@@ -107,7 +107,7 @@ include "../sys/conexao.php";
                 }
             }
 
-            if(getAll.length > 1000){
+            if(getAll.length > 300){
                 newMsg({
                     mensagem: "Mais de 300 arquivos",
                     response: false
@@ -181,8 +181,8 @@ include "../sys/conexao.php";
                 <l-ring-2 size="15" stroke="3" stroke-length="0.25" bg-opacity="0.1" speed="0.8" color="white"></l-ring-2>
             `;
 
-            if(imgs > 2250){
-                imgs = 2250;
+            if(imgs > 225){
+                imgs = 225;
                 newMsg({
                     mensagem: `Limite de exclusão: ${imgs} por vez`,
                     response: "aguardando"

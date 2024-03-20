@@ -413,7 +413,7 @@ const sendImgs = async () => {
         }
     }
 
-    if(files.length > 1000){
+    if(files.length > 300){
         newMsg({
             mensagem: "Mais de 300 arquivos",
             response: false
