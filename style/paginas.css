@@ -431,7 +431,10 @@ header, .extra{
     font-size: 18px;
     color: #525252;
 }
-
+.titleGpImg{
+    font-size: 15px;
+    color: #525252;
+}
 .contImgGp {
     display: flex;
     flex-wrap: wrap;
