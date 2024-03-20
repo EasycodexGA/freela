@@ -191,6 +191,7 @@ include "../sys/conexao.php";
             })
             .then(e=>e.json())
             .then(e=>{
+                el.innerHTML = "Excluir";
                 newMsg(e);
             })
         }
