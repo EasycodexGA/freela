@@ -181,7 +181,7 @@ include "../sys/conexao.php";
                 <l-ring-2 size="15" stroke="3" stroke-length="0.25" bg-opacity="0.1" speed="0.8" color="white"></l-ring-2>
             `;
 
-            let times = Math.floor(imgs * 0.05);
+            let times = Math.floor(imgs * 0.035);
 
             timerLoc.innerText = `Aguardando estimativa`;
 
