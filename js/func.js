@@ -480,18 +480,3 @@ const getBase64 = (e) => {
     });
 }
 
-const excluirSee = () => {
-    let id = seeExcluir.dataset.idfoto;
-    if(!id) return;
-
-    fetch(`../sys/api/galeria/foto/remove`,{
-        method: "POST",
-        body: JSON.stringify({
-            id: Number(id)
-        })
-    })
-    .then(e=>e.json())
-    .then(e=>{
-        newMsg(e);
-    })
-}

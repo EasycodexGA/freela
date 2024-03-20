@@ -16,7 +16,9 @@ include "../sys/conexao.php";
         <img id='seeInImg' src="">
         <div class="seeBtns">
             <button onclick='seeImg.style.display=`none`' class="seeFechar">Fechar</button>
+            <?php if(requireLevel($__TYPE__, 3)){ ?>
             <button onclick='excluirSee()' id="seeExcluir">Excluir</button>
+            <?php } ?>
         </div>
     </div>
     <header>
@@ -148,6 +150,21 @@ include "../sys/conexao.php";
                 document.getElementById(`preimgshow${i}`).src = img64;
 
             }
+        }
+        const excluirSee = () => {
+            let id = seeExcluir.dataset.idfoto;
+            if(!id) return;
+
+            fetch(`../sys/api/galeria/foto/remove`,{
+                method: "POST",
+                body: JSON.stringify({
+                    id: Number(id)
+                })
+            })
+            .then(e=>e.json())
+            .then(e=>{
+                newMsg(e);
+            })
         }
     </script>
     <?php } ?>
