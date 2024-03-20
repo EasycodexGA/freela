@@ -19,13 +19,14 @@ checkMissing(
 
 $id = decrypt($id);
 
-$check = mysqli_query($__CONEXAO__, "select nome from imagensgp where id='$id'");
+$check = mysqli_query($__CONEXAO__, "select img from imagensgp where id='$id'");
 
 if(mysqli_num_rows($check) < 1){
     endCode("Essa imagem não existe.", false);
 }
 
-$img = 
+$img = mysqli_fetch_assoc($check)["img"];
+$img = decrypt();
 $caminho = "../../../../imagens/galeria";
 
 if(unlink("$caminho/$img")){
