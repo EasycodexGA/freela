@@ -26,7 +26,7 @@ if (!file_exists($caminho)) {
 
 $parts = explode(',', $image);
 if (count($parts) !== 2) {
-    endCode("Código de imagem inválido", false);
+    endCode("Código de imagem inválido - $parts", false);
     return;
 }
 
