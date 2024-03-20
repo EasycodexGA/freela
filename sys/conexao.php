@@ -135,6 +135,13 @@ function requireLevel($__TYPE__, $type){
     return true;
 }
 
+function uniqueLevel($__TYPE__, $type){
+    if($__TYPE__ != $type){
+        return false;
+    }
+    return true;
+}
+
 function scapeString($__CONEXAO__, $string){
     $string = mysqli_real_escape_string($__CONEXAO__, $string);
     return $string;

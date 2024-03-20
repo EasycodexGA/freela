@@ -3,7 +3,7 @@ include '../../../conexao.php';
 
 justLog($__EMAIL__, $__TYPE__, 2);
 
-if(!requireLevel($__TYPE__, 2)){
+if(!uniqueLevel($__TYPE__, 2)){
     endCode("Você não pode alterar a foto de perfil.", false);
     exit;
 }
