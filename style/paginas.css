@@ -186,7 +186,7 @@ header, .extra{
     border: 2px solid #fc8686;
 }
 
-.erro-add{
+.aguardando-add{
     background: var(--contraste2);
     border: 2px solid var(--contraste2);
 }
