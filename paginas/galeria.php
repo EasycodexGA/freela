@@ -152,6 +152,9 @@ include "../sys/conexao.php";
             }
         }
         const excluirSee = () => {
+            let xx = confirm("Deseja continuar?");
+            if(!xx) return;
+            
             let id = seeExcluir.dataset.idfoto;
             if(!id) return;
 
@@ -168,6 +171,8 @@ include "../sys/conexao.php";
         }
 
         const excluirGp = (e) => {
+            let xx = confirm("Deseja continuar?");
+            if(!xx) return;
             fetch(`../sys/api/galeria/grupo/remove`,{
                 method: "POST",
                 body: JSON.stringify({
