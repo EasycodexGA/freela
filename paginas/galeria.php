@@ -220,7 +220,7 @@ include "../sys/conexao.php";
             .then(e=>{
                 el.innerHTML = "Excluir";
                 clearInterval(intervalTimer);
-                timerLoc.innerText = ""
+                timerLoc.innerText = "";
                 newMsg(e);
             })
         }
@@ -267,9 +267,9 @@ include "../sys/conexao.php";
                 gpOut.innerHTML += `
                     <div class='contGp'>
                         <div style='display: flex; gap: 10px; align-items: center'>
-                            <h1 class='titleGp'>${nomeGp}</h1>-<h4 class='titleGpImg'>${i.imagens.length} Imagens</h4>
+                            <h1 id='gp${i.id}' class='titleGp'>${nomeGp}</h1>-<h4 class='titleGpImg'>${i.imagens.length} Imagens</h4>
                             <?php if(requireLevel($__TYPE__, 2)){ ?>
-                                <button onclick='excluirGp(this, ${i.id}, ${i.imagens.length})' id="excGp">Excluir</button>
+                                <button onclick='excluirGp(this, ${i.id}, ${i.imagens.length})' data-gpown='gp${i.id}' id="excGp">Excluir</button>
                                 <span id='estimativa${i.id}'></span>
                             <?php } ?>
                         </div>

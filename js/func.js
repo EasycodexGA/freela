@@ -140,7 +140,7 @@ function addNewData(local, data){
 function defineColor(e){
     let color = "sucesso-add";
 
-    if(e == "aguardando"){
+    if(e == "aguardando" || e == 'ag'){
         color = "aguardando-add";
     } else if(!e){
         color = "erro-add";
@@ -149,7 +149,7 @@ function defineColor(e){
     return color;
 }
 
-function newMsg(e){
+async function newMsg(e){
     let msg = document.createElement("div");
     let color = defineColor(e.response);
 
@@ -157,10 +157,14 @@ function newMsg(e){
     msg.classList.add(color);
     msg.innerText = e.mensagem;
     document.body.appendChild(msg);
-    if(e.response === true){
+    if(e.response === true || e.response == 'ag'){
         closeAdd();
         cleanInps();
+        if(e.response == 'ag'){
+            await sleep(2000);
+        }
         window.location.reload()
+        
     }
     setTimeout(()=>{
         msg.remove();
