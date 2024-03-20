@@ -167,7 +167,7 @@ include "../sys/conexao.php";
             })
         }
 
-        const excluirGp = () => {
+        const excluirGp = (id) => {
             fetch(`../sys/api/galeria/grupo/remove`,{
                 method: "POST",
                 body: JSON.stringify({
