@@ -32,6 +32,7 @@ include "sys/conexao.php";
                         <button onclick='openPage(`categorias`, this)' id="eventosBt" class='btn'>Categorias</button>
                         <button onclick='openPage(`profissionais`, this)' id="professoresBt" class="btn">Profissionais</button>
                     <?php } if(requireLevel($__TYPE__, 2)){ ?>
+                        <button onclick='openPage(`recados`, this)' id="alunosBt" class='btn'>Recados</button>
                         <button onclick='openPage(`alunos`, this)' id="alunosBt" class='btn'>Alunos</button>
                     <?php } if(requireLevel($__TYPE__, 1)){ ?>
                         <button onclick='openPage(`turmas`, this)' id="turmasBt" class='btn'>Turmas</button>
