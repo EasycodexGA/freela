@@ -178,7 +178,7 @@ justLog($__EMAIL__, $__TYPE__, 2);
             .then(e=> {
                 for(let i of e.mensagem){
                     alunoAdd.innerHTML += `
-                        <option value='${i.id}'>${i.nome} - ${i.categoria}</option>
+                        <option value='${i.id}'>${i.nome} - ${i.email}</option>
                     `;
                 }
             })
