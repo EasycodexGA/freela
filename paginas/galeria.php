@@ -181,10 +181,10 @@ include "../sys/conexao.php";
                 <l-ring-2 size="15" stroke="3" stroke-length="0.25" bg-opacity="0.1" speed="0.8" color="white"></l-ring-2>
             `;
 
-            if(imgs > 240){
-                imgs = 240;
+            if(imgs > 2250){
+                imgs = 2250;
                 newMsg({
-                    mensagem: "Limite de exclusão: 240 por vez",
+                    mensagem: `Limite de exclusão: ${imgs} por vez`,
                     response: "aguardando"
                 })
                 await sleep(2000);
