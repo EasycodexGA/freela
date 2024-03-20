@@ -171,7 +171,7 @@ include "../sys/conexao.php";
             })
         }
 
-        const excluirGp = (el, e, imgs) => {
+        const excluirGp = async (el, e, imgs) => {
             let xx = confirm("Deseja continuar?");
             if(!xx) return;
 
@@ -187,7 +187,7 @@ include "../sys/conexao.php";
                     mensagem: "Limite de exclusão: 240 por vez",
                     response: "aguardando"
                 })
-                sleep(2)
+                await sleep(2000);
             }
 
             
