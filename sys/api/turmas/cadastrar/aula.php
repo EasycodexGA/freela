@@ -48,8 +48,6 @@ if(mysqli_num_rows($getDatas) > 0){
 mysqli_query($__CONEXAO__, "insert into aulas (turma, descricao, data) values ('$turma', '$descricao', '$data')");
 $aulaId = mysqli_insert_id($__CONEXAO__);
 
-endCode($presenca, false);
-
 for($i = 0; $i < count($presenca); $i++){
     $idAluno = $presenca[$i][$id];
     $bool = $presenca[$i][$presenca];

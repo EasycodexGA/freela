@@ -26,7 +26,7 @@ if(mysqli_num_rows($check) < 1){
 }
 
 $img = mysqli_fetch_assoc($check)["img"];
-$img = decrypt();
+$img = decrypt($img);
 $caminho = "../../../../imagens/galeria";
 
 if(unlink("$caminho/$img")){
