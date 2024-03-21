@@ -11,6 +11,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
     <link rel="stylesheet" href="../style/paginas.css">
     <link rel="shortcut icon" href="../img/prefeitura.png" type="image/x-icon">
     <script src="../js/func.js"></script>
+    <script src="../js/class.js"></script>
 </head>
 <body>
     <header>
@@ -177,7 +178,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
             }
         })
 
-        startPage('turmas');
+        const file = new Turmas;
     </script>
 </body>
 </html>

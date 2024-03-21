@@ -197,37 +197,6 @@ function cleanInps(){
     }
 }
 
-const preSets = {
-    'profissionais': {
-        'link': '../sys/api/usuarios/get/professores',
-        'th': ['nome', 'email', 'nascimento', 'titularidade', 'status']
-    },
-    'alunos': {
-        'link': '../sys/api/usuarios/get/alunos',
-        'th': ['nome', 'email', 'nascimento', 'status']
-    },
-    'categorias': {
-        'link': '../sys/api/usuarios/get/categorias',
-        'th': ['nome', 'turmas', 'status']
-    },
-    'eventos': {
-        'link': '../sys/api/turmas/get/eventos',
-        'th': ['nome', 'turma','categoria', 'data', 'status']
-    },
-    'turmas': {
-        'link': '../sys/api/turmas/get/turmas',
-        'th': ['nome', 'categoria', 'profissionais', 'alunos', 'status']
-    },
-    'aulas': {
-        'link': '../sys/api/turmas/get/aulas',
-        'th': ['data']
-    },
-    'recados': {
-        'link': '../sys/api/recados/get.php',
-        'th': ['from', 'to', 'status']
-    }
-}
-
 if (typeof searchBar !== "undefined"){
     searchBar.addEventListener('keyup', ()=>{
         let val = searchBar.value;

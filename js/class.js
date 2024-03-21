@@ -174,3 +174,63 @@ class Alunos extends File{
         this.arrayDetail.push('turmas')
     }
 }
+
+class Categorias extends File{
+    constructor(id){
+        super(id)
+        this.name = 'categorias'
+        this.linkGet = 'usuarios/get/categorias'
+        this.thContent = ['nome', 'turmas', 'status']
+        // this.jumpDetail.push()
+        // this.numsDetail.push()
+        // this.arrayDetail.push()
+    }
+}
+
+class Eventos extends File{
+    constructor(id){
+        super(id)
+        this.name = 'eventos'
+        this.linkGet = 'turmas/get/eventos'
+        this.thContent = ['nome', 'turma','categoria', 'data', 'status']
+        // this.jumpDetail.push()
+        this.numsDetail.push('data')
+        this.arrayDetail.push('turmas')
+    }
+}
+
+class Profissionais extends File{
+    constructor(id){
+        super(id)
+        this.name = 'alunos'
+        this.linkGet = 'usuarios/get/profissionais'
+        this.thContent = ['nome', 'email', 'nascimento', 'titularidade', 'status']
+        this.jumpDetail.push('allTurmas', 'imagem')
+        this.numsDetail.push('nascimento')
+        this.arrayDetail.push('turmas')
+    }
+}
+
+class Recados extends File{
+    constructor(id){
+        super(id)
+        this.name = 'alunos'
+        this.linkGet = 'recados/get.php'
+        this.thContent = ['from', 'to', 'status']
+        // this.jumpDetail.push()
+        // this.numsDetail.push()
+        // this.arrayDetail.push()
+    }
+}
+
+class Turmas extends File{
+    constructor(id){
+        super(id)
+        this.name = 'alunos'
+        this.linkGet = 'turmas/get/turmas'
+        this.thContent = ['nome', 'categoria', 'profissionais', 'alunos', 'status']
+        // this.jumpDetail.push()
+        this.numsDetail.push('horario')
+        this.arrayDetail.push('profissionais', 'alunos')
+    }
+}

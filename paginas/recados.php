@@ -11,6 +11,7 @@ justLog($__EMAIL__, $__TYPE__, 2);
     <link rel="stylesheet" href="../style/paginas.css">
     <link rel="shortcut icon" href="../img/prefeitura.png" type="image/x-icon">
     <script src="../js/func.js"></script>
+    <script src="../js/class.js"></script>
 </head>
 <body>
     <header>
@@ -139,7 +140,7 @@ justLog($__EMAIL__, $__TYPE__, 2);
             }
         })
 
-        startPage('recados');
+        const file = new Recados;
 
         fetch("../sys/api/usuarios/get/alunos")
         .then(e => e.json())
