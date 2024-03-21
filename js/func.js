@@ -44,7 +44,7 @@ function verMais(me, type, titleStr){
     let divMid = document.createElement("div");
     divMid.classList.add("chamadaout");
 
-    for(i of array){
+    for(let i of array){
         i = JSON.parse(i);
         console.log(i.nome);
         let div = document.createElement('div');
@@ -54,7 +54,7 @@ function verMais(me, type, titleStr){
         div.append(p);
 
         if(type == 1){
-            input = document.createElement("input");
+            let input = document.createElement("input");
             input.type = 'checkbox';
             input.classList.add("checkbox-presenca");
             input.id = 'checkId-' + i.id;
@@ -63,7 +63,7 @@ function verMais(me, type, titleStr){
                 input.checked = true;
             }
 
-            label = document.createElement("label");
+            let label = document.createElement("label");
             label.setAttribute('for','checkId-' + i.id);
             label.classList.add('toggle-switch');
             div.append(input);
@@ -73,32 +73,32 @@ function verMais(me, type, titleStr){
         divMid.append(div);
     }
 
-    outBt = document.createElement("div");
+    let outBt = document.createElement("div");
     outBt.classList.add("out-bt-sv");
 
-    closeBt = document.createElement("button");
+    let closeBt = document.createElement("button");
     closeBt.setAttribute("onclick", 'closeVerMais()');
     closeBt.innerHTML = 'Fechar';
     closeBt.classList.add("btn-close");
     outBt.append(closeBt);
 
     if(type == 1){
-        saveBt = document.createElement("button");
+        let saveBt = document.createElement("button");
         saveBt.setAttribute("onclick", `salvarPresenca(${me.dataset.id})`);
         saveBt.innerHTML = 'Salvar';
         saveBt.classList.add("btn-add");
         outBt.append(saveBt);
     }
 
-    if(me.dataset.all != ''){
-        turmasAll = me.dataset.all;
-        saveBt = document.createElement("button");
-        saveBt.setAttribute("onclick", 'verMais(this, 1, "adicionar turmas")');
-        saveBt.innerHTML = 'Adicionar turma';
-        saveBt.classList.add("btn-add");
-        saveBt.dataset.array = turmasAll;
-        saveBt.dataset.id = 'turmasBtDetail';
-        outBt.append(saveBt);
+    if(me.dataset.all != '' && me.dataset.id){
+        let turmasAll = me.dataset.all;
+        let addBt = document.createElement("button");
+        addBt.setAttribute("onclick", 'verMais(this, 1, "adicionar turma")');
+        addBt.innerHTML = 'Adicionar turma';
+        addBt.classList.add("btn-add");
+        addBt.dataset.array = turmasAll;
+        addBt.dataset.id = 'turmasBtDetail';
+        outBt.append(addBt);
     }
 
     divOut.append(title);
