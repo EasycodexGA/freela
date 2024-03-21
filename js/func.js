@@ -1,5 +1,7 @@
+var file;
+
 function startPage(classe){
-    const file = classe;
+    file = classe;
     console.log(file)
 }
 console.log(file)
