@@ -120,7 +120,7 @@ function salvarPresenca(id){
     for(i = 0; i < allBts.length; i++){
         bool = allBts[i].checked ? 1 : 0 ;
         array[i] = JSON.parse(array[i]);
-        array[i].presenca = bool;
+        array[i].checked = bool;
         array[i] = JSON.stringify(array[i]);
     }
     value = array.join('#');
@@ -389,7 +389,7 @@ function getDetails(cat, id){
             if(arrays.includes(key)){
                 for(j in value){
                     if(key == 'alunos'){
-                        value[j].presenca = 0;
+                        value[j].checked = 0;
                     }
                     value[j] = JSON.stringify(value[j]);
                 }
