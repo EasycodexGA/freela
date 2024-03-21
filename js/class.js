@@ -202,7 +202,7 @@ class Eventos extends File{
 class Profissionais extends File{
     constructor(id){
         super(id)
-        this.name = 'alunos'
+        this.name = 'profissionais'
         this.linkGet = 'usuarios/get/profissionais'
         this.thContent = ['nome', 'email', 'nascimento', 'titularidade', 'status']
         this.jumpDetail.push('allTurmas', 'imagem')
@@ -214,7 +214,7 @@ class Profissionais extends File{
 class Recados extends File{
     constructor(id){
         super(id)
-        this.name = 'alunos'
+        this.name = 'recados'
         this.linkGet = 'recados/get.php'
         this.thContent = ['from', 'to', 'status']
         // this.jumpDetail.push()
@@ -226,7 +226,7 @@ class Recados extends File{
 class Turmas extends File{
     constructor(id){
         super(id)
-        this.name = 'alunos'
+        this.name = 'turmas'
         this.linkGet = 'turmas/get/turmas'
         this.thContent = ['nome', 'categoria', 'profissionais', 'alunos', 'status']
         // this.jumpDetail.push()
