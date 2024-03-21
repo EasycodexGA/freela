@@ -178,18 +178,6 @@ justLog($__EMAIL__, $__TYPE__, 1);
         })
 
         startPage('turmas');
-
-        <?php if(requireLevel($__TYPE__, 2)){ ?>
-            fetch("../sys/api/turmas/get/turmas")
-            .then(e => e.json())
-            .then(e=> {
-                for(let i of e.mensagem){
-                    turmaAdd.innerHTML += `
-                        <option value='${i.id}'>${i.nome} - ${i.categoria}</option>
-                    `;
-                }
-            })
-        <?php } ?>
     </script>
 </body>
 </html>
