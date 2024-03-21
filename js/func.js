@@ -220,6 +220,10 @@ const preSets = {
     'aulas': {
         'link': '../sys/api/turmas/get/aulas',
         'th': ['data']
+    },
+    'recados': {
+        'link': '../sys/api/recados/get.php',
+        'th': ['from', 'to', 'status']
     }
 }
 
