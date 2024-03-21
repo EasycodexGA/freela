@@ -21,6 +21,7 @@ class File{
         return fetch(link)
         .then(e=>e.json())
         .then(e=>{
+            console.log("Fetching")
             this.allData = e.mensagem;
             for(let i of e.mensagem){
                 if(i.data){
