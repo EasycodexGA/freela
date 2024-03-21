@@ -113,9 +113,7 @@ function closeVerMais(){
 }
 
 function salvarPresenca(id){
-    console.log(id);
-    console.log(document.getElementById(`${id}`));
-    let string = document.getElementById(`${id}`).dataset.array;
+    let string = id.dataset.array;
     let array = string.split('#');
 
     allBts = document.querySelectorAll('.checkbox-presenca');
@@ -126,7 +124,7 @@ function salvarPresenca(id){
         array[i] = JSON.stringify(array[i]);
     }
     value = array.join('#');
-    document.getElementById(id).dataset.array = value;
+    id.dataset.array = value;
     closeVerMais();
 }
 
