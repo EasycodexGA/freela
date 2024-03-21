@@ -93,8 +93,8 @@ function verMais(me, type, titleStr){
     if(me.dataset.all != ''){
         turmasAll = me.dataset.all;
         saveBt = document.createElement("button");
-        saveBt.setAttribute("onclick", 'verMais(me, 1, "adicionar turmas")');
-        saveBt.innerHTML = 'Salvar';
+        saveBt.setAttribute("onclick", 'verMais(this, 1, "adicionar turmas")');
+        saveBt.innerHTML = 'Adicionar turma';
         saveBt.classList.add("btn-add");
         saveBt.dataset.array = turmasAll;
         saveBt.dataset.id = 'turmasBtDetail';
