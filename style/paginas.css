@@ -534,7 +534,8 @@ header, .extra{
 	width: 40px;
     margin-left: auto;
 	height: 20px;
-	background: grey;
+	background: #c7c7c7;
+    border: 1px solid gray;
 	display: block;
 	border-radius: 100px;
 	position: relative;
@@ -553,7 +554,7 @@ header, .extra{
 }
 
 .checkbox-presenca:checked + .toggle-switch {
-	background: #bada55;
+	background: #73be6d;
 }
 
 .checkbox-presenca:checked + .toggle-switch:after {
