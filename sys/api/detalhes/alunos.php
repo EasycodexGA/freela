@@ -19,31 +19,39 @@ while($_dados_ = mysqli_fetch_array($_query_)){
     $status     = $_dados_["active"];
     $status     = $status == '1' ? "active" : "inactive";
 
-    $query  = mysqli_query($__CONEXAO__, "select turma from alunos where email='$email'");
+    $query  = mysqli_query($__CONEXAO__, "select id, nome from turmas where id in (select turma from alunos where email='$email')");
     
     $email = decrypt($email);
 
     $arrTurmas = array();
 
     while($dados = mysqli_fetch_array($query)){
-        $turmaId    = $dados['turma'];
-        $query2     = mysqli_query($__CONEXAO__, "select nome from turmas where id='$turmaId'");
-        $turma      = mysqli_fetch_assoc($query2)['nome'];
+        $turma      = mysqli_fetch_assoc($query)['nome'];
+        $turmaId    = mysqli_fetch_assoc($query)['id'];
         array_push($arrTurmas, array("nome"=>decrypt($turma), "id"=>$turmaId));
     }
 
-    $query3 = mysqli_query($__CONEXAO__,"select presenca from chamada where aluno='$decAluno' and aula in (select id from aulas where data<'$__TIME__')");
+    $query2 = mysqli_query($__CONEXAO__,"select presenca from chamada where aluno='$decAluno' and aula in (select id from aulas where data<'$__TIME__')");
 
     $presencas  = 0;
     $faltas     = 0;
     
-    while($dados2 = mysqli_fetch_array($query3)){
+    while($dados2 = mysqli_fetch_array($query2)){
         $presenca = $dados2["presenca"];
         if($presenca == 0){
             $faltas = $faltas + 1;
         } else {
             $presencas = $presencas + 1;
         }
+    }
+
+    $allTurmas = array();
+    $query3 = mysqli_query($__CONEXAO__, "select id, nome from turmas where id not in (select turmas from alunos where email='$email')");
+
+    while($dados3 = mysqli_fetch_array($query3)){
+        $turma      = mysqli_fetch_assoc($query3)['nome'];
+        $turmaId    = mysqli_fetch_assoc($query3)['id'];
+        array_push($allTurmas, array("nome"=>decrypt($turma), "id"=>$turmaId));
     }
 
     $arr = array(
@@ -53,6 +61,7 @@ while($_dados_ = mysqli_fetch_array($_query_)){
         "cpf"           => $cpf,
         "nascimento"    => $nascimento,
         "turmas"        => $arrTurmas,
+        "allTurmas"     => $allTurmas,
         "presencas"     => $presencas,
         "faltas"        => $faltas,
         "status"        => $status
