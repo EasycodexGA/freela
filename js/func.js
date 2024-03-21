@@ -370,7 +370,6 @@ function getDetails(cat, id){
         i = e.mensagem[0];
 
         for(let [key, value] of Object.entries(i)){
-            console.log(key)
             if(nums.includes(key)){
                 value = (new Date(value * 1000 + 86400000)).toLocaleDateString("pt-BR");
             }
@@ -399,7 +398,6 @@ function getDetails(cat, id){
                 value = `<button id='${key}BtDetail' class='btn-add' data-all='${dataAll}' data-array='${value}' onclick='verMais(this, 0, "${key}")'>Ver ${key}</button>`;
             }
             if(!jump.includes(key)){
-                console.log(key)
                 document.getElementById(`${key}Get`).innerHTML = value.toString();
             }
         }
