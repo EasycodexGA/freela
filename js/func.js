@@ -373,11 +373,11 @@ function getDetails(cat, id){
         i = e.mensagem[0];
         console.log(i.allTurmas);
         let dataAll = '';
-        let save = '';
+        let dataSave = '';
 
         for(let [key, value] of Object.entries(i)){
             dataAll = '';
-            save = '';
+            dataSave = '';
             if(key == 'turmas'){
                 value2 = i.allTurmas
                 for(j in value2){
@@ -386,7 +386,7 @@ function getDetails(cat, id){
                 }
                 value2 = value2.join("#");
                 dataAll = value2;
-                save = 'all';
+                dataSave = 'all';
                 console.log(dataAll);
             }
             if(nums.includes(key)){
@@ -404,10 +404,10 @@ function getDetails(cat, id){
                     verPresencaBt.setAttribute('onclick', `verMais(this, 1, "Chamada")`);
                     verPresencaBt.dataset.array = value;
                     verPresencaBt.dataset.id = 'verPresencaBt';
-                    save = 'array';
+                    dataSave = 'array';
                 }
                 console.log(dataAll);
-                value = `<button id='${key}BtDetail' class='btn-add' data-all='${dataAll}' data-array='${value}' data-save='${save}' onclick='verMais(this, 0, "${key}")'>Ver ${key}</button>`;
+                value = `<button id='${key}BtDetail' class='btn-add' data-all='${dataAll}' data-array='${value}' data-save='${dataSave}' onclick='verMais(this, 0, "${key}")'>Ver ${key}</button>`;
             }
             if(!jump.includes(key)){
                 document.getElementById(`${key}Get`).innerHTML = value.toString();
