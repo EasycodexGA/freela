@@ -1,9 +1,4 @@
-function startPage(classe){
-    var file = classe;
-    console.log(file)
-}
-console.log(file)
-
+console.log(file);
 function openAdd(e){
     closeAdd();
 
