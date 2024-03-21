@@ -373,13 +373,14 @@ function getDetails(cat, id){
 
         for(let [key, value] of Object.entries(i)){
             dataAll = '';
-            if(key == 'allTurmas'){
-                for(j in value){
-                    value[j].checked = 0;
-                    value[j] = JSON.stringify(value[j]);
+            if(key == 'turmas'){
+                value2 = i.allTurmas
+                for(j in value2){
+                    value2[j].checked = 0;
+                    value2[j] = JSON.stringify(value2[j]);
                 }
-                value = value.join("#");
-                dataAll = value;
+                value2 = value2.join("#");
+                dataAll = value2;
                 console.log(dataAll);
             }
             if(nums.includes(key)){
