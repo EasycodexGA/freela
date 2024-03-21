@@ -11,6 +11,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
     <link rel="stylesheet" href="../style/paginas.css">
     <link rel="shortcut icon" href="../img/prefeitura.png" type="image/x-icon">
     <script src="../js/func.js"></script>
+    <script src="../js/class.js"></script>
 </head>
 <body>
     <header>
@@ -126,14 +127,13 @@ justLog($__EMAIL__, $__TYPE__, 1);
                     <button id='verPresencaBt' class='btn-add'>Ver chamada</button>
                 </div>
             </div>
-            <span id='idTurma'></span>
             <div class='out-bt-sv'>
                 <button class='btn-close' onclick='closeAddAula()'>Fechar</button>
                 <button onclick='addNewData("turmas/cadastrar/aula", {
                     descricao: descricaoAdd.value,
                     presenca: getPresenca(),
                     data: (dataAddAula.valueAsNumber / 1000),
-                    turma: idTurma.value
+                    turma: file.idDetail
                 })' class='btn-add'>Salvar</button>
             </div>
         </div>
@@ -178,7 +178,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
             }
         })
 
-        startPage('turmas');
+        const file = new Turmas;
     </script>
 </body>
 </html>
