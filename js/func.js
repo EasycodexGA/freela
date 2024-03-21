@@ -377,6 +377,7 @@ function getDetails(cat, id){
 
         for(let [key, value] of Object.entries(i)){
             dataAll = '';
+            save = '';
             if(key == 'turmas'){
                 value2 = i.allTurmas
                 for(j in value2){
