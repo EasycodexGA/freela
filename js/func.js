@@ -113,6 +113,7 @@ function closeVerMais(){
 }
 
 function salvarPresenca(id){
+    console.log(id);
     let string = id.dataset.array;
     let array = string.split('#');
 
