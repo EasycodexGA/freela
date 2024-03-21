@@ -24,8 +24,8 @@ while($_dados_ = mysqli_fetch_array($_query_)){
     $arrTurmas = array();
 
     while($dados = mysqli_fetch_array($query)){
-        $turma      = mysqli_fetch_assoc($query)['nome'];
-        $turmaId    = mysqli_fetch_assoc($query)['id'];
+        $turma      = $dados['nome'];
+        $turmaId    = $dados['id'];
         array_push($arrTurmas, array("nome"=>decrypt($turma), "id"=>$turmaId));
     }
 
@@ -47,9 +47,9 @@ while($_dados_ = mysqli_fetch_array($_query_)){
     $query3 = mysqli_query($__CONEXAO__, "select id, nome from turmas where id not in (select turmas from alunos where email='$email')");
 
     while($dados3 = mysqli_fetch_array($query3)){
-        $turma3      = mysqli_fetch_assoc($query3)['nome'];
-        $turmaId3    = mysqli_fetch_assoc($query3)['id'];
-        array_push($allTurmas, array("nome"=>decrypt($turm3), "id"=>$turmaId3));
+        $turma3      = $dados3['nome'];
+        $turmaId3    = $dados3['id'];
+        array_push($allTurmas, array("nome"=>decrypt($turma3), "id"=>$turmaId3));
     }
 
     $email = decrypt($email);
