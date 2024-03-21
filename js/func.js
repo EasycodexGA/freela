@@ -84,7 +84,7 @@ function verMais(me, type, titleStr){
 
     if(type == 1){
         let saveBt = document.createElement("button");
-        saveBt.setAttribute("onclick", `salvarPresenca(${me.dataset.id})`);
+        saveBt.setAttribute("onclick", `salvarPresenca(${me.dataset.id}, '${me.dataset.save}')`);
         saveBt.innerHTML = 'Salvar';
         saveBt.classList.add("btn-add");
         outBt.append(saveBt);
@@ -112,9 +112,9 @@ function closeVerMais(){
     verMaisDiv.classList.remove('add-active');
 }
 
-function salvarPresenca(id){
+function salvarPresenca(id, save){
     console.log(id);
-    let string = id.dataset.array;
+    let string = id.dataset['save'];
     let array = string.split('#');
 
     allBts = document.querySelectorAll('.checkbox-presenca');
@@ -125,7 +125,7 @@ function salvarPresenca(id){
         array[i] = JSON.stringify(array[i]);
     }
     value = array.join('#');
-    id.dataset.array = value;
+    id.dataset['save'] = value;
     closeVerMais();
 }
 
@@ -371,6 +371,7 @@ function getDetails(cat, id){
         i = e.mensagem[0];
         console.log(i.allTurmas);
         let dataAll = '';
+        let save = '';
 
         for(let [key, value] of Object.entries(i)){
             dataAll = '';
@@ -382,6 +383,7 @@ function getDetails(cat, id){
                 }
                 value2 = value2.join("#");
                 dataAll = value2;
+                save = 'all';
                 console.log(dataAll);
             }
             if(nums.includes(key)){
@@ -399,9 +401,10 @@ function getDetails(cat, id){
                     verPresencaBt.setAttribute('onclick', `verMais(this, 1, "Chamada")`);
                     verPresencaBt.dataset.array = value;
                     verPresencaBt.dataset.id = 'verPresencaBt';
+                    save = 'array';
                 }
                 console.log(dataAll);
-                value = `<button id='${key}BtDetail' class='btn-add' data-all='${dataAll}' data-array='${value}' onclick='verMais(this, 0, "${key}")'>Ver ${key}</button>`;
+                value = `<button id='${key}BtDetail' class='btn-add' data-all='${dataAll}' data-array='${value}' data-save='${save}' onclick='verMais(this, 0, "${key}")'>Ver ${key}</button>`;
             }
             if(!jump.includes(key)){
                 document.getElementById(`${key}Get`).innerHTML = value.toString();
