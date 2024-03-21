@@ -370,7 +370,7 @@ function getDetails(cat, id){
             }
             if(!jump.includes(key)){
                 console.log(key)
-                document.getElementById(`${key}Get`).innerHTML = value;
+                document.getElementById(`${key}Get`).innerHTML = value.toString();
             }
         }
         idTurma.value = id;
