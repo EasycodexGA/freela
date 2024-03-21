@@ -11,7 +11,9 @@ justLog($__EMAIL__, $__TYPE__, 2);
     <link rel="stylesheet" href="../style/paginas.css">
     <link rel="shortcut icon" href="../img/prefeitura.png" type="image/x-icon">
     <script src="../js/class.js"></script>
-    <script>const file = new Alunos;</script>
+    <script>const file = new Alunos;
+    console.log(file)
+</script>
     <script src="../js/func.js"></script>
     
 </head>
