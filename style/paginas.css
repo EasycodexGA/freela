@@ -532,6 +532,7 @@ header, .extra{
 	cursor: pointer;
 	text-indent: -9999px;
 	width: 40px;
+    margin-left: auto;
 	height: 20px;
 	background: grey;
 	display: block;
@@ -558,4 +559,18 @@ header, .extra{
 .checkbox-presenca:checked + .toggle-switch:after {
 	left: calc(100% - 2.5px);
 	transform: translateX(-100%);
+}
+
+.chamada-list {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.chamadaout{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }

@@ -42,16 +42,17 @@ function verMais(me, type, titleStr){
     title.innerHTML = titleStr;
 
     let divMid = document.createElement("div");
+    divMid.classList.add("chamadaout");
 
     for(i of array){
         i = JSON.parse(i);
         console.log(i.nome);
         let div = document.createElement('div');
+        div.classList.add("chamada-list")
         let p = document.createElement("p");
         p.innerHTML = i.nome;
         div.append(p);
         if(type == 1){
-            divBt = document.createElement("div");
             input = document.createElement("input");
             input.type = 'checkbox';
             input.classList.add("checkbox-presenca");
@@ -62,9 +63,8 @@ function verMais(me, type, titleStr){
             label = document.createElement("label");
             label.setAttribute('for','checkId-' + i.id);
             label.classList.add('toggle-switch');
-            divBt.append(input);
-            divBt.append(label);
-            div.append(divBt);
+            div.append(input);
+            div.append(label);
         }
         divMid.append(div);
     }
