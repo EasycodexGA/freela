@@ -17,6 +17,7 @@ class File{
     getData(){
         console.log("Get Data: " + this.name)
         let link = '../sys/api/' + this.linkGet
+        console.log(link)
         return fetch(link)
         .then(e=>e.json())
         .then(e=>{
