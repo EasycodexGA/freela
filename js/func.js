@@ -397,6 +397,7 @@ function getDetails(cat, id){
                     verPresencaBt.dataset.array = value;
                     verPresencaBt.dataset.id = 'verPresencaBt';
                 }
+                console.log(dataAll);
                 value = `<button id='${key}BtDetail' class='btn-add' data-all='${dataAll}' data-array='${value}' onclick='verMais(this, 0, "${key}")'>Ver ${key}</button>`;
             }
             if(!jump.includes(key)){
