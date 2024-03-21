@@ -21,8 +21,6 @@ while($_dados_ = mysqli_fetch_array($_query_)){
 
     $query  = mysqli_query($__CONEXAO__, "select id, nome from turmas where id in (select turma from alunos where email='$email')");
     
-    $email = decrypt($email);
-
     $arrTurmas = array();
 
     while($dados = mysqli_fetch_array($query)){
@@ -53,6 +51,8 @@ while($_dados_ = mysqli_fetch_array($_query_)){
         $turmaId3    = mysqli_fetch_assoc($query3)['id'];
         array_push($allTurmas, array("nome"=>decrypt($turm3), "id"=>$turmaId3));
     }
+
+    $email = decrypt($email);
 
     $arr = array(
         "id"            => $decAluno,
