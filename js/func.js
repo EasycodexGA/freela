@@ -371,6 +371,15 @@ function getDetails(cat, id){
         console.log(i.allTurmas);
 
         for(let [key, value] of Object.entries(i)){
+            if(key == 'allTurmas'){
+                for(j in value){
+                    value[j].checked = 0;
+                    value[j] = JSON.stringify(value[j]);
+                }
+                value = value.join("#");
+                dataAll = value;
+                console.log(dataAll);
+            }
             if(nums.includes(key)){
                 value = (new Date(value * 1000 + 86400000)).toLocaleDateString("pt-BR");
             }
@@ -388,16 +397,6 @@ function getDetails(cat, id){
                     verPresencaBt.dataset.id = 'verPresencaBt';
                 }
                 dataAll = '';
-                if(key == 'turmas'){
-                    console.log(i.allTurmas);
-                    for(k in i.allTurmas){
-                        i.allTurmas[k].checked = 0;
-                        i.allTurmas[k] = JSON.stringify(i.allTurmas[k]);
-                    }
-                    i.allTurmas = i.allTurmas.join("#");
-                    dataAll = i.allTurmas;
-                    console.log(dataAll);
-                }
                 value = `<button id='${key}BtDetail' class='btn-add' data-all='${dataAll}' data-array='${value}' onclick='verMais(this, 0, "${key}")'>Ver ${key}</button>`;
             }
             if(!jump.includes(key)){
