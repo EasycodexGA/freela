@@ -126,14 +126,13 @@ justLog($__EMAIL__, $__TYPE__, 1);
                     <button id='verPresencaBt' class='btn-add'>Ver chamada</button>
                 </div>
             </div>
-            <span id='idTurma'></span>
             <div class='out-bt-sv'>
                 <button class='btn-close' onclick='closeAddAula()'>Fechar</button>
                 <button onclick='addNewData("turmas/cadastrar/aula", {
                     descricao: descricaoAdd.value,
                     presenca: getPresenca(),
                     data: (dataAddAula.valueAsNumber / 1000),
-                    turma: idTurma.value
+                    turma: file.idDetail
                 })' class='btn-add'>Salvar</button>
             </div>
         </div>

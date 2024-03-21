@@ -10,9 +10,10 @@ function openAdd(e){
     addNew.classList.add("add-active");
 }
 
-function openDetail(cat, id){
+function openDetail(id){
     closeAdd();
-    getDetails(cat, id);
+    file.idDetail = id
+    file.getDetails()
 }
 
 function closeAdd(){
@@ -22,15 +23,16 @@ function closeAdd(){
 
 function openAddAula(){
     addNewAula.classList.add("add-active");
+    file.idDetail = ''
 }
 
 function closeAddAula(){
     addNewAula.classList.remove('add-active');
 }
 
-function verMais(me, type, titleStr){
+function verMais(type, titleStr){
     verMaisDiv.innerHTML = '';
-    let string = me.dataset.array;
+    let string = file.arrayStrAdd;
     console.log(string);
     let array = string.split('#');
 
@@ -84,20 +86,20 @@ function verMais(me, type, titleStr){
 
     if(type == 1){
         let saveBt = document.createElement("button");
-        saveBt.setAttribute("onclick", `salvarPresenca(${me.dataset.id})`);
+        saveBt.setAttribute("onclick", 'salvarCheckbox()');
         saveBt.innerHTML = 'Salvar';
         saveBt.classList.add("btn-add");
         outBt.append(saveBt);
     }
 
-    if(me.dataset.all){
-        let turmasAll = me.dataset.all;
+    if(file.arrayStrAdd2){
         let addBt = document.createElement("button");
         addBt.setAttribute("onclick", 'verMais(this, 1, "adicionar turma")');
         addBt.innerHTML = 'Adicionar turma';
         addBt.classList.add("btn-add");
-        addBt.dataset.array = turmasAll;
-        addBt.dataset.id = 'turmasBtDetail';
+        file.arrayStrAdd1 = file.arrayStrAdd;
+        file.arrayStrAdd = file.arrayStrAdd2;
+        file.arrayStrAdd2 = false;
         outBt.append(addBt);
     }
 
@@ -112,9 +114,8 @@ function closeVerMais(){
     verMaisDiv.classList.remove('add-active');
 }
 
-function salvarPresenca(id){
-    let save = id.dataset.save;
-    let string = id.getAttribute(`data-${save}`);
+function salvarCheckbox(){
+    let string = file[file.saveToAdd];
     let array = string.split('#');
 
     let allBts = document.querySelectorAll('.checkbox-presenca');
@@ -130,7 +131,7 @@ function salvarPresenca(id){
 }
 
 function getPresenca(){
-    let string = verPresencaBt.dataset.array;
+    let string = file.arrayStrAdd;
     let array = string.split('#');
     for(i = 0; i < array.length; i++){
         array[i] = JSON.parse(array[i]);
@@ -196,23 +197,6 @@ function cleanInps(){
     }
 }
 
-function getActInact(e){
-    const statusDiv = document.querySelectorAll(".td-status");
-    let activevar = 0;
-    let inactivevar = 0;
-
-    for(i of statusDiv){
-        let statusI = i.getAttribute("status");
-        if(statusI){
-            activevar++;
-        } else {
-            inactivevar++;
-        }
-    }
-    inactive.innerText = inactivevar;
-    active.innerText = activevar;
-}
-
 const preSets = {
     'profissionais': {
         'link': '../sys/api/usuarios/get/professores',
@@ -244,81 +228,11 @@ const preSets = {
     }
 }
 
-let allbgl;
-
-function getData(link){
-    return fetch(`${link}`)
-    .then(e=>e.json())
-    .then(e=>{
-        allbgl = e.mensagem;
-        for(let i of e.mensagem){
-            if(i.data){
-                let date = new Date(i.data * 1000 + 86400000);
-                i.data = date.toLocaleDateString("pt-BR");
-            }
-            
-            let tr = document.createElement('tr');
-            tr.classList.add('empty-line');
-            tr.classList.add('table-line');
-            tr.id = `key${i.id}`;
-
-            for(const [key, value] of Object.entries(i)){
-                if(key != 'id' && key != '_name'){
-                    let td = document.createElement('td');
-                    td.classList.add(`td-${key}`);
-
-                    if(key == 'status'){
-                        let preStatus = value == 'active' ? true : false;
-                        td.setAttribute("status", preStatus);
-                        let td2 = document.createElement('td');
-                        td2.innerHTML = `<button class="ver-detalhes" onclick="openDetail('${i._name}', ${i.id})">Ver detalhes</button>`;
-                        tr.appendChild(td2);
-                    }
-
-                    td.innerHTML = value;
-                    tr.appendChild(td);
-                }
-            }
-            tabList.appendChild(tr)
-        }
-        tabList.innerHTML += "<tr class='empty-line table-line2' id='notData'><td></td><td style='text-align: center'>Nenhum dado encontrado</td><td></td></tr>";
-
-        if(tabList.querySelectorAll('.table-line').length > 0){
-            notData.classList.remove('table-line2');
-        }
-    })
-}
-
-function createTh(arr){
-    let tr = document.createElement('tr');
-
-    let hlo = document.querySelector('.header-list-out');
-    let select = document.createElement('select');
-    select.id = 'selectFilter';
-
-    for(let i of arr){
-        if(i == 'status'){
-            let th2 = document.createElement('th');
-            tr.appendChild(th2);
-        }
-        let th = document.createElement('th');
-        th.innerHTML = i;
-        tr.appendChild(th);
-
-        let option = document.createElement('option');
-        option.value = i;
-        option.innerHTML = i;
-        select.appendChild(option);
-    }
-    headList.appendChild(tr);
-    hlo.appendChild(select);
-}
-
 if (typeof searchBar !== "undefined"){
     searchBar.addEventListener('keyup', ()=>{
         let val = searchBar.value;
         let filter = selectFilter.value;
-        for(let i of allbgl){
+        for(let i of page.allData){
             let name = i[filter];
             
             if(Number(name)){
@@ -339,89 +253,6 @@ if (typeof searchBar !== "undefined"){
             }
         }
     })
-}
-
-const callFunc = (func) => func();
-
-async function startPage(e){
-    // callFunc(func);
-    let preset = preSets[`${e}`];
-    createTh(preset.th);
-    await getData(preset.link);
-    getActInact();
-}
-
-function getDetails(cat, id){
-    let jump = ['id', 'status', 'imagem', 'allTurmas'];
-    let nums = ['data', 'nascimento', 'created'];
-    let arrays = ['alunos', 'profissionais', 'turmas'];
-    
-    return fetch(`../sys/api/detalhes/${cat}?id=${id}`)
-    .then(e=>e.json())
-    .then(e=>{
-        if(!e.response){
-            newMsg(e);
-            return;
-        }
-        details.classList.add("add-active");
-        btnRemove.onclick = () => {
-            removeSec(cat, id);
-        }
-
-        i = e.mensagem[0];
-        console.log(i.allTurmas);
-        let dataAll = '';
-        let dataSave = '';
-
-        for(let [key, value] of Object.entries(i)){
-            dataAll = '';
-            dataSave = '';
-            if(key == 'turmas'){
-                value2 = i.allTurmas
-                for(j in value2){
-                    value2[j].checked = 0;
-                    value2[j] = JSON.stringify(value2[j]);
-                }
-                value2 = value2.join("#");
-                dataAll = value2;
-                dataSave = 'all';
-                console.log(dataAll);
-            }
-            if(nums.includes(key)){
-                value = (new Date(value * 1000 + 86400000)).toLocaleDateString("pt-BR");
-            }
-            if(arrays.includes(key)){
-                for(j in value){
-                    if(key == 'alunos'){
-                        value[j].checked = 0;
-                    }
-                    value[j] = JSON.stringify(value[j]);
-                }
-                value = value.join("#");
-                if(key == 'alunos'){
-                    verPresencaBt.setAttribute('onclick', `verMais(this, 1, "Chamada")`);
-                    verPresencaBt.dataset.array = value;
-                    verPresencaBt.dataset.id = 'verPresencaBt';
-                    dataSave = 'array';
-                }
-                console.log(dataAll);
-                value = `<button id='${key}BtDetail' class='btn-add' data-all='${dataAll}' data-array='${value}' data-save='${dataSave}' onclick='verMais(this, 0, "${key}")'>Ver ${key}</button>`;
-            }
-            if(!jump.includes(key)){
-                document.getElementById(`${key}Get`).innerHTML = value.toString();
-            }
-        }
-        idTurma.value = id;
-    })
-}
-
-function removeSec(local, id){
-    fetch(`../sys/api/extra/remove?local=${local}&id=${id}`)
-    .then(e=>e.json())
-    .then(e=>{
-        newMsg(e);
-    })
-
 }
 
 const convert64 = async () => {
@@ -536,7 +367,6 @@ const getBase64 = (e) => {
         reader.readAsDataURL(e);
     });
 }
-
 
 function sleep(milliseconds) {
     return new Promise(resolve => setTimeout(resolve, milliseconds))
