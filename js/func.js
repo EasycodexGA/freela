@@ -90,7 +90,9 @@ function verMais(me, type, titleStr){
         outBt.append(saveBt);
     }
 
-    if(me.dataset.id.lenght > 1){
+    console.log(me.dataset.id)
+
+    if(me.dataset.id.length > 1){
         let turmasAll = me.dataset.all;
         let addBt = document.createElement("button");
         addBt.setAttribute("onclick", 'verMais(this, 1, "adicionar turma")');
