@@ -32,7 +32,7 @@ while($_dados_ = mysqli_fetch_array($_query_)){
         array_push($arrTurmas, array("nome"=>decrypt($turma), "id"=>$turmaId));
     }
 
-    $query3 = mysqli_query($__CONEXAO__, );"select presenca from chamada where aluno='$decAluno' and aula in (select * from aulas where data<'$__TIME__')"
+    $query3 = mysqli_query($__CONEXAO__,"select presenca from chamada where aluno='$decAluno' and aula in (select * from aulas where data<'$__TIME__')");
 
     $presencas  = 0;
     $faltas     = 0;
