@@ -563,10 +563,11 @@ header, .extra{
 
 .chamada-list {
     display: flex;
-    width: 100%;
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
 }
 
 .chamadaout{
