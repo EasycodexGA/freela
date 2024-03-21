@@ -13,23 +13,27 @@ $espera     = $json->espera;
 if(gettype($espera) !== boolean){
     endCode('Erro.', false);
 }
+$espera = $espera ? 0 : 1;
 
 $cpf        = scapeString($__CONEXAO__, $json->cpf);
 $nome       = scapeString($__CONEXAO__, $json->nome);
 $email      = scapeString($__CONEXAO__, $json->email);
 $nascimento = scapeString($__CONEXAO__, $json->nascimento);
+$turma      = scapeString($__CONEXAO__, $json->turma);
 
 $cpf        = setCpf($cpf);
 $nome       = setString($nome);
 $email      = setEmail($email);
 $nascimento = setNum($nascimento);
+$turma      = setNum($turma);
 
 checkMissing(
     array(
         $cpf, 
         $nome, 
         $email,
-        $nascimento
+        $nascimento,
+        $turma
     )
 );
 
@@ -39,18 +43,6 @@ if(!$email){
 
 stopUserExist($__CONEXAO__, $email);
 
-if($espera){
-    $checkEmailEspera = mysqli_query($__CONEXAO__, "select id from listaespera where email='$email'");
-    if(mysqli_num_rows($checkEmailEspera) > 0){
-        endCode('Já existe alguém na lista de espera com esse email.', false);
-    }
-    mysqli_query($__CONEXAO__, "insert into listaespera (nome, email, cpf, nascimento) values ('$nome', '$email', '$cpf', '$nascimento')") or die("erro insert");
-    endCode("Sucesso! Usuário adicionado na lista de espera.", true);
-}
-
-$turma  = scapeString($__CONEXAO__, $json->turma);
-$turma  = setNum($turma);
-checkMissing(array($turma));
 $tid = decrypt($turma);
 
 $queryRoom = mysqli_query($__CONEXAO__, "select id from turmas where id='$tid'");
@@ -62,7 +54,7 @@ if(mysqli_num_rows($queryRoom) < 1){
 $senha = bin2hex(random_bytes(3));
 $senhaH = password_hash($senha, PASSWORD_DEFAULT);
 
-mysqli_query($__CONEXAO__, "insert into users (nome, email, senha, cpf, nascimento, lastModify) values ('$nome', '$email', '$senhaH', '$cpf', '$nascimento', '$__TIME__')")  or die("erro insert");
+mysqli_query($__CONEXAO__, "insert into users (nome, email, senha, cpf, nascimento, lastModify, active) values ('$nome', '$email', '$senhaH', '$cpf', '$nascimento', '$__TIME__', '$espera')")  or die("erro insert");
 mysqli_query($__CONEXAO__, "insert into alunos (email, turma) values ('$email', '$tid')")  or die("erro insert");
 
 $subject = "Sua senha provisória é $senha";

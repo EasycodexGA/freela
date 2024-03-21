@@ -50,7 +50,7 @@ $aulaId = mysqli_insert_id($__CONEXAO__);
 
 for($i = 0; $i < count($presenca); $i++){
     $idAluno = $presenca[$i]->id;
-    $bool = $presenca[$i]->presenca;
+    $bool = $presenca[$i]->checked;
     mysqli_query($__CONEXAO__, "insert into chamada (aula, aluno, presenca) values ('$aulaId','$idAluno','$bool')");
 }
 

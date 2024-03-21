@@ -12,6 +12,7 @@ $espera         = $json->espera;
 if(gettype($espera) !== boolean){
     endCode('Erro.', false);
 }
+$espera = $espera ? 0 : 1;
 
 $cpf            = scapeString($__CONEXAO__, $json->cpf);
 $nome           = scapeString($__CONEXAO__, $json->nome);
@@ -41,19 +42,10 @@ if(!$email){
 
 stopUserExist($__CONEXAO__, $email);
 
-if($espera){
-    $checkEmailEspera = mysqli_query($__CONEXAO__, "select id from listaespera where email='$email'");
-    if(mysqli_num_rows($checkEmailEspera) > 0){
-        endCode('Já existe alguém na lista de espera com esse email.', false);
-    }
-    mysqli_query($__CONEXAO__, "insert into listaespera (nome, email, cpf, nascimento, titularidade, typeC) values ('$nome', '$email', '$cpf', '$nascimento', '$titularidade', '2')") or die("erro insert");
-    endCode("Sucesso! Usuário adicionado na lista de espera.", true);
-}
-
 $senha = bin2hex(random_bytes(3));
 $senhaH = password_hash($senha, PASSWORD_DEFAULT);
 
-mysqli_query($__CONEXAO__, "insert into users (nome, email, senha, cpf, nascimento, typeC, lastModify, titularidade) values ('$nome', '$email', '$senhaH', '$cpf', '$nascimento', '2', '$__TIME__', '$titularidade')")  or die("erro insert");
+mysqli_query($__CONEXAO__, "insert into users (nome, email, senha, cpf, nascimento, typeC, lastModify, titularidade, active) values ('$nome', '$email', '$senhaH', '$cpf', '$nascimento', '2', '$__TIME__', '$titularidade', '$espera')")  or die("erro insert");
 mysqli_query($__CONEXAO__, "insert into professores (email) values ('$email')")  or die("erro insert");
 
 $subject = "Sua senha provisória é $senha";

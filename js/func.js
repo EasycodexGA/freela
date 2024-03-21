@@ -30,7 +30,7 @@ function closeAddAula(){
 
 function verMais(me, type, titleStr){
     verMaisDiv.innerHTML = '';
-    let string = me.getAttribute('data-array');
+    let string = me.dataset.array;
     console.log(string);
     let array = string.split('#');
 
@@ -52,20 +52,24 @@ function verMais(me, type, titleStr){
         let p = document.createElement("p");
         p.innerHTML = i.nome;
         div.append(p);
+
         if(type == 1){
             input = document.createElement("input");
             input.type = 'checkbox';
             input.classList.add("checkbox-presenca");
             input.id = 'checkId-' + i.id;
-            if(i.presenca == 1){
+
+            if(i.checked == 1){
                 input.checked = true;
             }
+
             label = document.createElement("label");
             label.setAttribute('for','checkId-' + i.id);
             label.classList.add('toggle-switch');
             div.append(input);
             div.append(label);
         }
+
         divMid.append(div);
     }
 
@@ -77,11 +81,23 @@ function verMais(me, type, titleStr){
     closeBt.innerHTML = 'Fechar';
     closeBt.classList.add("btn-close");
     outBt.append(closeBt);
+
     if(type == 1){
         saveBt = document.createElement("button");
-        saveBt.setAttribute("onclick", 'salvarPresenca()');
+        saveBt.setAttribute("onclick", `salvarPresenca(${me.dataset.id})`);
         saveBt.innerHTML = 'Salvar';
         saveBt.classList.add("btn-add");
+        outBt.append(saveBt);
+    }
+
+    if(me.dataset.all != ''){
+        turmasAll = me.dataset.all;
+        saveBt = document.createElement("button");
+        saveBt.setAttribute("onclick", 'verMais(me, 1, "adicionar turmas")');
+        saveBt.innerHTML = 'Salvar';
+        saveBt.classList.add("btn-add");
+        saveBt.dataset.array = turmasAll;
+        saveBt.dataset.id = 'turmasBtDetail';
         outBt.append(saveBt);
     }
 
@@ -96,8 +112,8 @@ function closeVerMais(){
     verMaisDiv.classList.remove('add-active');
 }
 
-function salvarPresenca(){
-    string = verPresencaBt.getAttribute('data-array');
+function salvarPresenca(id){
+    let string = document.getElementById(id).dataset.array;
     let array = string.split('#');
 
     allBts = document.querySelectorAll('.checkbox-presenca');
@@ -108,12 +124,12 @@ function salvarPresenca(){
         array[i] = JSON.stringify(array[i]);
     }
     value = array.join('#');
-    verPresencaBt.setAttribute("data-array", `${value}`);
+    document.getElementById(id).dataset.array = value;
     closeVerMais();
 }
 
 function getPresenca(){
-    string = verPresencaBt.getAttribute('data-array');
+    let string = verPresencaBt.dataset.array;
     let array = string.split('#');
     for(i = 0; i < array.length; i++){
         array[i] = JSON.parse(array[i]);
@@ -335,7 +351,7 @@ async function startPage(e){
 }
 
 function getDetails(cat, id){
-    let jump = ['id', 'status', 'imagem'];
+    let jump = ['id', 'status', 'imagem', 'allTurmas'];
     let nums = ['data', 'nascimento', 'created'];
     let arrays = ['alunos', 'profissionais', 'turmas'];
     
@@ -359,18 +375,28 @@ function getDetails(cat, id){
                 value = (new Date(value * 1000 + 86400000)).toLocaleDateString("pt-BR");
             }
             if(arrays.includes(key)){
-                for(i in value){
+                for(j in value){
                     if(key == 'alunos'){
-                        value[i].presenca = 0;
+                        value[j].presenca = 0;
                     }
-                    value[i] = JSON.stringify(value[i]);
+                    value[j] = JSON.stringify(value[j]);
                 }
                 value = value.join("#");
                 if(key == 'alunos'){
                     verPresencaBt.setAttribute('onclick', `verMais(this, 1, "Chamada")`);
-                    verPresencaBt.setAttribute("data-array", `${value}`);
+                    verPresencaBt.dataset.array = value;
+                    verPresencaBt.dataset.id = 'verPresencaBt';
                 }
-                value = `<button class='btn-add' data-array='${value}' onclick='verMais(this, 0, "${key}")'>Ver ${key}</button>`;
+                dataAll = '';
+                if(key == 'turmas'){
+                    for(k in i.allTurmas){
+                        i.allTurmas[k].checked = 0;
+                        i.allTurmas[k] = JSON.stringify(i.allTurmas[k]);
+                    }
+                    i.allTurmas = i.allTurmas.join("#");
+                    dataAll = i.allTurmas;
+                }
+                value = `<button id='${key}BtDetail' class='btn-add' data-all='${dataAll}' data-array='${value}' onclick='verMais(this, 0, "${key}")'>Ver ${key}</button>`;
             }
             if(!jump.includes(key)){
                 console.log(key)

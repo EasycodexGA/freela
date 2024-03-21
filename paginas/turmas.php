@@ -34,6 +34,10 @@ justLog($__EMAIL__, $__TYPE__, 1);
                     <p id='categoriaGet'>-- -- --</p>
                 </div>
                 <div class='inp-add-out'>
+                    <h3>Horário</h3>
+                    <p id='horarioGet'>-- -- --</p>
+                </div>
+                <div class='inp-add-out'>
                     <h3>Profissionais - <span id='profissionaisQtGet'>0</span></h3>
                     <p id='profissionaisGet'>-- -- --</p>
                 </div>
@@ -41,10 +45,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
                     <h3>Alunos - <span id='alunosQtGet'>0</span></h3>
                     <p id='alunosGet'>-- -- --</p>
                 </div>
-                <div class='inp-add-out'>
-                    <h3>Horário</h3>
-                    <p id='horarioGet'>-- -- --</p>
-                </div>
+            
             </div>
             <div class='out-bt-sv'>
                 <button class='btn-close' onclick='closeAdd()'>Fechar</button>

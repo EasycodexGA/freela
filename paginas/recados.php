@@ -139,8 +139,7 @@ justLog($__EMAIL__, $__TYPE__, 2);
             }
         })
 
-        // startPage('alunos');
-        // fazer para recados
+        startPage('recados');
 
         fetch("../sys/api/usuarios/get/alunos")
         .then(e => e.json())
