@@ -114,7 +114,7 @@ class File{
                 this.removeSec();
             }
     
-            i = e.mensagem[0];
+            let i = e.mensagem[0];
             console.log(i.allTurmas);
     
             for(let [key, value] of Object.entries(i)){
