@@ -1,3 +1,8 @@
+let file;
+function startPage(classe){
+    file = classe;
+    console.log(file)
+}
 console.log(file)
 
 function openAdd(e){

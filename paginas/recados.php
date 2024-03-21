@@ -11,8 +11,8 @@ justLog($__EMAIL__, $__TYPE__, 2);
     <link rel="stylesheet" href="../style/paginas.css">
     <link rel="shortcut icon" href="../img/prefeitura.png" type="image/x-icon">
     <script src="../js/class.js"></script>
-    <script>const file = new Recados;</script>
     <script src="../js/func.js"></script>
+    <script>startPage(new Recados)</script>
 </head>
 <body>
     <header>
