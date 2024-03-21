@@ -12,8 +12,6 @@ class File{
         this.jumpDetail = ['id', 'status']
         this.arrayDetail = []
         this.numsDetail = ['created']
-        this.createTh()
-        this.getData()
     }
 
     getData(){
@@ -174,6 +172,8 @@ class Alunos extends File{
         this.jumpDetail.push('allTurmas')
         this.numsDetail.push('nascimento')
         this.arrayDetail.push('turmas')
+        this.createTh()
+        this.getData()
     }
 }
 
@@ -186,6 +186,8 @@ class Categorias extends File{
         // this.jumpDetail.push()
         // this.numsDetail.push()
         // this.arrayDetail.push()
+        this.createTh()
+        this.getData()
     }
 }
 
@@ -198,6 +200,8 @@ class Eventos extends File{
         // this.jumpDetail.push()
         this.numsDetail.push('data')
         this.arrayDetail.push('turmas')
+        this.createTh()
+        this.getData()
     }
 }
 
@@ -210,6 +214,8 @@ class Profissionais extends File{
         this.jumpDetail.push('allTurmas', 'imagem')
         this.numsDetail.push('nascimento')
         this.arrayDetail.push('turmas')
+        this.createTh()
+        this.getData()
     }
 }
 
@@ -222,6 +228,8 @@ class Recados extends File{
         // this.jumpDetail.push()
         // this.numsDetail.push()
         // this.arrayDetail.push()
+        this.createTh()
+        this.getData()
     }
 }
 
@@ -234,5 +242,7 @@ class Turmas extends File{
         // this.jumpDetail.push()
         this.numsDetail.push('horario')
         this.arrayDetail.push('profissionais', 'alunos')
+        this.createTh()
+        this.getData()
     }
 }
