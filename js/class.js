@@ -17,6 +17,7 @@ class File{
     }
 
     getData(){
+        console.log("Get Data")
         let link = '../sys/api' + this.linkGet
         return fetch(link)
         .then(e=>e.json())
@@ -75,6 +76,7 @@ class File{
     }
 
     createTh(){
+        console.log('Creating TH');
         let tr = document.createElement('tr');
     
         let hlo = document.querySelector('.header-list-out');
