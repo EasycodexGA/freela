@@ -84,7 +84,7 @@ function verMais(me, type, titleStr){
 
     if(type == 1){
         let saveBt = document.createElement("button");
-        saveBt.setAttribute("onclick", `salvarPresenca(${me.dataset.id}, '${me.dataset.save}')`);
+        saveBt.setAttribute("onclick", `salvarPresenca(${me.dataset.id})`);
         saveBt.innerHTML = 'Salvar';
         saveBt.classList.add("btn-add");
         outBt.append(saveBt);
@@ -112,10 +112,8 @@ function closeVerMais(){
     verMaisDiv.classList.remove('add-active');
 }
 
-function salvarPresenca(id, save){
-    console.log(id);
-    console.log(save);
-    console.log(id.getAttribute(`data-${save}`));
+function salvarPresenca(id){
+    save = id.dataset.save;
     let string = id.dataset['save'];
     let array = string.split('#');
 
