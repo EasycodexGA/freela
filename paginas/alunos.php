@@ -50,6 +50,10 @@ justLog($__EMAIL__, $__TYPE__, 2);
                     <h3>Faltas</h3>
                     <p id='faltasGet'>-- -- --</p>
                 </div>
+                <div class='inp-add-out'>
+                    <h3>Turmas</h3>
+                    <p id='turmasGet'>-- -- --</p>
+                </div>
             </div>
             <div class='out-bt-sv'>
                 <button class='btn-close' onclick='closeAdd()'>Fechar</button>
