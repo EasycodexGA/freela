@@ -113,7 +113,7 @@ function closeVerMais(){
 }
 
 function salvarPresenca(id){
-    let string = document.getElementById(id).dataset.array;
+    let string = document.getElementById(`${id}`).dataset.array;
     let array = string.split('#');
 
     allBts = document.querySelectorAll('.checkbox-presenca');
