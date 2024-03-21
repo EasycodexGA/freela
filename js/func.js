@@ -368,6 +368,7 @@ function getDetails(cat, id){
         }
 
         i = e.mensagem[0];
+        console.log(i.allTurmas);
 
         for(let [key, value] of Object.entries(i)){
             if(nums.includes(key)){
@@ -388,12 +389,14 @@ function getDetails(cat, id){
                 }
                 dataAll = '';
                 if(key == 'turmas'){
+                    console.log(i.allTurmas);
                     for(k in i.allTurmas){
                         i.allTurmas[k].checked = 0;
                         i.allTurmas[k] = JSON.stringify(i.allTurmas[k]);
                     }
                     i.allTurmas = i.allTurmas.join("#");
                     dataAll = i.allTurmas;
+                    console.log(dataAll);
                 }
                 value = `<button id='${key}BtDetail' class='btn-add' data-all='${dataAll}' data-array='${value}' onclick='verMais(this, 0, "${key}")'>Ver ${key}</button>`;
             }
