@@ -132,7 +132,7 @@ class File{
                     value = (new Date(value * 1000 + 86400000)).toLocaleDateString("pt-BR");
                 }
                 if(this.arrayDetail.includes(key)){
-                    for(j in value){
+                    for(let j in value){
                         if(key == 'alunos'){
                             value[j].checked = 0;
                         }
