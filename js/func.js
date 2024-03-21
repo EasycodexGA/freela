@@ -113,19 +113,19 @@ function closeVerMais(){
 }
 
 function salvarPresenca(id){
-    save = id.dataset.save;
-    let string = id.dataset['save'];
+    let save = id.dataset.save;
+    let string = id.getAttribute(`data-${save}`);
     let array = string.split('#');
 
-    allBts = document.querySelectorAll('.checkbox-presenca');
+    let allBts = document.querySelectorAll('.checkbox-presenca');
     for(i = 0; i < allBts.length; i++){
         bool = allBts[i].checked ? 1 : 0 ;
         array[i] = JSON.parse(array[i]);
         array[i].checked = bool;
         array[i] = JSON.stringify(array[i]);
     }
-    value = array.join('#');
-    id.dataset['save'] = value;
+    let value = array.join('#');
+    id.setAttribute(`data-${save}`, value);
     closeVerMais();
 }
 
