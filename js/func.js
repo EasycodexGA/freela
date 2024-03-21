@@ -1,3 +1,5 @@
+console.log(file)
+
 function openAdd(e){
     closeAdd();
 

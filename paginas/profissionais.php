@@ -10,8 +10,9 @@ justLog($__EMAIL__, $__TYPE__, 3);
     <link rel="stylesheet" href="../style/root.css">
     <link rel="stylesheet" href="../style/paginas.css">
     <link rel="shortcut icon" href="../img/prefeitura.png" type="image/x-icon">
-    <script src="../js/func.js"></script>
     <script src="../js/class.js"></script>
+    <script>const file = new Profissionais;</script>
+    <script src="../js/func.js"></script>
 </head>
 <body>
     <header>
@@ -124,10 +125,6 @@ justLog($__EMAIL__, $__TYPE__, 3);
         </table>
 
     </div>
-    <script>
-        const file = new Profissionais;
-    </script>
-    
 </body>
 </html>
 
