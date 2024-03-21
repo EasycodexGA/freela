@@ -369,6 +369,7 @@ function getDetails(cat, id){
 
         i = e.mensagem[0];
         console.log(i.allTurmas);
+        let dataAll = '';
 
         for(let [key, value] of Object.entries(i)){
             dataAll = '';
