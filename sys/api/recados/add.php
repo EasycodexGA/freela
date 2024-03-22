@@ -15,18 +15,19 @@ $type   = scapeString($__CONEXAO__, $json->type);
 $to     = scapeString($__CONEXAO__, $json->to);
 
 
-
-$title  = setString($title);
-$desc   = setNoXss($desc);
-$time   = setNum($time);
-$type   = setNum($type);
-
 if($type == 3){
     $to = "geral";
     $to = setString($to);
 } else {
     $to = setNum($to);
 }
+
+$title  = setString($title);
+$desc   = setNoXss($desc);
+$time   = setNum($time);
+$type   = setNum($type);
+
+
 
 
 checkMissing(
