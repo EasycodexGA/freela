@@ -86,7 +86,7 @@ include "sys/conexao.php";
             }
         }
 
-        fetch("sys/api/recados/get")
+        fetch("sys/api/recados/read")
         .then(e=>e.json())
         .then(e=>{
             if(e.mensagem.length > 0){
