@@ -1,29 +1,45 @@
 <?php
 include '../../conexao.php';
 
-justLog($__EMAIL__, $__TYPE__, 3);
+justLog($__EMAIL__, $__TYPE__, 2);
 
-$profissional  = scapeString($__CONEXAO__, $_GET['id']);
-$profissional = setNum($profissional);
-$decProfissional = decrypt($profissional);
+$recadoID  = scapeString($__CONEXAO__, $_GET['id']);
 
-$_query_ = mysqli_query($__CONEXAO__, "select * from users where id='$decProfissional'");
+$_query_ = mysqli_query($__CONEXAO__, "select * from recados where id='$recadoID'");
 
 $array = array();
 
 while($_dados_ = mysqli_fetch_array($_query_)){
-    $nome           = decrypt($_dados_["nome"]);
-    $cpf            = decrypt($_dados_["cpf"]);
-    $nascimento     = decrypt($_dados_["nascimento"]);
-    $titularidade   = decrypt($_dados_["titularidade"]);
-    $imagem         = decrypt($_dados_["imagem"]);
-    $email          = $_dados_["email"];
-    $status         = $_dados_["active"];
-    $status         = $status == '1' ? "active" : "inactive";
+    $id     = $_dados_["id"];
+    $title  = decrypt($_dados_["title"]);
+    $desc   = decrypt($_dados_["descricao"]);
+    $from   = $_dados_["fromid"];
+    $to     = $_dados_["toid"];
+    $time   = $_dados_["time"];
+    $status = $_dados_["active"];
 
-    $query  = mysqli_query($__CONEXAO__, "select turma from professores where email='$email'");
+    $getFrom = mysqli_query($__CONEXAO__, "select nome from users where id='$from'");
+    $from = mysqli_fetch_assoc($getFrom);
+    $from = decrypt($from["nome"]);
 
-    $email = decrypt($email);
+    if($type == "1"){
+        $getTo = mysqli_query($__CONEXAO__, "select nome from users where id='$to'");
+        $to = mysqli_fetch_assoc($getTo);
+        $to = decrypt($to["nome"]);
+    }
+
+    if($type == "2"){
+        $getTo = mysqli_query($__CONEXAO__, "select nome from turmas where id='$to'");
+        $to = mysqli_fetch_assoc($getTo);
+        $to = decrypt($to["nome"]);
+    }
+
+    if($type == "3"){
+        $to = "Todos";
+    }
+    
+
+    $status = $active == '1' ? "active" : "inactive";
 
     $arrTurmas = array();
 
@@ -35,15 +51,13 @@ while($_dados_ = mysqli_fetch_array($_query_)){
     }
 
     $arr = array(
-        "id"            => $decProfissional,
-        "nome"          => $nome, 
-        "titularidade"  => $titularidade,
-        "email"         => $email,
-        "cpf"           => $cpf,
-        "imagem"        => $imagem,
-        "nascimento"    => $nascimento,
-        "turmas"        => $arrTurmas,
-        "status"        => $status
+        "id"        => $id,
+        "title"     => $title,
+        "from"      => $from,
+        "desc"      => $desc,
+        "to"        => $to,
+        "data"      => $time,
+        "status"    => $status,
     );
     array_push($array, $arr);
 }
