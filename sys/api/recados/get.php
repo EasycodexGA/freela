@@ -16,6 +16,11 @@ while($dados = mysqli_fetch_array($_query_)){
     $time   = $dados["time"];
     $active = $dados["active"];
 
+    if($time < $__TIME__){
+        mysqli_query($__CONEXAO__, "update recados set active='0' where id='$id'");
+        $active = "0";
+    }
+
     if($type == "1"){
         $getTo = mysqli_query($__CONEXAO__, "select nome from users where id='$to'");
         $to = mysqli_fetch_assoc($getTo);
