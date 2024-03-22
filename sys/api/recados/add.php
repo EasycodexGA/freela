@@ -22,7 +22,7 @@ if($type == 3){
     $to = setNum($to);
 }
 
-$title  = setString($title);
+$title  = setNoXss($title);
 $desc   = setNoXss($desc);
 $time   = setNum($time);
 $type   = setNum($type);
