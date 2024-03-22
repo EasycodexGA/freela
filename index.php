@@ -95,7 +95,7 @@ include "sys/conexao.php";
                     let func = "closeRecados()";
                     let startr = "none";
 
-                    if(i < e.mensagem.length){
+                    if(i < e.mensagem.length - 1){
                         escrita = "Próximo"
                         func = "nextRecado()"
                     }
