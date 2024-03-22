@@ -14,6 +14,7 @@ while($_dados_ = mysqli_fetch_array($_query_)){
     $title  = decrypt($_dados_["title"]);
     $desc   = decrypt($_dados_["descricao"]);
     $from   = $_dados_["fromid"];
+    $type   = $_dados_["fromid"];
     $to     = $_dados_["toid"];
     $time   = $_dados_["time"];
     $status = $_dados_["active"];
@@ -26,16 +27,20 @@ while($_dados_ = mysqli_fetch_array($_query_)){
         $getTo = mysqli_query($__CONEXAO__, "select nome from users where id='$to'");
         $to = mysqli_fetch_assoc($getTo);
         $to = decrypt($to["nome"]);
+        $type = "Aluno";
     }
 
     if($type == "2"){
         $getTo = mysqli_query($__CONEXAO__, "select nome from turmas where id='$to'");
         $to = mysqli_fetch_assoc($getTo);
         $to = decrypt($to["nome"]);
+        $type = "Turma";
+
     }
 
     if($type == "3"){
         $to = "Todos";
+        $type = "Geral";
     }
     
 
@@ -56,6 +61,7 @@ while($_dados_ = mysqli_fetch_array($_query_)){
         "from"      => $from,
         "desc"      => $desc,
         "to"        => $to,
+        "type"      => $type,
         "data"      => $time,
         "status"    => $status,
     );
