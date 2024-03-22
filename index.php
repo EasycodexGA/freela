@@ -90,7 +90,7 @@ include "sys/conexao.php";
         .then(e=>e.json())
         .then(e=>{
             if(e.mensagem.length > 0){
-                for(let i = 0; i < e.mensagens.length; i++){
+                for(let i = 0; i < e.mensagem.length; i++){
                     recadosOut.innerHTML += `
                     <div class='recados-in'>
                         <h1 class='title-recados'>${e.mensagem[i].title}</h1>
