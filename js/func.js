@@ -28,6 +28,7 @@ function openAddAula(){
 }
 
 function closeAddAula(){
+    console.log(file.arrayStrAdd)
     addNewAula.classList.remove('add-active');
 }
 
