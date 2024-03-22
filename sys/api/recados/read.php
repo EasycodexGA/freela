@@ -20,6 +20,7 @@ while($dados = mysqli_fetch_array($getRecados)){
 
     array_push($todosRecados, array(
         "id"=>$id,
+        "title"=>$title,
         "desc"=>$desc,
         "time"=>$time,
         "from"=>$from

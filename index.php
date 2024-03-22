@@ -13,9 +13,11 @@ include "sys/conexao.php";
     <link rel="shortcut icon" href="img/prefeitura.png" type="image/x-icon">
     <title>Voleibol escolinhas - Dashboard</title>
     <script type="module" src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/ring2.js"></script>
-
 </head>
 <body>
+    <div id='recadosOut'>
+
+    </div>
 
     <div class="int-main">
         <div class="left">
@@ -83,6 +85,21 @@ include "sys/conexao.php";
                 el.classList.add("link-active")
             }
         }
+
+        fetch("sys/api/recados/get")
+        .then(e=>e.json())
+        .then(e=>{
+            if(e.mensagem.length > 0){
+                for(let i = 0; i < e.mensagens.length; i++){
+                    recadosOut.innerHTML += `
+                    <div class='recados-in'>
+                        <h1 class='title-recados'>${e.mensagens[i].title}</h1>
+                        <p class='desc-recados'>${e.mensagens[i].desc}</p>
+                    </div>
+                `
+                }
+            }
+        })
     </script>
 </body>
 </html>
