@@ -59,7 +59,7 @@ while($_dados_ = mysqli_fetch_array($_query_)){
             $presencaC = $dados4['presenca'];
             array_push($chamadaAula, array("id"=>$idC, "idAluno"=>$idAC, "presenca"=>$presencaC));
         }
-        array_push($aulas, array("id"=>$idAu, "data"=>$dataAu, "chamada"=>$chamadaAula))
+        array_push($aulas, array("id"=>$idAu, "data"=>$dataAu, "chamada"=>$chamadaAula));
     }
 
 
