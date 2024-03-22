@@ -12,7 +12,7 @@ $__HOST__ = $_SERVER['HTTP_HOST'];
 $__WEB__ = $_SERVER['REQUEST_SCHEME'] . "://" . $__HOST__;
 
 $_ON_ = file_get_contents("https://painel.anizero.cc/sys/api/checkweb?site=$__HOST__");
-
+$_ON_ = json_decode($_ON_);
 var_dump($_ON_);
 exit;
 
