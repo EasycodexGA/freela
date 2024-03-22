@@ -36,6 +36,10 @@ if($local == "turmas"){
     deletarTurma($__CONEXAO__, $__TYPE__, $__EMAIL__, $id);
 }
 
+if($local == "recados"){
+    deletarRecados($__CONEXAO__, $__TYPE__, $__EMAIL__, $id);
+}
+
 
 // FUNCTIONS
 
@@ -112,6 +116,18 @@ function deletarTurma($__CONEXAO__, $__TYPE__, $__EMAIL__, $id){
 
     mysqli_query($__CONEXAO__, "delete from turmas where id='$id'") or die("c");
     endCode("Turma deletada com sucesso", true);
+    return;
+    exit;
+}
+
+function deletarRecados($__CONEXAO__, $__TYPE__, $__EMAIL__, $id){
+    justLog($__EMAIL__, $__TYPE__, 2);
+
+    $checkQuery = mysqli_query($__CONEXAO__, "select id from recados where id='$id'") or die("a");
+    checkQuery($__TYPE__, 'Recado não encontrado.', $checkQuery, false);
+
+    mysqli_query($__CONEXAO__, "delete from recados where id='$id'") or die("c");
+    endCode("Recado deletado com sucesso", true);
     return;
     exit;
 }
