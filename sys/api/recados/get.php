@@ -16,13 +16,28 @@ while($dados = mysqli_fetch_array($_query_)){
     $time   = $dados["time"];
     $active = $dados["active"];
 
+    if($type == "1"){
+        $getTo = mysqli_query($__CONEXAO__, "select nome users where id='$to'");
+        $to = mysqli_fetch_assoc($getTo);
+        $to = decrypt($to["nome"]);
+    }
+
+    if($type == "2"){
+        $getTo = mysqli_query($__CONEXAO__, "select nome turmas where id='$to'");
+        $to = mysqli_fetch_assoc($getTo);
+        $to = decrypt($to["nome"]);
+    }
+
+    if($type == "3"){
+        $to = "Todos";
+    }
+    
+
     $status = $active == '1' ? "active" : "inactive";
 
     $arr = array(
         "id"        => $id,
         "title"     => $title,
-        "desc"      => $desc,
-        "type"      => $type,
         "to"        => $to,
         "time"      => $time,
         "status"    => $status,
