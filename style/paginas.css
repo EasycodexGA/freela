@@ -575,25 +575,3 @@ header, .extra{
     flex-direction: column;
     gap: 10px;
 }
-
-.recados-in{
-    width: 100%;
-    height: fit-content;
-    background: white;
-    border-radius: 3px;
-    padding: 20px;
-    max-width: 600px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.title-recados{
-    text-transform: capitalize;
-    font-size: 22px;
-    color: #6a6a6a;
-}
-
-.desc-recados{
-    color: gray;
-}
