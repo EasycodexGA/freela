@@ -56,6 +56,6 @@ if(mysqli_num_rows($check) > 0){
     endCode("Mensagem igual", false);
 }
 
-mysqli_query($__CONEXAO__, "insert into recados (type, from, to, title, descricao, time, created) values ('type', '$__ID__', '$to', '$title', '$desc', '$time', '$__TIME__')");
+mysqli_query($__CONEXAO__, "insert into recados (type, from, to, title, descricao, time, created) values ('$type', '$__ID__', '$to', '$title', '$desc', '$time', '$__TIME__')");
 
 endCode("Enviado", true);
