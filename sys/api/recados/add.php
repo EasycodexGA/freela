@@ -14,15 +14,20 @@ $time   = scapeString($__CONEXAO__, $json->time);
 $type   = scapeString($__CONEXAO__, $json->type);
 $to     = scapeString($__CONEXAO__, $json->to);
 
-if($type == 3){
-    $to = "geral";
-}
 
-$title  = setNoXss($title);
+
+$title  = setString($title);
 $desc   = setNoXss($desc);
 $time   = setNum($time);
 $type   = setNum($type);
-$to     = setNum($to);
+
+if($type == 3){
+    $to = "geral";
+    $to = setString($to);
+} else {
+    $to = setNum($to);
+}
+
 
 checkMissing(
     array(
@@ -34,13 +39,15 @@ checkMissing(
     )
 );
 
-if($type == 3){
-    $to = 0;
-}
+
 
 $time = decrypt($time);
 $type = decrypt($type);
 $to = decrypt($to);
+
+if($type == 3){
+    $to = 0;
+}
 
 $check = mysqli_query($__CONEXAO__, "select id from recados where title='$title' and type='$type' and to='$to'");
 
