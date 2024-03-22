@@ -91,16 +91,40 @@ include "sys/conexao.php";
         .then(e=>{
             if(e.mensagem.length > 0){
                 for(let i = 0; i < e.mensagem.length; i++){
+                    let escrita = "Fechar";
+                    let func = "closeRecados()";
+                    let startr = "none";
+
+                    if(i < e.mensagem.length){
+                        escrita = "Próximo"
+                        func = "nextRecado()"
+                    }
+
+
+                    if(i == 0){
+                        startr = "flex"
+                    }
+
                     recadosOut.innerHTML += `
-                        <div class='recados-in'>
+                        <div class='recados-in' style='display: ${startr}'>
                             <h1 class='title-recados'>${e.mensagem[i].title}</h1>
                             <p class='desc-recados'>${e.mensagem[i].desc}</p>
+                            <button onclick='${func}'>${escrita}</button>
                         </div>
                     `
                 }
                 recadosOut.classList.add("recado-open");
             }
         })
+
+        function closeRecados(){
+            recadosOut.classList.remove("recado-open");
+        }
+
+        function nextRecado(){
+            recadosOut.children[0].remove();
+            recadosOut.children[0].style = "display: flex";
+        }
     </script>
 </body>
 </html>
