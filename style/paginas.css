@@ -430,6 +430,7 @@ header, .extra{
 .titleGp{
     font-size: 18px;
     color: #525252;
+    text-transform: capitalize; 
 }
 .titleGpImg{
     font-size: 15px;
