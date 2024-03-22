@@ -134,7 +134,7 @@ body {
     background: #000000de;
     backdrop-filter: blur(2px);
     z-index: 10;
-    transition: all .3s;
+    transition: all .1s;
     padding: 10px;
     display: flex;
     justify-content: center;
