@@ -39,7 +39,7 @@ while($dados = mysqli_fetch_array($_query_)){
         "id"        => $id,
         "title"     => $title,
         "to"        => $to,
-        "time"      => $time,
+        "data"      => $time,
         "status"    => $status,
     );
     array_push($array, $arr);

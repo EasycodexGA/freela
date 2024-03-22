@@ -224,9 +224,9 @@ class Recados extends File{
         super(id)
         this.name = 'recados'
         this.linkGet = 'recados/get.php'
-        this.thContent = ['Título', 'Para', 'Até', 'status']
+        this.thContent = ['Título', 'Para', 'Data', 'status']
         // this.jumpDetail.push()
-        this.numsDetail.push("time")
+        this.numsDetail.push("Data")
         // this.arrayDetail.push()
         this.createTh()
         this.getData()
