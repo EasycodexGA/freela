@@ -1,4 +1,3 @@
-console.log(file);
 function openAdd(e){
     closeAdd();
 
@@ -34,7 +33,6 @@ function closeAddAula(){
 function verMais(me, type, titleStr){
     verMaisDiv.innerHTML = '';
     let string = file.arrayStrAdd[`${me.dataset.id}Array`];
-    console.log(string);
     let array = string.split('#');
 
     let divOut = document.createElement('div');
@@ -49,7 +47,6 @@ function verMais(me, type, titleStr){
 
     for(let i of array){
         i = JSON.parse(i);
-        console.log(i.nome);
         let div = document.createElement('div');
         div.classList.add("chamada-list")
         let p = document.createElement("p");
@@ -111,7 +108,6 @@ function verMais(me, type, titleStr){
 }
 
 function closeVerMais(){
-    console.log(file.arrayStrAdd)
     verMaisDiv.classList.remove('add-active');
 }
 
@@ -324,7 +320,6 @@ const sendImgs = async () => {
                 sendActive = false;
 
             }
-            console.log(e);
         })
     }
     

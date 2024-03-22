@@ -45,6 +45,24 @@ while($_dados_ = mysqli_fetch_array($_query_)){
         array_push($arrProf, array("id"=>$idP, "nome"=>$nomeP, "imagem"=>$imagem));
     }
 
+    $query3 = mysqli_query($__CONEXAO__, "select id, data from aulas where turma='$decTurma'");
+    $aulas = array();
+
+    while($dados3 = mysqli_fetch_array($query3)){
+        $idAu = $dados3['id'];
+        $dataAu = decrypt($dados3['data']);
+        $query4 = mysqli_query($__CONEXAO__, "select id, aluno, presenca from chamada where aula='$idAu'");
+        $chamadaAula = array();
+        while($dados4 = mysqli_fetch_array($query4)){
+            $idC = $dados4['id'];
+            $idAC = $dados4['aluno'];
+            $presencaC = $dados4['presenca'];
+            array_push($chamadaAula, array("id"=>$idC, "idAluno"=>$idAC, "presenca"=>$presencaC));
+        }
+        array_push($aulas, array("id"=>$idAu, "data"=>$dataAu, "chamada"=>$chamadaAula))
+    }
+
+
     $arr = array(
         "id"                => $decTurma,
         "nome"              => $nome, 
@@ -54,6 +72,7 @@ while($_dados_ = mysqli_fetch_array($_query_)){
         "profissionaisQt"   => mysqli_num_rows($query2),
         "alunosQt"          => mysqli_num_rows($query),
         "alunos"            => $arrAlunos,
+        "aulas"             => $aulas,
         "status"            => $status
     );
     array_push($array, $arr);
