@@ -31,9 +31,9 @@ function closeAddAula(){
     addNewAula.classList.remove('add-active');
 }
 
-function verMais(type, titleStr){
+function verMais(me, type, titleStr){
     verMaisDiv.innerHTML = '';
-    let string = file.arrayStrAdd;
+    let string = file.arrayStrAdd[`${me.dataset.id}Array`];
     console.log(string);
     let array = string.split('#');
 
@@ -87,20 +87,19 @@ function verMais(type, titleStr){
 
     if(type == 1){
         let saveBt = document.createElement("button");
-        saveBt.setAttribute("onclick", 'salvarCheckbox()');
+        saveBt.setAttribute("onclick", 'salvarCheckbox(this)');
         saveBt.innerHTML = 'Salvar';
+        saveBt.dataset.id = me.dataset.id
         saveBt.classList.add("btn-add");
         outBt.append(saveBt);
     }
 
-    if(file.arrayStrAdd2){
+    if(me.dataset.pre){
         let addBt = document.createElement("button");
         addBt.setAttribute("onclick", 'verMais(this, 1, "adicionar turma")');
         addBt.innerHTML = 'Adicionar turma';
         addBt.classList.add("btn-add");
-        file.arrayStrAdd1 = file.arrayStrAdd;
-        file.arrayStrAdd = file.arrayStrAdd2;
-        file.arrayStrAdd2 = false;
+        addBt.dataset.id = pre
         outBt.append(addBt);
     }
 
@@ -115,8 +114,8 @@ function closeVerMais(){
     verMaisDiv.classList.remove('add-active');
 }
 
-function salvarCheckbox(){
-    let string = file[file.saveToAdd];
+function salvarCheckbox(me){
+    let string = file.arrayStrAdd[`${me.dataset.id}Array`];
     let array = string.split('#');
 
     let allBts = document.querySelectorAll('.checkbox-presenca');
@@ -127,12 +126,12 @@ function salvarCheckbox(){
         array[i] = JSON.stringify(array[i]);
     }
     let value = array.join('#');
-    id.setAttribute(`data-${save}`, value);
+    file.arrayStrAdd[`${me.dataset.id}Array`] = value;
     closeVerMais();
 }
 
-function getPresenca(){
-    let string = file.arrayStrAdd;
+function getPresenca(id){
+    let string = file.arrayStrAdd[`${id}Array`];
     let array = string.split('#');
     for(i = 0; i < array.length; i++){
         array[i] = JSON.parse(array[i]);

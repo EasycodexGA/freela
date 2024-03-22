@@ -1,9 +1,7 @@
 class File{
     constructor(id){
         this.name = ''
-        this.arrayStrAdd = ''
-        this.arrayStrAdd1 = ''
-        this.arrayStrAdd2 = false
+        this.arrayStrAdd = {}
         this.saveToAdd = ''
         this.linkGet = ''
         this.thContent = []
@@ -118,6 +116,7 @@ class File{
             console.log(i.allTurmas);
     
             for(let [key, value] of Object.entries(i)){
+                let preData = false;
                 if(key == 'turmas'){
                     let value2 = i.allTurmas
                     for(j in value2){
@@ -125,8 +124,8 @@ class File{
                         value2[j] = JSON.stringify(value2[j]);
                     }
                     value2 = value2.join("#");
-                    this.arrayStrAdd2 = value2;
-                    this.saveToAdd = 'arrayStrAdd2';
+                    preData = key + 2;
+                    this.arrayStrAdd[`${preData}Array`] = value2
                 }
                 if(this.numsDetail.includes(key)){
                     value = (new Date(value * 1000 + 86400000)).toLocaleDateString("pt-BR");
@@ -141,11 +140,11 @@ class File{
                     value = value.join("#");
                     if(key == 'alunos'){
                         verPresencaBt.setAttribute('onclick', `verMais(this, 1, "Chamada")`);
-                        this.arrayStrAdd = value;
-                        this.arrayStrAdd1 = value;
-                        this.saveToAdd = 'arrayStrAdd1';
+                        verPresencaBt.dataset.id = key
+                        verPresencaBt.pre = preData
                     }
-                    value = `<button id='${key}BtDetail' class='btn-add' onclick='verMais(0, "${key}")'>Ver ${key}</button>`;
+                    this.arrayStrAdd[`${key}Array`] = value;
+                    value = `<button data-id='${key}' data-pre='${preData}' class='btn-add' onclick='verMais(this, 0, "${key}")'>Ver ${key}</button>`;
                 }
                 if(!this.jumpDetail.includes(key)){
                     document.getElementById(`${key}Get`).innerHTML = value.toString();
