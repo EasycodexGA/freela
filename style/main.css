@@ -126,3 +126,23 @@ body {
 #config{
     font-size: 14px;
 }
+
+#recadosOut {
+    position: fixed;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    background: #000000cb;
+    z-index: 10;
+    transition: all .3s;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.recado-open{
+    pointer-events: all!important;
+    opacity: 1!important;
+}
