@@ -17,13 +17,13 @@ while($dados = mysqli_fetch_array($_query_)){
     $active = $dados["active"];
 
     if($type == "1"){
-        $getTo = mysqli_query($__CONEXAO__, "select nome users where id='$to'");
+        $getTo = mysqli_query($__CONEXAO__, "select nome from users where id='$to'");
         $to = mysqli_fetch_assoc($getTo);
         $to = decrypt($to["nome"]);
     }
 
     if($type == "2"){
-        $getTo = mysqli_query($__CONEXAO__, "select nome turmas where id='$to'");
+        $getTo = mysqli_query($__CONEXAO__, "select nome from turmas where id='$to'");
         $to = mysqli_fetch_assoc($getTo);
         $to = decrypt($to["nome"]);
     }
