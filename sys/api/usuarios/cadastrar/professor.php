@@ -40,7 +40,7 @@ if(!$email){
     endCode("Email inválido", false);
 }
 
-stopUserExist($__CONEXAO__, $email);
+stopUserExist($__CONEXAO__, $email, $cpf);
 
 $senha = bin2hex(random_bytes(3));
 $senhaH = password_hash($senha, PASSWORD_DEFAULT);

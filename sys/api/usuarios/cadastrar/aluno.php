@@ -41,7 +41,7 @@ if(!$email){
     endCode("Email inválido", false);
 }
 
-stopUserExist($__CONEXAO__, $email);
+stopUserExist($__CONEXAO__, $email, $cpf);
 
 $tid = decrypt($turma);
 

@@ -147,13 +147,21 @@ function scapeString($__CONEXAO__, $string){
     return $string;
 }
 
-function stopUserExist($__CONEXAO__, $string){
-    $tryConnect = mysqli_query($__CONEXAO__, "select * from users where email='$string'") or die("erro select");
+function stopUserExist($__CONEXAO__, $email, $cpf){
+    $tryConnect = mysqli_query($__CONEXAO__, "select id from users where email='$email'") or die("erro select");
 
     if(mysqli_num_rows($tryConnect) > 0){
         endCode("Email já está em uso", false);
         exit;
     }
+
+    $tryConnect = mysqli_query($__CONEXAO__, "select id from users where cpf='$cpf'") or die("erro select");
+
+    if(mysqli_num_rows($tryConnect) > 0){
+        endCode("CPF já está em uso", false);
+        exit;
+    }
+
 }
 
 function stopUserExistnt($__CONEXAO__, $string){
