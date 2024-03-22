@@ -106,7 +106,7 @@ function setNum($string){
 function checkMissing($array){
     for($i = 0; $i < count($array); $i++){
         $item = decrypt($array[$i]);
-        if(!$item or $item == "" or $item == " " and $item != 0){
+        if(!$item or $item == "" or $item == " "){
             endCode("Algum dado está faltando. #$i", false);
         }
     }

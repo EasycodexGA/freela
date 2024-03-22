@@ -124,7 +124,6 @@ justLog($__EMAIL__, $__TYPE__, 2);
                     desc: descricaoXAdd.value,
                     time: (horarioXAdd.valueAsNumber / 1000),
                     type: 3,
-                    to: 0
                 })' class='btn-add'>Salvar</button>
             </div>
         </div>

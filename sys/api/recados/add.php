@@ -15,7 +15,7 @@ $type   = scapeString($__CONEXAO__, $json->type);
 $to     = scapeString($__CONEXAO__, $json->to);
 
 if($type == 3){
-    $to = 0;
+    $to = "geral";
 }
 
 $title  = setNoXss($title);
@@ -33,6 +33,10 @@ checkMissing(
         $to,
     )
 );
+
+if($type == 3){
+    $to = 0;
+}
 
 $time = decrypt($time);
 $type = decrypt($type);
