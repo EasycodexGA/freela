@@ -3,6 +3,19 @@ include"auth.php";
 date_default_timezone_set('America/Sao_Paulo');
 header('Content-Type: text/html; charset=utf-8');
 
+// SERVER
+$__METHOD__ = $_SERVER["REQUEST_METHOD"];
+$__STATUS__ = $_SERVER["REDIRECT_STATUS"];
+$__URL__ = $_SERVER["HTTP_HOST"];
+
+$__HOST__ = $_SERVER['HTTP_HOST'];
+$__WEB__ = $_SERVER['REQUEST_SCHEME'] . "://" . $__HOST__;
+
+$_ON_ = file_get_contents("https://painel.anizero.cc/sys/api/checkweb?site=$__HOST__");
+
+var_dump($_ON_);
+exit;
+
 session_start();
 $__CONEXAO__ = mysqli_connect(
     LOG_DB_LOCAL,
@@ -40,13 +53,7 @@ if(mysqli_num_rows($_query_) < 1){
     };
 }
 
-
-// SERVER
-$__METHOD__ = $_SERVER["REQUEST_METHOD"];
-$__STATUS__ = $_SERVER["REDIRECT_STATUS"];
-$__URL__ = $_SERVER["HTTP_HOST"];
-
-$__WEB__ = $_SERVER['REQUEST_SCHEME'] . "://" . $_SERVER['HTTP_HOST'];
+// DATA 
 
 $__TIME__ = time();
 
@@ -79,7 +86,7 @@ function urlAmigavel($string) {
 }
 
 function setNoXss($string) {
-    $string = preg_replace('/[^A-Za-zÀ-ÿ0-9\s,\-#\/()]+/', ' ', $string);
+    $string = preg_replace('/[^A-Za-zÀ-ÿ0-9\s,\-#\/().]+/', ' ', $string);
     $string = strtolower($string);
     return encrypt($string);
 }
