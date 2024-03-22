@@ -3,7 +3,7 @@ include '../../conexao.php';
 
 justLog($__EMAIL__, $__TYPE__, 2);
 
-$_query_ = mysqli_query($__CONEXAO__, "select * from recados where fromid='$__ID__'");
+$_query_ = mysqli_query($__CONEXAO__, "select * from recados where fromid='$__ID__' order by time desc");
 
 $array = array();
 
