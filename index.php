@@ -92,11 +92,11 @@ include "sys/conexao.php";
             if(e.mensagem.length > 0){
                 for(let i = 0; i < e.mensagem.length; i++){
                     recadosOut.innerHTML += `
-                    <div class='recados-in'>
-                        <h1 class='title-recados'>${e.mensagem[i].title}</h1>
-                        <p class='desc-recados'>${e.mensagem[i].desc}</p>
-                    </div>
-                `
+                        <div class='recados-in'>
+                            <h1 class='title-recados'>${e.mensagem[i].title}</h1>
+                            <p class='desc-recados'>${e.mensagem[i].desc}</p>
+                        </div>
+                    `
                 }
                 recadosOut.classList.add("recado-open");
             }
