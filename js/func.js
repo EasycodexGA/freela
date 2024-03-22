@@ -99,7 +99,7 @@ function verMais(me, type, titleStr){
         addBt.setAttribute("onclick", 'verMais(this, 1, "adicionar turma")');
         addBt.innerHTML = 'Adicionar turma';
         addBt.classList.add("btn-add");
-        addBt.dataset.id = pre
+        addBt.dataset.id = me.dataset.pre
         outBt.append(addBt);
     }
 
