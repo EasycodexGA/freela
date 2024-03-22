@@ -100,7 +100,6 @@ include "sys/conexao.php";
                         func = "nextRecado()"
                     }
 
-
                     if(i == 0){
                         startr = "flex"
                     }
@@ -109,7 +108,7 @@ include "sys/conexao.php";
                         <div class='recados-in' style='display: ${startr}'>
                             <h1 class='title-recados'>${e.mensagem[i].title}</h1>
                             <p class='desc-recados'>${e.mensagem[i].desc}</p>
-                            <button onclick='${func}'>${escrita}</button>
+                            <button class='bt-recados' onclick='${func}'>${escrita}</button>
                         </div>
                     `
                 }

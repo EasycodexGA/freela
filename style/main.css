@@ -170,3 +170,13 @@ body {
 .desc-recados{
     color: gray;
 }
+
+.bt-recados{
+    padding: 8px 25px;
+    width: fit-content;
+    color: white;
+    background: var(--contraste2);
+    border-radius: 3px;
+    margin-left: auto;
+    cursor: pointer;
+}
