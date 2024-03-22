@@ -62,7 +62,7 @@ justLog($__EMAIL__, $__TYPE__, 2);
                 <button onclick='addNewData("recados/add", {
                     title: nomeAssAdd.value,
                     desc: descricaoAdd.value,
-                    time: (horario2Add.value / 1000),
+                    time: (horario2Add.valueAsNumber / 1000),
                     type: 1,
                     to: alunoAdd.value
                 })' class='btn-add'>Salvar</button>
@@ -95,7 +95,7 @@ justLog($__EMAIL__, $__TYPE__, 2);
                 <button onclick='addNewData("recados/add", {
                     title: nomeAss2Add.value,
                     desc: descricao2Add.value,
-                    time: (horario3Add.value / 1000),
+                    time: (horario3Add.valueAsNumber / 1000),
                     type: 2,
                     to: turmaAdd.value
                 })' class='btn-add'>Salvar</button>
@@ -122,7 +122,7 @@ justLog($__EMAIL__, $__TYPE__, 2);
                 <button onclick='addNewData("recados/add", {
                     title: nomeAssXAdd.value,
                     desc: descricaoXAdd.value,
-                    time: (horarioXAdd.value / 1000),
+                    time: (horarioXAdd.valueAsNumber / 1000),
                     type: 3,
                     to: 0
                 })' class='btn-add'>Salvar</button>
