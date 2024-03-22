@@ -59,8 +59,12 @@ justLog($__EMAIL__, $__TYPE__, 2);
             </div>
             <div class='out-bt-sv'>
                 <button class='btn-close' onclick='closeAdd()'>Fechar</button>
-                <button onclick='addNewData("", {
-                    
+                <button onclick='addNewData("recados/add", {
+                    title: nomeAssAdd.value,
+                    desc: descricaoAdd.value,
+                    time: (horario2Add.value / 1000),
+                    type: 1,
+                    to: alunoAdd.value
                 })' class='btn-add'>Salvar</button>
             </div>
         </div>
@@ -69,11 +73,11 @@ justLog($__EMAIL__, $__TYPE__, 2);
             <div class='inps-add'>
                 <div class='inp-add-out'>
                     <h3>Título</h3>
-                    <input id='nomeAssAdd' type='text' placeholder='Assinaturas'/>
+                    <input id='nomeAss2Add' type='text' placeholder='Assinaturas'/>
                 </div>
                 <div class='inp-add-out'>
                     <h3>Descrição</h3>
-                    <input id='descricaoAdd' type='text' placeholder='Trazer assinatura...'/>
+                    <input id='descricao2Add' type='text' placeholder='Trazer assinatura...'/>
                 </div>
                 <div class='inp-add-out'>
                     <h3>Turma</h3>
@@ -83,13 +87,17 @@ justLog($__EMAIL__, $__TYPE__, 2);
                 </div>
                 <div class='inp-add-out'>
                     <h3>Até</h3>
-                    <input id='horario2Add' type='date'/>
+                    <input id='horario3Add' type='date'/>
                 </div>
             </div>
             <div class='out-bt-sv'>
                 <button class='btn-close' onclick='closeAdd()'>Fechar</button>
-                <button onclick='addNewData("", {
-                    
+                <button onclick='addNewData("recados/add", {
+                    title: nomeAss2Add.value,
+                    desc: descricao2Add.value,
+                    time: (horario3Add.value / 1000),
+                    type: 2,
+                    to: turmaAdd.value
                 })' class='btn-add'>Salvar</button>
             </div>
         </div>
@@ -98,21 +106,25 @@ justLog($__EMAIL__, $__TYPE__, 2);
             <div class='inps-add'>
                 <div class='inp-add-out'>
                     <h3>Título</h3>
-                    <input id='nomeAssAdd' type='text' placeholder='Assinaturas'/>
+                    <input id='nomeAssXAdd' type='text' placeholder='Assinaturas'/>
                 </div>
                 <div class='inp-add-out'>
                     <h3>Descrição</h3>
-                    <input id='descricaoAdd' type='text' placeholder='Trazer assinatura...'/>
+                    <input id='descricaoXAdd' type='text' placeholder='Trazer assinatura...'/>
                 </div>
                 <div class='inp-add-out'>
                     <h3>Até</h3>
-                    <input id='horario2Add' type='date'/>
+                    <input id='horarioXAdd' type='date'/>
                 </div>
             </div>
             <div class='out-bt-sv'>
                 <button class='btn-close' onclick='closeAdd()'>Fechar</button>
-                <button onclick='addNewData("", {
-                    
+                <button onclick='addNewData("recados/add", {
+                    title: nomeAssXAdd.value,
+                    desc: descricaoXAdd.value,
+                    time: (horarioXAdd.value / 1000),
+                    type: 3,
+                    to: 0
                 })' class='btn-add'>Salvar</button>
             </div>
         </div>
