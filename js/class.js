@@ -119,7 +119,7 @@ class File{
                 let preData = false;
                 if(key == 'turmas'){
                     let value2 = i.allTurmas
-                    for(j in value2){
+                    for(let j in value2){
                         value2[j].checked = 0;
                         value2[j] = JSON.stringify(value2[j]);
                     }
