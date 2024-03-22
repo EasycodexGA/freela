@@ -44,7 +44,7 @@ while($_dados_ = mysqli_fetch_array($_query_)){
     }
     
 
-    $status = $active == '1' ? "active" : "inactive";
+    $status = $status == '1' ? "active" : "inactive";
 
     $arrTurmas = array();
 
