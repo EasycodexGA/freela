@@ -28,30 +28,24 @@ justLog($__EMAIL__, $__TYPE__, 2);
             <h1 class='title-add'>Detalhes</h1>
             <div class='inps-add'>
                 <div class='inp-add-out'>
-                    <h3>Nome</h3>
-                    <p id='nomeGet' type='text'>-- -- --</p>
+                    <h3>Title</h3>
+                    <p id='titleGet' type='text'>-- -- --</p>
                 </div>
                 <div class='inp-add-out'>
-                    <h3>Titularidade</h3>
-                    <p id='titularidadeGet' type='text'>-- -- --</p>
+                    <h3>De</h3>
+                    <p id='fromGet' type='text'>-- -- --</p>
                 </div>
                 <div class='inp-add-out'>
-                    <h3>Nascimento</h3>
-                    <p id='nascimentoGet' type='text'>-- -- --</p>
+                    <h3>Para</h3>
+                    <p id='toGet' type='text'>-- -- --</p>
                 </div>
                 <div class='inp-add-out'>
-                    <h3>Email</h3>
-                    <p id='emailGet' type='text'>-- -- --</p>
+                    <h3>Categoria</h3>
+                    <p id='typeGet' type='text'>-- -- --</p>
                 </div>
                 <div class='inp-add-out'>
-                    <h3>CPF</h3>
-                    <p id='cpfGet' type='text'>-- -- --</p>
-                </div>
-                <div class="inp-add-out" style="width: calc(100%)">
-                    <h3>Foto</h3>
-                    <div class='img-out-dt'>
-                        <img src='../img/default.webp'>
-                    </div>
+                    <h3>Descrição</h3>
+                    <p id='descGet' type='text'>-- -- --</p>
                 </div>
             </div>
             <div class='out-bt-sv'>
