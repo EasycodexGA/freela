@@ -27,7 +27,7 @@ while($_dados_ = mysqli_fetch_array($_query_)){
         $turma      = $dados['nome'];
         $turmaId    = $dados['id'];
         
-        array_push($arrTurmas, array("nome"=>decrypt($turma), "id"=>$turmaId));
+        array_push($arrTurmas, array("nome"=>decrypt($turma), "id"=>$turmaId, "checked"=>1));
     }
 
     $query2 = mysqli_query($__CONEXAO__,"select presenca from chamada where aluno='$decAluno' and aula in (select id from aulas where data<'$__TIME__')");
@@ -50,10 +50,12 @@ while($_dados_ = mysqli_fetch_array($_query_)){
     while($dados3 = mysqli_fetch_array($query3)){
         $turma3      = $dados3['nome'];
         $turmaId3    = $dados3['id'];
-        array_push($allTurmas, array("nome"=>decrypt($turma3), "id"=>$turmaId3));
+        array_push($allTurmas, array("nome"=>decrypt($turma3), "id"=>$turmaId3, "checked"=>0));
     }
 
     $email = decrypt($email);
+
+    $turmas = array_merge($arrTurmas, $allTurmas);
 
     $arr = array(
         "id"            => $decAluno,
@@ -61,8 +63,7 @@ while($_dados_ = mysqli_fetch_array($_query_)){
         "email"         => $email,
         "cpf"           => $cpf,
         "nascimento"    => $nascimento,
-        "turmas"        => $arrTurmas,
-        "allTurmas"     => $allTurmas,
+        "turmas"        => $turmas,
         "presencas"     => $presencas,
         "faltas"        => $faltas,
         "status"        => $status

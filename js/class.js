@@ -146,21 +146,14 @@ class File{
             for(let [key, value] of Object.entries(i)){
                 let qt;
                 let preData = false;
-                if(key == 'turmas' && i.allTurmas){
-                    let value2 = i.allTurmas
-                    for(let j in value2){
-                        value2[j].checked = 0;
-                        value2[j] = JSON.stringify(value2[j]);
-                    }
-                    value2 = value2.join("#");
-                    preData = key + 2;
-                    this.arrayStrAdd[`${preData}Array`] = value2
+                let type = 0;
+                if(key == 'turmas' && (this.name == 'alunos' || this.name == 'profissionais')){
+                    type = 1;
                 }
                 if(this.numsDetail.includes(key)){
                     value = (new Date(value * 1000 + 86400000)).toLocaleDateString("pt-BR");
                 }
                 if(this.arrayDetail.includes(key)){
-                    let type = 0;
                     if(key == 'aulas'){
                         type = 2;
                         for(let i of value){
