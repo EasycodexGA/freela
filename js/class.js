@@ -126,7 +126,7 @@ class File{
 
             let btRemove = document.createElement("button");
             btRemove.classList.add("btn-add");
-            btRemove.setAttribute("onclick", this.removeSec())
+            btRemove.setAttribute("onclick", "file.removeSec()")
             btRemove.innerText = "Excluir";
 
             let btSave = document.createElement("button");
