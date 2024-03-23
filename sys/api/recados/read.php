@@ -5,7 +5,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
 
 $todosRecados = array();
 
-$__TIME__ = $__TIME__ -10800;
+$__TIME__ = $__TIME__ -14400;
 $getRecados = $__TYPE__ == 1 ? mysqli_query($__CONEXAO__, "select * from recados where time>'$__TIME__' and type='1' and toid='$__ID__' or time>'$__TIME__' and type='2' and toid in (select id from turmas where id in (select turma from alunos where email='$__EMAIL__')) or time>'$__TIME__' and type='3' and toid='0'") : "";
 
 while($dados = mysqli_fetch_array($getRecados)){
