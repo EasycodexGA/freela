@@ -108,13 +108,12 @@ justLog($__EMAIL__, $__TYPE__, 1);
             </div>
         </div>
     </div>
-
-    <div id='verMaisDiv'></div>
     
-    <?php } else { ?>
-        <div id='addNew'></div>
-        <div id='addNewAula'></div>
-    <?php }?>
+    <?php } ?>
+    
+    <div id='addNew'></div>
+    <div id='addNewAula'></div>
+    <div id='verMaisDiv'></div>
     
     <div class="list">
         <div class="header-list-out">
