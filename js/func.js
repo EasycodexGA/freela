@@ -94,19 +94,18 @@ function verMais(id, pre,type, titleStr){
 
     if(type > 0){
         let saveBt = document.createElement("button");
-        let type = me.dataset.id == 'aulas' ? 1 : 0;
+        let type = id == 'aulas' ? 1 : 0;
         saveBt.setAttribute("onclick", `salvarCheckbox(${id}, ${type})`);
         saveBt.innerText = 'Salvar';
         saveBt.classList.add("btn-add");
         outBt.append(saveBt);
     }
 
-    if(me.dataset.pre){
+    if(pre){
         let addBt = document.createElement("button");
         addBt.setAttribute("onclick", `verMais(${id}, false, 1, "adicionar turma")`);
         addBt.innerText = 'Adicionar turma';
         addBt.classList.add("btn-add");
-        addBt.dataset.id = me.dataset.pre
         outBt.append(addBt);
     }
 
