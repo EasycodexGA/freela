@@ -76,7 +76,8 @@ function verMais(me, type, titleStr){
             presencaBt.classList.add("btn-add");
             presencaBt.innerText = 'Ver chamada';
             presencaBt.setAttribute("onclick", "verMais(this, 1, 'Chamada')");
-            presencaBt.dataset.id = 'aulas' + i.id
+            presencaBt.dataset.id = 'aulas' + i.id;
+            presencaBt.dataset.pre = 'false';
             div.append(presencaBt);
         }
 
@@ -101,7 +102,7 @@ function verMais(me, type, titleStr){
         outBt.append(saveBt);
     }
 
-    if(me.dataset.pre != 'false' && me.dataset.id == 'turma'){
+    if(me.dataset.pre != 'false'){
         let addBt = document.createElement("button");
         addBt.setAttribute("onclick", 'verMais(this, 1, "adicionar turma")');
         addBt.innerText = 'Adicionar turma';

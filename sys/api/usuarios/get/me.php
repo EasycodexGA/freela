@@ -28,11 +28,11 @@ while($dados = mysqli_fetch_array($getMyProfile)){
     );
 
     if($__TYPE__ == 2){
-        array_push($infosArr, array(
+        array_push($infosArr,
             "imagem"=>$imagem,
             "curriculo"=>$curriculo,
             "titularidade"=>$titularidade
-        ));
+        );
     }
 }
 
