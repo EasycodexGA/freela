@@ -224,6 +224,7 @@ class File{
                             let a = document.createElement("a");
                             a.href = srcCur;
                             a.innerText = 'Ver currículo';
+                            a.target = '_blank';
                             a.classList.add('a-cur');
                             p.innerHTML = '';
                             p.append(a);
