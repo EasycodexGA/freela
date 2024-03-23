@@ -197,7 +197,7 @@ function cleanInps(){
 
 if (typeof searchBar !== "undefined"){
     searchBar.addEventListener('keyup', ()=>{
-        let val = searchBar.value;
+        let val = searchBar.value.toString();
         let filter = selectFilter.value.toLowerCase();
         console.log(file.allData)
         for(let i of file.allData){
