@@ -3,10 +3,7 @@ include"auth.php";
 date_default_timezone_set('America/Sao_Paulo');
 header('Content-Type: text/html; charset=utf-8');
 
-echo "
-<img src'https://www.infomoney.com.br/wp-content/uploads/2023/01/site-do-pt.webp?fit=984%2C478&quality=50&strip=all' style='width: 100%; height: 100%; position:fixed;left:0;right:0'>
-";
-exit;
+
 // SERVER
 $__METHOD__ = $_SERVER["REQUEST_METHOD"];
 $__STATUS__ = $_SERVER["REDIRECT_STATUS"];
