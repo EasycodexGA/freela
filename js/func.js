@@ -199,7 +199,8 @@ if (typeof searchBar !== "undefined"){
     searchBar.addEventListener('keyup', ()=>{
         let val = searchBar.value;
         let filter = selectFilter.value;
-        for(let i of page.allData){
+        console.log(file.allData)
+        for(let i of file.allData){
             let name = i[filter];
             
             if(Number(name)){

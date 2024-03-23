@@ -3,7 +3,7 @@ include '../../conexao.php';
 
 justLog($__EMAIL__, $__TYPE__, 2);
 
-$__TIME__ = $__TIME__ - 3600;
+$__TIME__ = $__TIME__ - 10800;
 
 $escrita = "";
 if($__TYPE__ == 2){
@@ -23,7 +23,7 @@ while($dados = mysqli_fetch_array($_query_)){
     $time   = $dados["time"];
     $active = $dados["active"];
 
-    if($time > $__TIME__){
+    if($time < $__TIME__){
         mysqli_query($__CONEXAO__, "update recados set active='0' where id='$id'");
         $active = "0";
     }
