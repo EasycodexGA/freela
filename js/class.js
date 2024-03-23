@@ -185,7 +185,6 @@ class File{
                     let addOut = document.createElement("div");
                     addOut.classList.add("inp-add-out");
                     if(key == 'imagem'){
-                        addOut.style = 'width: calc(100%);';
                         key = 'Foto';
                         let imgOut = document.createElement('div');
                         imgOut.classList.add('img-out-dt');
