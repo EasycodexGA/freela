@@ -140,6 +140,8 @@ function getPresenca(id){
 
 isActive = false;
 function addNewData(local, data){
+    console.log(`Reciving data: ${data}`)
+    console.log(`To local: ${local}`)
     if(isActive) return;
     isActive = true;
     fetch(`../sys/api/${local}`,{
@@ -148,6 +150,8 @@ function addNewData(local, data){
     })
     .then(e=>e.json())
     .then(e=>{
+        console.log(`Recived from: ${Local}`)
+        console.log(`Response: ${e}`)
         isActive = false;
         newMsg(e);
     })
