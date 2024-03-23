@@ -37,6 +37,7 @@ while($_dados_ = mysqli_fetch_array($_query_)){
 
     $arr = array(
         "id"            => $decProfissional,
+        "imagem"        => $imagem,
         "nome"          => $nome, 
         "titularidade"  => $titularidade,
         "email"         => $email,
@@ -44,7 +45,6 @@ while($_dados_ = mysqli_fetch_array($_query_)){
         "nascimento"    => $nascimento,
         "turmas"        => $arrTurmas,
         "curriculo"     => $curriculo,
-        "imagem"        => $imagem,
         "status"        => $status
     );
     array_push($array, $arr);
