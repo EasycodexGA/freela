@@ -11,6 +11,7 @@ while($dados = mysqli_fetch_array($getMyProfile)){
     $id             = $dados["id"];
     $cpf            = decrypt($dados["cpf"]);
     $nome           = decrypt($dados["nome"]);
+    $type           = decrypt($dados["typeC"]);
     $email          = decrypt($dados["email"]);
     $imagem         = decrypt($dados["imagem"]);
     $curriculo      = decrypt($dados["curriculo"]);
@@ -21,6 +22,7 @@ while($dados = mysqli_fetch_array($getMyProfile)){
         "id"=>$id,
         "cpf"=>$cpf,
         "nome"=>$nome,
+        "type"=>$type,
         "email"=>$email,
         "nascimento"=>$nascimento,
     );

@@ -16,13 +16,14 @@ justLog($__EMAIL__, $__TYPE__, 1);
     <h1 class='title-header'>Configurações</h1>
 
     <div class='inps-out'>
-        <input type="text" id="myName" placeholder="Carregando..." class='inpProfile'/>
-        <input type="text" id="myEmail" placeholder="Carregando..." class='inpProfile'/>
-        <input type="text" id="myCpf" placeholder="Carregando..." class='inpProfile'/>
-        <input type="text" id="myNascimento" placeholder="Carregando..." class='inpProfile'/>
-        <input type="text" id="myType" placeholder="Carregando..." class='inpProfile'/>
+        <input type="text" disabled id="nameGet" placeholder="Carregando..." class='inpProfile'/>
+        <input type="text" disabled id="cpfGet" placeholder="Carregando..." class='inpProfile'/>
+        <input type="text" id="passwordGet" placeholder="Nova senha" class='inpProfile'/>
+        <input type="text" id="emailGet" placeholder="Carregando..." class='inpProfile'/>
+        <input type="text" disabled id="nascimentoGet" placeholder="Carregando..." class='inpProfile'/>
+        <input type="text" disabled id="typeGet" placeholder="Carregando..." class='inpProfile'/>
         <?php if(uniqueLevel($__TYPE__, 2)){ ?>
-            <input type="text" id="myTitularidade" placeholder="Carregando..." class='inpProfile'/>
+            <input type="text" disabled id="titularidadeGet" placeholder="Carregando..." class='inpProfile'/>
         <?php } ?>
     </div>
     
@@ -48,7 +49,6 @@ justLog($__EMAIL__, $__TYPE__, 1);
                 let file = arquivoAdd.files[0];
                 if(!file) return;
                 let base64 = await getBase64(file);
-
                 addNewData("usuarios/perfil/novoCV", {
                     arquivo: base64
                 })
@@ -60,9 +60,22 @@ justLog($__EMAIL__, $__TYPE__, 1);
         fetch("../sys/api/usuarios/get/me")
         .then(e=>e.json())
         .then(e=>{
-            console.log(e)
+            console.log(e);
+
+            let data = e.mensagem;
+
+            cpfGet.value        = data.cpf;
+            typeGet.value       = data.type;
+            nameGet.value       = data.nome;
+            emailGet.value      = data.email;
+            nascimentoGet.value = data.nascimento;
+
+            <?php if(uniqueLevel($__TYPE__, 2)){ ?>
+                titularidadeGet.value = data.titularidade;
+            <?php } ?>
+
             newMsg({
-                mensagem: e.mensagem,
+                mensagem: "fethcado, katiau",
                 response: "aguardando"
             })
         })

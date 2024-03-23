@@ -172,7 +172,8 @@ class File{
                     if(key == 'aulas'){
                         type = 2;
                         for(let i of value){
-                            this.arrayStrAdd[`${i.id}Array`] = 
+                            let value2 = JSON.stringify(i);
+                            this.arrayStrAdd[`${key}${i.id}Array`] = value2;
                         }
                     }
                     if(key == 'alunos' && this.typeUser > 1){
