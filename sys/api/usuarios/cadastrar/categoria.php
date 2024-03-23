@@ -21,6 +21,6 @@ if(mysqli_num_rows($_query_) > 0){
     endCode('Já existe uma categoria com este nome!', false);
 }
 
-mysqli_query($__CONEXAO__, "insert into categorias (nome) values ('$nome')")  or die("erro insert");
+mysqli_query($__CONEXAO__, "insert into categorias (nome, created) values ('$nome', '$__TIME__')")  or die("erro insert");
 
 endCode("Sucesso, categoria criada!", true);

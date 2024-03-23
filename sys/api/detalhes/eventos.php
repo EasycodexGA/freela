@@ -28,7 +28,7 @@ while($_dados_ = mysqli_fetch_array($_query_)){
     $data       = $_dados_['data'];
     $status     = $_dados_["active"];
     $status     = $status == '1' ? "active" : "inactive";
-    $crated     = $_dados_['created'];
+    $created     = $_dados_['created'];
 
     $turmas = array();
     $getTurmas = mysqli_query($__CONEXAO__, "select id, nome, categoria from turmas where id in (select turma from eventos where nome='$nome' and data='$data')");

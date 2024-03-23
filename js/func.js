@@ -76,6 +76,7 @@ function verMais(id, pre,type, titleStr){
             presencaBt.classList.add("btn-presenca");
             presencaBt.innerText = 'Ver chamada';
             presencaBt.setAttribute("onclick", `verMais(${id}, false, 1, 'Chamada')`);
+            presencaBt.dataset.id = id;
             div.append(presencaBt);
         }
 
@@ -134,7 +135,7 @@ function salvarCheckbox(id, type){
         temp = temp.join("#");
         file.arrayStrAdd["aulasArray"] = temp;
     } else {
-        let string = file.arrayStrAdd[`${me.dataset.id}Array`];
+        let string = file.arrayStrAdd[`${id}Array`];
         let array = string.split('#');
 
         let allBts = document.querySelectorAll('.checkbox-presenca');
@@ -145,10 +146,10 @@ function salvarCheckbox(id, type){
             array[i] = JSON.stringify(array[i]);
         }
         let value = array.join('#');
-        file.arrayStrAdd[`${me.dataset.id}Array`] = value;
+        file.arrayStrAdd[`${id}Array`] = value;
     }
-    if(type == 1){
-        verMais()
+    if(type == 1 && id.includes('aulas')){
+        verMais("aulas", false, 2, "aulas");
     } else {
         closeVerMais();
     }

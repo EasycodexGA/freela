@@ -47,6 +47,6 @@ if(mysqli_num_rows($getEvento) > 0){
     endCode("Já existe um evento com esses dados.", false);
 }
 
-mysqli_query($__CONEXAO__, "insert into eventos (nome, turma, data, descricao) values ('$nome', '$turmaDec','$data', '$descricao')");
+mysqli_query($__CONEXAO__, "insert into eventos (nome, turma, data, descricao, created) values ('$nome', '$turmaDec','$data', '$descricao', '$__TIME__')");
 
 endCode("Sala criada com sucesso", true);
