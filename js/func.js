@@ -101,7 +101,7 @@ function verMais(me, type, titleStr){
         outBt.append(saveBt);
     }
 
-    if(me.dataset.pre != 'false'){
+    if(me.dataset.pre != 'false' && me.dataset.id == 'alunos' || me.dataset.id == 'profi'){
         let addBt = document.createElement("button");
         addBt.setAttribute("onclick", 'verMais(this, 1, "adicionar turma")');
         addBt.innerText = 'Adicionar turma';

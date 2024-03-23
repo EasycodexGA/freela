@@ -593,7 +593,7 @@ header, .extra{
     font-size: 15px;
     color: gray;
 }
-.inpProfile::disabled {
+.inpProfile:disabled {
     background: #dfdfdf!important;
 }
 .inpProfile {
