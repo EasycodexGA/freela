@@ -100,10 +100,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
                 titularidadeGet.value = data["0"].titularidade;
             <?php } ?>
 
-            newMsg({
-                mensagem: "fethcado, katiau",
-                response: "aguardando"
-            })
+            newMsg(e)
         })
     </script>
 
