@@ -3,6 +3,8 @@ include '../../conexao.php';
 
 justLog($__EMAIL__, $__TYPE__, 2);
 
+$__TIME__ = $__TIME__ - 3600;
+
 $escrita = "";
 if($__TYPE__ == 2){
     $escrita = "where fromid='$__ID__'";
