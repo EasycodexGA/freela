@@ -4,9 +4,6 @@ include 'conexao.php';
 justLog($__EMAIL__, $__TYPE__, 1);
 
 session_destroy();
-header("Location: ../");
+header("Location: #leave");
 exit;
 ?>
-<script>
-    window.location.reload();
-</script>
