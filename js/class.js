@@ -6,10 +6,11 @@ class File{
         this.linkGet = ''
         this.thContent = []
         this.allData = {}
-        this.idDetail = id
+        this.idDetail = '';
         this.jumpDetail = ['id', 'status']
         this.arrayDetail = []
         this.numsDetail = ['created']
+        this.typeUser = id;
     }
 
     getData(){
@@ -123,23 +124,23 @@ class File{
             btClose.classList.add("btn-close");
             btClose.setAttribute("onclick", "closeAdd()");
             btClose.innerText = "Fechar";
+            outBt.append(btClose);
 
-            let btRemove = document.createElement("button");
-            btRemove.classList.add("btn-add");
-            btRemove.setAttribute("onclick", "file.removeSec()")
-            btRemove.innerText = "Excluir";
+            if((this.typeUser > 2) || (this.typeUser > 1 && this.name == 'alunos')){
+                let btRemove = document.createElement("button");
+                btRemove.classList.add("btn-add");
+                btRemove.setAttribute("onclick", "file.removeSec()")
+                btRemove.innerText = "Excluir";
+                outBt.append(btRemove);
+            }
 
             let btSave = document.createElement("button");
             btSave.classList.add("btn-add");
             btSave.setAttribute("onclick", "javascript:void(0)");
             btSave.innerText = "Salvar";
-
-            outBt.append(btClose);
-            outBt.append(btRemove);
     
             let i = e.mensagem[0];
             
-    
             for(let [key, value] of Object.entries(i)){
                 let preData = false;
                 if(key == 'turmas'){
@@ -163,7 +164,7 @@ class File{
                         value[j] = JSON.stringify(value[j]);
                     }
                     value = value.join("#");
-                    if(key == 'alunos'){
+                    if(key == 'alunos' && this.typeUser > 1){
                         let btAddAula = document.createElement("button");
                         btAddAula.classList.add("btn-add");
                         btAddAula.setAttribute('onclick', `verMais(this, 1, "Chamada")`);
