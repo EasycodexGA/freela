@@ -94,6 +94,7 @@ function verMais(id, pre,type, titleStr){
 
     if(type > 0){
         let saveBt = document.createElement("button");
+        console.log(id);
         let type = id == 'aulas' ? 1 : 0;
         saveBt.setAttribute("onclick", `salvarCheckbox('${id}', ${type})`);
         saveBt.innerText = 'Salvar';
