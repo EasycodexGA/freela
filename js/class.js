@@ -167,7 +167,7 @@ class File{
                         let btAddAula = document.createElement("button");
                         btAddAula.classList.add("btn-add");
                         btAddAula.setAttribute('onclick', `verMais(this, 1, "Chamada")`);
-                        btAddAula.innerHTML = "Excluir";
+                        btAddAula.innerText = "Adicionar aula";
                         btAddAula.dataset.id = key;
                         btAddAula.pre = preData;
                         outBt.append(btAddAula);
