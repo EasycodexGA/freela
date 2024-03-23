@@ -76,7 +76,7 @@ while($dados = mysqli_fetch_array($getPat)){
 
     <?php } ?>
 
-    <div style="display:flex; gap: 20px; align-items: center;">
+    <div style="display:flex; gap: 30px; align-items: center;">
         <div class='infos'>
             <h1 class='title-header'>Contato</h1>
             <p>
@@ -85,7 +85,7 @@ while($dados = mysqli_fetch_array($getPat)){
                 <span>lucianor.menegaz@gmail.com</span>
             </p>
         </div>
-        <div style="width: 125px; aspect-ratio: 1; position: relative">
+        <div style="width: 125px; aspect-ratio: 1; position: relative; border-radius: 100px; overflow: hidden;">
             <img style="position: absolute; width: 100%; height: 100%; object-fit: cover;" src='../img/luciano.jpg'>
         </div>
     </div>
