@@ -16,14 +16,14 @@ justLog($__EMAIL__, $__TYPE__, 1);
     <h1 class='title-header'>Configurações</h1>
 
     <div class='inps-out'>
-        <input type="text" disabled id="nameGet" value="Carregando..." class='inpProfile'/>
-        <input type="text" disabled id="cpfGet" value="Carregando..." class='inpProfile'/>
-        <input type="text" id="passwordGet" value="Nova senha" class='inpProfile'/>
-        <input type="text" id="emailGet" value="Carregando..." class='inpProfile'/>
-        <input type="text" disabled id="nascimentoGet" value="Carregando..." class='inpProfile'/>
-        <input type="text" disabled id="typeGet" value="Carregando..." class='inpProfile'/>
+        <input type="text" disabled id="nameGet" placeholder="Carregando..." class='inpProfile'/>
+        <input type="text" disabled id="cpfGet" placeholder="Carregando..." class='inpProfile'/>
+        <input type="text" id="passwordGet" placeholder="Nova senha" class='inpProfile'/>
+        <input type="text" id="emailGet" placeholder="Carregando..." class='inpProfile'/>
+        <input type="text" disabled id="nascimentoGet" placeholder="Carregando..." class='inpProfile'/>
+        <input type="text" disabled id="typeGet" placeholder="Carregando..." class='inpProfile'/>
         <?php if(uniqueLevel($__TYPE__, 2)){ ?>
-            <input type="text" disabled id="titularidadeGet" value="Carregando..." class='inpProfile'/>
+            <input type="text" disabled id="titularidadeGet" placeholder="Carregando..." class='inpProfile'/>
         <?php } ?>
     </div>
     

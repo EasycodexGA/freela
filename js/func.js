@@ -76,6 +76,7 @@ function verMais(me, type, titleStr){
             presencaBt.innerText = 'Ver chamada';
             presencaBt.setAttribute("onclick", "verMais(this, 1, 'Chamada')");
             presencaBt.dataset.id = 'alunos' + i.id
+            
         }
 
         divMid.append(div);
