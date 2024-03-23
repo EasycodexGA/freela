@@ -92,7 +92,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
             nascimentoGet.value = data.nascimento ? data.nascimento : "Nenhum";
 
             <?php if(uniqueLevel($__TYPE__, 2)){ ?>
-                titularidadeGet.value = data.titularidade;
+                titularidadeGet.value = data["0"].titularidade;
             <?php } ?>
 
             newMsg({
