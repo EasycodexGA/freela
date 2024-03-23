@@ -54,7 +54,7 @@ if(mysqli_num_rows($queryRoom) < 1){
 $senha = bin2hex(random_bytes(3));
 $senhaH = password_hash($senha, PASSWORD_DEFAULT);
 
-mysqli_query($__CONEXAO__, "insert into users (nome, email, senha, cpf, nascimento, lastModify, active) values ('$nome', '$email', '$senhaH', '$cpf', '$nascimento', '$__TIME__', '$espera')")  or die("erro insert");
+mysqli_query($__CONEXAO__, "insert into users (nome, email, senha, cpf, nascimento, lastModify, active, created) values ('$nome', '$email', '$senhaH', '$cpf', '$nascimento', '$__TIME__', '$espera', '$__TIME__')")  or die("erro insert");
 mysqli_query($__CONEXAO__, "insert into alunos (email, turma) values ('$email', '$tid')")  or die("erro insert");
 
 $subject = "Sua senha provisória é $senha";
