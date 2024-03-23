@@ -31,10 +31,9 @@ function closeAddAula(){
     addNewAula.classList.remove('add-active');
 }
 
-function verMais(me, type, titleStr){
+function verMais(id, pre,type, titleStr){
     verMaisDiv.innerHTML = '';
-    console.log(me.dataset.id);
-    let string = file.arrayStrAdd[`${me.dataset.id}Array`];
+    let string = file.arrayStrAdd[`${id}Array`];
     let array = string.split('#');
 
     let divOut = document.createElement('div');
@@ -76,9 +75,7 @@ function verMais(me, type, titleStr){
             presencaBt.classList.add("btn-add");
             presencaBt.classList.add("btn-presenca");
             presencaBt.innerText = 'Ver chamada';
-            presencaBt.setAttribute("onclick", "verMais(this, 1, 'Chamada')");
-            presencaBt.dataset.id = 'aulas' + i.id;
-            presencaBt.dataset.pre = 'false';
+            presencaBt.setAttribute("onclick", `verMais(${id}, false, 1, 'Chamada')`);
             div.append(presencaBt);
         }
 
@@ -97,16 +94,15 @@ function verMais(me, type, titleStr){
     if(type > 0){
         let saveBt = document.createElement("button");
         let type = me.dataset.id == 'aulas' ? 1 : 0;
-        saveBt.setAttribute("onclick", `salvarCheckbox(this, ${type})`);
+        saveBt.setAttribute("onclick", `salvarCheckbox(${id}, ${type})`);
         saveBt.innerText = 'Salvar';
-        saveBt.dataset.id = me.dataset.id
         saveBt.classList.add("btn-add");
         outBt.append(saveBt);
     }
 
-    if(me.dataset.pre != 'false'){
+    if(me.dataset.pre){
         let addBt = document.createElement("button");
-        addBt.setAttribute("onclick", 'verMais(this, 1, "adicionar turma")');
+        addBt.setAttribute("onclick", `verMais(${id}, false, 1, "adicionar turma")`);
         addBt.innerText = 'Adicionar turma';
         addBt.classList.add("btn-add");
         addBt.dataset.id = me.dataset.pre
@@ -125,8 +121,8 @@ function closeVerMais(){
     verMaisDiv.classList.remove('add-active');
 }
 
-function salvarCheckbox(me, type){
-    if(me.dataset.id == 'aulas'){
+function salvarCheckbox(id, type){
+    if(id == 'aulas'){
         let temp = file.arrayStrAdd["aulasArray"];
         temp.split("#");
         let buttons = document.querySelectorAll(".btn-presenca");

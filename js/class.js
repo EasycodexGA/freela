@@ -188,11 +188,9 @@ class File{
                         btAddAula.innerText = "Adicionar aula";
                         outBt.append(btAddAula);
                         verPresencaBt.setAttribute('onclick', "verMais(this, 1, 'Chamada')");
-                        verPresencaBt.dataset.id = key;
-                        verPresencaBt.dataset.pre = preData;
                     }
                     this.arrayStrAdd[`${key}Array`] = value;
-                    value = `<button data-id='${key}' data-pre='${preData}' class='btn-add' onclick='verMais(this, ${type}, "${key}")'>Ver ${key}</button>`;
+                    value = `<button class='btn-add' onclick='verMais(${key}, ${preData}, ${type}, "${key}")'>Ver ${key}</button>`;
                 }
                 if(!this.jumpDetail.includes(key)){
                     let addOut = document.createElement("div");
