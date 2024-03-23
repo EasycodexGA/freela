@@ -92,7 +92,7 @@ class File{
     
             let option = document.createElement('option');
             option.value = i;
-            option.innerHTML = i[0].toUpperCase() + (i.substr(0, 0));
+            option.innerHTML = i[0].toUpperCase() + (i.substr(1, i.length));
             select.appendChild(option);
         }
         headList.appendChild(tr);
