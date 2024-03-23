@@ -114,6 +114,8 @@ cantLog($__EMAIL__);
             verifyDiv.style.display = 'none';
             loginBox.style.display = 'flex';
         })
+
+        localStorage.leave = "false";
     </script>
 
 </body>

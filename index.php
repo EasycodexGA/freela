@@ -131,6 +131,15 @@ include "sys/conexao.php";
             recadosOut.children[0].remove();
             recadosOut.children[0].style = "display: flex";
         }
+
+        setInterval(()=>{
+            if(!localStorage.leave){
+                localStorage.leave = "false";
+            }
+            if(localStorage.leave == "true"){
+                window.location.reload()
+            }
+        },2000)
     </script>
 </body>
 </html>

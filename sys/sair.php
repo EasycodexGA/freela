@@ -9,5 +9,5 @@ exit;
 ?>
 
 <script>
-    parent.window.location = "#leave";
+    localStorage.leave = "true";
 </script>
