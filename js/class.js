@@ -146,7 +146,7 @@ class File{
             for(let [key, value] of Object.entries(i)){
                 let qt;
                 let preData = false;
-                if(key == 'turmas'){
+                if(key == 'turmas' && i.allTurmas){
                     let value2 = i.allTurmas
                     for(let j in value2){
                         value2[j].checked = 0;

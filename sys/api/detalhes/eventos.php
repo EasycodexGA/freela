@@ -50,7 +50,6 @@ while($_dados_ = mysqli_fetch_array($_query_)){
         "turmas"    => $turmas,
         "data"      => $data,
         "descricao" => $descricao,
-        "turmasQt"  => mysqli_num_rows($getTurmas),
         "status"    => $status,
         "created"   => $created
     );
