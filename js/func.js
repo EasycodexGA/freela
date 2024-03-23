@@ -135,8 +135,7 @@ function salvarCheckbox(id, type){
         for(let i = 0; i < buttons.length; i++){
             let takeData = buttons[i].dataset.id;
             let temp2 = file.arrayStrAdd[`${takeData}Array`];
-            console.log(buttons[i], temp2);
-            temp[i] = temp2;
+            temp[i].chamada = temp2;
         }
         temp = temp.join("#");
         file.arrayStrAdd["aulasArray"] = temp;
