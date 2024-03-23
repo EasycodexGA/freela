@@ -45,7 +45,7 @@ stopUserExist($__CONEXAO__, $email, $cpf);
 $senha = bin2hex(random_bytes(3));
 $senhaH = password_hash($senha, PASSWORD_DEFAULT);
 
-mysqli_query($__CONEXAO__, "insert into users (nome, email, senha, cpf, nascimento, typeC, lastModify, titularidade, active) values ('$nome', '$email', '$senhaH', '$cpf', '$nascimento', '2', '$__TIME__', '$titularidade', '$espera')")  or die("erro insert");
+mysqli_query($__CONEXAO__, "insert into users (nome, email, senha, cpf, nascimento, typeC, lastModify, titularidade, active, created) values ('$nome', '$email', '$senhaH', '$cpf', '$nascimento', '2', '$__TIME__', '$titularidade', '$espera', '$__TIME__')")  or die("erro insert");
 mysqli_query($__CONEXAO__, "insert into professores (email) values ('$email')")  or die("erro insert");
 
 $subject = "Sua senha provisória é $senha";
