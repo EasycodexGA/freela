@@ -156,7 +156,7 @@ function salvarCheckbox(id, type){
     if(type == 1 && id.includes('aulas')){
         verMais("aulas", false, 2, "aulas");
     } else {
-        closeVerMais();
+        closeVerMais(0, 0);
     }
 }
 
