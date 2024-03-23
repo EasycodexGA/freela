@@ -20,6 +20,7 @@ $dados = "";
 if($pass){
     $pass   = encrypt($pass);
     $dados  .= "(senha)";
+    $_SESSION["password"] = $pass;
     mysqli_query($__CONEXAO__, "update users set senha='$pass' where id='$__ID__'");
 }
 
@@ -27,6 +28,7 @@ if($email){
     $email  = setEmail($email);
     if($email != $__EMAIL__){
         $dados  .= "(email)";
+        $_SESSION["email"] = $email;
         mysqli_query($__CONEXAO__, "update users set email='$email' where id='$__ID__'");
     }
 }
