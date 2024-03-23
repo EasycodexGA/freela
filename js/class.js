@@ -289,7 +289,7 @@ class Profissionais extends File{
         this.name = 'profissionais'
         this.linkGet = 'usuarios/get/profissionais'
         this.thContent = ['nome', 'email', 'nascimento', 'titularidade', 'status']
-        this.jumpDetail.push('allTurmas', 'imagem')
+        this.jumpDetail.push('allTurmas')
         this.numsDetail.push('nascimento')
         this.arrayDetail.push('turmas')
         this.createTh()

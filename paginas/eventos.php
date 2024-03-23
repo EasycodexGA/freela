@@ -77,6 +77,8 @@ justLog($__EMAIL__, $__TYPE__, 1);
     <div id='addNew'></div>
     <?php } ?>
 
+    <div id='verMaisDiv'></div>
+
     <div class="list">
         <div class="header-list-out">
             <h1 class="title-header">Eventos</h1>

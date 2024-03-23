@@ -76,13 +76,18 @@ while($dados = mysqli_fetch_array($getPat)){
 
     <?php } ?>
 
-    <div class='infos'>
-        <h1 class='title-header'>Contato</h1>
-        <p>
-            <span>Prof. Luciano Menegaz</span>
-            <span>F. (48) 99806 0667</span>
-            <span>lucianor.menegaz@gmail.com</span>
-        </p>
+    <div style="display:flex; gap: 20px; align-items: center;">
+        <div class='infos'>
+            <h1 class='title-header'>Contato</h1>
+            <p>
+                <span>Prof. Luciano Menegaz</span>
+                <span>F. (48) 99806 0667</span>
+                <span>lucianor.menegaz@gmail.com</span>
+            </p>
+        </div>
+        <div style="width: 125px; aspect-ratio: 1; position: relative">
+            <img style="position: absolute; width: 100%; height: 100%; object-fit: cover;" src='../img/luciano.jpg'>
+        </div>
     </div>
 
     <div class='infos'>
