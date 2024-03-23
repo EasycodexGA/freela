@@ -190,7 +190,7 @@ class File{
                         verPresencaBt.setAttribute('onclick', "verMais(this, 1, 'Chamada')");
                     }
                     this.arrayStrAdd[`${key}Array`] = value;
-                    value = `<button class='btn-add' onclick='verMais("${key}", ${preData}, ${type}, "${key}")'>Ver ${key}</button>`;
+                    value = `<button class='btn-add' onclick='verMais("${key}", "${preData}", ${type}, "${key}")'>Ver ${key}</button>`;
                 }
                 if(!this.jumpDetail.includes(key)){
                     let addOut = document.createElement("div");
