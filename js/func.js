@@ -202,12 +202,13 @@ if (typeof searchBar !== "undefined"){
         console.log(file.allData)
         for(let i of file.allData){
             let name = i[filter];
+            console.log(name);
             
             if(Number(name)){
                 name = Number(name);
                 name = new Date((name * 1000) + 86400000).toLocaleDateString('pt-br');
             } else {
-                name = name.toString().toLowerCase();
+                name = name.toLowerCase();
             }
             if(name.includes(val)){
                 document.getElementById(`key${i.id}`).classList.add('table-line');
