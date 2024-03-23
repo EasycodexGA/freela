@@ -41,7 +41,7 @@ function verMais(me, type, titleStr){
 
     let title = document.createElement("h1");
     title.classList.add("title-add");
-    title.innerHTML = titleStr;
+    title.innerText = titleStr;
 
     let divMid = document.createElement("div");
     divMid.classList.add("chamadaout");
@@ -51,7 +51,7 @@ function verMais(me, type, titleStr){
         let div = document.createElement('div');
         div.classList.add("chamada-list")
         let p = document.createElement("p");
-        p.innerHTML = i.nome;
+        p.innerText = i.nome ? i.nome : i.data;
         div.append(p);
 
         if(type == 1){
@@ -70,6 +70,13 @@ function verMais(me, type, titleStr){
             div.append(input);
             div.append(label);
         }
+        if(type == 2){
+            presencaBt = document.createElement("button");
+            presencaBt.classList.add("btn-add");
+            presencaBt.innerText = 'Ver chamada';
+            presencaBt.setAttribute("onclick", "verMais(this, 1, 'Chamada')");
+            
+        }
 
         divMid.append(div);
     }
@@ -79,14 +86,14 @@ function verMais(me, type, titleStr){
 
     let closeBt = document.createElement("button");
     closeBt.setAttribute("onclick", 'closeVerMais()');
-    closeBt.innerHTML = 'Fechar';
+    closeBt.innerText = 'Fechar';
     closeBt.classList.add("btn-close");
     outBt.append(closeBt);
 
-    if(type == 1){
+    if(type > 0){
         let saveBt = document.createElement("button");
         saveBt.setAttribute("onclick", 'salvarCheckbox(this)');
-        saveBt.innerHTML = 'Salvar';
+        saveBt.innerText = 'Salvar';
         saveBt.dataset.id = me.dataset.id
         saveBt.classList.add("btn-add");
         outBt.append(saveBt);
@@ -95,7 +102,7 @@ function verMais(me, type, titleStr){
     if(me.dataset.pre != 'false'){
         let addBt = document.createElement("button");
         addBt.setAttribute("onclick", 'verMais(this, 1, "adicionar turma")');
-        addBt.innerHTML = 'Adicionar turma';
+        addBt.innerText = 'Adicionar turma';
         addBt.classList.add("btn-add");
         addBt.dataset.id = me.dataset.pre
         outBt.append(addBt);

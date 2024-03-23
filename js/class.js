@@ -160,6 +160,7 @@ class File{
                     value = (new Date(value * 1000 + 86400000)).toLocaleDateString("pt-BR");
                 }
                 if(this.arrayDetail.includes(key)){
+                    let type = 0;
                     qt = value.length;
                     for(let j in value){
                         if(key == 'alunos'){
@@ -168,18 +169,24 @@ class File{
                         value[j] = JSON.stringify(value[j]);
                     }
                     value = value.join("#");
+                    if(key == 'aulas'){
+                        type = 2;
+                        for(let i of value){
+                            this.arrayStrAdd[`${i.id}Array`] = 
+                        }
+                    }
                     if(key == 'alunos' && this.typeUser > 1){
                         let btAddAula = document.createElement("button");
                         btAddAula.classList.add("btn-add");
                         btAddAula.setAttribute('onclick', `openAddAula()`);
                         btAddAula.innerText = "Adicionar aula";
                         outBt.append(btAddAula);
-                        verPresencaBt.setAttribute('onclick', `verMais(this, 1, "Chamada")`);
+                        verPresencaBt.setAttribute('onclick', "verMais(this, 1, 'Chamada')");
                         verPresencaBt.dataset.id = key;
                         verPresencaBt.dataset.pre = preData;
                     }
                     this.arrayStrAdd[`${key}Array`] = value;
-                    value = `<button data-id='${key}' data-pre='${preData}' class='btn-add' onclick='verMais(this, 0, "${key}")'>Ver ${key}</button>`;
+                    value = `<button data-id='${key}' data-pre='${preData}' class='btn-add' onclick='verMais(this, ${type}, "${key}")'>Ver ${key}</button>`;
                 }
                 if(!this.jumpDetail.includes(key)){
                     let addOut = document.createElement("div");

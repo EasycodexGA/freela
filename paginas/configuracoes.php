@@ -14,13 +14,22 @@ justLog($__EMAIL__, $__TYPE__, 1);
 </head>
 <body>
     <h1 class='title-header'>Configurações</h1>
+
+    <div class='inps-out'>
+        <input type="text" id="myName" placeholder="Carregando..." class='inpProfile'/>
+        <input type="text" id="myEmail" placeholder="Carregando..." class='inpProfile'/>
+        <input type="text" id="myCpf" placeholder="Carregando..." class='inpProfile'/>
+        <input type="text" id="myNascimento" placeholder="Carregando..." class='inpProfile'/>
+        <input type="text" id="myType" placeholder="Carregando..." class='inpProfile'/>
+        <?php if(uniqueLevel($__TYPE__, 2)){ ?>
+            <input type="text" id="myTitularidade" placeholder="Carregando..." class='inpProfile'/>
+        <?php } ?>
+    </div>
     
     <?php if(uniqueLevel($__TYPE__, 2)){ ?>
-        <!-- Enviar CV -->
-        <!-- trocar imagem  -->
         <input type='file' id='imageAdd' accept="image/png, image/jpeg"/>
         <button onclick='trocarImg()'>Trocar imagem</button>
- 
+
         <input type='file' id='arquivoAdd' accept="application/pdf"/>
         <button onclick='novocv()'>Enviar curriculo</button>
 
@@ -46,6 +55,18 @@ justLog($__EMAIL__, $__TYPE__, 1);
             }
         </script>
     <?php } ?>
+
+    <script>
+        fetch("../sys/api/usuarios/get/me")
+        .then(e=>e.json())
+        .then(e=>{
+            console.log(e)
+            newMsg({
+                mensagem: e.mensagem,
+                response: "aguardando"
+            })
+        })
+    </script>
 
     <a href="../sys/sair">Sair</a>
 </body>
