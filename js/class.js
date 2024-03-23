@@ -170,9 +170,10 @@ class File{
                     }
                     value = value.join("#");
                     if(key == 'aulas'){
+                        console.log(value)
                         type = 2;
                         for(let i of value){
-                            console.log(i);
+                            // console.log(i);
                             let value2 = JSON.stringify(i);
                             this.arrayStrAdd[`${key}${i.id}Array`] = value2;
                         }
