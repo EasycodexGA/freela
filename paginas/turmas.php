@@ -140,7 +140,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
             }
         })
 
-        fetch("../sys/api/usuarios/get/professores")
+        fetch("../sys/api/usuarios/get/profissionais")
         .then(e=>e.json())
         .then(e=>{
             for(let i of e.mensagem){
