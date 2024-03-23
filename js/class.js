@@ -153,7 +153,6 @@ class File{
                     preData = key + 2;
                     this.arrayStrAdd[`${preData}Array`] = value2
                 }
-                preData = false;
                 if(this.numsDetail.includes(key)){
                     value = (new Date(value * 1000 + 86400000)).toLocaleDateString("pt-BR");
                 }
@@ -171,7 +170,7 @@ class File{
                         btAddAula.setAttribute('onclick', `verMais(this, 1, "Chamada")`);
                         btAddAula.innerText = "Adicionar aula";
                         btAddAula.dataset.id = key;
-                        btAddAula.pre = preData;
+                        btAddAula.dataset.pre = preData;
                         outBt.append(btAddAula);
                     }
                     this.arrayStrAdd[`${key}Array`] = value;
