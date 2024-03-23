@@ -127,7 +127,7 @@ class File{
             btClose.innerText = "Fechar";
             outBt.append(btClose);
 
-            if((this.typeUser > 2) || (this.typeUser > 1 && this.name == 'alunos')){
+            if((this.typeUser > 2) || (this.typeUser > 1 && (this.name == 'alunos' || this.name == 'recados'))){
                 let btRemove = document.createElement("button");
                 btRemove.classList.add("btn-add");
                 btRemove.id = 'btnRemove';
@@ -218,8 +218,8 @@ class File{
                         let p = document.createElement("p");
                         p.innerHTML = value.toString();
 
-                        if(key == 'curriculo'){
-                            let srcCur = value ? '../arquivos/curriculos/' + value : '#';
+                        if(key == 'curriculo' && value){
+                            let srcCur = '../arquivos/curriculos/';
                             let a = document.createElement("a");
                             a.href = srcCur;
                             a.innerText = 'Ver currículo';
@@ -273,7 +273,7 @@ class Categorias extends File{
         this.thContent = ['nome', 'turmas', 'status']
         // this.jumpDetail.push()
         // this.numsDetail.push()
-        // this.arrayDetail.push()
+        this.arrayDetail.push('turmas')
         this.createTh()
         this.getData()
     }
