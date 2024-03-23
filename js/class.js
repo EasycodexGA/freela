@@ -121,7 +121,7 @@ class File{
 
             let btClose = document.createElement("button");
             btClose.classList.add("btn-close");
-            btClose.addAttribute("onclick", "closeAdd()");
+            btClose.setAttribute("onclick", "closeAdd()");
             btClose.innerText = "Fechar";
 
             let btRemove = document.createElement("button");
@@ -131,7 +131,7 @@ class File{
 
             let btSave = document.createElement("button");
             btSave.classList.add("btn-add");
-            btSave.addAttribute("onclick", "javascript:void(0)");
+            btSave.setAttribute("onclick", "javascript:void(0)");
             btSave.innerText = "Salvar";
 
             outBt.append(btClose);
