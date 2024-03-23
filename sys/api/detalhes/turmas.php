@@ -2,30 +2,22 @@
 include '../../conexao.php';
 
 justLog($__EMAIL__, $__TYPE__, 1);
-echo "a";
 
 $turma  = scapeString($__CONEXAO__, $_GET['id']);
 $turma = setNum($turma);
 $decTurma = decrypt($turma);
 
-echo "b";
-
-
 if($__TYPE__ == 3){
     $_query_ = mysqli_query($__CONEXAO__, "select * from turmas where id='$decTurma'") or die("1");
 } else {
     $table = $__TYPE__ == 2 ? 'professores' : 'alunos';
-    $_query_ = mysqli_query($__CONEXAO__, "select * from turmas where id='$decTurma' and id in (select turma from $table where email='$__EMAIL__')")  or die("2");
+    $_query_ = mysqli_query($__CONEXAO__, "select * from turmas where id='$decTurma' and id in (select turma from $table where email='$__EMAIL__')") or die("2");
 }
-
-echo "c";
 
 
 if(mysqli_num_rows($_query_) < 1){
     endCode('Essa turma não existe ou você não está participando dela.', false);
 }
-
-echo "d";
 
 
 $array = array();
@@ -37,7 +29,7 @@ while($_dados_ = mysqli_fetch_array($_query_)){
     $status     = $status == '1' ? "active" : "inactive";
 
     $query = mysqli_query($__CONEXAO__, "select id, nome from users where email in (select email from alunos where turma='$decTurma')")  or die("3");
-    $query2 = mysqli_query($__CONEXAO__, "select id, nome, imagem from users where email in (select email from professores where turma='$decTurma')")  or die("4");
+    $query2 = mysqli_query($__CONEXAO__, "select id, nome, imagem from users where email in (select email from professores where turma='$decTurma')") or die("4");
 
     $arrAlunos = array();
     $arrProf = array();
@@ -55,13 +47,13 @@ while($_dados_ = mysqli_fetch_array($_query_)){
         array_push($arrProf, array("id"=>$idP, "nome"=>$nomeP, "imagem"=>$imagem));
     }
 
-    $query3 = mysqli_query($__CONEXAO__, "select id, data from aulas where turma='$decTurma'")  or die("5");
+    $query3 = mysqli_query($__CONEXAO__, "select id, data from aulas where turma='$decTurma'") or die("5");
     $aulas = array();
 
     while($dados3 = mysqli_fetch_array($query3)){
         $idAu = $dados3['id'];
         $dataAu = decrypt($dados3['data']);
-        $query4 = mysqli_query($__CONEXAO__, "select id, aluno, presenca from chamada where aula='$idAu'")  or die("6");
+        $query4 = mysqli_query($__CONEXAO__, "select id, aluno, presenca from chamada where aula='$idAu'") or die("6");
         $chamadaAula = array();
         while($dados4 = mysqli_fetch_array($query4)){
             $idC = $dados4['id'];
@@ -86,11 +78,9 @@ while($_dados_ = mysqli_fetch_array($_query_)){
         "status"            => $status
     );
     array_push($array, $arr);
-echo "g";
 
 }
 
-echo "k";
 
 
 endCode($array, true);
