@@ -2,10 +2,14 @@
 include '../../conexao.php';
 
 justLog($__EMAIL__, $__TYPE__, 1);
+echo "a";
 
 $turma  = scapeString($__CONEXAO__, $_GET['id']);
 $turma = setNum($turma);
 $decTurma = decrypt($turma);
+
+echo "b";
+
 
 if($__TYPE__ == 3){
     $_query_ = mysqli_query($__CONEXAO__, "select * from turmas where id='$decTurma'") or die("1");
@@ -14,9 +18,15 @@ if($__TYPE__ == 3){
     $_query_ = mysqli_query($__CONEXAO__, "select * from turmas where id='$decTurma' and id in (select turma from $table where email='$__EMAIL__')")  or die("2");
 }
 
+echo "c";
+
+
 if(mysqli_num_rows($_query_) < 1){
     endCode('Essa turma não existe ou você não está participando dela.', false);
 }
+
+echo "d";
+
 
 $array = array();
 while($_dados_ = mysqli_fetch_array($_query_)){
@@ -76,6 +86,11 @@ while($_dados_ = mysqli_fetch_array($_query_)){
         "status"            => $status
     );
     array_push($array, $arr);
+echo "g";
+
 }
+
+echo "k";
+
 
 endCode($array, true);

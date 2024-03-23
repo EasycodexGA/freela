@@ -130,6 +130,7 @@ class File{
             if((this.typeUser > 2) || (this.typeUser > 1 && this.name == 'alunos')){
                 let btRemove = document.createElement("button");
                 btRemove.classList.add("btn-add");
+                btRemove.id = 'btnRemove';
                 btRemove.setAttribute("onclick", "file.removeSec()")
                 btRemove.innerText = "Excluir";
                 outBt.append(btRemove);
