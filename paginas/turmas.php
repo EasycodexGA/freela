@@ -109,10 +109,11 @@ justLog($__EMAIL__, $__TYPE__, 1);
         </div>
     </div>
     
-    <?php } ?>
-    
+    <?php } else { ?>
     <div id='addNew'></div>
     <div id='addNewAula'></div>
+    <?php } ?>
+    
     <div id='verMaisDiv'></div>
     
     <div class="list">
