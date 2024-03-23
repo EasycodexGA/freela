@@ -584,10 +584,18 @@ header, .extra{
 
 .infs-conf{
     width: calc(100% / 3);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.infs-conf h1{
+    font-size: 15px;
+    color: gray;
 }
 
 .inpProfile {
-    width: 100%;
+    width: calc(100% - 34px);
     border: 2px solid #dfdfdf;
     padding: 5px 15px;
     border-radius: 3px;

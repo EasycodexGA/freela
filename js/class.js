@@ -162,7 +162,6 @@ class File{
                 if(this.arrayDetail.includes(key)){
                     let type = 0;
                     if(key == 'aulas'){
-                        console.log(value)
                         type = 2;
                         for(let i of value){
                             let value2 = i.chamada;
