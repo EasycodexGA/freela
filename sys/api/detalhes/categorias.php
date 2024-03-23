@@ -18,8 +18,8 @@ while($_dados_ = mysqli_fetch_array($_query_)){
     $query  = mysqli_query($__CONEXAO__, "select id, nome from turmas where categoria='$id'");
     $turmas = array();
     for($dados = mysqli_fetch_array($query)){
-        $idT    = $dados['id'];
-        $nomeT  = $dados['nome'];
+        // $idT    = $dados['id'];
+        // $nomeT  = $dados['nome'];
         // array_push($turmas, array("id"=>$idT, "nome"=>decrypt($nomeT)));
     }
 
