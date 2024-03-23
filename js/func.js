@@ -130,7 +130,7 @@ function closeVerMais(id, type){
 function salvarCheckbox(id, type){
     if(id == 'aulas'){
         let temp = file.arrayStrAdd["aulasArray"];
-        temp.split("#");
+        temp = temp.split("#");
         let buttons = document.querySelectorAll(".btn-presenca");
         for(let i = 0; i < buttons.length; i++){
             let takeData = buttons[i].dataset.id;
