@@ -24,38 +24,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
     </header>
 
     <div id='details'>
-        <div class='add-container'>
-            <h1 class='title-add'>Detalhes</h1>
-            <div class='inps-add'>
-                <div class='inp-add-out'>
-                    <h3>Nome</h3>
-                    <p id='nomeGet'>-- -- --</p>
-                </div>
-                <div class='inp-add-out'>
-                    <h3>Categoria</h3>
-                    <p id='categoriaGet'>-- -- --</p>
-                </div>
-                <div class='inp-add-out'>
-                    <h3>Horário</h3>
-                    <p id='horarioGet'>-- -- --</p>
-                </div>
-                <div class='inp-add-out'>
-                    <h3>Profissionais - <span id='profissionaisQtGet'>0</span></h3>
-                    <p id='profissionaisGet'>-- -- --</p>
-                </div>
-                <div class='inp-add-out'>
-                    <h3>Alunos - <span id='alunosQtGet'>0</span></h3>
-                    <p id='alunosGet'>-- -- --</p>
-                </div>
-            
-            </div>
-            <div class='out-bt-sv'>
-                <button class='btn-close' onclick='closeAdd()'>Fechar</button>
-                <button id='btnRemove' class='btn-add'>Excluir</button>
-                <button id='btnAddAula' class='btn-add' onclick='openAddAula()'>+ Adicionar aula</button>
-                <button onclick='javascript:void(0)' class='btn-add'>Salvar</button>
-            </div>
-        </div>
+        <div class='add-container' id='detailContainer'></div>
     </div>
 
 

@@ -24,40 +24,7 @@ justLog($__EMAIL__, $__TYPE__, 2);
     </header>
     <div id='addNewAula'></div>
     <div id='details'>
-    <div class='add-container'>
-            <h1 class='title-add'>Detalhes</h1>
-            <div class='inps-add'>
-                <div class='inp-add-out'>
-                    <h3>Title</h3>
-                    <p id='titleGet' type='text'>-- -- --</p>
-                </div>
-                <div class='inp-add-out'>
-                    <h3>De</h3>
-                    <p id='fromGet' type='text'>-- -- --</p>
-                </div>
-                <div class='inp-add-out'>
-                    <h3>Para</h3>
-                    <p id='toGet' type='text'>-- -- --</p>
-                </div>
-                <div class='inp-add-out'>
-                    <h3>Categoria</h3>
-                    <p id='typeGet' type='text'>-- -- --</p>
-                </div>
-                <div class='inp-add-out'>
-                    <h3>Data</h3>
-                    <p id='dataGet' type='text'>-- -- --</p>
-                </div>
-                <div class='inp-add-out' style='width: calc(100%)'>
-                    <h3>Descrição</h3>
-                    <p id='descGet' type='text'>-- -- --</p>
-                </div>
-            </div>
-            <div class='out-bt-sv'>
-                <button class='btn-close' onclick='closeAdd()'>Fechar</button>
-                <button id='btnRemove' class='btn-add'>Excluir</button>
-                <button onclick='javascript:void(0)' class='btn-add'>Salvar</button>
-            </div>
-        </div>
+        <div class='add-container' id='detailContainer'></div>
     </div>
 
     <div class='extra'>

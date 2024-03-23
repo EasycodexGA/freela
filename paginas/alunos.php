@@ -25,44 +25,7 @@ justLog($__EMAIL__, $__TYPE__, 2);
     <div id='addNewAula'></div>
 
     <div id='details'>
-        <div class='add-container'>
-            <h1 class='title-add'>Detalhes</h1>
-            <div class='inps-add'>
-                <div class='inp-add-out'>
-                    <h3>Nome</h3>
-                    <p id='nomeGet'>-- -- --</p>
-                </div>
-                <div class='inp-add-out'>
-                    <h3>Email</h3>
-                    <p id='emailGet'>-- -- --</p>
-                </div>
-                <div class='inp-add-out'>
-                    <h3>CPF</h3>
-                    <p id='cpfGet'>-- -- --</p>
-                </div>
-                <div class='inp-add-out'>
-                    <h3>Nascimento</h3>
-                    <p id='nascimentoGet'>-- -- --</p>
-                </div>
-                <div class='inp-add-out'>
-                    <h3>Presenças</h3>
-                    <p id='presencasGet'>-- -- --</p>
-                </div>
-                <div class='inp-add-out'>
-                    <h3>Faltas</h3>
-                    <p id='faltasGet'>-- -- --</p>
-                </div>
-                <div class='inp-add-out'>
-                    <h3>Turmas</h3>
-                    <p id='turmasGet'>-- -- --</p>
-                </div>
-            </div>
-            <div class='out-bt-sv'>
-                <button class='btn-close' onclick='closeAdd()'>Fechar</button>
-                <button id='btnRemove' class='btn-add'>Excluir</button>
-                <button onclick='javascript:void(0)' class='btn-add'>Salvar</button>
-            </div>
-        </div>
+        <div class='add-container' id='detailContainer'></div>
     </div>
 
     <div id='verMaisDiv'></div>

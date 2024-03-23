@@ -24,42 +24,7 @@ justLog($__EMAIL__, $__TYPE__, 3);
     </header>
 
     <div id='details'>
-        <div class='add-container'>
-            <h1 class='title-add'>Detalhes</h1>
-            <div class='inps-add'>
-                <div class='inp-add-out'>
-                    <h3>Nome</h3>
-                    <p id='nomeGet' type='text'>-- -- --</p>
-                </div>
-                <div class='inp-add-out'>
-                    <h3>Titularidade</h3>
-                    <p id='titularidadeGet' type='text'>-- -- --</p>
-                </div>
-                <div class='inp-add-out'>
-                    <h3>Nascimento</h3>
-                    <p id='nascimentoGet' type='text'>-- -- --</p>
-                </div>
-                <div class='inp-add-out'>
-                    <h3>Email</h3>
-                    <p id='emailGet' type='text'>-- -- --</p>
-                </div>
-                <div class='inp-add-out'>
-                    <h3>CPF</h3>
-                    <p id='cpfGet' type='text'>-- -- --</p>
-                </div>
-                <div class="inp-add-out" style="width: calc(100%)">
-                    <h3>Foto</h3>
-                    <div class='img-out-dt'>
-                        <img src='../img/default.webp'>
-                    </div>
-                </div>
-            </div>
-            <div class='out-bt-sv'>
-                <button class='btn-close' onclick='closeAdd()'>Fechar</button>
-                <button id='btnRemove' class='btn-add'>Excluir</button>
-                <button onclick='javascript:void(0)' class='btn-add'>Salvar</button>
-            </div>
-        </div>
+        <div class='add-container' id='detailContainer'></div>
     </div>
 
     <div class='extra'>

@@ -108,12 +108,42 @@ class File{
                 return;
             }
             details.classList.add("add-active");
+
+            let h1 = document.createElement("h1");
+            h1.classList.add("title-add");
+            h1.innerText = "Detalhes";
+
+            let inpsAdd = document.createElement("div")
+            inpsAdd.classList.add("inps-add");
+
+            let outBt = document.createElement("div");
+            outBt.classList.add("out-bt-sv");
+
+            let btClose = document.createElement("button");
+            btClose.classList.add("btn-close");
+            btClose.addAttribute("onclick", "closeAdd()");
+            btClose.innerText = "Fechar";
+
+            let btRemove = document.createElement("button");
+            btRemove.classList.add("btn-add");
+            btRemove.id = 'btnRemove';
+            btRemove.innerText = "Excluir";
+
+            let btSave = document.createElement("button");
+            btSave.classList.add("btn-add");
+            btSave.addAttribute("onclick", "javascript:void(0)");
+            btSave.innerText = "Salvar";
+
+            outBt.append(btClose);
+            outBt.append(btRemove);
+
+
             btnRemove.onclick = () => {
                 this.removeSec();
             }
     
             let i = e.mensagem[0];
-            console.log(i.allTurmas);
+            
     
             for(let [key, value] of Object.entries(i)){
                 let preData = false;
@@ -139,17 +169,64 @@ class File{
                     }
                     value = value.join("#");
                     if(key == 'alunos'){
-                        verPresencaBt.setAttribute('onclick', `verMais(this, 1, "Chamada")`);
-                        verPresencaBt.dataset.id = key
-                        verPresencaBt.pre = preData
+                        let btAddAula = document.createElement("button");
+                        btAddAula.classList.add("btn-add");
+                        btAddAula.setAttribute('onclick', `verMais(this, 1, "Chamada")`);
+                        btAddAula.innerHTML = "Excluir";
+                        btAddAula.dataset.id = key;
+                        btAddAula.pre = preData;
+                        outBt.append(btAddAula);
                     }
                     this.arrayStrAdd[`${key}Array`] = value;
                     value = `<button data-id='${key}' data-pre='${preData}' class='btn-add' onclick='verMais(this, 0, "${key}")'>Ver ${key}</button>`;
                 }
                 if(!this.jumpDetail.includes(key)){
-                    document.getElementById(`${key}Get`).innerHTML = value.toString();
+                    let addOut = document.createElement("div");
+                    addOut.classList.add("inp-add-out");
+                    if(key == 'imagem'){
+                        addOut.style = 'width: calc(100%);';
+                        key = 'Foto';
+                        let imgOut = document.createElement('div');
+                        imgOut.classList.add('img-out-dt');
+                        let img = document.createElement("img");
+                        let srcImg = value ? value : '../img/default.webp';
+                        img.src = srcImg;
+                        let h3 = document.createElement("h3");
+                        h3.innerHTML = key;
+                        imgOut.append(img);
+                        addOut.append(h3);
+                        addOut.append(imgOut);
+                    } else {
+                        if(key == 'descricao'){
+                            key = 'descrição';
+                            addOut.style = 'width: calc(100%);';
+                        }
+
+                        if(this.arrayDetail.includes(key)){
+                            let h3 = document.createElement("h3");
+                            let span = document.createElement("span");
+                            span.innerText = i[`${key}Qt`]
+                            h3.innerHTML = key + ' - ';
+                            h3.append(span);
+                            addOut.append(h3);
+                        } else {
+                            let h3 = document.createElement("h3");
+                            h3.innerHTML = key;
+                            addOut.append(h3);
+                        }
+
+                        let p = document.createElement("p");
+                        p.innerHTML = value.toString();
+
+                        addOut.append(p);
+                    }
+                    inpsAdd.append(addOut);
                 }
             }
+            outBt.append(btSave);
+            detailContainer.append(h1);
+            detailContainer.append(inpsAdd);
+            detailContainer.append(outBt);
         })
     }
 
@@ -239,7 +316,7 @@ class Turmas extends File{
         this.name = 'turmas'
         this.linkGet = 'turmas/get/turmas'
         this.thContent = ['nome', 'categoria', 'profissionais', 'alunos', 'status']
-        // this.jumpDetail.push()
+        this.jumpDetail.push('alunosQt', 'profissionaisQt')
         this.numsDetail.push('horario')
         this.arrayDetail.push('profissionais', 'alunos')
         this.createTh()
