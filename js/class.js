@@ -168,11 +168,12 @@ class File{
                     if(key == 'alunos' && this.typeUser > 1){
                         let btAddAula = document.createElement("button");
                         btAddAula.classList.add("btn-add");
-                        btAddAula.setAttribute('onclick', `verMais(this, 1, "Chamada")`);
+                        btAddAula.setAttribute('onclick', `openAddAula()`);
                         btAddAula.innerText = "Adicionar aula";
-                        btAddAula.dataset.id = key;
-                        btAddAula.dataset.pre = preData;
                         outBt.append(btAddAula);
+                        verPresencaBt.setAttribute('onclick', `verMais(this, 1, "Chamada")`);
+                        verPresencaBt.dataset.id = key;
+                        verPresencaBt.dataset.pre = preData;
                     }
                     this.arrayStrAdd[`${key}Array`] = value;
                     value = `<button data-id='${key}' data-pre='${preData}' class='btn-add' onclick='verMais(this, 0, "${key}")'>Ver ${key}</button>`;
