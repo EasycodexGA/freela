@@ -33,6 +33,7 @@ function closeAddAula(){
 
 function verMais(me, type, titleStr){
     verMaisDiv.innerHTML = '';
+    console.log(me.dataset.id);
     let string = file.arrayStrAdd[`${me.dataset.id}Array`];
     let array = string.split('#');
 
@@ -75,7 +76,7 @@ function verMais(me, type, titleStr){
             presencaBt.classList.add("btn-add");
             presencaBt.innerText = 'Ver chamada';
             presencaBt.setAttribute("onclick", "verMais(this, 1, 'Chamada')");
-            presencaBt.dataset.id = 'alunos' + i.id
+            presencaBt.dataset.id = 'aulas' + i.id
             div.append(presencaBt);
         }
 

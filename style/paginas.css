@@ -583,7 +583,7 @@ header, .extra{
 }
 
 .infs-conf{
-    width: calc(100% / 3);
+    width: calc(100% / 3 - 10px);
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -593,7 +593,9 @@ header, .extra{
     font-size: 15px;
     color: gray;
 }
-
+.inpProfile::disabled {
+    background: #eaeaea;
+}
 .inpProfile {
     width: calc(100% - 34px);
     border: 2px solid #dfdfdf;
