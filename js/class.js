@@ -92,7 +92,7 @@ class File{
     
             let option = document.createElement('option');
             option.value = i;
-            option.innerHTML = i;
+            option.innerHTML = i[0].toUpperCase() + (i.substr(0, 0));
             select.appendChild(option);
         }
         headList.appendChild(tr);
@@ -144,6 +144,7 @@ class File{
             let i = e.mensagem[0];
             
             for(let [key, value] of Object.entries(i)){
+                let qt;
                 let preData = false;
                 if(key == 'turmas'){
                     let value2 = i.allTurmas
@@ -159,6 +160,7 @@ class File{
                     value = (new Date(value * 1000 + 86400000)).toLocaleDateString("pt-BR");
                 }
                 if(this.arrayDetail.includes(key)){
+                    qt = value.length;
                     for(let j in value){
                         if(key == 'alunos'){
                             value[j].checked = 0;
@@ -204,7 +206,7 @@ class File{
                         if(this.arrayDetail.includes(key)){
                             let h3 = document.createElement("h3");
                             let span = document.createElement("span");
-                            span.innerText = i[`${key}Qt`]
+                            span.innerText = qt;
                             h3.innerHTML = key + ' - ';
                             h3.append(span);
                             addOut.append(h3);
@@ -244,7 +246,7 @@ class Alunos extends File{
         super(id)
         this.name = 'alunos'
         this.linkGet = 'usuarios/get/alunos'
-        this.thContent = ['nome', 'email', 'nascimento', 'status']
+        this.thContent = ['Nome', 'email', 'nascimento', 'status']
         this.jumpDetail.push('allTurmas')
         this.numsDetail.push('nascimento')
         this.arrayDetail.push('turmas')
@@ -300,7 +302,7 @@ class Recados extends File{
         super(id)
         this.name = 'recados'
         this.linkGet = 'recados/get.php'
-        this.thContent = ['Título', 'Para', 'data', 'status']
+        this.thContent = ['Título', 'Para', 'Data', 'Status']
         // this.jumpDetail.push()
         this.numsDetail.push("data")
         // this.arrayDetail.push()
@@ -314,7 +316,7 @@ class Turmas extends File{
         super(id)
         this.name = 'turmas'
         this.linkGet = 'turmas/get/turmas'
-        this.thContent = ['nome', 'categoria', 'profissionais', 'alunos', 'status']
+        this.thContent = ['Nome', 'Categoria', 'Profissionais', 'Alunos', 'Status']
         this.jumpDetail.push('alunosQt', 'profissionaisQt')
         this.numsDetail.push('horario')
         this.arrayDetail.push('profissionais', 'alunos')
