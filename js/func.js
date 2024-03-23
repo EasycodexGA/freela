@@ -150,7 +150,7 @@ function addNewData(local, data){
     })
     .then(e=>e.json())
     .then(e=>{
-        console.log(`Recived from: ${Local}`)
+        console.log(`Recived from: ${local}`)
         console.log(`Response: ${e}`)
         isActive = false;
         newMsg(e);
