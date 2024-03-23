@@ -74,6 +74,7 @@ function verMais(me, type, titleStr){
         if(type == 2){
             presencaBt = document.createElement("button");
             presencaBt.classList.add("btn-add");
+            presencaBt.classList.add("btn-presenca");
             presencaBt.innerText = 'Ver chamada';
             presencaBt.setAttribute("onclick", "verMais(this, 1, 'Chamada')");
             presencaBt.dataset.id = 'aulas' + i.id;
@@ -124,18 +125,31 @@ function closeVerMais(){
 }
 
 function salvarCheckbox(me){
-    let string = file.arrayStrAdd[`${me.dataset.id}Array`];
-    let array = string.split('#');
+    if(me.dataset.id == 'aulas'){
+        let temp = file.arrayStrAdd[`${me.dataset.id}Array`];
+        temp.split("#");
+        let buttons = document.querySelectorAll(".btn-presenca");
+        for(let i = 0; i < buttons.length; i++){
+            let takeData = buttons[i].dataset.id;
+            let temp2 = file.arrayStrAdd[`${takeData}Array`];
+            temp[i] = temp2;
+        }
+        temp = temp.join("#");
+        file.arrayStrAdd[`${me.dataset.id}Array`] = temp;
+    } else {
+        let string = file.arrayStrAdd[`${me.dataset.id}Array`];
+        let array = string.split('#');
 
-    let allBts = document.querySelectorAll('.checkbox-presenca');
-    for(i = 0; i < allBts.length; i++){
-        bool = allBts[i].checked ? 1 : 0 ;
-        array[i] = JSON.parse(array[i]);
-        array[i].checked = bool;
-        array[i] = JSON.stringify(array[i]);
+        let allBts = document.querySelectorAll('.checkbox-presenca');
+        for(let i = 0; i < allBts.length; i++){
+            bool = allBts[i].checked ? 1 : 0 ;
+            array[i] = JSON.parse(array[i]);
+            array[i].checked = bool;
+            array[i] = JSON.stringify(array[i]);
+        }
+        let value = array.join('#');
+        file.arrayStrAdd[`${me.dataset.id}Array`] = value;
     }
-    let value = array.join('#');
-    file.arrayStrAdd[`${me.dataset.id}Array`] = value;
     closeVerMais();
 }
 
