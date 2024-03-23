@@ -117,6 +117,7 @@ function verMais(me, type, titleStr){
 }
 
 function closeVerMais(){
+    console.log(file.arrayStrAdd);
     verMaisDiv.classList.remove('add-active');
 }
 
