@@ -7,3 +7,7 @@ session_destroy();
 header("Location: #leave");
 exit;
 ?>
+
+<script>
+    parent.window.location = "#leave";
+</script>
