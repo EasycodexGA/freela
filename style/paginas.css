@@ -289,7 +289,7 @@ header, .extra{
     overflow-x: hidden;
 }
 
-.content-list td::first-letter, .inp-add-out p::first-letter,  .inp-add-out h3::first-letter, #selectFilter option::first-letter, .title-add::first-letter, .chamada-list p::first-letter{
+.content-list td::first-letter, .inp-add-out p::first-letter,  .inp-add-out h3::first-letter, #selectFilter options::first-letter, .title-add::first-letter, .chamada-list p::first-letter{
     text-transform: capitalize;
 }
 
