@@ -203,7 +203,6 @@ if (typeof searchBar !== "undefined"){
         console.log(file.allData)
         for(let i of file.allData){
             let name = i[filter];
-            console.log(name);
             name = name.toString().toLowerCase();
             if(name.includes(val)){
                 document.getElementById(`key${i.id}`).classList.add('table-line');
