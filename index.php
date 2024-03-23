@@ -132,12 +132,13 @@ include "sys/conexao.php";
             recadosOut.children[0].style = "display: flex";
         }
 
-        setInterval(()=>{
+        let intCheck = setInterval(()=>{
             if(!localStorage.leave){
                 localStorage.leave = "false";
             }
             if(localStorage.leave == "true"){
-                window.location.reload()
+                clearInterval(intCheck)
+                window.location.reload();
             }
         },2000)
     </script>
