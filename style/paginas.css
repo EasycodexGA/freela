@@ -594,7 +594,7 @@ header, .extra{
     color: gray;
 }
 .inpProfile::disabled {
-    background: #eaeaea;
+    background: #dfdfdf!important;
 }
 .inpProfile {
     width: calc(100% - 34px);
