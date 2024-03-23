@@ -75,7 +75,7 @@ function verMais(id, pre,type, titleStr){
             presencaBt.classList.add("btn-add");
             presencaBt.classList.add("btn-presenca");
             presencaBt.innerText = 'Ver chamada';
-            presencaBt.setAttribute("onclick", `verMais(${id}, false, 1, 'Chamada')`);
+            presencaBt.setAttribute("onclick", `verMais('${id}${i.id}', false, 1, 'Chamada')`);
             presencaBt.dataset.id = id;
             div.append(presencaBt);
         }
@@ -95,7 +95,7 @@ function verMais(id, pre,type, titleStr){
     if(type > 0){
         let saveBt = document.createElement("button");
         let type = id == 'aulas' ? 1 : 0;
-        saveBt.setAttribute("onclick", `salvarCheckbox(${id}, ${type})`);
+        saveBt.setAttribute("onclick", `salvarCheckbox('${id}', ${type})`);
         saveBt.innerText = 'Salvar';
         saveBt.classList.add("btn-add");
         outBt.append(saveBt);
@@ -103,7 +103,7 @@ function verMais(id, pre,type, titleStr){
 
     if(pre){
         let addBt = document.createElement("button");
-        addBt.setAttribute("onclick", `verMais(${id}, false, 1, "adicionar turma")`);
+        addBt.setAttribute("onclick", `verMais('${id}', false, 1, "adicionar turma")`);
         addBt.innerText = 'Adicionar turma';
         addBt.classList.add("btn-add");
         outBt.append(addBt);
