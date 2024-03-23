@@ -46,5 +46,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
             }
         </script>
     <?php } ?>
+
+    <a href="../sys/sair">Sair</a>
 </body>
 </html>
