@@ -94,7 +94,7 @@ justLog($__EMAIL__, $__TYPE__, 2);
         </table>
 
     </div>
-
+    <?php if(requireLevel($__TYPE__, 2)){ ?>
     <script>
         fetch("../sys/api/turmas/get/turmas")
         .then(e=>e.json())
@@ -106,5 +106,6 @@ justLog($__EMAIL__, $__TYPE__, 2);
             }
         })
     </script>
+    <?php } ?>
 </body>
 </html>

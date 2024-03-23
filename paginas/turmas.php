@@ -127,6 +127,8 @@ justLog($__EMAIL__, $__TYPE__, 1);
         </table>
 
     </div>
+
+    <?php if(requireLevel($__TYPE__, 2)){ ?>
     <script>
         fetch("../sys/api/usuarios/get/categorias")
         .then(e=>e.json())
@@ -148,5 +150,6 @@ justLog($__EMAIL__, $__TYPE__, 1);
             }
         })
     </script>
+    <?php } ?>
 </body>
 </html>
