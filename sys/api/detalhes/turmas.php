@@ -52,7 +52,7 @@ while($_dados_ = mysqli_fetch_array($_query_)){
 
     while($dados3 = mysqli_fetch_array($query3)){
         $idAu = $dados3['id'];
-        $dataAu = decrypt($dados3['data']);
+        $dataAu = $dados3['data'];
         $query4 = mysqli_query($__CONEXAO__, "select id, aluno, presenca from chamada where aula='$idAu'") or die("6");
         $chamadaAula = array();
         while($dados4 = mysqli_fetch_array($query4)){
