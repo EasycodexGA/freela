@@ -329,7 +329,7 @@ class Turmas extends File{
         this.thContent = ['Nome', 'Categoria', 'Profissionais', 'Alunos', 'Status']
         this.jumpDetail.push('alunosQt', 'profissionaisQt')
         this.numsDetail.push('horario')
-        this.arrayDetail.push('profissionais', 'alunos')
+        this.arrayDetail.push('profissionais', 'alunos', 'aulas')
         this.createTh()
         this.getData()
     }
