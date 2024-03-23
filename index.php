@@ -137,7 +137,7 @@ include "sys/conexao.php";
                 localStorage.leave = "false";
             }
             if(localStorage.leave == "true"){
-                clearInterval(intCheck)
+                localStorage.leave = "false";
                 window.location.reload();
             }
         },2000)
