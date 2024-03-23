@@ -3,9 +3,9 @@ include '../../conexao.php';
 
 justLog($__EMAIL__, $__TYPE__, 3);
 
-$id  = scapeString($__CONEXAO__, $_GET['id']);
-$id  = setNum($id);
-$id = decrypt($id);
+$id     = scapeString($__CONEXAO__, $_GET['id']);
+$id     = setNum($id);
+$id     = decrypt($id);
 $_query_ = mysqli_query($__CONEXAO__, "select * from categorias where id='$id'");
 
 $array = array();
@@ -15,12 +15,12 @@ while($_dados_ = mysqli_fetch_array($_query_)){
     $status = $_dados_["active"];
 
 
-    $query = mysqli_query($__CONEXAO__, "select id, nome from turmas where categoria='$id'");
+    $query  = mysqli_query($__CONEXAO__, "select id, nome from turmas where categoria='$id'");
     $turmas = array();
     for($dados = mysqli_fetch_array($query)){
-        $idT = $dados['id'];
-        $nomeT = decrypt($dados['nome']);
-        array_push($turmas, array("id"=>$idT, "nome"=>$nomeT));
+        $idT    = $dados['id'];
+        $nomeT  = $dados['nome'];
+        array_push($turmas, array("id"=>$idT, "nome"=>decrypt($nomeT)));
     }
 
     $status = $status == '1' ? "active" : "inactive";
