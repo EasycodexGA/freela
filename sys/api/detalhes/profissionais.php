@@ -17,6 +17,7 @@ while($_dados_ = mysqli_fetch_array($_query_)){
     $nascimento     = decrypt($_dados_["nascimento"]);
     $titularidade   = decrypt($_dados_["titularidade"]);
     $imagem         = decrypt($_dados_["imagem"]);
+    $curriculo      = decrypt($_dados_["curriculo"]);
     $email          = $_dados_["email"];
     $status         = $_dados_["active"];
     $status         = $status == '1' ? "active" : "inactive";
@@ -40,9 +41,10 @@ while($_dados_ = mysqli_fetch_array($_query_)){
         "titularidade"  => $titularidade,
         "email"         => $email,
         "cpf"           => $cpf,
-        "imagem"        => $imagem,
         "nascimento"    => $nascimento,
         "turmas"        => $arrTurmas,
+        "curriculo"     => $curriculo,
+        "imagem"        => $imagem,
         "status"        => $status
     );
     array_push($array, $arr);

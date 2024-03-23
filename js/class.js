@@ -190,7 +190,7 @@ class File{
                         let imgOut = document.createElement('div');
                         imgOut.classList.add('img-out-dt');
                         let img = document.createElement("img");
-                        let srcImg = value ? value : '../img/default.webp';
+                        let srcImg = value ? '../imagens/perfil/' + value : '../img/default.webp';
                         img.src = srcImg;
                         let h3 = document.createElement("h3");
                         h3.innerHTML = key;
@@ -207,17 +207,27 @@ class File{
                             let h3 = document.createElement("h3");
                             let span = document.createElement("span");
                             span.innerText = qt;
-                            h3.innerHTML = key + ' - ';
+                            h3.innerText = key + ' - ';
                             h3.append(span);
                             addOut.append(h3);
                         } else {
                             let h3 = document.createElement("h3");
-                            h3.innerHTML = key;
+                            h3.innerText = key;
                             addOut.append(h3);
                         }
 
                         let p = document.createElement("p");
-                        p.innerHTML = value.toString();
+                        p.innerText = value.toString();
+                        
+                        if(key == 'curriculo'){
+                            let srcCur = value ? '../arquivos/curriculos/' + value : '#';
+                            let a = document.createElement("a");
+                            a.href = srcCur;
+                            a.innerText = 'Ver currículo';
+                            a.classList.add('a-cur');
+                            p.innerHTML = '';
+                            p.append(a);
+                        }
 
                         addOut.append(p);
                     }
