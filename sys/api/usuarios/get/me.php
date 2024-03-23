@@ -3,7 +3,7 @@ include '../../../conexao.php';
 
 justLog($__EMAIL__, $__TYPE__, 1);
 
-$getMyProfile = mysqli_query($__CONEXAO__, "select * from users where type='$__TYPE__' and id='$__ID__'");
+$getMyProfile = mysqli_query($__CONEXAO__, "select * from users where typeC='$__TYPE__' and id='$__ID__'");
 
 $infosArr = array();
 
@@ -22,11 +22,16 @@ while($dados = mysqli_fetch_array($getMyProfile)){
         "cpf"=>$cpf,
         "nome"=>$nome,
         "email"=>$email,
-        "imagem"=>$imagem,
-        "curriculo"=>$curriculo,
         "nascimento"=>$nascimento,
-        "titularidade"=>$titularidade
-    )
+    );
+
+    if($__TYPE__ == 2){
+        array_push($infosArr, array(
+            "imagem"=>$imagem,
+            "curriculo"=>$curriculo,
+            "titularidade"=>$titularidade
+        ));
+    }
 }
 
 endCode($infosArr, true);
