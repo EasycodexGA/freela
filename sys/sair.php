@@ -8,5 +8,5 @@ header("Location: ../");
 exit;
 ?>
 <script>
-    parent.window.location.reload();
+    window.location.reload();
 </script>
