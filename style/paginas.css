@@ -576,3 +576,8 @@ header, .extra{
     flex-direction: column;
     gap: 10px;
 }
+.inps-out {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
