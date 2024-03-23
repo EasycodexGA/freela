@@ -153,6 +153,7 @@ class File{
                     preData = key + 2;
                     this.arrayStrAdd[`${preData}Array`] = value2
                 }
+                preData = false;
                 if(this.numsDetail.includes(key)){
                     value = (new Date(value * 1000 + 86400000)).toLocaleDateString("pt-BR");
                 }
