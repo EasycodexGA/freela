@@ -140,7 +140,7 @@ function getPresenca(id){
 
 isActive = false;
 function addNewData(local, data){
-    console.log(`Reciving data: ${data}`)
+    console.log(`Reciving data:`, data)
     console.log(`To local: ${local}`)
     if(isActive) return;
     isActive = true;
@@ -151,7 +151,7 @@ function addNewData(local, data){
     .then(e=>e.json())
     .then(e=>{
         console.log(`Recived from: ${local}`)
-        console.log(`Response: ${e}`)
+        console.log(`Response:`, e)
         isActive = false;
         newMsg(e);
     })
