@@ -167,7 +167,7 @@ class File{
                         for(let i of value){
                             let value2 = i.chamada;
                             for(let j in value2){
-                                value2 = JSON.stringify(value2[j]);
+                                value2[j] = JSON.stringify(value2[j]);
                             }
                             value2 = value2.join('#');
                             this.arrayStrAdd[`${key}${i.id}Array`] = value2;
