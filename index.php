@@ -73,11 +73,11 @@ include "sys/conexao.php";
     <script>
         const btns = document.querySelectorAll("button.btn");
 
-        iframePage.onchange = () => {
+        iframePage.addEventListener("change", {
             if(iframePage.src == "#leave"){
                 window.location.reload();
             }
-        }
+        })
 
         const openPage = (e, el) => {
             loading.classList.add("load-active");
