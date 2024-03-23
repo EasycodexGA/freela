@@ -217,8 +217,8 @@ class File{
                         }
 
                         let p = document.createElement("p");
-                        p.innerText = value.toString();
-                        
+                        p.innerHTML = value.toString();
+
                         if(key == 'curriculo'){
                             let srcCur = value ? '../arquivos/curriculos/' + value : '#';
                             let a = document.createElement("a");
