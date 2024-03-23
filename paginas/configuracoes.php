@@ -16,6 +16,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
     <h1 class='title-header'>Configurações</h1>
 
     <div class='inps-out'>
+        
         <input type="text" disabled id="nameGet" placeholder="Carregando..." class='inpProfile'/>
         <input type="text" disabled id="cpfGet" placeholder="Carregando..." class='inpProfile'/>
         <input type="text" id="passwordGet" placeholder="Nova senha" class='inpProfile'/>

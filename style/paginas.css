@@ -582,7 +582,7 @@ header, .extra{
     gap: 15px;
 }
 .inpProfile {
-    width: calc(100% / 3 - 20px);
+    width: calc(100% / 3 - 45px);
     border: 2px solid #dfdfdf;
     padding: 5px 15px;
     border-radius: 3px;

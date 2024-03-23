@@ -161,6 +161,14 @@ class File{
                 }
                 if(this.arrayDetail.includes(key)){
                     let type = 0;
+                    if(key == 'aulas'){
+                        console.log(value)
+                        type = 2;
+                        for(let i of value){
+                            let value2 = JSON.stringify(i);
+                            this.arrayStrAdd[`${key}${i.id}Array`] = value2;
+                        }
+                    }
                     qt = value.length;
                     for(let j in value){
                         if(key == 'alunos'){
@@ -169,15 +177,7 @@ class File{
                         value[j] = JSON.stringify(value[j]);
                     }
                     value = value.join("#");
-                    if(key == 'aulas'){
-                        console.log(value)
-                        type = 2;
-                        for(let i of value){
-                            // console.log(i);
-                            let value2 = JSON.stringify(i);
-                            this.arrayStrAdd[`${key}${i.id}Array`] = value2;
-                        }
-                    }
+                    
                     if(key == 'alunos' && this.typeUser > 1){
                         let btAddAula = document.createElement("button");
                         btAddAula.classList.add("btn-add");
