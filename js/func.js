@@ -86,13 +86,15 @@ function verMais(id, pre,type, titleStr){
     let outBt = document.createElement("div");
     outBt.classList.add("out-bt-sv");
 
-    let closeBt = document.createElement("button");
-    let typee = id.includes('aulas') && id != 'aulas' ? 1 : 0;
-    closeBt.setAttribute("onclick", `closeVerMais('${id}', ${typee})`);
-    closeBt.innerText = 'Fechar';
-    closeBt.classList.add("btn-close");
-    outBt.append(closeBt);
-
+    if(id != 'aulas'){
+        let closeBt = document.createElement("button");
+        let typee = id.includes('aulas') && id != 'aulas' ? 1 : 0;
+        closeBt.setAttribute("onclick", `closeVerMais('${id}', ${typee})`);
+        closeBt.innerText = 'Fechar';
+        closeBt.classList.add("btn-close");
+        outBt.append(closeBt);
+    }
+    
     if(type > 0){
         let saveBt = document.createElement("button");
         console.log(id);
