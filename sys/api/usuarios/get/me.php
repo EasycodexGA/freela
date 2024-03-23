@@ -9,9 +9,9 @@ $infosArr = array();
 
 while($dados = mysqli_fetch_array($getMyProfile)){
     $id             = $dados["id"];
+    $type           = $dados["typeC"];
     $cpf            = decrypt($dados["cpf"]);
     $nome           = decrypt($dados["nome"]);
-    $type           = decrypt($dados["typeC"]);
     $email          = decrypt($dados["email"]);
     $imagem         = decrypt($dados["imagem"]);
     $curriculo      = decrypt($dados["curriculo"]);
