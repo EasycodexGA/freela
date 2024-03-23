@@ -87,7 +87,8 @@ function verMais(id, pre,type, titleStr){
     outBt.classList.add("out-bt-sv");
 
     let closeBt = document.createElement("button");
-    closeBt.setAttribute("onclick", 'closeVerMais()');
+    let type = id.includes('aulas') && id != 'aulas' ? 1 : 0;
+    closeBt.setAttribute("onclick", `closeVerMais('${id}', ${type})`);
     closeBt.innerText = 'Fechar';
     closeBt.classList.add("btn-close");
     outBt.append(closeBt);
@@ -117,9 +118,13 @@ function verMais(id, pre,type, titleStr){
     verMaisDiv.classList.add('add-active');
 }
 
-function closeVerMais(){
+function closeVerMais(id, type){
     console.log(file.arrayStrAdd);
-    verMaisDiv.classList.remove('add-active');
+    if(type == 1 && id.includes('aulas')){
+        verMais("aulas", false, 2, "aulas");
+    } else {
+        verMaisDiv.classList.remove('add-active');
+    }
 }
 
 function salvarCheckbox(id, type){
