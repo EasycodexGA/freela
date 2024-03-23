@@ -64,11 +64,11 @@ justLog($__EMAIL__, $__TYPE__, 1);
 
             let data = e.mensagem;
 
-            cpfGet.value        = data.cpf;
-            typeGet.value       = data.type;
-            nameGet.value       = data.nome;
-            emailGet.value      = data.email;
-            nascimentoGet.value = data.nascimento;
+            cpfGet.value        = data.cpf ? data.cpf : "Nenhum";
+            typeGet.value       = data.type ? data.type : "Nenhum";
+            nameGet.value       = data.nome ? data.nome : "Nenhum";
+            emailGet.value      = data.email ? data.email : "Nenhum";
+            nascimentoGet.value = data.nascimento ? data.nascimento : "Nenhum";
 
             <?php if(uniqueLevel($__TYPE__, 2)){ ?>
                 titularidadeGet.value = data.titularidade;
