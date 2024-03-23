@@ -198,7 +198,7 @@ function cleanInps(){
 if (typeof searchBar !== "undefined"){
     searchBar.addEventListener('keyup', ()=>{
         let val = searchBar.value;
-        let filter = selectFilter.value;
+        let filter = selectFilter.value.toLowerCase();
         console.log(file.allData)
         for(let i of file.allData){
             let name = i[filter];
@@ -208,7 +208,7 @@ if (typeof searchBar !== "undefined"){
                 name = Number(name);
                 name = new Date((name * 1000) + 86400000).toLocaleDateString('pt-br');
             } else {
-                name = name.toLowerCase();
+                name = name.toString().toLowerCase();
             }
             if(name.includes(val)){
                 document.getElementById(`key${i.id}`).classList.add('table-line');
