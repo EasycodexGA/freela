@@ -96,7 +96,8 @@ function verMais(me, type, titleStr){
 
     if(type > 0){
         let saveBt = document.createElement("button");
-        saveBt.setAttribute("onclick", 'salvarCheckbox(this)');
+        let type = me.dataset.id == 'aulas' ? 1 : 0;
+        saveBt.setAttribute("onclick", `salvarCheckbox(this, ${type})`);
         saveBt.innerText = 'Salvar';
         saveBt.dataset.id = me.dataset.id
         saveBt.classList.add("btn-add");
@@ -124,9 +125,9 @@ function closeVerMais(){
     verMaisDiv.classList.remove('add-active');
 }
 
-function salvarCheckbox(me){
+function salvarCheckbox(me, type){
     if(me.dataset.id == 'aulas'){
-        let temp = file.arrayStrAdd[`${me.dataset.id}Array`];
+        let temp = file.arrayStrAdd["aulasArray"];
         temp.split("#");
         let buttons = document.querySelectorAll(".btn-presenca");
         for(let i = 0; i < buttons.length; i++){
@@ -135,7 +136,7 @@ function salvarCheckbox(me){
             temp[i] = temp2;
         }
         temp = temp.join("#");
-        file.arrayStrAdd[`${me.dataset.id}Array`] = temp;
+        file.arrayStrAdd["aulasArray"] = temp;
     } else {
         let string = file.arrayStrAdd[`${me.dataset.id}Array`];
         let array = string.split('#');
@@ -150,7 +151,11 @@ function salvarCheckbox(me){
         let value = array.join('#');
         file.arrayStrAdd[`${me.dataset.id}Array`] = value;
     }
-    closeVerMais();
+    if(type == 1){
+        verMais()
+    } else {
+        closeVerMais();
+    }
 }
 
 function getPresenca(id){

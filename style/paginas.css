@@ -355,7 +355,6 @@ header, .extra{
 .img-out-dt{
     width: 30%;
     aspect-ratio: 1;
-    background: #000000;
     border-radius: 100%;
     max-width: 100px;
     position: relative;

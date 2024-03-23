@@ -232,7 +232,7 @@ class File{
                         p.innerHTML = value.toString();
 
                         if(key == 'curriculo' && value){
-                            let srcCur = '../arquivos/curriculos/';
+                            let srcCur = '../arquivos/curriculos/' + value;
                             let a = document.createElement("a");
                             a.href = srcCur;
                             a.innerText = 'Ver currículo';
