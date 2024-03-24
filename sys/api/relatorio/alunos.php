@@ -17,21 +17,21 @@ $query = mysqli_query($__CONEXAO__, "select id, nome, email, cpf, nascimento fro
 $array = array();
 
 while($dados = mysqli_fetch_array($query)){
-    // $id         = $dados["id"];
-    // $nome       = decrypt($dados["nome"]);
-    // $email      = decrypt($dados["email"]);
-    // $cpf        = decrypt($dados["cpf"]);
-    // $nascimento = decrypt($dados["nascimento"]);
+    $id         = $dados["id"];
+    $nome       = decrypt($dados["nome"]);
+    $email      = decrypt($dados["email"]);
+    $cpf        = decrypt($dados["cpf"]);
+    $nascimento = date('d/m/Y', decrypt($dados["nascimento"]));
     
-    // array_push($array, array(
-    //     $id,
-    //     $nome,
-    //     $email,
-    //     $cpf,
-    //     $nascimento
-    // ));
+    array_push($array, array(
+        $id,
+        $nome,
+        $email,
+        $cpf,
+        $nascimento
+    ));
 
-    array_push($array, $dados);
+    // array_push($array, $dados);
 
 }
 

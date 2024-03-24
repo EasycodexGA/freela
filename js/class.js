@@ -234,15 +234,23 @@ class File{
                         if(this.typeUser == 2 || (this.typeUser > 1 && (this.name == 'alunos' || this.name == 'turmas'))){
                             addOut.append(p);
                         }
-                    } else if(this.typeUser == 2 || (this.typeUser > 1 && (this.name == 'alunos' || this.name == 'turmas'))){
-                            
+                    } else if(this.arrayDetail.includes(key)){
+
+                    } else if((this.typeUser == 2 || (this.typeUser > 1 && (this.name == 'alunos' || this.name == 'turmas'))) && !(this.arrayDetail.includes(key))){
+                        let input = document.createElement("input");
+                        let typeInp = 'text';
+                        if(key == 'nascimento' || key == 'data'){
+                            typeInp = 'date';
+                        }
+                        input.classList.add('input-americano');
+                        input.type = typeInp;
+                        input.value = value;
                     } else {
                         p.innerHTML = value.toString();
                         addOut.append(p);
                     }
                 }
                 inpsAdd.append(addOut);
-            }
             }
             outBt.append(btSave);
             detailContainer.append(h1);
