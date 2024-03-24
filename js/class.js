@@ -231,7 +231,7 @@ class File{
                         a.target = '_blank';
                         a.classList.add('a-cur');
                         p.append(a);
-                        if(this.typeUser == 2 || (this.typeUser > 1 && (this.name == 'alunos' || this.name == 'turmas'))){
+                        if(this.typeUser == 3 || (this.typeUser > 1 && (this.name == 'alunos' || this.name == 'turmas'))){
                             addOut.append(p);
                         }
                     } else if(this.arrayDetail.includes(key)){
