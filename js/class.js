@@ -179,6 +179,7 @@ class File{
                         btAddAula.classList.add("btn-add");
                         btAddAula.setAttribute('onclick', `openAddAula()`);
                         btAddAula.innerText = "Adicionar aula";
+
                         outBt.append(btAddAula);
                         verPresencaBt.setAttribute('onclick', "verMais(this, 1, 'Chamada')");
                     }
@@ -198,7 +199,7 @@ class File{
 
                         h3.innerText = key + ' - ';
                         h3.append(span);
-                        
+
                     } else {
                         h3.innerText = key;
                     }
@@ -224,17 +225,10 @@ class File{
                         a.innerText = 'Ver currículo';
                         a.target = '_blank';
                         a.classList.add('a-cur');
-                        p.innerHTML = '';
                         p.append(a);
                         if(this.typeUser == 2 || (this.typeUser > 1 && (this.name == 'alunos' || this.name == 'turmas'))){
                             addOut.append(p);
                         }
-                    } else {
-                    
-                    }
-                    if(key == 'descricao'){
-                        key = 'descrição';
-                        addOut.style = 'width: calc(100%);';
                     }
                     if(this.typeUser == 2 || (this.typeUser > 1 && (this.name == 'alunos' || this.name == 'turmas'))){
                             
