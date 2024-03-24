@@ -237,6 +237,7 @@ if (typeof searchBar !== "undefined"){
     searchBar.addEventListener('keyup', ()=>{
         let val = searchBar.value.toString();
         let filter = selectFilter.value.toLowerCase();
+        console.log(filter);
         filter = 'nascimento' ? 'data' : filter;
         for(let i of file.allData){
             let name = i[filter];
