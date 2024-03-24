@@ -201,8 +201,7 @@ function sendEdit(id, name, parent){
         data[`${i.dataset.key}`] = i.value;
     }
     for(let i of buttons){
-        data[`${i.dataset.key}`] = file[`${i.dataset.key}Array`]; 
-        console.log(file[i.dataset.key + 'Array'])
+        data[`${i.dataset.key}`] = file.arrayStrAdd[`${i.dataset.key}Array`]; 
     }
     console.log(data)
     // addNewData(url, data);
