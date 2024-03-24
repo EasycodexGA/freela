@@ -48,10 +48,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
         <?php } ?>
     </div>
 
-    <button onclick='addNewData("editar/me", {
-        pass: passwordGet.value,
-        email: emailGet.value,
-    })' class='btn-add'>Salvar</button>
+    <button onclick='changeDatas()' class='btn-add'>Salvar</button>
     
     <?php if(uniqueLevel($__TYPE__, 2)){ ?>
         <input type='file' id='imageAdd' accept="image/png, image/jpeg"/>
@@ -105,6 +102,16 @@ justLog($__EMAIL__, $__TYPE__, 1);
                 response: "aguardando"
             })
         })
+
+        function changeDatas(){
+            addNewData("editar/me", {
+                pass: passwordGet.value,
+                email: emailGet.value,
+            })
+            .then(e=>{
+                passwordGet.value = "";
+            })
+        }
     </script>
 
     <a href="../sys/sair">Sair</a>
