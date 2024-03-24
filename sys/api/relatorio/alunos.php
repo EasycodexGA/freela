@@ -44,11 +44,9 @@ while($dados = mysqli_fetch_array($query)){
             $turmas .= ", $nm";
         }
     }
-
-    if(strlen($cpf) == 10){
-        $cpf = "(0)"."$cpf";
-    }
     
+    $cpf = "c-$cpf";
+
     $content = array(
         $id,
         $nome,
