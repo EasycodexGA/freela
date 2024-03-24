@@ -22,7 +22,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
         </div>
         <div class='infs-conf'>
             <h1>Nova senha</h1>
-            <input type="text" id="passwordGet" placeholder="Nova senha" class='inpProfile'/>
+            <input type="password" id="passwordGet" placeholder="Nova senha" class='inpProfile'/>
         </div>
         <div class='infs-conf'>
             <h1>Email</h1>
