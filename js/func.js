@@ -195,7 +195,7 @@ function sendEdit(id, name, parent){
     for(let i of buttons){
         let preData = file.arrayStrAdd[`${i.dataset.key}Array`];
         console.log(preData);
-        preData = preData.join("#");
+        preData = preData.split("#");
         for(let j in preData){
             preData[j] = JSON.parse(preData[j]);
         }
