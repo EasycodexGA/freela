@@ -18,32 +18,32 @@ justLog($__EMAIL__, $__TYPE__, 1);
     <div class='inps-out'>
         <div class='infs-conf'>
             <h1>Nome</h1>
-            <input type="text" disabled id="nameGet" placeholder="Nome" class='inpProfile'/>
+            <input type="text" autocomplete="off" disabled id="nameGet" placeholder="Nome" class='inpProfile'/>
         </div>
         <div class='infs-conf'>
             <h1>Nova senha</h1>
-            <input type="password" id="passwordGet" placeholder="Nova senha" class='inpProfile'/>
+            <input type="password" autocomplete="off" id="passwordGet" placeholder="Nova senha" class='inpProfile'/>
         </div>
         <div class='infs-conf'>
             <h1>Email</h1>
-            <input type="text" id="emailGet" placeholder="Email" class='inpProfile'/>
+            <input type="text" autocomplete="off" id="emailGet" placeholder="Email" class='inpProfile'/>
         </div>
         <div class='infs-conf'>
             <h1>CPF</h1>
-            <input type="text" disabled id="cpfGet" placeholder="CPF" class='inpProfile'/>
+            <input type="text" autocomplete="off" disabled id="cpfGet" placeholder="CPF" class='inpProfile'/>
         </div>
         <div class='infs-conf'>
             <h1>Nascimento</h1>
-            <input type="text" disabled id="nascimentoGet" placeholder="Nascimento" class='inpProfile'/>
+            <input type="text" autocomplete="off" disabled id="nascimentoGet" placeholder="Nascimento" class='inpProfile'/>
         </div>
         <div class='infs-conf'>
             <h1>Tipo</h1>
-            <input type="text" disabled id="typeGet" placeholder="Tipo" class='inpProfile'/>
+            <input type="text" autocomplete="off" disabled id="typeGet" placeholder="Tipo" class='inpProfile'/>
         </div>
         <?php if(uniqueLevel($__TYPE__, 2)){ ?>
             <div class='infs-conf'>
                 <h1>Titularidade</h1>
-                <input type="text" disabled id="titularidadeGet" placeholder="Titularidade" class='inpProfile'/>
+                <input type="text" autocomplete="off" disabled id="titularidadeGet" placeholder="Titularidade" class='inpProfile'/>
             </div>
         <?php } ?>
     </div>
