@@ -11,7 +11,7 @@ $json = json_decode($request);
 $pass   = scapeString($__CONEXAO__, $json->pass);
 $email  = scapeString($__CONEXAO__, $json->email);
 
-if(($pass == "" or $pass == " ") and encrypt($email) == $__EMAIL__){
+if(($pass == "" or $pass == " ") and encrypt($email) == $__EMAIL__ and ($email == "" or $email == " ")){
     endCode("Nenhum dado válido", false);
 }
 
