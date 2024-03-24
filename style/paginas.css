@@ -595,10 +595,10 @@ header, .extra{
 }
 .inpProfile:disabled {
     background: #dfdfdf!important;
+    text-transform: capitalize;
 }
 .inpProfile {
     width: calc(100% - 34px);
-    text-transform: capitalize;
     border: 2px solid #dfdfdf;
     padding: 5px 15px;
     border-radius: 3px;
