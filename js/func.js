@@ -238,10 +238,10 @@ if (typeof searchBar !== "undefined"){
         let val = searchBar.value.toString();
         let filter = selectFilter.value.toLowerCase();
         filter = 'nascimento' ? 'data' : filter;
-        console.log(file.allData)
         for(let i of file.allData){
             let name = i[filter];
             name = name.toString().toLowerCase();
+            console.log(file.allData, name, val);
             if(name.includes(val)){
                 document.getElementById(`key${i.id}`).classList.add('table-line');
             } else {
