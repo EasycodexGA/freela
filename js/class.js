@@ -176,7 +176,7 @@ class File{
                         outBt.append(btAddAula);
                         verPresencaBt.setAttribute('onclick', "verMais(this, 1, 'Chamada')");
                     }
-                    this.arrayStrAdd[`${key}Array`] = value;
+                    this.arrayStrAdd[`${key}Array`] = value == '' ? false : value;
                     value = `<button class='btn-add btn-send-data' data-key='${key}' onclick='verMais("${key}", ${type}, "${key}")'>Ver ${key}</button>`;
                 }
                 if(!this.jumpDetail.includes(key)){
