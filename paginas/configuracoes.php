@@ -48,6 +48,11 @@ justLog($__EMAIL__, $__TYPE__, 1);
         <?php } ?>
     </div>
 
+    <?php if(uniqueLevel($__TYPE__, 3)){ ?>
+        <div 
+        <a class='btn-add exit-bt' href="../sys/sair">Sair</a>
+    <?php } ?>
+
     <button onclick='changeDatas()' class='btn-add'>Salvar</button>
     
     <?php if(uniqueLevel($__TYPE__, 2)){ ?>
