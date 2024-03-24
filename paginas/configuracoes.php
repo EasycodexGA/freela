@@ -47,6 +47,8 @@ justLog($__EMAIL__, $__TYPE__, 1);
             </div>
         <?php } ?>
     </div>
+    
+    <button onclick='changeDatas()' class='btn-add'>Salvar</button>
 
     <?php if(uniqueLevel($__TYPE__, 3)){ ?>
         <div class='extra'>
@@ -60,7 +62,6 @@ justLog($__EMAIL__, $__TYPE__, 1);
         </div>
     <?php } ?>
 
-    <button onclick='changeDatas()' class='btn-add'>Salvar</button>
     
     <?php if(uniqueLevel($__TYPE__, 2)){ ?>
         <input type='file' id='imageAdd' accept="image/png, image/jpeg"/>
