@@ -201,6 +201,9 @@ function setCpf($cpf) {
             endCode("O cpf informado está incorreto.", false);
         }
     }
+    if(strlen($cpf) == 10){
+        $cpf = "0"."$cpf";
+    }
     return encrypt($cpf);
 }
 
