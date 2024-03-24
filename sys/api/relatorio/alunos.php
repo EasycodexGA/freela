@@ -12,7 +12,7 @@ $cabecalho = ['id', 'Nome', 'E-mail','CPF','Nascimento', mb_convert_encoding('En
 
 fputcsv($resultado, $cabecalho, ';');
 
-$query = mysqli_query($__CONEXAO__, "select id, nome, email, cpf, nascimento from alunos where typeC='1'");
+$query = mysqli_query($__CONEXAO__, "select id, nome, email, cpf, nascimento from users where typeC='1'");
 
 while($dados = mysqli_fetch_array($query)){
     fputcsv($resultado, $dados, ';');

@@ -188,6 +188,7 @@ class File{
                 if(!this.jumpDetail.includes(key)){
                     let addOut = document.createElement("div");
                     addOut.classList.add("inp-add-out");
+                    let p = document.createElement("p");
                     if(key == 'imagem'){
                         key = 'Foto';
                         let imgOut = document.createElement('div');
@@ -212,9 +213,6 @@ class File{
                         if(this.typeUser == 2 || (this.typeUser > 1 && (this.name == 'alunos' || this.name == 'turmas'))){
                             addOut.append(p);
                         }
-                    } else if(key == 'descricao'){
-                        key = 'descrição';
-                        addOut.style = 'width: calc(100%);';
                     } else if(this.arrayDetail.includes(key)){
                         let h3 = document.createElement("h3");
                         let span = document.createElement("span");
@@ -227,8 +225,11 @@ class File{
                         h3.innerText = key;
                         addOut.append(h3);
                     }
-                    let p = document.createElement("p");
-                        if(this.typeUser == 2 || (this.typeUser > 1 && (this.name == 'alunos' || this.name == 'turmas'))){
+                    if(key == 'descricao'){
+                        key = 'descrição';
+                        addOut.style = 'width: calc(100%);';
+                    }
+                    if(this.typeUser == 2 || (this.typeUser > 1 && (this.name == 'alunos' || this.name == 'turmas'))){
                             
                         } else {
                             p.innerHTML = value.toString();
