@@ -18,7 +18,7 @@ if(($pass == "" or $pass == " ") and encrypt($email) == $__EMAIL__){
 $dados = "";
 
 if($pass and $pass != " "){
-    $pass   = encrypt($pass);
+    $pass   =  password_hash($pass, PASSWORD_DEFAULT);
     $dados  .= "(senha)";
     $_SESSION["password"] = $pass;
     mysqli_query($__CONEXAO__, "update users set senha='$pass' where id='$__ID__'");
