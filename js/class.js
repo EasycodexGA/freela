@@ -193,6 +193,11 @@ class File{
                     let p = document.createElement("p");
                     let h3 = document.createElement("h3");
 
+                    if(key == 'descricao'){
+                        key = 'descrição';
+                        addOut.style = 'width: calc(100%);';
+                    }
+
                     if(this.arrayDetail.includes(key)){
                         let span = document.createElement("span");
                         span.innerText = qt;
@@ -229,14 +234,13 @@ class File{
                         if(this.typeUser == 2 || (this.typeUser > 1 && (this.name == 'alunos' || this.name == 'turmas'))){
                             addOut.append(p);
                         }
-                    }
-                    if(this.typeUser == 2 || (this.typeUser > 1 && (this.name == 'alunos' || this.name == 'turmas'))){
+                    } else if(this.typeUser == 2 || (this.typeUser > 1 && (this.name == 'alunos' || this.name == 'turmas'))){
                             
-                        } else {
-                            p.innerHTML = value.toString();
-                            addOut.append(p);
-                        }
+                    } else {
+                        p.innerHTML = value.toString();
+                        addOut.append(p);
                     }
+                }
                     inpsAdd.append(addOut);
                 }
             }
