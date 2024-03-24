@@ -191,6 +191,21 @@ function addNewData(local, data){
     })
 }
 
+
+function sendEdit(id, name, parent){
+    let url = 'editar/' + name + '.php';
+    let data = {"id": id}
+    let inputs = parent.querySelectorAll(".input-americano");
+    let buttons = parent.querySelectorAll(".btn-send-data");
+    for(let i of inputs){
+        data[`${i.dataset.key}`] = i.value;
+    }
+    for(let i of buttons){
+        data[`${i.dataset.key}`] = file[`${i.dataset.key}Array`];
+    }
+    addNewData(url, data);
+}
+
 function defineColor(e){
     let color = "sucesso-add";
 
@@ -237,8 +252,7 @@ if (typeof searchBar !== "undefined"){
     searchBar.addEventListener('keyup', ()=>{
         let val = searchBar.value.toString();
         let filter = selectFilter.value.toLowerCase();
-        console.log(filter);
-        filter = 'nascimento' ? 'data' : filter;
+        filter = filter == 'nascimento' ? 'data' : filter;
         for(let i of file.allData){
             let name = i[filter];
             name = name.toString().toLowerCase();

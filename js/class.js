@@ -135,12 +135,6 @@ class File{
                 btRemove.innerText = "Excluir";
                 outBt.append(btRemove);
             }
-
-            let btSave = document.createElement("button");
-            btSave.classList.add("btn-add");
-            btSave.setAttribute("onclick", "javascript:void(0)");
-            btSave.innerText = "Salvar";
-    
             let i = e.mensagem[0];
             
             for(let [key, value] of Object.entries(i)){
@@ -184,7 +178,7 @@ class File{
                         verPresencaBt.setAttribute('onclick', "verMais(this, 1, 'Chamada')");
                     }
                     this.arrayStrAdd[`${key}Array`] = value;
-                    value = `<button class='btn-add' onclick='verMais("${key}", "${preData}", ${type}, "${key}")'>Ver ${key}</button>`;
+                    value = `<button class='btn-add btn-send-data' data-key='${key}' onclick='verMais("${key}", "${preData}", ${type}, "${key}")'>Ver ${key}</button>`;
                 }
                 if(!this.jumpDetail.includes(key)){
                     let addOut = document.createElement("div");
@@ -243,6 +237,7 @@ class File{
                             typeInp = 'date';
                         }
                         input.classList.add('input-americano');
+                        input.dataset.key = key;
                         input.type = typeInp;
                         input.value = value;
                         addOut.append(input);
@@ -254,7 +249,13 @@ class File{
                     inpsAdd.append(addOut);
                 }
             }
-            outBt.append(btSave);
+            if((this.typeUser > 2) || (this.typeUser > 1 && (this.name == 'alunos' || this.name == 'recados'))){
+                let btSave = document.createElement("button");
+                btSave.classList.add("btn-add");
+                btSave.setAttribute("onclick", "sendEdit(file.idDetail, file.name, this.parentNode.parentNode)");
+                btSave.innerText = "Salvar";
+                outBt.append(btSave);
+            }
             detailContainer.append(h1);
             detailContainer.append(inpsAdd);
             detailContainer.append(outBt);
