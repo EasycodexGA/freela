@@ -24,7 +24,11 @@ while($dados = mysqli_fetch_array($query)){
     $nascimento = decrypt($dados["nascimento"]);
     
     array_push($array, array(
-        "id"=>
+        $id,
+        $nome,
+        $email,
+        $cpf,
+        $nascimento
     ));
 }
 
