@@ -52,10 +52,10 @@ justLog($__EMAIL__, $__TYPE__, 1);
     
     <?php if(uniqueLevel($__TYPE__, 2)){ ?>
         <input type='file' id='imageAdd' accept="image/png, image/jpeg"/>
-        <button onclick='trocarImg()'>Trocar imagem</button>
+        <button class='btn-add' onclick='trocarImg()'>Trocar imagem</button>
 
         <input type='file' id='arquivoAdd' accept="application/pdf"/>
-        <button onclick='novocv()'>Enviar curriculo</button>
+        <button class='btn-add' onclick='novocv()'>Enviar curriculo</button>
 
         <script>
             const trocarImg = async () => {
