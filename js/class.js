@@ -223,16 +223,18 @@ class File{
                         imgOut.append(img);
                         addOut.append(imgOut);
 
-                    } else if(key == 'curriculo' && value){
-                        let srcCur = '../arquivos/curriculos/' + value;
-                        let a = document.createElement("a");
-                        a.href = srcCur;
-                        a.innerText = 'Ver currículo';
-                        a.target = '_blank';
-                        a.classList.add('a-cur');
-                        p.append(a);
-                        if(this.typeUser == 3 || (this.typeUser > 1 && (this.name == 'alunos' || this.name == 'turmas'))){
-                            addOut.append(p);
+                    } else if(key == 'curriculo'){
+                        if(value){
+                            let srcCur = '../arquivos/curriculos/' + value;
+                            let a = document.createElement("a");
+                            a.href = srcCur;
+                            a.innerText = 'Ver currículo';
+                            a.target = '_blank';
+                            a.classList.add('a-cur');
+                            p.append(a);
+                            if(this.typeUser == 3 || (this.typeUser > 1 && (this.name == 'alunos' || this.name == 'turmas'))){
+                                addOut.append(p);
+                            }
                         }
                     } else if((this.typeUser == 3 || (this.typeUser > 1 && (this.name == 'alunos' || this.name == 'turmas'))) && !(this.arrayDetail.includes(key)) && key != 'presencas' && key != 'faltas'){
                         let input = document.createElement("input");
