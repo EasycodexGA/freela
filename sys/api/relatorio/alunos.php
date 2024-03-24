@@ -46,7 +46,7 @@ while($dados = mysqli_fetch_array($query)){
     }
 
     if(strlen($cpf) == 10){
-        $cpf = "0"."$cpf";
+        $cpf = "(0)"."$cpf";
     }
     
     $content = array(
