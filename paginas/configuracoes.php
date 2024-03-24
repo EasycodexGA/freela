@@ -60,7 +60,13 @@ justLog($__EMAIL__, $__TYPE__, 1);
         <script>
             const trocarImg = async () => {
                 let file = imageAdd.files[0];
-                if(!file) return;
+                if(!file){
+                    newMsg({
+                        mensagem: "Nenhum arquivo",
+                        response: false
+                    })
+                    return;
+                };
                 let base64 = await getBase64(file);
 
                 addNewData("usuarios/perfil/trocarImg", {
@@ -70,7 +76,13 @@ justLog($__EMAIL__, $__TYPE__, 1);
 
             const novocv = async () => {
                 let file = arquivoAdd.files[0];
-                if(!file) return;
+                if(!file){
+                    newMsg({
+                        mensagem: "Nenhum arquivo",
+                        response: false
+                    })
+                    return;
+                };
                 let base64 = await getBase64(file);
                 addNewData("usuarios/perfil/novoCV", {
                     arquivo: base64
@@ -98,7 +110,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
             <?php } ?>
 
             newMsg({
-                mensagem: "fethcado, katiau",
+                mensagem: "Dados carregados",
                 response: "aguardando"
             })
         })
