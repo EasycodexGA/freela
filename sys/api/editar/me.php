@@ -11,20 +11,20 @@ $json = json_decode($request);
 $pass   = scapeString($__CONEXAO__, $json->pass);
 $email  = scapeString($__CONEXAO__, $json->email);
 
-if((!$pass and !$email) or ($pass == " " or $pass == "") or ($email == "" or $email == " ")){
+if(!$pass and !$email){
     endCode("Nenhum dado recebido.", false);
 }
 
 $dados = "";
 
-if($pass){
+if($pass and $pass != "" and $pass != " "){
     $pass   = encrypt($pass);
     $dados  .= "(senha)";
     $_SESSION["password"] = $pass;
     mysqli_query($__CONEXAO__, "update users set senha='$pass' where id='$__ID__'");
 }
 
-if($email){
+if($email and $email != "" and $email != " "){
     $email  = setEmail($email);
     if($email != $__EMAIL__){
         $dados  .= "(email)";
