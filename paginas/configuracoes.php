@@ -53,8 +53,9 @@ justLog($__EMAIL__, $__TYPE__, 1);
             <h1 class="title-header">Gerar relatórios</h1>
             <div class="header-in">
                 <a class='btn-add' href="../sys/api/relatorio/alunos">Alunos</a>
-                <a class='btn-add' style="background: var(--contraste)" href="#">Alunos</a>
-                <a class='btn-add' style="background: var(--contraste)" href="#">Alunos</a>
+                <a class='btn-add' style="background: var(--contraste)" href="#">Profissionais</a>
+                <a class='btn-add' style="background: var(--contraste)" href="#">Turmas</a>
+                <a class='btn-add' style="background: var(--contraste)" href="#">Eventos</a>
             </div>
         </div>
     <?php } ?>
