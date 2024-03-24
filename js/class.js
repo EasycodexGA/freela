@@ -245,6 +245,7 @@ class File{
                         input.classList.add('input-americano');
                         input.type = typeInp;
                         input.value = value;
+                        addOut.append(input);
                     } else {
                         p.innerHTML = value.toString();
                         addOut.append(p);
