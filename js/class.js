@@ -200,40 +200,40 @@ class File{
                         imgOut.append(img);
                         addOut.append(h3);
                         addOut.append(imgOut);
+                    } else if(key == 'curriculo' && value){
+                        let srcCur = '../arquivos/curriculos/' + value;
+                        let a = document.createElement("a");
+                        a.href = srcCur;
+                        a.innerText = 'Ver currículo';
+                        a.target = '_blank';
+                        a.classList.add('a-cur');
+                        p.innerHTML = '';
+                        p.append(a);
+                        if(this.typeUser == 2 || (this.typeUser > 1 && (this.name == 'alunos' || this.name == 'turmas'))){
+                            addOut.append(p);
+                        }
+                    } else if(key == 'descricao'){
+                        key = 'descrição';
+                        addOut.style = 'width: calc(100%);';
+                    } else if(this.arrayDetail.includes(key)){
+                        let h3 = document.createElement("h3");
+                        let span = document.createElement("span");
+                        span.innerText = qt;
+                        h3.innerText = key + ' - ';
+                        h3.append(span);
+                        addOut.append(h3);
                     } else {
-                        if(key == 'descricao'){
-                            key = 'descrição';
-                            addOut.style = 'width: calc(100%);';
-                        }
-
-                        if(this.arrayDetail.includes(key)){
-                            let h3 = document.createElement("h3");
-                            let span = document.createElement("span");
-                            span.innerText = qt;
-                            h3.innerText = key + ' - ';
-                            h3.append(span);
-                            addOut.append(h3);
+                        let h3 = document.createElement("h3");
+                        h3.innerText = key;
+                        addOut.append(h3);
+                    }
+                    let p = document.createElement("p");
+                        if(this.typeUser == 2 || (this.typeUser > 1 && (this.name == 'alunos' || this.name == 'turmas'))){
+                            
                         } else {
-                            let h3 = document.createElement("h3");
-                            h3.innerText = key;
-                            addOut.append(h3);
+                            p.innerHTML = value.toString();
+                            addOut.append(p);
                         }
-
-                        let p = document.createElement("p");
-                        p.innerHTML = value.toString();
-
-                        if(key == 'curriculo' && value){
-                            let srcCur = '../arquivos/curriculos/' + value;
-                            let a = document.createElement("a");
-                            a.href = srcCur;
-                            a.innerText = 'Ver currículo';
-                            a.target = '_blank';
-                            a.classList.add('a-cur');
-                            p.innerHTML = '';
-                            p.append(a);
-                        }
-
-                        addOut.append(p);
                     }
                     inpsAdd.append(addOut);
                 }
