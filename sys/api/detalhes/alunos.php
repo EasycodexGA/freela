@@ -19,16 +19,6 @@ while($_dados_ = mysqli_fetch_array($_query_)){
     $status     = $_dados_["active"];
     $status     = $status == '1' ? "active" : "inactive";
 
-    $query  = mysqli_query($__CONEXAO__, "select id, nome from turmas where id in (select turma from alunos where email='$email')");
-    
-    $arrTurmas = array();
-
-    while($dados = mysqli_fetch_array($query)){
-        $turma      = $dados['nome'];
-        $turmaId    = $dados['id'];
-        
-        array_push($arrTurmas, array("nome"=>decrypt($turma), "id"=>$turmaId, "checked"=>1));
-    }
 
     $query2 = mysqli_query($__CONEXAO__,"select presenca from chamada where aluno='$decAluno' and aula in (select id from aulas where data<'$__TIME__')");
 
@@ -44,6 +34,17 @@ while($_dados_ = mysqli_fetch_array($_query_)){
         }
     }
 
+    $query  = mysqli_query($__CONEXAO__, "select id, nome from turmas where id in (select turma from alunos where email='$email')");
+    
+    $arrTurmas = array();
+
+    while($dados = mysqli_fetch_array($query)){
+        $turma      = $dados['nome'];
+        $turmaId    = $dados['id'];
+        
+        array_push($arrTurmas, array("nome"=>decrypt($turma), "id"=>$turmaId, "checked"=>1));
+    }
+
     $allTurmas = array();
     $query3 = mysqli_query($__CONEXAO__, "select id, nome from turmas where id not in (select turma from alunos where email='$email')");
 
@@ -53,14 +54,12 @@ while($_dados_ = mysqli_fetch_array($_query_)){
         array_push($allTurmas, array("nome"=>decrypt($turma3), "id"=>$turmaId3, "checked"=>0));
     }
 
-    $email = decrypt($email);
-
     $turmas = array_merge($arrTurmas, $allTurmas);
 
     $arr = array(
         "id"            => $decAluno,
         "nome"          => $nome, 
-        "email"         => $email,
+        "email"         => decrypt($email),
         "cpf"           => $cpf,
         "nascimento"    => $nascimento,
         "turmas"        => $turmas,

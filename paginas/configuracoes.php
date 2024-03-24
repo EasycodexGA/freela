@@ -49,8 +49,13 @@ justLog($__EMAIL__, $__TYPE__, 1);
     </div>
 
     <?php if(uniqueLevel($__TYPE__, 3)){ ?>
-        <div class='inps-out'>
-            <a class='btn-add' href="../sys/api/relatorio/alunos">Sair</a>
+        <div class='extra'>
+            <h1 class="title-header">Gerar relatórios</h1>
+            <div class="header-in">
+                <a class='btn-add' href="../sys/api/relatorio/alunos">Alunos</a>
+                <a class='btn-add' style="background: var(--contraste)" href="#">Alunos</a>
+                <a class='btn-add' style="background: var(--contraste)" href="#">Alunos</a>
+            </div>
         </div>
     <?php } ?>
 
