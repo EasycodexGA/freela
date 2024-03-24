@@ -31,6 +31,7 @@ if($pass and $pass != " "){
 if($email and $email != "" and $email != " "){
     $email  = setEmail($email);
     if($email != $__EMAIL__){
+        stopUserExist($__CONEXAO__, $email, 0);
         $dados  .= "(email)";
         $_SESSION["email"] = $email;
         mysqli_query($__CONEXAO__, "update users set email='$email' where id='$__ID__'");
