@@ -236,7 +236,7 @@ class File{
                         }
                     } else if(this.arrayDetail.includes(key)){
 
-                    } else if((this.typeUser == 2 || (this.typeUser > 1 && (this.name == 'alunos' || this.name == 'turmas'))) && !(this.arrayDetail.includes(key)) && key != 'presencas' && key != 'faltas'){
+                    } else if((this.typeUser == 2 || (this.typeUser > 1 && (this.name == 'alunos' || this.name == 'turmas'))) && (this.arrayDetail.includes(key)) && key != 'presencas' && key != 'faltas'){
                         let input = document.createElement("input");
                         let typeInp = 'text';
                         if(key == 'nascimento' || key == 'data'){
