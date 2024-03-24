@@ -108,11 +108,11 @@ justLog($__EMAIL__, $__TYPE__, 1);
                 pass: passwordGet.value,
                 email: emailGet.value,
             })
-            
+
             passwordGet.value = "";
         }
     </script>
 
-    <a href="../sys/sair">Sair</a>
+    <a class='btn-add exit-bt' href="../sys/sair">Sair</a>
 </body>
 </html>

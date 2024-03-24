@@ -29,7 +29,7 @@ header, .extra{
 
 }
 
-#btnRemove{
+#btnRemove, .exit-bt{
     background: #ff5e52!important;
 }
 
@@ -144,6 +144,7 @@ header, .extra{
 .btn-add{
     padding: 7px 14px;
     color: white;
+    font-size: 13px;
     background: var(--contraste2);
     border-radius: 3px;
     width: fit-content;
