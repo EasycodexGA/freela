@@ -11,13 +11,13 @@ $json = json_decode($request);
 $pass   = scapeString($__CONEXAO__, $json->pass);
 $email  = scapeString($__CONEXAO__, $json->email);
 
-if($pass == "" or $pass = " " and encrypt($email) == $__EMAIL__){
+if($pass == "" or $pass == " " and encrypt($email) == $__EMAIL__){
     endCode("Nenhum dado válido", false);
 }
 
 $dados = "";
 
-if($pass and $pass != "" and $pass != " "){
+if($pass and $pass != " "){
     $pass   = encrypt($pass);
     $dados  .= "(senha)";
     $_SESSION["password"] = $pass;
