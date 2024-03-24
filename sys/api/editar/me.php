@@ -15,6 +15,10 @@ if(!$pass and !$email){
     endCode("Nenhum dado recebido.", false);
 }
 
+if(($pass == "" or $pass = " ") and encrypt($email) == $__EMAIL__){
+    endCode("Nenhum dado válido", false);
+}
+
 $dados = "";
 
 if($pass and $pass != "" and $pass != " "){
