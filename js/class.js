@@ -189,6 +189,17 @@ class File{
                     let addOut = document.createElement("div");
                     addOut.classList.add("inp-add-out");
                     let p = document.createElement("p");
+                    let h3 = document.createElement("h3");
+                    if(this.arrayDetail.includes(key)){
+                        let span = document.createElement("span");
+                        span.innerText = qt;
+                        h3.innerText = key + ' - ';
+                        h3.append(span);
+                        addOut.append(h3);
+                    } else {
+                        let h3 = document.createElement("h3");
+                        h3.innerText = key;
+                    }
                     if(key == 'imagem'){
                         key = 'Foto';
                         let imgOut = document.createElement('div');
@@ -196,10 +207,7 @@ class File{
                         let img = document.createElement("img");
                         let srcImg = value ? '../imagens/perfil/' + value : '../img/default.webp';
                         img.src = srcImg;
-                        let h3 = document.createElement("h3");
-                        h3.innerHTML = key;
                         imgOut.append(img);
-                        addOut.append(h3);
                         addOut.append(imgOut);
                     } else if(key == 'curriculo' && value){
                         let srcCur = '../arquivos/curriculos/' + value;
@@ -213,17 +221,8 @@ class File{
                         if(this.typeUser == 2 || (this.typeUser > 1 && (this.name == 'alunos' || this.name == 'turmas'))){
                             addOut.append(p);
                         }
-                    } else if(this.arrayDetail.includes(key)){
-                        let h3 = document.createElement("h3");
-                        let span = document.createElement("span");
-                        span.innerText = qt;
-                        h3.innerText = key + ' - ';
-                        h3.append(span);
-                        addOut.append(h3);
                     } else {
-                        let h3 = document.createElement("h3");
-                        h3.innerText = key;
-                        addOut.append(h3);
+                    
                     }
                     if(key == 'descricao'){
                         key = 'descrição';
