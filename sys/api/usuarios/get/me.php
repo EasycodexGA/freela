@@ -18,6 +18,18 @@ while($dados = mysqli_fetch_array($getMyProfile)){
     $nascimento     = decrypt($dados["nascimento"]);
     $titularidade   = decrypt($dados["titularidade"]);
 
+    if($type == "1"){
+        $type = "Aluno";
+    }
+
+    if($type == "2"){
+        $type = "Profissional";
+    }
+
+    if($type == "3"){
+        $type = "Administrador";
+    }
+
     $infosArr = array(
         "id"=>$id,
         "cpf"=>$cpf,
