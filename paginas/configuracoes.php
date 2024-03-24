@@ -51,7 +51,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
     <?php if(uniqueLevel($__TYPE__, 3)){ ?>
         <div class='extra'>
             <h1 class="title-header">Gerar relatórios</h1>
-            <div class="header-in">
+            <div class="header-in" style='gap: 10px;'>
                 <a class='btn-add' href="../sys/api/relatorio/alunos">Alunos</a>
                 <a class='btn-add' style="background: var(--contraste)" href="#">Profissionais</a>
                 <a class='btn-add' style="background: var(--contraste)" href="#">Turmas</a>
