@@ -139,7 +139,6 @@ class File{
             
             for(let [key, value] of Object.entries(i)){
                 let qt;
-                let preData = false;
                 let type = 0;
                 if(key == 'turmas' && (this.name == 'alunos' || this.name == 'profissionais')){
                     type = 1;
@@ -178,7 +177,7 @@ class File{
                         verPresencaBt.setAttribute('onclick', "verMais(this, 1, 'Chamada')");
                     }
                     this.arrayStrAdd[`${key}Array`] = value;
-                    value = `<button class='btn-add btn-send-data' data-key='${key}' onclick='verMais("${key}", "${preData}", ${type}, "${key}")'>Ver ${key}</button>`;
+                    value = `<button class='btn-add btn-send-data' data-key='${key}' onclick='verMais("${key}", ${type}, "${key}")'>Ver ${key}</button>`;
                 }
                 if(!this.jumpDetail.includes(key)){
                     let addOut = document.createElement("div");

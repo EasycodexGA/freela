@@ -31,7 +31,7 @@ function closeAddAula(){
     addNewAula.classList.remove('add-active');
 }
 
-function verMais(id, pre,type, titleStr){
+function verMais(id,type, titleStr){
     verMaisDiv.innerHTML = '';
     let string = file.arrayStrAdd[`${id}Array`];
     let array = string.split('#');
@@ -75,7 +75,7 @@ function verMais(id, pre,type, titleStr){
             presencaBt.classList.add("btn-add");
             presencaBt.classList.add("btn-presenca");
             presencaBt.innerText = 'Ver chamada';
-            presencaBt.setAttribute("onclick", `verMais('${id}${i.id}', false, 1, 'Chamada')`);
+            presencaBt.setAttribute("onclick", `verMais('${id}${i.id}', 1, 'Chamada')`);
             presencaBt.dataset.id = id;
             div.append(presencaBt);
         }
@@ -105,14 +105,6 @@ function verMais(id, pre,type, titleStr){
         outBt.append(saveBt);
     }
 
-    if(pre){
-        let addBt = document.createElement("button");
-        addBt.setAttribute("onclick", `verMais('${id}', false, 1, "adicionar turma")`);
-        addBt.innerText = 'Adicionar turma';
-        addBt.classList.add("btn-add");
-        outBt.append(addBt);
-    }
-
     divOut.append(title);
     divOut.append(divMid);
     divOut.append(outBt);
@@ -123,7 +115,7 @@ function verMais(id, pre,type, titleStr){
 function closeVerMais(id, type){
     console.log(file.arrayStrAdd);
     if(type == 1 && id.includes('aulas')){
-        verMais("aulas", false, 2, "aulas");
+        verMais("aulas", 2, "aulas");
     } else {
         verMaisDiv.classList.remove('add-active');
     }
@@ -156,7 +148,7 @@ function salvarCheckbox(id, type){
         file.arrayStrAdd[`${id}Array`] = value;
     }
     if(type == 1 && id.includes('aulas')){
-        verMais("aulas", false, 2, "aulas");
+        verMais("aulas", 2, "aulas");
     } else {
         closeVerMais(0, 0);
     }
