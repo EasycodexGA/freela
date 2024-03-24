@@ -247,6 +247,7 @@ class File{
                         input.value = value;
                         addOut.append(input);
                     } else {
+                        console.log(value);
                         p.innerHTML = value.toString();
                         addOut.append(p);
                     }
