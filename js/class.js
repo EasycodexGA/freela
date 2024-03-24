@@ -241,8 +241,8 @@ class File{
                         addOut.append(p);
                     }
                 }
-                    inpsAdd.append(addOut);
-                }
+                inpsAdd.append(addOut);
+            }
             }
             outBt.append(btSave);
             detailContainer.append(h1);

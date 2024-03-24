@@ -36,7 +36,7 @@ while($dados = mysqli_fetch_array($query)){
 }
 
 echo '<pre>';
-var_dump($a_sua_variavel_aqui);
+var_dump($array);
 echo '</pre>';
 
 // fputcsv($resultado, $array, ';');
