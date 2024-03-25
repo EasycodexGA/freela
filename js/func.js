@@ -190,7 +190,7 @@ function sendEdit(id, name, parent){
     let inputs = parent.querySelectorAll(".input-americano");
     let buttons = parent.querySelectorAll(".btn-send-data");
     for(let i of inputs){
-        if(i.dataset.key == "nascimento"){
+        if(i.dataset.key == "nascimento" || i.dataset.key == "data"){
             data[`${i.dataset.key}`] = i.valueAsNumber / 1000;
         } else {
             data[`${i.dataset.key}`] = i.value;
