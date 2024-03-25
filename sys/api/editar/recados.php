@@ -11,12 +11,12 @@ $json = json_decode($request);
 $id     = scapeString($__CONEXAO__, $json->id);
 $title  = scapeString($__CONEXAO__, $json->title);
 $desc   = scapeString($__CONEXAO__, $json->desc);
-$time   = scapeString($__CONEXAO__, $json->time);
+$time   = scapeString($__CONEXAO__, $json->data);
 
 $id     = setNum($id);
-$title  = setNoXss($nome);
+$title  = setNoXss($title);
 $desc   = setNoXss($desc);
-$time   = setNum($nome);
+$time   = setNum($time);
 
 checkMissing(
     array(
