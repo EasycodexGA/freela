@@ -203,7 +203,7 @@ function sendEdit(id, name, parent){
         data[`${i.dataset.key}`] = preData;
     }
     console.log(data)
-    // addNewData(url, data);
+    addNewData(url, data);
 }
 
 function defineColor(e){
