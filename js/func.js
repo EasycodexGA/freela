@@ -185,12 +185,16 @@ function addNewData(local, data){
 
 
 function sendEdit(id, name, parent){
-    let url = 'editar/' + name + '.php';
+    let url = 'editar/' + name;
     let data = {"id": id}
     let inputs = parent.querySelectorAll(".input-americano");
     let buttons = parent.querySelectorAll(".btn-send-data");
     for(let i of inputs){
-        data[`${i.dataset.key}`] = i.value;
+        if(i.dataset.key == "nascimento"){
+            data[`${i.dataset.key}`] = i.valueAsNumber / 1000;
+        } else {
+            data[`${i.dataset.key}`] = i.value;
+        }
     }
     for(let i of buttons){
         let preData = file.arrayStrAdd[`${i.dataset.key}Array`];
