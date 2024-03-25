@@ -37,7 +37,7 @@ checkMissing(
 $id = decrypt($id);
 $active = decrypt($active);
 
-$check = mysqli_query($__CONEXAO__, "select email from users where id='$id' and type='1'");
+$check = mysqli_query($__CONEXAO__, "select email from users where id='$id' and typCe='1'");
 
 if(mysqli_num_rows($check) < 1){
     endCode("Aluno não existe", false);
