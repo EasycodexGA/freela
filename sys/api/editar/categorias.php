@@ -9,7 +9,7 @@ $request = file_get_contents('php://input');
 $json = json_decode($request);
 
 $id     = scapeString($__CONEXAO__, $json->id);
-$title  = scapeString($__CONEXAO__, $json->title);
+$title  = scapeString($__CONEXAO__, $json->nome);
 $active = scapeString($__CONEXAO__, $json->active);
 
 $id     = setNum($id);
