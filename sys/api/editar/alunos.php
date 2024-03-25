@@ -53,10 +53,16 @@ if($__TYPE__ == 2){
     }
 }
 
-$checkRepeat = mysqli_query($__CONEXAO__, "select id from users where email='$email' or cpf='$cpf' and id!='$id'");
+$checkRepeat = mysqli_query($__CONEXAO__, "select id from users where email='$email' and id!='$id'");
 
 if(mysqli_num_rows($checkRepeat) > 0){
-    endCode("Email ou CPF já estão em uso por outro usuário", false);
+    endCode("Email já está em uso por outro usuário", false);
+}
+
+$checkRepeat = mysqli_query($__CONEXAO__, "select id from users where cpf='$cpf' and id!='$id'");
+
+if(mysqli_num_rows($checkRepeat) > 0){
+    endCode(" CPF já está em uso por outro usuário", false);
 }
 
 
