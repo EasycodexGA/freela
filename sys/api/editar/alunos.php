@@ -37,7 +37,7 @@ checkMissing(
 $id = decrypt($id);
 $active = decrypt($active);
 
-$check = mysqli_query($__CONEXAO__, "select id from users where id='$id' and type='1'");
+$check = mysqli_query($__CONEXAO__, "select email from users where id='$id' and type='1'");
 
 if(mysqli_num_rows($check) < 1){
     endCode("Aluno não existe", false);
@@ -59,7 +59,23 @@ if(mysqli_num_rows($checkRepeat) > 0){
     endCode("Email ou CPF já estão em uso por outro usuário", false);
 }
 
+
+for($i = 0; $i < count($turmas); $i++){
+    $check = $i->checked;
+    $idTurma = $i->id;
+    $check_query = mysqli_query($__CONEXAO__, "select id from alunos where turma='$idTurma' and email='$emm'");
+    if($check){
+        if(mysqli_num_rows($check_query) == 0){
+            mysqli_query($__CONEXAO__, "insert into alunos (email, turma) values ('$emm','$idTurma')");
+        }
+    } else {
+        if(mysqli_num_rows($check_query) > 0){
+            mysqli_query($__CONEXAO__, "delete from alunos where email='$emm' and turma='$idTurma'");
+        }
+    }
+}
+
+mysqli_query($__CONEXAO__, "update alunos set email='$email' where email='$emm'");
 mysqli_query($__CONEXAO__, "update users set nome='$nome', cpf='$cpf', email='$email', nascimento='$nascimento', titularidade='$titularidade', active='$active' where id='$id'");
-mysqli_query($__CONEXAO__, "update professores set email='$email' where email='$emm'");
 
 endCode("Alterado com sucesso", true);
