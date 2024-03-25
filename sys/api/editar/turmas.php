@@ -14,6 +14,7 @@ $horario        = scapeString($__CONEXAO__, $json->horario);
 $categoria      = scapeString($__CONEXAO__, $json->categoria);
 $active         = scapeString($__CONEXAO__, $json->active);
 
+$categoria      = Number($categoria);
 $id             = setNum($id);
 $nome           = setNoXss($nome);
 $horario        = setNum($horario);
