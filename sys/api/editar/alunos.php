@@ -56,13 +56,13 @@ if($__TYPE__ == 2){
 $checkRepeat = mysqli_query($__CONEXAO__, "select id from users where email='$email' and id!='$id'");
 
 if(mysqli_num_rows($checkRepeat) > 0){
-    endCode("Email já está em uso por outro usuário", false);
+    endCode("Email já está em uso.", false);
 }
 
 $checkRepeat = mysqli_query($__CONEXAO__, "select id from users where cpf='$cpf' and id!='$id'");
 
 if(mysqli_num_rows($checkRepeat) > 0){
-    endCode(" CPF já está em uso por outro usuário", false);
+    endCode(" CPF já está em uso.", false);
 }
 
 
