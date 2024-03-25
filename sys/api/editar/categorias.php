@@ -13,7 +13,7 @@ $title  = scapeString($__CONEXAO__, $json->nome);
 $active = scapeString($__CONEXAO__, $json->active);
 
 $id     = setNum($id);
-$title  = setNoXss($nome);
+$title  = setNoXss($title);
 $active = setNum($active);
 
 checkMissing(
