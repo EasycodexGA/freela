@@ -242,8 +242,8 @@ class File{
                         label.setAttribute('for','checkId-' + i.id);
                         label.classList.add('toggle-switch');
 
-                        div.append(input);
-                        div.append(label);
+                        addOut.append(input);
+                        addOut.append(label);
 
                     } else if((this.typeUser == 3 || (this.typeUser > 1 && (this.name == 'alunos' || this.name == 'turmas'))) && !(this.arrayDetail.includes(key)) && key != 'presencas' && key != 'faltas'){
                         let input = document.createElement("input");
@@ -368,5 +368,8 @@ class Turmas extends File{
         this.arrayDetail.push('profissionais', 'alunos', 'aulas')
         this.createTh()
         this.getData()
+    }
+    createBtLista(){
+
     }
 }
