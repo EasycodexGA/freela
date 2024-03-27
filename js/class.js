@@ -233,6 +233,7 @@ class File{
                         let input = document.createElement("input");
                         input.type = 'checkbox';
                         input.classList.add("checkbox-presenca");
+                        input.classList.add(".input-americano");
                         input.dataset.key = key;
                         if(value == 'active'){
                             input.checked = true;
