@@ -233,14 +233,15 @@ class File{
                         let input = document.createElement("input");
                         input.type = 'checkbox';
                         input.classList.add("checkbox-presenca");
-                        input.classList.add(".input-americano");
+                        input.classList.add("input-americano");
                         input.dataset.key = key;
                         if(value == 'active'){
                             input.checked = true;
                         }
+                        input.id = 'statusInp';
 
                         let label = document.createElement("label");
-                        label.setAttribute('for','checkId-' + i.id);
+                        label.setAttribute('for','statusInp');
                         label.classList.add('toggle-switch');
 
                         addOut.append(input);
