@@ -192,7 +192,9 @@ function sendEdit(id, name, parent){
     for(let i of inputs){
         if(i.dataset.key == "nascimento" || i.dataset.key == "data"){
             data[`${i.dataset.key}`] = i.valueAsNumber / 1000;
-        } else {
+        } else if(i.dataset.key == 'status'){
+            data[`${i.dataset.key}`] = i.checked
+        }else {
             data[`${i.dataset.key}`] = i.value;
         }
     }

@@ -7,7 +7,7 @@ class File{
         this.thContent = []
         this.allData = {}
         this.idDetail = '';
-        this.jumpDetail = ['id', 'status']
+        this.jumpDetail = ['id']
         this.arrayDetail = []
         this.numsDetail = ['created']
         this.typeUser = id;
@@ -229,6 +229,22 @@ class File{
                                 addOut.append(p);
                             }
                         }
+                    } else if(key == 'status'){
+                        let input = document.createElement("input");
+                        input.type = 'checkbox';
+                        input.classList.add("checkbox-presenca");
+                        input.dataset.key = key;
+                        if(value == 'active'){
+                            input.checked = true;
+                        }
+
+                        let label = document.createElement("label");
+                        label.setAttribute('for','checkId-' + i.id);
+                        label.classList.add('toggle-switch');
+
+                        div.append(input);
+                        div.append(label);
+
                     } else if((this.typeUser == 3 || (this.typeUser > 1 && (this.name == 'alunos' || this.name == 'turmas'))) && !(this.arrayDetail.includes(key)) && key != 'presencas' && key != 'faltas'){
                         let input = document.createElement("input");
                         let typeInp = 'text';
