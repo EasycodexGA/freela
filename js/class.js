@@ -18,7 +18,7 @@ class File{
         let link = '../sys/api/' + this.linkGet
         return fetch(`${link}`)
         .then(e=>e.json())
-        .then(e=>{
+        .then(e=>{ 
             console.log("Fetching")
             this.allData = e.mensagem;
             for(let i of e.mensagem){
