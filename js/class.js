@@ -370,8 +370,22 @@ class Turmas extends File{
         this.arrayDetail.push('profissionais', 'alunos', 'aulas')
         this.createTh()
         this.getData()
+        this.createBtLista()
     }
     createBtLista(){
-
+        let bt = document.createElement("div");
+        bt.classList.add("func-bt");
+        bt.innerText = 'Lista de espera';
+        bt.setAttribute("onclick", "file.openDivLista()");
+        headerIn.append(bt);
+    }
+    openDivLista(){ // criar a div pica
+        let link = '../sys/api/' + this.linkGet
+        return fetch(`${link}`)
+        .then(e=>e.json())
+        .then(e=>{
+            let data = e.mensagem;
+            return data;
+        })
     }
 }

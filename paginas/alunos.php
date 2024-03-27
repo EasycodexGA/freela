@@ -29,7 +29,7 @@ justLog($__EMAIL__, $__TYPE__, 2);
 
     <div class='extra'>
         <h1 class='title-header'>Funções</h1>
-        <div class='header-in'>
+        <div id='headerIn' class='header-in'>
             <button onclick='openAdd(addAluno)' class='funcBt'>+ Adicionar aluno</button>
         </div>
     </div>
