@@ -193,7 +193,8 @@ function sendEdit(id, name, parent){
         if(i.dataset.key == "nascimento" || i.dataset.key == "data"){
             data[`${i.dataset.key}`] = i.valueAsNumber / 1000;
         } else if(i.dataset.key == 'status'){
-            data[`${i.dataset.key}`] = i.checked
+            let val = i.checked ? 1 : 0;
+            data[`active`] = val;
         }else {
             data[`${i.dataset.key}`] = i.value;
         }
