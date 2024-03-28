@@ -21,12 +21,12 @@ justLog($__EMAIL__, $__TYPE__, 1);
             <input type="text" autocomplete="off" disabled id="nameGet" placeholder="Nome" class='inpProfile'/>
         </div>
         <div class='infs-conf'>
-            <h1>Nova senha</h1>
-            <input type="password" autocomplete="off" id="passwordGet" placeholder="Nova senha" class='inpProfile'/>
-        </div>
-        <div class='infs-conf'>
             <h1>Email</h1>
             <input type="text" autocomplete="off" id="emailGet" placeholder="Email" class='inpProfile'/>
+        </div>
+        <div class='infs-conf'>
+            <h1>Nova senha</h1>
+            <input type="password" autocomplete="off" id="passwordGet" placeholder="Nova senha" class='inpProfile'/>
         </div>
         <div class='infs-conf'>
             <h1>CPF</h1>
