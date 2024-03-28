@@ -206,6 +206,8 @@ class File{
 
                     addOut.append(h3);
 
+                    let disablekey = ["from", "to", "type"];
+
                     if(key == 'imagem'){
                         key = 'Foto';
                         let imgOut = document.createElement('div');
@@ -233,7 +235,6 @@ class File{
                         }
                     } else if(key == 'status'){
                         let input = document.createElement("input");
-                        let disablekey = ["from", "to", "type"];
                         input.type = 'checkbox';
                         input.classList.add("checkbox-presenca");
                         input.classList.add("input-americano");
@@ -270,6 +271,9 @@ class File{
                         input.classList.add('input-americano');
                         input.dataset.key = key;
                         input.type = typeInp;
+                        if(disablekey.includes(key)){
+                            input.disabled = true;
+                        }
                         if(isNumInp){
                             if(typeof e.mensagem[0].def_time != "undefined"){
                                 input.valueAsNumber = Number(e.mensagem[0].def_time);
