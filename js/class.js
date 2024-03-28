@@ -144,7 +144,6 @@ class File{
                     type = 1;
                 }
                 if(this.numsDetail.includes(key)){
-                    value_default = value;
                     value = (new Date(value * 1000 + 86400000)).toLocaleDateString("pt-BR");
                 }
                 if(this.arrayDetail.includes(key)){
@@ -264,7 +263,12 @@ class File{
                         input.dataset.key = key;
                         input.type = typeInp;
                         if(isNumInp){
-                            input.valueAsNumber = e.mensagem.horario_default;;
+                            if(typeof e.mensagem.def_time != "undefined"){
+                                input.valueAsNumber = e.mensagem.def_time;
+                                return;
+                            }
+
+                            input.valueAsNumber = value;
                         } else {
                             input.value = value;
                         }
@@ -379,7 +383,6 @@ class Turmas extends File{
         this.thContent = ['Nome', 'Categoria', 'Profissionais', 'Alunos', 'Status']
         this.jumpDetail.push('alunosQt', 'profissionaisQt')
         this.numsDetail.push('horario')
-        this.numsDetail.push('horario_default')
         this.arrayDetail.push('profissionais', 'alunos', 'aulas')
         this.createTh()
         this.getData()
