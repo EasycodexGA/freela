@@ -271,12 +271,11 @@ class File{
 
                             } else {
                                 input.valueAsNumber = deftime * 1000;
-                                console.log(`-DEF: ${deftime}}`);
+                                console.log(`-DEF: ${deftime}`);
                             }
                         } else {
                             input.value = value;
                         }
-                        console.log(`Inp val: ${value} def ${deftime}`)
                         addOut.append(input);
                     } else {
                         console.log(value);
