@@ -30,6 +30,7 @@ checkMissing(
     )
 );
 
+$id  = decrypt($id);
 $categoria  = decrypt($categoria);
 $horarioDec = decrypt($horario);
 $active = decrypt($active);
@@ -42,7 +43,7 @@ if($__TYPE__ == 2){
 }
 
 
-$checkExist = mysqli_query($__CONEXAO__, "select id from turmas where nome='$nome' and categoria='$categoria'");
+$checkExist = mysqli_query($__CONEXAO__, "select id from turmas where nome='$nome' and categoria='$categoria' and id!='$id'");
 
 if(mysqli_num_rows($checkExist) > 0){
     endCode("Já existe uma turma com esses dados.", false);
