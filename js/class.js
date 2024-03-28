@@ -267,8 +267,11 @@ class File{
                         if(isNumInp){
                             if(typeof Number(e.mensagem[0].def_time) != "undefined"){
                                 input.valueAsNumber = Number(e.mensagem[0].def_time);
+                                console.log(`-NOT UNDEF: ${deftime}}`);
+
                             } else {
                                 input.valueAsNumber = deftime;
+                                console.log(`-DEF: ${deftime}}`);
                             }
                         } else {
                             input.value = value;
