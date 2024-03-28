@@ -598,6 +598,10 @@ header, .extra{
     font-size: 15px;
     color: gray;
 }
+input:disabled {
+    background: #dfdfdf!important;
+}
+
 .inpProfile:disabled {
     background: #dfdfdf!important;
     text-transform: capitalize;

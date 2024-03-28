@@ -233,10 +233,16 @@ class File{
                         }
                     } else if(key == 'status'){
                         let input = document.createElement("input");
+                        let disablekey = ["from", "to", "type"];
                         input.type = 'checkbox';
                         input.classList.add("checkbox-presenca");
                         input.classList.add("input-americano");
                         input.dataset.key = key;
+
+                        if(disablekey.includes(key)){
+                            input.disabled = true;
+                        }
+                        
                         if(value == 'active'){
                             input.checked = true;
                         }
