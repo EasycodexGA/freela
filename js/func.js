@@ -35,6 +35,14 @@ function verMais(id,type, titleStr){
     verMaisDiv.innerHTML = '';
     let string = file.arrayStrAdd[`${id}Array`];
     console.log(`-VER_MAIS_CONTENT: ${string}`)
+
+    if(!string){
+        newMsg({
+            mensagem: "Em desenvolvimento",
+            response: false
+        })
+    }
+    
     let array = string.split('#');
 
     let divOut = document.createElement('div');
