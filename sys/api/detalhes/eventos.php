@@ -47,10 +47,9 @@ while($_dados_ = mysqli_fetch_array($_query_)){
     $arr = array(
         "id"        => $decEvento,
         "nome"      => decrypt($nome),
-        "turmas"    => $turmas,
         "data"      => $data,
+        "turmas"    => $turmas,
         "status"    => $status,
-        "created"   => $created,
         "descricao" => $descricao,
     );
     array_push($array, $arr);

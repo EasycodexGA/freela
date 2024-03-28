@@ -206,7 +206,7 @@ class File{
 
                     addOut.append(h3);
 
-                    let disablekey = ["from", "to", "type"];
+                    let disablekey = ["from", "to", "type", "categoria", "created"];
 
                     if(key == 'imagem'){
                         key = 'Foto';
