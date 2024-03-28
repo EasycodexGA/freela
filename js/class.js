@@ -263,8 +263,10 @@ class File{
                         input.dataset.key = key;
                         input.type = typeInp;
                         if(isNumInp){
-                            if(typeof e.mensagem.def_time != "undefined"){
-                                input.valueAsNumber = Number(e.mensagem.def_time);
+                            if(typeof Number(e.mensagem[0].def_time) != "undefined"){
+                                console.log("DEF_TIME")
+                                console.log(Number(e.mensagem[0].def_time))
+                                input.valueAsNumber = Number(e.mensagem[0].def_time);
                                 return;
                             }
 
