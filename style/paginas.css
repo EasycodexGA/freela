@@ -121,8 +121,13 @@ header, .extra{
     font-size: 14px;
     color: #929292;
 }
+.inp-add-out-img {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 
-.inp-add-out input, .inp-add-out select {
+.inp-add-out input, .inp-add-out select, #pastaAdd {
     padding: 12px;
     background: white;
     border: 2px solid #ededed;
