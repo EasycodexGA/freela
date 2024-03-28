@@ -466,7 +466,7 @@ header, .extra{
     object-fit: cover;
 }
 
-/* .inp-add-out label {
+.inp-add-out-img label {
     font-size: 14px;
     display: flex;
     align-items: center;
@@ -478,8 +478,8 @@ header, .extra{
     color: white;
     cursor: pointer;
     transition: all .3s;
-} */
-.inp-add-out label:hover {
+}
+.inp-add-out-img label:hover {
     opacity: .8;
 }
 
@@ -533,7 +533,7 @@ header, .extra{
 	cursor: pointer;
 	text-indent: -9999px;
 	width: 40px;
-    margin-left: auto;
+    /* margin-left: auto; */
 	height: 20px;
 	background: #c7c7c7;
     border: 1px solid #ccc;

@@ -62,13 +62,13 @@ include "../sys/conexao.php";
             <h1 class='title-add'>Enviar imagens</h1>
 
             <div class='inps-add'>
-                <div class='inp-add-out'>
+                <div class='inp-add-out-img'>
                     <h3>Pasta</h3>
                     <select id='pastaAdd'>
                         <option value=''>Nenhuma pasta selecionada</option>
                     </select>
                 </div>
-                <div class='inp-add-out'>
+                <div class='inp-add-out-img'>
                     <h3>Imagens</h3>
                     <label for='imageAdd'>Escolher imagens</lavel>
                     <input id='imageAdd' multiple type='file' hidden placeholder='Nova imagem' accept="image/png, image/jpeg, image/webp"/>
