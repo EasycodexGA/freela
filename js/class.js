@@ -267,6 +267,7 @@ class File{
                         } else {
                             input.value = value;
                         }
+                        console.log(`Inp val: ${value}`)
                         addOut.append(input);
                     } else {
                         console.log(value);
