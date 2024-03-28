@@ -273,7 +273,7 @@ class File{
                         } else {
                             input.value = value;
                         }
-                        console.log(`Inp val: ${value}`)
+                        console.log(`Inp val: ${value} def ${deftime}`)
                         addOut.append(input);
                     } else {
                         console.log(value);
