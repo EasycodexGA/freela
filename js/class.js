@@ -264,13 +264,10 @@ class File{
                         input.type = typeInp;
                         if(isNumInp){
                             if(typeof Number(e.mensagem[0].def_time) != "undefined"){
-                                console.log("DEF_TIME")
-                                console.log(Number(e.mensagem[0].def_time))
                                 input.valueAsNumber = Number(e.mensagem[0].def_time);
-                                return;
+                            } else {
+                                input.valueAsNumber = value;
                             }
-
-                            input.valueAsNumber = value;
                         } else {
                             input.value = value;
                         }
