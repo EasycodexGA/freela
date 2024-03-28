@@ -104,7 +104,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
 
     <script src="../js/class.js"></script>
     <script>const file = new Eventos(<?php echo $__TYPE__; ?>);</script>
-    <script src="../js/func.js" defer></script>
+    <script src="../js/func.js"></script>
     
 </body>
 </html>

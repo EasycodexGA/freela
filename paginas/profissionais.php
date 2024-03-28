@@ -93,7 +93,7 @@ justLog($__EMAIL__, $__TYPE__, 3);
 
     <script src="../js/class.js"></script>
     <script>const file = new Profissionais(<?php echo $__TYPE__; ?>);</script>
-    <script src="../js/func.js" defer></script>
+    <script src="../js/func.js"></script>
 </body>
 </html>
 
