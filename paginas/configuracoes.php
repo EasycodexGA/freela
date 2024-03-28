@@ -143,5 +143,10 @@ justLog($__EMAIL__, $__TYPE__, 1);
     </script>
 
     <a class='btn-add exit-bt' href="../sys/sair">Sair</a>
+    <div id="b2xcodeOut">
+        <h1 id='b2xcodeIn'>
+            Feito com ♥ por <a href="#">B2X</a> - © Copyright <?php echo date('Y')?>
+        </h1>
+    </div>
 </body>
 </html>

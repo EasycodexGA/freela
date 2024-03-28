@@ -1,11 +1,3 @@
-document.body.innerHTML += `
-<div id="b2xcodeOut">
-    <h1 id='b2xcodeIn'>
-        Feito com ♥ por <a href="#">B2X</a>
-    </h1>
-</div>
-`;
-
 function openAdd(e){
     closeAdd();
 

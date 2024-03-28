@@ -306,6 +306,11 @@ include "../sys/conexao.php";
             seeExcluir.dataset.idfoto = id;
         }
     </script>
+    <div id="b2xcodeOut">
+        <h1 id='b2xcodeIn'>
+            Feito com ♥ por <a href="#">B2X</a> - © Copyright <?php echo date('Y')?>
+        </h1>
+    </div>
 </body>
 </html>
 

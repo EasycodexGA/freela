@@ -174,5 +174,10 @@ justLog($__EMAIL__, $__TYPE__, 2);
     <script src="../js/class.js"></script>
     <script>const file = new Recados(<?php echo $__TYPE__; ?>);</script>
     <script src="../js/func.js"></script>
+    <div id="b2xcodeOut">
+        <h1 id='b2xcodeIn'>
+            Feito com ♥ por <a href="#">B2X</a> - © Copyright <?php echo date('Y')?>
+        </h1>
+    </div>
 </body>
 </html>

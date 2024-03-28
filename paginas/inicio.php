@@ -101,5 +101,10 @@ while($dados = mysqli_fetch_array($getPat)){
             <span>E-mail: seel@pomerode.sc.gov.br</span>
         </p>
     </div>
+    <div id="b2xcodeOut">
+        <h1 id='b2xcodeIn'>
+            Feito com ♥ por <a href="#">B2X</a> - © Copyright <?php echo date('Y')?>
+        </h1>
+    </div>
 </body>
 </html>
