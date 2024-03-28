@@ -259,7 +259,7 @@ class File{
                         input.classList.add('input-americano');
                         input.dataset.key = key;
                         input.type = typeInp;
-                        input.value = value;
+                        input.valueAsNumber = value;
                         addOut.append(input);
                     } else {
                         console.log(value);
