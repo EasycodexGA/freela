@@ -250,20 +250,23 @@ class File{
                     } else if((this.typeUser == 3 || (this.typeUser > 1 && (this.name == 'alunos' || this.name == 'turmas'))) && !(this.arrayDetail.includes(key)) && key != 'presencas' && key != 'faltas'){
                         let input = document.createElement("input");
                         let typeInp = 'text';
+                        let isNumInp = false;
                         if(key == 'nascimento' || key == 'data'){
                             typeInp = 'date';
-                            input.valueAsNumber = value;
-                        } else if(key == 'horario'){
+                            isNumInp = true;
+                        }
+                        if(key == 'horario'){
                             typeInp = 'time';
+                            isNumInp = true;
+                        }
+                        input.classList.add('input-americano');
+                        input.dataset.key = key;
+                        input.type = typeInp;
+                        if(isNumInp){
                             input.valueAsNumber = value;
                         } else {
                             input.value = value;
                         }
-
-                        input.classList.add('input-americano');
-                        input.dataset.key = key;
-                        input.type = typeInp;
-                        
                         addOut.append(input);
                     } else {
                         console.log(value);
