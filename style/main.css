@@ -101,7 +101,7 @@ body {
 #loading{
     position: fixed;
     width: 80%;
-    height: 100svh;
+    height: calc(100svh - 30px);
     background: #fafafa;
     z-index: 10;
     display: flex;
