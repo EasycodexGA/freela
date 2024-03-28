@@ -105,9 +105,9 @@ justLog($__EMAIL__, $__TYPE__, 2);
     </script>
     <?php } ?>
     <script src="../js/class.js"></script>
-    <script src="../js/func.js" defer></script>
     <script>
         const file = new Alunos(<?php echo $__TYPE__; ?>);
     </script>
+    <script src="../js/func.js" defer></script>
 </body>
 </html>
