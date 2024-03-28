@@ -10,8 +10,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
     <link rel="stylesheet" href="../style/root.css">
     <link rel="stylesheet" href="../style/paginas.css">
     <link rel="shortcut icon" href="../img/prefeitura.png" type="image/x-icon">
-    <script src="../js/class.js"></script>
-    <script>const file = new Turmas(<?php echo $__TYPE__; ?>);</script>
+    
 </head>
 <body>
     <header>
@@ -150,6 +149,8 @@ justLog($__EMAIL__, $__TYPE__, 1);
         })
     </script>
     <?php } ?>
+    <script src="../js/class.js"></script>
+    <script>const file = new Turmas(<?php echo $__TYPE__; ?>);</script>
     <script src="../js/func.js"></script>
 </body>
 </html>
