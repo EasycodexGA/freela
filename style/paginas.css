@@ -466,7 +466,7 @@ header, .extra{
     object-fit: cover;
 }
 
-.inp-add-out label {
+/* .inp-add-out label {
     font-size: 14px;
     display: flex;
     align-items: center;
@@ -478,7 +478,7 @@ header, .extra{
     color: white;
     cursor: pointer;
     transition: all .3s;
-}
+} */
 .inp-add-out label:hover {
     opacity: .8;
 }
@@ -523,23 +523,23 @@ header, .extra{
     background:#ff5e52!important;
 }
 
-.checkbox-presenca{
+.checkbox-presenca{ 
 	height: 0;
 	width: 0;
 	visibility: hidden;
 }
 
 .toggle-switch {
-	cursor: pointer!important;
-	text-indent: -9999px!important;
-	width: 40px!important;
-    margin-left: auto!important;
-	height: 20px!important;
-	background: #c7c7c7!important;
-    border: 1px solid #ccc!important;
-	display: block!important;
-	border-radius: 100px!important;
-	position: relative!important;
+	cursor: pointer;
+	text-indent: -9999px;
+	width: 40px;
+    margin-left: auto;
+	height: 20px;
+	background: #c7c7c7;
+    border: 1px solid #ccc;
+	display: block;
+	border-radius: 100px;
+	position: relative;
 }
 
 .toggle-switch:after {
