@@ -253,6 +253,9 @@ class File{
                         if(key == 'nascimento' || key == 'data'){
                             typeInp = 'date';
                         }
+                        if(key == 'horario'){
+                            typeInp = 'time';
+                        }
                         input.classList.add('input-americano');
                         input.dataset.key = key;
                         input.type = typeInp;
