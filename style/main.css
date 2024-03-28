@@ -122,20 +122,6 @@ body {
     width: 100%!important;
     height: calc(100svh - 30px)!important;
 }
-#b2xcodeOut{
-    width: calc(100% - 10px);
-    height: 30px;
-    display: flex;
-    justify-content: flex-end;
-}
-#b2xcodeIn{
-    font-size: 12px;
-    color: #3c3c3c;
-}
-#b2xcodeIn a{
-    border-bottom: 2px dotted #3c3c3c;
-    color: #3c3c3c;
-}
 
 #config{
     font-size: 14px;

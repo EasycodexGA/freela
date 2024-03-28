@@ -4,6 +4,7 @@ body{
     flex-direction: column;
     gap: 60px;
     background: #FAFAFA;
+    min-height: 100svh;
 }
 header, .extra{
     display: flex;
@@ -612,4 +613,20 @@ input:disabled {
     padding: 5px 15px;
     border-radius: 3px;
     background: #f6f6f6;
+}
+
+#b2xcodeOut{
+    margin-top: 30px;
+    width: calc(100% - 10px);
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+#b2xcodeIn{
+    font-size: 14px;
+    color: #3c3c3c;
+}
+#b2xcodeIn a{
+    border-bottom: 2px dotted #3c3c3c;
+    color: #3c3c3c;
 }

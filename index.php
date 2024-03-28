@@ -68,10 +68,6 @@ include "sys/conexao.php";
             <iframe src='./paginas/inicio' id='iframePage' class="right">
             
             </iframe>
-            <div id="b2xcodeOut">
-                <h1 id='b2xcodeIn'>
-                    Feito com ♥ por <a href="#">B2X</a>
-            </div>
         </div>
     </div>
 
