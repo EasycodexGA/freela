@@ -1,4 +1,3 @@
-let file = new File();
 class File{
     constructor(id){
         this.name = ''
