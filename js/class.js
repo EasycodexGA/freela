@@ -264,7 +264,7 @@ class File{
                         input.type = typeInp;
                         if(isNumInp){
                             if(typeof e.mensagem.def_time != "undefined"){
-                                input.valueAsNumber = e.mensagem.def_time;
+                                input.valueAsNumber = Number(e.mensagem.def_time);
                                 return;
                             }
 
