@@ -265,7 +265,7 @@ class File{
                         input.dataset.key = key;
                         input.type = typeInp;
                         if(isNumInp){
-                            if(typeof Number(e.mensagem[0].def_time) != "undefined"){
+                            if(typeof e.mensagem[0].def_time != "undefined"){
                                 input.valueAsNumber = Number(e.mensagem[0].def_time);
                                 console.log(`-NOT UNDEF: ${deftime}}`);
 
