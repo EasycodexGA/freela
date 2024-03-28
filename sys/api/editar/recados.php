@@ -31,8 +31,9 @@ checkMissing(
 
 $id     = decrypt($id);
 $time   = decrypt($time);
+$active = decrypt($active);
 
-// coloquei o active para ser automativo e ficar inativo depois de passar a data 
+// coloquei o active para ser automatico e ficar inativo depois de passar a data 
 // demais informações que não estão aqui, não precisam ser editadas 
 
 mysqli_query($__CONEXAO__, "update recados set title='$title', descricao='$desc', time='$time', active='$active' where id='$id'");
