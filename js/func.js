@@ -13,8 +13,8 @@ function openAdd(e){
 function openDetail(id){
     closeAdd();
     // console.log(file.typeUser);
-    // file.idDetail = id
-    // file.getDetails()
+    file.idDetail = id
+    file.getDetails()
 }
 
 function closeAdd(){
