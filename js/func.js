@@ -41,8 +41,9 @@ function verMais(id,type, titleStr){
             mensagem: "Em desenvolvimento",
             response: false
         })
+        return;
     }
-    
+
     let array = string.split('#');
 
     let divOut = document.createElement('div');
