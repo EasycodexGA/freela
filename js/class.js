@@ -270,7 +270,7 @@ class File{
                                 console.log(`-NOT UNDEF: ${deftime}}`);
 
                             } else {
-                                input.valueAsNumber = deftime;
+                                input.valueAsNumber = deftime * 1000;
                                 console.log(`-DEF: ${deftime}}`);
                             }
                         } else {
