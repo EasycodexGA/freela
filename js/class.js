@@ -252,14 +252,18 @@ class File{
                         let typeInp = 'text';
                         if(key == 'nascimento' || key == 'data'){
                             typeInp = 'date';
-                        }
-                        if(key == 'horario'){
+                            input.valueAsNumber = value;
+                        } else if(key == 'horario'){
                             typeInp = 'time';
+                            input.valueAsNumber = value;
+                        } else {
+                            input.value = value;
                         }
+
                         input.classList.add('input-americano');
                         input.dataset.key = key;
                         input.type = typeInp;
-                        input.valueAsNumber = value;
+                        
                         addOut.append(input);
                     } else {
                         console.log(value);
