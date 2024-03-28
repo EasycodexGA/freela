@@ -127,6 +127,10 @@ justLog($__EMAIL__, $__TYPE__, 1);
                 response: "aguardando"
             })
         })
+        .catch(e=>newMsg({
+            mensagem: "Ocorreu algum erro, contate o administrador",
+            response: false
+        }))
 
         function changeDatas(){
             addNewData("editar/me", {

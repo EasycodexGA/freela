@@ -169,6 +169,10 @@ include "../sys/conexao.php";
             .then(e=>{
                 newMsg(e);
             })
+            .catch(e=>newMsg({
+                mensagem: "Ocorreu algum erro, contate o administrador",
+                response: false
+            }))
         }
 
         const excluirGp = async (el, e, imgs) => {
@@ -225,6 +229,10 @@ include "../sys/conexao.php";
                 timerLoc.innerText = "";
                 newMsg(e);
             })
+            .catch(e=>newMsg({
+                mensagem: "Ocorreu algum erro, contate o administrador",
+                response: false
+            }))
         }
     </script>
     <?php } ?>
@@ -287,6 +295,10 @@ include "../sys/conexao.php";
             }
 
         })
+        .catch(e=>newMsg({
+            mensagem: "Ocorreu algum erro, contate o administrador",
+            response: false
+        }))
 
         const openImgGal = (src, id) => {
             seeInImg.src = src;

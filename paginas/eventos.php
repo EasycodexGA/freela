@@ -99,6 +99,10 @@ justLog($__EMAIL__, $__TYPE__, 1);
                 `;
             }
         })
+        .catch(e=>newMsg({
+            mensagem: "Ocorreu algum erro, contate o administrador",
+            response: false
+        }))
     </script>
     <?php } ?>
 

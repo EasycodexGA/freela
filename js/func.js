@@ -123,7 +123,7 @@ function verMais(id,type, titleStr){
 }
 
 function closeVerMais(id, type){
-    console.log(file.arrayStrAdd);
+    // console.log(file.arrayStrAdd);
     if(type == 1 && id.includes('aulas')){
         verMais("aulas", 2, "aulas");
     } else {
@@ -191,6 +191,10 @@ function addNewData(local, data){
         isActive = false;
         newMsg(e);
     })
+    .catch(e=>newMsg({
+        mensagem: "Ocorreu algum erro, contate o administrador",
+        response: false
+    }))
 }
 
 function sendEdit(id, name, parent){
@@ -389,6 +393,10 @@ const sendImgs = async () => {
 
             }
         })
+        .catch(e=>newMsg({
+            mensagem: "Ocorreu algum erro, contate o administrador",
+            response: false
+        }))
     }
     
 }

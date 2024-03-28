@@ -71,6 +71,10 @@ class File{
             inactive.innerText = inactivevar;
             active.innerText = activevar;
         })
+        .catch(e=>newMsg({
+            mensagem: "Ocorreu algum erro, contate o administrador",
+            response: false
+        }))
     }
 
     createTh(){
@@ -306,6 +310,10 @@ class File{
             detailContainer.append(inpsAdd);
             detailContainer.append(outBt);
         })
+        .catch(e=>newMsg({
+            mensagem: "Ocorreu algum erro, contate o administrador",
+            response: false
+        }))
     }
 
     removeSec(){
@@ -315,6 +323,10 @@ class File{
         .then(e=>{
             newMsg(e);
         })
+        .catch(e=>newMsg({
+            mensagem: "Ocorreu algum erro, contate o administrador",
+            response: false
+        }))
     }
 }
 
@@ -416,5 +428,9 @@ class Turmas extends File{
             let data = e.mensagem;
             return data;
         })
+        .catch(e=>newMsg({
+            mensagem: "Ocorreu algum erro, contate o administrador",
+            response: false
+        }))
     }
 }

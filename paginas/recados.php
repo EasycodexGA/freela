@@ -151,6 +151,10 @@ justLog($__EMAIL__, $__TYPE__, 2);
                 `;
             }
         })
+        .catch(e=>newMsg({
+            mensagem: "Ocorreu algum erro, contate o administrador",
+            response: false
+        }))
 
         fetch("../sys/api/usuarios/get/alunos")
         .then(e => e.json())
@@ -161,6 +165,10 @@ justLog($__EMAIL__, $__TYPE__, 2);
                 `;
             }
         })
+        .catch(e=>newMsg({
+            mensagem: "Ocorreu algum erro, contate o administrador",
+            response: false
+        }))
     </script>
 
     <script src="../js/class.js"></script>
