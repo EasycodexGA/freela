@@ -183,7 +183,6 @@ function addNewData(local, data){
     })
 }
 
-
 function sendEdit(id, name, parent){
     let url = 'editar/' + name;
     let data = {"id": id}
