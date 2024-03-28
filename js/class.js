@@ -140,10 +140,12 @@ class File{
             for(let [key, value] of Object.entries(i)){
                 let qt;
                 let type = 0;
+                let deftime = 0;
                 if(key == 'turmas' && (this.name == 'alunos' || this.name == 'profissionais')){
                     type = 1;
                 }
                 if(this.numsDetail.includes(key)){
+                    deftime = value;
                     value = (new Date(value * 1000 + 86400000)).toLocaleDateString("pt-BR");
                 }
                 if(this.arrayDetail.includes(key)){
@@ -266,7 +268,7 @@ class File{
                             if(typeof Number(e.mensagem[0].def_time) != "undefined"){
                                 input.valueAsNumber = Number(e.mensagem[0].def_time);
                             } else {
-                                input.valueAsNumber = value;
+                                input.valueAsNumber = deftime;
                             }
                         } else {
                             input.value = value;
