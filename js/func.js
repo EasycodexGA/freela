@@ -34,6 +34,7 @@ function closeAddAula(){
 function verMais(id,type, titleStr){
     verMaisDiv.innerHTML = '';
     let string = file.arrayStrAdd[`${id}Array`];
+    console.log(`-VER_MAIS_CONTENT: ${string}`)
     let array = string.split('#');
 
     let divOut = document.createElement('div');
