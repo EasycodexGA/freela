@@ -67,7 +67,7 @@ $__CODE__ = bin2hex(random_bytes(3));
 
 $__HEADERS__[] = 'MIME-Version: 1.0';
 $__HEADERS__[] = 'Content-type: text/html; charset=iso-8859-1';
-$__HEADERS__[] = "From: Voleibol <contato_$__CODE__@$__URL__>";
+$__HEADERS__[] = "From: Voleibol <noreply@$__URL__>";
 $__HEADERS__[] = "Reply-to: no-reply";
 $__HEADERS__[] = 'X-Mailer: PHP/' . phpversion();
 
