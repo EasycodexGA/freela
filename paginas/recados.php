@@ -176,7 +176,7 @@ justLog($__EMAIL__, $__TYPE__, 2);
     <script src="../js/func.js"></script>
     <div id="b2xcodeOut">
         <h1 id='b2xcodeIn'>
-            Feito com ♥ por <a href="#">B2X</a> - © Copyright <?php echo date('Y')?>
+            Feito com ♥ por <a href="#">codity.com.br</a> - © Copyright <?php echo date('Y')?>
         </h1>
     </div>
 </body>
