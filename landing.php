@@ -141,6 +141,9 @@ include "sys/conexao.php";
             padding: 8px;
             width: 100%;
         }
+        #localizacao .infos p{
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -213,6 +216,16 @@ include "sys/conexao.php";
     </section>
     <section id='localizacao' class='container'>
         <h1>Localização</h1>
+        <div class="infos">
+            <p>
+                <span>Ginasio Ralf Knaesel</span>
+                <span>Secretaria de Eventos, Esporte e Lazer</span>
+                <span>Endereço: Av. 21 de Janeiro - 2700</span>
+                <span>Pomerode - SC</span>
+                <span>Telefone(s): (47) 3387-2612</span>
+                <span>E-mail: seel@pomerode.sc.gov.br</span>
+            </p>
+        </div>
     </section>
 </body>
 </html>
