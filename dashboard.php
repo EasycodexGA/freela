@@ -1,6 +1,9 @@
 <?php
 include "sys/conexao.php";
-justLog($__EMAIL__, $__TYPE__, 1);
+
+if(requireLevel($__TYPE__, 1)){
+    header("Location: ./");
+}
 ?>
 
 <!DOCTYPE html>
