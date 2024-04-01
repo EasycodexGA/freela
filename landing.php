@@ -34,18 +34,36 @@ include "sys/conexao.php";
         }
 
         header{
+            padding: 10px 20px;
             display: flex;
+            align-items: center;
             justify-content: space-between;
+            box-shadow: 0 4px 20px #00000015;
             gap: 20px;
+        }
+        .right-h{
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+        .link-h {
+            color: black;
+        }
+        .login-h {
+            color: white;
+            background: var(--contraste3);
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
-    <div class='highheader'>
+    <nav class='highheader'>
         <h1>O esporte em você</h1>
         <span>GRATUITO</span>
-        <h1>Entre em contato -></h1>
-    </div>
+        <h1>Entre em contato ➔</h1>
+    </nav>
     <hedaer>
         <div class='left-h'>
             <img src='./img/logo.png'>
@@ -59,5 +77,8 @@ include "sys/conexao.php";
             <a href='#' class='link-h login-h'>Entrar</a>
         </div>
     </header>
+    <section id='banner'>
+
+    </section>
 </body>
 </html>
