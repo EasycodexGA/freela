@@ -9,7 +9,6 @@ include "sys/conexao.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/root.css">
-    <link rel="stylesheet" href="style/main.css">
     <link rel="stylesheet" href="style/landing.css">
     <link rel="shortcut icon" href="img/prefeitura.png" type="image/x-icon">
     <title>Partiu vôlei - Vôleibol escolinhas</title>
@@ -78,8 +77,30 @@ include "sys/conexao.php";
         .container{
             width: calc(100% - 50px);
             padding: 15px 25px;
-            margin: auto;
+            margin: 30px auto;
             max-width: 930px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .container h1{
+            font-size: 22px;
+            color: #656565;
+        }
+
+        .container p{
+            color: #858585;
+            text-align: justify;
+        }
+        #patrocinadores {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+        #patrocinadores img {
+            width: 100%;
+            max-width: 150px;
         }
     </style>
 </head>
@@ -108,9 +129,12 @@ include "sys/conexao.php";
     </section>
     <section id='sobre' class='container'>
         <h1>Sobre o projeto</h1>
+        <p>Projeto desportivo que mira, além da inclusão social, o rendimento desportivo individual e coletivo. Em sua essência, o PROJETO POMERODE VOLEIBOL 2024, visa oportunizar às crianças e jovens do município de Pomerode o contato com a modalidade VOLEIBOL de forma gratuita e em um ambiente saudável e integrado com a sociedade.</p>
     </section>
     <section id='patrocinadores' class='container'>
         <h1>Patrocinadores</h1>
+        <img src="https://partiuvolei.com/imagens/patrocinadores/i17104004235d47ee.png">
+        <img src="https://partiuvolei.com/imagens/patrocinadores/i17104004235d47ee.png">
     </section>
     <section id='contato' class='container'>
         <h1>Contato</h1>
