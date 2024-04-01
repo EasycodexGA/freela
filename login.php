@@ -1,7 +1,7 @@
 <?php 
 include 'sys/conexao.php';
 if($__TYPE__){
-    header("Location: ./");
+    header("Location: ./dashboard");
 }
 ?>
 
