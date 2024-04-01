@@ -67,7 +67,7 @@ if(!requireLevel($__TYPE__, 1)){
                 ></l-ring-2>
                 <!-- https://uiball.com/ldrs/ -->
             </div>
-            <iframe src='./paginas/inicio' id='iframePage' class="right">
+            <iframe src='./paginas/turmas' id='iframePage' class="right">
             
             </iframe>
         </div>
