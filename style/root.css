@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Cherry+Bomb+One&family=Quicksand:wght@300&family=Righteous&display=swap');
 
 * {
     padding: 0;
@@ -12,6 +12,7 @@
     --max: 1280px;
     --contraste: #ffb43c;
     --contraste2: #114494;
+    --contraste3: #1F6FE6;
     --bg: #202020;
 }
 
