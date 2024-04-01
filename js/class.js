@@ -380,12 +380,9 @@ class File{
     }
 
     sendEspera(id){ // criar a div pica
-        let link = '../sys/api/usuarios/cadastrar/' + this.name + "?id=" + id + "?espera"
+        let local = '../sys/api/usuarios/cadastrar/' + this.name
+        data = {id: id, espera: true}
         addNewData(local, data);
-        .catch(e=>newMsg({
-            mensagem: "Ocorreu algum erro, contate o administrador",
-            response: false
-        }))
     }
 }
 
