@@ -69,9 +69,15 @@ body {
     font-size: 1.1rem;
     cursor: pointer;
     padding: 10px;
-    width: 95%;
+    width: fit-conten;
     border-radius: 0 100px 100px 0;
     transition: all .1s;
+    width: 95%;
+}
+
+.links a{
+    text-align: center;
+    width: calc(95% - 20px);
 }
 
 .link-active {
