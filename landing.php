@@ -146,10 +146,12 @@ include "sys/conexao.php";
         }
 
         footer{
-            margin-top: 40px;
+            margin-top: 60px;
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 30px 20px;
+            background: var(--contraste3);
         }
     </style>
 </head>
