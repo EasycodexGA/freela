@@ -27,7 +27,7 @@ justLog($__EMAIL__, $__TYPE__, 3);
 
     <div class='extra'>
         <h1 class='title-header'>Funções</h1>
-        <div class='header-in'>
+        <div class='header-in' id='headerIn'>
             <button onclick='openAdd(addProfessor)' class='funcBt'>+ Adicionar profissional</button>
         </div>
     </div>

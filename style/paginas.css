@@ -296,6 +296,10 @@ header, .extra{
     overflow-x: hidden;
 }
 
+[data-status="false"] td{
+    border-color: var(--contraste2);
+}
+
 .content-list td::first-letter, .inp-add-out p::first-letter,  .inp-add-out h3::first-letter, #selectFilter::first-letter, .title-add::first-letter, .chamada-list p::first-letter{
     text-transform: capitalize;
 }

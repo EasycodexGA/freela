@@ -39,7 +39,7 @@ class File{
     
                         if(key == 'status'){
                             let preStatus = value == 'active' ? true : false;
-                            td.setAttribute("status", preStatus);
+                            tr.dataset.status = preStatus;
                             let td2 = document.createElement('td');
                             td2.innerHTML = `<button class="ver-detalhes" onclick="openDetail(${i.id})">Ver detalhes</button>`;
                             tr.appendChild(td2);
@@ -328,6 +328,65 @@ class File{
             response: false
         }))
     }
+
+    createEspera(){
+        console.log("Get Espera: " + this.name)
+        let link = '../sys/api/usuarios/espera/' + this.name
+        return fetch(`${link}`)
+        .then(e=>e.json())
+        .then(e=>{ 
+            console.log("Fetching")
+            this.allData = e.mensagem;
+            for(let i of e.mensagem){
+                if(i.data){
+                    let date = new Date(i.data * 1000 + 86400000);
+                    i.data = date.toLocaleDateString("pt-BR");
+                }
+                
+                let tr = document.createElement('tr');
+                tr.classList.add('empty-line');
+                tr.classList.add('table-line');
+                tr.id = `key${i.id}`;
+    
+                for(let [key, value] of Object.entries(i)){
+                    if(key != 'id' && key != '_name'){
+                        let td = document.createElement('td');
+                        td.classList.add(`td-${key}`);
+                        
+                        td.innerHTML = value;
+                        tr.appendChild(td);
+                    }
+                }
+                tabList.appendChild(tr)
+
+                if(!--iterations){
+                    let preStatus = value == 'active' ? true : false;
+                    tr.dataset.status = preStatus;
+                    let td2 = document.createElement('td');
+                    td2.innerHTML = `<button class="ver-detalhes" onclick="sendEspera(${i.id})">Aprovar</button>`;
+                    tr.appendChild(td2);
+                }
+            }
+            tabList.innerHTML += "<tr class='empty-line table-line2' id='notData'><td></td><td style='text-align: center'>Nenhum dado encontrado</td><td></td></tr>";
+
+            if(tabList.querySelectorAll('.table-line').length > 0){
+                notData.classList.remove('table-line2');
+            }
+        })
+        .catch(e=>newMsg({
+            mensagem: "Ocorreu algum erro, contate o administrador",
+            response: false
+        }))
+    }
+
+    sendEspera(id){ // criar a div pica
+        let link = '../sys/api/usuarios/cadastrar/' + this.name + "?id=" + id + "?espera"
+        addNewData(local, data);
+        .catch(e=>newMsg({
+            mensagem: "Ocorreu algum erro, contate o administrador",
+            response: false
+        }))
+    }
 }
 
 class Alunos extends File{
@@ -341,6 +400,7 @@ class Alunos extends File{
         this.arrayDetail.push('turmas')
         this.createTh()
         this.getData()
+        this.createEspera()
     }
 }
 
@@ -383,6 +443,7 @@ class Profissionais extends File{
         this.arrayDetail.push('turmas')
         this.createTh()
         this.getData()
+        this.createEspera()
     }
 }
 
@@ -412,25 +473,5 @@ class Turmas extends File{
         this.createTh()
         this.getData()
         this.createBtLista()
-    }
-    createBtLista(){
-        let bt = document.createElement("div");
-        bt.classList.add("func-bt");
-        bt.innerText = 'Lista de espera';
-        bt.setAttribute("onclick", "file.openDivLista()");
-        headerIn.append(bt);
-    }
-    openDivLista(){ // criar a div pica
-        let link = '../sys/api/' + this.linkGet
-        return fetch(`${link}`)
-        .then(e=>e.json())
-        .then(e=>{
-            let data = e.mensagem;
-            return data;
-        })
-        .catch(e=>newMsg({
-            mensagem: "Ocorreu algum erro, contate o administrador",
-            response: false
-        }))
     }
 }
