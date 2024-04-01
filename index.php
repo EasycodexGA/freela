@@ -171,7 +171,7 @@ include "sys/conexao.php";
             <a href='#patrocinadores' class='link-h'>Patrocinadores</a>
             <a href='#contato' class='link-h'>Contato</a>
             <a href='#localizacao' class='link-h'>Local</a>
-            <a href='./login' class='link-h login-h'><?php $__TYPE__ ? echo "Dashboard"; : echo "Entrar"; ?></a>
+            <a href='./login' class='link-h login-h'><?php echo $__TYPE__ ? "Dashboard"; : "Entrar"; ?></a>
         </div>
     </header>
     <section id='banner'>
