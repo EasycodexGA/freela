@@ -1,7 +1,7 @@
 <?php
 include "sys/conexao.php";
 
-if(requireLevel($__TYPE__, 1)){
+if(!requireLevel($__TYPE__, 1)){
     header("Location: ./");
 }
 ?>
