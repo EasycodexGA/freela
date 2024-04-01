@@ -105,9 +105,41 @@ include "sys/conexao.php";
         section#contato, section#localizacao {
             border-radius: 5px;
             background: var(--contraste3);
+            padding: 35px 20px;
         }
         #contato h1{
             color: white;
+        }
+        .infos p {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        form{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .inpout {
+            width: calc(100% / 3 - 10px);
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .inpout label {
+            color: white;
+        }
+        .inpout input {
+            padding: 8px 10px;
+            border-radius: 2px;
+            font-size: 13px;
+        }
+
+        form button {
+            background: var(--contraste);
+            color: white;
+            padding: 8px;
+            width: 100%;
         }
     </style>
 </head>
