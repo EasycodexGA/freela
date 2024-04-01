@@ -1,6 +1,8 @@
 <?php 
 include 'sys/conexao.php';
-cantLog($__EMAIL__);
+if($__TYPE__){
+    header("Location: ./");
+}
 ?>
 
 <!DOCTYPE html>
