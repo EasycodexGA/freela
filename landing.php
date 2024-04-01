@@ -56,6 +56,25 @@ include "sys/conexao.php";
             border-radius: 3px;
             font-size: 14px;
         }
+        section#banner {
+            position: relative;
+            height: 50svh;
+            background: gray;
+            overflow: hidden;
+        }
+        section img{
+            width:100%;
+            height: 100%;
+            position: absolute;
+            object-fit: cover;
+        }
+
+        #black{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #00000080;
+        }
     </style>
 </head>
 <body>
@@ -64,7 +83,7 @@ include "sys/conexao.php";
         <span>GRATUITO</span>
         <h1>Entre em contato ➔</h1>
     </nav>
-    <hedaer>
+    <header>
         <div class='left-h'>
             <img src='./img/logo.png'>
         </div>
@@ -78,7 +97,8 @@ include "sys/conexao.php";
         </div>
     </header>
     <section id='banner'>
-
+        <img src='./img/time.png'>
+        <div id='black'></div>
     </section>
 </body>
 </html>
