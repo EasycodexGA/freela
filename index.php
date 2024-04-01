@@ -1,6 +1,11 @@
 <?php
 include "sys/conexao.php";
 
+$escrita = "Entrar";
+
+if(requireLevel($__TYPE__, 1)){
+    $escrita = "Painel";
+}
 ?>
 
 <!DOCTYPE html>
@@ -171,7 +176,7 @@ include "sys/conexao.php";
             <a href='#patrocinadores' class='link-h'>Patrocinadores</a>
             <a href='#contato' class='link-h'>Contato</a>
             <a href='#localizacao' class='link-h'>Local</a>
-            <a href='./login' class='link-h login-h'><?php echo $__TYPE__ ? "Dashboard"; : "Entrar"; ?></a>
+            <a href='./login' class='link-h login-h'><?php echo $escrita; ?></a>
         </div>
     </header>
     <section id='banner'>
