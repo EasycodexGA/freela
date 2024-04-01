@@ -107,7 +107,7 @@ include "sys/conexao.php";
             background: var(--contraste3);
             padding: 35px 20px;
         }
-        #contato h1{
+        #contato h1, #localizacao h1{
             color: white;
         }
         .infos p {
