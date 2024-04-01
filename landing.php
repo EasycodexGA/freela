@@ -34,7 +34,7 @@ include "sys/conexao.php";
         }
 
         header{
-            padding: 10px 20px;
+            padding: 8px 20px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -58,7 +58,7 @@ include "sys/conexao.php";
         }
         section#banner {
             position: relative;
-            height: 50svh;
+            height: 60svh;
             background: gray;
             overflow: hidden;
         }
@@ -73,7 +73,13 @@ include "sys/conexao.php";
             position: absolute;
             width: 100%;
             height: 100%;
-            background: #00000080;
+            background: #000000bf;
+        }
+        .container{
+            width: calc(100% - 50px);
+            padding: 15px 25px;
+            margin: auto;
+            max-width: 930px;
         }
     </style>
 </head>
@@ -99,6 +105,21 @@ include "sys/conexao.php";
     <section id='banner'>
         <img src='./img/time.png'>
         <div id='black'></div>
+    </section>
+    <section id='sobre' class='container'>
+        <h1>Sobre o projeto</h1>
+    </section>
+    <section id='patrocinadores' class='container'>
+        <h1>Patrocinadores</h1>
+    </section>
+    <section id='contato' class='container'>
+        <h1>Contato</h1>
+    </section>
+    <section id='responsavel' class='container'>
+        <h1>Responsável</h1>
+    </section>
+    <section id='localizacao' class='container'>
+        <h1>Localização</h1>
     </section>
 </body>
 </html>
