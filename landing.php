@@ -92,13 +92,13 @@ include "sys/conexao.php";
             color: #858585;
             text-align: justify;
         }
-        #patrocinadores {
+        #patrocinador {
             display: flex;
             flex-wrap: wrap;
             gap: 40px;
             align-items: center;
         }
-        #patrocinadores img {
+        #patrocinador img {
             width: 100%;
             max-width: 150px;
         }
@@ -133,8 +133,10 @@ include "sys/conexao.php";
     </section>
     <section id='patrocinadores' class='container'>
         <h1>Patrocinadores</h1>
-        <img src="https://partiuvolei.com/imagens/patrocinadores/i17104004235d47ee.png">
-        <img src="https://partiuvolei.com/imagens/patrocinadores/i17104004235d47ee.png">
+        <div id='patrocinador'>
+            <img src="https://partiuvolei.com/imagens/patrocinadores/i17104004235d47ee.png">
+            <img src="https://partiuvolei.com/imagens/patrocinadores/i17104004235d47ee.png">
+        </div>
     </section>
     <section id='contato' class='container'>
         <h1>Contato</h1>
