@@ -63,7 +63,7 @@ body {
     gap: 15px;
 }
 
-.links button {
+.links button, .links a {
     color: #FFF;
     background: none;
     font-size: 1.1rem;
