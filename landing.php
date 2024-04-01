@@ -61,7 +61,7 @@ include "sys/conexao.php";
             background: gray;
             overflow: hidden;
         }
-        section img{
+        #banner img{
             width:100%;
             height: 100%;
             position: absolute;
@@ -102,6 +102,13 @@ include "sys/conexao.php";
             width: 100%;
             max-width: 150px;
         }
+        section#contato, section#localizacao {
+            border-radius: 5px;
+            background: var(--contraste3);
+        }
+        #contato h1{
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -140,9 +147,37 @@ include "sys/conexao.php";
     </section>
     <section id='contato' class='container'>
         <h1>Contato</h1>
+        <form action='javascript:void(0)' class='contato'>
+            <div class='inpout'>
+                <label for="nome">Nome</label>
+                <input id='nome' type='text' placeholder='Fulano ciclano'>
+            </div>
+            <div class='inpout'>
+                <label for="email">Email</label>
+                <input id='email' type='text' placeholder='exemplo@gmail.com'>
+            </div>
+            <div class='inpout'>
+                <label for="telefone">Telefone</label>
+                <input id='telefone' type='text' placeholder='47 9 9999-9999'>
+            </div>
+            <button>Enviar</button>
+        </form>
     </section>
     <section id='responsavel' class='container'>
         <h1>Responsável</h1>
+        <div style="display:flex; gap: 30px; align-items: center;">
+        <div style="width: 125px; aspect-ratio: 1; position: relative; border-radius: 100px; overflow: hidden;">
+            <img style="position: absolute; width: 100%; height: 100%; object-fit: cover;" src="../img/luciano.jpg">
+        </div>
+        <div class="infos">
+            <h1 class="title-header">Contato</h1>
+            <p>
+                <span>Prof. Luciano Menegaz</span>
+                <span>F. (48) 99806 0667</span>
+                <span>lucianor.menegaz@gmail.com</span>
+            </p>
+        </div>
+    </div>
     </section>
     <section id='localizacao' class='container'>
         <h1>Localização</h1>
