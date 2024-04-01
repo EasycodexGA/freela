@@ -144,6 +144,13 @@ include "sys/conexao.php";
         #localizacao .infos p{
             color: white;
         }
+
+        footer{
+            margin-top: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
     </style>
 </head>
 <body>
@@ -227,5 +234,9 @@ include "sys/conexao.php";
             </p>
         </div>
     </section>
+
+    <footer>
+        <img src='./img/logo2.png'>
+    </footer>
 </body>
 </html>
