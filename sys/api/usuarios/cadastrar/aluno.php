@@ -30,33 +30,24 @@ if($id){
     $cpf        = scapeString($__CONEXAO__, $json->cpf);
     $nome       = scapeString($__CONEXAO__, $json->nome);
     $email      = scapeString($__CONEXAO__, $json->email);
+    $turma      = scapeString($__CONEXAO__, $json->turma);
     $nascimento = scapeString($__CONEXAO__, $json->nascimento);
 
     $cpf        = setCpf($cpf);
     $nome       = setString($nome);
     $email      = setEmail($email);
+    $turma      = setNum($turma);
     $nascimento = setNum($nascimento);
+
+    checkMissing(array($turma));
 }
 
-$turma      = scapeString($__CONEXAO__, $json->turma);
-$turma      = setNum($turma);
-
-endCode(
-    array(
-        $cpf, 
-        $nome, 
-        $email,
-        $nascimento,
-        $turma
-    ), false
-);
 checkMissing(
     array(
         $cpf, 
         $nome, 
         $email,
         $nascimento,
-        $turma
     )
 );
 
