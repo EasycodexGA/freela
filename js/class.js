@@ -329,55 +329,55 @@ class File{
         }))
     }
 
-    // createEspera(){
-    //     console.log("Get Espera: " + this.name)
-    //     let link = '../sys/api/usuarios/espera/getEspera?type=' + this.name
-    //     return fetch(`${link}`)
-    //     .then(e=>e.json())
-    //     .then(e=>{ 
-    //         console.log("Fetching")
-    //         this.allData = e.mensagem;
-    //         for(let i of e.mensagem){
-    //             if(i.data){
-    //                 let date = new Date(i.data * 1000 + 86400000);
-    //                 i.data = date.toLocaleDateString("pt-BR");
-    //             }
+    createEspera(){
+        console.log("Get Espera: " + this.name)
+        let link = '../sys/api/usuarios/espera/getEspera?type=' + this.name
+        return fetch(`${link}`)
+        .then(e=>e.json())
+        .then(e=>{ 
+            console.log("Fetching")
+            this.allData = e.mensagem;
+            for(let i of e.mensagem){
+                if(i.data){
+                    let date = new Date(i.data * 1000 + 86400000);
+                    i.data = date.toLocaleDateString("pt-BR");
+                }
                 
-    //             let tr = document.createElement('tr');
-    //             tr.classList.add('empty-line');
-    //             tr.classList.add('table-line');
-    //             tr.id = `key${i.id}`;
+                let tr = document.createElement('tr');
+                tr.classList.add('empty-line');
+                tr.classList.add('table-line');
+                tr.id = `key${i.id}`;
     
-    //             for(let [key, value] of Object.entries(i)){
-    //                 if(key != 'id' && key != '_name'){
-    //                     let td = document.createElement('td');
-    //                     td.classList.add(`td-${key}`);
+                for(let [key, value] of Object.entries(i)){
+                    if(key != 'id' && key != '_name'){
+                        let td = document.createElement('td');
+                        td.classList.add(`td-${key}`);
                         
-    //                     td.innerHTML = value;
-    //                     tr.appendChild(td);
-    //                 }
-    //             }
-    //             tabList.appendChild(tr)
+                        td.innerHTML = value;
+                        tr.appendChild(td);
+                    }
+                }
+                tabList.appendChild(tr)
 
-    //             if(!--iterations){
-    //                 let preStatus = value == 'active' ? true : false;
-    //                 tr.dataset.status = preStatus;
-    //                 let td2 = document.createElement('td');
-    //                 td2.innerHTML = `<button class="ver-detalhes" onclick="sendEspera(${i.id})">Aprovar</button>`;
-    //                 tr.appendChild(td2);
-    //             }
-    //         }
-    //         tabList.innerHTML += "<tr class='empty-line table-line2' id='notData'><td></td><td style='text-align: center'>Nenhum dado encontrado</td><td></td></tr>";
+                if(!--iterations){
+                    let preStatus = value == 'active' ? true : false;
+                    tr.dataset.status = preStatus;
+                    let td2 = document.createElement('td');
+                    td2.innerHTML = `<button class="ver-detalhes" onclick="sendEspera(${i.id})">Aprovar</button>`;
+                    tr.appendChild(td2);
+                }
+            }
+            tabList.innerHTML += "<tr class='empty-line table-line2' id='notData'><td></td><td style='text-align: center'>Nenhum dado encontrado</td><td></td></tr>";
 
-    //         if(tabList.querySelectorAll('.table-line').length > 0){
-    //             notData.classList.remove('table-line2');
-    //         }
-    //     })
-    //     .catch(e=>newMsg({
-    //         mensagem: "Ocorreu algum erro, contate o administrador",
-    //         response: false
-    //     }))
-    // }
+            if(tabList.querySelectorAll('.table-line').length > 0){
+                notData.classList.remove('table-line2');
+            }
+        })
+        .catch(e=>newMsg({
+            mensagem: "Ocorreu algum erro, contate o administrador",
+            response: false
+        }))
+    }
 
     sendEspera(id){
         let local = '../sys/api/usuarios/cadastrar/' + this.name
