@@ -41,6 +41,15 @@ if($id){
 $turma      = scapeString($__CONEXAO__, $json->turma);
 $turma      = setNum($turma);
 
+endCode(
+    array(
+        $cpf, 
+        $nome, 
+        $email,
+        $nascimento,
+        $turma
+    ), false
+);
 checkMissing(
     array(
         $cpf, 
