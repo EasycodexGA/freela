@@ -6,7 +6,7 @@ $__STIME = $_SESSION["timeflood"];
 $__SBAN = $_SESSION["timebanflood"];
 
 $maxTime = 10;
-$maxRequest = 50;
+$maxRequest = 30;
 
 if($__STIME){
     if($__STIME < time() - $maxTime and $__SBAN < time()){
