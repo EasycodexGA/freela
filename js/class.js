@@ -36,7 +36,7 @@ class File{
                     if(key != 'id' && key != '_name'){
                         let td = document.createElement('td');
                         td.classList.add(`td-${key}`);
-    
+
                         if(key == 'status'){
                             let preStatus = value == 'active' ? true : false;
                             tr.dataset.status = preStatus;
@@ -331,7 +331,7 @@ class File{
 
     createEspera(){
         console.log("Get Espera: " + this.name)
-        let link = '../sys/api/usuarios/espera/' + this.name
+        let link = '../sys/api/usuarios/espera/getEspera?type=' + this.name
         return fetch(`${link}`)
         .then(e=>e.json())
         .then(e=>{ 
@@ -379,7 +379,7 @@ class File{
         }))
     }
 
-    sendEspera(id){ // criar a div pica
+    sendEspera(id){
         let local = '../sys/api/usuarios/cadastrar/' + this.name
         data = {id: id, espera: true}
         addNewData(local, data);

@@ -5,34 +5,49 @@ justLog($__EMAIL__, $__TYPE__, 3);
 
 header('Content-Type: application/json; charset=utf-8');
 
-$request = file_get_contents('php://input');
-$json = json_decode($request);
+$espera = $json->espera;
+$id     = $json->id; 
 
-$espera         = $json->espera;
-if(gettype($espera) !== boolean){
-    endCode('Erro.', false);
+if($id){
+    $id = scapeString($__CONEXAO__, $id);
+    $id = setNum($id);
+    $query = mysqli_query($__CONEXAO__, "select * from listaespera where id='$id'");
+    if(mysqli_num_rows($query) == 0){
+        endCode("Usuário na lista de espera não existe", false);
+    }
+    $fetch = mysqli_fetch_assoc($query);
+    
+    $cpf            = $fetch['cpf'];
+    $nome           = $fetch['nome'];
+    $email          = $fetch['email'];
+    $nascimento     = $fetch['nascimento'];
+    $titularidade   = $fetch['titularidade'];
+
+    mysqli_query($__CONEXAO__, "delete from listaespera where id='$id'");
+} else {
+    $cpf            = scapeString($__CONEXAO__, $json->cpf);
+    $nome           = scapeString($__CONEXAO__, $json->nome);
+    $email          = scapeString($__CONEXAO__, $json->email);
+    $nascimento     = scapeString($__CONEXAO__, $json->nascimento);
+    $titularidade   = scapeString($__CONEXAO__, $json->titularidade);
+
+    $cpf            = setCpf($cpf);
+    $nome           = setString($nome);
+    $email          = setEmail($email);
+    $nascimento     = setNum($nascimento);
+    $titularidade   = setNoXss($titularidade);
 }
-$espera = $espera ? 0 : 1;
 
-$cpf            = scapeString($__CONEXAO__, $json->cpf);
-$nome           = scapeString($__CONEXAO__, $json->nome);
-$email          = scapeString($__CONEXAO__, $json->email);
-$nascimento     = scapeString($__CONEXAO__, $json->nascimento);
-$titularidade   = scapeString($__CONEXAO__, $json->titularidade);
-
-$cpf            = setCpf($cpf);
-$nome           = setString($nome);
-$email          = setEmail($email);
-$nascimento     = setNum($nascimento);
-$titularidade   = setNoXss($titularidade);
+$turma      = scapeString($__CONEXAO__, $json->turma);
+$turma      = setNum($turma);
 
 checkMissing(
     array(
-        $cpf,
-        $nome,
+        $cpf, 
+        $nome, 
         $email,
         $nascimento,
-        $titularidade
+        $turma
     )
 );
 
@@ -41,6 +56,15 @@ if(!$email){
 }
 
 stopUserExist($__CONEXAO__, $email, $cpf);
+
+if($espera){
+    $query = mysqli_query($__CONEXAO__, "select id from listaespera where email='$email'");
+    if(mysqli_num_rows($query) > 1){
+        endCode("Email já cadastrado na lista de espera", false);
+    }
+    mysqli_query($__CONEXAO__, "insert into listaespera (nome, email, senha, cpf, nascimento, typeC, titularidade, lastModify, created) values ('$nome', '$email', '$senhaH', '$cpf', '$nascimento', '2', '$titularidade', '$__TIME__', '$__TIME__')")  or die("erro insert");
+    endCode("Sucesso, aluno cadastrado na lista de espera!");
+}
 
 $senha = bin2hex(random_bytes(3));
 $senhaH = password_hash($senha, PASSWORD_DEFAULT);

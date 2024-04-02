@@ -8,23 +8,37 @@ header('Content-Type: application/json; charset=utf-8');
 $request    = file_get_contents('php://input');
 $json       = json_decode($request);
 
-$espera     = $json->espera;
+$espera = $json->espera;
+$id     = $json->id; 
 
-if(gettype($espera) !== boolean){
-    endCode('Erro.', false);
+if($id){
+    $id = scapeString($__CONEXAO__, $id);
+    $id = setNum($id);
+    $query = mysqli_query($__CONEXAO__, "select * from listaespera where id='$id'");
+    if(mysqli_num_rows($query) == 0){
+        endCode("Usuário na lista de espera não existe", false);
+    }
+    $fetch = mysqli_fetch_assoc($query);
+    
+    $cpf        = $fetch['cpf'];
+    $nome       = $fetch['nome'];
+    $email      = $fetch['email'];
+    $nascimento = $fetch['nascimento'];
+
+    mysqli_query($__CONEXAO__, "delete from listaespera where id='$id'");
+} else {
+    $cpf        = scapeString($__CONEXAO__, $json->cpf);
+    $nome       = scapeString($__CONEXAO__, $json->nome);
+    $email      = scapeString($__CONEXAO__, $json->email);
+    $nascimento = scapeString($__CONEXAO__, $json->nascimento);
+
+    $cpf        = setCpf($cpf);
+    $nome       = setString($nome);
+    $email      = setEmail($email);
+    $nascimento = setNum($nascimento);
 }
-$espera = $espera ? 0 : 1;
 
-$cpf        = scapeString($__CONEXAO__, $json->cpf);
-$nome       = scapeString($__CONEXAO__, $json->nome);
-$email      = scapeString($__CONEXAO__, $json->email);
-$nascimento = scapeString($__CONEXAO__, $json->nascimento);
 $turma      = scapeString($__CONEXAO__, $json->turma);
-
-$cpf        = setCpf($cpf);
-$nome       = setString($nome);
-$email      = setEmail($email);
-$nascimento = setNum($nascimento);
 $turma      = setNum($turma);
 
 checkMissing(
@@ -43,6 +57,15 @@ if(!$email){
 
 stopUserExist($__CONEXAO__, $email, $cpf);
 
+if($espera){
+    $query = mysqli_query($__CONEXAO__, "select id from listaespera where email='$email'");
+    if(mysqli_num_rows($query) > 1){
+        endCode("Email já cadastrado na lista de espera", false);
+    }
+    mysqli_query($__CONEXAO__, "insert into listaespera (nome, email, senha, cpf, nascimento, lastModify, created) values ('$nome', '$email', '$senhaH', '$cpf', '$nascimento', '$__TIME__', '$__TIME__')")  or die("erro insert");
+    endCode("Sucesso, aluno cadastrado na lista de espera!");
+}
+
 $tid = decrypt($turma);
 
 $queryRoom = mysqli_query($__CONEXAO__, "select id from turmas where id='$tid'");
@@ -54,7 +77,7 @@ if(mysqli_num_rows($queryRoom) < 1){
 $senha = bin2hex(random_bytes(3));
 $senhaH = password_hash($senha, PASSWORD_DEFAULT);
 
-mysqli_query($__CONEXAO__, "insert into users (nome, email, senha, cpf, nascimento, lastModify, active, created) values ('$nome', '$email', '$senhaH', '$cpf', '$nascimento', '$__TIME__', '$espera', '$__TIME__')")  or die("erro insert");
+mysqli_query($__CONEXAO__, "insert into users (nome, email, senha, cpf, nascimento, lastModify, active, created) values ('$nome', '$email', '$senhaH', '$cpf', '$nascimento', '$__TIME__', '1', '$__TIME__')")  or die("erro insert");
 mysqli_query($__CONEXAO__, "insert into alunos (email, turma) values ('$email', '$tid')")  or die("erro insert");
 
 $subject = "Sua senha provisória é $senha";
