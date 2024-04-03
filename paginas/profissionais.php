@@ -88,7 +88,17 @@ justLog($__EMAIL__, $__TYPE__, 3);
             <thead id='headList'></thead>
             <tbody id='tabList'></tbody>
         </table>
+    </div>
 
+    <div class="list">
+        <div class="header-list-out">
+            <h1 class="title-header">Lista de espera</h1>
+            <input id="searchBar2" name="searchBar" placeholder="Pesquisar..">
+        </div>
+        <table class="content-list">
+            <thead id='headList2'></thead>
+            <tbody id='tabList2'></tbody>
+        </table>
     </div>
 
     <script src="../js/class.js"></script>
