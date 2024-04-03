@@ -379,13 +379,13 @@ class File{
                         td.innerHTML = value;
                         tr.appendChild(td);
                     }
-                }
-                if(!--iterations){
-                    let preStatus = value == 'active' ? true : false;
-                    tr.dataset.status = preStatus;
-                    let td2 = document.createElement('td');
-                    td2.innerHTML = `<button class="ver-detalhes" onclick="sendEspera(${i.id})">Aprovar</button>`;
-                    tr.appendChild(td2);
+                    if(!--iterations){
+                        let preStatus = value == 'active' ? true : false;
+                        tr.dataset.status = preStatus;
+                        let td2 = document.createElement('td');
+                        td2.innerHTML = `<button class="ver-detalhes" onclick="sendEspera(${i.id})">Aprovar</button>`;
+                        tr.appendChild(td2);
+                    }
                 }
                 tabList2.appendChild(tr)
             }
