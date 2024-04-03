@@ -38,16 +38,13 @@ if($id){
     $titularidade   = setNoXss($titularidade);
 }
 
-$turma      = scapeString($__CONEXAO__, $json->turma);
-$turma      = setNum($turma);
-
 checkMissing(
     array(
         $cpf, 
         $nome, 
         $email,
         $nascimento,
-        $turma
+        $titularidade
     )
 );
 
@@ -59,11 +56,15 @@ stopUserExist($__CONEXAO__, $email, $cpf);
 
 if($espera){
     $query = mysqli_query($__CONEXAO__, "select id from listaespera where email='$email'");
-    if(mysqli_num_rows($query) > 1){
+    if(mysqli_num_rows($query) > 0){
         endCode("Email já cadastrado na lista de espera", false);
     }
-    mysqli_query($__CONEXAO__, "insert into listaespera (nome, email, senha, cpf, nascimento, typeC, titularidade, lastModify, created) values ('$nome', '$email', '$senhaH', '$cpf', '$nascimento', '2', '$titularidade', '$__TIME__', '$__TIME__')")  or die("erro insert");
-    endCode("Sucesso, aluno cadastrado na lista de espera!");
+    $query = mysqli_query($__CONEXAO__, "select id from listaespera where cpf='$cpf'");
+    if(mysqli_num_rows($query) > 0){
+        endCode("CPF já cadastrado na lista de espera", false);
+    }
+    mysqli_query($__CONEXAO__, "insert into listaespera (nome, email, cpf, nascimento, typeC, titularidade, created) values ('$nome', '$email', '$cpf', '$nascimento', '2', '$titularidade', '$__TIME__')")  or die("erro insert");
+    endCode("Sucesso, professor cadastrado na lista de espera!");
 }
 
 $senha = bin2hex(random_bytes(3));
