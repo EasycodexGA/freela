@@ -127,7 +127,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
     </div>
     <div id="headerIn"></div>
 
-    <?php if(requireLevel($__TYPE__, 2)){ ?>
+    <?php if(requireLevel($__TYPE__, 3)){ ?>
     <script>
         fetch("../sys/api/usuarios/get/categorias")
         .then(e=>e.json())
