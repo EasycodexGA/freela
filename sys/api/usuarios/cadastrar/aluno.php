@@ -117,4 +117,4 @@ $sendEmail = mail(decrypt($email), $subject, $message, implode("\r\n", $__HEADER
 
 $dec = decrypt($email);
 
-endCode("Sucesso $dec", true);
+endCode("Sucesso $dec!", true);
