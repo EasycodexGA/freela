@@ -50,7 +50,7 @@ header, .extra{
     cursor: pointer;
 }
 
-#selectFilter{
+#selectFilter, #selectFilter2{
     padding: 10px;
     border: 1px solid #E7E7E7;
     border-radius: 5px;
@@ -227,7 +227,7 @@ header, .extra{
     align-items: center;
 }
 
-#searchBar {
+#searchBar, #searchBar2 {
     width: 50%;
     max-width: 200px;
     padding: 10px;
@@ -238,7 +238,7 @@ header, .extra{
     transition: all .2s ease-in-out;
 }
 
-#searchBar:focus {
+#searchBar:focus, #searchBar2:focus {
     border: 1px solid var(--contraste2);
 }
 

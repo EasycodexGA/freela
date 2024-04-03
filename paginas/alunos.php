@@ -91,6 +91,17 @@ justLog($__EMAIL__, $__TYPE__, 2);
         </table>
 
     </div>
+
+    <div class="list">
+        <div class="header-list-out">
+            <h1 class="title-header">Lista de espera</h1>
+        </div>
+        <table class="content-list">
+            <thead id='headList2'></thead>
+            <tbody id='tabList2'></tbody>
+        </table>
+
+    </div>
     <?php if(requireLevel($__TYPE__, 2)){ ?>
     <script>
         fetch("../sys/api/turmas/get/turmas")

@@ -13,7 +13,7 @@ if($type == 'alunos'){
     endCode('Erro.', false);
 }
 
-$_query_ = mysqli_query($__CONEXAO__, "select * from listaespera");
+$_query_ = mysqli_query($__CONEXAO__, "select * from listaespera where typeC='$typeC'");
 
 $array = array();
 

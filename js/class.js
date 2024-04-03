@@ -6,6 +6,7 @@ class File{
         this.linkGet = ''
         this.thContent = []
         this.allData = {}
+        this.allEspera = {}
         this.idDetail = '';
         this.jumpDetail = ['id']
         this.arrayDetail = []
@@ -329,6 +330,32 @@ class File{
         }))
     }
 
+    createThEspera(){
+        console.log('Creating TH: ' + this.name);
+        let tr = document.createElement('tr');
+    
+        let hlo = document.querySelector('.header-list-out');
+        let select = document.createElement('select');
+        select.id = 'selectFilter2';
+    
+        for(let i of this.thContent){
+            if(i == 'status'){
+                let th2 = document.createElement('th');
+                tr.appendChild(th2);
+            }
+            let th = document.createElement('th');
+            th.innerHTML = i;
+            tr.appendChild(th);
+    
+            let option = document.createElement('option');
+            option.value = i;
+            option.innerHTML = i[0].toUpperCase() + (i.substr(1, i.length));
+            select.appendChild(option);
+        }
+        headList.appendChild(tr);
+        hlo[1].appendChild(select);
+    }
+
     createEspera(){
         console.log("Get Espera: " + this.name)
         let link = '../sys/api/usuarios/espera/getEspera?type=' + this.name
@@ -336,7 +363,7 @@ class File{
         .then(e=>e.json())
         .then(e=>{ 
             console.log("Fetching")
-            this.allData = e.mensagem;
+            this.allEspera = e.mensagem;
             for(let i of e.mensagem){
                 if(i.data){
                     let date = new Date(i.data * 1000 + 86400000);
@@ -346,7 +373,7 @@ class File{
                 let tr = document.createElement('tr');
                 tr.classList.add('empty-line');
                 tr.classList.add('table-line');
-                tr.id = `key${i.id}`;
+                tr.id = `key${i.id}E`;
     
                 for(let [key, value] of Object.entries(i)){
                     if(key != 'id' && key != '_name'){
@@ -357,7 +384,7 @@ class File{
                         tr.appendChild(td);
                     }
                 }
-                tabList.appendChild(tr)
+                tabList2.appendChild(tr)
 
                 if(!--iterations){
                     let preStatus = value == 'active' ? true : false;
@@ -367,10 +394,10 @@ class File{
                     tr.appendChild(td2);
                 }
             }
-            tabList.innerHTML += "<tr class='empty-line table-line2' id='notData'><td></td><td style='text-align: center'>Nenhum dado encontrado</td><td></td></tr>";
+            tabList2.innerHTML += "<tr class='empty-line table-line2' id='notData2'><td></td><td style='text-align: center'>Nenhum dado encontrado</td><td></td></tr>";
 
-            if(tabList.querySelectorAll('.table-line').length > 0){
-                notData.classList.remove('table-line2');
+            if(tabList2.querySelectorAll('.table-line').length > 0){
+                notData2.classList.remove('table-line2');
             }
         })
         .catch(e=>newMsg({

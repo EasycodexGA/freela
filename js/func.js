@@ -292,6 +292,28 @@ if (typeof searchBar !== "undefined"){
         }
     })
 }
+if (typeof searchBar2 !== "undefined"){
+    searchBar2.addEventListener('keyup', ()=>{
+        let val = searchBar2.value.toString();
+        let filter = selectFilter2.value.toLowerCase();
+        filter = filter == 'nascimento' ? 'data' : filter;
+        for(let i of file.allEspera){
+            let name = i[filter];
+            name = name.toString().toLowerCase();
+            console.log(file.allEspera, name, val, filter);
+            if(name.includes(val)){
+                document.getElementById(`key${i.id}E`).classList.add('table-line');
+            } else {
+                document.getElementById(`key${i.id}E`).classList.remove('table-line');
+            }
+            if(tabList2.querySelectorAll('.table-line').length == 0){
+                notData2.classList.add('table-line2');
+            } else {
+                notData2.classList.remove('table-line2');
+            }
+        }
+    })
+}
 
 const convert64 = async () => {
     let file = imageAdd.files[0];
