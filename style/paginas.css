@@ -323,9 +323,8 @@ header, .extra{
     text-align: right;
 }
 
-.content-list td:nth-last-child(2){
+#tabList td:nth-last-child(2){
     text-align: right;
-    color: var(--contraste);
 }
 
 .out-bt-sv{
