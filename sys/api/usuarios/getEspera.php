@@ -20,16 +20,20 @@ $array = array();
 while($_dados_ = mysqli_fetch_array($_query_)){
     $id         = $_dados_['id'];
     $nome       = decrypt($_dados_["nome"]);
-    $email      = decrpyt($_dados_['email']);
-    // $nascimento = decrpy($_dados_['nascimento']);
+    $email      = decrypt($_dados_['email']);
+    $nascimento = decrypt($_dados_['nascimento']);
+    $titularidade =  decrypt($_dados_['titularidade']);
     
-    // $arr = array(
-    //     "id"        => $id, 
-    //     "nome"      => $nome, 
-    //     "email"     => $email,
-    //     "data"      => $nascimento,
-    // );
-    // array_push($array, $arr);
+    $arr = array(
+        "id"        => $id, 
+        "nome"      => $nome, 
+        "email"     => $email,
+        "data"      => $nascimento,
+    );
+    if($type == 'profissionais'){
+        array_merge($arr, array("titularidade"=>$titularidade));
+    }
+    array_push($array, $arr);
 }
 
 endCode($array, true);
