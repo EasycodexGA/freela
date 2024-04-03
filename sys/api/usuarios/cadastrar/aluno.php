@@ -9,12 +9,12 @@ $request    = file_get_contents('php://input');
 $json       = json_decode($request);
 
 $espera = $json->espera;
-$id     = $json->id; 
+$email     = $json->email; 
 
 if($id){
-    $id = scapeString($__CONEXAO__, $id);
-    $id = setNum($id);
-    $query = mysqli_query($__CONEXAO__, "select * from listaespera where id='$id'");
+    $email = scapeString($__CONEXAO__, $email);
+    $email = setEmail($email);
+    $query = mysqli_query($__CONEXAO__, "select * from listaespera where email='$email'");
     if(mysqli_num_rows($query) == 0){
         endCode("Usuário na lista de espera não existe", false);
     }
