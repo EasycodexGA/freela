@@ -399,6 +399,7 @@ class File{
     }
 
     sendEspera(id){
+        let nome = this.name == 'alunos' ? 'aluno' : 'professor'
         let local = '../sys/api/usuarios/cadastrar/' + this.name
         let data = {id: id, espera: true}
         addNewData(local, data);
