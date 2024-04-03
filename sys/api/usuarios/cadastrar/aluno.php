@@ -54,30 +54,34 @@ if(!$email){
 
 stopUserExist($__CONEXAO__, $email, $cpf);
 
-$query = mysqli_query($__CONEXAO__, "select id from listaespera where email='$email'");
-if(mysqli_num_rows($query) > 0){
-    endCode("Email já cadastrado na lista de espera", false);
+if(!$insert){
+    $query = mysqli_query($__CONEXAO__, "select id from listaespera where email='$email'");
+    if(mysqli_num_rows($query) > 0){
+        endCode("Email já cadastrado na lista de espera", false);
+    }
+    $query = mysqli_query($__CONEXAO__, "select id from listaespera where cpf='$cpf'");
+    if(mysqli_num_rows($query) > 0){
+        endCode("CPF já cadastrado na lista de espera", false);
+    }
+    
+    if($espera){
+        mysqli_query($__CONEXAO__, "insert into listaespera (nome, email, cpf, nascimento, created) values ('$nome', '$email', '$cpf', '$nascimento', '$__TIME__')")  or die("erro insert");
+        endCode("Sucesso, aluno cadastrado na lista de espera!", true);
+    }
 }
-$query = mysqli_query($__CONEXAO__, "select id from listaespera where cpf='$cpf'");
-if(mysqli_num_rows($query) > 0){
-    endCode("CPF já cadastrado na lista de espera", false);
-}
 
-if($espera){
-    mysqli_query($__CONEXAO__, "insert into listaespera (nome, email, cpf, nascimento, created) values ('$nome', '$email', '$cpf', '$nascimento', '$__TIME__')")  or die("erro insert");
-    endCode("Sucesso, aluno cadastrado na lista de espera!", true);
-}
-
-$turma      = scapeString($__CONEXAO__, $json->turma);
-$turma      = setNum($turma);
-checkMissing(array($turma));
-
-$tid = decrypt($turma);
-
-$queryRoom = mysqli_query($__CONEXAO__, "select id from turmas where id='$tid'");
-
-if(mysqli_num_rows($queryRoom) < 1){
-    endCode("Turma inexistente", false);
+if(!$insert){
+    $turma      = scapeString($__CONEXAO__, $json->turma);
+    $turma      = setNum($turma);
+    checkMissing(array($turma));
+    
+    $tid = decrypt($turma);
+    
+    $queryRoom = mysqli_query($__CONEXAO__, "select id from turmas where id='$tid'");
+    
+    if(mysqli_num_rows($queryRoom) < 1){
+        endCode("Turma inexistente", false);
+    }
 }
 
 $senha = bin2hex(random_bytes(3));
