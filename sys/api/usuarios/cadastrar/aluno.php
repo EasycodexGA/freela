@@ -22,10 +22,13 @@ if($email){
     
     $cpf        = $fetch['cpf'];
     $nome       = $fetch['nome'];
+    $type       = $fetch['typeC'];
     $email      = $fetch['email'];
     $nascimento = $fetch['nascimento'];
-
-    mysqli_query($__CONEXAO__, "delete from listaespera where id='$id'");
+    // fazer aqui para ser aprovado 
+    // mandar email com senha 
+    // colocar no users e em alunos
+    mysqli_query($__CONEXAO__, "delete from listaespera where email='$email'");
     endCode("Aluno aprovado", true);
 } else {
     $cpf        = scapeString($__CONEXAO__, $json->cpf);
