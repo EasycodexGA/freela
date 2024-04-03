@@ -5,13 +5,17 @@ justLog($__EMAIL__, $__TYPE__, 3);
 
 header('Content-Type: application/json; charset=utf-8');
 
-$espera = $json->espera;
-$id     = $json->id; 
+$request    = file_get_contents('php://input');
+$json       = json_decode($request);
 
-if($id){
-    $id = scapeString($__CONEXAO__, $id);
-    $id = setNum($id);
-    $query = mysqli_query($__CONEXAO__, "select * from listaespera where id='$id'") or die("no id1");
+$espera = $json->espera;
+$email     = $json->email; 
+$insert = $json->insert ? $json->insert : false;
+
+if($email and $espera = true and $insert == true){
+    $email = scapeString($__CONEXAO__, $email);
+    $email = setNum($email);
+    $query = mysqli_query($__CONEXAO__, "select * from listaespera where email='$email'") or die("no email1");
     if(mysqli_num_rows($query) == 0){
         endCode("Usuário na lista de espera não existe", false);
     }
@@ -23,7 +27,7 @@ if($id){
     $nascimento     = $fetch['nascimento'];
     $titularidade   = $fetch['titularidade'];
 
-    mysqli_query($__CONEXAO__, "delete from listaespera where id='$id'") or die("no id2");
+    mysqli_query($__CONEXAO__, "delete from listaespera where email='$email'") or die("no id2");
 } else {
     $cpf            = scapeString($__CONEXAO__, $json->cpf);
     $nome           = scapeString($__CONEXAO__, $json->nome);
