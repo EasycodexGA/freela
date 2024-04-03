@@ -352,7 +352,7 @@ class File{
             option.innerHTML = i[0].toUpperCase() + (i.substr(1, i.length));
             select.appendChild(option);
         }
-        headList.appendChild(tr);
+        headList2.appendChild(tr);
         hlo[1].appendChild(select);
     }
 
