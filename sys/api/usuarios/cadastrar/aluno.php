@@ -63,7 +63,7 @@ if($espera){
         endCode("CPF já cadastrado na lista de espera", false);
     }
     mysqli_query($__CONEXAO__, "insert into listaespera (nome, email, cpf, nascimento, created) values ('$nome', '$email', '$cpf', '$nascimento', '$__TIME__')")  or die("erro insert");
-    endCode("Sucesso, aluno cadastrado na lista de espera!");
+    endCode("Sucesso, aluno cadastrado na lista de espera!", true);
 }
 
 $turma      = scapeString($__CONEXAO__, $json->turma);
