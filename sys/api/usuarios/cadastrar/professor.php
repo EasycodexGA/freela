@@ -14,7 +14,7 @@ $insert = $json->insert ? $json->insert : false;
 
 if($email and $espera = true and $insert == true){
     $email = scapeString($__CONEXAO__, $email);
-    $email = setNum($email);
+    $email = setEmail($email);
     $query = mysqli_query($__CONEXAO__, "select * from listaespera where email='$email'") or die("no email1");
     if(mysqli_num_rows($query) == 0){
         endCode("Usuário na lista de espera não existe", false);
