@@ -334,7 +334,7 @@ class File{
         console.log('Creating TH: ' + this.name);
         let tr = document.createElement('tr');
     
-        let hlo = document.querySelector('.header-list-out');
+        let hlo = document.querySelectorAll('.header-list-out');
         let select = document.createElement('select');
         select.id = 'selectFilter2';
     
