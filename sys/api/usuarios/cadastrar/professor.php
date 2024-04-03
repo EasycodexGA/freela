@@ -11,7 +11,7 @@ $id     = $json->id;
 if($id){
     $id = scapeString($__CONEXAO__, $id);
     $id = setNum($id);
-    $query = mysqli_query($__CONEXAO__, "select * from listaespera where id='$id'");
+    $query = mysqli_query($__CONEXAO__, "select * from listaespera where id='$id'") or die("no id1");
     if(mysqli_num_rows($query) == 0){
         endCode("Usuário na lista de espera não existe", false);
     }
@@ -23,7 +23,7 @@ if($id){
     $nascimento     = $fetch['nascimento'];
     $titularidade   = $fetch['titularidade'];
 
-    mysqli_query($__CONEXAO__, "delete from listaespera where id='$id'");
+    mysqli_query($__CONEXAO__, "delete from listaespera where id='$id'") or die("no id2");
 } else {
     $cpf            = scapeString($__CONEXAO__, $json->cpf);
     $nome           = scapeString($__CONEXAO__, $json->nome);
