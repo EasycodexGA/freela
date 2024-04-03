@@ -358,7 +358,7 @@ class File{
 
     createEspera(){
         console.log("Get Espera: " + this.name)
-        let link = '../sys/api/usuarios/espera/getEspera?type=' + this.name
+        let link = '../sys/api/usuarios/getEspera?type=' + this.name
         return fetch(`${link}`)
         .then(e=>e.json())
         .then(e=>{ 
