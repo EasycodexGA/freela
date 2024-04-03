@@ -338,11 +338,7 @@ class File{
         let select = document.createElement('select');
         select.id = 'selectFilter2';
     
-        for(let i of this.thContent){
-            if(i == 'status'){
-                let th2 = document.createElement('th');
-                tr.appendChild(th2);
-            }
+        for(let i of ["nome", "email", "nascimento"]){
             let th = document.createElement('th');
             th.innerHTML = i;
             tr.appendChild(th);
