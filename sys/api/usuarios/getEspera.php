@@ -17,19 +17,19 @@ $_query_ = mysqli_query($__CONEXAO__, "select * from listaespera where typeC='$t
 
 $array = array();
 
-// while($_dados_ = mysqli_fetch_array($_query_)){
-//     $id         = $_dados_['id'];
-//     $nome       = decrypt($_dados_["nome"]);
-//     $email      = decrpyt($_dados_['email']);
-//     $nascimento = decrpy($_dados_['nascimento']);
+while($_dados_ = mysqli_fetch_array($_query_)){
+    $id         = $_dados_['id'];
+    $nome       = decrypt($_dados_["nome"]);
+    $email      = decrpyt($_dados_['email']);
+    $nascimento = decrpy($_dados_['nascimento']);
     
-//     $arr = array(
-//         "id"        => $id, 
-//         "nome"      => $nome, 
-//         "email"     => $email,
-//         "data"      => $nascimento,
-//     );
-//     array_push($array, $arr);
-// }
+    // $arr = array(
+    //     "id"        => $id, 
+    //     "nome"      => $nome, 
+    //     "email"     => $email,
+    //     "data"      => $nascimento,
+    // );
+    // array_push($array, $arr);
+}
 
 endCode($array, true);
