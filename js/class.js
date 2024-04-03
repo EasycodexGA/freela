@@ -400,7 +400,7 @@ class File{
 
     sendEspera(id){
         let local = '../sys/api/usuarios/cadastrar/' + this.name
-        data = {id: id, espera: true}
+        let data = {id: id, espera: true}
         addNewData(local, data);
     }
 }
