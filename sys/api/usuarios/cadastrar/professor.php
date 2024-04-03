@@ -12,7 +12,7 @@ $espera = $json->espera;
 $email     = $json->email; 
 $insert = $json->insert ? $json->insert : false;
 
-if($email and $espera = true and $insert == true){
+if($email and $espera === true and $insert === true){
     $email = scapeString($__CONEXAO__, $email);
     $email = setEmail($email);
     $query = mysqli_query($__CONEXAO__, "select * from listaespera where email='$email'") or die("no email1");
