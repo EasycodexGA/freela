@@ -16,7 +16,7 @@ if($email and $espera = true and $insert == true){
     $email = scapeString($__CONEXAO__, $email);
     $email = setEmail($email); 
     $query = mysqli_query($__CONEXAO__, "select * from listaespera where email='$email'");
-    if(mysqli_num_rows($query) == 0){
+    if(mysqli_num_rows($query) == 0){ 
         endCode("Usuário na lista de espera não existe", false);
     }
     $fetch = mysqli_fetch_assoc($query);
