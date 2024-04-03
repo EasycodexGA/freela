@@ -26,6 +26,7 @@ if($email){
     $nascimento = $fetch['nascimento'];
 
     mysqli_query($__CONEXAO__, "delete from listaespera where id='$id'");
+    endCode("Aluno aprovado", true);
 } else {
     $cpf        = scapeString($__CONEXAO__, $json->cpf);
     $nome       = scapeString($__CONEXAO__, $json->nome);
