@@ -11,7 +11,7 @@ $json       = json_decode($request);
 $espera = $json->espera;
 $email     = $json->email; 
 
-if($id){
+if($email){
     $email = scapeString($__CONEXAO__, $email);
     $email = setEmail($email);
     $query = mysqli_query($__CONEXAO__, "select * from listaespera where email='$email'");
