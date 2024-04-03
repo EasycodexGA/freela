@@ -380,8 +380,6 @@ class File{
                         tr.appendChild(td);
                     }
                 }
-                let preStatus = value == 'active' ? true : false;
-                tr.dataset.status = preStatus;
                 let td2 = document.createElement('td');
                 td2.innerHTML = `<button class="ver-detalhes" onclick="file.sendEspera(${i.id})">Aprovar</button>`;
                 tr.appendChild(td2);
