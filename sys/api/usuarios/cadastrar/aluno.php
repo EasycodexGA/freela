@@ -9,9 +9,9 @@ $request    = file_get_contents('php://input');
 $json       = json_decode($request);
 
 $espera = $json->espera;
-$email     = $json->email; 
+$email  = $json->email; 
 
-if($email){
+if($email and $espera = true and $json->insert == true){
     $email = scapeString($__CONEXAO__, $email);
     $email = setEmail($email);
     $query = mysqli_query($__CONEXAO__, "select * from listaespera where email='$email'");

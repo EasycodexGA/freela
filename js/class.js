@@ -403,7 +403,7 @@ class File{
     sendEspera(email){
         let nome = this.name == 'alunos' ? 'aluno' : 'professor'
         let local = 'usuarios/cadastrar/' + nome
-        let data = {email: email, espera: true}
+        let data = {email: email, espera: true, insert: true}
         addNewData(local, data);
     }
 }
