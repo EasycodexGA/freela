@@ -424,6 +424,7 @@ class Alunos extends File{
         this.arrayDetail.push('turmas')
         this.createTh()
         this.getData()
+        this.createThEspera()
         this.createEspera()
     }
 }
@@ -467,6 +468,7 @@ class Profissionais extends File{
         this.arrayDetail.push('turmas')
         this.createTh()
         this.getData()
+        this.createThEspera()
         this.createEspera()
     }
 }
@@ -496,6 +498,5 @@ class Turmas extends File{
         this.arrayDetail.push('profissionais', 'alunos', 'aulas')
         this.createTh()
         this.getData()
-        this.createBtLista()
     }
 }
