@@ -57,6 +57,9 @@ if(!$email){
 
 stopUserExist($__CONEXAO__, $email, $cpf);
 
+$senha = bin2hex(random_bytes(3));
+$senhaH = password_hash($senha, PASSWORD_DEFAULT);
+
 if($espera){
     $query = mysqli_query($__CONEXAO__, "select id from listaespera where email='$email'");
     if(mysqli_num_rows($query) > 1){
@@ -73,9 +76,6 @@ $queryRoom = mysqli_query($__CONEXAO__, "select id from turmas where id='$tid'")
 if(mysqli_num_rows($queryRoom) < 1){
     endCode("Turma inexistente", false);
 }
-
-$senha = bin2hex(random_bytes(3));
-$senhaH = password_hash($senha, PASSWORD_DEFAULT);
 
 mysqli_query($__CONEXAO__, "insert into users (nome, email, senha, cpf, nascimento, lastModify, active, created) values ('$nome', '$email', '$senhaH', '$cpf', '$nascimento', '$__TIME__', '1', '$__TIME__')")  or die("erro insert");
 mysqli_query($__CONEXAO__, "insert into alunos (email, turma) values ('$email', '$tid')")  or die("erro insert");
