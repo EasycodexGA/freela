@@ -57,7 +57,7 @@ function deletarAluno($__CONEXAO__, $__TYPE__, $__EMAIL__, $id){
     mysqli_query($__CONEXAO__, "delete from users where email='$email'") or die("c1");
     mysqli_query($__CONEXAO__, "delete from alunos where email='$email'") or die("c2");
     mysqli_query($__CONEXAO__, "delete from chamada where aluno='$id'") or die("c3");
-    mysqli_query($__CONEXAO__, "delete from recados where type='1' and idFinal='$id'") or die("c4");
+    mysqli_query($__CONEXAO__, "delete from recados where type='1' and toid='$id'") or die("c4");
     endCode("Aluno deletado com sucesso", true);
 
     return;
