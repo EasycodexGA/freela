@@ -397,7 +397,7 @@ class File{
             }
         })
         .catch(e=>newMsg({
-            mensagem: "Ocorreu algum erro, contate o administrador",
+            mensagem: "Ocorreu algum erro, contate o administrador22",
             response: false
         }))
     }
