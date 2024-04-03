@@ -400,10 +400,10 @@ class File{
         }))
     }
 
-    sendEspera(id){
+    sendEspera(email){
         let nome = this.name == 'alunos' ? 'aluno' : 'professor'
         let local = 'usuarios/cadastrar/' + nome
-        let data = {id: id, espera: true}
+        let data = {email: email, espera: true}
         addNewData(local, data);
     }
 }
