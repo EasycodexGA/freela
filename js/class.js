@@ -383,7 +383,7 @@ class File{
                     }
                 }
                 let td2 = document.createElement('td');
-                td2.innerHTML = `<button class="ver-detalhes" onclick="file.sendEspera(${i.email})">Aprovar</button>`;
+                td2.innerHTML = `<button class="ver-detalhes" onclick="file.sendEspera('${i.email}')">Aprovar</button>`;
                 tr.appendChild(td2);
 
                 tabList2.appendChild(tr)
