@@ -26,7 +26,7 @@ while($_dados_ = mysqli_fetch_array($_query_)){
     $arr = array(
         "id"        => $id, 
         "nome"      => $nome, 
-        "email"     => $emailuser,
+        "email"     => $email,
         "data"      => $nascimento,
     );
     array_push($array, $arr);
