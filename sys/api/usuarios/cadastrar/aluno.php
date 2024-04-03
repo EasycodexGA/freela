@@ -10,8 +10,9 @@ $json       = json_decode($request);
 
 $espera = $json->espera;
 $email  = $json->email; 
+$insert = $json->insert ? $json->insert : false;
 
-if($email and $espera = true and $json->insert == true){
+if($email and $espera === true and $insert === true){
     $email = scapeString($__CONEXAO__, $email);
     $email = setEmail($email);
     $query = mysqli_query($__CONEXAO__, "select * from listaespera where email='$email'");
@@ -53,7 +54,6 @@ if(!$email){
 }
 
 stopUserExist($__CONEXAO__, $email, $cpf);
-
 $query = mysqli_query($__CONEXAO__, "select id from listaespera where email='$email'");
 if(mysqli_num_rows($query) > 0){
     endCode("Email já cadastrado na lista de espera", false);
@@ -63,10 +63,11 @@ if(mysqli_num_rows($query) > 0){
     endCode("CPF já cadastrado na lista de espera", false);
 }
 
-if($espera){
+if($espera and !$insert){
     mysqli_query($__CONEXAO__, "insert into listaespera (nome, email, cpf, nascimento, created) values ('$nome', '$email', '$cpf', '$nascimento', '$__TIME__')")  or die("erro insert");
     endCode("Sucesso, aluno cadastrado na lista de espera!", true);
 }
+
 
 $turma      = scapeString($__CONEXAO__, $json->turma);
 $turma      = setNum($turma);
