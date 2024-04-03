@@ -61,8 +61,7 @@ if($espera){
     if(mysqli_num_rows($query) > 1){
         endCode("Email já cadastrado na lista de espera", false);
     }
-    endCode("aa", false);
-    mysqli_query($__CONEXAO__, "insert into listaespera (nome, email, senha, cpf, nascimento, lastModify, created) values ('$nome', '$email', '$senhaH', '$cpf', '$nascimento', '$__TIME__', '$__TIME__')")  or die("erro insert");
+    mysqli_query($__CONEXAO__, "insert into listaespera (nome, email, senha, cpf, nascimento, created) values ('$nome', '$email', '$senhaH', '$cpf', '$nascimento', '$__TIME__')")  or die("erro insert");
     endCode("Sucesso, aluno cadastrado na lista de espera!");
 }
 
