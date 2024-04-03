@@ -379,14 +379,13 @@ class File{
                         td.innerHTML = value;
                         tr.appendChild(td);
                     }
-                    if(!--iterations){
-                        let preStatus = value == 'active' ? true : false;
-                        tr.dataset.status = preStatus;
-                        let td2 = document.createElement('td');
-                        td2.innerHTML = `<button class="ver-detalhes" onclick="sendEspera(${i.id})">Aprovar</button>`;
-                        tr.appendChild(td2);
-                    }
                 }
+                let preStatus = value == 'active' ? true : false;
+                tr.dataset.status = preStatus;
+                let td2 = document.createElement('td');
+                td2.innerHTML = `<button class="ver-detalhes" onclick="sendEspera(${i.id})">Aprovar</button>`;
+                tr.appendChild(td2);
+                
                 tabList2.appendChild(tr)
             }
             tabList2.innerHTML += "<tr class='empty-line table-line2' id='notData2'><td></td><td style='text-align: center'>Nenhum dado encontrado</td><td></td></tr>";
