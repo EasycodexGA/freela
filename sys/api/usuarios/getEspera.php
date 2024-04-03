@@ -20,7 +20,7 @@ $array = array();
 while($_dados_ = mysqli_fetch_array($_query_)){
     $id         = $_dados_['id'];
     $nome       = decrypt($_dados_["nome"]);
-    // $email      = decrpyt($_dados_['email']);
+    $email      = decrpyt($_dados_['email']);
     // $nascimento = decrpy($_dados_['nascimento']);
     
     // $arr = array(
