@@ -348,6 +348,8 @@ class File{
             option.innerHTML = i[0].toUpperCase() + (i.substr(1, i.length));
             select.appendChild(option);
         }
+        let th = document.createElement("th");
+        tr.append(th);
         headList2.appendChild(tr);
         hlo[1].appendChild(select);
     }
