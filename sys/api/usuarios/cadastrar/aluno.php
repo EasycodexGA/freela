@@ -55,11 +55,11 @@ stopUserExist($__CONEXAO__, $email, $cpf);
 
 if($espera){
     $query = mysqli_query($__CONEXAO__, "select id from listaespera where email='$email'");
-    if(mysqli_num_rows($query) > 1){
+    if(mysqli_num_rows($query) > 0){
         endCode("Email já cadastrado na lista de espera", false);
     }
     $query = mysqli_query($__CONEXAO__, "select id from listaespera where cpf='$cpf'");
-    if(mysqli_num_rows($query) > 1){
+    if(mysqli_num_rows($query) > 0){
         endCode("CPF já cadastrado na lista de espera", false);
     }
     mysqli_query($__CONEXAO__, "insert into listaespera (nome, email, cpf, nascimento, created) values ('$nome', '$email', '$cpf', '$nascimento', '$__TIME__')")  or die("erro insert");
