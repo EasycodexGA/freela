@@ -68,7 +68,7 @@ if(!$insert){
         endCode("CPF já cadastrado na lista de espera", false);
     }
     
-    if($espera){
+    if($espera === true){
         mysqli_query($__CONEXAO__, "insert into listaespera (nome, email, cpf, nascimento, typeC, titularidade, created) values ('$nome', '$email', '$cpf', '$nascimento', '2', '$titularidade', '$__TIME__')")  or die("erro insert");
         endCode("Sucesso, professor cadastrado na lista de espera!", true);
     }
