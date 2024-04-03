@@ -25,11 +25,8 @@ if($email){
     $type       = $fetch['typeC'];
     $email      = $fetch['email'];
     $nascimento = $fetch['nascimento'];
-    // fazer aqui para ser aprovado 
-    // mandar email com senha 
-    // colocar no users e em alunos
+
     mysqli_query($__CONEXAO__, "delete from listaespera where email='$email'");
-    endCode("Aluno aprovado", true);
 } else {
     $cpf        = scapeString($__CONEXAO__, $json->cpf);
     $nome       = scapeString($__CONEXAO__, $json->nome);
