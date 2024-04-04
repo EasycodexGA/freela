@@ -209,7 +209,7 @@ if(requireLevel($__TYPE__, 1)){
                 <label for="telefone">Telefone</label>
                 <input id='telefone' type='text' placeholder='47 9 9999-9999'>
             </div>
-            <button onclick="()=>dhuiashduih()">Enviar</button>
+            <button onclick="dhuiashduih()">Enviar</button>
         </form>
     </section>
     <section id='responsavel' class='container'>
@@ -262,5 +262,6 @@ if(requireLevel($__TYPE__, 1)){
                 newMsg(e);
             })
         }
+    </script>
 </body>
 </html>
