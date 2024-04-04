@@ -113,6 +113,7 @@ class File{
                 newMsg(e);
                 return;
             }
+            console.log("a1")
             details.classList.add("add-active");
             detailContainer.innerHTML = '';
 
@@ -131,6 +132,8 @@ class File{
             btClose.setAttribute("onclick", "closeAdd()");
             btClose.innerText = "Fechar";
             outBt.append(btClose);
+
+            console.log("a2")
 
             if((this.typeUser > 2) || (this.typeUser > 1 && (this.name == 'alunos' || this.name == 'recados'))){
                 let btRemove = document.createElement("button");
