@@ -209,7 +209,7 @@ if(requireLevel($__TYPE__, 1)){
                 <label for="telefone">Telefone</label>
                 <input id='telefone' type='text' placeholder='47 9 9999-9999'>
             </div>
-            <button>Enviar</button>
+            <button onclick="sendContato()">Enviar</button>
         </form>
     </section>
     <section id='responsavel' class='container'>
@@ -245,5 +245,10 @@ if(requireLevel($__TYPE__, 1)){
     <footer>
         <img src='./img/logo2.png'>
     </footer>
+
+    <script>
+        const sendContato = () => {
+            fetch("")
+        }
 </body>
 </html>
