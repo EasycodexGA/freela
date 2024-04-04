@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 include"checkmobile.php";
 include"functions.php";
 include"checkflood.php";
@@ -22,7 +24,6 @@ if($_ON_->response == false){
     endCode("Site inativo", false);
 }
 
-session_start();
 $__CONEXAO__ = mysqli_connect(
     LOG_DB_LOCAL,
     LOG_DB_USER,

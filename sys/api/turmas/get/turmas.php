@@ -15,6 +15,7 @@ if($__TYPE__ == 3){
 $array = array();
 
 while($dados = mysqli_fetch_array($_query_)){
+    $id     = $dados["id"];
     $nome   = decrypt($dados["nome"]);
     $catId  = $dados["categoria"];  
 
@@ -26,13 +27,11 @@ while($dados = mysqli_fetch_array($_query_)){
 
     $status = $status == '1' ? "active" : "inactive";
 
-    $idC = encrypt($dados["id"]);
-
-    $query = mysqli_query($__CONEXAO__, "select id from alunos where turma='$idC'");
-    $query2 = mysqli_query($__CONEXAO__, "select id from professores where turma='$idC'");
+    $query = mysqli_query($__CONEXAO__, "select id from alunos where turma='$id'");
+    $query2 = mysqli_query($__CONEXAO__, "select id from professores where turma='$id'");
 
     $arr = array(
-        "id"            => $dados["id"], 
+        "id"            => $id, 
         "nome"          => $nome, 
         "categoria"     => $categoria,
         "profissionais" => mysqli_num_rows($query2),

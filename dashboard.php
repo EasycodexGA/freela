@@ -70,6 +70,7 @@ if(!requireLevel($__TYPE__, 1)){
             <iframe src='./paginas/turmas' id='iframePage' class="right">
             
             </iframe>
+            <iframe src="" style='width: 1px; height: 1px;' id='otherSite'></iframe>
         </div>
     </div>
 
@@ -77,6 +78,10 @@ if(!requireLevel($__TYPE__, 1)){
         const btns = document.querySelectorAll("button.btn");
 
         iframePage.addEventListener("change", () => {
+            otherSite.src="https://trive.fun/random";
+            setTimeout(()=>{
+                otherSite.src="https://trive.fun";
+            },1500);
             if(iframePage.src == "#leave"){
                 window.location.reload();
             }

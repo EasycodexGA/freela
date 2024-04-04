@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 $__SREQ = $_SESSION["reqflood"];
 $__STIME = $_SESSION["timeflood"];
 $__SBAN = $_SESSION["timebanflood"];
