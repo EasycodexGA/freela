@@ -306,6 +306,7 @@ class File{
                 }
             }
             console.log('a6');
+            console.log(this.typeUser)
             if((this.typeUser > 2) || (this.typeUser > 1 && (this.name == 'alunos' || this.name == 'recados'))){
                 console.log("a7")
                 let btSave = document.createElement("button");
