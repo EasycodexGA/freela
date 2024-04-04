@@ -257,6 +257,10 @@ if(requireLevel($__TYPE__, 1)){
                     telefone: telefone.value
                 })
             })
+            .then(e=>e.json())
+            .then(e=>{
+                
+            })
         }
 </body>
 </html>

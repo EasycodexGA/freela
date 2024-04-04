@@ -19,7 +19,7 @@ while($_dados_ = mysqli_fetch_array($_query_)){
     $status = $_dados_["active"];
     $status = $status == '1' ? "active" : "inactive";
 
-    $query = mysqli_query($__CONEXAO__, "select id from alunos where equipe='$id')");
+    $query = mysqli_query($__CONEXAO__, "select id from alunos where equipe='$id'");
 
     $arr = array(
         "id"            => $id,

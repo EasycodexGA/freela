@@ -30,4 +30,6 @@ if(mysqli_num_rows($check) > 0){
     endCode("Alguém já utilizou esses dados", false);
 } 
 
-mysqli_query($__CONEXAO__, "insert into contatos (nome, email, telefone, created) values ('$nome', $)");
+mysqli_query($__CONEXAO__, "insert into contatos (nome, email, telefone, created) values ('$nome', '$email', '$telefone', '$__TIME__')");
+
+endCode("Enviado com sucesso!", true);
