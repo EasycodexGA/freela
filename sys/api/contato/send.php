@@ -3,14 +3,14 @@ include '../../conexao.php';
 
 // justLog($__EMAIL__, $__TYPE__, 2);
 
-if(!$_SESSION["lastcontato"] or $_SESSION["lastcontato"] < time() - 10){
-    $_SESSION["lastcontato"] = time();
-}
-
 if($_SESSION["lastcontato"]){
     if($_SESSION["lastcontato"] > time() - 10){
         endCode("Aguarde 10 segundos", false);
     }
+}
+
+if(!$_SESSION["lastcontato"] or $_SESSION["lastcontato"] < time() - 10){
+    $_SESSION["lastcontato"] = time();
 }
 
 
