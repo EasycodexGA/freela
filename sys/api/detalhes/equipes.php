@@ -17,6 +17,8 @@ if(mysqli_num_rows($_query_) < 1){
     endCode('Essa equipe não existe ou você não está participando dela.', false);
 }
 
+$array = array();
+
 while($_dados_ = mysqli_fetch_array($_query_)){
     $id     = $_dados_["id"];
     $nome   = decrypt($_dados_["nome"]);
