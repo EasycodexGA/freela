@@ -305,12 +305,15 @@ class File{
                     inpsAdd.append(addOut);
                 }
             }
+            console.log('a6');
             if((this.typeUser > 2) || (this.typeUser > 1 && (this.name == 'alunos' || this.name == 'recados'))){
+                console.log("a7")
                 let btSave = document.createElement("button");
                 btSave.classList.add("btn-add");
                 btSave.setAttribute("onclick", "sendEdit(file.idDetail, file.name, this.parentNode.parentNode)");
                 btSave.innerText = "Salvar";
                 outBt.append(btSave);
+                console.log("a8")
             }
             console.log('a3');
             detailContainer.append(h1);
