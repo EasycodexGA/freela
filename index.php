@@ -260,6 +260,11 @@ if(requireLevel($__TYPE__, 1)){
             .then(e=>e.json())
             .then(e=>{
                 newMsg(e);
+                if(e.response){
+                    nome.value = "";
+                    email.value = "";
+                    telefone.value = "";
+                }
             })
         }
     </script>
