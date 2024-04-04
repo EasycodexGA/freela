@@ -68,6 +68,7 @@ function verMais(id,type, titleStr){
             let input = document.createElement("input");
             input.type = 'checkbox';
             input.classList.add("checkbox-presenca");
+            input.classList.add("checkbox-presencaa");
             input.id = 'checkId-' + i.id;
 
             if(i.checked == 1){
@@ -147,7 +148,7 @@ function salvarCheckbox(id, type){
         let string = file.arrayStrAdd[`${id}Array`];
         let array = string.split('#');
 
-        let allBts = document.querySelectorAll('.checkbox-presenca');
+        let allBts = document.querySelectorAll('.checkbox-presencaa');
         for(let i = 0; i < allBts.length; i++){
             bool = allBts[i].checked ? 1 : 0 ;
             console.log(i)
