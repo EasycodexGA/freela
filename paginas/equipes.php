@@ -29,8 +29,8 @@ justLog($__EMAIL__, $__TYPE__, 3);
     </div>
 
 
-    <!-- <script src="../js/class.js"></script>
-    <script>const file = new Turmas(<?php echo $__TYPE__; ?>);</script>-->
+    <script src="../js/class.js"></script>
+    <script>const file = new Equipes(<?php echo $__TYPE__; ?>);</script>
     <script src="../js/func.js" defer></script> 
     <div id="b2xcodeOut">
         <h1 id='b2xcodeIn'>

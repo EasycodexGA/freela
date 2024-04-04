@@ -125,7 +125,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
         </table>
 
     </div>
-    <div id="headerIn"></div>
+    <!-- <div id="headerIn"></div> -->
 
     <?php if(requireLevel($__TYPE__, 3)){ ?>
     <script>
