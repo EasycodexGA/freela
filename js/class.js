@@ -301,6 +301,7 @@ class File{
                         p.innerHTML = value.toString();
                         addOut.append(p);
                     }
+                    console.log("a5");
                     inpsAdd.append(addOut);
                 }
             }
