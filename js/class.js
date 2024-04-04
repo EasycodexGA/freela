@@ -303,6 +303,7 @@ class File{
                     }
                     console.log("a5");
                     inpsAdd.append(addOut);
+                    console.log("a9")
                 }
             }
             console.log('a6');
