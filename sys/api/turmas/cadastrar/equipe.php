@@ -23,6 +23,6 @@ if(mysqli_num_rows($getEquipe) > 0){
     endCode("Já existe uma equipe com esses dados.", false);
 }
 
-mysqli_query($__CONEXAO__, "insert into equipe (nome, created) values ('$nome', '$__TIME__')");
+mysqli_query($__CONEXAO__, "insert into equipes (nome, created) values ('$nome', '$__TIME__')");
 
-endCode("Sala criada com sucesso", true);
+endCode("Equipe criada com sucesso", true);

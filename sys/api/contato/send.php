@@ -26,4 +26,8 @@ checkMissing(
 
 $check = mysqli_query($__CONEXAO__, "select id from contatos where telefone='$telefone' or email='$email'");
 
-endCode("Alguém já utilizou esses dados, troque o email e o telefone", false);
+if(mysqli_num_rows($check) > 0){
+    endCode("Alguém já utilizou esses dados", false);
+} 
+
+mysqli_query($__CONEXAO__, "insert into contatos (nome, email, telefone, created) values ('$nome', $)");
