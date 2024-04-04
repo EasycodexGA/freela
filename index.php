@@ -246,6 +246,7 @@ if(requireLevel($__TYPE__, 1)){
         <img src='./img/logo2.png'>
     </footer>
 
+    <script src='js/func.js'></script>
     <script>
         const sendContato = () => {
             fetch("./sys/api/contato/send",{
