@@ -248,7 +248,14 @@ if(requireLevel($__TYPE__, 1)){
 
     <script>
         const sendContato = () => {
-            fetch("")
+            fetch("./sys/api/contato/send",{
+                method: "POST",
+                body: JSON.stringify({
+                    nome: nome.value,
+                    email: email.value,
+                    telefone: telefone.value
+                })
+            })
         }
 </body>
 </html>

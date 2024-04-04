@@ -488,9 +488,23 @@ class Turmas extends File{
         this.name = 'turmas'
         this.linkGet = 'turmas/get/turmas'
         this.thContent = ['Nome', 'Categoria', 'Profissionais', 'Alunos', 'Status']
-        this.jumpDetail.push('alunosQt', 'profissionaisQt', 'def_time')
+        this.jumpDetail.push('def_time')
         this.numsDetail.push('horario')
         this.arrayDetail.push('profissionais', 'alunos', 'aulas')
+        this.createTh()
+        this.getData()
+    }
+}
+
+class Equipes extends File{
+    constructor(id){
+        super(id)
+        this.name = 'equipes'
+        this.linkGet = 'turmas/get/equipes'
+        this.thContent = ['Nome', 'Alunos', 'Status']
+        // this.jumpDetail.push()
+        // this.numsDetail.push()
+        this.arrayDetail.push('alunos')
         this.createTh()
         this.getData()
     }

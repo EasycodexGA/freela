@@ -24,8 +24,38 @@ justLog($__EMAIL__, $__TYPE__, 3);
     <div class='extra'>
         <h1 class='title-header'>Funções</h1>
         <div class='header-in'>
-            <button onclick="newMsg({mensagem: 'Em desenvolvimento', response: 'aguardando'})" class='funcBt'>+ Adicionar equipe</button>
+            <button onclick="newMsg(addEquipe)" class='funcBt'>+ Adicionar equipe</button>
         </div>
+    </div>
+
+    <div id='addNew'>
+        <div id='addEquipe' class='add-container'>
+            <h1 class='title-add'>Nova equipe</h1>
+
+            <div class='inps-add'>
+                <div class='inp-add-out'>
+                    <h3>Nome</h3>
+                    <input id='nomeAdd' type='text' placeholder='Equipe sub 19'/>
+                </div>
+            </div>
+            <div class='out-bt-sv'>
+                <button class='btn-close' onclick='closeAdd()'>Fechar</button>
+                <button onclick='addNewData("turmas/cadastrar/equipe", {
+                    nome: nomeAdd.value,
+                })' class='btn-add'>Salvar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="list">
+        <div class="header-list-out">
+            <h1 class="title-header">Equipes</h1>
+            <input id="searchBar" name="searchBar" placeholder="Pesquisar..">
+        </div>
+        <table class="content-list">
+            <thead id='headList'></thead>
+            <tbody id='tabList'></tbody>
+        </table>
     </div>
 
 

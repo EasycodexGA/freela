@@ -56,6 +56,28 @@ while($_dados_ = mysqli_fetch_array($_query_)){
 
     $turmas = array_merge($arrTurmas, $allTurmas);
 
+    $query4  = mysqli_query($__CONEXAO__, "select id, nome from equipes where id in (select equipe from alunos where email='$email')");
+    
+    $arrEquipe = array();
+
+    while($dados = mysqli_fetch_array($query4)){
+        $equipe      = $dados['nome'];
+        $equipeId    = $dados['id'];
+        
+        array_push($arrTurmas, array("nome"=>decrypt($equipe), "id"=>$equipeId, "checked"=>1));
+    }
+
+    $allEquipes = array();
+    $query5 = mysqli_query($__CONEXAO__, "select id, nome from equipes where id not in (select equipe from alunos where email='$email')");
+
+    while($dados5 = mysqli_fetch_array($query5)){
+        $equipe2      = $dados5['nome'];
+        $equipeId2    = $dados5['id'];
+        array_push($allTurmas, array("nome"=>decrypt($equipe2), "id"=>$equipeId2, "checked"=>0));
+    }
+
+    $equipes = array_merge($arrEquipes, $allEquipes);
+
     $arr = array(
         "id"            => $decAluno,
         "nome"          => $nome, 
@@ -63,6 +85,7 @@ while($_dados_ = mysqli_fetch_array($_query_)){
         "cpf"           => $cpf,
         "nascimento"    => $nascimento,
         "turmas"        => $turmas,
+        "equipes"       => $equipes,
         "presencas"     => $presencas,
         "faltas"        => $faltas,
         "status"        => $status
