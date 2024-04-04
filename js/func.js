@@ -146,10 +146,12 @@ function salvarCheckbox(id, type){
     } else {
         let string = file.arrayStrAdd[`${id}Array`];
         let array = string.split('#');
+        console.log(array);
 
         let allBts = document.querySelectorAll('.checkbox-presenca');
         for(let i = 0; i < allBts.length; i++){
             bool = allBts[i].checked ? 1 : 0 ;
+            console.log(array[i]);
             array[i] = JSON.parse(array[i]);
             array[i].checked = bool;
             array[i] = JSON.stringify(array[i]);
