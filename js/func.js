@@ -146,7 +146,7 @@ function salvarCheckbox(id, type){
     } else {
         let string = file.arrayStrAdd[`${id}Array`];
         let array = string.split('#');
-        console.log(array);
+        array = array[0];
 
         let allBts = document.querySelectorAll('.checkbox-presenca');
         for(let i = 0; i < allBts.length; i++){
