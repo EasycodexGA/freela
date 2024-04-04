@@ -189,6 +189,7 @@ class File{
                     this.arrayStrAdd[`${key}Array`] = value == '' ? false : value;
                     value = `<button class='btn-add btn-send-data' data-key='${key}' onclick='verMais("${key}", ${type}, "${key}")'>Ver ${key}</button>`;
                 }
+                console.log("a4");
                 if(!this.jumpDetail.includes(key)){
                     let addOut = document.createElement("div");
                     addOut.classList.add("inp-add-out");
