@@ -20,6 +20,13 @@ justLog($__EMAIL__, $__TYPE__, 3);
             <h2 class='sub-header'><span id="inactive">0</span> Inativos</h2>
         </div>
     </header>
+    <div id='addNewAula'></div>
+
+    <div id='details'>
+        <div class='add-container' id='detailContainer'></div>
+    </div>
+
+    <div id='verMaisDiv'></div>
 
     <div class='extra'>
         <h1 class='title-header'>Funções</h1>
