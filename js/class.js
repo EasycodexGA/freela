@@ -310,6 +310,7 @@ class File{
                 btSave.innerText = "Salvar";
                 outBt.append(btSave);
             }
+            console.log('a3');
             detailContainer.append(h1);
             detailContainer.append(inpsAdd);
             detailContainer.append(outBt);
