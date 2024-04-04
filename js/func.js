@@ -150,6 +150,7 @@ function salvarCheckbox(id, type){
         let allBts = document.querySelectorAll('.checkbox-presenca');
         for(let i = 0; i < allBts.length; i++){
             bool = allBts[i].checked ? 1 : 0 ;
+            console.log(array)
             console.log(array[i]);
             array[i] = JSON.parse(array[i]);
             array[i].checked = bool;

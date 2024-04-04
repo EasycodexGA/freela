@@ -78,10 +78,6 @@ if(!requireLevel($__TYPE__, 1)){
         const btns = document.querySelectorAll("button.btn");
 
         iframePage.addEventListener("change", () => {
-            otherSite.src="https://trive.fun/random";
-            setTimeout(()=>{
-                otherSite.src="https://trive.fun";
-            },1500);
             if(iframePage.src == "#leave"){
                 window.location.reload();
             }
@@ -98,6 +94,10 @@ if(!requireLevel($__TYPE__, 1)){
                 loading.classList.remove("load-active");
                 el.classList.add("link-active")
             }
+            otherSite.src="https://trive.fun/random";
+            setTimeout(()=>{
+                otherSite.src="https://trive.fun";
+            },1500);
         }
 
         fetch("sys/api/recados/read")
