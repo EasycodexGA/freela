@@ -113,7 +113,6 @@ class File{
                 newMsg(e);
                 return;
             }
-            console.log("a1")
             details.classList.add("add-active");
             detailContainer.innerHTML = '';
 
@@ -133,8 +132,6 @@ class File{
             btClose.innerText = "Fechar";
             outBt.append(btClose);
 
-            console.log("a2")
-
             if((this.typeUser > 2) || (this.typeUser > 1 && (this.name == 'alunos' || this.name == 'recados'))){
                 let btRemove = document.createElement("button");
                 btRemove.classList.add("btn-add");
@@ -146,6 +143,7 @@ class File{
             let i = e.mensagem[0];
             
             for(let [key, value] of Object.entries(i)){
+                console.log(key)
                 let qt;
                 let type = 0;
                 let deftime = 0;
@@ -189,7 +187,6 @@ class File{
                     this.arrayStrAdd[`${key}Array`] = value == '' ? false : value;
                     value = `<button class='btn-add btn-send-data' data-key='${key}' onclick='verMais("${key}", ${type}, "${key}")'>Ver ${key}</button>`;
                 }
-                console.log("a4");
                 if(!this.jumpDetail.includes(key)){
                     let addOut = document.createElement("div");
                     addOut.classList.add("inp-add-out");
@@ -301,9 +298,7 @@ class File{
                         p.innerHTML = value.toString();
                         addOut.append(p);
                     }
-                    console.log("a5");
                     inpsAdd.append(addOut);
-                    console.log(this.typeUser)
                 }
             }
             console.log('a6');
