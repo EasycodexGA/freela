@@ -5,7 +5,7 @@ include '../../conexao.php';
 
 if($_SESSION["lastcontato"]){
     if($_SESSION["lastcontato"] > time() - 10){
-        $rest = time() - $_SESSION["lastcontato"];
+        $rest = 10 - (time() - $_SESSION["lastcontato"]);
         endCode("Aguarde $rest segundos", false);
     }
 }
