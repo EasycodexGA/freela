@@ -248,7 +248,7 @@ if(requireLevel($__TYPE__, 1)){
 
     <script src='js/func.js'></script>
     <script>
-        const sendContato = () => {
+        function sendContato(){
             fetch("./sys/api/contato/send",{
                 method: "POST",
                 body: JSON.stringify({
