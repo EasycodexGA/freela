@@ -209,7 +209,7 @@ if(requireLevel($__TYPE__, 1)){
                 <label for="telefone">Telefone</label>
                 <input id='telefone' type='text' placeholder='47 9 9999-9999'>
             </div>
-            <button onclick="sendContato()">Enviar</button>
+            <button onclick="()=>dhuiashduih()">Enviar</button>
         </form>
     </section>
     <section id='responsavel' class='container'>
@@ -248,7 +248,7 @@ if(requireLevel($__TYPE__, 1)){
 
     <script src='js/func.js'></script>
     <script>
-        function sendContato(){
+        function dhuiashduih(){
             fetch("./sys/api/contato/send",{
                 method: "POST",
                 body: JSON.stringify({

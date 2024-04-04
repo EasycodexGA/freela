@@ -30,9 +30,9 @@ while($_dados_ = mysqli_fetch_array($_query_)){
 
     while($dados = mysqli_fetch_array($query)){
         $idA    = $dados['id'];
-        $nomeA  = decrypt($dados['nome']);
+        $nomeA  = $dados['nome'];
 
-        array_push($alunosArr, array("id"=>$idA, "nome"=>$nomeA));
+        array_push($alunosArr, array("id"=>$idA, "nome"=>decrypt($nomeA)));
     }
 
     $arr = array(
