@@ -65,7 +65,6 @@ if(mysqli_num_rows($checkRepeat) > 0){
     endCode(" CPF já está em uso.", false);
 }
 
-endCode(count($turmas), false);
 for($i = 0; $i < count($turmas); $i++){
     $check = $i->checked;
     $idTurma = $i->id;
