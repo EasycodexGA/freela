@@ -165,6 +165,7 @@ class File{
             
             for(let [key, value] of Object.entries(i)){
                 console.log(key)
+                let qt;
                 let type = 0;
                 let deftime = 0;
                 if((key == 'turmas' || key == 'equipes') && (this.name == 'alunos' || this.name == 'profissionais')){
