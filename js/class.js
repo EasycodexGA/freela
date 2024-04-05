@@ -140,6 +140,27 @@ class File{
                 btRemove.innerText = "Excluir";
                 outBt.append(btRemove);
             }
+
+            if(this.name == 'turmas' && this.typeUser > 1){
+                let btAddAula = document.createElement("button");
+                btAddAula.classList.add("btn-add");
+                btAddAula.setAttribute('onclick', `openAddAula()`);
+                btAddAula.innerText = "Adicionar aula";
+
+                outBt.append(btAddAula);
+                verPresencaBt.setAttribute('onclick', "verMais(this, 1, 'Chamada')");
+            }
+
+            if((this.typeUser > 2) || (this.typeUser > 1 && (this.name == 'alunos' || this.name == 'recados'))){
+                console.log("a7")
+                let btSave = document.createElement("button");
+                btSave.classList.add("btn-add");
+                btSave.setAttribute("onclick", "sendEdit(file.idDetail, file.name, this.parentNode.parentNode)");
+                btSave.innerText = "Salvar";
+                outBt.append(btSave);
+                console.log("a8")
+            }
+
             let i = e.mensagem[0];
             
             for(let [key, value] of Object.entries(i)){
@@ -168,22 +189,13 @@ class File{
                     }
                     qt = value.length;
                     for(let j in value){
-                        if(key == 'alunos'){
+                        if(key == 'alunos' || key == 'equipes'){
                             value[j].checked = 0;
                         }
                         value[j] = JSON.stringify(value[j]);
                     }
                     value = value.join("#");
                     
-                    if(key == 'alunos' && this.typeUser > 1){
-                        let btAddAula = document.createElement("button");
-                        btAddAula.classList.add("btn-add");
-                        btAddAula.setAttribute('onclick', `openAddAula()`);
-                        btAddAula.innerText = "Adicionar aula";
-
-                        outBt.append(btAddAula);
-                        verPresencaBt.setAttribute('onclick', "verMais(this, 1, 'Chamada')");
-                    }
                     this.arrayStrAdd[`${key}Array`] = value == '' ? false : value;
                     value = `<button class='btn-add btn-send-data' data-key='${key}' onclick='verMais("${key}", ${type}, "${key}")'>Ver ${key}</button>`;
                 }
@@ -199,16 +211,7 @@ class File{
                         addOut.style = 'width: calc(100%);';
                     }
 
-                    if(this.arrayDetail.includes(key)){
-                        let span = document.createElement("span");
-                        span.innerText = qt;
-
-                        h3.innerText = key + ' - ';
-                        h3.append(span);
-
-                    } else {
-                        h3.innerText = key;
-                    }
+                    h3.innerText = key;
 
                     addOut.append(h3);
 
@@ -302,17 +305,6 @@ class File{
                 }
             }
             console.log('a6');
-            console.log(this.typeUser)
-            if((this.typeUser > 2) || (this.typeUser > 1 && (this.name == 'alunos' || this.name == 'recados'))){
-                console.log("a7")
-                let btSave = document.createElement("button");
-                btSave.classList.add("btn-add");
-                btSave.setAttribute("onclick", "sendEdit(file.idDetail, file.name, this.parentNode.parentNode)");
-                btSave.innerText = "Salvar";
-                outBt.append(btSave);
-                console.log("a8")
-            }
-            console.log('a3');
             detailContainer.append(h1);
             detailContainer.append(inpsAdd);
             detailContainer.append(outBt);
