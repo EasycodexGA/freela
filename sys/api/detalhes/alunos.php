@@ -77,6 +77,7 @@ while($_dados_ = mysqli_fetch_array($_query_)){
     }
 
     $equipes = array_merge($arrEquipes, $allEquipes);
+    endCode($equipes, false);
 
     $arr = array(
         "id"            => $decAluno,
