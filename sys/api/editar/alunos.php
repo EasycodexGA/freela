@@ -87,7 +87,6 @@ for($i = 0; $i < count($equipes); $i++){
     $idEquipe = $equipes[$i]->id;
     $check_query = mysqli_query($__CONEXAO__, "select id from alunos where equipe='$idEquipe' and email='$emm'");
     if($check){
-        endCode("bb", false);
         if(mysqli_num_rows($check_query) == 0){
             endCode("aa", false);
             mysqli_query($__CONEXAO__, "insert into alunos (email, equipe) values ('$emm','$idEquipe')");
