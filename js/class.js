@@ -165,10 +165,9 @@ class File{
             
             for(let [key, value] of Object.entries(i)){
                 console.log(key)
-                let qt;
                 let type = 0;
                 let deftime = 0;
-                if(key == 'turmas' && (this.name == 'alunos' || this.name == 'profissionais')){
+                if((key == 'turmas' || key == 'equipes') && (this.name == 'alunos' || this.name == 'profissionais')){
                     type = 1;
                 }
                 if(this.numsDetail.includes(key)){
