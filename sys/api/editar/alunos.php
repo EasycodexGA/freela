@@ -69,7 +69,7 @@ if(mysqli_num_rows($checkRepeat) > 0){
 for($i = 0; $i < count($turmas); $i++){
     $check = $turmas[$i]->checked;
     $idTurma = $turmas[$i]->id;
-    endCode($idTurma + $check, false);
+    endCode($check, false);
     $check_query = mysqli_query($__CONEXAO__, "select id from alunos where turma='$idTurma' and email='$emm'");
     if($check){
         if(mysqli_num_rows($check_query) == 0){
