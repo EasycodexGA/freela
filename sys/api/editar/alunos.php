@@ -76,6 +76,7 @@ for($i = 0; $i < count($turmas); $i++){
             mysqli_query($__CONEXAO__, "insert into alunos (email, turma) values ('$emm','$idTurma')") or die('ccc');
         }
     } else {
+        endCode("haha", false);
         if(mysqli_num_rows($check_query) > 0){
             mysqli_query($__CONEXAO__, "delete from alunos where email='$emm' and turma='$idTurma'");
         }
