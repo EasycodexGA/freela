@@ -64,7 +64,7 @@ while($_dados_ = mysqli_fetch_array($_query_)){
         $equipe      = $dados['nome'];
         $equipeId    = $dados['id'];
         
-        array_push($arrTurmas, array("nome"=>decrypt($equipe), "id"=>$equipeId, "checked"=>1));
+        array_push($arrEquipe, array("nome"=>decrypt($equipe), "id"=>$equipeId, "checked"=>1));
     }
 
     $allEquipes = array();
@@ -73,11 +73,10 @@ while($_dados_ = mysqli_fetch_array($_query_)){
     while($dados5 = mysqli_fetch_array($query5)){
         $equipe2      = $dados5['nome'];
         $equipeId2    = $dados5['id'];
-        array_push($allTurmas, array("nome"=>decrypt($equipe2), "id"=>$equipeId2, "checked"=>0));
+        array_push($allEquipes, array("nome"=>decrypt($equipe2), "id"=>$equipeId2, "checked"=>0));
     }
 
-    $equipes = array_merge($arrEquipes, $allEquipes);
-    endCode($arrEquipes, false);
+    $equipes = array_merge($arrEquipe, $allEquipes);
 
     $arr = array(
         "id"            => $decAluno,
