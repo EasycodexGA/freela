@@ -15,6 +15,7 @@ $nome           = scapeString($__CONEXAO__, $json->nome);
 $email          = scapeString($__CONEXAO__, $json->email);
 $nascimento     = scapeString($__CONEXAO__, $json->nascimento);
 $turmas         = $json->turmas;
+$equipes        = $json->equipes;
 $active         = scapeString($__CONEXAO__, $json->active);
 
 $id             = setNum($id);
@@ -66,9 +67,8 @@ if(mysqli_num_rows($checkRepeat) > 0){
 }
 
 for($i = 0; $i < count($turmas); $i++){
-    $check = $i->checked;
-    $idTurma = $i->id;
-    endCode($i, false);
+    $check = $turmas[$i]->checked;
+    $idTurma = $turmas[$i]->id;
     $check_query = mysqli_query($__CONEXAO__, "select id from alunos where turma='$idTurma' and email='$emm'");
     if($check){
         if(mysqli_num_rows($check_query) == 0){
@@ -77,6 +77,21 @@ for($i = 0; $i < count($turmas); $i++){
     } else {
         if(mysqli_num_rows($check_query) > 0){
             mysqli_query($__CONEXAO__, "delete from alunos where email='$emm' and turma='$idTurma'");
+        }
+    }
+}
+
+for($i = 0; $i < count($equipes); $i++){
+    $check = $equipes[$i]->checked;
+    $idEquipe = $equipes[$i]->id;
+    $check_query = mysqli_query($__CONEXAO__, "select id from alunos where equipe='$idEquipe' and email='$emm'");
+    if($check){
+        if(mysqli_num_rows($check_query) == 0){
+            mysqli_query($__CONEXAO__, "insert into alunos (email, equipe) values ('$emm','$idEquipe')");
+        }
+    } else {
+        if(mysqli_num_rows($check_query) > 0){
+            mysqli_query($__CONEXAO__, "delete from alunos where email='$emm' and equipe='$idEquipe'");
         }
     }
 }
