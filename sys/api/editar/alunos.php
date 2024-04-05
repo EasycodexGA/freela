@@ -15,6 +15,7 @@ $nome           = scapeString($__CONEXAO__, $json->nome);
 $email          = scapeString($__CONEXAO__, $json->email);
 $nascimento     = scapeString($__CONEXAO__, $json->nascimento);
 $turmas         = $json->turmas;
+endCode($turmas, false);
 $active         = scapeString($__CONEXAO__, $json->active);
 
 $id             = setNum($id);
