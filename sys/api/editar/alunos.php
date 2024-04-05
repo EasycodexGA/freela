@@ -85,6 +85,7 @@ for($i = 0; $i < count($turmas); $i++){
 for($i = 0; $i < count($equipes); $i++){
     $check = $equipes[$i]->checked;
     $idEquipe = $equipes[$i]->id;
+    endCode($idEquipe, false);
     $check_query = mysqli_query($__CONEXAO__, "select id from alunos where equipe='$idEquipe' and email='$emm'");
     if($check){
         endCode("bb", false);
