@@ -72,7 +72,6 @@ for($i = 0; $i < count($turmas); $i++){
     $check = $check == 1 ? true : false;
     $check_query = mysqli_query($__CONEXAO__, "select id from alunos where turma='$idTurma' and email='$emm'");
     if($check){
-        endCode("end", false);
         if(mysqli_num_rows($check_query) == 0){
             endCode("query", false);
             mysqli_query($__CONEXAO__, "insert into alunos (email, turma) values ('$emm','$idTurma')");
