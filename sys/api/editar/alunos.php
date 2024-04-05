@@ -15,7 +15,7 @@ $nome           = scapeString($__CONEXAO__, $json->nome);
 $email          = scapeString($__CONEXAO__, $json->email);
 $nascimento     = scapeString($__CONEXAO__, $json->nascimento);
 $turmas         = $json->turmas;
-endCode($turmas, false);
+// endCode($turmas, false);
 $active         = scapeString($__CONEXAO__, $json->active);
 
 $id             = setNum($id);
@@ -66,11 +66,11 @@ if(mysqli_num_rows($checkRepeat) > 0){
     endCode(" CPF já está em uso.", false);
 }
 
-endCode($turmas, false);
+// endCode($turmas, false);
 for($i = 0; $i < count($turmas); $i++){
     $check = $i->checked;
     $idTurma = $i->id;
-    endCode($i, false);
+    // endCode($i, false);
     $check_query = mysqli_query($__CONEXAO__, "select id from alunos where turma='$idTurma' and email='$emm'");
     if($check){
         if(mysqli_num_rows($check_query) == 0){
