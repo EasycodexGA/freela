@@ -414,7 +414,7 @@ class Alunos extends File{
         this.thContent = ['Nome', 'email', 'nascimento', 'status']
         this.jumpDetail.push('allTurmas')
         this.numsDetail.push('nascimento')
-        this.arrayDetail.push('turmas', 'equipes')
+        this.arrayDetail.push('turmas')
         this.createTh()
         this.getData()
         this.createThEspera()
