@@ -73,8 +73,7 @@ for($i = 0; $i < count($turmas); $i++){
     $check_query = mysqli_query($__CONEXAO__, "select id from alunos where turma='$idTurma' and email='$emm'");
     if($check){
         if(mysqli_num_rows($check_query) == 0){
-            endCode("query", false);
-            mysqli_query($__CONEXAO__, "insert into alunos (email, turma) values ('$emm','$idTurma')");
+            mysqli_query($__CONEXAO__, "insert into alunos (email, turma) values ('$emm','$idTurma')") or die('ccc');
         }
     } else {
         if(mysqli_num_rows($check_query) > 0){
