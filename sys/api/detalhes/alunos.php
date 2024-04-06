@@ -61,6 +61,7 @@ while($_dados_ = mysqli_fetch_array($_query_)){
     $arrEquipe = array();
 
     while($dados = mysqli_fetch_array($query4)){
+        endCode($dados['nome']);
         $equipe      = $dados['nome'];
         $equipeId    = $dados['id'];
         
