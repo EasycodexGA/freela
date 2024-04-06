@@ -60,9 +60,9 @@ while($_dados_ = mysqli_fetch_array($_query_)){
     // endCode(mysqli_num_rows($query4), false);
     $arrEquipe = array();
 
-    while($dados = mysqli_fetch_array($query4)){
-        $equipe      = $dados['nome'];
-        $equipeId    = $dados['id'];
+    while($dados4 = mysqli_fetch_array($query4)){
+        $equipe      = $dados4['nome'];
+        $equipeId    = $dados4['id'];
         
         array_push($arrEquipe, array("nome"=>decrypt($equipe), "id"=>$equipeId, "checked"=>1));
     }
