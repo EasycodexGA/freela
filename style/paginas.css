@@ -591,3 +591,20 @@ input:disabled {
     border-bottom: 2px dotted #3c3c3c;
     color: #3c3c3c;
 }
+
+.contato{
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 0 4px 20px 0 #00000010;
+    border: 2px solid #00000010;
+    border-bottom: 2px solid var(--contraste2);
+}
+
+.contatoin {
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+}
