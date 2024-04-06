@@ -17,6 +17,7 @@ justLog($__EMAIL__, $__TYPE__, 2);
         <div class='header-in'>
             <h2 class='sub-header'><span id="active">0</span> Ativos</h2>
             <h2 class='sub-header'><span id="inactive">0</span> Inativos</h2>
+            <h2 class='sub-header'><span id="espera">0</span> Espera</h2>
         </div>
     </header>
     <div id='addNewAula'></div>

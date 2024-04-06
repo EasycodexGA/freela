@@ -60,17 +60,21 @@ class File{
             let statusDiv = document.querySelectorAll(".table-line");
             let activevar = 0;
             let inactivevar = 0;
+            let esperavar = 0;
 
             for(let i of statusDiv){
                 let statusI = i.dataset.status;
                 if(statusI == 'true'){
                     activevar++;
-                } else {
+                } else if(statusI == 'false') {
                     inactivevar++;
+                } else {
+                    esperavar++;
                 }
             }
             inactive.innerText = inactivevar;
             active.innerText = activevar;
+            espera.innerText = esperavar;
         })
         .catch(e=>newMsg({
             mensagem: "Ocorreu algum erro, contate o administrador",
