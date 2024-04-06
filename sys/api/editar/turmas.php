@@ -30,27 +30,29 @@ checkMissing(
     )
 );
 
-endCode("chegou 2", false);
 
-// $id  = decrypt($id);
-// $categoria  = decrypt($categoria);
-// $horarioDec = decrypt($horario);
-// $active = decrypt($active);
-
-
-// if($__TYPE__ == 2){
-//     $checkTurma= mysqli_query($__CONEXAO__, "select id from turmas where id in (select turma from professores where email='$__EMAIL__') and id='$id')") or die("b");
-//     if(mysqli_num_rows($checkTurma) > 0){
-//         endCode("Essa turma não lhe pertence", false);
-//     }
-// }
+$id  = decrypt($id);
+$categoria  = decrypt($categoria);
+$horarioDec = decrypt($horario);
+$active = decrypt($active);
 
 
-// $checkExist = mysqli_query($__CONEXAO__, "select id from turmas where nome='$nome' and categoria='$categoria' and id!='$id'");
+if($__TYPE__ == 2){
+    $checkTurma= mysqli_query($__CONEXAO__, "select id from turmas where id in (select turma from professores where email='$__EMAIL__') and id='$id')") or die("b");
+    if(mysqli_num_rows($checkTurma) > 0){
+        endCode("Essa turma não lhe pertence", false);
+    }
+}
 
-// if(mysqli_num_rows($checkExist) > 0){
-//     endCode("Já existe uma turma com esses dados.", false);
-// }
+
+$checkExist = mysqli_query($__CONEXAO__, "select id from turmas where nome='$nome' and categoria='$categoria' and id!='$id'");
+
+if(mysqli_num_rows($checkExist) > 0){
+    endCode("Já existe uma turma com esses dados.", false);
+}
+
+endCode("chegou 3", false);
+
 
 // for($i = 0; $i < count($aulas); $i++){
 //     endCode(var_dump($aulas), false);
