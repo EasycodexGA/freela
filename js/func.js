@@ -65,7 +65,7 @@ function verMais(id,type, titleStr){
         p.innerText = i.nome ? i.nome : i.data;
         div.append(p);
 
-        if(type == 1){
+        if(type == 1 && file.typeUser > 1){
             let input = document.createElement("input");
             input.type = 'checkbox';
             input.classList.add("checkbox-presenca");
