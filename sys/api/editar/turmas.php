@@ -15,6 +15,8 @@ $categoria  = scapeString($__CONEXAO__, $json->categoria);
 $aulas      = $json->aulas;
 $active     = scapeString($__CONEXAO__, $json->active);
 
+endCode("chegou", false);
+
 $id         = setNum($id);
 $nome       = setNoXss($nome);
 $horario    = setNum($horario);
