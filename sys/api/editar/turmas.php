@@ -3,12 +3,12 @@ include '../../conexao.php';
 
 justLog($__EMAIL__, $__TYPE__, 2);
 
+endCode("chegou", false);
 header('Content-Type: application/json; charset=utf-8');
 
 $request = file_get_contents('php://input');
 $json = json_decode($request);
 
-endCode("chegou", false);
 
 $horario    = scapeString($__CONEXAO__, $json->horario);
 $id         = scapeString($__CONEXAO__, $json->id);
