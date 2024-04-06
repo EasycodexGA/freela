@@ -57,28 +57,6 @@ class File{
             if(tabList.querySelectorAll('.table-line').length > 0){
                 notData.classList.remove('table-line2');
             }
-            let statusDiv = document.querySelectorAll(".table-line");
-            let activevar = 0;
-            let inactivevar = 0;
-            let esperavar = 0;
-
-            for(let i of statusDiv){
-                let statusI = i.dataset.status;
-                if(statusI == 'true'){
-                    activevar++;
-                } else if(statusI == 'false'){
-                    inactivevar++;
-                } else if(statusI == 'espera'){
-                    newMsg({
-                        mensagem: "chegou",
-                        response: "ag"
-                    })
-                    esperavar++;
-                }
-            }
-            inactive.innerText = inactivevar;
-            active.innerText = activevar;
-            esperaat.innerText = esperavar;
         })
         .catch(e=>newMsg({
             mensagem: "Ocorreu algum erro, contate o administrador",
@@ -418,6 +396,27 @@ class File{
         let data = {email: email, espera: true, insert: true}
         addNewData(local, data);
     }
+
+    getNums(){
+        let statusDiv = document.querySelectorAll(".table-line");
+        let activevar = 0;
+        let inactivevar = 0;
+        let esperavar = 0;
+
+        for(let i of statusDiv){
+            let statusI = i.dataset.status;
+            if(statusI == 'true'){
+                activevar++;
+            } else if(statusI == 'false'){
+                inactivevar++;
+            } else if(statusI == 'espera'){
+                esperavar++;
+            }
+        }
+        inactive.innerText = inactivevar;
+        active.innerText = activevar;
+        esperaat.innerText = esperavar;
+    }
 }
 
 class Alunos extends File{
@@ -433,6 +432,7 @@ class Alunos extends File{
         this.getData()
         this.createThEspera()
         this.createEspera()
+        this.getNums()
     }
 }
 
@@ -447,6 +447,7 @@ class Categorias extends File{
         this.arrayDetail.push('turmas')
         this.createTh()
         this.getData()
+        this.getNums()
     }
 }
 
@@ -461,6 +462,7 @@ class Eventos extends File{
         this.arrayDetail.push('turmas')
         this.createTh()
         this.getData()
+        this.getNums()
     }
 }
 
@@ -477,6 +479,7 @@ class Profissionais extends File{
         this.getData()
         this.createThEspera()
         this.createEspera()
+        this.getNums()
     }
 }
 
@@ -491,6 +494,7 @@ class Recados extends File{
         // this.arrayDetail.push()
         this.createTh()
         this.getData()
+        this.getNums()
     }
 }
 
@@ -505,6 +509,7 @@ class Turmas extends File{
         this.arrayDetail.push('profissionais', 'alunos', 'aulas')
         this.createTh()
         this.getData()
+        this.getNums()
     }
 }
 
@@ -519,5 +524,6 @@ class Equipes extends File{
         this.arrayDetail.push('alunos')
         this.createTh()
         this.getData()
+        this.getNums()
     }
 }
