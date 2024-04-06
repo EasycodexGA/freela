@@ -30,8 +30,28 @@ justLog($__EMAIL__, $__TYPE__, 3);
         .then(e=>{
             console.log(e)
             if(e.mensagem.length == 0){
-                
+                contatos.innerHTML = "<p>Nenhum contato</p>";
+                return;
             }
+
+            e.mensagens.map(res=>{
+                contatos.innerHTML += `
+                    <div class='contato'>
+                        <div class='contatoin'>
+                            <h1>Nome</h1>
+                            <p>${res.nome}</p>
+                        </div>
+                        <div class='contatoin'>
+                            <h1>Email</h1>
+                            <p>${res.email}</p>
+                        </div>
+                        <div class='contatoin'>
+                            <h1>Telefone</h1>
+                            <p>${res.telefone}</p>
+                        </div>
+                    </div>
+                `;
+            })
         })
     </script>
 </body>
