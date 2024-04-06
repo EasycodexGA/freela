@@ -229,6 +229,7 @@ function sendEdit(id, name, parent){
                 if(i.dataset.key == 'aulas'){
                     let manipulate = file.arrayStrAdd[`aulas${preData[j].id}Array`]
                     manipulate = manipulate.split("#")
+                    manipulate = manipulate.map((x)=>JSON.parse(x));
                     preData[j].chamada = manipulate
                 }
             }
