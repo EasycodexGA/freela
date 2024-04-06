@@ -69,6 +69,6 @@ for($i = 0; $i < count($aulas); $i++){
 }
 
 
-mysqli_query($__CONEXAO__, "update turmas set nome='$nome', categoria='$categoria', horario='$horario', active='$active' where id='$id'");
+mysqli_query($__CONEXAO__, "update turmas set nome='$nome', horario='$horario', active='$active' where id='$id'");
 
 endCode("Alterado com sucesso", true);
