@@ -67,10 +67,10 @@ justLog($__EMAIL__, $__TYPE__, 3);
             })
             .then(e=>e.json())
             .then(e=>{
-                newMsg(e)
                 if(e.response){
                     window.location.reload();
                 }
+                newMsg(e)
             })
         }
     </script>
