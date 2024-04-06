@@ -8,14 +8,15 @@ header('Content-Type: application/json; charset=utf-8');
 $request = file_get_contents('php://input');
 $json = json_decode($request);
 
+endCode("chegou", false);
+
+$horario    = scapeString($__CONEXAO__, $json->horario);
 $id         = scapeString($__CONEXAO__, $json->id);
 $nome       = scapeString($__CONEXAO__, $json->nome);
-$horario    = scapeString($__CONEXAO__, $json->horario);
 $categoria  = scapeString($__CONEXAO__, $json->categoria);
 $aulas      = $json->aulas;
 $active     = scapeString($__CONEXAO__, $json->active);
 
-endCode("chegou", false);
 
 $id         = setNum($id);
 $nome       = setNoXss($nome);
