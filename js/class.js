@@ -14,10 +14,10 @@ class File{
         this.typeUser = id;
     }
 
-    async getData(){
+    getData(){
         console.log("Get Data: " + this.name)
         let link = '../sys/api/' + this.linkGet
-        return await fetch(`${link}`)
+        return fetch(`${link}`)
         .then(e=>e.json())
         .then(e=>{ 
             console.log("Fetching")
