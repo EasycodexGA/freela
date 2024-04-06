@@ -413,11 +413,9 @@ class File{
                 esperavar++;
             }
         }
-        inactive.innerText = inactivevar;
-        active.innerText = activevar;
+        inactive.innerText = 5;
+        active.innerText = 10;
         typeof esperaat != "undefined" ? esperaat.innerText = esperavar : "";
-
-        console.log("ASIUDHASUIDHASUIDHASIUHD IUASH DIUAHSUIDH ASUIHD IUASH DIASUHD ")
     }
 }
 
