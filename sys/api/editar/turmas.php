@@ -49,7 +49,7 @@ if(mysqli_num_rows($checkExist) > 0){
 }
 
 for($i = 0; $i < count($aulas); $i++){
-    endCode($aulas);
+    endCode(var_dump($aulas), false);
     $idAula = $aulas[$i]->id;
     $chamadaAula = $aulas[$i]->chamada;
     for($j = 0; $j < count($chamadaAula); $j++){
