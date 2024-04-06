@@ -33,7 +33,7 @@ justLog($__EMAIL__, $__TYPE__, 3);
                 return;
             }
 
-            active.innerText = 
+            active.innerText = e.mensagem.length;
 
             for(let res of e.mensagem){
                 contatos.innerHTML += `
