@@ -22,7 +22,7 @@ $json = json_decode($request);
 
 $id   = scapeString($__CONEXAO__, $json->telefone);
 
-$id   = setNum($telefone);
+$id   = setNum($id);
 
 checkMissing(
     array(
