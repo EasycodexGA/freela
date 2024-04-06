@@ -149,6 +149,7 @@ class File{
 
                 outBt.append(btAddAula);
                 let data = e.mensagem[0].alunos;
+                console.log(data);
                 for(i in data){
                     data[i] = JSON.stringify(data[i]);
                 }
