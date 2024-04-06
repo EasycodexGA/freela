@@ -148,7 +148,8 @@ class File{
                 btAddAula.innerText = "Adicionar aula";
 
                 outBt.append(btAddAula);
-                verPresencaBt.setAttribute('onclick', "verMais(this, 1, 'Chamada')");
+                this.arrayStrAdd.addAulaArray = e.mensagem[0].alunos
+                verPresencaBt.setAttribute('onclick', "verMais('addAula', 1, 'Chamada')");
             }
 
             if((this.typeUser > 2) || (this.typeUser > 1 && (this.name == 'alunos' || this.name == 'recados'))){

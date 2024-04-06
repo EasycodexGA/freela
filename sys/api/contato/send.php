@@ -25,7 +25,7 @@ $email      = scapeString($__CONEXAO__, $json->email);
 $telefone   = scapeString($__CONEXAO__, $json->telefone);
 
 $nome       = setString($nome);
-$email       = setString($email);
+$email      = setEmail($email);
 $telefone   = setNum($telefone);
 
 checkMissing(
