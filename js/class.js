@@ -15,12 +15,10 @@ class File{
     }
 
     getData(){
-        console.log("Get Data: " + this.name)
         let link = '../sys/api/' + this.linkGet
         return fetch(`${link}`)
         .then(e=>e.json())
         .then(e=>{ 
-            console.log("Fetching")
             this.allData = e.mensagem;
             for(let i of e.mensagem){
                 if(i.data){
@@ -66,7 +64,6 @@ class File{
     }
 
     createTh(){
-        console.log('Creating TH: ' + this.name);
         let tr = document.createElement('tr');
     
         let hlo = document.querySelector('.header-list-out');
@@ -272,11 +269,9 @@ class File{
                         if(isNumInp){
                             if(typeof e.mensagem[0].def_time != "undefined"){
                                 input.valueAsNumber = Number(e.mensagem[0].def_time);
-                                console.log(`-NOT UNDEF: ${deftime}}`);
 
                             } else {
                                 input.valueAsNumber = deftime * 1000;
-                                console.log(`-DEF: ${deftime}`);
                             }
                         } else {
                             input.value = value;
@@ -313,7 +308,6 @@ class File{
     }
 
     createThEspera(){
-        console.log('Creating TH: ' + this.name);
         let tr = document.createElement('tr');
     
         let hlo = document.querySelectorAll('.header-list-out');
@@ -337,12 +331,10 @@ class File{
     }
 
     async createEspera(){
-        console.log("Get Espera: " + this.name)
         let link = '../sys/api/usuarios/getEspera?type=' + this.name
         return await fetch(`${link}`)
         .then(e=>e.json())
         .then(e=>{ 
-            console.log("Fetching")
             this.allEspera = e.mensagem;
             for(let i of e.mensagem){
                 if(i.data){
@@ -392,13 +384,11 @@ class File{
 
     getNums(){
         let statusDiv = document.querySelectorAll(".table-line");
-        console.log(statusDiv)
         let activevar = 0;
         let inactivevar = 0;
         let esperavar = 0;
 
         for(let i of statusDiv){
-            console.log(i)
             let statusI = i.dataset.status;
             if(statusI == 'true'){
                 activevar++;

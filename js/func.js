@@ -12,7 +12,6 @@ function openAdd(e){
 
 function openDetail(id){
     closeAdd();
-    console.log(file.typeUser);
     file.idDetail = id
     file.getDetails()
 }
@@ -33,7 +32,6 @@ function closeAddAula(){
 function verMais(id,type, titleStr){
     verMaisDiv.innerHTML = '';
     let string = file.arrayStrAdd[`${id}Array`];
-    console.log(`-VER_MAIS_CONTENT: ${string}`)
 
     if(!string){
         newMsg({
@@ -111,7 +109,6 @@ function verMais(id,type, titleStr){
     
     if(type > 0){
         let saveBt = document.createElement("button");
-        console.log(id);
         let typee = id.includes('aulas') && id != 'aulas' ? 1 : 0;
         saveBt.setAttribute("onclick", `salvarCheckbox('${id}', ${typee})`);
         saveBt.innerText = 'Salvar';
@@ -127,7 +124,6 @@ function verMais(id,type, titleStr){
 }
 
 function closeVerMais(id, type){
-    // console.log(file.arrayStrAdd);
     if(type == 1 && id.includes('aulas')){
         verMais("aulas", 2, "aulas");
     } else {
@@ -154,8 +150,6 @@ function salvarCheckbox(id, type){
         let allBts = document.querySelectorAll('.checkbox-presencaa');
         for(let i = 0; i < allBts.length; i++){
             bool = allBts[i].checked ? 1 : 0 ;
-            console.log(i)
-            console.log(array[i]);
             array[i] = JSON.parse(array[i]);
             array[i].checked = bool;
             array[i] = JSON.stringify(array[i]);
@@ -182,8 +176,6 @@ function getPresenca(id){
 
 isActive = false;
 function addNewData(local, data){
-    console.log(`Reciving data:`, data)
-    console.log(`To local: ${local}`)
     if(isActive) return;
     isActive = true;
     fetch(`../sys/api/${local}`,{
@@ -192,8 +184,6 @@ function addNewData(local, data){
     })
     .then(e=>e.json())
     .then(e=>{
-        console.log(`Recived from: ${local}`)
-        console.log(`Response:`, e)
         isActive = false;
         newMsg(e);
     })
@@ -236,7 +226,6 @@ function sendEdit(id, name, parent){
         }
         data[`${i.dataset.key}`] = preData;
     }
-    console.log(data)
     addNewData(url, data);
 }
 
@@ -290,7 +279,6 @@ if (typeof searchBar !== "undefined"){
         for(let i of file.allData){
             let name = i[filter];
             name = name.toString().toLowerCase();
-            console.log(file.allData, name, val, filter);
             if(name.includes(val)){
                 document.getElementById(`key${i.id}`).classList.add('table-line');
             } else {
@@ -312,7 +300,6 @@ if (typeof searchBar2 !== "undefined"){
         for(let i of file.allEspera){
             let name = i[filter];
             name = name.toString().toLowerCase();
-            console.log(file.allEspera, name, val, filter);
             if(name.includes(val)){
                 document.getElementById(`key${i.id}E`).classList.add('table-line');
             } else {
