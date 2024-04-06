@@ -87,7 +87,7 @@ class File{
         select.id = 'selectFilter';
     
         for(let i of this.thContent){
-            if(i == 'status'){
+            if(i.toLowerCase() == 'status'){
                 let th2 = document.createElement('th');
                 tr.appendChild(th2);
             }
