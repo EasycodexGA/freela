@@ -148,8 +148,12 @@ class File{
                 btAddAula.innerText = "Adicionar aula";
 
                 outBt.append(btAddAula);
-                let data = e.mensagem[0].alunos
-                this.arrayStrAdd.addAulaArray = e.mensagem[0].alunos
+                let data = e.mensagem[0].alunos;
+                for(i in data){
+                    data[i] = JSON.stringify(data[i]);
+                }
+                data = data.join('#');
+                this.arrayStrAdd.addAulaArray = data
                 verPresencaBt.setAttribute('onclick', "verMais('addAula', 1, 'Chamada')");
             }
 

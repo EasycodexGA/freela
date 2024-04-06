@@ -3,6 +3,7 @@ include '../../conexao.php';
 
 justLog($__EMAIL__, $__TYPE__, 3);
 
+
 $query = mysqli_query($__CONEXAO__, "select * from contatos");
 
 $arrData = array();
@@ -11,11 +12,11 @@ while($dados = mysqli_fetch_array($query)){
     $nome       = decrypt($dados["nome"]);
     $email      = decrypt($dados["email"]);
     $telefone   = decrypt($dados["telefone"]);
-
+    
     array_push($arrData, array(
-        "nome" => "$nome",
-        "email" => "$email",
-        "telefone", => "$telefone"
+        "nome" => $nome,
+        "email" => $email,
+        "telefone" => $telefone
     ));
 }
 
