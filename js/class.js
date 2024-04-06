@@ -150,9 +150,7 @@ class File{
                 outBt.append(btAddAula);
                 let data = e.mensagem[0].alunos;
                 console.log(data);
-                for(i in data){
-                    data[i] = JSON.stringify(data[i]);
-                }
+                data = data.map((x)=>JSON.stringify(x));
                 console.log(data);
                 data = data.join('#');
                 console.log(data);
