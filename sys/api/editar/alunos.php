@@ -14,8 +14,8 @@ $cpf            = scapeString($__CONEXAO__, $json->cpf);
 $nome           = scapeString($__CONEXAO__, $json->nome);
 $email          = scapeString($__CONEXAO__, $json->email);
 $nascimento     = scapeString($__CONEXAO__, $json->nascimento);
-$turmas         = scapeString($__CONEXAO__, $json->turmas);
-$equipes        = scapeString($__CONEXAO__, $json->equipes);
+$turmas         = $json->turmas;
+$equipes        = $json->equipes;
 $active         = scapeString($__CONEXAO__, $json->active);
 
 $id             = setNum($id);
