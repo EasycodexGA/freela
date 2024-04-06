@@ -189,7 +189,7 @@ class File{
                     }
                     qt = value.length;
                     for(let j in value){
-                        if(key == 'alunos' || key == 'equipes'){
+                        if(key == 'alunos'){
                             value[j].checked = 0;
                         }
                         value[j] = JSON.stringify(value[j]);
