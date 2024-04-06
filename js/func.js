@@ -24,7 +24,6 @@ function closeAdd(){
 
 function openAddAula(){
     addNewAula.classList.add("add-active");
-    file.idDetail = ''
 }
 
 function closeAddAula(){
