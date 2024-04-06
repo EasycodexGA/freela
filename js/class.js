@@ -449,7 +449,6 @@ class Categorias extends File{
         this.arrayDetail.push('turmas')
         this.createTh()
         this.getData()
-        this.getNums()
     }
 }
 
@@ -464,7 +463,6 @@ class Eventos extends File{
         this.arrayDetail.push('turmas')
         this.createTh()
         this.getData()
-        this.getNums()
     }
 }
 
@@ -481,7 +479,6 @@ class Profissionais extends File{
         this.getData()
         this.createThEspera()
         this.createEspera()
-        this.getNums()
     }
 }
 
@@ -496,7 +493,6 @@ class Recados extends File{
         // this.arrayDetail.push()
         this.createTh()
         this.getData()
-        this.getNums()
     }
 }
 
@@ -511,7 +507,6 @@ class Turmas extends File{
         this.arrayDetail.push('profissionais', 'alunos', 'aulas')
         this.createTh()
         this.getData()
-        this.getNums()
     }
 }
 
@@ -526,6 +521,5 @@ class Equipes extends File{
         this.arrayDetail.push('alunos')
         this.createTh()
         this.getData()
-        this.getNums()
     }
 }
