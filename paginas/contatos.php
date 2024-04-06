@@ -56,11 +56,17 @@ justLog($__EMAIL__, $__TYPE__, 3);
                 `;
             }
 
-            newMsg(e);
         })
 
         function removeContato(e){
-            console.log(e)
+            fetch("../sys/api/contato/remove", {
+                method: "POST",
+                body: JSON.stringify({
+                    id: e
+                })
+            })
+            .then(e=>e.json())
+            .then(e=>newMsg(e))
         }
     </script>
 </body>
