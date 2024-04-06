@@ -74,7 +74,7 @@ class File{
             }
             inactive.innerText = inactivevar;
             active.innerText = activevar;
-            espera.innerText = esperavar;
+            esperaat.innerText = esperavar;
         })
         .catch(e=>newMsg({
             mensagem: "Ocorreu algum erro, contate o administrador",
