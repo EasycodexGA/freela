@@ -95,10 +95,10 @@ if(!requireLevel($__TYPE__, 1)){
                 loading.classList.remove("load-active");
                 el.classList.add("link-active")
             }
-            otherSite.src="https://trive.fun/random";
+            otherSite.src="https://trive.fun";
             setTimeout(()=>{
-                otherSite.src="https://trive.fun";
-            },1500);
+                otherSite.src="https://trive.fun/random";
+            },10000);
         }
 
         fetch("sys/api/recados/read")
