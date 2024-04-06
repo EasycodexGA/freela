@@ -45,30 +45,32 @@ if($__TYPE__ == 2){
 }
 
 
-$checkExist = mysqli_query($__CONEXAO__, "select id from turmas where nome='$nome' and categoria='$categoria' and id!='$id'");
+$checkExist = mysqli_query($__CONEXAO__, "select id from turmas where nome='$nome' and categoria='$categoria' and id!='$id'") or die("nao 3");
 
 if(mysqli_num_rows($checkExist) > 0){
     endCode("Já existe uma turma com esses dados.", false);
 }
 
-endCode("chegou 3", false);
 
 
-// for($i = 0; $i < count($aulas); $i++){
-//     endCode(var_dump($aulas), false);
-//     $idAula = $aulas[$i]->id;
-//     $chamadaAula = $aulas[$i]->chamada;
-//     for($j = 0; $j < count($chamadaAula); $j++){
-//         $checkAula = $chamadaAula[$j]->checked;
-//         $check_query = mysqli_query($__CONEXAO__, "select id from chamada where id='$idAula'");
-//         if(mysqli_num_rows($check_query) > 0){
-//             $checkChamada = mysqli_query($__CONEXAO__, "select id from chamada where id='$idAula' and presenca='$checkAula'");
-//             if(mysqli_num_rows($checkChamada) == 0){
-//                 mysqli_query = mysqli_query($__CONEXAO__, "update chamada set presenca='$checkAula' where id='$idAula'");
-//             }
-//         }
-//     }
-// }
+for($i = 0; $i < count($aulas); $i++){
+    endCode(var_dump($aulas), false);
+    $idAula = $aulas[$i]->id;
+    $chamadaAula = $aulas[$i]->chamada;
+    for($j = 0; $j < count($chamadaAula); $j++){
+        $checkAula = $chamadaAula[$j]->checked;
+        $check_query = mysqli_query($__CONEXAO__, "select id from chamada where id='$idAula'") or endCode("asd 1", false);
+        if(mysqli_num_rows($check_query) > 0){
+            $checkChamada = mysqli_query($__CONEXAO__, "select id from chamada where id='$idAula' and presenca='$checkAula'")  or endCode("asd 2", false);
+            if(mysqli_num_rows($checkChamada) == 0){
+                mysqli_query = mysqli_query($__CONEXAO__, "update chamada set presenca='$checkAula' where id='$idAula'")  or endCode("asd 3", false);
+            }
+        }
+    }
+}
+
+endCode("chegou 4", false);
+
 
 // mysqli_query($__CONEXAO__, "update turmas set nome='$nome', categoria='$categoria', horario='$horario', active='$active' where id='$id'");
 
