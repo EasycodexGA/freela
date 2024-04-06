@@ -18,7 +18,7 @@ $active     = scapeString($__CONEXAO__, $json->active);
 $id         = setNum($id);
 $nome       = setNoXss($nome);
 $horario    = setNum($horario);
-$categoria  = setNum($categoria);
+$categoria  = setNoXss($categoria);
 $active     = setNum($active);
 
 endCode("chegou", false);
