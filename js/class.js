@@ -63,7 +63,7 @@ class File{
 
             for(let i of statusDiv){
                 let statusI = i.dataset.status;
-                if(statusI){
+                if(statusI == 'true'){
                     activevar++;
                 } else {
                     inactivevar++;
