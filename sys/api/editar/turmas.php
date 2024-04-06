@@ -26,7 +26,6 @@ checkMissing(
         $id,
         $nome,
         $horario,
-        $categoria,
     )
 );
 
