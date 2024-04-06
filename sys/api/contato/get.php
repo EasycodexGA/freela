@@ -15,6 +15,8 @@ while($dados = mysqli_fetch_array($query)){
     array_push($arrData, array(
         "nome" => $nome,
         "email" => $email,
-        "telefone"
+        "telefone", => $telefone
     ));
 }
+
+endCode($arrData, true);
