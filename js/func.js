@@ -65,22 +65,27 @@ function verMais(id,type, titleStr){
         p.innerText = i.nome ? i.nome : i.data;
         div.append(p);
 
-        if(type == 1 && file.typeUser > 1){
-            let input = document.createElement("input");
-            input.type = 'checkbox';
-            input.classList.add("checkbox-presenca");
-            input.classList.add("checkbox-presencaa");
-            input.id = 'checkId-' + i.id;
+        if(type == 1){
+            if(file.typeUser > 1){
+                let input = document.createElement("input");
+                input.type = 'checkbox';
+                input.classList.add("checkbox-presenca");
+                input.classList.add("checkbox-presencaa");
+                input.id = 'checkId-' + i.id;
 
-            if(i.checked == 1){
-                input.checked = true;
+                if(i.checked == 1){
+                    input.checked = true;
+                }
+
+                let label = document.createElement("label");
+                label.setAttribute('for','checkId-' + i.id);
+                label.classList.add('toggle-switch');
+                div.append(input);
+                div.append(label);
+            } else {
+                let p = document.createElement("p");
+                p.innerText = i.checked == 1 ? 'Presente' : 'Ausente';
             }
-
-            let label = document.createElement("label");
-            label.setAttribute('for','checkId-' + i.id);
-            label.classList.add('toggle-switch');
-            div.append(input);
-            div.append(label);
         }
         if(type == 2){
             presencaBt = document.createElement("button");
