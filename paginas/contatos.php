@@ -49,14 +49,14 @@ justLog($__EMAIL__, $__TYPE__, 3);
                             <h1>Telefone</h1>
                             <p>${res.telefone}</p>
                         </div>
-                        <button onclick='removeContato(${})'>Remover</button>
+                        <button onclick='removeContato(${res.id})'>Remover</button>
                     </div>
                 `;
             }
         })
 
-        function removeContato(){
-            cons
+        function removeContato(e){
+            console.log(e)
         }
     </script>
 </body>
