@@ -37,7 +37,7 @@ function verMais(id,type, titleStr){
 
     if(!string){
         newMsg({
-            mensagem: "Sem dados, adicione primeiro",
+            mensagem: "Sem dados!",
             response: "ag"
         })
         return;

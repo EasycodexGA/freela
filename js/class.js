@@ -136,29 +136,23 @@ class File{
 
                 outBt.append(btAddAula);
                 let data = e.mensagem[0].alunos;
-                console.log(data);
                 data = data.map((x)=>JSON.stringify(x));
-                console.log(data);
                 data = data.join('#');
-                console.log(data);
                 this.arrayStrAdd.addAulaArray = data
                 verPresencaBt.setAttribute('onclick', "verMais('addAula', 1, 'Chamada')");
             }
 
             if((this.typeUser > 2) || (this.typeUser > 1 && (this.name == 'alunos' || this.name == 'recados'))){
-                console.log("a7")
                 let btSave = document.createElement("button");
                 btSave.classList.add("btn-add");
                 btSave.setAttribute("onclick", "sendEdit(file.idDetail, file.name, this.parentNode.parentNode)");
                 btSave.innerText = "Salvar";
                 outBt.append(btSave);
-                console.log("a8")
             }
 
             let i = e.mensagem[0];
             
             for(let [key, value] of Object.entries(i)){
-                console.log(key)
                 let qt;
                 let type = 0;
                 let deftime = 0;
@@ -289,14 +283,12 @@ class File{
                         }
                         addOut.append(input);
                     } else {
-                        console.log(value);
                         p.innerHTML = value.toString();
                         addOut.append(p);
                     }
                     inpsAdd.append(addOut);
                 }
             }
-            console.log('a6');
             detailContainer.append(h1);
             detailContainer.append(inpsAdd);
             detailContainer.append(outBt);
