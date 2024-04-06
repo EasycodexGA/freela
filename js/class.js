@@ -148,7 +148,7 @@ class File{
                 btAddAula.innerText = "Adicionar aula";
 
                 outBt.append(btAddAula);
-                console.log(e.mensagem[0].alunos)
+                console.log("mensagem: " + e.mensagem[0].alunos)
                 this.arrayStrAdd.addAulaArray = e.mensagem[0].alunos
                 verPresencaBt.setAttribute('onclick', "verMais('addAula', 1, 'Chamada')");
             }
