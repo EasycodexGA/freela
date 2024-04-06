@@ -3,36 +3,34 @@ include '../../conexao.php';
 
 justLog($__EMAIL__, $__TYPE__, 2);
 
+header('Content-Type: application/json; charset=utf-8');
+
+$request = file_get_contents('php://input');
+$json = json_decode($request);
+
+
+$horario    = scapeString($__CONEXAO__, $json->horario);
+$id         = scapeString($__CONEXAO__, $json->id);
+$nome       = scapeString($__CONEXAO__, $json->nome);
+$categoria  = scapeString($__CONEXAO__, $json->categoria);
+$aulas      = $json->aulas;
+$active     = scapeString($__CONEXAO__, $json->active);
+
+$id         = setNum($id);
+$nome       = setNoXss($nome);
+$horario    = setNum($horario);
+$categoria  = setNoXss($categoria);
+$active     = setNum($active);
+
+checkMissing(
+    array(
+        $id,
+        $nome,
+        $horario
+    )
+);
+
 endCode("chegou", false);
-
-// header('Content-Type: application/json; charset=utf-8');
-
-// $request = file_get_contents('php://input');
-// $json = json_decode($request);
-
-
-// $horario    = scapeString($__CONEXAO__, $json->horario);
-// $id         = scapeString($__CONEXAO__, $json->id);
-// $nome       = scapeString($__CONEXAO__, $json->nome);
-// $categoria  = scapeString($__CONEXAO__, $json->categoria);
-// $aulas      = $json->aulas;
-// $active     = scapeString($__CONEXAO__, $json->active);
-
-// $id         = setNum($id);
-// $nome       = setNoXss($nome);
-// $horario    = setNum($horario);
-// $categoria  = setNoXss($categoria);
-// $active     = setNum($active);
-
-// endCode("chegou", false);
-
-// checkMissing(
-//     array(
-//         $id,
-//         $nome,
-//         $horario
-//     )
-// );
 
 // $id  = decrypt($id);
 // $categoria  = decrypt($categoria);
