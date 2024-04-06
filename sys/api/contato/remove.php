@@ -3,18 +3,6 @@ include '../../conexao.php';
 
 // justLog($__EMAIL__, $__TYPE__, 2);
 
-if($_SESSION["lastcontato"]){
-    if($_SESSION["lastcontato"] > time() - 10){
-        $rest = 10 - (time() - $_SESSION["lastcontato"]);
-        endCode("Aguarde $rest segundos", false);
-    }
-}
-
-if(!$_SESSION["lastcontato"] or $_SESSION["lastcontato"] < time() - 10){
-    $_SESSION["lastcontato"] = time();
-}
-
-
 header('Content-Type: application/json; charset=utf-8');
 
 $request = file_get_contents('php://input');
