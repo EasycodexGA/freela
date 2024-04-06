@@ -415,7 +415,7 @@ class File{
         }
         inactive.innerText = inactivevar;
         active.innerText = activevar;
-        esperaat.innerText = esperavar;
+        typeof esperaat != "undefined" ? esperaat.innerText = esperavar : "";
     }
 }
 
