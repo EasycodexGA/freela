@@ -230,6 +230,7 @@ function sendEdit(id, name, parent){
                     console.log(preData[j].id)
                     console.log(file.arrayStrAdd[`aulas${preData[j].id}Array`])
                     preData[j].chamada = file.arrayStrAdd[`aulas${preData[j].id}Array`]
+                    console.log(preData[j].chamada)
                 }
             }
         }
