@@ -15,8 +15,7 @@ justLog($__EMAIL__, $__TYPE__, 3);
     <header>
         <h1 class='title-header'>Geral - Contatos</h1>
         <div class='header-in'>
-            <h2 class='sub-header'><span id="active">0</span> Ativos</h2>
-            <h2 class='sub-header'><span id="inactive">0</span> Inativos</h2>
+            <h2 class='sub-header'><span id="active">0</span> Contatos</h2>
         </div>
     </header>
 
@@ -33,6 +32,8 @@ justLog($__EMAIL__, $__TYPE__, 3);
                 contatos.innerHTML = "<p>Nenhum contato</p>";
                 return;
             }
+
+            active.innerText = 
 
             for(let res of e.mensagem){
                 contatos.innerHTML += `
