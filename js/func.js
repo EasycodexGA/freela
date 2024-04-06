@@ -226,9 +226,10 @@ function sendEdit(id, name, parent){
             preData = preData.split("#");
             for(let j in preData){
                 preData[j] = JSON.parse(preData[j]);
-                // if(i.dataset.key == 'aulas'){
-                //     preData[j].chamada = file.arrayStrAdd[`aulas${preData[j].id}`]
-                // }
+                if(i.dataset.key == 'aulas'){
+                    console.log(file.arrayStrAdd[`aulas${preData[j].id}`])
+                    // preData[j].chamada = file.arrayStrAdd[`aulas${preData[j].id}`]
+                }
             }
         }
         data[`${i.dataset.key}`] = preData;
