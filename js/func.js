@@ -85,6 +85,7 @@ function verMais(id,type, titleStr){
             } else {
                 let p = document.createElement("p");
                 p.innerText = i.checked == 1 ? 'Presente' : 'Ausente';
+                div.append(p);
             }
         }
         if(type == 2){
