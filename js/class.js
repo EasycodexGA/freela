@@ -57,12 +57,12 @@ class File{
             if(tabList.querySelectorAll('.table-line').length > 0){
                 notData.classList.remove('table-line2');
             }
-            let statusDiv = document.querySelectorAll(".td-status");
+            let statusDiv = document.querySelectorAll(".table-line");
             let activevar = 0;
             let inactivevar = 0;
 
             for(let i of statusDiv){
-                let statusI = i.getAttribute("status");
+                let statusI = i.dataset.status;
                 if(statusI){
                     activevar++;
                 } else {
