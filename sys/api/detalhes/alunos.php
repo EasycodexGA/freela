@@ -67,7 +67,6 @@ while($_dados_ = mysqli_fetch_array($_query_)){
         
         array_push($arrEquipe, array("nome"=>decrypt($equipe), "id"=>$equipeId, "checked"=>1));
     }
-    endCode($arrEquipe, false);
 
     $allEquipes = array();
     $query5 = mysqli_query($__CONEXAO__, "select id, nome from equipes where id not in (select equipe from alunos where email='$email')");
