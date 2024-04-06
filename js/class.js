@@ -14,10 +14,10 @@ class File{
         this.typeUser = id;
     }
 
-    getData(){
+    async getData(){
         console.log("Get Data: " + this.name)
         let link = '../sys/api/' + this.linkGet
-        return fetch(`${link}`)
+        return await fetch(`${link}`)
         .then(e=>e.json())
         .then(e=>{ 
             console.log("Fetching")
@@ -343,10 +343,10 @@ class File{
         hlo[1].appendChild(select);
     }
 
-    createEspera(){
+    async createEspera(){
         console.log("Get Espera: " + this.name)
         let link = '../sys/api/usuarios/getEspera?type=' + this.name
-        return fetch(`${link}`)
+        return await fetch(`${link}`)
         .then(e=>e.json())
         .then(e=>{ 
             console.log("Fetching")
