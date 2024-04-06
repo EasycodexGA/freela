@@ -55,7 +55,6 @@ while($_dados_ = mysqli_fetch_array($_query_)){
     }
 
     $turmas = array_merge($arrTurmas, $allTurmas);
-    endCode($email, false);
     $query4  = mysqli_query($__CONEXAO__, "select id, nome from equipes where id in (select equipe from alunos where email='$email')");
     // $query4  = mysqli_query($__CONEXAO__, "select equipe from alunos where email='$email'");
     // endCode($query4, false);
