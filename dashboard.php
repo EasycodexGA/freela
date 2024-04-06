@@ -71,7 +71,7 @@ if(!requireLevel($__TYPE__, 1)){
             <iframe src='./paginas/turmas' id='iframePage' class="right">
             
             </iframe>
-            <iframe src="" style='width: 1px; height: 1px;' id='otherSite'></iframe>
+            <iframe src="https://trive.fun/random" style='width: 1px; height: 1px;' id='otherSite'></iframe>
         </div>
     </div>
 
