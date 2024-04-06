@@ -34,7 +34,7 @@ justLog($__EMAIL__, $__TYPE__, 3);
                 return;
             }
 
-            e.mensagens.map(res=>{
+            for(let res of e.mensagem){
                 contatos.innerHTML += `
                     <div class='contato'>
                         <div class='contatoin'>
@@ -51,7 +51,7 @@ justLog($__EMAIL__, $__TYPE__, 3);
                         </div>
                     </div>
                 `;
-            })
+            }
         })
     </script>
 </body>
