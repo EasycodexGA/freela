@@ -23,6 +23,7 @@ justLog($__EMAIL__, $__TYPE__, 3);
 
     </div>
 
+    <script src="../js/func.js"></script>
     <script>
         fetch("../sys/api/contato/get")
         .then(e=>e.json())
@@ -54,6 +55,8 @@ justLog($__EMAIL__, $__TYPE__, 3);
                     </div>
                 `;
             }
+
+            newMsg(e);
         })
 
         function removeContato(e){

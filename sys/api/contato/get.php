@@ -30,4 +30,6 @@ checkMissing(
     )
 );
 
-$check = mysqli_query($__CONEXAO__, "select id from contatos where telefone='$telefone' or email='$email'");
+$check = mysqli_query($__CONEXAO__, "delete from contatos where id='$id'");
+
+endCode("Removido com sucesso!", true);
