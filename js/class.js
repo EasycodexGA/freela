@@ -69,6 +69,10 @@ class File{
                 } else if(statusI == 'false'){
                     inactivevar++;
                 } else if(statusI == 'espera'){
+                    newMsg({
+                        mensagem: "chegou",
+                        response: "ag"
+                    })
                     esperavar++;
                 }
             }
