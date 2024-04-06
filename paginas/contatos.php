@@ -20,11 +20,18 @@ justLog($__EMAIL__, $__TYPE__, 3);
         </div>
     </header>
 
+    <div id="contatos">
+
+    </div>
+
     <script>
         fetch("../sys/api/contato/get")
         .then(e=>e.json())
         .then(e=>{
             console.log(e)
+            if(e.mensagem.length == 0){
+                
+            }
         })
     </script>
 </body>
