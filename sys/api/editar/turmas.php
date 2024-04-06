@@ -48,6 +48,21 @@ if(mysqli_num_rows($checkExist) > 0){
     endCode("Já existe uma turma com esses dados.", false);
 }
 
+for($i = 0; $i < count($aulas); $i++){
+    $idAula = $aulas[$i]->id;
+    $chamadaAula = $aulas[$i]->chamada;
+    for($j = 0; $j < count($chamadaAula); $j++){
+        $checkAula = $chamadaAula[$j]->checked;
+        $check_query = mysqli_query($__CONEXAO__, "select id from chamada where id='$idAula'");
+        if(mysqli_num_rows($check_query) > 0){
+            $checkChamada = mysqli_query($__CONEXAO__, "select id from chamada where id='$idAula' and presenca='$checkAula'");
+            if(mysqli_num_rows($checkChamada) == 0){
+                mysqli_query = mysqli_query($__CONEXAO__, "update chamada set presenca='$checkAula' where id='$idAula'");
+            }
+        }
+    }
+}
+
 mysqli_query($__CONEXAO__, "update turmas set nome='$nome', categoria='$categoria', horario='$horario', active='$active' where id='$id'");
 
 endCode("Alterado com sucesso", true);
