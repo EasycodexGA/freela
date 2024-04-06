@@ -19,5 +19,13 @@ justLog($__EMAIL__, $__TYPE__, 3);
             <h2 class='sub-header'><span id="inactive">0</span> Inativos</h2>
         </div>
     </header>
+
+    <script>
+        fetch("../sys/api/contato/get")
+        .then(e=>e.json())
+        .then(e=>{
+            console.log(e)
+        })
+    </script>
 </body>
 </html>
