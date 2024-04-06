@@ -379,6 +379,7 @@ class File{
                 tr.classList.add('empty-line');
                 tr.classList.add('table-line');
                 tr.id = `key${i.id}E`;
+                tr.dataset.status = 'espera';
     
                 for(let [key, value] of Object.entries(i)){
                     if(key != 'id' && key != '_name'){
@@ -395,7 +396,7 @@ class File{
 
                 tabList2.appendChild(tr)
             }
-            tabList2.innerHTML += "<tr class='empty-line table-line2' id='notData2'><td></td><td style='text-align: center' data-status='espera'>Nenhum dado encontrado</td><td></td></tr>";
+            tabList2.innerHTML += "<tr class='empty-line table-line2' id='notData2'><td></td><td style='text-align: center'>Nenhum dado encontrado</td><td></td></tr>";
 
             if(tabList2.querySelectorAll('.table-line').length > 0){
                 notData2.classList.remove('table-line2');
