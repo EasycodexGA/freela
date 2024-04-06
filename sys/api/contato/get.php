@@ -13,9 +13,9 @@ while($dados = mysqli_fetch_array($query)){
     $telefone   = decrypt($dados["telefone"]);
 
     array_push($arrData, array(
-        "nome" => $nome,
-        "email" => $email,
-        "telefone", => $telefone
+        "nome" => "$nome",
+        "email" => "$email",
+        "telefone", => "$telefone"
     ));
 }
 
