@@ -11,7 +11,7 @@ $json = json_decode($request);
 $id         = scapeString($__CONEXAO__, $json->id);
 $nome       = scapeString($__CONEXAO__, $json->nome);
 $horario    = scapeString($__CONEXAO__, $json->horario);
-$aulas      = scapeString($__CONEXAO__, $json->aulas);
+$aulas      = $json->aulas;
 $active     = scapeString($__CONEXAO__, $json->active);
 
 $id         = setNum($id);
