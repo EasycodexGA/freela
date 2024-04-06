@@ -55,8 +55,8 @@ if(mysqli_num_rows($checkExist) > 0){
 if($aulas !== false){
     for($i = 0; $i < count($aulas); $i++){
         // endCode(var_dump($aulas), false);
-        // $idAula = $aulas[$i]->id;
-        // $chamadaAula = $aulas[$i]->chamada;
+        $idAula = $aulas[$i]->id;
+        $chamadaAula = $aulas[$i]->chamada;
         // for($j = 0; $j < count($chamadaAula); $j++){
         //     $checkAula = $chamadaAula[$j]->checked;
         //     $check_query = mysqli_query($__CONEXAO__, "select id from chamada where id='$idAula'") or endCode("asd 1", false);
