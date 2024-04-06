@@ -66,36 +66,40 @@ function verMais(id,type, titleStr){
         div.append(p);
 
         if(type == 1){
-            if(file.typeUser > 1){
-                let input = document.createElement("input");
-                input.type = 'checkbox';
-                input.classList.add("checkbox-presenca");
-                input.classList.add("checkbox-presencaa");
-                input.id = 'checkId-' + i.id;
+            let input = document.createElement("input");
+            input.type = 'checkbox';
+            input.classList.add("checkbox-presenca");
+            input.classList.add("checkbox-presencaa");
+            input.id = 'checkId-' + i.id;
 
-                if(i.checked == 1){
-                    input.checked = true;
-                }
-
-                let label = document.createElement("label");
-                label.setAttribute('for','checkId-' + i.id);
-                label.classList.add('toggle-switch');
-                div.append(input);
-                div.append(label);
-            } else {
-                let p = document.createElement("p");
-                p.innerText = i.checked == 1 ? 'Presente' : 'Ausente';
-                div.append(p);
+            if(i.checked == 1){
+                input.checked = true;
             }
+
+            let label = document.createElement("label");
+            label.setAttribute('for','checkId-' + i.id);
+            label.classList.add('toggle-switch');
+            div.append(input);
+            div.append(label);
         }
         if(type == 2){
-            presencaBt = document.createElement("button");
-            presencaBt.classList.add("btn-add");
-            presencaBt.classList.add("btn-presenca");
-            presencaBt.innerText = 'Ver chamada';
-            presencaBt.setAttribute("onclick", `verMais('${id}${i.id}', 1, 'Chamada')`);
-            presencaBt.dataset.id = id;
-            div.append(presencaBt);
+            if(file.typeUser > 1){
+                presencaBt = document.createElement("button");
+                presencaBt.classList.add("btn-add");
+                presencaBt.classList.add("btn-presenca");
+                presencaBt.innerText = 'Ver chamada';
+                presencaBt.setAttribute("onclick", `verMais('${id}${i.id}', 1, 'Chamada')`);
+                presencaBt.dataset.id = id;
+                div.append(presencaBt);
+            } else {
+                // let p = document.createElement('p');
+                // let takeCheck;
+                // for(i of file.arrayStrAdd[`${id}${i.id}Array`]){
+                //     if(i.)
+                // }
+                // p.innerText = 
+                // div.append(p)
+            }
         }
 
         divMid.append(div);
