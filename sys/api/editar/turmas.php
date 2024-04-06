@@ -8,17 +8,17 @@ header('Content-Type: application/json; charset=utf-8');
 $request = file_get_contents('php://input');
 $json = json_decode($request);
 
-$id             = scapeString($__CONEXAO__, $json->id);
-$nome           = scapeString($__CONEXAO__, $json->nome);
-$horario        = scapeString($__CONEXAO__, $json->horario);
+$id         = scapeString($__CONEXAO__, $json->id);
+$nome       = scapeString($__CONEXAO__, $json->nome);
+$horario    = scapeString($__CONEXAO__, $json->horario);
+$aulas      = scapeString($__CONEXAO__, $json->aulas);
+$active     = scapeString($__CONEXAO__, $json->active);
 
-$active         = scapeString($__CONEXAO__, $json->active);
-
-$id             = setNum($id);
-$nome           = setNoXss($nome);
-$horario        = setNum($horario);
-$categoria      = setNum($categoria);
-$active         = setNum($active);
+$id         = setNum($id);
+$nome       = setNoXss($nome);
+$horario    = setNum($horario);
+$categoria  = setNum($categoria);
+$active     = setNum($active);
 
 
 checkMissing(
