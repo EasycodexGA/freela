@@ -60,12 +60,12 @@ if($aulas !== false){
         for($j = 0; $j < count($chamadaAula); $j++){
             $checkAula = $chamadaAula[$j]->checked;
             $check_query = mysqli_query($__CONEXAO__, "select id from chamada where id='$idAula'") or endCode("asd 1", false);
-        //     if(mysqli_num_rows($check_query) > 0){
-        //         $checkChamada = mysqli_query($__CONEXAO__, "select id from chamada where id='$idAula' and presenca='$checkAula'")  or endCode("asd 2", false);
+            if(mysqli_num_rows($check_query) > 0){
+                $checkChamada = mysqli_query($__CONEXAO__, "select id from chamada where id='$idAula' and presenca='$checkAula'")  or endCode("asd 2", false);
         //         if(mysqli_num_rows($checkChamada) == 0){
         //             mysqli_query = mysqli_query($__CONEXAO__, "update chamada set presenca='$checkAula' where id='$idAula'")  or endCode("asd 3", false);
         //         }
-        //     }
+            }
         }
     }
 }
