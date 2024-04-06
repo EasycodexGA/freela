@@ -66,9 +66,9 @@ class File{
                 let statusI = i.dataset.status;
                 if(statusI == 'true'){
                     activevar++;
-                } else if(statusI == 'false') {
+                } else if(statusI == 'false'){
                     inactivevar++;
-                } else {
+                } else if(statusI == 'espera'){
                     esperavar++;
                 }
             }
