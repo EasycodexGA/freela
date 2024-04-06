@@ -36,13 +36,13 @@ function verMais(id,type, titleStr){
     let string = file.arrayStrAdd[`${id}Array`];
     console.log(`-VER_MAIS_CONTENT: ${string}`)
 
-    if(!string){
-        newMsg({
-            mensagem: "Em desenvolvimento",
-            response: false
-        })
-        return;
-    }
+    // if(!string){
+    //     newMsg({
+    //         mensagem: "Em desenvolvimento",
+    //         response: false
+    //     })
+    //     return;
+    // }
 
     let array = string.split('#');
 
