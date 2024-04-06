@@ -49,7 +49,7 @@ $emm = $emm["email"];
 
 if($__TYPE__ == 2){
     $checkAluno = mysqli_query($__CONEXAO__, "select id from alunos where turma in (select turma from professores where email='$__EMAIL__') and email in (select email from users where typeC='1' and id='$id')") or die("b");
-    if(mysqli_num_rows($checkAluno) > 0){
+    if(mysqli_num_rows($checkAluno) == 0){
         endCode("Esse aluno não pertence a você", false);
     }
 }
