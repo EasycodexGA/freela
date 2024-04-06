@@ -8,7 +8,7 @@ header('Content-Type: application/json; charset=utf-8');
 $request = file_get_contents('php://input');
 $json = json_decode($request);
 
-$id   = scapeString($__CONEXAO__, $json->telefone);
+$id   = scapeString($__CONEXAO__, $json->id);
 
 $id   = setNum($id);
 
