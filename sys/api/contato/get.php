@@ -9,11 +9,13 @@ $query = mysqli_query($__CONEXAO__, "select * from contatos");
 $arrData = array();
 
 while($dados = mysqli_fetch_array($query)){
+    $id         = $dados["id"];
     $nome       = decrypt($dados["nome"]);
     $email      = decrypt($dados["email"]);
     $telefone   = decrypt($dados["telefone"]);
     
     array_push($arrData, array(
+        "id" => $id,
         "nome" => $nome,
         "email" => $email,
         "telefone" => $telefone

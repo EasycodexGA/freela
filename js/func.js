@@ -35,13 +35,13 @@ function verMais(id,type, titleStr){
     let string = file.arrayStrAdd[`${id}Array`];
     console.log(`-VER_MAIS_CONTENT: ${string}`)
 
-    // if(!string){
-    //     newMsg({
-    //         mensagem: "Em desenvolvimento",
-    //         response: false
-    //     })
-    //     return;
-    // }
+    if(!string){
+        newMsg({
+            mensagem: "Em desenvolvimento",
+            response: false
+        })
+        return;
+    }
 
     let array = string.split('#');
 
@@ -60,6 +60,10 @@ function verMais(id,type, titleStr){
         let div = document.createElement('div');
         div.classList.add("chamada-list")
         let p = document.createElement("p");
+        if(i.data){
+            let date = new Date(i.data * 1000 + 86400000);
+            i.data = date.toLocaleDateString("pt-BR");
+        }
         p.innerText = i.nome ? i.nome : i.data;
         div.append(p);
 
@@ -222,6 +226,9 @@ function sendEdit(id, name, parent){
             preData = preData.split("#");
             for(let j in preData){
                 preData[j] = JSON.parse(preData[j]);
+                if(i.dataset.key == 'aulas'){
+                    preData[j].chamada = file.arrayStrAdd[`aulas${preData[j].id}`]
+                }
             }
         }
         data[`${i.dataset.key}`] = preData;
