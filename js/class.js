@@ -57,6 +57,7 @@ class File{
             if(tabList.querySelectorAll('.table-line').length > 0){
                 notData.classList.remove('table-line2');
             }
+            this.getNums();
         })
         .catch(e=>newMsg({
             mensagem: "Ocorreu algum erro, contate o administrador",
@@ -356,7 +357,6 @@ class File{
                     let date = new Date(i.data * 1000 + 86400000);
                     i.data = date.toLocaleDateString("pt-BR");
                 }
-                
                 let tr = document.createElement('tr');
                 tr.classList.add('empty-line');
                 tr.classList.add('table-line');
@@ -383,6 +383,7 @@ class File{
             if(tabList2.querySelectorAll('.table-line').length > 0){
                 notData2.classList.remove('table-line2');
             }
+            this.getNums();
         })
         .catch(e=>newMsg({
             mensagem: "Ocorreu algum erro, contate o administrador22",
@@ -434,7 +435,6 @@ class Alunos extends File{
         this.getData()
         this.createThEspera()
         this.createEspera()
-        this.getNums()
     }
 }
 
