@@ -11,6 +11,7 @@ $json = json_decode($request);
 $id         = scapeString($__CONEXAO__, $json->id);
 $nome       = scapeString($__CONEXAO__, $json->nome);
 $horario    = scapeString($__CONEXAO__, $json->horario);
+$categoria  = scapeString($__CONEXAO__, $json->categoria);
 $aulas      = $json->aulas;
 $active     = scapeString($__CONEXAO__, $json->active);
 
@@ -25,7 +26,7 @@ checkMissing(
     array(
         $id,
         $nome,
-        $horario,
+        $horario
     )
 );
 
