@@ -21,6 +21,7 @@ $horario    = setNum($horario);
 $categoria  = setNum($categoria);
 $active     = setNum($active);
 
+endCode("chegou", false);
 
 checkMissing(
     array(
@@ -35,7 +36,6 @@ $categoria  = decrypt($categoria);
 $horarioDec = decrypt($horario);
 $active = decrypt($active);
 
-endCode("chegou", false);
 
 if($__TYPE__ == 2){
     $checkTurma= mysqli_query($__CONEXAO__, "select id from turmas where id in (select turma from professores where email='$__EMAIL__') and id='$id')") or die("b");

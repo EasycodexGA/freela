@@ -66,7 +66,7 @@ while($_dados_ = mysqli_fetch_array($_query_)){
         array_push($aulas, array("id"=>$idAu, "data"=>$dataAu, "chamada"=>$chamadaAula));
     }
 
-    $query5 = mysqli_query($__CONEXAO__, "select nome from categoria where id='$categoria'");
+    $query5 = mysqli_query($__CONEXAO__, "select nome from categorias where id='$categoria'");
     $nomeCat = mysqli_fetch_assoc($query5)['nome'];
 
 
