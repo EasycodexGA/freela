@@ -416,6 +416,10 @@ class File{
         inactive.innerText = inactivevar;
         active.innerText = activevar;
         typeof esperaat != "undefined" ? esperaat.innerText = esperavar : "";
+        newMsg({
+            mensagem: "chegou 1",
+            response: false
+        })
     }
 }
 
