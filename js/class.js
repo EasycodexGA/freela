@@ -399,11 +399,13 @@ class File{
 
     getNums(){
         let statusDiv = document.querySelectorAll(".table-line");
+        console.log(statusDiv)
         let activevar = 0;
         let inactivevar = 0;
         let esperavar = 0;
 
         for(let i of statusDiv){
+            console.log(i)
             let statusI = i.dataset.status;
             if(statusI == 'true'){
                 activevar++;
@@ -413,8 +415,8 @@ class File{
                 esperavar++;
             }
         }
-        inactive.innerText = 5;
-        active.innerText = 10;
+        inactive.innerText = inactivevar;
+        active.innerText = activevar;
         typeof esperaat != "undefined" ? esperaat.innerText = esperavar : "";
     }
 }
