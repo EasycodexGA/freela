@@ -153,7 +153,9 @@ class File{
                 for(i in data){
                     data[i] = JSON.stringify(data[i]);
                 }
+                console.log(data);
                 data = data.join('#');
+                console.log(data);
                 this.arrayStrAdd.addAulaArray = data
                 verPresencaBt.setAttribute('onclick', "verMais('addAula', 1, 'Chamada')");
             }
