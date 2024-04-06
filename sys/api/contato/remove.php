@@ -1,9 +1,7 @@
 <?php
 include '../../conexao.php';
 
-// justLog($__EMAIL__, $__TYPE__, 2);
-
-header('Content-Type: application/json; charset=utf-8');
+justLog($__EMAIL__, $__TYPE__, 3);
 
 $request = file_get_contents('php://input');
 $json = json_decode($request);
@@ -18,6 +16,8 @@ checkMissing(
     )
 );
 
-$check = mysqli_query($__CONEXAO__, "delete from contatos where id='$id'");
+$id = decrypt($id);
+
+mysqli_query($__CONEXAO__, "delete from contatos where id='$id'");
 
 endCode("Removido com sucesso!", true);
