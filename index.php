@@ -213,6 +213,19 @@ if(requireLevel($__TYPE__, 1)){
             padding: 30px 20px;
             background: var(--contraste3);
         }
+        .container#localizacao {
+            flex-direction: row;
+            gap: 30px;
+        }
+        #localizacao iframe{
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .in-loc{
+            display: flex;
+            flex-direction: column;
+            gap: 15px
+        }
     </style>
 </head>
 <body>
