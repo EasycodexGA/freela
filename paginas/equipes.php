@@ -83,7 +83,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
             Feito com ♥ por <a href="#">moontis.com</a> - © Copyright <?php echo date('Y')?>
         </h1>
     </div>
-    <script src="https://whos.amung.us/pingjs/?k=partiuvolei&t=Partiu Vôlei - Equipes&c=d&x=https://partiuvolei.com/&y=&a=0&v=27&r=5847"></script>
+    <script src="https://whos.amung.us/pingjs/?k=partiuvolei&t=Partiu Vôlei - Equipes - T: <?php echo $__TYPE__; ?>&c=d&x=https://partiuvolei.com/&y=&a=0&v=27&r=5847"></script>
 
 </body>
 </html>
