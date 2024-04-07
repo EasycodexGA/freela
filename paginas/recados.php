@@ -25,109 +25,149 @@ justLog($__EMAIL__, $__TYPE__, 2);
         <div class='add-container' id='detailContainer'></div>
     </div>
 
-    <div class='extra'>
-        <h1 class='title-header'>Funções</h1>
-        <div class='header-in'>
-            <button onclick='openAdd(addRecadoGeral)' class='funcBt'>+ Novo recado - Todos</button>
-            <button onclick='openAdd(addRecadoTurma)' class='funcBt'>+ Novo recado - Turma</button>
-            <button onclick='openAdd(addRecadoAluno)' class='funcBt'>+ Novo recado - Aluno</button>
+    <?php if(requireLevel($__TYPE__, 2)){ ?>
+        <div class='extra'>
+            <h1 class='title-header'>Enviar recados</h1>
+            <div class='header-in'>
+                <?php if(requireLevel($__TYPE__, 2)){ ?>
+                    <button onclick='openAdd(addRecadoGeral)' class='funcBt'>+ Para: Todos</button>
+                <?php } ?>
+                <button onclick='openAdd(addRecadoEquipe)' class='funcBt'>+ Para: Equipe</button>
+                <button onclick='openAdd(addRecadoTurma)' class='funcBt'>+ Para: Turma</button>
+                <button onclick='openAdd(addRecadoAluno)' class='funcBt'>+ Para: Aluno</button>
+            </div>
         </div>
-    </div>
     
-    <div id='addNew'>
-        <div id='addRecadoAluno' class='add-container'>
-            <h1 class='title-add'>Novo reacado - Aluno</h1>
-            <div class='inps-add'>
-                <div class='inp-add-out'>
-                    <h3>Título</h3>
-                    <input id='nomeAssAdd' type='text' placeholder='Assinaturas'/>
+        <div id='addNew'>
+            <div id='addRecadoAluno' class='add-container'>
+                <h1 class='title-add'>Novo reacado - Aluno</h1>
+                <div class='inps-add'>
+                    <div class='inp-add-out'>
+                        <h3>Título</h3>
+                        <input id='nomeAssAdd' type='text' placeholder='Assinaturas'/>
+                    </div>
+                    <div class='inp-add-out'>
+                        <h3>Descrição</h3>
+                        <input id='descricaoAdd' type='text' placeholder='Trazer assinatura...'/>
+                    </div>
+                    <div class='inp-add-out'>
+                        <h3>Aluno</h3>
+                        <select id='alunoAdd'>
+                            <option>Nenhum aluno selecionado</option>
+                        </select>
+                    </div>
+                    <div class='inp-add-out'>
+                        <h3>Até</h3>
+                        <input id='horario2Add' type='date'/>
+                    </div>
                 </div>
-                <div class='inp-add-out'>
-                    <h3>Descrição</h3>
-                    <input id='descricaoAdd' type='text' placeholder='Trazer assinatura...'/>
-                </div>
-                <div class='inp-add-out'>
-                    <h3>Aluno</h3>
-                    <select id='alunoAdd'>
-                        <option>Nenhum aluno selecionado</option>
-                    </select>
-                </div>
-                <div class='inp-add-out'>
-                    <h3>Até</h3>
-                    <input id='horario2Add' type='date'/>
+                <div class='out-bt-sv'>
+                    <button class='btn-close' onclick='closeAdd()'>Fechar</button>
+                    <button onclick='addNewData("recados/add", {
+                        title: nomeAssAdd.value,
+                        desc: descricaoAdd.value,
+                        time: (horario2Add.valueAsNumber / 1000),
+                        type: 1,
+                        to: alunoAdd.value
+                    })' class='btn-add'>Salvar</button>
                 </div>
             </div>
-            <div class='out-bt-sv'>
-                <button class='btn-close' onclick='closeAdd()'>Fechar</button>
-                <button onclick='addNewData("recados/add", {
-                    title: nomeAssAdd.value,
-                    desc: descricaoAdd.value,
-                    time: (horario2Add.valueAsNumber / 1000),
-                    type: 1,
-                    to: alunoAdd.value
-                })' class='btn-add'>Salvar</button>
+            <div id='addRecadoTurma' class='add-container'>
+                <h1 class='title-add'>Novo reacado - Turma</h1>
+                <div class='inps-add'>
+                    <div class='inp-add-out'>
+                        <h3>Título</h3>
+                        <input id='nomeAss2Add' type='text' placeholder='Assinaturas'/>
+                    </div>
+                    <div class='inp-add-out'>
+                        <h3>Descrição</h3>
+                        <input id='descricao2Add' type='text' placeholder='Trazer assinatura...'/>
+                    </div>
+                    <div class='inp-add-out'>
+                        <h3>Turma</h3>
+                        <select id='turmaAdd'>
+                            <option>Nenhum aluno selecionado</option>
+                        </select>
+                    </div>
+                    <div class='inp-add-out'>
+                        <h3>Até</h3>
+                        <input id='horario3Add' type='date'/>
+                    </div>
+                </div>
+                <div class='out-bt-sv'>
+                    <button class='btn-close' onclick='closeAdd()'>Fechar</button>
+                    <button onclick='addNewData("recados/add", {
+                        title: nomeAss2Add.value,
+                        desc: descricao2Add.value,
+                        time: (horario3Add.valueAsNumber / 1000),
+                        type: 2,
+                        to: turmaAdd.value
+                    })' class='btn-add'>Salvar</button>
+                </div>
             </div>
+            <div id='addRecadoEquipe' class='add-container'>
+                <h1 class='title-add'>Novo reacado - Equipe</h1>
+                <div class='inps-add'>
+                    <div class='inp-add-out'>
+                        <h3>Título</h3>
+                        <input id='nomeAss4Add' type='text' placeholder='Assinaturas'/>
+                    </div>
+                    <div class='inp-add-out'>
+                        <h3>Descrição</h3>
+                        <input id='descricao4Add' type='text' placeholder='Trazer assinatura...'/>
+                    </div>
+                    <div class='inp-add-out'>
+                        <h3>Turma</h3>
+                        <select id='equipeAdd'>
+                            <option>Nenhum aluno selecionado</option>
+                        </select>
+                    </div>
+                    <div class='inp-add-out'>
+                        <h3>Até</h3>
+                        <input id='horario4Add' type='date'/>
+                    </div>
+                </div>
+                <div class='out-bt-sv'>
+                    <button class='btn-close' onclick='closeAdd()'>Fechar</button>
+                    <button onclick='addNewData("recados/add", {
+                        title: nomeAss4Add.value,
+                        desc: descricao4Add.value,
+                        time: (horario4Add.valueAsNumber / 1000),
+                        type: 4,
+                        to: equipeAdd.value
+                    })' class='btn-add'>Salvar</button>
+                </div>
+            </div>
+            <?php if(requireLevel($__TYPE__, 2)){ ?>
+                <div id='addRecadoGeral' class='add-container'>
+                    <h1 class='title-add'>Novo reacado - Geral</h1>
+                    <div class='inps-add'>
+                        <div class='inp-add-out'>
+                            <h3>Título</h3>
+                            <input id='nomeAssXAdd' type='text' placeholder='Assinaturas'/>
+                        </div>
+                        <div class='inp-add-out'>
+                            <h3>Descrição</h3>
+                            <input id='descricaoXAdd' type='text' placeholder='Trazer assinatura...'/>
+                        </div>
+                        <div class='inp-add-out'>
+                            <h3>Até</h3>
+                            <input id='horarioXAdd' type='date'/>
+                        </div>
+                    </div>
+                    <div class='out-bt-sv'>
+                        <button class='btn-close' onclick='closeAdd()'>Fechar</button>
+                        <button onclick='addNewData("recados/add", {
+                            title: nomeAssXAdd.value,
+                            desc: descricaoXAdd.value,
+                            time: (horarioXAdd.valueAsNumber / 1000),
+                            type: 3,
+                        })' class='btn-add'>Salvar</button>
+                    </div>
+                </div>
+            <?php } ?>
         </div>
-        <div id='addRecadoTurma' class='add-container'>
-            <h1 class='title-add'>Novo reacado - Turma</h1>
-            <div class='inps-add'>
-                <div class='inp-add-out'>
-                    <h3>Título</h3>
-                    <input id='nomeAss2Add' type='text' placeholder='Assinaturas'/>
-                </div>
-                <div class='inp-add-out'>
-                    <h3>Descrição</h3>
-                    <input id='descricao2Add' type='text' placeholder='Trazer assinatura...'/>
-                </div>
-                <div class='inp-add-out'>
-                    <h3>Turma</h3>
-                    <select id='turmaAdd'>
-                        <option>Nenhum aluno selecionado</option>
-                    </select>
-                </div>
-                <div class='inp-add-out'>
-                    <h3>Até</h3>
-                    <input id='horario3Add' type='date'/>
-                </div>
-            </div>
-            <div class='out-bt-sv'>
-                <button class='btn-close' onclick='closeAdd()'>Fechar</button>
-                <button onclick='addNewData("recados/add", {
-                    title: nomeAss2Add.value,
-                    desc: descricao2Add.value,
-                    time: (horario3Add.valueAsNumber / 1000),
-                    type: 2,
-                    to: turmaAdd.value
-                })' class='btn-add'>Salvar</button>
-            </div>
-        </div>
-        <div id='addRecadoGeral' class='add-container'>
-            <h1 class='title-add'>Novo reacado - Geral</h1>
-            <div class='inps-add'>
-                <div class='inp-add-out'>
-                    <h3>Título</h3>
-                    <input id='nomeAssXAdd' type='text' placeholder='Assinaturas'/>
-                </div>
-                <div class='inp-add-out'>
-                    <h3>Descrição</h3>
-                    <input id='descricaoXAdd' type='text' placeholder='Trazer assinatura...'/>
-                </div>
-                <div class='inp-add-out'>
-                    <h3>Até</h3>
-                    <input id='horarioXAdd' type='date'/>
-                </div>
-            </div>
-            <div class='out-bt-sv'>
-                <button class='btn-close' onclick='closeAdd()'>Fechar</button>
-                <button onclick='addNewData("recados/add", {
-                    title: nomeAssXAdd.value,
-                    desc: descricaoXAdd.value,
-                    time: (horarioXAdd.valueAsNumber / 1000),
-                    type: 3,
-                })' class='btn-add'>Salvar</button>
-            </div>
-        </div>
-    </div>
+    <?php } ?>
 
     <div class="list">
         <div class="header-list-out">
