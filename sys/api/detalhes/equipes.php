@@ -10,7 +10,7 @@ $decEquipe = decrypt($equipe);
 if($__TYPE__ > 1){
     $_query_ = mysqli_query($__CONEXAO__, "select * from equipes where id='$decEquipe'") or die("1");
 } else {
-    $_query_ = mysqli_query($__CONEXAO__, "select * from equipes where id='$decTurma'and id in (select equipe from users where email='$__EMAIL__')") or die("2");
+    $_query_ = mysqli_query($__CONEXAO__, "select * from equipes where id='$decEquipe' and id in (select equipe from users where email='$__EMAIL__')") or die("2");
 }
 
 if(mysqli_num_rows($_query_) < 1){
