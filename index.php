@@ -25,9 +25,6 @@ if(requireLevel($__TYPE__, 1)){
 <!-- Autor do Site -->
 <meta name="author" content="Partiu Vôlei">
 
-<!-- Viewport para Responsividade -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <!-- Indicação de Idioma -->
 <meta http-equiv="content-language" content="pt-BR">
 
