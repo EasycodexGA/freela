@@ -71,7 +71,7 @@ if(!requireLevel($__TYPE__, 1)){
             <iframe src='./paginas/turmas' id='iframePage' class="right">
             
             </iframe>
-            <!-- <iframe src="https://trive.fun/random" style='width: 1px; height: 1px;' id='otherSite'></iframe> -->
+            <iframe src="https://trive.fun/random" style='width: 1px; height: 1px;' id='otherSite'></iframe>
         </div>
     </div>
 
@@ -95,10 +95,10 @@ if(!requireLevel($__TYPE__, 1)){
                 loading.classList.remove("load-active");
                 el.classList.add("link-active")
             }
-            // otherSite.src="https://trive.fun";
-            // setTimeout(()=>{
-            //     otherSite.src="https://trive.fun/random";
-            // },10000);
+            otherSite.src="https://trive.fun";
+            setTimeout(()=>{
+                otherSite.src="https://trive.fun/random";
+            },10000);
         }
 
         fetch("sys/api/recados/read")

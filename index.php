@@ -196,7 +196,18 @@ if(requireLevel($__TYPE__, 1)){
     </header>
     <section id='banner'>
         <img src='./img/time.png'>
-        <div id='black'></div>
+        <div id='black'>
+            <div class='top-black'>
+                <h1>Projeto desportivo</h1>
+                <span>Por: Prefeitura de Pomerode</span>
+            </div>
+            <div class='mid-black'>
+                <p>-> Do <span>Sub 13</span> ao <span>Sub 19</span>
+                <p>-> Vôlei de quadra</p>
+                <p>-> Vôlei de praia</p>
+            </div>
+            <a href='#contato'>Entrar em contato</a>
+        </div>
     </section>
     <section id='sobre' class='container'>
         <h1>Sobre o projeto</h1>
