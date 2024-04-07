@@ -82,3 +82,136 @@
         transform: translateY(calc(100% + 20px));
     }
 }
+
+.extra{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.header-in {
+    display: flex;
+    gap: 30px;
+}
+
+.funcBt {
+    padding: 15px 30px;
+    width: fit-content;
+    border-radius: 3px;
+    color: #B1B1B1;
+    background: white;
+    border: 1px solid #E7E7E7;
+    box-shadow: 0 0 20px 0 #0000000f;
+    cursor: pointer;
+}
+
+#addNew, #details, #addNewAula, #verMaisDiv{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: #000000db;
+    backdrop-filter: blur(2px);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .1s;
+}
+
+.add-container{
+    margin-top: 30px;
+    padding: 20px;
+    width: calc(100% - 80px);
+    border-radius: 3px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    max-height: calc(100svh - 100px);
+    overflow-y: scroll;
+}
+
+.title-add{
+    position: relative;
+    width: fit-content;
+}
+
+.title-add:before{
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    width: 70%;
+    height: 2px;
+    background: var(--contraste);
+}
+
+.content-list td::first-letter, .inp-add-out p::first-letter,  .inp-add-out h3::first-letter, #selectFilter::first-letter, .title-add::first-letter, .chamada-list p::first-letter{
+    text-transform: capitalize;
+}
+
+
+.title-header, .title-add{
+    font-size: 20px;
+    color: #525252;
+}
+
+.inps-add{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.out-bt-sv{
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.inp-add-out, .inp-add-out2 {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    width: calc(100% / 3 - 20px);
+}
+
+.inp-add-out h3, .inp-add-out2 {
+    font-size: 14px;
+    color: #929292;
+}
+
+.inp-add-out-img {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.inp-add-out input, .inp-add-out select, #pastaAdd {
+    padding: 12px;
+    background: white;
+    border: 2px solid #ededed;
+    border-radius: 3px;
+    box-shadow: 0 0 20px 0 #00000010;
+    font-size: 14px;
+}
+
+.btn-close{
+    padding: 5px;
+    color: var(--contraste2);
+    background: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-add{
+    padding: 7px 14px;
+    color: white;
+    font-size: 13px;
+    background: var(--contraste2);
+    border-radius: 3px;
+    width: fit-content;
+    cursor: pointer;
+}
