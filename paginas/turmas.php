@@ -26,13 +26,11 @@ justLog($__EMAIL__, $__TYPE__, 1);
     </div>
 
 
-    <?php if(requireLevel($__TYPE__, 2)){ ?>
+    <?php if(requireLevel($__TYPE__, 3)){ ?>
     <div class='extra'>
         <h1 class='title-header'>Funções</h1>
         <div class='header-in'>
-        <?php if(requireLevel($__TYPE__, 3)){ ?>
             <button onclick='openAdd(addTurma)' class='funcBt'>+ Adicionar turma</button>
-        <?php } ?>
         </div>
     </div>
 
