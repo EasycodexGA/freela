@@ -214,7 +214,7 @@ justLog($__EMAIL__, $__TYPE__, 2);
         .then(e => e.json())
         .then(e=> {
             for(let i of e.mensagem){
-                alunoAdd.innerHTML += `
+                equipeAdd.innerHTML += `
                     <option value='${i.id}'>${i.nome} - ${i.email}</option>
                 `;
             }
