@@ -15,6 +15,24 @@ if(requireLevel($__TYPE__, 1)){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/root.css">
     <link rel="stylesheet" href="style/landing.css">
+    
+<!-- Descrição do Site -->
+<meta name="description" content="Descubra o Projeto Pomerode Voleibol 2024 – promovendo inclusão social e excelência no voleibol para crianças e jovens em Pomerode, totalmente gratuito.">
+
+<!-- Palavras-chave -->
+<meta name="keywords" content="Projeto Pomerode Voleibol, inclusão social, voleibol gratuito, desenvolvimento esportivo, Pomerode, voleibol para jovens">
+
+<!-- Autor do Site -->
+<meta name="author" content="Partiu Vôlei">
+
+<!-- Viewport para Responsividade -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Indicação de Idioma -->
+<meta http-equiv="content-language" content="pt-BR">
+
+<!-- Direitos Autorais -->
+<meta name="copyright" content="Partiu Vôlei">
     <link rel="shortcut icon" href="img/prefeitura.png" type="image/x-icon">
     <title>Partiu vôlei - Vôleibol escolinhas</title>
     <style>
