@@ -28,6 +28,9 @@ justLog($__EMAIL__, $__TYPE__, 1);
 
     <div id='verMaisDiv'></div>
 
+    <?php if(requireLevel($__TYPE__, 2)){ ?>
+
+
     <div class='extra'>
         <h1 class='title-header'>Funções</h1>
         <div class='header-in'>
@@ -35,6 +38,9 @@ justLog($__EMAIL__, $__TYPE__, 1);
         </div>
     </div>
 
+    <?php } ?>
+
+    <?php if(requireLevel($__TYPE__, 2)){ ?>
     <div id='addNew'>
         <div id='addEquipe' class='add-container'>
             <h1 class='title-add'>Nova equipe</h1>
@@ -53,6 +59,9 @@ justLog($__EMAIL__, $__TYPE__, 1);
             </div>
         </div>
     </div>
+    <?php } else { ?>
+    <div id='addNew'></div>
+    <?php } ?>
 
     <div class="list">
         <div class="header-list-out">
