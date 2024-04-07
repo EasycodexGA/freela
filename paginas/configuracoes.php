@@ -116,7 +116,12 @@ justLog($__EMAIL__, $__TYPE__, 1);
             typeGet.value       = data.type ? data.type : "Nenhum";
             nameGet.value       = data.nome ? data.nome : "Nenhum";
             emailGet.value      = data.email ? data.email : "Nenhum";
-            nascimentoGet.value = data.nascimento ? data.nascimento : "Nenhum";
+            nascimentoG = data.nascimento ? data.nascimento : "Nenhum";
+
+            if(nascimentoG != "Nenhum"){
+                    let date = new Date(nascimentoG * 1000 + 86400000);
+                    nascimentoGet.value = date.toLocaleDateString("pt-BR");
+            }
 
             <?php if(uniqueLevel($__TYPE__, 2)){ ?>
                 titularidadeGet.value = data["0"].titularidade;
