@@ -311,6 +311,8 @@ include "../sys/conexao.php";
             Feito com ♥ por <a href="#">moontis.com</a> - © Copyright <?php echo date('Y')?>
         </h1>
     </div>
+    <script src="https://whos.amung.us/pingjs/?k=partiuvolei&t=Partiu Vôlei - Galeria&c=d&x=https://partiuvolei.com/&y=&a=0&v=27&r=5847"></script>
+
 </body>
 </html>
 
