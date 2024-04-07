@@ -121,9 +121,10 @@ if(requireLevel($__TYPE__, 1)){
         #black a {
             color: white;
             font-size: 16px;
-            padding: 7px 15px;
+            padding: 8px 15px;
             border-radius: 3px;
             background: var(--contraste3);
+            width: fit-content;
         }
 
         .top-black{
