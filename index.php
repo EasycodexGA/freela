@@ -165,7 +165,7 @@ if(requireLevel($__TYPE__, 1)){
         section#contato, section#localizacao {
             border-radius: 5px;
             background: var(--contraste3);
-            padding: 25px 20px 35px;
+            padding: 25px 20px;
         }
         #contato h1, #localizacao h1{
             color: white;
