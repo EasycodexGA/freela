@@ -37,11 +37,6 @@ header{
     cursor: pointer;
 }
 
-.add-active{
-    opacity: 1!important;
-    pointer-events: auto!important;
-}
-
 .inp-add-out2 input {
     background-color: #fff;
     margin: 0;
