@@ -35,8 +35,6 @@ justLog($__EMAIL__, $__TYPE__, 1);
     </div>
 
     <div id='addNew'>
-    <?php if(requireLevel($__TYPE__, 3)){ ?>
-
         <div id='addTurma' class='add-container'>
             <h1 class='title-add'>Nova turma</h1>
 
