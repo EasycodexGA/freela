@@ -90,21 +90,21 @@ if(requireLevel($__TYPE__, 1)){
 
         #black {
             position: absolute;
-            width: calc(100% - 80px);
+            width: calc(100% - 100px);
             height: calc(100% - 40px);
-            padding: 20px 40px;
+            padding: 20px 20px 20px 80px;
             background: #000000bf;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            gap: 15px;
+            gap: 20px;
         }
         .top-black h1 {
             color: white;
             font-size: 30px;
         }
         .top-black h2 {
-            color: gray;
+            color: lightgrey;
             font-size: 18px;
         }
 
