@@ -120,8 +120,10 @@ justLog($__EMAIL__, $__TYPE__, 1);
 
             if(nascimentoG != "Nenhum"){
                     let date = new Date(nascimentoG * 1000 + 86400000);
-                    nascimentoGet.value = date.toLocaleDateString("pt-BR");
+                    nascimentoG = date.toLocaleDateString("pt-BR");
             }
+
+            nascimentoGet.value = nascimentoG;
 
             <?php if(uniqueLevel($__TYPE__, 2)){ ?>
                 titularidadeGet.value = data["0"].titularidade;
