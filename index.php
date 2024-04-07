@@ -118,7 +118,7 @@ if(requireLevel($__TYPE__, 1)){
             font-size: 17px;
         }
 
-        .top-black a {
+        #black a {
             color: white;
             font-size: 16px;
             padding: 7px 15px;
