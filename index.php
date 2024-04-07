@@ -30,220 +30,13 @@ while($dados = mysqli_fetch_array($getPat)){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/root.css">
     <link rel="stylesheet" href="style/landing.css">
-    
-<!-- Descrição do Site -->
-<meta name="description" content="Descubra o Projeto Pomerode Voleibol 2024 – promovendo inclusão social e excelência no voleibol para crianças e jovens em Pomerode, totalmente gratuito.">
-
-<!-- Palavras-chave -->
-<meta name="keywords" content="Projeto Pomerode Voleibol, inclusão social, voleibol gratuito, desenvolvimento esportivo, Pomerode, voleibol para jovens">
-
-<!-- Autor do Site -->
-<meta name="author" content="Partiu Vôlei">
-
-<!-- Indicação de Idioma -->
-<meta http-equiv="content-language" content="pt-BR">
-
-<!-- Direitos Autorais -->
-<meta name="copyright" content="Partiu Vôlei">
+    <meta name="description" content="Descubra o Projeto Pomerode Voleibol 2024 – promovendo inclusão social e excelência no voleibol para crianças e jovens em Pomerode, totalmente gratuito.">
+    <meta name="keywords" content="Projeto Pomerode Voleibol, inclusão social, voleibol gratuito, desenvolvimento esportivo, Pomerode, voleibol para jovens">
+    <meta name="author" content="Partiu Vôlei">
+    <meta http-equiv="content-language" content="pt-BR">
+    <meta name="copyright" content="Partiu Vôlei">
     <link rel="shortcut icon" href="img/prefeitura.png" type="image/x-icon">
     <title>Partiu vôlei - Vôleibol escolinhas</title>
-    <style>
-        *{
-            font-family: Righteous, sans-serif!important;
-        }
-        .highheader{
-            background: var(--contraste3);
-            display: flex;
-            justify-content: space-between;
-            gap: 15px;
-            padding: 5px 15px;
-        }
-        .highheader h1, .highheader span{
-            color: white;
-            font-size: 16px;
-        }
-
-        .highheader span{
-            font-size: 14px
-        }
-
-        header{
-            padding: 8px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            box-shadow: 0 4px 20px #00000015;
-            gap: 20px;
-        }
-        .right-h{
-            display: flex;
-            gap: 12px;
-            align-items: center;
-        }
-        .link-h {
-            color: black;
-        }
-        .login-h {
-            color: white;
-            background: var(--contraste3);
-            padding: 5px 10px;
-            border-radius: 3px;
-            font-size: 14px;
-        }
-        section#banner {
-            position: relative;
-            height: 60svh;
-            background: gray;
-            overflow: hidden;
-        }
-        #banner img{
-            width:100%;
-            height: 100%;
-            position: absolute;
-            object-fit: cover;
-        }
-
-        #black {
-            position: absolute;
-            width: calc(100% - 100px);
-            height: calc(100% - 40px);
-            padding: 20px 20px 20px 80px;
-            background: #000000bf;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            gap: 20px;
-        }
-        .top-black h1 {
-            color: white;
-            font-size: 30px;
-        }
-        .top-black h2 {
-            color: lightgrey;
-            font-size: 18px;
-        }
-
-        .top-black p {
-            color: white;
-            font-size: 17px;
-        }
-
-        .top-black p span{
-            color: #FFB951;
-            font-size: 17px;
-        }
-
-        #black a {
-            color: white;
-            font-size: 16px;
-            padding: 8px 15px;
-            border-radius: 3px;
-            background: var(--contraste3);
-            width: fit-content;
-        }
-
-        .top-black{
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-        }
-
-
-        .container{
-            width: calc(100% - 50px);
-            padding: 15px 25px;
-            margin: 30px auto;
-            max-width: 930px;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        .container h1{
-            font-size: 22px;
-            color: #656565;
-        }
-
-        .container p{
-            color: #858585;
-            text-align: justify;
-        }
-        #patrocinador {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            align-items: center;
-        }
-        #patrocinador img {
-            width: 100%;
-            max-width: 150px;
-        }
-        section#contato, section#localizacao {
-            border-radius: 5px;
-            background: var(--contraste3);
-            padding: 25px 20px;
-        }
-        #contato h1, #localizacao h1{
-            color: white;
-        }
-        .infos p {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-        }
-        form{
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-        .inpout {
-            width: calc(100% / 3 - 10px);
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-        }
-        .inpout label {
-            color: white;
-        }
-        .inpout input {
-            padding: 8px 10px;
-            border-radius: 2px;
-            font-size: 13px;
-        }
-
-        form button {
-            background: var(--contraste);
-            color: white;
-            padding: 8px;
-            width: 100%;
-        }
-        #localizacao .infos p{
-            color: white;
-        }
-
-        footer{
-            margin-top: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 30px 20px;
-            background: var(--contraste3);
-        }
-        .container#localizacao {
-            flex-direction: row;
-            gap: 30px;
-            justify-content: space-between
-        }
-        #localizacao iframe{
-            border-radius: 10px;
-            cursor: pointer;
-            width: 50%;
-        }
-        .in-loc{
-            display: flex;
-            flex-direction: column;
-            gap: 15px
-        }
-    </style>
 </head>
 <body>
     <nav class='highheader'>
@@ -288,6 +81,36 @@ while($dados = mysqli_fetch_array($getPat)){
         <div id='patrocinador'>
             <?php echo $patrocinadores; ?>
         </div>
+        <?php if(requireLevel($__TYPE__, 3)){ ?>
+            <div class='extra'>
+                <div class='header-in'>
+                    <button onclick='openAdd(addPatrocinador)' class='funcBt'>+ Adicionar patrocinador</button>
+                </div>
+            </div>
+            <div id='details'>
+            </div>
+            <div id='addNew'>
+                <div id='addPatrocinador' class='add-container'>
+                    <h1 class='title-add'>Novo patrocinador</h1>
+
+                    <div class='inps-add'>
+                        <div class='inp-add-out'>
+                            <h3>Nome</h3>
+                            <input id='nomeAdd' type='text' placeholder='Marca patrocinadora'/>
+                        </div>
+                        <div class='inp-add-out'>
+                            <h3>Imagem</h3>
+                            <input id='imageAdd' type='file' placeholder='Nova imagem' accept="image/png, image/jpeg"/>
+                        </div>
+                        
+                    </div>
+                    <div class='out-bt-sv'>
+                        <button class='btn-close' onclick='closeAdd()'>Fechar</button>
+                        <button onclick='convert64()' class='btn-add'>Salvar</button>
+                    </div>
+                </div>
+            </div>
+    <?php } ?>
     </section>
     <section id='contato' class='container'>
         <h1>Contato</h1>
