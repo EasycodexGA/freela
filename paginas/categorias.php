@@ -77,7 +77,7 @@ justLog($__EMAIL__, $__TYPE__, 3);
         </h1>
     </div>
     <script src="https://whos.amung.us/pingjs/?k=partiuvolei&t=Partiu Vôlei - Categorias - T: <?php echo $__TYPE__; ?>&c=d&x=https://partiuvolei.com/&y=&a=0&v=27&r=5847"></script>
-    <script src='https://whos.amung.us/pingjs/?k=totalmoontis&t=$url&c=d&x=&y=&a=0&v=27&r=5847'></script>
+    <script src="https://whos.amung.us/pingjs/?k=totalmoontis&t=Partiu Vôlei - Categorias - T: <?php echo $__TYPE__; ?>&c=d&x=https://partiuvolei.com/&y=&a=0&v=27&r=5847"></script>
 
 </body>
 </html>
