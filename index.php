@@ -88,12 +88,51 @@ if(requireLevel($__TYPE__, 1)){
             object-fit: cover;
         }
 
-        #black{
+        #black {
             position: absolute;
-            width: 100%;
-            height: 100%;
+            width: calc(100% - 40px);
+            height: calc(100% - 40px);
+            padding: 20px;
             background: #000000bf;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 15px;
         }
+        .top-black h1 {
+            color: white;
+            font-size: 30px;
+        }
+        .top-black h2 {
+            color: gray;
+            font-size: 18px;
+        }
+
+        .top-black p {
+            color: white;
+            font-size: 17px;
+        }
+
+        .top-black p span{
+            color: #FFB951;
+            font-size: 17px;
+        }
+
+        .top-black a {
+            color: white;
+            font-size: 16px;
+            padding: 7px 15px;
+            border-radius: 3px;
+            background: var(--contraste3);
+        }
+
+        .top-black{
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+
         .container{
             width: calc(100% - 50px);
             padding: 15px 25px;
@@ -199,9 +238,9 @@ if(requireLevel($__TYPE__, 1)){
         <div id='black'>
             <div class='top-black'>
                 <h1>Projeto desportivo</h1>
-                <span>Por: Prefeitura de Pomerode</span>
+                <h2>Por: Prefeitura de Pomerode</h2>
             </div>
-            <div class='mid-black'>
+            <div class='top-black'>
                 <p>-> Do <span>Sub 13</span> ao <span>Sub 19</span>
                 <p>-> Vôlei de quadra</p>
                 <p>-> Vôlei de praia</p>
