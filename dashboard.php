@@ -36,14 +36,14 @@ if(!requireLevel($__TYPE__, 1)){
                     <button onclick='openPage(`galeria`, this)' id="eventosBt" class='btn'>Galeria</button>
                     <?php if(requireLevel($__TYPE__, 3)){ ?>
                         <button onclick='openPage(`contatos`, this)' id="eventosBt" class='btn'>Contatos</button>
-                        <button onclick='openPage(`equipes`, this)' id="eventosBt" class='btn'>Equipes</button>
                         <button onclick='openPage(`categorias`, this)' id="eventosBt" class='btn'>Categorias</button>
                         <button onclick='openPage(`profissionais`, this)' id="professoresBt" class="btn">Profissionais</button>
-                    <?php } if(requireLevel($__TYPE__, 2)){ ?>
-                        <button onclick='openPage(`recados`, this)' id="alunosBt" class='btn'>Recados</button>
-                        <button onclick='openPage(`alunos`, this)' id="alunosBt" class='btn'>Alunos</button>
-                    <?php } ?>
-                        <button onclick='openPage(`turmas`, this)' id="turmasBt" class='btn'>Turmas</button>
+                        <?php } if(requireLevel($__TYPE__, 2)){ ?>
+                            <button onclick='openPage(`recados`, this)' id="alunosBt" class='btn'>Recados</button>
+                            <button onclick='openPage(`alunos`, this)' id="alunosBt" class='btn'>Alunos</button>
+                            <?php } ?>
+                            <button onclick='openPage(`equipes`, this)' id="eventosBt" class='btn'>Equipes</button>
+                            <button onclick='openPage(`turmas`, this)' id="turmasBt" class='btn'>Turmas</button>
                         <button onclick='openPage(`eventos`, this)' id="eventosBt" class='btn'>Eventos</button>
                         <button onclick='openPage(`configuracoes`, this)' id="configBt" class='btn'>Configurações</button>
                         <a href='./' class='btn'>Voltar</a>
