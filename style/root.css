@@ -220,3 +220,8 @@
     opacity: 1!important;
     pointer-events: auto!important;
 }
+
+.excluir-pat{
+    cursor: pointer;
+    transition: all .3s;
+}
