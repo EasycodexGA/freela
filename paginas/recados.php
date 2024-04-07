@@ -209,6 +209,20 @@ justLog($__EMAIL__, $__TYPE__, 2);
             mensagem: "Ocorreu algum erro, contate o administrador",
             response: false
         }))
+
+        fetch("../sys/api/equipes/get/equipes")
+        .then(e => e.json())
+        .then(e=> {
+            for(let i of e.mensagem){
+                alunoAdd.innerHTML += `
+                    <option value='${i.id}'>${i.nome} - ${i.email}</option>
+                `;
+            }
+        })
+        .catch(e=>newMsg({
+            mensagem: "Ocorreu algum erro, contate o administrador",
+            response: false
+        }))
     </script>
 
     <script src="../js/class.js"></script>
