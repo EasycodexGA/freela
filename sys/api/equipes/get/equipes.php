@@ -9,7 +9,7 @@ if($__TYPE__ == 3){
     $_query_ = mysqli_query($__CONEXAO__, "select * from equipes");
 } else {
     $table = $__TYPE__ == 2 ? 'professores' : 'alunos';
-    $_query_ = mysqli_query($__CONEXAO__, "select * from equipes where id in (select equipes from $table where email='$__EMAIL__')");
+    $_query_ = mysqli_query($__CONEXAO__, "select * from equipes where id in (select equipe from $table where email='$__EMAIL__')");
 }
 
 $array = array();
