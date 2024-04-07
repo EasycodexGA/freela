@@ -216,10 +216,12 @@ if(requireLevel($__TYPE__, 1)){
         .container#localizacao {
             flex-direction: row;
             gap: 30px;
+            justify-content: space-between
         }
         #localizacao iframe{
             border-radius: 10px;
             cursor: pointer;
+            width: 50%;
         }
         .in-loc{
             display: flex;
