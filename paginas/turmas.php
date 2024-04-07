@@ -70,9 +70,10 @@ justLog($__EMAIL__, $__TYPE__, 1);
                 })' class='btn-add'>Salvar</button>
             </div>
         </div>
-        <?php } ?>
     </div>
+    <?php } ?>
 
+    <?php if(requireLevel($__TYPE__, 2)){ ?>
     <div id='addNewAula'>
         <div id='addAula' class='add-container'>
             <h1 class='title-add'>Nova aula</h1>
