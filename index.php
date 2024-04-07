@@ -90,9 +90,9 @@ if(requireLevel($__TYPE__, 1)){
 
         #black {
             position: absolute;
-            width: calc(100% - 40px);
+            width: calc(100% - 80px);
             height: calc(100% - 40px);
-            padding: 20px;
+            padding: 20px 40px;
             background: #000000bf;
             display: flex;
             flex-direction: column;
