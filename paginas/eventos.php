@@ -25,6 +25,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
         <div class='add-container' id='detailContainer'></div>
     </div>
 
+    <?php if(requireLevel($__TYPE__, 2)){ ?>
     <div class='extra'>
         <h1 class='title-header'>Funções</h1>
         <div class='header-in'>
@@ -32,6 +33,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
         </div>
     </div>
 
+    <?php } ?>
     <?php if(requireLevel($__TYPE__, 2)){ ?>
 
     <div id='addNew'>
