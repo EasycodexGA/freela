@@ -268,9 +268,7 @@ class File{
                             input.disabled = true;
                         }
                         if(isNumInp || isHorInp){
-                            if(isHorInp){
-                                console.log("---->",e.mensagem[0])
-                            }
+                            console.log("---->",e.mensagem[0], key)
                             if(typeof e.mensagem[0].def_time != "undefined"){
                                 input.valueAsNumber = Number(e.mensagem[0].def_time);
                             } else {
