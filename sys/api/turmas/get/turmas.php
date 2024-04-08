@@ -27,8 +27,8 @@ while($dados = mysqli_fetch_array($_query_)){
 
     $status = $status == '1' ? "active" : "inactive";
 
-    $query = mysqli_query($__CONEXAO__, "select id from alunos where turma='$id'");
-    $query2 = mysqli_query($__CONEXAO__, "select id from professores where turma='$id'");
+    $query = mysqli_query($__CONEXAO__, "select id from alunos where turma='$id' and email in (select email from users where active='1' and typeC='1')");
+    $query2 = mysqli_query($__CONEXAO__, "select id from professores where turma='$id' and email in (select email from users where active='1' and typeC='2')");
 
     $arr = array(
         "id"            => $id, 
