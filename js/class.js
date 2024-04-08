@@ -269,8 +269,8 @@ class File{
                         if(isNumInp){
                             if(typeof e.mensagem[0].def_time != "undefined"){
                                 input.valueAsNumber = Number(e.mensagem[0].def_time);
-
                             } else {
+                                console.log("----> ", key);
                                 input.valueAsNumber = deftime * 1000;
                             }
                         } else {
