@@ -141,6 +141,18 @@ function closeVerMais(id, type){
     }
 }
 
+function convertHora(millis) {
+    let seconds = Math.floor(millis / 1000);
+    let minutes = Math.floor(seconds / 60);
+    let hours = Math.floor(minutes / 60);
+  
+    seconds = seconds % 60;
+    minutes = minutes % 60;
+    hours = hours % 24;
+  
+    return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+  }
+
 function salvarCheckbox(id, type){
     if(id == 'aulas'){
         let temp = file.arrayStrAdd["aulasArray"];

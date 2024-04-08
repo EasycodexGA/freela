@@ -252,14 +252,16 @@ class File{
                         let input = document.createElement("input");
                         let typeInp = 'text';
                         let isNumInp = false;
-                        let isHorInp = false;
                         if(key == 'nascimento' || key == 'data'){
                             typeInp = 'date';
                             isNumInp = true;
                         }
+
+                        console.log(`-> ${key}`);
+
                         if(key == 'horario'){
                             typeInp = 'time';
-                            isHorInp = true;
+                            isNumInp = true;
                         }
                         input.classList.add('input-americano');
                         input.dataset.key = key;
@@ -267,18 +269,25 @@ class File{
                         if(disablekey.includes(key)){
                             input.disabled = true;
                         }
-                        console.log("---->",e.mensagem[0], key)
-                        if(isNumInp || isHorInp){
+                        if(isNumInp){
                             if(typeof e.mensagem[0].def_time != "undefined"){
                                 input.valueAsNumber = Number(e.mensagem[0].def_time);
+                                console.log("chegou 3");
+
                             } else {
                                 input.valueAsNumber = deftime * 1000;
+                                console.log("chegou 2");
                             }
+
                         } else {
                             input.value = value;
+                            console.log("chegou 1");
+
                         }
                         addOut.append(input);
+
                     } else {
+                        console.log("chegou 0");
                         p.innerHTML = value.toString();
                         addOut.append(p);
                     }
