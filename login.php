@@ -24,9 +24,10 @@ if($__TYPE__){
             <p class="title-p1">Voleibol</p>
             <p class="title-p2">Escolinhas</p>
         </div>
-
-        <div id="loginBox" class="login-box">
+        
+        <form action='javascript:void(0)' id="loginBox" class="login-box">
             <div class="inputDiv">
+                <p id="responseFalse"></p>
                 <p class="spanlog">Email</p>
                 <input name="email" id="email">
             </div>
@@ -37,12 +38,12 @@ if($__TYPE__){
             <div class="loginBot">
                 <button id="sendData" class="send-bt">Enviar</button>
                 <button id="forgotPass" class="sub-bt">Esqueceu sua senha?</button>
-                <p id="responseFalse"></p>
             </div>
-        </div>
+        </form>
 
-        <div id="verifyDiv" class="login-box">
+        <form action="javascript:void(0)" id="verifyDiv" class="login-box">
             <div class="inputDiv">
+                <p id="responseFalseVerify"></p>
                 <p class="spanLog" id="responseVerify">Código de verificação</p>
                 <input id="verifyCode" name="verifyCode">
             </div>
@@ -53,9 +54,8 @@ if($__TYPE__){
             <div class="loginBot">
                 <button id="sendNewPass" class="send-bt">Enviar</button>
                 <button id="backLogin" class="sub-bt">Voltar</button>
-                <p id="responseFalseVerify"></p>
             </div>
-        </div>
+        </form>
     </div>
 
     <script>
