@@ -28,8 +28,8 @@ while($_dados_ = mysqli_fetch_array($_query_)){
     $status     = $_dados_["active"];
     $status     = $status == '1' ? "active" : "inactive";
 
-    $query = mysqli_query($__CONEXAO__, "select id, nome from users where email in (select email from alunos where turma='$decTurma')")  or die("3");
-    $query2 = mysqli_query($__CONEXAO__, "select id, nome, imagem from users where email in (select email from professores where turma='$decTurma')") or die("4");
+    $query = mysqli_query($__CONEXAO__, "select id, nome from users where email in (select email from alunos where turma='$decTurma') and active='1'")  or die("3");
+    $query2 = mysqli_query($__CONEXAO__, "select id, nome, imagem from users where email in (select email from professores where turma='$decTurma') and active='1'") or die("4");
 
     $arrAlunos = array();
     $arrProf = array();
@@ -58,7 +58,7 @@ while($_dados_ = mysqli_fetch_array($_query_)){
         while($dados4 = mysqli_fetch_array($query4)){
             $idC = $dados4['id'];
             $idAC = $dados4['aluno'];
-            $queryA = mysqli_query($__CONEXAO__, "select nome from users where id='$idAC'");
+            $queryA = mysqli_query($__CONEXAO__, "select nome from users where id='$idAC' and active='1'");
             $nomeAC = mysqli_fetch_assoc($queryA)['nome']; 
             $presencaC = $dados4['presenca'];
             array_push($chamadaAula, array("id"=>$idC, "nome"=>decrypt($nomeAC), "checked"=>$presencaC));
