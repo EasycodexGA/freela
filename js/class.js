@@ -116,7 +116,7 @@ class File{
             btClose.innerText = "Fechar";
             outBt.append(btClose);
 
-            if((this.typeUser > 2) || (this.typeUser > 1 && (this.name == 'alunos' || this.name == 'recados'))){
+            if((this.typeUser >= 2) || (this.typeUser > 1 && (this.name == 'alunos' || this.name == 'recados'))){
                 let btRemove = document.createElement("button");
                 btRemove.classList.add("btn-add");
                 btRemove.id = 'btnRemove';
