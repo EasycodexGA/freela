@@ -29,7 +29,7 @@ justLog($__EMAIL__, $__TYPE__, 2);
         <div class='extra'>
             <h1 class='title-header'>Enviar recados</h1>
             <div class='header-in'>
-                <?php if(requireLevel($__TYPE__, 2)){ ?>
+                <?php if(requireLevel($__TYPE__, 3)){ ?>
                     <button onclick='openAdd(addRecadoGeral)' class='funcBt'>+ Para: Todos</button>
                 <?php } ?>
                 <button onclick='openAdd(addRecadoEquipe)' class='funcBt'>+ Para: Equipe</button>
