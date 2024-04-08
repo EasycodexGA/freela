@@ -289,9 +289,10 @@ class File{
                     } else {
                         console.log("chegou 0");
                         if(key == "horario"){
-                            console.log(e.mensagem);
+                            p.innerHTML = convertHora(e.mensagem[0].def_time);
+                        } else {
+                            p.innerHTML = value.toString();
                         }
-                        p.innerHTML = value.toString();
                         addOut.append(p);
                     }
                     inpsAdd.append(addOut);
