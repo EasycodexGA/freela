@@ -16,6 +16,9 @@ $to     = scapeString($__CONEXAO__, $json->to);
 
 
 if($type == 3){
+    if($__TYPE__ == 2){
+        endCode("Você não possui permissão para esse tipo de mensagem", false);
+    }
     $to = "geral";
     $to = setString($to);
 } else {
