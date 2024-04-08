@@ -35,7 +35,7 @@ while($_dados_ = mysqli_fetch_array($_query_)){
     }
 
     if($__TYPE__ == 2){
-        $ext = "and id in (select id turma from professores where email='$__EMAIL__')";
+        $ext = "and id in (select turma from professores where email='$__EMAIL__')";
     } else{
         $ext = "";
     }
