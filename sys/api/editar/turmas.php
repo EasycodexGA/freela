@@ -38,7 +38,7 @@ $active = decrypt($active);
 
 
 if($__TYPE__ == 2){
-    $checkTurma= mysqli_query($__CONEXAO__, "select id from turmas where id in (select turma from professores where email='$__EMAIL__') and id='$id')") or die("b");
+    $checkTurma= mysqli_query($__CONEXAO__, "select id from turmas where id in (select turma from professores where email='$__EMAIL__')") or die("b");
     if(mysqli_num_rows($checkTurma) > 0){
         endCode("Essa turma não lhe pertence", false);
     }
