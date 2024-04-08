@@ -51,7 +51,7 @@ while($_dados_ = mysqli_fetch_array($_query_)){
     }
 
     $allTurmas = array();
-    $query3 = mysqli_query($__CONEXAO__, "select id, nome from turmas where id not in (select turma from alunos where email='$email')");
+    $query3 = mysqli_query($__CONEXAO__, "select id, nome from turmas where id not in (select turma from alunos where email='$email') $ext");
 
     while($dados3 = mysqli_fetch_array($query3)){
         $turma3      = $dados3['nome'];
