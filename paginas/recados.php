@@ -220,7 +220,7 @@ justLog($__EMAIL__, $__TYPE__, 2);
             for(let i of e.mensagem){
                 if(i.status == "active"){
                     equipeAdd.innerHTML += `
-                        <option value='${i.id}'>${i.nome} - ${i.email}</option>
+                        <option value='${i.id}'>${i.nome}</option>
                     `;
                 }
             }
