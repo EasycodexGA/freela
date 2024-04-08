@@ -91,14 +91,6 @@ function verMais(id,type, titleStr){
                 presencaBt.setAttribute("onclick", `verMais('${id}${i.id}', 1, 'Chamada')`);
                 presencaBt.dataset.id = id;
                 div.append(presencaBt);
-            } else {
-                // let p = document.createElement('p');
-                // let takeCheck;
-                // for(i of file.arrayStrAdd[`${id}${i.id}Array`]){
-                //     if(i.)
-                // }
-                // p.innerText = 
-                // div.append(p)
             }
         }
 
