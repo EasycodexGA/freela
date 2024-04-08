@@ -17,8 +17,8 @@ function openDetail(id){
 }
 
 function closeAdd(){
-    addNew.classList.remove("add-active");
-    details.classList.remove("add-active");
+    typeof addNew != "undefined" ? addNew.classList.remove("add-active") : console.log("faltou");;
+    typeof details != "undefined" ? details.classList.remove("add-active") : console.log("faltou");;
 }
 
 function openAddAula(){
