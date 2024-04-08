@@ -288,6 +288,9 @@ class File{
 
                     } else {
                         console.log("chegou 0");
+                        if(key == "horario"){
+                            console.log(e.mensagem);
+                        }
                         p.innerHTML = value.toString();
                         addOut.append(p);
                     }
