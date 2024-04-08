@@ -186,9 +186,11 @@ justLog($__EMAIL__, $__TYPE__, 2);
         .then(e=>e.json())
         .then(e=>{     
             for(let i of e.mensagem){
-                turmaAdd.innerHTML += `
-                    <option value='${i.id}'>${i.nome} - ${i.categoria}</option>
-                `;
+                if(i.status == "active"){
+                    turmaAdd.innerHTML += `
+                        <option value='${i.id}'>${i.nome} - ${i.categoria}</option>
+                    `;
+                }
             }
         })
         .catch(e=>newMsg({
@@ -200,9 +202,11 @@ justLog($__EMAIL__, $__TYPE__, 2);
         .then(e => e.json())
         .then(e=> {
             for(let i of e.mensagem){
-                alunoAdd.innerHTML += `
-                    <option value='${i.id}'>${i.nome} - ${i.email}</option>
-                `;
+                if(i.status == "active"){
+                    alunoAdd.innerHTML += `
+                        <option value='${i.id}'>${i.nome} - ${i.email}</option>
+                    `;
+                }
             }
         })
         .catch(e=>newMsg({
@@ -214,9 +218,11 @@ justLog($__EMAIL__, $__TYPE__, 2);
         .then(e => e.json())
         .then(e=> {
             for(let i of e.mensagem){
-                equipeAdd.innerHTML += `
-                    <option value='${i.id}'>${i.nome} - ${i.email}</option>
-                `;
+                if(i.status == "active"){
+                    equipeAdd.innerHTML += `
+                        <option value='${i.id}'>${i.nome} - ${i.email}</option>
+                    `;
+                }
             }
         })
         .catch(e=>newMsg({
