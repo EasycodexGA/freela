@@ -51,6 +51,12 @@ $aulaId = mysqli_insert_id($__CONEXAO__);
 for($i = 0; $i < count($presenca); $i++){
     $idAluno = $presenca[$i]->id;
     $bool = $presenca[$i]->checked;
+
+    $checkActiveAluno = mysqli_query($__CONEXAO__, "select id from users where id='$idAluno' and active='1'");
+    if(mysqli_num_rows($checkActiveAluno) < 1){
+        $bool = false;
+    }
+    
     mysqli_query($__CONEXAO__, "insert into chamada (aula, aluno, presenca) values ('$aulaId','$idAluno','$bool')");
 }
 
