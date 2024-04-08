@@ -225,7 +225,7 @@ class File{
                                 addOut.append(p);
                             }
                         }
-                    } else if(key == 'status' && this.typeUser == 3){
+                    } else if(key == 'status' && this.typeUser >= 2){
                         let input = document.createElement("input");
                         input.type = 'checkbox';
                         input.classList.add("checkbox-presenca");
