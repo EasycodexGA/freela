@@ -36,7 +36,7 @@ function verMais(id,type, titleStr){
     if(!string){
         newMsg({
             mensagem: "Sem dados!",
-            response: "ag"
+            response: false
         })
         return;
     }
