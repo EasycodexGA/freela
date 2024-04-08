@@ -210,7 +210,7 @@ justLog($__EMAIL__, $__TYPE__, 2);
             response: false
         }))
 
-        fetch("../sys/api/equipes/get/equipes")
+        fetch("../sys/api/turmas/get/equipes")
         .then(e => e.json())
         .then(e=> {
             for(let i of e.mensagem){
