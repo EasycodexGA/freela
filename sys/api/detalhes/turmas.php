@@ -58,7 +58,7 @@ while($_dados_ = mysqli_fetch_array($_query_)){
         while($dados4 = mysqli_fetch_array($query4)){
             $idC = $dados4['id'];
             $idAC = $dados4['aluno'];
-            $queryA = mysqli_query($__CONEXAO__, "select nome from users where id='$idAC' and active='1'");
+            $queryA = mysqli_query($__CONEXAO__, "select nome from users where id='$idAC'");
             $nomeAC = mysqli_fetch_assoc($queryA)['nome']; 
             $presencaC = $dados4['presenca'];
             array_push($chamadaAula, array("id"=>$idC, "nome"=>decrypt($nomeAC), "checked"=>$presencaC));
