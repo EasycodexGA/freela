@@ -32,6 +32,13 @@ if(mysqli_num_rows($check) < 1){
     endCode("Categoria não existe", false);
 }
 
+if(!$active){
+    $c = mysqli_query($__CONEXAO__, "select id from turmas where categoria='$id'");
+    if(mysqli_num_rows($c) > 0){
+        endCode("Não da para desabilitar uma categoria que está em uso.", false);
+    }
+}
+
 mysqli_query($__CONEXAO__, "update categorias set nome='$title', active='$active' where id='$id'");
 
 endCode("Alterado com sucesso", true);
