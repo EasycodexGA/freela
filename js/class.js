@@ -139,7 +139,7 @@ class File{
                 verPresencaBt.setAttribute('onclick', "verMais('addAula', 1, 'Chamada')");
             }
 
-            if((this.typeUser > 2) || (this.typeUser > 1 && (this.name == 'alunos' || this.name == 'recados'))){
+            if((this.typeUser >= 2) || (this.typeUser > 1 && (this.name == 'alunos' || this.name == 'recados'))){
                 let btSave = document.createElement("button");
                 btSave.classList.add("btn-add");
                 btSave.setAttribute("onclick", "sendEdit(file.idDetail, file.name, this.parentNode.parentNode)");
