@@ -25,7 +25,7 @@ while($dados = mysqli_fetch_array($query)){
     
     $turmas = "";
     
-    $getTurmas = mysqli_query($__CONEXAO__, "select nome from turmas where id in (select turma from alunos where email='$email')");
+    $getTurmas = mysqli_query($__CONEXAO__, "select nome from turmas where id in (select turma from professores where email='$email')");
     
     while($t = mysqli_fetch_array($getTurmas)){
         $nm = decrypt($t["nome"]);
