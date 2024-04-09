@@ -12,7 +12,7 @@ $cabecalho = ['id', 'Nome', 'Titularidade', 'E-mail','CPF','Nascimento', 'Turmas
 
 fputcsv($resultado, $cabecalho, ';');
 
-$query = mysqli_query($__CONEXAO__, "select id, nome, email, cpf, nascimento, titularidade from users where typeC='1'");
+$query = mysqli_query($__CONEXAO__, "select id, nome, email, cpf, nascimento, titularidade from users where typeC='2'");
 
 // $arr = array();
 
