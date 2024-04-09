@@ -19,7 +19,7 @@ while($dados = mysqli_fetch_array($query)){
     $nome       = decrypt($dados["nome"]);
     $categoria  = $dados["categoria"];
     $horario    = decrypt($dados["horario"]);
-    $status     = $_dados_["active"];
+    $status     = $dados["active"];
     $status     = $status == '1' ? "active" : "inactive";
 
     $getCat = mysqli_query($__CONEXAO__, "select nome from categorias where id='$categoria'");
@@ -28,7 +28,7 @@ while($dados = mysqli_fetch_array($query)){
 
     $emails = array();
 
-    $getProf = mysqli_query($__CONEXAO__, "select email users where active='1' and email in (select email from professores where turma='$id')");
+    $getProf = mysqli_query($__CONEXAO__, "select email from users where active='1' and email in (select email from professores where turma='$id')");
     $professores = "";
 
     while($prof = mysqli_fetch_array($getProf)){
@@ -39,7 +39,7 @@ while($dados = mysqli_fetch_array($query)){
         array_push($emails, $em);
     }
 
-    $getAlunos = mysqli_query($__CONEXAO__, "select email users where active='1' and email in (select email from alunos where turma='$id')");
+    $getAlunos = mysqli_query($__CONEXAO__, "select email from users where active='1' and email in (select email from alunos where turma='$id')");
     $alunos = "";
 
     while($alu = mysqli_fetch_array($getAlunos)){

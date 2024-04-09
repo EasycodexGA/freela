@@ -22,7 +22,7 @@ while($dados = mysqli_fetch_array($query)){
     $email      = $dados["email"];
     $cpf        = decrypt($dados["cpf"]);
     $nascimento = date('d/m/Y', (decrypt($dados["nascimento"])+ 86400));
-    $status     = $_dados_["active"];
+    $status     = $dados["active"];
     $status     = $status == '1' ? "active" : "inactive";
     
     $getPeF = mysqli_query($__CONEXAO__, "select presenca from chamada where aluno='$id'");
