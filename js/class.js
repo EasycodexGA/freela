@@ -456,7 +456,7 @@ class Eventos extends File{
         this.thContent = ['nome', 'turma','categoria', 'data', 'status']
         // this.jumpDetail.push()
         this.numsDetail.push('data')
-        this.arrayDetail.push('turmas')
+        this.arrayDetail.push('turmas', 'equipes')
         this.createTh()
         this.getData()
     }

@@ -46,12 +46,6 @@ justLog($__EMAIL__, $__TYPE__, 1);
                     <input id='nomeAdd' type='text' placeholder='Vôlei de praia'/>
                 </div>
                 <div class='inp-add-out'>
-                    <h3>Turma</h3>
-                    <select id='turmaAdd'>
-                        <option value=''>Nenhuma turma</option>
-                    </select>
-                </div>
-                <div class='inp-add-out'>
                     <h3>Data</h3>
                     <input id='dataAdd' type='date'/>
                 </div>
@@ -64,7 +58,6 @@ justLog($__EMAIL__, $__TYPE__, 1);
                 <button class='btn-close' onclick='closeAdd()'>Fechar</button>
                 <button onclick='addNewData("turmas/cadastrar/evento", {
                     nome: nomeAdd.value,
-                    turma: turmaAdd.value,
                     data: (dataAdd.valueAsNumber / 1000),
                     descricao: descricaoAdd.value
 
@@ -89,24 +82,6 @@ justLog($__EMAIL__, $__TYPE__, 1);
         </table>
 
     </div>
-
-    <?php if(requireLevel($__TYPE__, 2)){ ?>
-    <script>
-        fetch("../sys/api/turmas/get/turmas")
-        .then(e=>e.json())
-        .then(e=>{
-            for(let i of e.mensagem){
-                turmaAdd.innerHTML += `
-                    <option value='${i.id}'>${i.nome} - ${i.categoria}</option>
-                `;
-            }
-        })
-        .catch(e=>newMsg({
-            mensagem: "Ocorreu algum erro, contate o administrador",
-            response: false
-        }))
-    </script>
-    <?php } ?>
 
     <script src="../js/class.js"></script>
     <script>const file = new Eventos(<?php echo $__TYPE__; ?>);</script>
