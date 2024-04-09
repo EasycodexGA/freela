@@ -8,11 +8,11 @@ header('Content-Disposition: attachment; filename=relatorio_aluno.csv');
 
 $resultado = fopen("php://output", 'w');
 
-$cabecalho = ['id', 'Nome', 'Titularidade', 'E-mail','CPF','Nascimento', 'Turmas'];
+$cabecalho = ['id', 'Nome', 'Titularidade', 'E-mail','CPF','Nascimento', 'Status', 'Turmas'];
 
 fputcsv($resultado, $cabecalho, ';');
 
-$query = mysqli_query($__CONEXAO__, "select id, nome, email, cpf, nascimento, titularidade from users where typeC='2'");
+$query = mysqli_query($__CONEXAO__, "select id, nome, email, cpf, nascimento, titularidade, active from users where typeC='2'");
 
 // $arr = array();
 
@@ -22,6 +22,8 @@ while($dados = mysqli_fetch_array($query)){
     $email      = $dados["email"];
     $cpf        = decrypt($dados["cpf"]);
     $nascimento = date('d/m/Y', (decrypt($dados["nascimento"])+ 86400));
+    $status     = $_dados_["active"];
+    $status     = $status == '1' ? "active" : "inactive";
     
     $turmas = "";
     
@@ -44,6 +46,7 @@ while($dados = mysqli_fetch_array($query)){
         decrypt($email),
         $cpf,
         $nascimento,
+        $status,
         $turmas
     );
 
