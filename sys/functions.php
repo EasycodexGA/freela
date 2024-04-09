@@ -136,6 +136,15 @@ function setCpf($cpf) {
     return encrypt($cpf);
 }
 
+function getHora($milissegundos) {
+    $segundos = $milissegundos / 1000;
+    $minutos = floor($segundos / 60);
+    $horas = floor($minutos / 60);
+    $minutos = $minutos % 60;
+
+    return str_pad($horas, 2, '0', STR_PAD_LEFT) . ':' . str_pad($minutos, 2, '0', STR_PAD_LEFT);
+}
+
 function converterHora($time){
     $time = decrypt($time);
     $time = date("H:i", ($time / 1000 + 10800 ));//10800 = +3h timezone

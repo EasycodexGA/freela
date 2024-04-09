@@ -19,7 +19,7 @@ while($dados = mysqli_fetch_array($query)){
     $nome       = decrypt($dados["nome"]);
     $categoria  = $dados["categoria"];
     $horario    = decrypt($dados["horario"]);
-    $horario    = converterHora($horario);
+    $horario    = getHora($horario);
     $status     = $dados["active"];
     $status     = $status == '1' ? "active" : "inactive";
 
