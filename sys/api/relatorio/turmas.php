@@ -8,7 +8,7 @@ header('Content-Disposition: attachment; filename=relatorio_aluno.csv');
 
 $resultado = fopen("php://output", 'w');
 
-$cabecalho = ['id', 'Nome', 'Categoria', 'Horário','Status'];
+$cabecalho = ['id', 'Nome', 'Categoria', 'Horário','Status', 'Alunos', 'Professores'];
 
 fputcsv($resultado, $cabecalho, ';');
 
@@ -28,7 +28,7 @@ while($dados = mysqli_fetch_array($query)){
 
     $emails = array();
 
-    $getProf = mysqli_query($__CONEXAO__, "select email from professores where turma='$id'");
+    $getProf = mysqli_query($__CONEXAO__, "select email users where active='1' and email in (select email from professores where turma='$id')");
     $professores = "";
 
     while($prof = mysqli_fetch_array($getProf)){
@@ -39,7 +39,7 @@ while($dados = mysqli_fetch_array($query)){
         array_push($emails, $em);
     }
 
-    $getAlunos = mysqli_query($__CONEXAO__, "select email from alunos where turma='$id'");
+    $getAlunos = mysqli_query($__CONEXAO__, "select email users where active='1' and email in (select email from alunos where turma='$id')");
     $alunos = "";
 
     while($alu = mysqli_fetch_array($getAlunos)){
