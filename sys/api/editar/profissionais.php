@@ -13,9 +13,10 @@ $id             = scapeString($__CONEXAO__, $json->id);
 $cpf            = scapeString($__CONEXAO__, $json->cpf);
 $nome           = scapeString($__CONEXAO__, $json->nome);
 $email          = scapeString($__CONEXAO__, $json->email);
+$active         = scapeString($__CONEXAO__, $json->active);
+$turmas         = $json->turmas;
 $nascimento     = scapeString($__CONEXAO__, $json->nascimento);
 $titularidade   = scapeString($__CONEXAO__, $json->titularidade);
-$active         = scapeString($__CONEXAO__, $json->active);
 
 $id             = setNum($id);
 $cpf            = setCpf($cpf);
@@ -58,6 +59,22 @@ $checkRepeat = mysqli_query($__CONEXAO__, "select id from users where cpf='$cpf'
 
 if(mysqli_num_rows($checkRepeat) > 0){
     endCode(" CPF já está em uso.", false);
+}
+
+for($i = 0; $i < count($turmas); $i++){
+    $check = $turmas[$i]->checked;
+    $idTurma = $turmas[$i]->id;
+    $check = $check == 1 ? true : false;
+    $check_query = mysqli_query($__CONEXAO__, "select id from professores where turma='$idTurma' and email='$emm'");
+    if($check){
+        if(mysqli_num_rows($check_query) == 0){
+            mysqli_query($__CONEXAO__, "insert into professores (email, turma) values ('$emm','$idTurma')") or die('ccc');
+        }
+    } else {
+        if(mysqli_num_rows($check_query) > 0){
+            mysqli_query($__CONEXAO__, "delete from professores where email='$emm' and turma='$idTurma'");
+        }
+    }
 }
 
 mysqli_query($__CONEXAO__, "update users set nome='$nome', cpf='$cpf', email='$email', nascimento='$nascimento', titularidade='$titularidade', active='$active' where id='$id'");
