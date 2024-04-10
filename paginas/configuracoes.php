@@ -21,7 +21,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
                 <img style="position: absolute; width: 100%; height: 100%; object-fit: cover;" id='imagemGet' src="">
             </div>
 
-            <a id='curriculoGet' href='#'>Ver curriculo</a>
+            <a id='curriculoGet' target='_blank' href='#'>Ver curriculo</a>
         </div>
     <?php } ?>
 
