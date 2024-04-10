@@ -26,6 +26,7 @@ $siteGet = mysqli_query($__CONEXAO__, "select banner, title from configs where i
 $assocBanner = mysqli_fetch_assoc($siteGet);
 $titleBanner = decrypt($assocBanner["title"]);
 $imgBanner = decrypt($assocBanner["banner"]);
+$locBannerImg = "$__WEB__/imagens/website/$img";
 ?>
 
 <!DOCTYPE html>
