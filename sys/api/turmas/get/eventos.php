@@ -9,7 +9,7 @@ if($__TYPE__ == 3){
     $_query_ = mysqli_query($__CONEXAO__, "select * from eventos");
 } else {
     $table = $__TYPE__ == 2 ? 'professores' : 'alunos';
-    $_query_ = mysqli_query($__CONEXAO__, "select * from eventos where turma in (select turma from $table where email='$__EMAIL__')");
+    $_query_ = mysqli_query($__CONEXAO__, "select e.* from eventos e join $table t on e.turmas like '%,' + t.turma + ',%' where t.email='$__EMAIL__'");
 }
 
 $array = array();

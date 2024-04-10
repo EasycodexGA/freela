@@ -90,6 +90,24 @@ while($dados = mysqli_fetch_array($getPat)){
             <div id='details'>
             </div>
             <div id='addNew'>
+            <div id='editSite' class='add-container'>
+                    <h1 class='title-add'>Editar site</h1>
+                    <div class='inps-add'>
+                        <div class='inp-add-out'>
+                            <h3>Titulo banner</h3>
+                            <input id='tituloAdd' type='text' placeholder='Projeto desportivo'/>
+                        </div>
+                        <div class='inp-add-out'>
+                            <h3>Imagem</h3>
+                            <input id='bannerAdd' type='file' placeholder='Nova imagem' accept="image/png, image/jpeg"/>
+                        </div>
+                        
+                    </div>
+                    <div class='out-bt-sv'>
+                        <button class='btn-close' onclick='closeAdd()'>Fechar</button>
+                        <button onclick='editSite()' class='btn-add'>Salvar</button>
+                    </div>
+                </div>
                 <div id='addPatrocinador' class='add-container'>
                     <h1 class='title-add'>Novo patrocinador</h1>
 

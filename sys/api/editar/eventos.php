@@ -49,43 +49,32 @@ if($__TYPE__ == 2){
     }
 }
 
-$takeData = mysqli_query($__CONEXAO__, "select nome, data, descricao from eventos where id='$id'");
-$assoc = mysqli_fetch_assoc($takeData);
-$nomeA = $assoc["nome"];
-$dataA = $assoc['data'];
-$descA = $assoc['descricao'];
+$turmasArray = array();
 
 for($i = 0; $i < count($turmas); $i++){
-    $check = $turmas[$i]->checked;
+    $check = $turmas[$i]->checked == 1 ? true : false;
     $idTurma = $turmas[$i]->id;
-    $check = $check == 1 ? true : false;
-    $check_query = mysqli_query($__CONEXAO__, "select id from eventos where turma='$idTurma' and where nome='$nomeA' and data='$dataA'");
     if($check){
-        if(mysqli_num_rows($check_query) == 0){
-            mysqli_query($__CONEXAO__, "insert into eventos (nome, data, descricao, turma) values ('$nomeA','$dataA','$descA','$idTurma')") or die('ccc');
-        }
-    } else {
-        if(mysqli_num_rows($check_query) > 0){
-            mysqli_query($__CONEXAO__, "delete from eventos where where nome='$nomeA' and data='$dataA' and turma='$idTurma'");
-        }
+        array_push($turmasArray, $idTurma);
     }
 }
+
+$equipesArray = array();
 
 for($i = 0; $i < count($equipes); $i++){
-    $check = $equipes[$i]->checked;
+    $check = $equipes[$i]->checked == 1 ? true : false;
     $idEquipe = $equipes[$i]->id;
-    $check_query = mysqli_query($__CONEXAO__, "select id from eventos where equipe='$idEquipe' and where nome='$nomeA' and data='$dataA'");
     if($check){
-        if(mysqli_num_rows($check_query) == 0){
-            mysqli_query($__CONEXAO__, "insert into eventos (nome, descricao, data, equipe) values ('$nomeA', '$descA', '$dataA','$idEquipe')");
-        }
-    } else {
-        if(mysqli_num_rows($check_query) > 0){
-            mysqli_query($__CONEXAO__, "delete from eventos where where nome='$nomeA' and data='$dataA' and equipe='$idEquipe'");
-        }
+        array_push($equipesArray, $idEquipe);
     }
 }
 
-mysqli_query($__CONEXAO__, "update eventos set nome='$nome', data='$data', descricao='$descricao', active='$active' where id='$id'");
+$turmasArray = implode(',', $turmasArray);
+$turmasArray = ',' + $turmasArray;
+
+$equipesArray = implode(',', $equipesArray);
+$equipesArray = $equipesArray;
+
+mysqli_query($__CONEXAO__, "update eventos set nome='$nome', data='$data', descricao='$descricao', active='$active', turmas='$turmasArray', equipes='$equipesArray' where id='$id'");
 
 endCode("Alterado com sucesso", true);

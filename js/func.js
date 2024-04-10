@@ -328,6 +328,17 @@ if (typeof searchBar2 !== "undefined"){
     })
 }
 
+const editSite = async () => {
+    let file = bannerAdd.files[0];
+    if(!file) return;
+    let base64 = await getBase64(file);
+
+    addNewData("extra/site/edit", {
+        titulo: tituloAdd.value,
+        image: base64
+    })
+}
+
 const convert64 = async () => {
     let file = imageAdd.files[0];
     if(!file) return;

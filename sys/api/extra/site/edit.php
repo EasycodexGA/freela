@@ -8,20 +8,14 @@ header('Content-Type: application/json; charset=utf-8');
 $request = file_get_contents('php://input');
 $json = json_decode($request);
 
-$nome  = scapeString($__CONEXAO__, $json->nome);
+$titulo  = scapeString($__CONEXAO__, $json->titulo);
 $image  = scapeString($__CONEXAO__, $json->image);
 
-$nome   = setNoXss($nome);
+$titulo   = setNoXss($titulo);
 
-checkMissing(
-    array(
-        $nome,
-        $image,
-    )
-);
+if($image)
 
-$caminho = "../../../../imagens/patrocinadores";
-
+$caminho = "../../../../imagens/website";
 
 if (!file_exists($caminho)) {
     if (!mkdir($caminho, 0777, true)) {
@@ -61,8 +55,8 @@ $completo = "$caminho/$novoNome";
 $novoNomeEnc = encrypt($novoNome);
 
 if (file_put_contents($completo, $imageData)) {
-    mysqli_query($__CONEXAO__, "insert into patrocinadores (nome, img) values ('$nome', '$novoNomeEnc')") or endCode("Erro ao salvar imagem", false);
-    endCode("Sucesso no upload! $completo", true);
+    mysqli_query($__CONEXAO__, "update configs set title='$nome', banner='$novoNomeEnc'") or endCode("Erro ao salvar", false);
+    endCode("Editado com sucesso!", true);
 } else {
     endCode("Erro ao salvar imagem", false);
 }
