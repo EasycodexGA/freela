@@ -69,6 +69,10 @@ if($ext != ""){
 }
 }
 
+if($ext == ""){
+    endCode("Erro", false);
+}
+
 if (file_put_contents($completo, $imageData)) {
     mysqli_query($__CONEXAO__, "update configs set $ext") or endCode("Erro ao salvar", false);
     endCode("Editado com sucesso!", true);

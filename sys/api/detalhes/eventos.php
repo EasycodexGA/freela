@@ -53,7 +53,7 @@ while($_dados_ = mysqli_fetch_array($_query_)){
     $allEquipes = array();
 
 
-    $queryT = mysqli_query($__CONEXAO__, "select id, nome from turmas where id in $thisTurmas")or die ('aaa');
+    $queryT = mysqli_query($__CONEXAO__, "select id, nome from turmas where id in ($thisTurmas)")or die ('aaa');
     $queryNotT = mysqli_query($__CONEXAO__, "select id, nome from turmas where id not in $thisTurmas") or die('bbb');
 
     $queryE = mysqli_query($__CONEXAO__, "select id, nome from equipes where id in $thisEquipes");
