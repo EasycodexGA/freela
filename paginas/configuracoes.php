@@ -27,7 +27,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
                 what: "imagem"
             })'>Remover foto</button>
         </div>
-        <h1 class='title-header'>Curriculo</h1>
+        <h1 class='title-header'>Informações</h1>
         <div class='inps-out' id='curriculoGeral' style='align-items: center;'>
             <a id='curriculoGet' class='btn-add' target='_blank' href='#'>Ver currículo</a>
             <button id='curriculoRem' class='btn-add exit-bt' onclick='addNewData("usuarios/perfil/remove", {
