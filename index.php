@@ -21,6 +21,11 @@ while($dados = mysqli_fetch_array($getPat)){
     $extra = $__TYPE__ == 3 ? "onclick='addNewData(`extra/patrocinadores/remove`,{id:$id})' class='excluir-pat'" : "";
     $patrocinadores .= "<img $extra src='$__WEB__/imagens/patrocinadores/$img' alt='$nome'/>";
 }
+
+$siteGet = mysqli_query($__CONEXAO__, "select banner, title from configs where id='1'");
+$assocBanner = mysqli_fetch_assoc($siteGet);
+$titleBanner = $assocBanner["title"];
+$titleBanner
 ?>
 
 <!DOCTYPE html>
@@ -61,7 +66,7 @@ while($dados = mysqli_fetch_array($getPat)){
         <img src='./img/time.png'>
         <div id='black'>
             <div class='top-black'>
-                <h1>Projeto desportivo</h1>
+                <h1><?php echo $titleBanner; ?></h1>
                 <h2>Por: Prefeitura de Pomerode</h2>
             </div>
             <div class='top-black'>

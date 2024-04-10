@@ -37,13 +37,11 @@ while($_dados_ = mysqli_fetch_array($_query_)){
 
     $thisTurmas = $assocEventos['turmas'];
     $thisTurmas = substr($thisTurmas, 1);
-    $thisTurmas = explode($thisTurmas, ',');
-    $thisTurmas = $thisTurmas ? $thisTurmas : array();
+    $thisTurmas = '(' . $thisTurmas . ')';
 
     $thisEquipes = $assocEventos['equipes'];
     $thisEquipes = substr($thisEquipes, 1);
-    $thisEquipes = explode($thisEquipes, ',');
-    $thisEquipes = $thisEquipes ? $thisEquipes : array();
+    $thisEquipes = '(' . $thisEquipes . ')';
 
 
     $arrTurmas = array();
@@ -53,7 +51,7 @@ while($_dados_ = mysqli_fetch_array($_query_)){
     $allEquipes = array();
 
 
-    $queryT = mysqli_query($__CONEXAO__, "select id, nome from turmas where id in ($thisTurmas)")or die ('ccc');
+    $queryT = mysqli_query($__CONEXAO__, "select id, nome from turmas where id in $thisTurmas")or die ('ccc');
     $queryNotT = mysqli_query($__CONEXAO__, "select id, nome from turmas where id not in $thisTurmas") or die('bbb');
 
     $queryE = mysqli_query($__CONEXAO__, "select id, nome from equipes where id in $thisEquipes");
