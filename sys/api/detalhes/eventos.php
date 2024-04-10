@@ -36,8 +36,8 @@ while($_dados_ = mysqli_fetch_array($_query_)){
 
 
     $thisTurmas = $assocEventos['turmas'];
+    endCode(count($thisTurmas), false);
     $thisTurmas = count($thisTurmas) > 0 ? substr($thisTurmas, 1) : $thisTurmas;
-    endCode($thisTurmas, false);
 
     $thisEquipes = $assocEventos['equipes'];
     $thisEquipes = count($thisEquipes) > 0 ? substr($thisEquipes, 1) : $thisEquipes;
