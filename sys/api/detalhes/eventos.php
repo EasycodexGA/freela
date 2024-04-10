@@ -39,6 +39,7 @@ while($_dados_ = mysqli_fetch_array($_query_)){
     $thisTurmas = substr($thisTurmas, 1);
     $thisTurmas = explode($thisTurmas, ',');
     $thisTurmas = $thisTurmas ? $thisTurmas : array();
+    endCode($thisTurmas, false);
 
     $thisEquipes = $assocEventos['equipes'];
     $thisEquipes = substr($thisEquipes, 1);

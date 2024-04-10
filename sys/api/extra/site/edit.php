@@ -18,7 +18,7 @@ if(!$titulo and !$image){
 if($titulo){
     $ext   = "title='" . setNoXss($titulo) . "'";
 } else {
-    $titulo = "";
+    $ext = "";
 }
 
 if($image){
@@ -62,9 +62,8 @@ $novoNome   = "i$__TIME__$__CODE__.$format";
 $completo = "$caminho/$novoNome";
 $novoNomeEnc = encrypt($novoNome);
 
-$ext = ", banner='$novoNomeEnc'";
-} else {
-    $ext = "";
+if($ext != "")
+$ext .= ", banner='$novoNomeEnc'";
 }
 
 if (file_put_contents($completo, $imageData)) {
