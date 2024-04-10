@@ -453,7 +453,7 @@ class Eventos extends File{
         super(id)
         this.name = 'eventos'
         this.linkGet = 'turmas/get/eventos'
-        this.thContent = ['nome', 'turma','categoria', 'data', 'status']
+        this.thContent = ['nome', 'data', 'status']
         // this.jumpDetail.push()
         this.numsDetail.push('data')
         this.arrayDetail.push('turmas', 'equipes')
