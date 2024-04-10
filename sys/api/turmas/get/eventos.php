@@ -19,20 +19,10 @@ while($dados = mysqli_fetch_array($_query_)){
     $data       = $dados["data"];
     $status     = $dados["active"]; 
     $status     = $status == '1' ? "active" : "inactive";
-    $turmaId    = $dados["turma"];
-
-    $getCat     = mysqli_query($__CONEXAO__, "select categoria from turma where id='$turma'");
-    $categoria  = mysqli_fetch_assoc($getCat)["categoria"];
-
-    $queryT = mysqli_query($__CONEXAO__, "select nome from turmas where id='$turmaId'");
-
-    $turma = mysqli_fetch_assoc($queryT)["nome"];
 
     $arr = array(
         "id"        => $dados["id"], 
         "nome"      => $nome,
-        "turma"     => decrypt($turma),
-        "categoria" => decrypt($categoria),
         "data"      => $data,
         "status"    => $status,
         "_name"     => "eventos"
