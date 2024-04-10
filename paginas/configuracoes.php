@@ -16,7 +16,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
     <h1 class='title-header'>Configurações</h1>
 
     <?php if(uniqueLevel($__TYPE__, 2)){ ?>
-        <div class='inps-out' style='flex-direction: column;'>
+        <div class='inps-out' style='align-items: center;'>
             <div style="width: 125px; aspect-ratio: 1; position: relative; border-radius: 100px; overflow: hidden;" bis_skin_checked="1">
                 <img style="position: absolute; width: 100%; height: 100%; object-fit: cover;" id='imagemGet' src="">
             </div>
