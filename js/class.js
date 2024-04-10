@@ -153,7 +153,7 @@ class File{
                 let qt;
                 let type = 0;
                 let deftime = 0;
-                if((key == 'turmas' || key == 'equipes') && (this.name == 'alunos' || this.name == 'profissionais')){
+                if((key == 'turmas' || key == 'equipes') && (this.name == 'alunos' || this.name == 'profissionais' || this.name == 'eventos')){
                     type = 1;
                 }
                 if(this.numsDetail.includes(key)){
