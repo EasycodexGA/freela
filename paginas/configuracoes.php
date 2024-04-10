@@ -138,7 +138,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
             <?php if(uniqueLevel($__TYPE__, 2)){ ?>
                 titularidadeGet.value = data["0"].titularidade;
                 imagemGet.src = "../imagens/perfil/" + data["0"].imagem;
-                curriculoGet.href = data["0"].curriculo;
+                curriculoGet.href = "../arquivos/curriculos/" + data["0"].curriculo;
             <?php } ?>
 
             newMsg({
