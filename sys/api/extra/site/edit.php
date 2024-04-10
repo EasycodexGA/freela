@@ -15,7 +15,11 @@ if(!$titulo and !$image){
     endCode("Altere alguma coisa", false);
 }
 
-$titulo   = setNoXss($titulo);
+if($titulo){
+    $ext   = "title='" . setNoXss($titulo) . "'";
+} else {
+    $titulo = "";
+}
 
 if($image){
 
@@ -64,7 +68,7 @@ $ext = ", banner='$novoNomeEnc'";
 }
 
 if (file_put_contents($completo, $imageData)) {
-    mysqli_query($__CONEXAO__, "update configs set title='$nome' $ext") or endCode("Erro ao salvar", false);
+    mysqli_query($__CONEXAO__, "update configs set $ext") or endCode("Erro ao salvar", false);
     endCode("Editado com sucesso!", true);
 } else {
     endCode("Erro ao salvar imagem", false);
