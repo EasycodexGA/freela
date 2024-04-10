@@ -108,7 +108,7 @@ $locBannerImg = "$__WEB__/imagens/website/$imgBanner";
                     <div class='inps-add'>
                         <div class='inp-add-out'>
                             <h3>Titulo banner</h3>
-                            <input id='tituloAdd' type='text' placeholder='Projeto desportivo'/>
+                            <input id='tituloAdd' type='text' placeholder='<?php echo $titleBanner; ?>'/>
                         </div>
                         <div class='inp-add-out'>
                             <h3>Imagem</h3>
