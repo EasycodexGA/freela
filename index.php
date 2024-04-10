@@ -52,7 +52,7 @@ $locBannerImg = "$__WEB__/imagens/website/$img";
     </nav>
     <header>
         <div class='left-h'>
-            <img src='./img/logo.png'>
+            <img src='<?php echo $locBannerImg; ?>'>
         </div>
         <div class='right-h'>
             <a href='./' class='link-h'>Início</a>
