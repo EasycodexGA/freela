@@ -67,6 +67,7 @@ section#banner {
 .top-black h1 {
     color: white;
     font-size: 30px;
+    text-transform: uppercase;
 }
 .top-black h2 {
     color: lightgrey;
