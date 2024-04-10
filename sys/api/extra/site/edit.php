@@ -73,7 +73,7 @@ if($ext == ""){
     endCode("Erro, sem dados", false);
 }
 
-if (file_put_contents($completo, $imageData)) {
+if (file_put_contents($completo, $imageData) or !$image) {
     mysqli_query($__CONEXAO__, "update configs set $ext") or endCode("Erro ao salvar", false);
     endCode("Editado com sucesso!", true);
 } else {
