@@ -28,7 +28,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
             })'>Remover foto</button>
         </div>
         <h1 class='title-header'>Curriculo</h1>
-        <div class='inps-out' style='align-items: center;'>
+        <div class='inps-out' id='curriculoGeral' style='align-items: center;'>
             <a id='curriculoGet' class='btn-add' target='_blank' href='#'>Ver currículo</a>
             <button id='curriculoRem' class='btn-add exit-bt' onclick='addNewData("usuarios/perfil/remove", {
                     what: "curriculo"
@@ -161,8 +161,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
                 }
                 imagemGet.src = imgProf;
                 if(!data["0"].curriculo){
-                    curriculoGet.style.display = "none";
-                    curriculoRem.style.display = "none";
+                    curriculoGeral.style.display = "none";
                 }
                 curriculoGet.href = "../arquivos/curriculos/" + data["0"].curriculo;
             <?php } ?>
