@@ -11,11 +11,11 @@ $json = json_decode($request);
 $titulo  = scapeString($__CONEXAO__, $json->titulo);
 $image  = scapeString($__CONEXAO__, $json->image);
 
-if(!$titulo and !$image)
+if(!$titulo and !$image){
+    endCode("Altere alguma coisa", false);
+}
 
 $titulo   = setNoXss($titulo);
-
-
 
 if($image){
 

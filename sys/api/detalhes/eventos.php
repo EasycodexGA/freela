@@ -36,6 +36,7 @@ while($_dados_ = mysqli_fetch_array($_query_)){
 
 
     $thisTurmas = $assocEventos['turmas'];
+    endCode($thisTurmas, false);
     $thisTurmas = substr($thisTurmas, 1);
     $thisTurmas = explode($thisTurmas, ',');
     endCode($thisTurmas, false);
