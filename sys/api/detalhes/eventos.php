@@ -41,7 +41,6 @@ while($_dados_ = mysqli_fetch_array($_query_)){
     $thisEquipes = $assocEventos['equipes'];
     $thisEquipes = strlen($thisEquipes) > 0 ? substr($thisEquipes, 1) : 'x';
 
-    $thisbb = "('$thisTurmas')";
 
 
     $arrTurmas = array();
@@ -51,12 +50,12 @@ while($_dados_ = mysqli_fetch_array($_query_)){
     $allEquipes = array();
 
 
-    $queryT = mysqli_query($__CONEXAO__, "select id, nome from turmas where id in $thisbb") or die ("asd".$thisbb);
+    $queryT = mysqli_query($__CONEXAO__, "select id, nome from turmas where id in ('$thisTurmas')") or die ("asd".$thisbb);
 
-    $queryNotT = mysqli_query($__CONEXAO__, "select id, nome from turmas where id not in ($thisTurmas)") or die('bbb');
+    $queryNotT = mysqli_query($__CONEXAO__, "select id, nome from turmas where id not in ('$thisTurmas')") or die('bbb');
 
-    $queryE = mysqli_query($__CONEXAO__, "select id, nome from equipes where id in ($thisEquipes)");
-    $queryNotE = mysqli_query($__CONEXAO__, "select id, nome from equipes where id not in ($thisEquipes)");
+    $queryE = mysqli_query($__CONEXAO__, "select id, nome from equipes where id in ('$thisEquipes')");
+    $queryNotE = mysqli_query($__CONEXAO__, "select id, nome from equipes where id not in ('$thisEquipes')");
 
 
     while($dadosT = mysqli_fetch_array($queryT)){
