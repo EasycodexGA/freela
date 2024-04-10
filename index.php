@@ -24,8 +24,8 @@ while($dados = mysqli_fetch_array($getPat)){
 
 $siteGet = mysqli_query($__CONEXAO__, "select banner, title from configs where id='1'");
 $assocBanner = mysqli_fetch_assoc($siteGet);
-$titleBanner = $assocBanner["title"];
-$titleBanner
+$titleBanner = decrypt($assocBanner["title"]);
+$imgBanner = decrypt($assocBanner["banner"]);
 ?>
 
 <!DOCTYPE html>
