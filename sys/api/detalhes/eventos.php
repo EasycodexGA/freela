@@ -37,7 +37,6 @@ while($_dados_ = mysqli_fetch_array($_query_)){
 
     $thisTurmas = $assocEventos['turmas'];
     $thisTurmas = strlen($thisTurmas) > 0 ? substr($thisTurmas, 1) : 'x';
-    var_dump($thisTurmas);
 
     $thisEquipes = $assocEventos['equipes'];
     $thisEquipes = strlen($thisEquipes) > 0 ? substr($thisEquipes, 1) : 'x';
