@@ -69,14 +69,11 @@ for($i = 0; $i < count($equipes); $i++){
     }
 }
 
-var_dump($turmasArray);
 $turmasArray = implode(',', $turmasArray);
-var_dump($turmasArray);
-$turmasArray = ',' + $turmasArray;
-var_dump($turmasArray);
+$turmasArray = ',' . $turmasArray;
 
 $equipesArray = implode(',', $equipesArray);
-$equipesArray = $equipesArray;
+$equipesArray = ',' . $equipesArray;
 
 mysqli_query($__CONEXAO__, "update eventos set nome='$nome', data='$data', descricao='$descricao', active='$active', turmas='$turmasArray', equipes='$equipesArray' where id='$id'") or die("plmdds");
 
