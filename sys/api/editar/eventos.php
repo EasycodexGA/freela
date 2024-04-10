@@ -50,9 +50,10 @@ if($__TYPE__ == 2){
 }
 
 $takeData = mysqli_query($__CONEXAO__, "select nome, data, descricao from eventos where id='$id'");
-$nomeA = mysqli_fetch_assoc($takeData)['nome'];
-$dataA = mysqli_fetch_assoc($takeData)['data'];
-$descA = mysqli_fetch_assoc($takeData)['descricao'];
+$assoc = mysqli_fetch_assoc($takeData);
+$nomeA = $assoc["nome"];
+$dataA = $assoc['data'];
+$descA = $assoc['descricao'];
 
 for($i = 0; $i < count($turmas); $i++){
     $check = $turmas[$i]->checked;
