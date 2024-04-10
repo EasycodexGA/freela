@@ -70,7 +70,7 @@ if($ext != ""){
 }
 
 if($ext == ""){
-    endCode("Erro", false);
+    endCode("Erro, sem dados", false);
 }
 
 if (file_put_contents($completo, $imageData)) {
