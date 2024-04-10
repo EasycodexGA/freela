@@ -82,7 +82,7 @@ $locBannerImg = "$__WEB__/imagens/website/$imgBanner";
         <section class='container'>
             <div class='extra'>
                 <div class='header-in'>
-                    <button onclick='openAdd(changeSite)' class='funcBt'>+ Alterar informações</button>
+                    <button onclick='openAdd(changeSite)' class='funcBt'>+ Editar banner</button>
                 </div>
             </div>
         </section>
