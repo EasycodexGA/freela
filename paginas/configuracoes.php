@@ -22,6 +22,14 @@ justLog($__EMAIL__, $__TYPE__, 1);
             </div>
 
             <a id='curriculoGet' class='btn-add' target='_blank' href='#'>Ver curriculo</a>
+            
+            <button class='btn-add' onclick='addNewData("usuarios/perfil/remove", {
+                    what: "imagem"
+                })'>Remover foto</button>
+
+            <button class='btn-add' onclick='addNewData("usuarios/perfil/remove", {
+                    what: "curriculo"
+                })'>Remover Curriculo</button>
         </div>
     <?php } ?>
 

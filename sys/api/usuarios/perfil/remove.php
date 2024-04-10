@@ -12,8 +12,19 @@ $request = file_get_contents('php://input');
 $json = json_decode($request);
 
 $what  = scapeString($__CONEXAO__, $json->what);
+$what  = setNoXss($what);
 
 checkMissing(array(
     $what
 ));
+
+$what = decrypt($what);
+
+if($what != "curriculo" and $what != "imagem"){
+    endCode("Inválido.", false);
+}
+
+mysqli_query($__CONEXAO__, "update users set $what='' where email='$__EMAIL__'");
+
+endCode("Removido com sucesso!", true);
 

@@ -64,7 +64,7 @@ $imgUser = decrypt($assoc["imagem"]);
 if (imagejpeg($imageS, $completo, 60)) {
     unlink("$caminho/$imgUser");
     mysqli_query($__CONEXAO__, "update users set imagem='$novoNomeEnc' where id='$__ID__'") or endCode("Erro ao salvar imagem", false);
-    endCode("Sucesso no upload!", "enviado");
+    endCode("Sucesso no upload!", true);
 } else {
     endCode("Erro ao salvar imagem", false);
 }
