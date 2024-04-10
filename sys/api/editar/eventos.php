@@ -75,6 +75,6 @@ $turmasArray = ',' . $turmasArray;
 $equipesArray = implode(',', $equipesArray);
 $equipesArray = ',' . $equipesArray;
 
-mysqli_query($__CONEXAO__, "update eventos set nome='$nome', data='$data', descricao='$descricao', active='$active', turmas='$turmasArray', equipes='$equipesArray' where id='$id'") or die("plmdds");
+mysqli_query($__CONEXAO__, "update eventos set nome='$nome', data='$data', descricao='$descricao', active='$active', turmas='$turmasArray', equipes='$equipesArray' where id='$id'");
 
 endCode("Alterado com sucesso", true);
