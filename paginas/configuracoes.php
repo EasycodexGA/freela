@@ -15,6 +15,16 @@ justLog($__EMAIL__, $__TYPE__, 1);
 <body>
     <h1 class='title-header'>Configurações</h1>
 
+    <?php if(uniqueLevel($__TYPE__, 2)){ ?>
+        <div class='inps-out'>
+            <div style="width: 125px; aspect-ratio: 1; position: relative; border-radius: 100px; overflow: hidden;" bis_skin_checked="1">
+                <img style="position: absolute; width: 100%; height: 100%; object-fit: cover;" id='imagemGet' src="">
+            </div>
+
+            <a id='curriculoGet' href='#'>Ver curriculo</a>
+        </div>
+    <?php } ?>
+
     <div class='inps-out'>
         <div class='infs-conf'>
             <h1>Nome</h1>
@@ -127,6 +137,8 @@ justLog($__EMAIL__, $__TYPE__, 1);
 
             <?php if(uniqueLevel($__TYPE__, 2)){ ?>
                 titularidadeGet.value = data["0"].titularidade;
+                imagemGet.src = "../imagens/perfil/" + data["0"].imagem;
+                curriculoGet.href = data["0"].curriculo;
             <?php } ?>
 
             newMsg({
