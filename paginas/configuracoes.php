@@ -144,8 +144,9 @@ justLog($__EMAIL__, $__TYPE__, 1);
             nascimentoGet.value = nascimentoG;
 
             <?php if(uniqueLevel($__TYPE__, 2)){ ?>
+                let imgProf = data["0"].imagem ? "../imagens/perfil/" + data["0"].imagem : "../img/default.webp";
                 titularidadeGet.value = data["0"].titularidade;
-                imagemGet.src = "../imagens/perfil/" + data["0"].imagem;
+                imagemGet.src = imgProf;
                 curriculoGet.href = "../arquivos/curriculos/" + data["0"].curriculo;
             <?php } ?>
 
