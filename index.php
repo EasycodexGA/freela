@@ -72,6 +72,13 @@ while($dados = mysqli_fetch_array($getPat)){
             <a href='#contato'>Entrar em contato</a>
         </div>
     </section>
+    <?php if(requireLevel($__TYPE__, 3)){ ?>
+            <div class='extra'>
+                <div class='header-in'>
+                    <button onclick='openAdd(changeSite)' class='funcBt'>+ Alterar informações</button>
+                </div>
+            </div>
+    <?php } ?>
     <section id='sobre' class='container'>
         <h1>Sobre o projeto</h1>
         <p>Projeto desportivo que mira, além da inclusão social, o rendimento desportivo individual e coletivo. Em sua essência, o PROJETO POMERODE VOLEIBOL 2024, visa oportunizar às crianças e jovens do município de Pomerode o contato com a modalidade VOLEIBOL de forma gratuita e em um ambiente saudável e integrado com a sociedade.</p>
@@ -90,7 +97,7 @@ while($dados = mysqli_fetch_array($getPat)){
             <div id='details'>
             </div>
             <div id='addNew'>
-            <div id='editSite' class='add-container'>
+            <div id='changeSite' class='add-container'>
                     <h1 class='title-add'>Editar site</h1>
                     <div class='inps-add'>
                         <div class='inp-add-out'>
