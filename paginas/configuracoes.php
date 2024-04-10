@@ -21,7 +21,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
                 <img style="position: absolute; width: 100%; height: 100%; object-fit: cover;" id='imagemGet' src="">
             </div>
 
-            <a id='curriculoGet' class='btn-add' target='_blank' href='#'>Ver curriculo</a>
+            <a id='curriculoGet' class='btn-add' target='_blank' href='#'>Ver currículo</a>
             
             <button class='btn-add exit-bt' onclick='addNewData("usuarios/perfil/remove", {
                     what: "imagem"
@@ -82,11 +82,18 @@ justLog($__EMAIL__, $__TYPE__, 1);
 
     
     <?php if(uniqueLevel($__TYPE__, 2)){ ?>
-        <input type='file' id='imageAdd' accept="image/png, image/jpeg"/>
-        <button class='btn-add' onclick='trocarImg()'>Trocar imagem</button>
-
-        <input type='file' id='arquivoAdd' accept="application/pdf"/>
-        <button class='btn-add' onclick='novocv()'>Enviar curriculo</button>
+        <div class="inps-out">
+            <div class='infs-conf'>
+                <h1>Foto de perfil</h1>
+                <input type='file' id='imageAdd' accept="image/png, image/jpeg"/>
+                <button class='btn-add' onclick='trocarImg()'>Trocar imagem</button>
+            </div>
+            <div class='infs-conf'>
+                <h1>Currículo</h1>
+                <input type='file' id='arquivoAdd' accept="application/pdf"/>
+                <button class='btn-add' onclick='novocv()'>Enviar currículo</button>
+            </div>
+        </div>
 
         <script>
             const trocarImg = async () => {
