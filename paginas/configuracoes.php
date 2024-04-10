@@ -16,17 +16,20 @@ justLog($__EMAIL__, $__TYPE__, 1);
     <h1 class='title-header'>Configurações</h1>
 
     <?php if(uniqueLevel($__TYPE__, 2)){ ?>
+        <h1 class='title-header'>Perfil</h1>
         <div class='inps-out' style='align-items: center;'>
             <div style="width: 125px; aspect-ratio: 1; position: relative; border-radius: 100px; overflow: hidden;" bis_skin_checked="1">
                 <img style="position: absolute; width: 100%; height: 100%; object-fit: cover;" id='imagemGet' src="">
             </div>
 
-            <a id='curriculoGet' class='btn-add' target='_blank' href='#'>Ver currículo</a>
             
             <button id='imagemRem' class='btn-add exit-bt' onclick='addNewData("usuarios/perfil/remove", {
-                    what: "imagem"
-                })'>Remover foto</button>
-
+                what: "imagem"
+            })'>Remover foto</button>
+        </div>
+        <h1 class='title-header'>Curriculo</h1>
+        <div class='inps-out' style='align-items: center;'>
+            <a id='curriculoGet' class='btn-add' target='_blank' href='#'>Ver currículo</a>
             <button id='curriculoRem' class='btn-add exit-bt' onclick='addNewData("usuarios/perfil/remove", {
                     what: "curriculo"
                 })'>Remover Curriculo</button>
