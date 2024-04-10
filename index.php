@@ -52,7 +52,7 @@ $locBannerImg = "$__WEB__/imagens/website/$img";
     </nav>
     <header>
         <div class='left-h'>
-            <img src='<?php echo $locBannerImg; ?>'>
+            <img src='./img/logo.png'>
         </div>
         <div class='right-h'>
             <a href='./' class='link-h'>Início</a>
@@ -64,7 +64,7 @@ $locBannerImg = "$__WEB__/imagens/website/$img";
         </div>
     </header>
     <section id='banner'>
-        <img src='./img/time.png'>
+        <img src='<?php echo $locBannerImg; ?>'>
         <div id='black'>
             <div class='top-black'>
                 <h1><?php echo $titleBanner; ?></h1>
