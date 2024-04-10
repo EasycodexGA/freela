@@ -13,7 +13,7 @@ $image  = scapeString($__CONEXAO__, $json->image);
 
 $titulo   = setNoXss($titulo);
 
-if($image)
+if($image){
 
 $caminho = "../../../../imagens/website";
 
@@ -54,8 +54,11 @@ $novoNome   = "i$__TIME__$__CODE__.$format";
 $completo = "$caminho/$novoNome";
 $novoNomeEnc = encrypt($novoNome);
 
+$ext = ", banner='$novoNomeEnc'";
+}
+
 if (file_put_contents($completo, $imageData)) {
-    mysqli_query($__CONEXAO__, "update configs set title='$nome', banner='$novoNomeEnc'") or endCode("Erro ao salvar", false);
+    mysqli_query($__CONEXAO__, "update configs set title='$nome' $ext") or endCode("Erro ao salvar", false);
     endCode("Editado com sucesso!", true);
 } else {
     endCode("Erro ao salvar imagem", false);

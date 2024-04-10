@@ -31,7 +31,7 @@ while($_dados_ = mysqli_fetch_array($_query_)){
     $created     = $_dados_['created'];
 
 
-    $queryEventos  = mysqli_query($__CONEXAO__, "select turmas from eventos where nome='$nome' and data='$data'");
+    $queryEventos  = mysqli_query($__CONEXAO__, "select turmas, equipes from eventos where nome='$nome' and data='$data'");
     $assocEventos = mysqli_fetch_assoc($queryEventos);
 
 
