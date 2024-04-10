@@ -23,7 +23,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
 
             <a id='curriculoGet' class='btn-add' target='_blank' href='#'>Ver currículo</a>
             
-            <button id='imageRem' class='btn-add exit-bt' onclick='addNewData("usuarios/perfil/remove", {
+            <button id='imagemRem' class='btn-add exit-bt' onclick='addNewData("usuarios/perfil/remove", {
                     what: "imagem"
                 })'>Remover foto</button>
 
@@ -151,12 +151,11 @@ justLog($__EMAIL__, $__TYPE__, 1);
             nascimentoGet.value = nascimentoG;
 
             <?php if(uniqueLevel($__TYPE__, 2)){ ?>
+                let imgProf = data["0"].imagem ? "../imagens/perfil/" + data["0"].imagem : "../img/default.webp";
+                titularidadeGet.value = data["0"].titularidade;
                 if(!data["0"].imagem){
                     imagemRem.style.display = "none";
                 }
-
-                let imgProf = data["0"].imagem ? "../imagens/perfil/" + data["0"].imagem : "../img/default.webp";
-                titularidadeGet.value = data["0"].titularidade;
                 imagemGet.src = imgProf;
                 if(!data["0"].curriculo){
                     curriculoGet.style.display = "none";
