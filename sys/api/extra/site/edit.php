@@ -11,7 +11,11 @@ $json = json_decode($request);
 $titulo  = scapeString($__CONEXAO__, $json->titulo);
 $image  = scapeString($__CONEXAO__, $json->image);
 
+if(!$titulo and !$image)
+
 $titulo   = setNoXss($titulo);
+
+
 
 if($image){
 
@@ -56,7 +60,7 @@ $novoNomeEnc = encrypt($novoNome);
 
 $ext = ", banner='$novoNomeEnc'";
 } else {
-    $ext = ""
+    $ext = "";
 }
 
 if (file_put_contents($completo, $imageData)) {
