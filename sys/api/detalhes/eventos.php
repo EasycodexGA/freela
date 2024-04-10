@@ -36,7 +36,7 @@ while($_dados_ = mysqli_fetch_array($_query_)){
 
 
     $thisTurmas = $assocEventos['turmas'];
-    $thisTurmas = $thisTurmas != ','   or strlen($thisTurmas) > 0 ? substr($thisTurmas, 1) : "''";
+    $thisTurmas = $thisTurmas != ','  or strlen($thisTurmas) > 0 ? substr($thisTurmas, 1) : "''";
 
     $thisEquipes = $assocEventos['equipes'];
     $thisEquipes = $thisEquipes != ','  or strlen($thisEquipes) > 0 ? substr($thisEquipes, 1) : "''";
