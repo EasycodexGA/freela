@@ -23,11 +23,11 @@
     RewriteRule ^(.*?)/?$ $1.php [L]
 </IfModule>
 
-ErrorDocument 400 https://freela.anizero.cc
-ErrorDocument 401 https://freela.anizero.cc
-ErrorDocument 403 https://freela.anizero.cc
-ErrorDocument 404 https://freela.anizero.cc
-ErrorDocument 503 https://freela.anizero.cc
+ErrorDocument 400 http://partiuvolei.com
+ErrorDocument 401 http://partiuvolei.com
+ErrorDocument 403 http://partiuvolei.com
+ErrorDocument 404 http://partiuvolei.com
+ErrorDocument 503 http://partiuvolei.com
 
 
 
