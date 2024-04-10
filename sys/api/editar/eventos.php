@@ -69,9 +69,7 @@ for($i = 0; $i < count($equipes); $i++){
     }
 }
 
-var_dump($turmasArray);
 $turmasArray = implode(',', $turmasArray);
-var_dump($turmasArray);
 
 $equipesArray = implode(',', $equipesArray);
 
