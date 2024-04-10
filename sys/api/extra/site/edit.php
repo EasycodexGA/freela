@@ -55,6 +55,8 @@ $completo = "$caminho/$novoNome";
 $novoNomeEnc = encrypt($novoNome);
 
 $ext = ", banner='$novoNomeEnc'";
+} else {
+    $ext = ""
 }
 
 if (file_put_contents($completo, $imageData)) {
