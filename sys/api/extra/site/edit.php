@@ -62,8 +62,11 @@ $novoNome   = "i$__TIME__$__CODE__.$format";
 $completo = "$caminho/$novoNome";
 $novoNomeEnc = encrypt($novoNome);
 
-if($ext != "")
-$ext .= ", banner='$novoNomeEnc'";
+if($ext != ""){
+    $ext .= ", banner='$novoNomeEnc'";
+} else {
+    $ext = "banner='$novoNomeEnc'";
+}
 }
 
 if (file_put_contents($completo, $imageData)) {
