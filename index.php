@@ -79,7 +79,7 @@ $locBannerImg = "$__WEB__/imagens/website/$imgBanner";
         </div>
     </section>
     <?php if(requireLevel($__TYPE__, 3)){ ?>
-        <section id='contato' class='container'>
+        <section class='container'>
             <div class='extra'>
                 <div class='header-in'>
                     <button onclick='openAdd(changeSite)' class='funcBt'>+ Alterar informações</button>
