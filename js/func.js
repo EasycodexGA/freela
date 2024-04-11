@@ -232,8 +232,8 @@ function sendEdit(id, name, parent){
                 preData[j] = JSON.parse(preData[j]);
                 if(i.dataset.key == 'aulas'){
                     let manipulate = file.arrayStrAdd[`aulas${preData[j].id}Array`]
-                    test = preData[j].chamada.join("#")
                     test = test.map((x)=>JSON.stringify(x))
+                    test = preData[j].chamada.join("#")
                     console.log(preData[j].chamada)
                     console.log(manipulate)
                     if(preData[j].chamada == manipulate){
