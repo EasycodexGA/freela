@@ -235,7 +235,7 @@ function sendEdit(id, name, parent){
                     test = preData[j].chamada
                     test = test.map((x)=>JSON.stringify(x))
                     test = test.join("#")
-                    console.log(preData[j].chamada)
+                    console.log(test)
                     console.log(manipulate)
                     if(test == manipulate){
                         console.log('rapaz')
