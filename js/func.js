@@ -237,7 +237,7 @@ function sendEdit(id, name, parent){
                     test = test.join("#")
                     console.log(preData[j].chamada)
                     console.log(manipulate)
-                    if(preData[j].chamada == manipulate){
+                    if(test == manipulate){
                         console.log('rapaz')
                         preData.splice(j, 1);
                     } else{
