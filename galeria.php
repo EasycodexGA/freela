@@ -1,16 +1,16 @@
 <?php
-include "../sys/conexao.php";
+include "sys/conexao.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style/root.css">
-    <link rel="stylesheet" href="../style/paginas.css">
-    <link rel="shortcut icon" href="../img/prefeitura.png" type="image/x-icon">
+    <link rel="stylesheet" href="style/root.css">
+    <link rel="stylesheet" href="style/paginas.css">
+    <link rel="shortcut icon" href="img/prefeitura.png" type="image/x-icon">
     <script type="module" src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/ring2.js"></script>
-    <script src="../js/func.js"></script>
+    <script src="js/func.js"></script>
 </head>
 <body>
     <div id="seeImg" bis_skin_checked="1">
@@ -159,7 +159,7 @@ include "../sys/conexao.php";
             let id = seeExcluir.dataset.idfoto;
             if(!id) return;
 
-            fetch(`../sys/api/galeria/foto/remove`,{
+            fetch(`sys/api/galeria/foto/remove`,{
                 method: "POST",
                 body: JSON.stringify({
                     id: Number(id)
@@ -216,7 +216,7 @@ include "../sys/conexao.php";
                 response: "aguardando"
             })
 
-            fetch(`../sys/api/galeria/grupo/remove`,{
+            fetch(`sys/api/galeria/grupo/remove`,{
                 method: "POST",
                 body: JSON.stringify({
                     id: Number(e)
@@ -242,7 +242,7 @@ include "../sys/conexao.php";
     </div>
 
     <script>
-        fetch("../sys/api/galeria/grupo/get")
+        fetch("sys/api/galeria/grupo/get")
         .then(e=>e.json())
         .then(e=>{
             let galeriasTT = e.mensagem.length;
