@@ -237,19 +237,12 @@ function sendEdit(id, name, parent){
                     let test = preData[j].chamada
                     test = test.map((x)=>JSON.stringify(x))
                     test = test.join("#")
-                    if(test == manipulate){
-                        preData[j].key = j;
-                        notUse.push(j);
-                    } else{
+                    if(test != manipulate){
                         manipulate = manipulate.split("#")
                         manipulate = manipulate.map((x)=>JSON.parse(x));
                         preData[j].chamada = manipulate
+                        newArr.push(preData[j]);
                     }
-                }
-            }            
-            for(let j in preData){
-                if(!notUse.includes(preData[j].key)){
-                    newArr.push(preData[j]);
                 }
             }
             // envia o newArr;
