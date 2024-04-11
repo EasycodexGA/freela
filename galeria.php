@@ -87,9 +87,6 @@ include "components/header.php";
             </div>
         </div>
     </div>
-    <div id="gpOut">
-
-    </div>
     </div>
 
     <!-- script só para adm/professor  -->
@@ -245,6 +242,9 @@ include "components/header.php";
         }
     </script>
     <?php } ?>
+        <div id="gpOut">
+        </div>
+    </div>
 
 
     <script>
