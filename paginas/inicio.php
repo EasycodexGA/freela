@@ -26,9 +26,10 @@ while($dados = mysqli_fetch_array($getPat)){
     <script src="../js/func.js"></script>
 </head>
 <body>
-    <header>
+<div class='bodyin'>
+    <div class='header'>
         <h1 class='title-header'>Inicio</h1>
-    </header>
+    </div>
     <div class='infos'>
         <h1 class='title-header'>Objetivo do projeto</h1>
         <p>
@@ -105,6 +106,7 @@ while($dados = mysqli_fetch_array($getPat)){
         <h1 id='b2xcodeIn'>
             Feito com ♥ por <a href="#">moontis.com</a> - © Copyright <?php echo date('Y')?>
         </h1>
+    </div>
     </div>
 </body>
 </html>

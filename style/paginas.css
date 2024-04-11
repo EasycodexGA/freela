@@ -1,4 +1,4 @@
-body{
+.bodyin{
     padding: 40px;
     display: flex;
     flex-direction: column;
@@ -6,7 +6,7 @@ body{
     background: #FAFAFA;
     min-height: 100svh;
 }
-header{
+.header{
     display: flex;
     flex-direction: column;
     gap: 15px;

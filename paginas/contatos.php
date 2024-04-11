@@ -12,17 +12,20 @@ justLog($__EMAIL__, $__TYPE__, 3);
     <link rel="shortcut icon" href="../img/prefeitura.png" type="image/x-icon">
 </head>
 <body>
-    <header>
-        <h1 class='title-header'>Geral - Contatos</h1>
-        <div class='header-in'>
-            <h2 class='sub-header'><span id="active">0</span> Contatos</h2>
+
+    <div class='bodyin'>
+        <div class='header'>
+            <h1 class='title-header'>Geral - Contatos</h1>
+            <div class='header-in'>
+                <h2 class='sub-header'><span id="active">0</span> Contatos</h2>
+            </div>
         </div>
-    </header>
-
-    <div id="contatos">
-
+        
+        <div id="contatos">
+            
+        </div>
+        
     </div>
-
     <script src="../js/func.js"></script>
     <script>
         fetch("../sys/api/contato/get")

@@ -13,91 +13,92 @@ justLog($__EMAIL__, $__TYPE__, 1);
     <script src="../js/func.js"></script>
 </head>
 <body>
-    <h1 class='title-header'>Configurações</h1>
+    <div class='bodyin'>
+        <h1 class='title-header'>Configurações</h1>
 
-    <?php if(uniqueLevel($__TYPE__, 2)){ ?>
-        <h1 class='title-header'>Perfil</h1>
-        <div class='inps-out' style='align-items: center;'>
-            <div style="width: 125px; aspect-ratio: 1; position: relative; border-radius: 100px; overflow: hidden;" bis_skin_checked="1">
-                <img style="position: absolute; width: 100%; height: 100%; object-fit: cover;" id='imagemGet' src="">
-            </div>
-
-            
-            <button id='imagemRem' class='btn-add exit-bt' onclick='addNewData("usuarios/perfil/remove", {
-                what: "imagem"
-            })'>Remover foto</button>
-        </div>
-        <h1 class='title-header'>Informações</h1>
-        <div class='inps-out' id='curriculoGeral' style='align-items: center;'>
-            <a id='curriculoGet' class='btn-add' target='_blank' href='#'>Ver currículo</a>
-            <button id='curriculoRem' class='btn-add exit-bt' onclick='addNewData("usuarios/perfil/remove", {
-                    what: "curriculo"
-                })'>Remover Curriculo</button>
-        </div>
-    <?php } ?>
-
-    <div class='inps-out'>
-        <div class='infs-conf'>
-            <h1>Nome</h1>
-            <input type="text" autocomplete="off" disabled id="nameGet" placeholder="Nome" class='inpProfile'/>
-        </div>
-        <div class='infs-conf'>
-            <h1>Email</h1>
-            <input type="text" autocomplete="off" id="emailGet" placeholder="Email" class='inpProfile'/>
-        </div>
-        <div class='infs-conf'>
-            <h1>Nova senha</h1>
-            <input type="password" autocomplete="off" id="passwordGet" placeholder="Nova senha" class='inpProfile'/>
-        </div>
-        <div class='infs-conf'>
-            <h1>CPF</h1>
-            <input type="text" autocomplete="off" disabled id="cpfGet" placeholder="CPF" class='inpProfile'/>
-        </div>
-        <div class='infs-conf'>
-            <h1>Nascimento</h1>
-            <input type="text" autocomplete="off" disabled id="nascimentoGet" placeholder="Nascimento" class='inpProfile'/>
-        </div>
-        <div class='infs-conf'>
-            <h1>Tipo</h1>
-            <input type="text" autocomplete="off" disabled id="typeGet" placeholder="Tipo" class='inpProfile'/>
-        </div>
         <?php if(uniqueLevel($__TYPE__, 2)){ ?>
-            <div class='infs-conf'>
-                <h1>Titularidade</h1>
-                <input type="text" autocomplete="off" disabled id="titularidadeGet" placeholder="Titularidade" class='inpProfile'/>
+            <h1 class='title-header'>Perfil</h1>
+            <div class='inps-out' style='align-items: center;'>
+                <div style="width: 125px; aspect-ratio: 1; position: relative; border-radius: 100px; overflow: hidden;" bis_skin_checked="1">
+                    <img style="position: absolute; width: 100%; height: 100%; object-fit: cover;" id='imagemGet' src="">
+                </div>
+
+                
+                <button id='imagemRem' class='btn-add exit-bt' onclick='addNewData("usuarios/perfil/remove", {
+                    what: "imagem"
+                })'>Remover foto</button>
+            </div>
+            <h1 class='title-header'>Informações</h1>
+            <div class='inps-out' id='curriculoGeral' style='align-items: center;'>
+                <a id='curriculoGet' class='btn-add' target='_blank' href='#'>Ver currículo</a>
+                <button id='curriculoRem' class='btn-add exit-bt' onclick='addNewData("usuarios/perfil/remove", {
+                        what: "curriculo"
+                    })'>Remover Curriculo</button>
             </div>
         <?php } ?>
-    </div>
-    
-    <button onclick='changeDatas()' class='btn-add'>Salvar</button>
 
-    <?php if(uniqueLevel($__TYPE__, 3)){ ?>
-        <div class='extra'>
-            <h1 class="title-header">Gerar relatórios</h1>
-            <div class="header-in" style='gap: 10px;'>
-                <a class='btn-add' href="../sys/api/relatorio/alunos">Alunos</a>
-                <a class='btn-add' href="../sys/api/relatorio/profissionais">Profissionais </a>
-                <a class='btn-add' href="../sys/api/relatorio/turmas">Turmas</a>
-                <a class='btn-add' style="background: var(--contraste)" href="#">Eventos</a>
-            </div>
-        </div>
-    <?php } ?>
-
-    
-    <?php if(uniqueLevel($__TYPE__, 2)){ ?>
-        <div class="inps-out">
+        <div class='inps-out'>
             <div class='infs-conf'>
-                <h1>Foto de perfil</h1>
-                <input type='file' id='imageAdd' accept="image/png, image/jpeg"/>
-                <button class='btn-add' onclick='trocarImg()'>Trocar imagem</button>
+                <h1>Nome</h1>
+                <input type="text" autocomplete="off" disabled id="nameGet" placeholder="Nome" class='inpProfile'/>
             </div>
             <div class='infs-conf'>
-                <h1>Currículo</h1>
-                <input type='file' id='arquivoAdd' accept="application/pdf"/>
-                <button class='btn-add' onclick='novocv()'>Enviar currículo</button>
+                <h1>Email</h1>
+                <input type="text" autocomplete="off" id="emailGet" placeholder="Email" class='inpProfile'/>
+            </div>
+            <div class='infs-conf'>
+                <h1>Nova senha</h1>
+                <input type="password" autocomplete="off" id="passwordGet" placeholder="Nova senha" class='inpProfile'/>
+            </div>
+            <div class='infs-conf'>
+                <h1>CPF</h1>
+                <input type="text" autocomplete="off" disabled id="cpfGet" placeholder="CPF" class='inpProfile'/>
+            </div>
+            <div class='infs-conf'>
+                <h1>Nascimento</h1>
+                <input type="text" autocomplete="off" disabled id="nascimentoGet" placeholder="Nascimento" class='inpProfile'/>
+            </div>
+            <div class='infs-conf'>
+                <h1>Tipo</h1>
+                <input type="text" autocomplete="off" disabled id="typeGet" placeholder="Tipo" class='inpProfile'/>
+            </div>
+            <?php if(uniqueLevel($__TYPE__, 2)){ ?>
+                <div class='infs-conf'>
+                    <h1>Titularidade</h1>
+                    <input type="text" autocomplete="off" disabled id="titularidadeGet" placeholder="Titularidade" class='inpProfile'/>
+                </div>
+            <?php } ?>
+        </div>
+        
+        <button onclick='changeDatas()' class='btn-add'>Salvar</button>
+
+        <?php if(uniqueLevel($__TYPE__, 3)){ ?>
+            <div class='extra'>
+                <h1 class="title-header">Gerar relatórios</h1>
+                <div class="header-in" style='gap: 10px;'>
+                    <a class='btn-add' href="../sys/api/relatorio/alunos">Alunos</a>
+                    <a class='btn-add' href="../sys/api/relatorio/profissionais">Profissionais </a>
+                    <a class='btn-add' href="../sys/api/relatorio/turmas">Turmas</a>
+                    <a class='btn-add' style="background: var(--contraste)" href="#">Eventos</a>
+                </div>
+            </div>
+        <?php } ?>
+
+        
+        <?php if(uniqueLevel($__TYPE__, 2)){ ?>
+            <div class="inps-out">
+                <div class='infs-conf'>
+                    <h1>Foto de perfil</h1>
+                    <input type='file' id='imageAdd' accept="image/png, image/jpeg"/>
+                    <button class='btn-add' onclick='trocarImg()'>Trocar imagem</button>
+                </div>
+                <div class='infs-conf'>
+                    <h1>Currículo</h1>
+                    <input type='file' id='arquivoAdd' accept="application/pdf"/>
+                    <button class='btn-add' onclick='novocv()'>Enviar currículo</button>
+                </div>
             </div>
         </div>
-
         <script>
             const trocarImg = async () => {
                 let file = imageAdd.files[0];

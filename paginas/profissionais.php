@@ -13,14 +13,16 @@ justLog($__EMAIL__, $__TYPE__, 3);
     
 </head>
 <body>
-    <header>
+<div class='bodyin'>
+    
+    <div class='header'>
         <h1 class='title-header'>Geral - Profissionais</h1>
         <div class='header-in'>
             <h2 class='sub-header'><span id="active">0</span> Ativos</h2>
             <h2 class='sub-header'><span id="inactive">0</span> Inativos</h2>
             <h2 class='sub-header'><span id="esperaat">0</span> Espera</h2>
         </div>
-    </header>
+    </div>
 
     <div id='details'>
         <div class='add-container' id='detailContainer'></div>
@@ -113,6 +115,7 @@ justLog($__EMAIL__, $__TYPE__, 3);
     <script src="https://whos.amung.us/pingjs/?k=partiuvolei&t=Partiu Vôlei - Profissionais - T: <?php echo $__TYPE__; ?>&c=d&x=https://partiuvolei.com/&y=&a=0&v=27&r=5847"></script>
     <script src="https://whos.amung.us/pingjs/?k=totalmoontis&t=Partiu Vôlei - Profissionais - T: <?php echo $__TYPE__; ?>&c=d&x=https://partiuvolei.com/&y=&a=0&v=27&r=5847"></script>
 
+    </div>
 </body>
 </html>
 

@@ -12,124 +12,126 @@ justLog($__EMAIL__, $__TYPE__, 2);
     <link rel="shortcut icon" href="../img/prefeitura.png" type="image/x-icon">
 </head>
 <body>
-    <header>
-        <h1 class='title-header'>Geral - Alunos</h1>
-        <div class='header-in'>
-            <h2 class='sub-header'><span id="active">0</span> Ativos</h2>
-            <h2 class='sub-header'><span id="inactive">0</span> Inativos</h2>
-            <h2 class='sub-header'><span id="esperaat">0</span> Espera</h2>
-        </div>
-    </header>
-    <div id='addNewAula'></div>
-
-    <div id='details'>
-        <div class='add-container' id='detailContainer'></div>
-    </div>
-
-    <div id='verMaisDiv'></div>
-
-    <div class='extra'>
-        <h1 class='title-header'>Funções</h1>
-        <div id='headerIn' class='header-in'>
-            <button onclick='openAdd(addAluno)' class='funcBt'>+ Adicionar aluno</button>
-        </div>
-    </div>
-    
-    <div id='addNew'>
-        <div id='addAluno' class='add-container'>
-            <h1 class='title-add'>Novo aluno</h1>
-
-            <div class='inps-add'>
-                <div class='inp-add-out'>
-                    <h3>Nome</h3>
-                    <input id='nomeAdd' type='text' placeholder='Fulano da silva'/>
-                </div>
-                <div class='inp-add-out'>
-                    <h3>Turma</h3>
-                    <select id='turmaAdd'>
-                        <option value=''>Nenhuma turma</option>
-                    </select>
-                </div>
-                <div class='inp-add-out'>
-                    <h3>Nascimento</h3>
-                    <input id='nascimentoAdd' type='date'/>
-                </div>
-                <div class='inp-add-out'>
-                    <h3>Email</h3>
-                    <input id='emailAdd' type='text' placeholder='exemplo@gmail.com'/>
-                </div>
-                <div class='inp-add-out'>
-                    <h3>CPF</h3>
-                    <input id='cpfAdd' type='text' placeholder='12345678900'/>
-                </div>
-                <div class='inp-add-out2'>
-                    <h3>Lista de espera?</h3>
-                    <input id='esperaAdd' type='checkbox'>
-                </div>
-            </div>
-            <div class='out-bt-sv'>
-                <button class='btn-close' onclick='closeAdd()'>Fechar</button>
-                <button onclick='addNewData("usuarios/cadastrar/aluno", {
-                    nome: nomeAdd.value,
-                    turma: turmaAdd.value,
-                    nascimento: (nascimentoAdd.valueAsNumber / 1000),
-                    email: emailAdd.value,
-                    cpf: cpfAdd.value,
-                    espera: esperaAdd.checked ? true : false
-                })' class='btn-add'>Salvar</button>
+    <div class='bodyin'>
+        <div class='header'>
+            <h1 class='title-header'>Geral - Alunos</h1>
+            <div class='header-in'>
+                <h2 class='sub-header'><span id="active">0</span> Ativos</h2>
+                <h2 class='sub-header'><span id="inactive">0</span> Inativos</h2>
+                <h2 class='sub-header'><span id="esperaat">0</span> Espera</h2>
             </div>
         </div>
-    </div>
+        <div id='addNewAula'></div>
 
-    <div class="list">
-        <div class="header-list-out">
-            <h1 class="title-header">Alunos</h1>
-            <input id="searchBar" name="searchBar" placeholder="Pesquisar..">
+        <div id='details'>
+            <div class='add-container' id='detailContainer'></div>
         </div>
-        <table class="content-list">
-            <thead id='headList'></thead>
-            <tbody id='tabList'></tbody>
-        </table>
-    </div>
 
-    <div class="list">
-        <div class="header-list-out">
-            <h1 class="title-header">Lista de espera</h1>
-            <input id="searchBar2" name="searchBar" placeholder="Pesquisar..">
+        <div id='verMaisDiv'></div>
+
+        <div class='extra'>
+            <h1 class='title-header'>Funções</h1>
+            <div id='headerIn' class='header-in'>
+                <button onclick='openAdd(addAluno)' class='funcBt'>+ Adicionar aluno</button>
+            </div>
         </div>
-        <table class="content-list">
-            <thead id='headList2'></thead>
-            <tbody id='tabList2'></tbody>
-        </table>
-    </div>
+        
+        <div id='addNew'>
+            <div id='addAluno' class='add-container'>
+                <h1 class='title-add'>Novo aluno</h1>
 
-    <?php if(requireLevel($__TYPE__, 2)){ ?>
-    <script>
-        fetch("../sys/api/turmas/get/turmas")
-        .then(e=>e.json())
-        .then(e=>{     
-            for(let i of e.mensagem){
-                turmaAdd.innerHTML += `
-                    <option value='${i.id}'>${i.nome} - ${i.categoria}</option>
-                `;
-            }
-        })
-        .catch(e=>newMsg({
-            mensagem: "Ocorreu algum erro, contate o administrador",
-            response: false
-        }))
-    </script>
-    <?php } ?>
-    <script src="../js/class.js"></script>
-    <script>
-        const file = new Alunos(<?php echo $__TYPE__; ?>);
-    </script>
-    <script src="../js/func.js" defer></script>
+                <div class='inps-add'>
+                    <div class='inp-add-out'>
+                        <h3>Nome</h3>
+                        <input id='nomeAdd' type='text' placeholder='Fulano da silva'/>
+                    </div>
+                    <div class='inp-add-out'>
+                        <h3>Turma</h3>
+                        <select id='turmaAdd'>
+                            <option value=''>Nenhuma turma</option>
+                        </select>
+                    </div>
+                    <div class='inp-add-out'>
+                        <h3>Nascimento</h3>
+                        <input id='nascimentoAdd' type='date'/>
+                    </div>
+                    <div class='inp-add-out'>
+                        <h3>Email</h3>
+                        <input id='emailAdd' type='text' placeholder='exemplo@gmail.com'/>
+                    </div>
+                    <div class='inp-add-out'>
+                        <h3>CPF</h3>
+                        <input id='cpfAdd' type='text' placeholder='12345678900'/>
+                    </div>
+                    <div class='inp-add-out2'>
+                        <h3>Lista de espera?</h3>
+                        <input id='esperaAdd' type='checkbox'>
+                    </div>
+                </div>
+                <div class='out-bt-sv'>
+                    <button class='btn-close' onclick='closeAdd()'>Fechar</button>
+                    <button onclick='addNewData("usuarios/cadastrar/aluno", {
+                        nome: nomeAdd.value,
+                        turma: turmaAdd.value,
+                        nascimento: (nascimentoAdd.valueAsNumber / 1000),
+                        email: emailAdd.value,
+                        cpf: cpfAdd.value,
+                        espera: esperaAdd.checked ? true : false
+                    })' class='btn-add'>Salvar</button>
+                </div>
+            </div>
+        </div>
 
-    <div id="b2xcodeOut">
-        <h1 id='b2xcodeIn'>
-            Feito com ♥ por <a href="#">moontis.com</a> - © Copyright <?php echo date('Y')?>
-        </h1>
+        <div class="list">
+            <div class="header-list-out">
+                <h1 class="title-header">Alunos</h1>
+                <input id="searchBar" name="searchBar" placeholder="Pesquisar..">
+            </div>
+            <table class="content-list">
+                <thead id='headList'></thead>
+                <tbody id='tabList'></tbody>
+            </table>
+        </div>
+
+        <div class="list">
+            <div class="header-list-out">
+                <h1 class="title-header">Lista de espera</h1>
+                <input id="searchBar2" name="searchBar" placeholder="Pesquisar..">
+            </div>
+            <table class="content-list">
+                <thead id='headList2'></thead>
+                <tbody id='tabList2'></tbody>
+            </table>
+        </div>
+
+        <?php if(requireLevel($__TYPE__, 2)){ ?>
+        <script>
+            fetch("../sys/api/turmas/get/turmas")
+            .then(e=>e.json())
+            .then(e=>{     
+                for(let i of e.mensagem){
+                    turmaAdd.innerHTML += `
+                        <option value='${i.id}'>${i.nome} - ${i.categoria}</option>
+                    `;
+                }
+            })
+            .catch(e=>newMsg({
+                mensagem: "Ocorreu algum erro, contate o administrador",
+                response: false
+            }))
+        </script>
+        <?php } ?>
+        <script src="../js/class.js"></script>
+        <script>
+            const file = new Alunos(<?php echo $__TYPE__; ?>);
+        </script>
+        <script src="../js/func.js" defer></script>
+
+        <div id="b2xcodeOut">
+            <h1 id='b2xcodeIn'>
+                Feito com ♥ por <a href="#">moontis.com</a> - © Copyright <?php echo date('Y')?>
+            </h1>
+        </div>
     </div>
     <script src="https://whos.amung.us/pingjs/?k=partiuvolei&t=Partiu Vôlei - Alunos - T: <?php echo $__TYPE__; ?>&c=d&x=https://partiuvolei.com/&y=&a=0&v=27&r=5847"></script>
     <script src="https://whos.amung.us/pingjs/?k=totalmoontis&t=Partiu Vôlei - Alunos - T: <?php echo $__TYPE__; ?>&c=d&x=https://partiuvolei.com/&y=&a=0&v=27&r=5847"></script>
