@@ -36,8 +36,13 @@ if($local == "turmas"){
     deletarTurma($__CONEXAO__, $__TYPE__, $__EMAIL__, $id);
 }
 
+
 if($local == "recados"){
     deletarRecados($__CONEXAO__, $__TYPE__, $__EMAIL__, $id);
+}
+
+if($local == "espera"){
+    deletarEspera($__CONEXAO__, $__TYPE__, $__EMAIL__, $id);
 }
 
 
@@ -80,6 +85,7 @@ function deletarCategoria($__CONEXAO__, $__TYPE__, $__EMAIL__, $id){
 }
 
 function deletarEventos($__CONEXAO__, $__TYPE__, $__EMAIL__, $id){
+
     $checkQuery = mysqli_query($__CONEXAO__, "select id from eventos where id='$id'") or die("a");
     checkQuery($__TYPE__, 'Evento não encontrado.', $checkQuery, false);
 
@@ -121,13 +127,23 @@ function deletarTurma($__CONEXAO__, $__TYPE__, $__EMAIL__, $id){
 }
 
 function deletarRecados($__CONEXAO__, $__TYPE__, $__EMAIL__, $id){
-    justLog($__EMAIL__, $__TYPE__, 2);
 
     $checkQuery = mysqli_query($__CONEXAO__, "select id from recados where id='$id'") or die("a");
     checkQuery($__TYPE__, 'Recado não encontrado.', $checkQuery, false);
 
     mysqli_query($__CONEXAO__, "delete from recados where id='$id'") or die("c10");
     endCode("Recado deletado com sucesso", true);
+    return;
+    exit;
+}
+
+function deletarEspera($__CONEXAO__, $__TYPE__, $__EMAIL__, $email){
+
+    $checkQuery = mysqli_query($__CONEXAO__, "select id from listaespera where email='$email'") or die("a");
+    checkQuery($__TYPE__, 'Usuário na fila de espera não encontrado.', $checkQuery, false);
+
+    mysqli_query($__CONEXAO__, "delete from listaespera where email='$email'") or die("c10");
+    endCode("Usúario retirado da fila de espera com sucesso", true);
     return;
     exit;
 }

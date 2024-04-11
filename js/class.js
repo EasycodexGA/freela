@@ -120,7 +120,7 @@ class File{
                 let btRemove = document.createElement("button");
                 btRemove.classList.add("btn-add");
                 btRemove.id = 'btnRemove';
-                btRemove.setAttribute("onclick", "file.removeSec()")
+                btRemove.setAttribute("onclick", `file.removeSec('${this.name}',${this.idDetail})`)
                 btRemove.innerText = "Excluir";
                 outBt.append(btRemove);
             }
@@ -308,8 +308,8 @@ class File{
         }))
     }
 
-    removeSec(){
-        let link = '../sys/api/extra/remove?local=' + this.name + '&id=' + this.idDetail
+    removeSec(local, data){
+        let link = '../sys/api/extra/remove?local=' + local + '&id=' + data
         fetch(link)
         .then(e=>e.json())
         .then(e=>{
@@ -370,6 +370,8 @@ class File{
                         tr.appendChild(td);
                     }
                 }
+                let td1 = document.createElement('td');
+                td1.innerHTML = `<button class="ver-detalhes" onclick="removeSec('espera', '${i.email}')">Aprovar</button>`
                 let td2 = document.createElement('td');
                 td2.innerHTML = `<button class="ver-detalhes" onclick="file.sendEspera('${i.email}')">Aprovar</button>`;
                 tr.appendChild(td2);

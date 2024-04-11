@@ -229,8 +229,7 @@ function sendEdit(id, name, parent){
         let newArr = [];
         if(preData){
             preData = preData.split("#");
-            let notUse = []
-            for(let j in preData){ // [0]=>{} [1]=>{}
+            for(let j in preData){
                 preData[j] = JSON.parse(preData[j]);
                 if(i.dataset.key == 'aulas'){
                     let manipulate = file.arrayStrAdd[`aulas${preData[j].id}Array`]
@@ -245,7 +244,6 @@ function sendEdit(id, name, parent){
                     }
                 }
             }
-            // envia o newArr;
         }
         data[`${i.dataset.key}`] = newArr;
     }
