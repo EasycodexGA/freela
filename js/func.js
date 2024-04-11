@@ -226,26 +226,35 @@ function sendEdit(id, name, parent){
     }
     for(let i of buttons){
         let preData = file.arrayStrAdd[`${i.dataset.key}Array`];
+        let newArr = [];
         if(preData){
             preData = preData.split("#");
-            for(let j in preData){
+            let notUse = []
+            for(let j in preData){ // [0]=>{} [1]=>{}
                 preData[j] = JSON.parse(preData[j]);
                 if(i.dataset.key == 'aulas'){
                     let manipulate = file.arrayStrAdd[`aulas${preData[j].id}Array`]
-                    test = preData[j].chamada
+                    let test = preData[j].chamada
                     test = test.map((x)=>JSON.stringify(x))
                     test = test.join("#")
                     if(test == manipulate){
-                        preData.splice(j, 1);
+                        preData[j].key = j;
+                        notUse.push(j);
                     } else{
                         manipulate = manipulate.split("#")
                         manipulate = manipulate.map((x)=>JSON.parse(x));
                         preData[j].chamada = manipulate
                     }
                 }
+            }            
+            for(let j in preData){
+                if(!notUse.includes(preData[j].key)){
+                    newArr.push(preData[j]);
+                }
             }
+            // envia o newArr;
         }
-        data[`${i.dataset.key}`] = preData;
+        data[`${i.dataset.key}`] = newArr;
     }
     addNewData(url, data);
 }
