@@ -235,10 +235,7 @@ function sendEdit(id, name, parent){
                     test = preData[j].chamada
                     test = test.map((x)=>JSON.stringify(x))
                     test = test.join("#")
-                    console.log(test)
-                    console.log(manipulate)
                     if(test == manipulate){
-                        console.log('rapaz')
                         preData.splice(j, 1);
                     } else{
                         manipulate = manipulate.split("#")
@@ -250,7 +247,7 @@ function sendEdit(id, name, parent){
         }
         data[`${i.dataset.key}`] = preData;
     }
-    // addNewData(url, data);
+    addNewData(url, data);
 }
 
 function defineColor(e){
