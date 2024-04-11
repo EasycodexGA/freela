@@ -371,7 +371,7 @@ class File{
                     }
                 }
                 let td1 = document.createElement('td');
-                td1.innerHTML = `<button class="ver-detalhes remove-espera" onclick="removeSec('espera', '${i.email}')">Remover</button>`
+                td1.innerHTML = `<button class="ver-detalhes remove-espera" onclick="file.removeSec('espera', '${i.email}')">Remover</button>`
                 let td2 = document.createElement('td');
                 td2.innerHTML = `<button class="ver-detalhes" onclick="file.sendEspera('${i.email}')">Aprovar</button>`;
                 tr.appendChild(td1);
