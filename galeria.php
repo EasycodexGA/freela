@@ -27,13 +27,13 @@ include "components/header.php";
             <?php } ?>
         </div>
     </div>
-    <header>
+    <div class='header'>
         <h1 class='title-header'>Galeria</h1>
         <div class='header-in'>
             <h2 class='sub-header'><span id="galeriasT">0</span> Galerias</h2>
             <h2 class='sub-header'><span id="imagensT">0</span> Imagens</h2>
         </div>
-    </header>
+    </div>
 
     <?php if(requireLevel($__TYPE__, 2)){ ?>
     <div id='details'></div>
