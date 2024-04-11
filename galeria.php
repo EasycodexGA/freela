@@ -1,5 +1,7 @@
 <?php
 include "sys/conexao.php";
+include "components/header.php";
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,11 +10,14 @@ include "sys/conexao.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/root.css">
     <link rel="stylesheet" href="style/paginas.css">
+    <link rel="stylesheet" href="style/landing.css">
     <link rel="shortcut icon" href="img/prefeitura.png" type="image/x-icon">
     <script type="module" src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/ring2.js"></script>
     <script src="js/func.js"></script>
 </head>
 <body>
+    <?php echo $_HEADER_; ?>
+
     <div id="seeImg" bis_skin_checked="1">
         <img id='seeInImg' src="">
         <div class="seeBtns">
