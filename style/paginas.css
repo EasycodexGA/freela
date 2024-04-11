@@ -53,6 +53,10 @@
     background: none;
 }
 
+.remove-espera{
+    color: rgb(222, 67, 67)
+}
+
 .list {
     display: flex;
     flex-direction: column;
