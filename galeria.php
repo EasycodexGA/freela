@@ -17,7 +17,7 @@ include "components/header.php";
 </head>
 <body>
     <?php echo $_HEADER_; ?>
-
+    <div class='bodyin'>
     <div id="seeImg" bis_skin_checked="1">
         <img id='seeInImg' src="">
         <div class="seeBtns">
@@ -86,6 +86,7 @@ include "components/header.php";
                 <button onclick='sendImgs()' class='btn-add'>Salvar</button>
             </div>
         </div>
+    </div>
     </div>
 
     <!-- script só para adm/professor  -->
