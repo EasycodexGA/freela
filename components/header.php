@@ -23,6 +23,7 @@ $_HEADER_ = "
             <a href='#patrocinadores' class='link-h'>Patrocinadores</a>
             <a href='#contato' class='link-h'>Contato</a>
             <a href='#localizacao' class='link-h'>Local</a>
+            <a href='./galeria' class='link-h'>Galeria</a>
             <a href='./login' class='link-h login-h'>$escrita</a>
         </div>
     </header>
