@@ -116,13 +116,13 @@ function verMais(id,type, titleStr){
                 let check = false;
                 console.log(file.idAluno);
                 i.chamada.forEach((e, index) => {
-                    if(e.id == file.idAluno){
+                    if(e.idA == file.idAluno){
                         check = index
                     }
                 });
                 console.log(check)
                 console.log(i)
-                // presenca.innerText = i.chamada[check].checked == 1 ? 'presente' : 'ausente';
+                presenca.innerText = i.chamada[check].checked == 1 ? 'presente' : 'ausente';
                 div.append(presenca)
             }
         }
