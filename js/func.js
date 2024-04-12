@@ -55,8 +55,13 @@ function verMais(id,type, titleStr){
 
     for(let i of array){
         i = JSON.parse(i);
+
         let div = document.createElement('div');
         div.classList.add("chamada-list")
+
+        let div2 = document.createElement('div');
+        div.classList.add('chamada-list2');
+
         let p = document.createElement("p");
         if(i.data){
             let date = new Date(i.data * 1000 + 86400000);
@@ -69,13 +74,16 @@ function verMais(id,type, titleStr){
             p.innerText = i.data;
             createDesc = true;
         }
-        div.append(p);
+
+        div2.append(p);
+
         if(createDesc){
             let d = document.createElement('p');
             d.classList.add('desc-aulas-chamada');
             d.innerText = i.descricao;
-            div.append(d);
+            div2.append(d);
         }
+        div.append(div2);
 
         if(type == 1){
             let input = document.createElement("input");
