@@ -237,6 +237,9 @@
     overflow: hidden;
     cursor: pointer;
     background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .menu-h, .menu-h img{
@@ -277,6 +280,7 @@
     position: absolute;
     top: 15px;
     left: 30px;
+    cursor: pointer;
 }
 #navItem{
     transform: translateX(100%);
