@@ -121,7 +121,7 @@ function verMais(id,type, titleStr){
                     }
                 });
                 console.log(check)
-                if(!check){
+                if(check === false){
                     continue
                 }
                 presenca.innerText = i.chamada[check].checked == 1 ? 'presente' : 'ausente';
