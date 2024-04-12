@@ -235,6 +235,14 @@
 
 .menu-h{
     display: none;
+    overflow: hidden;
+    cursor: pointer;
+    background: none;
+}
+
+.menu-h, .menu-h img{
+    width: 25px;
+    aspect-ratio: 1;
 }
 
 @media only screen and (max-width: 730px){

@@ -8,11 +8,11 @@ if(requireLevel($__TYPE__, 1)){
 }
 
 $_HEADER_ = "
-    <nav class='highheader'>
+    <subheader class='highheader'>
         <h1>O esporte em você</h1>
         <span>GRATUITO</span>
         <h1>Entre em contato ➔</h1>
-    </nav>
+    </subheader>
     <header>
         <div class='left-h'>
             <img src='./img/logo.png'>
@@ -30,4 +30,14 @@ $_HEADER_ = "
             </button>
         </div>
     </header>
+    <nav class='nav'>
+        <div class='nav-h'>
+            <a href='./' class='link-h'>Início</a>
+            <a href='#sobre' class='link-h'>Sobre</a>
+            <a href='#patrocinadores' class='link-h'>Patrocinadores</a>
+            <a href='#contato' class='link-h'>Contato</a>
+            <a href='#localizacao' class='link-h'>Local</a>
+            <a href='./galeria' class='link-h'>Galeria</a>
+        </div>
+    </nav>
 ";
