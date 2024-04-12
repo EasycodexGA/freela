@@ -111,6 +111,16 @@ function verMais(id,type, titleStr){
                 presencaBt.setAttribute("onclick", `verMais('${id}${i.id}', 1, 'Chamada')`);
                 presencaBt.dataset.id = id;
                 div.append(presencaBt);
+            } else {
+                let presenca = document.createElement('p');
+                let check = false;
+                i.chamada.forEach((e, index) => {
+                    if(e.id == file.idAluno){
+                        check = index
+                    }
+                });
+                presenca.innerText = i.chamada[check].checked == 1 ? 'presente' : 'ausente';
+                div.append(presenca)
             }
         }
 

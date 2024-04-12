@@ -155,7 +155,7 @@ justLog($__EMAIL__, $__TYPE__, 1);
     </script>
     <?php } ?>
     <script src="../js/class.js"></script>
-    <script>const file = new Turmas(<?php echo $__TYPE__; ?>);</script>
+    <script>const file = new Turmas(<?php echo $__TYPE__ . ',' . $__ID__; ?>);</script>
     <script src="../js/func.js" defer></script>
     <div id="b2xcodeOut">
         <h1 id='b2xcodeIn'>

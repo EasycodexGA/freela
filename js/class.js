@@ -1,5 +1,5 @@
 class File{
-    constructor(id){
+    constructor(id, idAluno){
         this.name = ''
         this.arrayStrAdd = {}
         this.saveToAdd = ''
@@ -12,6 +12,7 @@ class File{
         this.arrayDetail = []
         this.numsDetail = ['created']
         this.typeUser = id;
+        this.idAluno = idAluno
     }
 
     getData(){
@@ -496,8 +497,9 @@ class Recados extends File{
 }
 
 class Turmas extends File{
-    constructor(id){
+    constructor(id, idAluno){
         super(id)
+        super(idAluno)
         this.name = 'turmas'
         this.linkGet = 'turmas/get/turmas'
         this.thContent = ['Nome', 'Categoria', 'Profissionais', 'Alunos', 'Status']
