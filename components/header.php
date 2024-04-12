@@ -25,6 +25,9 @@ $_HEADER_ = "
             <a href='#localizacao' class='link-h'>Local</a>
             <a href='./galeria' class='link-h'>Galeria</a>
             <a href='./login' class='link-h login-h'>$escrita</a>
+            <button class='menu-h' onclick='alert(`hamb`)'>
+                <img class='hamb' src='../img/hamb.png'>
+            </button>
         </div>
     </header>
 ";
