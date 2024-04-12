@@ -116,6 +116,7 @@ function verMais(id,type, titleStr){
                 let check = false;
                 i.chamada.forEach((e, index) => {
                     if(e.id == file.idAluno){
+                        console.log(file.idAluno)
                         check = index
                     }
                 });
