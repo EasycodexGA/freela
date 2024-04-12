@@ -120,8 +120,9 @@ function verMais(id,type, titleStr){
                         check = index
                     }
                 });
-                console.log(check)
-                console.log(i)
+                if(!check){
+                    continue
+                }
                 presenca.innerText = i.chamada[check].checked == 1 ? 'presente' : 'ausente';
                 div.append(presenca)
             }
