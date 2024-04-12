@@ -137,7 +137,6 @@ function deletarRecados($__CONEXAO__, $__TYPE__, $__EMAIL__, $id){
 }
 
 function deletarEspera($__CONEXAO__, $__TYPE__, $__EMAIL__, $email){
-    endCode($email, false);
     $email = setEmail($email);
     $checkQuery = mysqli_query($__CONEXAO__, "select id from listaespera where email='$email'") or die("a");
     checkQuery($__TYPE__, 'Usuário na fila de espera não encontrado.', $checkQuery, false);
