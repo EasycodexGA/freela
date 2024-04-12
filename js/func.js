@@ -62,8 +62,20 @@ function verMais(id,type, titleStr){
             let date = new Date(i.data * 1000 + 86400000);
             i.data = date.toLocaleDateString("pt-BR");
         }
-        p.innerText = i.nome ? i.nome : i.data;
+        let createDesc = false;
+        if(i.nome){
+            p.innerText = i.nome;
+        } else {
+            p.innerText = i.data;
+            createDesc = true;
+        }
         div.append(p);
+        if(createDesc){
+            let d = document.createElement('p');
+            d.classList.add('desc-aulas-chamada');
+            d.innerText = i.descricao;
+            div.append(d);
+        }
 
         if(type == 1){
             let input = document.createElement("input");
@@ -137,13 +149,13 @@ function convertHora(millis) {
     let seconds = Math.floor(millis / 1000);
     let minutes = Math.floor(seconds / 60);
     let hours = Math.floor(minutes / 60);
-  
+    
     seconds = seconds % 60;
     minutes = minutes % 60;
     hours = hours % 24;
-  
+    
     return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
-  }
+}
 
 function salvarCheckbox(id, type){
     if(id == 'aulas'){
