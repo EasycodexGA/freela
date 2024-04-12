@@ -234,7 +234,6 @@
 /* RESPONSIVIDADE GERAL */
 
 .menu-h{
-    display: none;
     overflow: hidden;
     cursor: pointer;
     background: none;
@@ -245,11 +244,15 @@
     aspect-ratio: 1;
 }
 
+.nav .link-h, .menu-h{
+    display: none;
+}
+
 @media only screen and (max-width: 730px){
     .link-h{
         display: none;
     }
-    .login-h, .menu-h{
+    .login-h, .menu-h,  .nav .link-h{
         display: block;
     }
 }
