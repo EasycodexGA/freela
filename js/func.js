@@ -120,7 +120,7 @@ function verMais(id,type, titleStr){
                     }
                 });
                 console.log(check)
-                console.log(i.chamada)
+                console.log(i)
                 presenca.innerText = i.chamada[check].checked == 1 ? 'presente' : 'ausente';
                 div.append(presenca)
             }
