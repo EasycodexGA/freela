@@ -299,4 +299,18 @@
     #navItem{
         display: block;
     }
+
+    #localizacao, form{
+        flex-direction: column;
+    }
+    #localizacao iframe{
+        width: 100%;
+        height: 250px;
+    }
+    .inpout{
+        width: 100%;
+    }
+    #black {
+        padding: 20px 20px 20px 40px;
+    }
 }
