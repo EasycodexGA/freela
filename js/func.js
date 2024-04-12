@@ -116,9 +116,13 @@ function verMais(id,type, titleStr){
                 let presenca = document.createElement('p');
                 i.chamada.forEach((e, index) => {
                     if(e.idA == file.idAluno){
-                        presenca.innerText = i.chamada[index].checked == 1 ? 'presente' : 'ausente';
-                        presenca.classList.add('presenca-p');
-                        presenca.classList.add('presenca-a');
+                        if(i.chamada[index].checked == 1){
+                            presenca.innerText = 'presente';
+                            presenca.classList.add('presenca-p');
+                        } else {
+                            presenca.innerText = 'ausente';
+                            presenca.classList.add('presenca-a');
+                        }
                     }
                 });
                 div.append(presenca)
