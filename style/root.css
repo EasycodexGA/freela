@@ -284,6 +284,7 @@
 }
 #navItem{
     transform: translateX(100%);
+    display: none;
 }
 .navOpen{
     transform: translateX(0%)!important;
@@ -293,6 +294,9 @@
         display: none;
     }
     .login-h, .menu-h,  .nav .link-h{
+        display: block;
+    }
+    #navItem{
         display: block;
     }
 }
