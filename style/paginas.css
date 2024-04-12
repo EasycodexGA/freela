@@ -408,6 +408,10 @@
     max-width: 60%;
 }
 
+.btn-presenca{
+    height: fit-content;
+}
+
 .chamadaout{
     display: flex;
     flex-direction: column;
