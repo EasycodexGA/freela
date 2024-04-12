@@ -4,7 +4,7 @@ include '../../conexao.php';
 justLog($__EMAIL__, $__TYPE__, 3);
 
 header('Content-Type: text/csv; charset=utf-8');
-header('Content-Disposition: attachment; filename=relatorio_alunos.csv');
+header("Content-Disposition: attachment; filename*=UTF-8''relatorio_alunos.csv");
 
 $resultado = fopen("php://output", 'w');
 
