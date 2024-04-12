@@ -317,4 +317,7 @@
     .highheader h1{
         display: none!important;
     }
+    .highheader{
+        justify-content: center!important;
+    }
 }
