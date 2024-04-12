@@ -47,7 +47,7 @@ while($_dados_ = mysqli_fetch_array($_query_)){
         array_push($arrProf, array("id"=>$idP, "nome"=>$nomeP, "imagem"=>$imagem));
     }
 
-    $query3 = mysqli_query($__CONEXAO__, "select id, data from aulas where turma='$decTurma'") or die("5");
+    $query3 = mysqli_query($__CONEXAO__, "select id, data, descricao from aulas where turma='$decTurma'") or die("5");
     $aulas = array();
 
     while($dados3 = mysqli_fetch_array($query3)){
@@ -64,7 +64,7 @@ while($_dados_ = mysqli_fetch_array($_query_)){
             $presencaC = $dados4['presenca'];
             array_push($chamadaAula, array("id"=>$idC, "nome"=>decrypt($nomeAC), "checked"=>$presencaC));
         }
-        array_push($aulas, array("id"=>$idAu, "data"=>$dataAu, "chamada"=>$chamadaAula, "descricao"=>$descAu));
+        array_push($aulas, array("id"=>$idAu, "data"=>$dataAu, "chamada"=>$chamadaAula, "descricao"=>decrypt($descAu));
     }
 
     $query5 = mysqli_query($__CONEXAO__, "select nome from categorias where id='$categoria'");
