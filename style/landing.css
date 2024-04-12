@@ -257,7 +257,7 @@ footer{
         display: none!important;
     }
     .login-h, .menu-h,  .nav .link-h{
-        display: block!important;
+        display: flex!important;
     }
     #navItem{
         display: block!important;
