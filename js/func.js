@@ -117,6 +117,8 @@ function verMais(id,type, titleStr){
                 i.chamada.forEach((e, index) => {
                     if(e.idA == file.idAluno){
                         presenca.innerText = i.chamada[index].checked == 1 ? 'presente' : 'ausente';
+                        presenca.classList.add('presenca-p');
+                        presenca.classList.add('presenca-a');
                     }
                 });
                 div.append(presenca)

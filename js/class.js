@@ -341,6 +341,8 @@ class File{
         }
         let th = document.createElement("th");
         tr.append(th);
+        let th2 = document.createElement("th");
+        tr.append(th2);
         headList2.appendChild(tr);
         hlo[1].appendChild(select);
     }
