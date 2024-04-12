@@ -246,6 +246,28 @@
 
 .nav .link-h, .menu-h{
     display: none;
+    color: white;
+    text-align: center;
+}
+
+.nav{
+    z-index: 100;
+    top: 0;
+    width: 100%;
+    max-width: 260px;
+    position: fixed;
+    overflow: hidden;
+    transition: all .3s;
+    right: 0;
+    background: var(--contraste2);
+}
+.nav-h{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    height: 100vh;
 }
 
 @media only screen and (max-width: 730px){
