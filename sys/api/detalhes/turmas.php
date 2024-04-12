@@ -60,10 +60,10 @@ while($_dados_ = mysqli_fetch_array($_query_)){
             $idC = $dados4['id'];
             $idAC = $dados4['aluno'];
             $queryA = mysqli_query($__CONEXAO__, "select id, nome from users where id='$idAC'");
-            $idAC = mysqli_fetch_assoc($queryA)['id'];
+            $idAAC = mysqli_fetch_assoc($queryA)['id'];
             $nomeAC = mysqli_fetch_assoc($queryA)['nome']; 
             $presencaC = $dados4['presenca'];
-            array_push($chamadaAula, array("id"=>$idC, "nome"=>decrypt($nomeAC), "idA"=>$idAC, "checked"=>$presencaC));
+            array_push($chamadaAula, array("id"=>$idC, "nome"=>decrypt($nomeAC), "idA"=>$idAAC, "checked"=>$presencaC));
         }
         array_push($aulas, array("id"=>$idAu, "data"=>$dataAu, "chamada"=>$chamadaAula, "descricao"=>decrypt($descAu)));
     }
