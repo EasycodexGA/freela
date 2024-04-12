@@ -68,6 +68,7 @@ function verMais(id,type, titleStr){
             i.data = date.toLocaleDateString("pt-BR");
         }
         let createDesc = false;
+        console.log(i);
         if(i.nome){
             p.innerText = i.nome;
         } else {
