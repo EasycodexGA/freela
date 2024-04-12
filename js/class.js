@@ -498,8 +498,7 @@ class Recados extends File{
 
 class Turmas extends File{
     constructor(id, idAluno){
-        super(id)
-        super(idAluno)
+        super(id, idAluno)
         this.name = 'turmas'
         this.linkGet = 'turmas/get/turmas'
         this.thContent = ['Nome', 'Categoria', 'Profissionais', 'Alunos', 'Status']
