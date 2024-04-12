@@ -312,6 +312,6 @@
     }
     #black {
         padding: 20px 20px 20px 40px!important;
-        width: calc(100% - 60px!important);
+        width: calc(100% - 60px)!important;
     }
 }
