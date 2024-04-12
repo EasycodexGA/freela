@@ -120,6 +120,7 @@ function verMais(id,type, titleStr){
                         check = index
                     }
                 });
+                console.log(check)
                 if(!check){
                     continue
                 }
