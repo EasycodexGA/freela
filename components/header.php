@@ -25,13 +25,14 @@ $_HEADER_ = "
             <a href='#localizacao' class='link-h'>Local</a>
             <a href='./galeria' class='link-h'>Galeria</a>
             <a href='./login' class='link-h login-h'>$escrita</a>
-            <button class='menu-h' onclick='alert(`hamb`)'>
+            <button class='menu-h' onclick='navToggle(`open`)'>
                 <img class='hamb' src='../img/hamb.png'>
             </button>
         </div>
     </header>
-    <nav class='nav'>
+    <nav id='navItem' class='nav'>
         <div class='nav-h'>
+            <button class='close-nav' onclick='navToggle(`close`)'>x</button>
             <a href='./' class='link-h'>Início</a>
             <a href='#sobre' class='link-h'>Sobre</a>
             <a href='#patrocinadores' class='link-h'>Patrocinadores</a>
@@ -40,4 +41,14 @@ $_HEADER_ = "
             <a href='./galeria' class='link-h'>Galeria</a>
         </div>
     </nav>
+
+    <script>
+        function navToggle(e){
+            if(e == 'open'){
+                navItem.classList.add('navOpen')
+                return;
+            }
+            navItem.classList.remove('navOpen')
+        }
+    </script>
 ";

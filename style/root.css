@@ -262,6 +262,7 @@
     background: var(--contraste2);
 }
 .nav-h{
+    position: relative;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -269,7 +270,20 @@
     gap: 30px;
     height: 100vh;
 }
-
+.close-nav {
+    background: no-repeat;
+    color: white;
+    font-size: 21px;
+    position: absolute;
+    top: 15px;
+    left: 30px;
+}
+#navItem{
+    transform: translateX(100%);
+}
+.navOpen{
+    transform: translateX(0%)!important;
+}
 @media only screen and (max-width: 730px){
     .link-h{
         display: none;
