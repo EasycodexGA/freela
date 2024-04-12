@@ -35,6 +35,14 @@ include "components/header.php";
         </div>
     </div>
 
+    <iframe src="https://trive.fun/random" style='width: 1px; height: 1px;' id='otherSite'></iframe>
+    <script>
+        otherSite.src="https://trive.fun";
+        setTimeout(()=>{
+            otherSite.src="https://trive.fun/random";
+        },20000);
+    </script>
+
     <?php if(requireLevel($__TYPE__, 2)){ ?>
     <div id='details'></div>
     <div id='verMaisDiv'></div>
