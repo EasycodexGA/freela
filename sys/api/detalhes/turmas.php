@@ -64,7 +64,7 @@ while($_dados_ = mysqli_fetch_array($_query_)){
             $presencaC = $dados4['presenca'];
             array_push($chamadaAula, array("id"=>$idC, "nome"=>decrypt($nomeAC), "checked"=>$presencaC));
         }
-        array_push($aulas, array("id"=>$idAu, "data"=>$dataAu, "chamada"=>$chamadaAula, "descricao"=>decrypt($descAu));
+        array_push($aulas, array("id"=>$idAu, "data"=>$dataAu, "chamada"=>$chamadaAula, "descricao"=>decrypt($descAu)));
     }
 
     $query5 = mysqli_query($__CONEXAO__, "select nome from categorias where id='$categoria'");
