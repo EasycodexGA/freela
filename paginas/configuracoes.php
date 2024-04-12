@@ -79,7 +79,6 @@ justLog($__EMAIL__, $__TYPE__, 1);
                     <a class='btn-add' href="../sys/api/relatorio/alunos">Alunos</a>
                     <a class='btn-add' href="../sys/api/relatorio/profissionais">Profissionais </a>
                     <a class='btn-add' href="../sys/api/relatorio/turmas">Turmas</a>
-                    <a class='btn-add' style="background: var(--contraste)" href="#">Eventos</a>
                 </div>
             </div>
         <?php } ?>
