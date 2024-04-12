@@ -291,26 +291,26 @@
 }
 @media only screen and (max-width: 730px){
     .link-h{
-        display: none;
+        display: none!important;
     }
     .login-h, .menu-h,  .nav .link-h{
-        display: block;
+        display: block!important;
     }
     #navItem{
-        display: block;
+        display: block!important;
     }
 
     #localizacao, form{
-        flex-direction: column;
+        flex-direction: column!important;
     }
     #localizacao iframe{
-        width: 100%;
-        height: 250px;
+        width: 100%!important;
+        height: 250px!important;
     }
     .inpout{
-        width: 100%;
+        width: 100%!important;
     }
     #black {
-        padding: 20px 20px 20px 40px;
+        padding: 20px 20px 20px 40px!important;
     }
 }
