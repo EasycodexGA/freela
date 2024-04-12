@@ -60,7 +60,7 @@ function verMais(id,type, titleStr){
         div.classList.add("chamada-list")
 
         let div2 = document.createElement('div');
-        div.classList.add('chamada-list2');
+        div2.classList.add('chamada-list2');
 
         let p = document.createElement("p");
         if(i.data){
