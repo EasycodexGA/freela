@@ -47,7 +47,7 @@ while($_dados_ = mysqli_fetch_array($_query_)){
         array_push($arrProf, array("id"=>$idP, "nome"=>$nomeP, "imagem"=>$imagem));
     }
 
-    $query3 = mysqli_query($__CONEXAO__, "select id, data, descricao from aulas where turma='$decTurma' order by desc") or die("5");
+    $query3 = mysqli_query($__CONEXAO__, "select id, data, descricao from aulas where turma='$decTurma' order by data desc") or die("5");
     $aulas = array();
 
     while($dados3 = mysqli_fetch_array($query3)){
