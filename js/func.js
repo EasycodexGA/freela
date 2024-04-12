@@ -114,9 +114,9 @@ function verMais(id,type, titleStr){
             } else {
                 let presenca = document.createElement('p');
                 let check = false;
+                console.log(file.idAluno);
                 i.chamada.forEach((e, index) => {
                     if(e.id == file.idAluno){
-                        console.log(file.idAluno)
                         check = index
                     }
                 });
