@@ -9,8 +9,8 @@ $local  = scapeString($__CONEXAO__, $_GET['local']);
 $local  = setString($local);
 $local  = decrypt($local);
 
-if($local == "recados"){
-    deletarRecados($__CONEXAO__, $__TYPE__, $__EMAIL__, $id);
+if($local == "espera"){
+    deletarEspera($__CONEXAO__, $__TYPE__, $__EMAIL__, $id);
 }
 
 $id = setNum($id);
@@ -38,6 +38,10 @@ if($local == "profissionais"){
 
 if($local == "turmas"){
     deletarTurma($__CONEXAO__, $__TYPE__, $__EMAIL__, $id);
+}
+
+if($local == "recados"){
+    deletarRecados($__CONEXAO__, $__TYPE__, $__EMAIL__, $id);
 }
 
 
