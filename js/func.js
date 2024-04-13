@@ -55,6 +55,9 @@ function verMais(id,type, titleStr){
 
     for(let i of array){
         i = JSON.parse(i);
+        if(file.typeUser == 1 && i.checked == 0){
+            continue
+        }
 
         let div = document.createElement('div');
         div.classList.add("chamada-list")
@@ -87,24 +90,21 @@ function verMais(id,type, titleStr){
         div.append(div2);
 
         if(type == 1){
-            let input = document.createElement("input");
-            input.type = 'checkbox';
-            input.classList.add("checkbox-presenca");
-            input.classList.add("checkbox-presencaa");
-            if(file.typeUser == 1){
-                input.disabled = true;
+            if(file.typeUser > 1){
+                let input = document.createElement("input");
+                input.type = 'checkbox';
+                input.classList.add("checkbox-presenca");
+                input.classList.add("checkbox-presencaa");
+                input.id = 'checkId-' + i.id;
+                if(i.checked == 1){
+                    input.checked = true;
+                }
+                let label = document.createElement("label");
+                label.setAttribute('for','checkId-' + i.id);
+                label.classList.add('toggle-switch');
+                div.append(input);
+                div.append(label);
             }
-            input.id = 'checkId-' + i.id;
-
-            if(i.checked == 1){
-                input.checked = true;
-            }
-
-            let label = document.createElement("label");
-            label.setAttribute('for','checkId-' + i.id);
-            label.classList.add('toggle-switch');
-            div.append(input);
-            div.append(label);
         }
         if(type == 2){
             if(file.typeUser > 1){

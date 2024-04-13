@@ -571,7 +571,7 @@ button{
     .chamada-list{
         flex-direction: column!important;
     }
-    .chamada-list p{
+    .chamada-list p, .chamada-list label{
         margin-top: 20px;
     }
 }
