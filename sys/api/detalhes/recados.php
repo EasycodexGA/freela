@@ -35,12 +35,18 @@ while($_dados_ = mysqli_fetch_array($_query_)){
         $to = mysqli_fetch_assoc($getTo);
         $to = decrypt($to["nome"]);
         $type = "Turma";
-
     }
 
     if($type == "3"){
         $to = "Todos";
         $type = "Geral";
+    }
+
+    if($type == "4"){
+        $getTo = mysqli_query($__CONEXAO__, "select nome from equipes where id='$to'");
+        $to = mysqli_fetch_assoc($getTo);
+        $to = decrypt($to["nome"]);
+        $type = "Equipe";
     }
     
 
