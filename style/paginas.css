@@ -150,6 +150,10 @@ thead tr{
     box-shadow: 0 0 0 1px var(--contraste2) !important;
 }
 
+[data-status="false"] .ver-detalhes{
+    color: var(--contraste2) !important;
+}
+
 .td-nome {
     text-transform: capitalize;
 }
