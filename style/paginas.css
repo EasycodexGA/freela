@@ -522,4 +522,7 @@ button{
     .inps-add{
         flex-direction: column;
     }
+    .header-list-out{
+        flex-direction: column!important;
+    }
 }
