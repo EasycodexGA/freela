@@ -45,7 +45,7 @@ class File{
                             tr.appendChild(td2);
                         }
     
-                        td.innerHTML = `<span>${key}:</span> <asd>${value}</asd>`;
+                        td.innerHTML = `<span>${key}:</span> <asd>${value}<asd`;
                         tr.appendChild(td);
                     }
                 }

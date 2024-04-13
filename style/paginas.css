@@ -568,6 +568,12 @@ button{
     .infs-conf{
         width: 100%;
     }
+    .chamada-list{
+        flex-direction: column!important;
+    }
+    .chamada-list p{
+        margin-top: 20px;
+    }
 }
 
 .empty-line{
