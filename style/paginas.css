@@ -136,7 +136,7 @@
 }
 
 thead tr{
-    box-shadow: none;
+    box-shadow: none !important;
 }
 
 .content-list td {
@@ -147,7 +147,7 @@ thead tr{
 }
 
 [data-status="false"]{
-    box-shadow: 0 0 0 1px var(--contraste2);
+    box-shadow: 0 0 0 1px var(--contraste2) !important;
 }
 
 .td-nome {
