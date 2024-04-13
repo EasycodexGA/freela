@@ -20,6 +20,7 @@ if(!requireLevel($__TYPE__, 1)){
         function navToggle(){
             left.classList.toggle("leftOpen");
         }
+    </script>
 </head>
 <body>
     <div id='recadosOut'>
