@@ -23,7 +23,7 @@ while($dados = mysqli_fetch_array($_query_)){
     $time   = $dados["time"];
     $active = $dados["active"];
 
-    if($time < $__TIME__){
+    if($time + 86400 < $__TIME__){
         // endCode("$time < $__TIME__", false);
         mysqli_query($__CONEXAO__, "update recados set active='0' where id='$id'");
         $active = "0";
@@ -43,6 +43,13 @@ while($dados = mysqli_fetch_array($_query_)){
 
     if($type == "3"){
         $to = "Todos";
+    }
+
+    if($type == "4"){
+        $getTo = mysqli_query($__CONEXAO__, "select nome from equipes where id='$to'");
+        $to = mysqli_fetch_assoc($getTo);
+        $to = decrypt($to["nome"]);
+        $type = "Turma";
     }
     
 
