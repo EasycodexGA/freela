@@ -49,7 +49,7 @@ while($dados = mysqli_fetch_array($_query_)){
         $getTo = mysqli_query($__CONEXAO__, "select nome from equipes where id='$to'");
         $to = mysqli_fetch_assoc($getTo);
         $to = decrypt($to["nome"]);
-        $type = "Turma";
+        $type = "Equipes";
     }
     
 
