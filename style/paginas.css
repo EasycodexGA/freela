@@ -531,4 +531,16 @@ button{
     .extra .header-in .funcBt{
         width: 100%!important;
     }
+    .content-list tr {
+        box-shadow: 0 0 0 1px var(--contraste);
+        border-radius: 2px;
+        display: flex !important;
+        flex-direction: column!important;
+        align-items: flex-start!important;
+        margin-bottom: 20px;
+    }
+    .content-list td{
+        width: calc(100% - 30px);
+        display: flex;
+    }
 }
