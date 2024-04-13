@@ -68,7 +68,7 @@ while($_dados_ = mysqli_fetch_array($_query_)){
         "desc"      => $desc,
         "to"        => $to,
         "type"      => $type,
-        "data"      => $time,
+        "data"      => $time + 86400,
         "status"    => $status,
     );
     array_push($array, $arr);
