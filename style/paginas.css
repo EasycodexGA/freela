@@ -562,6 +562,12 @@ button{
     thead tr{
         display: none!important;
     }
+    .inps-out{
+        flex-direction: column;
+    }
+    .infs-conf{
+        width: calc(100% - 30px);
+    }
 }
 
 .empty-line{
