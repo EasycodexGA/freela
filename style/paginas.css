@@ -525,10 +525,10 @@ button{
         flex-direction: column!important;
         align-items: normal!important;
     }
-    .header-in:nth-child(1){
+    .extra .header-in{
         flex-direction: column!important;
     }
-    .header-in:nth-child(1) .funcBt{
+    .extra .header-in .funcBt{
         width: 100%!important;
     }
 }
