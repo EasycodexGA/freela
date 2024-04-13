@@ -562,3 +562,11 @@ button{
 .empty-line{
     display: none!important;
 }
+
+.table-line {
+    display: table-row !important;
+}
+
+.table-line2 {
+    display: table-row !important;
+}
