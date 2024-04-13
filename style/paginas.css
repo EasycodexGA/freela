@@ -524,5 +524,6 @@ button{
     }
     .header-list-out{
         flex-direction: column!important;
+        align-items: normal!important;
     }
 }
