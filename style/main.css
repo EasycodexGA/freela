@@ -229,7 +229,7 @@ body {
         justify-content: center;
         align-items: center;
     }
-    .loading{
+    #loading{
         width: 100%;
     }
 }
