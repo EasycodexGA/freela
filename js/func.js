@@ -91,7 +91,7 @@ function verMais(id,type, titleStr){
             input.type = 'checkbox';
             input.classList.add("checkbox-presenca");
             input.classList.add("checkbox-presencaa");
-            if(file.typeUser > 1){
+            if(file.typeUser == 1){
                 input.disabled = true;
             }
             input.id = 'checkId-' + i.id;
