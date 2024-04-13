@@ -566,7 +566,7 @@ button{
         flex-direction: column;
     }
     .infs-conf{
-        width: calc(100% - 30px);
+        width: 100%;
     }
 }
 
