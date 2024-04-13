@@ -9,7 +9,7 @@ if($__TYPE__ == 3){
     $_query_ = mysqli_query($__CONEXAO__, "select * from eventos");
 } else {
     $table = $__TYPE__ == 2 ? 'professores' : 'alunos';
-    $_query_ = mysqli_query($__CONEXAO__, "select distinct eventos.* from eventos join $table on cast(eventos.turmas as char) like concat('%,',$table.turma,',%') where $table.email='$__EMAIL__'");
+    $_query_ = mysqli_query($__CONEXAO__, "select distinct eventos.* from eventos join $table on cast(eventos.turmas as char) like concat('%,',$table.turma,',%') join  where $table.email='$__EMAIL__'");
 }
 
 // var_dump("aaa " . $__EMAIL__);
