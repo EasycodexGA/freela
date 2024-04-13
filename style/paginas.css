@@ -503,7 +503,9 @@ button{
     color: white;
     cursor: pointer;
 }
-
+.ver-detalhes{
+    padding: 0!important;
+}
 .presenca-p{
     color: #18B657;
 }
