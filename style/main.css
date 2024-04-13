@@ -186,3 +186,40 @@ body {
     margin-left: auto;
     cursor: pointer;
 }
+
+/* RESPONSIVIDADE PAINEL  */
+
+.bt-phone{
+    position: fixed;
+    display: none;
+    width: 30px;
+    aspect-ratio: 1;
+    border-radius: 100px;
+    right: 30px;
+    bottom: 30px;
+    cursor: pointer;
+}
+
+.hamb{    
+    width: 25px;
+    aspect-ratio: 1;
+    filter: invert(1);
+}
+
+@media screen and (max-width: 730px){
+    .left{
+        z-index: 10!important;
+        width: 100vw!important;
+        height: 1px!important;
+        transform: translateX(-100%)!important;
+        position: fixed!important;
+    }
+    .right{
+        width: 100vw!important;
+    }
+    .bt-phone{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

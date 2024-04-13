@@ -16,6 +16,10 @@ if(!requireLevel($__TYPE__, 1)){
     <link rel="shortcut icon" href="img/prefeitura.png" type="image/x-icon">
     <title>Voleibol escolinhas - Dashboard</title>
     <script type="module" src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/ring2.js"></script>
+    <script>
+        function navToggle(){
+            left.classList.toggle("leftOpen");
+        }
 </head>
 <body>
     <div id='recadosOut'>
@@ -23,7 +27,10 @@ if(!requireLevel($__TYPE__, 1)){
     </div>
 
     <div class="int-main">
-        <div class="left">
+        <button class="bt-phone" onclick="navToggle()">
+            <img class="hamb" src="../img/hamb.png">
+        </button>
+        <div id='left' class="left">
             <div class="left-top">
                 <div class="logo" style='background: none!important'>
                     <div class="img-div">
