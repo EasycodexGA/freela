@@ -539,7 +539,7 @@ button{
     .content-list tr {
         box-shadow: 0 0 0 1px var(--contraste);
         border-radius: 2px;
-        display: flex !important;
+        display: flex;
         flex-direction: column!important;
         align-items: flex-start!important;
         margin-bottom: 20px;
