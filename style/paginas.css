@@ -513,3 +513,13 @@ button{
     color: #F24C4C;
 }
 
+/* RESPONSIVIDADE PAGINAS  */
+
+@media screen and (max-width: 730px){
+    .inp-add-out, .inp-add-out2{
+        width: 100%;
+    }
+    .inps-add{
+        flex-direction: column;
+    }
+}
