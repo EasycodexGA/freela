@@ -330,6 +330,7 @@ function cleanInps(){
 if (typeof searchBar !== "undefined"){
     searchBar.addEventListener('keyup', ()=>{
         let val = searchBar.value.toString();
+        val = val.toLowerCase();
         let filter = selectFilter.value.toLowerCase();
         filter = filter == 'nascimento' ? 'data' : filter;
         for(let i of file.allData){
