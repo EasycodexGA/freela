@@ -550,7 +550,12 @@ button{
         width: calc(100% - 30px);
         display: flex;
     }
+    asd{
+        display: block;
+        text-transform: capitalize;
+    }
     .content-list td span{
+        text-transform: capitalize;
         display: block;
         margin-right: 10px;
     }
