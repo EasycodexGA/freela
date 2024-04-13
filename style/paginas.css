@@ -558,3 +558,7 @@ button{
         display: none!important;
     }
 }
+
+.empty-line{
+    display: none!important;
+}
