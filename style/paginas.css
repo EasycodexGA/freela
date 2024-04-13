@@ -550,8 +550,9 @@ button{
     }
     .content-list td span{
         display: block;
+        margin-right: 10px;
     }
     thead tr{
-        display: none;
+        display: none!important;
     }
 }
