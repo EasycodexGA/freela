@@ -526,9 +526,9 @@ button{
         align-items: normal!important;
     }
     .header-in:nth-child(1){
-        flex-direction: column;
+        flex-direction: column!important;
     }
     .header-in:nth-child(1) .funcBt{
-        width: 100%;
+        width: 100%!important;
     }
 }
