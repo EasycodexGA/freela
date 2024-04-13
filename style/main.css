@@ -229,7 +229,11 @@ body {
         justify-content: center;
         align-items: center;
     }
-    #loading{
+    #loading, .inp-add-out, .inp-add-out2{
         width: 100%;
     }
+    .inps-add{
+        flex-direction: column;
+    }
+    
 }
