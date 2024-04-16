@@ -62,6 +62,8 @@ $novoNome   = "banner.$format";
 $completo = "$caminho/$novoNome";
 $novoNomeEnc = encrypt($novoNome);
 
+unlink("$completo");
+
 if($ext != ""){
     $ext .= ", banner='$novoNomeEnc'";
 } else {

@@ -51,6 +51,8 @@ $novoNome   = "logo.$format";
 $completo = "$caminho/$novoNome";
 $novoNomeEnc = encrypt($novoNome);
 
+unlink("$completo");
+
 // Verifique se a imagem é PNG e processe-a de acordo
 if ($format === 'png') {
     $im = imagecreatefromstring($imageData);
