@@ -78,7 +78,7 @@ $bInfo3 = str_replace(")", "</span>", $bInfo3);
     <?php if(requireLevel($__TYPE__, 3)){ ?>
         <section class='container'>
             <div class='extra'>
-                <div class='header-in'>
+                <div class='header-in' style='flex-wrap: wrap'>
                     <button onclick='openAdd(changeSite)' class='funcBt'>+ Editar banner</button>
                     <button onclick='openAdd(changeLogo)' class='funcBt'>+ Editar Logotipo</button>
                     <button onclick='openAdd(changeMiniDesc)' class='funcBt'>+ Editar mini descrições</button>
