@@ -30,17 +30,17 @@ $titleBanner = decrypt($assocBanner["title"]);
 $imgBanner = decrypt($assocBanner["banner"]);
 $locBannerImg = "$__WEB__/imagens/website/$imgBanner";
 
-$bInfo1 = decrypt($assocBanner["info1"]);
-$bInfo2 = decrypt($assocBanner["info2"]);
-$bInfo3 = decrypt($assocBanner["info3"]);
+$bInfo1o = decrypt($assocBanner["info1"]);
+$bInfo2o = decrypt($assocBanner["info2"]);
+$bInfo30 = decrypt($assocBanner["info3"]);
 
-$bInfo1 = str_replace("(", "<span>", $bInfo1);
-$bInfo2 = str_replace("(", "<span>", $bInfo2);
-$bInfo3 = str_replace("(", "<span>", $bInfo3);
+$bInfo1 = str_replace("(", "<span>", $bInfo1o);
+$bInfo2 = str_replace("(", "<span>", $bInfo2o);
+$bInfo3 = str_replace("(", "<span>", $bInfo3o);
 
-$bInfo1 = str_replace(")", "<span>", $bInfo1);
-$bInfo2 = str_replace(")", "<span>", $bInfo2);
-$bInfo3 = str_replace(")", "<span>", $bInfo3);
+$bInfo1 = str_replace(")", "</span>", $bInfo1o);
+$bInfo2 = str_replace(")", "</span>", $bInfo2o);
+$bInfo3 = str_replace(")", "</span>", $bInfo3o);
 ?>
 
 <!DOCTYPE html>
@@ -108,15 +108,15 @@ $bInfo3 = str_replace(")", "<span>", $bInfo3);
                     <div class='inps-add'>
                         <div class='inp-add-out'>
                             <h3>Informação 1</h3>
-                            <input id='info1Add' type='text' value='<?php echo $bInfo1; ?>'/>
+                            <input id='info1Add' type='text' value='<?php echo $bInfo10; ?>'/>
                         </div>
                         <div class='inp-add-out'>
                             <h3>Informação 2</h3>
-                            <input id='info2Add' type='text' value='<?php echo $bInfo2; ?>'/>
+                            <input id='info2Add' type='text' value='<?php echo $bInfo20; ?>'/>
                         </div>
                         <div class='inp-add-out'>
                             <h3>Informação 3</h3>
-                            <input id='info3Add' type='text' value='<?php echo $bInfo3; ?>'/>
+                            <input id='info3Add' type='text' value='<?php echo $bInfo30; ?>'/>
                         </div>
                     </div>
                     <div class='out-bt-sv'>
