@@ -23,12 +23,24 @@ while($dados = mysqli_fetch_array($getPat)){
     $patrocinadores .= "<img $extra src='$__WEB__/imagens/patrocinadores/$img' alt='$nome'/>";
 }
 
-$siteGet = mysqli_query($__CONEXAO__, "select banner, logo, title from configs where id='1'") or die("Atualize a página e tente novamente");
+$siteGet = mysqli_query($__CONEXAO__, "select banner, logo, title, info1, info2, info3 from configs where id='1'") or die("Atualize a página e tente novamente");
 $assocBanner = mysqli_fetch_assoc($siteGet);
 $titleBanner = decrypt($assocBanner["title"]);
 
 $imgBanner = decrypt($assocBanner["banner"]);
 $locBannerImg = "$__WEB__/imagens/website/$imgBanner";
+
+$bInfo1 = decrypt($assocBanner["info1"]);
+$bInfo2 = decrypt($assocBanner["info2"]);
+$bInfo3 = decrypt($assocBanner["info3"]);
+
+$bInfo1 = str_replace("(", "<span>", $bInfo1);
+$bInfo2 = str_replace("(", "<span>", $bInfo2);
+$bInfo3 = str_replace("(", "<span>", $bInfo3);
+
+$bInfo1 = str_replace(")", "<span>", $bInfo1);
+$bInfo2 = str_replace(")", "<span>", $bInfo2);
+$bInfo3 = str_replace(")", "<span>", $bInfo3);
 ?>
 
 <!DOCTYPE html>
@@ -56,9 +68,9 @@ $locBannerImg = "$__WEB__/imagens/website/$imgBanner";
                 <h2>Por: Prefeitura de Pomerode</h2>
             </div>
             <div class='top-black'>
-                <p>-> Do <span>Sub 13</span> ao <span>Sub 19</span>
-                <p>-> Vôlei de quadra</p>
-                <p>-> Vôlei de praia</p>
+                <p><?php echo $bInfo1; ?></p>
+                <p><?php echo $bInfo2; ?></p>
+                <p><?php echo $bInfo3; ?></p>
             </div>
             <a href='#contato'>Entrar em contato</a>
         </div>
@@ -69,6 +81,7 @@ $locBannerImg = "$__WEB__/imagens/website/$imgBanner";
                 <div class='header-in'>
                     <button onclick='openAdd(changeSite)' class='funcBt'>+ Editar banner</button>
                     <button onclick='openAdd(changeLogo)' class='funcBt'>+ Editar Logotipo</button>
+                    <button onclick='openAdd(changeMiniDesc)' class='funcBt'>+ Editar mini descrições</button>
                 </div>
             </div>
         </section>
@@ -90,6 +103,27 @@ $locBannerImg = "$__WEB__/imagens/website/$imgBanner";
             </div>
             <div id='details'></div>
             <div id='addNew'>
+            <div id='changeMiniDesc' class='add-container'>
+                    <h1 class='title-add'>Editar mini descrições</h1>
+                    <div class='inps-add'>
+                        <div class='inp-add-out'>
+                            <h3>Informação 1</h3>
+                            <input id='info1Add' type='text' value='<?php echo $bInfo1; ?>'/>
+                        </div>
+                        <div class='inp-add-out'>
+                            <h3>Informação 2</h3>
+                            <input id='info2Add' type='text' value='<?php echo $bInfo2; ?>'/>
+                        </div>
+                        <div class='inp-add-out'>
+                            <h3>Informação 3</h3>
+                            <input id='info3Add' type='text' value='<?php echo $bInfo3; ?>'/>
+                        </div>
+                    </div>
+                    <div class='out-bt-sv'>
+                        <button class='btn-close' onclick='closeAdd()'>Fechar</button>
+                        <button onclick='editMiniDesc()' class='btn-add'>Salvar</button>
+                    </div>
+                </div>
                 <div id='changeLogo' class='add-container'>
                     <h1 class='title-add'>Editar Logotipo</h1>
                     <div class='inps-add'>

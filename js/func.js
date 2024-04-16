@@ -405,6 +405,13 @@ const editLogo = async () => {
     })
 }
 
+const editMiniDesc = async () => {
+    addNewData("extra/site/editinfos", {
+        info1: info1Add.value,
+        info2: info2Add.value,
+        info3: info3Add.value
+    })
+}
 
 
 const convert64 = async () => {
