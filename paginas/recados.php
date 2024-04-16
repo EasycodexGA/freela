@@ -87,7 +87,7 @@ justLog($__EMAIL__, $__TYPE__, 2);
                     <div class='inp-add-out'>
                         <h3>Turma</h3>
                         <select id='turmaAdd'>
-                            <option>Nenhum aluno selecionado</option>
+                            <option>Nenhuma turma selecionada</option>
                         </select>
                     </div>
                     <div class='inp-add-out'>
@@ -118,9 +118,9 @@ justLog($__EMAIL__, $__TYPE__, 2);
                         <input id='descricao4Add' type='text' placeholder='Trazer assinatura...'/>
                     </div>
                     <div class='inp-add-out'>
-                        <h3>Turma</h3>
+                        <h3>Equipe</h3>
                         <select id='equipeAdd'>
-                            <option>Nenhum aluno selecionado</option>
+                            <option>Nenhuma turma selecionado</option>
                         </select>
                     </div>
                     <div class='inp-add-out'>
