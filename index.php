@@ -32,7 +32,7 @@ $locBannerImg = "$__WEB__/imagens/website/$imgBanner";
 
 $bInfo1o = decrypt($assocBanner["info1"]);
 $bInfo2o = decrypt($assocBanner["info2"]);
-$bInfo30 = decrypt($assocBanner["info3"]);
+$bInfo3o = decrypt($assocBanner["info3"]);
 
 $bInfo1 = str_replace("(", "<span>", $bInfo1o);
 $bInfo2 = str_replace("(", "<span>", $bInfo2o);
@@ -108,15 +108,15 @@ $bInfo3 = str_replace(")", "</span>", $bInfo3);
                     <div class='inps-add'>
                         <div class='inp-add-out'>
                             <h3>Informação 1</h3>
-                            <input id='info1Add' type='text' value='<?php echo $bInfo10; ?>'/>
+                            <input id='info1Add' type='text' value='<?php echo $bInfo1o; ?>'/>
                         </div>
                         <div class='inp-add-out'>
                             <h3>Informação 2</h3>
-                            <input id='info2Add' type='text' value='<?php echo $bInfo20; ?>'/>
+                            <input id='info2Add' type='text' value='<?php echo $bInfo2o; ?>'/>
                         </div>
                         <div class='inp-add-out'>
                             <h3>Informação 3</h3>
-                            <input id='info3Add' type='text' value='<?php echo $bInfo30; ?>'/>
+                            <input id='info3Add' type='text' value='<?php echo $bInfo3o; ?>'/>
                         </div>
                     </div>
                     <div class='out-bt-sv'>
