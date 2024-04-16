@@ -77,6 +77,7 @@ section#banner {
 .top-black p {
     color: white;
     font-size: 17px;
+    text-transform: uppercase;
 }
 
 .top-black p span{
