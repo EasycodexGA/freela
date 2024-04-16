@@ -7,6 +7,13 @@ if(requireLevel($__TYPE__, 1)){
     $escrita = "Painel";
 }
 
+$siteGet = mysqli_query($__CONEXAO__, "select logo from configs where id='1'") or die("Atualize a página e tente novamente");
+$assocBanner = mysqli_fetch_assoc($siteGet);
+
+$imgLogo = decrypt($assocBanner["logo"]);
+$locLogoImg = "$__WEB__/imagens/website/$imgLogo";
+
+// <img src='./img/logo.png'>
 $_HEADER_ = "
     <subheader class='highheader'>
         <h1>O esporte em você</h1>
@@ -15,7 +22,7 @@ $_HEADER_ = "
     </subheader>
     <header>
         <div class='left-h'>
-            <img src='./img/logo.png'>
+            <img src='$locLogoImg'>
         </div>
         <div class='right-h'>
             <a href='./' class='link-h'>Início</a>

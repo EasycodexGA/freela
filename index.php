@@ -23,9 +23,10 @@ while($dados = mysqli_fetch_array($getPat)){
     $patrocinadores .= "<img $extra src='$__WEB__/imagens/patrocinadores/$img' alt='$nome'/>";
 }
 
-$siteGet = mysqli_query($__CONEXAO__, "select banner, title from configs where id='1'");
+$siteGet = mysqli_query($__CONEXAO__, "select banner, logo, title from configs where id='1'") or die("Atualize a página e tente novamente");
 $assocBanner = mysqli_fetch_assoc($siteGet);
 $titleBanner = decrypt($assocBanner["title"]);
+
 $imgBanner = decrypt($assocBanner["banner"]);
 $locBannerImg = "$__WEB__/imagens/website/$imgBanner";
 ?>
@@ -67,6 +68,7 @@ $locBannerImg = "$__WEB__/imagens/website/$imgBanner";
             <div class='extra'>
                 <div class='header-in'>
                     <button onclick='openAdd(changeSite)' class='funcBt'>+ Editar banner</button>
+                    <button onclick='openAdd(changeLogo)' class='funcBt'>+ Editar Logotipo</button>
                 </div>
             </div>
         </section>
@@ -86,10 +88,22 @@ $locBannerImg = "$__WEB__/imagens/website/$imgBanner";
                     <button onclick='openAdd(addPatrocinador)' class='funcBt'>+ Adicionar patrocinador</button>
                 </div>
             </div>
-            <div id='details'>
-            </div>
+            <div id='details'></div>
             <div id='addNew'>
-            <div id='changeSite' class='add-container'>
+                <div id='changeLogo' class='add-container'>
+                    <h1 class='title-add'>Editar Logotipo</h1>
+                    <div class='inps-add'>
+                        <div class='inp-add-out'>
+                            <h3>Imagem</h3>
+                            <input id='logoAdd' type='file' placeholder='Nova imagem' accept="image/png, image/jpeg"/>
+                        </div>
+                    </div>
+                    <div class='out-bt-sv'>
+                        <button class='btn-close' onclick='closeAdd()'>Fechar</button>
+                        <button onclick='editLogo()' class='btn-add'>Salvar</button>
+                    </div>
+                </div>
+                <div id='changeSite' class='add-container'>
                     <h1 class='title-add'>Editar site</h1>
                     <div class='inps-add'>
                         <div class='inp-add-out'>
