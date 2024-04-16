@@ -57,7 +57,7 @@ if ($format === 'jpeg') {
 }
 
 
-$novoNome   = "b$__TIME__$__CODE__.$format";
+$novoNome   = "banner.$format";
 
 $completo = "$caminho/$novoNome";
 $novoNomeEnc = encrypt($novoNome);
