@@ -388,7 +388,7 @@ const editSite = async () => {
 }
 
 const editLogo = async () => {
-    let file = bannerAdd.files[0];
+    let file = logoAdd.files[0];
     let base64 = false;
     if(file){
         base64 = await getBase64(file);
