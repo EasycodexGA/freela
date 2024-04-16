@@ -57,12 +57,15 @@ if ($format === 'jpeg') {
 }
 
 
-$novoNome   = "banner.$format";
+$novoNome   = "b$__TIME__$__CODE__.$format";
 
 $completo = "$caminho/$novoNome";
 $novoNomeEnc = encrypt($novoNome);
 
-unlink("$completo");
+$rmBanner = mysqli_query($__CONEXAO__, "select banner from configs where id='1'");
+$assRmBanner = mysqli_fetch_assoc($rmBanner);
+$oldBanner = decrypt($assRmBanner["banner"]);
+unlink("$caminho/$oldBanner");
 
 if($ext != ""){
     $ext .= ", banner='$novoNomeEnc'";

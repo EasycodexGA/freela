@@ -47,11 +47,9 @@ if ($format === 'jpeg') {
     $format = 'jpg';
 }
 
-$novoNome   = "logo.$format";
+$novoNome   = "b$__TIME__$__CODE__.$format";
 $completo = "$caminho/$novoNome";
 $novoNomeEnc = encrypt($novoNome);
-
-unlink("$completo");
 
 // Verifique se a imagem é PNG e processe-a de acordo
 if ($format === 'png') {
@@ -64,6 +62,11 @@ if ($format === 'png') {
         endCode("Erro ao salvar imagem", false);
     }
 }
+
+$rmBanner = mysqli_query($__CONEXAO__, "select logo from configs where id='1'");
+$assRmBanner = mysqli_fetch_assoc($rmBanner);
+$oldBanner = decrypt($assRmBanner["logo"]);
+unlink("$caminho/$oldBanner");
 
 if (file_exists($completo) or !$image) {
     mysqli_query($__CONEXAO__, "update configs set logo='$novoNomeEnc'") or endCode("Erro ao salvar", false);
