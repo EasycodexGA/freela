@@ -22,7 +22,7 @@ $_HEADER_ = "
     </subheader>
     <header>
         <div class='left-h'>
-            <img src='$locLogoImg' onerror='this.style.diplay=`none`'>
+            <img src='$locLogoImg' onerror='(e)=> console.log(e)'>
         </div>
         <div class='right-h'>
             <a href='./' class='link-h'>Início</a>
