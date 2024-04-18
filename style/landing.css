@@ -21,6 +21,7 @@ header{
     padding: 8px 20px;
     display: flex;
     align-items: center;
+    min-height: 55px;
     justify-content: space-between;
     box-shadow: 0 4px 20px #00000015;
     gap: 20px;
