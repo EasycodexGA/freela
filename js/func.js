@@ -390,15 +390,8 @@ const editSite = async () => {
 const editLogo = async () => {
     let file = logoAdd.files[0];
     let base64 = false;
-    if(file){
-        base64 = await getBase64(file);
-    } else {
-        newMsg({
-            mensagem: "Coloque alguma imagem",
-            response: false
-        })
-        return;
-    }
+    base64 = await getBase64(file);
+
 
     addNewData("extra/site/editlogo", {
         image: base64
