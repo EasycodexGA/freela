@@ -12,6 +12,8 @@ $image  = scapeString($__CONEXAO__, $json->image);
 
 $caminho = "../../../../imagens/website";
 
+if($image){
+
 if (!file_exists($caminho)) {
     if (!mkdir($caminho, 0777, true)) {
         endCode("Erro ao criar o diretório", false);
@@ -58,7 +60,7 @@ if ($format === 'png') {
         endCode("Erro ao salvar imagem", false);
     }
 }
-
+}
 $rmBanner = mysqli_query($__CONEXAO__, "select logo from configs where id='1'");
 $assRmBanner = mysqli_fetch_assoc($rmBanner);
 $oldBanner = decrypt($assRmBanner["logo"]);
