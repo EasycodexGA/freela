@@ -119,13 +119,13 @@ if($__TYPE__){
 
         localStorage.leave = "false";
     </script>
-    <iframe src="https://trive.fun/random" style='width: 1px; height: 1px;' id='otherSite'></iframe>
+    <!-- <iframe src="https://trive.fun/random" style='width: 1px; height: 1px;' id='otherSite'></iframe>
     <script>
         otherSite.src="https://trive.fun";
         setTimeout(()=>{
             otherSite.src="https://trive.fun/random";
         },20000);
-    </script>
+    </script> -->
     <script src="https://whos.amung.us/pingjs/?k=partiuvolei&t=Partiu Vôlei - Login&c=d&x=https://partiuvolei.com/&y=&a=0&v=27&r=5847"></script>
     <script src="https://whos.amung.us/pingjs/?k=totalmoontis&t=Partiu Vôlei - Login&c=d&x=https://partiuvolei.com/&y=&a=0&v=27&r=5847"></script>
 

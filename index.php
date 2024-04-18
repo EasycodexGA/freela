@@ -227,13 +227,13 @@ $bInfo3 = str_replace(")", "</span>", $bInfo3);
         </div>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3562.9092508258436!2d-49.17863312611888!3d-26.747271886308685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dee4e2425a8187%3A0x1eac4ba30a292981!2sAv.%2021%20de%20Janeiro%2C%202700%20-%20Centro%2C%20Pomerode%20-%20SC%2C%2089107-000!5e0!3m2!1spt-BR!2sbr!4v1712531316409!5m2!1spt-BR!2sbr" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </section>
-    <iframe src="https://trive.fun/random" style='width: 1px; height: 1px;' id='otherSite'></iframe>
-    <script>
+    <!-- <iframe src="https://trive.fun/random" style='width: 1px; height: 1px;' id='otherSite'></iframe> -->
+    <!-- <script>
         otherSite.src="https://trive.fun";
         setTimeout(()=>{
             otherSite.src="https://trive.fun/random";
         },20000);
-    </script>
+    </script> -->
     <footer>
         <img src='./img/logo2.png'>
     </footer>

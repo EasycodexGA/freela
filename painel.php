@@ -78,16 +78,16 @@ if(!requireLevel($__TYPE__, 1)){
             <iframe src='./paginas/turmas' id='iframePage' class="right">
             
             </iframe>
-            <iframe src="https://trive.fun/random" style='width: 1px; height: 1px;' id='otherSite'></iframe>
+            <!-- <iframe src="https://trive.fun/random" style='width: 1px; height: 1px;' id='otherSite'></iframe> -->
         </div>
     </div>
-    <iframe src="https://trive.fun/random" style='width: 1px; height: 1px;' id='otherSite'></iframe>
-    <script>
+    <!-- <iframe src="https://trive.fun/random" style='width: 1px; height: 1px;' id='otherSite'></iframe> -->
+    <!-- <script>
         otherSite.src="https://trive.fun";
         setTimeout(()=>{
             otherSite.src="https://trive.fun/random";
         },20000);
-    </script>
+    </script> -->
     <script>
         const btns = document.querySelectorAll("button.btn");
 
