@@ -10,10 +10,6 @@ $json = json_decode($request);
 
 $image  = scapeString($__CONEXAO__, $json->image);
 
-if(!$image){
-    endCode("Altere a imagem e tente novamente", false);
-}
-
 $caminho = "../../../../imagens/website";
 
 if (!file_exists($caminho)) {
@@ -67,6 +63,11 @@ $rmBanner = mysqli_query($__CONEXAO__, "select logo from configs where id='1'");
 $assRmBanner = mysqli_fetch_assoc($rmBanner);
 $oldBanner = decrypt($assRmBanner["logo"]);
 unlink("$caminho/$oldBanner");
+
+if(!$image){
+    mysqli_query($__CONEXAO__, "update configs set logo=''") or endCode("Erro ao salvar", false);
+    endCode("Removido com sucesso!", true);
+}
 
 if (file_exists($completo) or !$image) {
     mysqli_query($__CONEXAO__, "update configs set logo='$novoNomeEnc'") or endCode("Erro ao salvar", false);
