@@ -229,3 +229,7 @@
 .excluir-pat:hover{
     opacity: 0.6!important;
 }
+
+.left-h img{
+    max-width: 130px;
+}
