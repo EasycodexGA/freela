@@ -42,7 +42,7 @@ $bInfo1 = str_replace(")", "</span>", $bInfo1);
 $bInfo2 = str_replace(")", "</span>", $bInfo2);
 $bInfo3 = str_replace(")", "</span>", $bInfo3);
 
-$descIndex = decrypt($assocBanner["desc"]);
+$descIndex = decrypt($assocBanner["descr"]);
 ?>
 
 <!DOCTYPE html>
