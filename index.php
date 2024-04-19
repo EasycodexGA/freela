@@ -138,7 +138,7 @@ $descIndex = decrypt($assocBanner["descr"]);
                 <div id='changeLogo' class='add-container'>
                     <h1 class='title-add'>Editar Logotipo</h1>
                     <div class='inps-add'>
-                        <div class='inp-add-out'>
+                        <div class='inp-add-out' style='width: 100%'>
                             <h3>Imagem</h3>
                             <input id='logoAdd' type='file' placeholder='Nova imagem' accept="image/png, image/jpeg"/>
                         </div>
@@ -151,7 +151,7 @@ $descIndex = decrypt($assocBanner["descr"]);
                 <div id='changeDesc' class='add-container'>
                     <h1 class='title-add'>Editar descrição</h1>
                     <div class='inps-add'>
-                        <div class='inp-add-out'>
+                        <div class='inp-add-out' style='width: 100%'>
                             <h3>Descrição</h3>
                             <input id='descAdd' type='text' value='<?php echo $descIndex; ?>'/>
                         </div>
