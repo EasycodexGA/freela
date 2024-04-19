@@ -23,10 +23,12 @@ $json = json_decode($request);
 $nome       = scapeString($__CONEXAO__, $json->nome);
 $email      = scapeString($__CONEXAO__, $json->email);
 $telefone   = scapeString($__CONEXAO__, $json->telefone);
+$desc       = scapeString($__CONEXAO__, $json->desc);
 
 $nome       = setString($nome);
 $email      = setEmail($email);
 $telefone   = setNum($telefone);
+$desc       = setNoXss($desc);
 
 checkMissing(
     array(
@@ -42,6 +44,6 @@ if(mysqli_num_rows($check) > 0){
     endCode("Alguém já utilizou esses dados", false);
 } 
 
-mysqli_query($__CONEXAO__, "insert into contatos (nome, email, telefone, created) values ('$nome', '$email', '$telefone', '$__TIME__')");
+mysqli_query($__CONEXAO__, "insert into contatos (nome, email, telefone, created, descr) values ('$nome', '$email', '$telefone', '$__TIME__', '$desc')");
 
 endCode("Enviado com sucesso!", true);

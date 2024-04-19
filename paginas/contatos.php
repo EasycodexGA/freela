@@ -54,6 +54,10 @@ justLog($__EMAIL__, $__TYPE__, 3);
                             <h1>Telefone</h1>
                             <p>${res.telefone}</p>
                         </div>
+                        <div class='contatoin'>
+                            <h1>Descrição</h1>
+                            <p>${res.desc}</p>
+                        </div>
                         <button onclick='removeContato(${res.id})'>Remover</button>
                     </div>
                 `;

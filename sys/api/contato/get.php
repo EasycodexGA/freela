@@ -13,10 +13,12 @@ while($dados = mysqli_fetch_array($query)){
     $nome       = decrypt($dados["nome"]);
     $email      = decrypt($dados["email"]);
     $telefone   = decrypt($dados["telefone"]);
+    $desc   = decrypt($dados["descr"]);
     
     array_push($arrData, array(
         "id" => $id,
         "nome" => $nome,
+        "desc" => $desc,
         "email" => $email,
         "telefone" => $telefone
     ));

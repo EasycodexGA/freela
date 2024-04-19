@@ -216,6 +216,10 @@ $descIndex = decrypt($assocBanner["descr"]);
                 <label for="telefone">Telefone</label>
                 <input id='telefone' type='text' placeholder='47 9 9999-9999'>
             </div>
+            <div class="inpout" bis_skin_checked="1" style="width: 100%">
+                <label for="descc">Descrição</label>
+                <input id="descc" type="text" placeholder="Ex: Quero saber como funciona!">
+            </div>
             <button onclick="dhuiashduih()">Enviar</button>
         </form>
     </section>
@@ -270,7 +274,8 @@ $descIndex = decrypt($assocBanner["descr"]);
                 body: JSON.stringify({
                     nome: nome.value,
                     email: email.value,
-                    telefone: telefone.value
+                    telefone: telefone.value,
+                    desc: descc.value
                 })
             })
             .then(e=>e.json())
