@@ -4,7 +4,7 @@ include '../../conexao.php';
 justLog($__EMAIL__, $__TYPE__, 3);
 
 
-$query = mysqli_query($__CONEXAO__, "select * from contatos");
+$query = mysqli_query($__CONEXAO__, "select * from contatos by id desc");
 
 $arrData = array();
 
