@@ -387,6 +387,12 @@ const editSite = async () => {
     })
 }
 
+const editDesc = async () => {
+    addNewData("extra/site/editdesc", {
+        desc: descAdd.value,
+    })
+}
+
 const editLogo = async () => {
     let file = logoAdd.files[0];
     let base64 = false;

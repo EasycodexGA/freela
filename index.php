@@ -23,7 +23,7 @@ while($dados = mysqli_fetch_array($getPat)){
     $patrocinadores .= "<img $extra src='$__WEB__/imagens/patrocinadores/$img' alt='$nome'/>";
 }
 
-$siteGet = mysqli_query($__CONEXAO__, "select banner, logo, title, info1, info2, info3 from configs where id='1'") or die("Atualize a página e tente novamente");
+$siteGet = mysqli_query($__CONEXAO__, "select * from configs where id='1'") or die("Atualize a página e tente novamente");
 $assocBanner = mysqli_fetch_assoc($siteGet);
 $titleBanner = decrypt($assocBanner["title"]);
 
@@ -41,6 +41,8 @@ $bInfo3 = str_replace("(", "<span>", $bInfo3o);
 $bInfo1 = str_replace(")", "</span>", $bInfo1);
 $bInfo2 = str_replace(")", "</span>", $bInfo2);
 $bInfo3 = str_replace(")", "</span>", $bInfo3);
+
+$descIndex = decrypt($assocBanner["desc"]);
 ?>
 
 <!DOCTYPE html>
@@ -88,7 +90,16 @@ $bInfo3 = str_replace(")", "</span>", $bInfo3);
     <?php } ?>
     <section id='sobre' class='container'>
         <h1>Sobre o projeto</h1>
-        <p>Projeto desportivo que mira, além da inclusão social, o rendimento desportivo individual e coletivo. Em sua essência, o PROJETO POMERODE VOLEIBOL 2024, visa oportunizar às crianças e jovens do município de Pomerode o contato com a modalidade VOLEIBOL de forma gratuita e em um ambiente saudável e integrado com a sociedade.</p>
+        <p><?php echo $descIndex; ?></p>
+        <?php if(requireLevel($__TYPE__, 3)){ ?>
+            <section class='container'>
+                <div class='extra'>
+                    <div class='header-in'>
+                        <button onclick='openAdd(changeDesc)' class='funcBt'>+ Alterar descrição</button>
+                    </div>
+                </div>
+            </section>
+        <?php } ?>
     </section>
     <section id='patrocinadores' class='container'>
         <h1>Patrocinadores</h1>
@@ -135,6 +146,19 @@ $bInfo3 = str_replace(")", "</span>", $bInfo3);
                     <div class='out-bt-sv'>
                         <button class='btn-close' onclick='closeAdd()'>Fechar</button>
                         <button onclick='editLogo()' class='btn-add'>Salvar</button>
+                    </div>
+                </div>
+                <div id='changeDesc' class='add-container'>
+                    <h1 class='title-add'>Editar descrição</h1>
+                    <div class='inps-add'>
+                        <div class='inp-add-out'>
+                            <h3>Descrição</h3>
+                            <input id='descAdd' type='text' value='<?php echo $descIndex; ?>'/>
+                        </div>
+                    </div>
+                    <div class='out-bt-sv'>
+                        <button class='btn-close' onclick='closeAdd()'>Fechar</button>
+                        <button onclick='editDesc()' class='btn-add'>Salvar</button>
                     </div>
                 </div>
                 <div id='changeSite' class='add-container'>
