@@ -12,5 +12,5 @@ $desc  = scapeString($__CONEXAO__, $json->desc);
 
 $desc = setNoXss($desc);
 
-mysqli_query($__CONEXAO__, "update configs set desc='$desc'") or endCode("Erro ao salvar", false);
+mysqli_query($__CONEXAO__, "update configs set descr='$desc'") or endCode("Erro ao salvar $desc", false);
 endCode("Editado com sucesso!", true);
