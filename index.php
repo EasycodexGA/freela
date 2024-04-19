@@ -91,7 +91,8 @@ $descIndex = decrypt($assocBanner["descr"]);
     <section id='sobre' class='container'>
         <h1>Sobre o projeto</h1>
         <p><?php echo $descIndex; ?></p>
-        <?php if(requireLevel($__TYPE__, 3)){ ?>
+    </section>
+    <?php if(requireLevel($__TYPE__, 3)){ ?>
             <section class='container'>
                 <div class='extra'>
                     <div class='header-in'>
@@ -100,7 +101,6 @@ $descIndex = decrypt($assocBanner["descr"]);
                 </div>
             </section>
         <?php } ?>
-    </section>
     <section id='patrocinadores' class='container'>
         <h1>Patrocinadores</h1>
         <div id='patrocinador'>
