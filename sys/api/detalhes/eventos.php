@@ -53,9 +53,9 @@ while($_dados_ = mysqli_fetch_array($_query_)){
     $allEquipes = array();
 
 
-    $queryT = mysqli_query($__CONEXAO__, "select id, nome, categoria from turmas where id in ('".$thisTurmas."')") or die ("asd".$thisbb);
+    $queryT = mysqli_query($__CONEXAO__, "select id, nome from turmas where id in ('".$thisTurmas."')") or die ("asd".$thisbb);
 
-    $queryNotT = mysqli_query($__CONEXAO__, "select id, nome, categoria from turmas where id not in ('".$thisTurmas."')") or die('bbb');
+    $queryNotT = mysqli_query($__CONEXAO__, "select id, nome from turmas where id not in ('".$thisTurmas."')") or die('bbb');
 
     $queryE = mysqli_query($__CONEXAO__, "select id, nome from equipes where id in ('".$thisEquipes."')");
     $queryNotE = mysqli_query($__CONEXAO__, "select id, nome from equipes where id not in ('".$thisEquipes."')");
@@ -64,24 +64,13 @@ while($_dados_ = mysqli_fetch_array($_query_)){
     while($dadosT = mysqli_fetch_array($queryT)){
         $turma      = $dadosT['nome'];
         $turmaId    = $dadosT['id'];
-        $categoriaT = $dadosT['categoria'];
-
-        $query5 = mysqli_query($__CONEXAO__, "select nome from categorias where id='$categoriaT'");
-        $nomeCat = mysqli_fetch_assoc($query5)['nome'];
-
-        array_push($arrTurmas, array("nome"=>decrypt($turma) . " - " . decrypt($nomeCat), "id"=>$turmaId, "checked"=>1));
+        array_push($arrTurmas, array("nome"=>decrypt($turma), "id"=>$turmaId, "checked"=>1));
     }
 
     while($dadosNotT = mysqli_fetch_array($queryNotT)){
         $turmaNot       = $dadosNotT['nome'];
         $turmaIdNot     = $dadosNotT['id'];
-
-        $categoriaT = $dadosNotT['categoria'];
-
-        $query5 = mysqli_query($__CONEXAO__, "select nome from categorias where id='$categoriaT'");
-        $nomeCat = mysqli_fetch_assoc($query5)['nome'];
-
-        array_push($allTurmas, array("nome"=>decrypt($turma) . " - " . decrypt($nomeCat), "id"=>$turmaIdNot, "checked"=>0));
+        array_push($allTurmas, array("nome"=>decrypt($turmaNot), "id"=>$turmaIdNot, "checked"=>0));
     }
 
     while($dadosE = mysqli_fetch_array($queryE)){
