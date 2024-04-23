@@ -41,7 +41,8 @@ if($email and $espera === true and $insert == true){
 
 checkMissing(
     array(
-        $cpf, 
+        // $cpf, 
+        // ele pediu para não ser obrigatório
         $nome, 
         $email,
         $nascimento,
@@ -59,7 +60,7 @@ if(!$insert){
     if(mysqli_num_rows($query) > 0){
         endCode("Email já cadastrado na lista de espera", false);
     }
-    $query = mysqli_query($__CONEXAO__, "select id from listaespera where cpf='$cpf'");
+    $query = mysqli_query($__CONEXAO__, "select id from listaespera where cpf='$cpf' and cpf!=''");
     if(mysqli_num_rows($query) > 0){
         endCode("CPF já cadastrado na lista de espera", false);
     }
