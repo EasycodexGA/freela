@@ -93,7 +93,7 @@ function stopUserExist($__CONEXAO__, $email, $cpf){
         exit;
     }
 
-    $tryConnect = mysqli_query($__CONEXAO__, "select id from users where cpf='$cpf'") or die("erro select");
+    $tryConnect = mysqli_query($__CONEXAO__, "select id from users where cpf='$cpf' and cpf!=''") or die("erro select");
 
     if(mysqli_num_rows($tryConnect) > 0){
         endCode("CPF já está em uso", false);
