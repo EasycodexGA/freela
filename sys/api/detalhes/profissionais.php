@@ -22,15 +22,19 @@ while($_dados_ = mysqli_fetch_array($_query_)){
     $status         = $_dados_["active"];
     $status         = $status == '1' ? "active" : "inactive";
 
-    $query  = mysqli_query($__CONEXAO__, "select id, nome from turmas where id in (select turma from professores where email='$email')");
+    $query  = mysqli_query($__CONEXAO__, "select id, nome, categoria from turmas where id in (select turma from professores where email='$email')");
     
     $arrTurmas = array();
 
     while($dados = mysqli_fetch_array($query)){
         $turma      = $dados['nome'];
         $turmaId    = $dados['id'];
+        $categoriaT = $dados['categoria'];
+
+        $query5 = mysqli_query($__CONEXAO__, "select nome from categorias where id='$categoriaT'");
+        $nomeCat = mysqli_fetch_assoc($query5)['nome'];
         
-        array_push($arrTurmas, array("nome"=>decrypt($turma), "id"=>$turmaId, "checked"=>1));
+        array_push($arrTurmas, array("nome"=>decrypt($turma) . " - " . decrypt($nomeCat), "id"=>$turmaId, "checked"=>1));
     }
 
     $allTurmas = array();
