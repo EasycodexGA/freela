@@ -198,20 +198,18 @@ function salvarCheckbox(id, type){
     } else {
         let string = file.arrayStrAdd[`${id}Array`];
         let array = string.split('#');
-
-        console.log(array)
-
+        
         let allBts = document.querySelectorAll('.checkbox-presencaa');
         for(let i = 0; i < allBts.length; i++){
             bool = allBts[i].checked ? 1 : 0 ;
             array[i] = JSON.parse(array[i]);
             array[i].checked = bool;
             array[i] = JSON.stringify(array[i]);
-            console.log(allBts[i].checked)
-
+            
         }
         let value = array.join('#');
         file.arrayStrAdd[`${id}Array`] = value;
+        console.log(file.arrayStrAdd[`${id}Array`])
     }
     if(type == 1 && id.includes('aulas')){
         verMais("aulas", 2, "aulas");
