@@ -284,6 +284,7 @@ function sendEdit(id, name, parent){
                         newArr.push(preData[j]);
                     }
                 }
+                console.log(newArr);
             }
         }
         data[`${i.dataset.key}`] = newArr;
