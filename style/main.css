@@ -37,7 +37,8 @@ body {
 }
 
 .img-div {
-    width: 50px;
+    width: 80%;
+    max-width: 130px;
 }
 
 .img-div img {
