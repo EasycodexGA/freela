@@ -271,8 +271,9 @@ function sendEdit(id, name, parent){
             preData = preData.split("#");
             for(let j in preData){
                 preData[j] = JSON.parse(preData[j]);
+                console.log(`preData`, preData[j]);
                 if(i.dataset.key == 'aulas'){
-                    let manipulate = file.arrayStrAdd[`aulas${preData[j].id}Array`]
+                    let manipulate = file.arrayStrAdd[`aulas${preData[j].id}Array`]                    
                     let test = preData[j].chamada
                     test = test.map((x)=>JSON.stringify(x))
                     test = test.join("#")
@@ -287,7 +288,7 @@ function sendEdit(id, name, parent){
         }
         data[`${i.dataset.key}`] = newArr;
     }
-    addNewData(url, data);
+    // addNewData(url, data);
 }
 
 function defineColor(e){
