@@ -28,7 +28,7 @@ $active         = setNum($active);
 checkMissing(
     array(
         $id,
-        $cpf,
+        // $cpf,
         $nome,
         $email,
         $nascimento,
