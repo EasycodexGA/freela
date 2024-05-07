@@ -198,7 +198,7 @@ function salvarCheckbox(id, type){
     } else {
         let string = file.arrayStrAdd[`${id}Array`];
         let array = string.split('#');
-        
+
         let allBts = document.querySelectorAll('.checkbox-presencaa');
         for(let i = 0; i < allBts.length; i++){
             bool = allBts[i].checked ? 1 : 0 ;
@@ -209,7 +209,6 @@ function salvarCheckbox(id, type){
         }
         let value = array.join('#');
         file.arrayStrAdd[`${id}Array`] = value;
-        console.log(file.arrayStrAdd[`${id}Array`])
     }
     if(type == 1 && id.includes('aulas')){
         verMais("aulas", 2, "aulas");
@@ -250,6 +249,7 @@ function addNewData(local, data){
 function sendEdit(id, name, parent){
     let url = 'editar/' + name;
     let data = {"id": id}
+    console.log(data);
     let inputs = parent.querySelectorAll(".input-americano");
     let buttons = parent.querySelectorAll(".btn-send-data");
     for(let i of inputs){
