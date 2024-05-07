@@ -39,8 +39,8 @@ if(!requireLevel($__TYPE__, 1)){
                         <img src="img/logo_praia.png">
                         <!-- <img src="img/prefeitura.png"> -->
                     </div>
-                    <!-- <p class="title-p1">Voleibol</p>
-                    <p class="title-p2">Escolinhas</p> -->
+                    <p class="title-p1">Programa</p>
+                    <p class="title-p2">VOLEIBOL POMERODE</p>
                 </div>
                 <div class="links">
                     <?php if(requireLevel($__TYPE__, 3)){ ?>
