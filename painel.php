@@ -35,10 +35,11 @@ if(!requireLevel($__TYPE__, 1)){
             <div class="left-top">
                 <div class="logo" style='background: none!important'>
                     <div class="img-div">
-                        <img src="img/prefeitura.png">
+                        <img src="img/logo_painel.jpeg">
+                        <!-- <img src="img/prefeitura.png"> -->
                     </div>
-                    <p class="title-p1">Voleibol</p>
-                    <p class="title-p2">Escolinhas</p>
+                    <!-- <p class="title-p1">Voleibol</p>
+                    <p class="title-p2">Escolinhas</p> -->
                 </div>
                 <div class="links">
                     <?php if(requireLevel($__TYPE__, 3)){ ?>
