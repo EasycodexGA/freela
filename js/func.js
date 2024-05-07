@@ -284,9 +284,7 @@ function sendEdit(id, name, parent){
                         newArr.push(preData[j]);
                     }
                 } else {
-                    if(preData[j].checked == 1){
-                        newArr.push(preData[j])
-                    }
+                    newArr.push(preData[j])
                 }
                 console.log(newArr);
             }
