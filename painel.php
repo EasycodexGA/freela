@@ -36,6 +36,7 @@ if(!requireLevel($__TYPE__, 1)){
                 <div class="logo" style='background: none!important'>
                     <div class="img-div">
                         <img src="img/logo_painel.jpeg">
+                        <img src="img/logo_praia.png">
                         <!-- <img src="img/prefeitura.png"> -->
                     </div>
                     <!-- <p class="title-p1">Voleibol</p>
