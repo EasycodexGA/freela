@@ -60,11 +60,15 @@ if(mysqli_num_rows($checkRepeat) > 0){
     endCode("Email já está em uso.", false);
 }
 
-$checkRepeat = mysqli_query($__CONEXAO__, "select id from users where cpf='$cpf' and id!='$id'");
+if(decrypt($cpf) != ""){
+    $checkRepeat = mysqli_query($__CONEXAO__, "select id from users where cpf='$cpf' and id!='$id'");
 
-if(mysqli_num_rows($checkRepeat) > 0){
-    endCode(" CPF já está em uso.", false);
+    if(mysqli_num_rows($checkRepeat) > 0){
+        endCode(" CPF já está em uso.", false);
+    }
 }
+
+
 
 for($i = 0; $i < count($turmas); $i++){
     $check = $turmas[$i]->checked;
