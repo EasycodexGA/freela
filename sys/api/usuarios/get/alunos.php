@@ -6,7 +6,7 @@ justLog($__EMAIL__, $__TYPE__, 2);
 if($__TYPE__ == 3){
     $_query_ = mysqli_query($__CONEXAO__, "select nome, active, email, nascimento, id from users where typeC='1' order by id desc");
 } else {
-    $_query_ = mysqli_query($__CONEXAO__, "select nome, active, email, nascimento, id from users where typeC='1' and email in (select email from alunos where turma in (select turma from professores where email='$__EMAIL__')) order by name desc");
+    $_query_ = mysqli_query($__CONEXAO__, "select nome, active, email, nascimento, id from users where typeC='1' and email in (select email from alunos where turma in (select turma from professores where email='$__EMAIL__')) order by nome asc");
 }
 
 $array = array();
