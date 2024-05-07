@@ -68,8 +68,6 @@ if(decrypt($cpf) != ""){
     }
 }
 
-
-
 for($i = 0; $i < count($turmas); $i++){
     $check = $turmas[$i]->checked;
     $idTurma = $turmas[$i]->id;
