@@ -44,6 +44,7 @@ if(!requireLevel($__TYPE__, 1)){
                 </div>
                 <div class="links">
                     <?php if(requireLevel($__TYPE__, 3)){ ?>
+                        <button onclick='openPage(`rifas`, this)' id="eventosBt" class='btn'>Rifas</button>
                         <button onclick='openPage(`contatos`, this)' id="eventosBt" class='btn'>Contatos</button>
                         <button onclick='openPage(`categorias`, this)' id="eventosBt" class='btn'>Categorias</button>
                         <button onclick='openPage(`profissionais`, this)' id="professoresBt" class="btn">Profissionais</button>
