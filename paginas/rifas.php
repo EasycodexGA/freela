@@ -69,7 +69,7 @@ justLog($__EMAIL__, $__TYPE__, 3);
                         nome: nomeAdd.value,
                         desc: descAdd.value,
                         data: (dataAdd.valueAsNumber / 1000),
-                        qt: getRifaQt(), //fazer as duas funções que retornam os valores -> valor normal se tiver quantidade e -1 se limiteNumRifa estiver clickado
+                        qt: getRifaQt(), // retornar -> valor normal se tiver quantidade e -1 se limiteNumRifa estiver clickado
                         premios: getRifaPremio() // retornar um objeto com com todos os premios e suas respectivas imagens
                     })' class='btn-add'>Salvar</button>
                 </div>
