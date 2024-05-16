@@ -51,7 +51,7 @@ justLog($__EMAIL__, $__TYPE__, 3);
             inputImg.type = 'file';
 
             let button = document.createElement('button');
-            button.onclick = () => {deletePremio(this)};
+            button.onclick = () => {deletePremio(button)};
             button.classList.add('removePremioBt');
             button.innerText = 'Remover item';
 
