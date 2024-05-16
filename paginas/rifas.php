@@ -123,7 +123,7 @@ justLog($__EMAIL__, $__TYPE__, 3);
             return obj
         }
 
-        function addRifass() {
+        async function addRifass() {
             let premiosObj = await getRifaPremio()
             addNewData("turmas/cadastrar/rifa", {
                         nome: nomeAdd.value,
