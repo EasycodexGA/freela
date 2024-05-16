@@ -12,6 +12,15 @@ justLog($__EMAIL__, $__TYPE__, 3);
     <link rel="shortcut icon" href="../img/prefeitura.png" type="image/x-icon">
     <script src="../js/func.js"></script>
     <script>
+        limiteNumRifa.onclick = () => {
+            if(limiteNumRifa.checked){
+                qtAdd.disabled = true;
+            } else {
+                qtAdd.disabled = false;
+            }
+        }
+
+
         function getRifaQt(){
             let val = limiteNumRifa.checked == true ? -1 : qtAdd.value
             return val
@@ -38,6 +47,8 @@ justLog($__EMAIL__, $__TYPE__, 3);
             me.parentElement.remove()
         }
 
+        let indexFile = 1
+
         function createPremio(me){
             let div = document.createElement('div');
             div.classList.add('inp-add-in-premio');
@@ -45,6 +56,10 @@ justLog($__EMAIL__, $__TYPE__, 3);
             let input = document.createElement('input');
             input.classList.add('premio-add-input');
             input.placeholder = 'Bicicleta';
+
+            let label = document.createElement('label');
+            label.for = 'item' + indexFile;
+            label.innerText = 'Imagem';
 
             let inputImg = document.createElement('input');
             inputImg.classList.add('premio-add-img');
@@ -56,10 +71,12 @@ justLog($__EMAIL__, $__TYPE__, 3);
             button.innerText = 'Remover item';
 
             div.append(input);
+            div.append(label);
             div.append(inputImg);
             div.append(button);
             
             inpAddOutPremio.append(div);
+            indexFile++;
         }
     </script>
 </head>
@@ -108,12 +125,13 @@ justLog($__EMAIL__, $__TYPE__, 3);
                         <h3>Limite de números?</h3>
                         <input id='limiteNumRifa' type='checkbox'>
                     </div>
-                    <div class='inp-add-out'>
+                    <div class='inp-add-out' style='width: 100%'>
                         <h3>Prêmios</h3>
                         <div id='inpAddOutPremio'>
                             <div class='inp-add-in-premio'>
                                 <input type='text' placeholder='Bicicleta' class='premio-add-input'/>
-                                <input type="file" accept='image/jpg, image/png, image/jpeg'>
+                                <label for='item0'>Imagem</label>
+                                <input type="file" accept='image/jpg, image/png, image/jpeg' id='item0' style='display: none'>
                             </div>
                         </div>
                         <button onclick='createPremio(this)' class='addPremioBt'>Adicionar prêmio</button>
