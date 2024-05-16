@@ -11,74 +11,7 @@ justLog($__EMAIL__, $__TYPE__, 3);
     <link rel="stylesheet" href="../style/paginas.css">
     <link rel="shortcut icon" href="../img/prefeitura.png" type="image/x-icon">
     <script src="../js/func.js"></script>
-    <script>
-        limiteNumRifa.onclick = () => {
-            if(limiteNumRifa.checked){
-                qtAdd.disabled = true;
-            } else {
-                qtAdd.disabled = false;
-            }
-        }
-
-
-        function getRifaQt(){
-            let val = limiteNumRifa.checked == true ? -1 : qtAdd.value
-            return val
-        }
-
-        function getRifaPremio(){
-            let obj = {}
-            let premioAddInput = document.querySelectorAll('.premio-add-input');
-            let premioAddImg = document.querySelectorAll('.premio-add-img');
-
-            for(i = 0; i < premioAddInput.length; i++){
-                if(premioAddInput[i].value != ''){
-                    obj[`premio${i}`] = {
-                        nome: premioAddInput[i].value,
-                        img: getBase64(premioAddImg[i].files[0])
-                    }
-                }
-            }
-            return obj
-        }
-
-        function deletePremio(me){
-            console.log(me);
-            me.parentElement.remove()
-        }
-
-        let indexFile = 1
-
-        function createPremio(me){
-            let div = document.createElement('div');
-            div.classList.add('inp-add-in-premio');
-
-            let input = document.createElement('input');
-            input.classList.add('premio-add-input');
-            input.placeholder = 'Bicicleta';
-
-            let label = document.createElement('label');
-            label.for = 'item' + indexFile;
-            label.innerText = 'Imagem';
-
-            let inputImg = document.createElement('input');
-            inputImg.classList.add('premio-add-img');
-            inputImg.type = 'file';
-
-            let button = document.createElement('button');
-            button.onclick = () => {deletePremio(button)};
-            button.classList.add('removePremioBt');
-            button.innerText = 'Remover item';
-
-            div.append(input);
-            div.append(label);
-            div.append(inputImg);
-            div.append(button);
-            
-            inpAddOutPremio.append(div);
-            indexFile++;
-        }
-    </script>
+    
 </head>
 <body>
 <div class='bodyin'>
@@ -161,6 +94,75 @@ justLog($__EMAIL__, $__TYPE__, 3);
                 <tbody id='tabList'></tbody>
             </table>
         </div>
+
+        <script>
+        limiteNumRifa.onclick = () => {
+            if(limiteNumRifa.checked){
+                qtAdd.disabled = true;
+            } else {
+                qtAdd.disabled = false;
+            }
+        }
+
+
+        function getRifaQt(){
+            let val = limiteNumRifa.checked == true ? -1 : qtAdd.value
+            return val
+        }
+
+        function getRifaPremio(){
+            let obj = {}
+            let premioAddInput = document.querySelectorAll('.premio-add-input');
+            let premioAddImg = document.querySelectorAll('.premio-add-img');
+
+            for(i = 0; i < premioAddInput.length; i++){
+                if(premioAddInput[i].value != ''){
+                    obj[`premio${i}`] = {
+                        nome: premioAddInput[i].value,
+                        img: getBase64(premioAddImg[i].files[0])
+                    }
+                }
+            }
+            return obj
+        }
+
+        function deletePremio(me){
+            console.log(me);
+            me.parentElement.remove()
+        }
+
+        let indexFile = 1
+
+        function createPremio(me){
+            let div = document.createElement('div');
+            div.classList.add('inp-add-in-premio');
+
+            let input = document.createElement('input');
+            input.classList.add('premio-add-input');
+            input.placeholder = 'Bicicleta';
+
+            let label = document.createElement('label');
+            label.for = 'item' + indexFile;
+            label.innerText = 'Imagem';
+
+            let inputImg = document.createElement('input');
+            inputImg.classList.add('premio-add-img');
+            inputImg.type = 'file';
+
+            let button = document.createElement('button');
+            button.onclick = () => {deletePremio(button)};
+            button.classList.add('removePremioBt');
+            button.innerText = 'Remover item';
+
+            div.append(input);
+            div.append(label);
+            div.append(inputImg);
+            div.append(button);
+            
+            inpAddOutPremio.append(div);
+            indexFile++;
+        }
+    </script>
     
 
     <div id="b2xcodeOut">
