@@ -64,7 +64,7 @@ justLog($__EMAIL__, $__TYPE__, 3);
                             <div class='inp-add-in-premio'>
                                 <input type='text' placeholder='Bicicleta' class='premio-add-input'/>
                                 <label for='item0'>Imagem</label>
-                                <input type="file" accept='image/jpg, image/png, image/jpeg' id='item0' style='display: none'>
+                                <input type="file" accept='image/jpg, image/png, image/jpeg' id='item0' style='display: none' class='premio-add-img'>
                             </div>
                         </div>
                         <button onclick='createPremio(this)' class='addPremioBt'>Adicionar prêmio</button>
