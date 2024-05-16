@@ -117,7 +117,7 @@ justLog($__EMAIL__, $__TYPE__, 3);
             let premioAddImg = document.querySelectorAll('.premio-add-img');
 
             for(i = 0; i < premioAddInput.length; i++){
-                console.log(i);
+                console.log(premioAddImg[i]);
                 if(premioAddInput[i].value != ''){
                     obj[`premio${i}`] = {
                         nome: premioAddInput[i].value,
