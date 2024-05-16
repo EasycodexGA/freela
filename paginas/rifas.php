@@ -121,7 +121,7 @@ justLog($__EMAIL__, $__TYPE__, 3);
                 if(premioAddInput[i].value != ''){
                     obj[`premio${i}`] = {
                         nome: premioAddInput[i].value,
-                        img: await (premioAddImg[i].files[0])
+                        img: await getBase64(premioAddImg[i].files[0])
                     }
                 }
             }
