@@ -149,6 +149,7 @@ justLog($__EMAIL__, $__TYPE__, 3);
             let inputImg = document.createElement('input');
             inputImg.classList.add('premio-add-img');
             inputImg.type = 'file';
+            inputImg.style = 'display: none';
 
             let button = document.createElement('button');
             button.onclick = () => {deletePremio(button)};
