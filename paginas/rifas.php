@@ -113,7 +113,7 @@ justLog($__EMAIL__, $__TYPE__, 3);
             for(i = 0; i < premioAddInput.length; i++){
                 console.log(premioAddImg[i]);
                 if(premioAddInput[i].value != ''){
-                    obj[`premio${i}`] = {
+                    await obj[`premio${i}`] = {
                         nome: premioAddInput[i].value,
                         img: await getBase64(premioAddImg[i].files[0])
                     }
