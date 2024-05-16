@@ -278,7 +278,7 @@ $descIndex = decrypt($assocBanner["descr"]);
         },20000);
     </script> -->
     <footer>
-        <img src='<?php echo $locLogoImg; ?>'>
+        <img style='max-width: 150px' src='<?php echo $locLogoImg; ?>'>
     </footer>
 
     <script src='js/func.js'></script>
