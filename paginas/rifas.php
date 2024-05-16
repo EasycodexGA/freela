@@ -143,13 +143,14 @@ justLog($__EMAIL__, $__TYPE__, 3);
             input.placeholder = 'Bicicleta';
 
             let label = document.createElement('label');
-            label.for = 'item' + indexFile;
+            label.setAttribute('for','item' + indexFile);
             label.innerText = 'Imagem';
 
             let inputImg = document.createElement('input');
             inputImg.classList.add('premio-add-img');
             inputImg.type = 'file';
             inputImg.style = 'display: none';
+            inputImg.id = 'item' + indexFile;
 
             let button = document.createElement('button');
             button.onclick = () => {deletePremio(button)};
