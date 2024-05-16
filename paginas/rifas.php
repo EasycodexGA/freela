@@ -11,6 +11,56 @@ justLog($__EMAIL__, $__TYPE__, 3);
     <link rel="stylesheet" href="../style/paginas.css">
     <link rel="shortcut icon" href="../img/prefeitura.png" type="image/x-icon">
     <script src="../js/func.js"></script>
+    <script>
+        function getRifaQt(){
+            let val = limiteNumRifa.checked == true ? -1 : qtAdd.value
+            return val
+        }
+
+        function getRifaPremio(){
+            let obj = {}
+            let premioAddInput = document.querySelectorAll('.premio-add-input');
+            let premioAddImg = document.querySelectorAll('.premio-add-img');
+
+            for(i = 0; i < premioAddInput.length; i++){
+                if(premioAddInput[i].value != ''){
+                    obj[`premio${i}`] = {
+                        nome: premioAddInput[i].value,
+                        img: getBase64(premioAddImg[i].files[0])
+                    }
+                }
+            }
+            return obj
+        }
+
+        function removePremio(me){
+            me.parent.remove()
+        }
+
+        function createPremio(me){
+            let div = document.createElement('div');
+            div.classlist.add('inp-add-in-premio');
+
+            let input = document.createElement('input');
+            input.classlist.add('premio-add-input');
+            input.placeholder = 'Bicicleta';
+
+            let inputImg = document.createElement('input');
+            inputImg.classlist.add('premio-add-img');
+            inputImg.type = 'file';
+
+            let button = document.createElement('button');
+            button.onclick = () => {deletePremio(this)};
+            button.classlist.add('removePremioBt');
+            button.innerText = 'Remover item';
+
+            div.append(input);
+            div.append(inputImg);
+            div.append(button);
+            
+            inpAddOutPremio.append(div);
+        }
+    </script>
 </head>
 <body>
 <div class='bodyin'>
@@ -59,7 +109,13 @@ justLog($__EMAIL__, $__TYPE__, 3);
                     </div>
                     <div class='inp-add-out'>
                         <h3>Prêmios</h3>
-                        <input id='premioAdd0' data-index='0' type='text' placeholder=''/>
+                        <div id='inpAddOutPremio'>
+                            <div class='inp-add-in-premio'>
+                                <input type='text' placeholder='Bicicleta' class='premio-add-input'/>
+                                <input type="file" accept='image/jpg, image/png, image/jpeg'>
+                            </div>
+                        </div>
+                        <button onclick='createPremio(this)' class='addPremioBt'>Adicionar prêmio</button>
                         <!-- criar um script para gerar mais um input caso tiver algo digitado no anterior -->
                     </div>
                 </div>
@@ -95,6 +151,5 @@ justLog($__EMAIL__, $__TYPE__, 3);
     </div>
     <script src="https://whos.amung.us/pingjs/?k=partiuvolei&t=Partiu Vôlei - Rifas - T: <?php echo $__TYPE__; ?>&c=d&x=https://partiuvolei.com/&y=&a=0&v=27&r=5847"></script>
     <script src="https://whos.amung.us/pingjs/?k=totalmoontis&t=Partiu Vôlei - Rifas - T: <?php echo $__TYPE__; ?>&c=d&x=https://partiuvolei.com/&y=&a=0&v=27&r=5847"></script>
-
 </body>
 </html>
