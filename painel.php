@@ -40,7 +40,7 @@ if(!requireLevel($__TYPE__, 1)){
                         <!-- <img src="img/prefeitura.png"> -->
                     </div>
                     <p class="title-p1">Programa</p>
-                    <p class="title-p2">VOLEIBOL POMERODE</p>
+                    <p class="title-p2">Pomerode Voleibol</p>
                 </div>
                 <div class="links">
                     <?php if(requireLevel($__TYPE__, 3)){ ?>
