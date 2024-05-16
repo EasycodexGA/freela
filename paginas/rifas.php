@@ -97,6 +97,7 @@ justLog($__EMAIL__, $__TYPE__, 3);
 
         <script>
         limiteNumRifa.onclick = () => {
+            console.log('a')
             if(limiteNumRifa.checked){
                 qtAdd.disabled = true;
             } else {
