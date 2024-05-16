@@ -34,6 +34,7 @@ justLog($__EMAIL__, $__TYPE__, 3);
         }
 
         function deletePremio(me){
+            console.log(me);
             me.parentElement.remove()
         }
 
