@@ -33,7 +33,7 @@ justLog($__EMAIL__, $__TYPE__, 3);
             return obj
         }
 
-        function removePremio(me){
+        function deletePremio(me){
             me.parent.remove()
         }
 
