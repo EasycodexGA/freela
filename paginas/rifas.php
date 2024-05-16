@@ -111,7 +111,7 @@ justLog($__EMAIL__, $__TYPE__, 3);
             return val
         }
 
-        function getRifaPremio(){
+        async function getRifaPremio(){
             let obj = {}
             let premioAddInput = document.querySelectorAll('.premio-add-input');
             let premioAddImg = document.querySelectorAll('.premio-add-img');
@@ -121,7 +121,7 @@ justLog($__EMAIL__, $__TYPE__, 3);
                 if(premioAddInput[i].value != ''){
                     obj[`premio${i}`] = {
                         nome: premioAddInput[i].value,
-                        img: getBase64(premioAddImg[i].files[0])
+                        img: await (premioAddImg[i].files[0])
                     }
                 }
             }
