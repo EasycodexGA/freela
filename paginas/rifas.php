@@ -73,7 +73,7 @@ justLog($__EMAIL__, $__TYPE__, 3);
                 </div>
                 <div class='out-bt-sv'>
                     <button class='btn-close' onclick='closeAdd()'>Fechar</button>
-                    <button onclick='addRifa()' class='btn-add'>Salvar</button>
+                    <button onclick='addRifass()' class='btn-add'>Salvar</button>
                 </div>
             </div>
         </div>
@@ -123,7 +123,7 @@ justLog($__EMAIL__, $__TYPE__, 3);
             return obj
         }
 
-        async function addRifa() {
+        async function addRifass() {
             addNewData("turmas/cadastrar/rifa", {
                         nome: nomeAdd.value,
                         desc: descAdd.value,
