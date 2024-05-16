@@ -39,7 +39,7 @@ justLog($__EMAIL__, $__TYPE__, 3);
 
         function createPremio(me){
             let div = document.createElement('div');
-            div.classlist.add('inp-add-in-premio');
+            div.classList.add('inp-add-in-premio');
 
             let input = document.createElement('input');
             input.classlist.add('premio-add-input');

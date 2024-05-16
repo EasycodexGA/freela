@@ -225,19 +225,34 @@ $descIndex = decrypt($assocBanner["descr"]);
     </section>
     <section id='responsavel' class='container'>
         <h1>Responsável</h1>
-        <div style="display:flex; gap: 30px; align-items: center;">
-        <div style="width: 125px; aspect-ratio: 1; position: relative; border-radius: 100px; overflow: hidden;">
-            <img style="position: absolute; width: 100%; height: 100%; object-fit: cover;" src="../img/luciano.jpg">
+        <div style='display: flex; gap: 30px;'>
+            <div style="display:flex; gap: 30px; align-items: center;">
+                <div style="width: 125px; aspect-ratio: 1; position: relative; border-radius: 100px; overflow: hidden;">
+                    <img style="position: absolute; width: 100%; height: 100%; object-fit: cover;" src="../img/luciano.jpg">
+                </div>
+                <div class="infos">
+                    <h1 class="title-header">Contato</h1>
+                    <p>
+                        <span>Prof. Luciano Menegaz</span>
+                        <span>F. (48) 99806 0667</span>
+                        <span>lucianor.menegaz@gmail.com</span>
+                    </p>
+                </div>
+            </div>
+            <div style="display:flex; gap: 30px; align-items: center;">
+                <div style="width: 125px; aspect-ratio: 1; position: relative; border-radius: 100px; overflow: hidden;">
+                    <img style="position: absolute; width: 100%; height: 100%; object-fit: cover;" src="../img/luciano.jpg">
+                </div>
+                <div class="infos">
+                    <h1 class="title-header">Contato</h1>
+                    <p>
+                        <span>Prof. Luciano Menegaz</span>
+                        <span>F. (48) 99806 0667</span>
+                        <span>lucianor.menegaz@gmail.com</span>
+                    </p>
+                </div>
+            </div>
         </div>
-        <div class="infos">
-            <h1 class="title-header">Contato</h1>
-            <p>
-                <span>Prof. Luciano Menegaz</span>
-                <span>F. (48) 99806 0667</span>
-                <span>lucianor.menegaz@gmail.com</span>
-            </p>
-        </div>
-    </div>
     </section>
     <section id='localizacao' class='container'>
         <div class='in-loc'>
