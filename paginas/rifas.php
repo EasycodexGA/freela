@@ -42,16 +42,16 @@ justLog($__EMAIL__, $__TYPE__, 3);
             div.classList.add('inp-add-in-premio');
 
             let input = document.createElement('input');
-            input.classlist.add('premio-add-input');
+            input.classList.add('premio-add-input');
             input.placeholder = 'Bicicleta';
 
             let inputImg = document.createElement('input');
-            inputImg.classlist.add('premio-add-img');
+            inputImg.classList.add('premio-add-img');
             inputImg.type = 'file';
 
             let button = document.createElement('button');
             button.onclick = () => {deletePremio(this)};
-            button.classlist.add('removePremioBt');
+            button.classList.add('removePremioBt');
             button.innerText = 'Remover item';
 
             div.append(input);
