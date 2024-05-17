@@ -6,8 +6,6 @@ include"functions.php";
 include"checkflood.php";
 include"auth.php";
 
-echo decrypt("0wGibXxxZk+rtERqgYt5szstadyu");
-
 date_default_timezone_set('America/Sao_Paulo');
 header('Content-Type: text/html; charset=utf-8');
 
