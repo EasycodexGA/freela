@@ -126,12 +126,12 @@ justLog($__EMAIL__, $__TYPE__, 3);
         async function addRifass() {
             let premiosObj = await getRifaPremio()
             addNewData("turmas/cadastrar/rifa", {
-                        nome: nomeAdd.value,
-                        desc: descAdd.value,
-                        data: (dataAdd.valueAsNumber / 1000),
-                        qt: getRifaQt(), // retornar -> valor normal se tiver quantidade e -1 se limiteNumRifa estiver clickado
-                        premios: premiosObj // retornar um objeto com com todos os premios e suas respectivas imagens
-                    })
+                nome: nomeAdd.value,
+                desc: descAdd.value,
+                data: (dataAdd.valueAsNumber / 1000),
+                qt: getRifaQt(), // retornar -> valor normal se tiver quantidade e -1 se limiteNumRifa estiver clickado
+                premios: premiosObj // retornar um objeto com com todos os premios e suas respectivas imagens
+            })
         }
 
         function deletePremio(me){
