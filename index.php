@@ -24,7 +24,7 @@ while($dados = mysqli_fetch_array($getPat)){
 }
 
 $siteGet = mysqli_query($__CONEXAO__, "select * from configs where id='1'") or die("Atualize a página e tente novamente");
-$assocBanner = mysqli_fetch_assoc($siteGet);]
+$assocBanner = mysqli_fetch_assoc($siteGet);
 
 $imgResp1 = decrypt($assocBanner["resp1foto"]);
 $imgResp2 = decrypt($assocBanner["resp2foto"]);
@@ -33,14 +33,14 @@ $imgResp1 = "$__WEB__/imagens/responsaveis/$imgResp1";
 $imgResp2 = "$__WEB__/imagens/responsaveis/$imgResp2";
 
 $resp1Data = decrypt($assocBanner["resp1data"]);
-// $resp1nome = decrypt($resp1Data->nome);
-// $resp1tel = decrypt($resp1Data->telefone);
-// $resp1email = decrypt($resp1Data->email);
+$resp1nome = decrypt($resp1Data->nome);
+$resp1tel = decrypt($resp1Data->telefone);
+$resp1email = decrypt($resp1Data->email);
 
 $resp2Data = decrypt($assocBanner["resp2data"]);
-// $resp2nome = decrypt($resp1Data['nome']);
-// $resp2tel = decrypt($resp1Data->telefone);
-// $resp2email = decrypt($resp1Data->email);
+$resp2nome = decrypt($resp1Data->nome);
+$resp2tel = decrypt($resp1Data->telefone);
+$resp2email = decrypt($resp1Data->email);
 
 $titleBanner = decrypt($assocBanner["title"]);
 
