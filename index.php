@@ -268,7 +268,7 @@ $descIndex = decrypt($assocBanner["descr"]);
     </section>
     <section id='responsavel' class='container'>
         <h1>Responsável</h1>
-        <div style='display: flex; gap: 30px;'>
+        <div style='display: flex; gap: 30px; flex-wrap: wrap;'>
             <div style="display:flex; gap: 30px; align-items: center;">
                 <div style="width: 125px; aspect-ratio: 1; position: relative; border-radius: 100px; overflow: hidden;">
                     <img style=" position: absolute; z-index: -1; width: 100%; height: 100%; object-fit: cover;" src="../img/luciano.jpg">
