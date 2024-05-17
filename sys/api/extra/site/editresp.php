@@ -21,8 +21,8 @@ $nomeresp1 = setNoXss($nomeresp1);
 $nomeresp2 = setNoXss($nomeresp2);
 $telresp1 = setNoXss($telresp1);
 $telresp2 = setNoXss($telresp2);
-$mailresp1 = setNoXss($mailresp1);
-$mailresp2 = setNoXss($mailresp2);
+$mailresp1 = setEmail($mailresp1);
+$mailresp2 = setEmail($mailresp2);
 
 checkMissing(
     array(
