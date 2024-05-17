@@ -282,13 +282,7 @@ $descIndex = decrypt($assocBanner["descr"]);
                     </p>
                 </div>
             </div>
-            <section class='container'>
-            <div class='extra'>
-                <div class='header-in' style='flex-wrap: wrap'>
-                    <button onclick='openAdd(addResponsavel)' class='funcBt'>+ Editar responsáveis</button>
-                </div>
-            </div>
-        </section>
+            
             <div style="display:flex; gap: 30px; align-items: center;">
                 <div style="width: 125px; aspect-ratio: 1; position: relative; border-radius: 100px; overflow: hidden;">
                     <img style="position: absolute; width: 100%; height: 100%; object-fit: cover;" src="../img/default.webp">
@@ -301,6 +295,13 @@ $descIndex = decrypt($assocBanner["descr"]);
                         <span>ctpomerodevoleidepraia@gmail.com</span>
                     </p>
                 </div>
+            </div>
+        </div>
+    </section>
+    <section class='container'>
+        <div class='extra'>
+            <div class='header-in' style='flex-wrap: wrap'>
+                <button onclick='openAdd(addResponsavel)' class='funcBt'>+ Editar responsáveis</button>
             </div>
         </div>
     </section>
