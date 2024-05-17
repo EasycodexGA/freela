@@ -38,9 +38,10 @@ checkMissing(
 function salvarImg($__CONEXAO__, $__TIME__, $__CODE__, $image, $local){
     $caminho = "../../../../imagens/responsaveis";
 
-    $$local = $image;
+    $$image = $image;
+    $$local = $local
 
-    if($$local){
+    if($$image){
 
         if (!file_exists($caminho)) {
             if (!mkdir($caminho, 0777, true)) {
@@ -49,7 +50,7 @@ function salvarImg($__CONEXAO__, $__TIME__, $__CODE__, $image, $local){
             }
         }
 
-        $parts = explode(',', $$local);
+        $parts = explode(',', $$image);
         if (count($parts) !== 2) {
             endCode("Código de imagem inválido", false);
             return;
@@ -89,17 +90,17 @@ function salvarImg($__CONEXAO__, $__TIME__, $__CODE__, $image, $local){
             }
         }
     }
-    $rmimg = mysqli_query($__CONEXAO__, "select $local from configs where id='1'");
+    $rmimg = mysqli_query($__CONEXAO__, "select " . $$local . " from configs where id='1'");
     $assRmimg = mysqli_fetch_assoc($rmimg);
-    $oldimg = decrypt($assRmimg[$local]);
+    $oldimg = decrypt($assRmimg[$$local]);
     unlink("$caminho/$oldimg");
 
-    if(!$$local){
-        mysqli_query($__CONEXAO__, "update configs set $local=''") or endCode("Erro ao salvar", false);
+    if(!$$image){
+        mysqli_query($__CONEXAO__, "update configs set " . $$local . "=''") or endCode("Erro ao salvar", false);
     }
 
     if (file_exists($completo)) {
-        mysqli_query($__CONEXAO__, "update configs set $local='$novoNomeEnc'") or endCode("Erro ao salvar", false);
+        mysqli_query($__CONEXAO__, "update configs set " . $$local . "='$novoNomeEnc'") or endCode("Erro ao salvar", false);
     }
 }
 
