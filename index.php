@@ -198,6 +198,49 @@ $descIndex = decrypt($assocBanner["descr"]);
                         <button onclick='convert64()' class='btn-add'>Salvar</button>
                     </div>
                 </div>
+                <div id='addResponsavel' class='add-container'>
+                    <h1 class='title-add'>Editar responsáveis</h1>
+                    <div class='inps-add'>
+                        <div class='inp-add-out'>
+                            <h3>Nome - Responsavel 1</h3>
+                            <input id='nomeResp1Add' type='text' placeholder='Nome'/>
+                        </div>
+                        <div class='inp-add-out'>
+                            <h3>Telefone - Responsavel 1</h3>
+                            <input id='telResp1Add' type='text' placeholder='telefone'/>
+                        </div>
+                        <div class='inp-add-out'>
+                            <h3>Email - Responsavel 1</h3>
+                            <input id='mailResp1Add' type='text' placeholder='email'/>
+                        </div>
+                        <div class='inp-add-out'>
+                            <h3>Imagem - Responsável 1</h3>
+                            <input id='imageResp1Add' type='file' placeholder='Nova imagem' accept="image/png, image/jpeg"/>
+                        </div>
+                    </div>
+                    <div class='inps-add'>
+                        <div class='inp-add-out'>
+                            <h3>Nome - Responsável 2</h3>
+                            <input id='nomeResp2Add' type='text' placeholder='Nome'/>
+                        </div>
+                        <div class='inp-add-out'>
+                            <h3>Telefone - Responsável 2</h3>
+                            <input id='telResp2Add' type='text' placeholder='telefone'/>
+                        </div>
+                        <div class='inp-add-out'>
+                            <h3>Email - Responsável 2</h3>
+                            <input id='mailResp2Add' type='text' placeholder='email'/>
+                        </div>
+                        <div class='inp-add-out'>
+                            <h3>Imagem - Responsável 2</h3>
+                            <input id='imageResp2Add' type='file' placeholder='Nova imagem' accept="image/png, image/jpeg"/>
+                        </div>
+                    </div>
+                    <div class='out-bt-sv'>
+                        <button class='btn-close' onclick='closeAdd()'>Fechar</button>
+                        <button onclick='convert64()' class='btn-add'>Salvar</button>
+                    </div>
+                </div>
             </div>
     <?php } ?>
     </section>
@@ -239,6 +282,13 @@ $descIndex = decrypt($assocBanner["descr"]);
                     </p>
                 </div>
             </div>
+            <section class='container'>
+            <div class='extra'>
+                <div class='header-in' style='flex-wrap: wrap'>
+                    <button onclick='openAdd(addResponsavel)' class='funcBt'>+ Editar responsáveis</button>
+                </div>
+            </div>
+        </section>
             <div style="display:flex; gap: 30px; align-items: center;">
                 <div style="width: 125px; aspect-ratio: 1; position: relative; border-radius: 100px; overflow: hidden;">
                     <img style="position: absolute; width: 100%; height: 100%; object-fit: cover;" src="../img/default.webp">
