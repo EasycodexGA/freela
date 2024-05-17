@@ -38,7 +38,7 @@ checkMissing(
 function salvarImg($__CONEXAO__, $__TIME__, $__CODE__, $image, $local){
     $caminho = "../../../../imagens/responsaveis";
 
-    $$local = $local;
+    $$local = $image;
 
     if($$local){
 
