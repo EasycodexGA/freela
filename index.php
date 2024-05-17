@@ -38,7 +38,7 @@ $resp1Data = decrypt($assocBanner["resp1data"]);
 // $resp1email = decrypt($resp1Data->email);
 
 $resp2Data = decrypt($assocBanner["resp2data"]);
-$resp2nome = decrypt($resp1Data['nome']);
+// $resp2nome = decrypt($resp1Data['nome']);
 // $resp2tel = decrypt($resp1Data->telefone);
 // $resp2email = decrypt($resp1Data->email);
 
