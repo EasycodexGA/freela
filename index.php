@@ -271,7 +271,7 @@ $descIndex = decrypt($assocBanner["descr"]);
         <div style='display: flex; gap: 30px;'>
             <div style="display:flex; gap: 30px; align-items: center;">
                 <div style="width: 125px; aspect-ratio: 1; position: relative; border-radius: 100px; overflow: hidden;">
-                    <img style="position: absolute; width: 100%; height: 100%; object-fit: cover;" src="../img/luciano.jpg">
+                    <img style="z-index: -1; position: absolute; width: 100%; height: 100%; object-fit: cover;" src="../img/luciano.jpg">
                 </div>
                 <div class="infos">
                     <h1 class="title-header">Contato</h1>
@@ -285,7 +285,7 @@ $descIndex = decrypt($assocBanner["descr"]);
             
             <div style="display:flex; gap: 30px; align-items: center;">
                 <div style="width: 125px; aspect-ratio: 1; position: relative; border-radius: 100px; overflow: hidden;">
-                    <img style="position: absolute; width: 100%; height: 100%; object-fit: cover;" src="../img/default.webp">
+                    <img style="z-index: -1; position: absolute; width: 100%; height: 100%; object-fit: cover;" src="../img/default.webp">
                 </div>
                 <div class="infos">
                     <h1 class="title-header">Contato</h1>
