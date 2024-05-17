@@ -102,9 +102,8 @@ function salvarImg($__CONEXAO__, $__TIME__, $__CODE__, $image, $local){
 }
 
 salvarImg($__CONEXAO__, $__TIME__, $__CODE__, $imageresp1, "resp1foto");
+sleep(5);
 salvarImg($__CONEXAO__, $__TIME__, $__CODE__, $imageresp2, "resp2foto");
-
-endCode("$imageresp2-resp2, $imageresp1-resp1", false);
 
 $restoData1 = array(
     "nome"=>$nomeresp1,
