@@ -38,7 +38,9 @@ checkMissing(
 function salvarImg($__CONEXAO__, $__TIME__, $__CODE__, $image, $local){
     $caminho = "../../../../imagens/responsaveis";
 
-    if($image){
+    $$image = $image;
+
+    if($$image){
 
         if (!file_exists($caminho)) {
             if (!mkdir($caminho, 0777, true)) {
@@ -47,7 +49,7 @@ function salvarImg($__CONEXAO__, $__TIME__, $__CODE__, $image, $local){
             }
         }
 
-        $parts = explode(',', $image);
+        $parts = explode(',', $$image);
         if (count($parts) !== 2) {
             endCode("Código de imagem inválido", false);
             return;
@@ -92,7 +94,7 @@ function salvarImg($__CONEXAO__, $__TIME__, $__CODE__, $image, $local){
     $oldimg = decrypt($assRmimg[$local]);
     unlink("$caminho/$oldimg");
 
-    if(!$image){
+    if(!$$image){
         mysqli_query($__CONEXAO__, "update configs set $local=''") or endCode("Erro ao salvar", false);
     }
 
@@ -102,7 +104,6 @@ function salvarImg($__CONEXAO__, $__TIME__, $__CODE__, $image, $local){
 }
 
 salvarImg($__CONEXAO__, $__TIME__, $__CODE__, $imageresp1, "resp1foto");
-sleep(5);
 salvarImg($__CONEXAO__, $__TIME__, $__CODE__, $imageresp2, "resp2foto");
 
 $restoData1 = array(
