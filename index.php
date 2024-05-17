@@ -33,14 +33,14 @@ $imgResp1 = "$__WEB__/imagens/responsaveis/$imgResp1";
 $imgResp2 = "$__WEB__/imagens/responsaveis/$imgResp2";
 
 $resp1Data = decrypt($assocBanner["resp1data"]);
-$resp1nome = decrypt($resp1Data->nome);
-$resp1tel = decrypt($resp1Data->telefone);
-$resp1email = decrypt($resp1Data->email);
+// $resp1nome = decrypt($resp1Data->nome);
+// $resp1tel = decrypt($resp1Data->telefone);
+// $resp1email = decrypt($resp1Data->email);
 
 $resp2Data = decrypt($assocBanner["resp2data"]);
-$resp2nome = decrypt($resp1Data->nome);
-$resp2tel = decrypt($resp1Data->telefone);
-$resp2email = decrypt($resp1Data->email);
+$resp2nome = decrypt($resp1Data['nome']);
+// $resp2tel = decrypt($resp1Data->telefone);
+// $resp2email = decrypt($resp1Data->email);
 
 $titleBanner = decrypt($assocBanner["title"]);
 
