@@ -59,14 +59,14 @@ function salvarImg($__CONEXAO__, $__TIME__, $__CODE__, $image, $local){
         }
 
         $format = str_replace(['data:image/', ';base64'], '', $formatPart);
-        if (!in_array($format, ['jpeg', 'jpg', 'gif', 'png'])) {
+        if (!in_array($format, ['jpg', 'gif', 'png'])) {
             endCode("Formato de imagem inválido", false);
             return;
         }
 
-        if ($format === 'jpeg') {
-            $format = 'jpg';
-        }
+        // if ($format === 'jpeg') {
+        //     $format = 'jpg';
+        // }
 
         $novoNome   = "l$__TIME__$__CODE__.$format";
         $completo = "$caminho/$novoNome";
