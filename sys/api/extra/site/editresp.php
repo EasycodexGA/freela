@@ -102,6 +102,7 @@ function salvarImg($__CONEXAO__, $__TIME__, $__CODE__, $image, $local){
 }
 
 salvarImg($__CONEXAO__, $__TIME__, $__CODE__, $imageresp1, "resp1foto");
+sleep(2);
 salvarImg($__CONEXAO__, $__TIME__, $__CODE__, $imageresp2, "resp2foto");
 
 $restoData1 = array(
