@@ -24,7 +24,24 @@ while($dados = mysqli_fetch_array($getPat)){
 }
 
 $siteGet = mysqli_query($__CONEXAO__, "select * from configs where id='1'") or die("Atualize a página e tente novamente");
-$assocBanner = mysqli_fetch_assoc($siteGet);
+$assocBanner = mysqli_fetch_assoc($siteGet);]
+
+$imgResp1 = decrypt($assocBanner["resp1foto"]);
+$imgResp2 = decrypt($assocBanner["resp2foto"]);
+
+$imgResp1 = "$__WEB__/imagens/responsaveis/$imgResp1";
+$imgResp2 = "$__WEB__/imagens/responsaveis/$imgResp2";
+
+$resp1Data = decrypt($assocBanner["resp1data"]);
+$resp1nome = decrypt($resp1Data->nome);
+$resp1tel = decrypt($resp1Data->telefone);
+$resp1email = decrypt($resp1Data->email);
+
+$resp2Data = decrypt($assocBanner["resp2data"]);
+$resp2nome = decrypt($resp1Data->nome);
+$resp2tel = decrypt($resp1Data->telefone);
+$resp2email = decrypt($resp1Data->email);
+
 $titleBanner = decrypt($assocBanner["title"]);
 
 $imgBanner = decrypt($assocBanner["banner"]);
@@ -271,28 +288,28 @@ $descIndex = decrypt($assocBanner["descr"]);
         <div style='display: flex; gap: 30px; flex-wrap: wrap;'>
             <div style="display:flex; gap: 30px; align-items: center;">
                 <div style=" z-index: -1; width: 125px; aspect-ratio: 1; position: relative; border-radius: 100px; overflow: hidden;">
-                    <img style=" position: absolute; z-index: -1; width: 100%; height: 100%; object-fit: cover;" src="../img/luciano.jpg">
+                    <img style=" position: absolute; z-index: -1; width: 100%; height: 100%; object-fit: cover;" src="<?php echo $imgResp1; ?>">
                 </div>
                 <div class="infos">
                     <h1 class="title-header">Contato</h1>
                     <p>
-                        <span>Prof. Luciano Menegaz</span>
-                        <span>F. (48) 99806 0667</span>
-                        <span>lucianor.menegaz@gmail.com</span>
+                        <span><?php echo $resp1nome; ?></span>
+                        <span><?php echo $resp1tel; ?></span>
+                        <span><?php echo $resp1email; ?></span>
                     </p>
                 </div>
             </div>
             
             <div style="display:flex; gap: 30px; align-items: center;">
                 <div style=" z-index: -1; width: 125px; aspect-ratio: 1; position: relative; border-radius: 100px; overflow: hidden;">
-                    <img style=" position: absolute; z-index: -1; width: 100%; height: 100%; object-fit: cover;" src="../img/default.webp">
+                    <img style=" position: absolute; z-index: -1; width: 100%; height: 100%; object-fit: cover;" src="<?php echo $imgResp2; ?>">
                 </div>
                 <div class="infos">
                     <h1 class="title-header">Contato</h1>
                     <p>
-                        <span>Prof. Manoel Henrique (Maneca)</span>
-                        <span>F. (00) 00000 0000</span>
-                        <span>ctpomerodevoleidepraia@gmail.com</span>
+                        <span><?php echo $resp2nome; ?></span>
+                        <span><?php echo $resp2tel; ?></span>
+                        <span><?php echo $resp2email; ?></span>
                     </p>
                 </div>
             </div>

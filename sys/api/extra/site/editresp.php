@@ -116,8 +116,8 @@ $restoData2 = array(
     "email"=>$mailresp2
 );
 
-$restoData1 = json_encode($restoData1);
-$restoData2 = json_encode($restoData2);
+$restoData1 = encrypt(json_encode($restoData1));
+$restoData2 = encrypt(json_encode($restoData2));
 
 mysqli_query($__CONEXAO__, "update configs set resp1data='$restoData1', resp2data='$restoData2'") or endCode("Erro ao salvar", false);
 
