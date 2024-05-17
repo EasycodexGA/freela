@@ -32,7 +32,7 @@ checkMissing(
     )
 );
 
-function salvarImg1($__CONEXAO__, $__TIME__, $__CODE__, $image, $local){
+function salvarImg($__CONEXAO__, $__TIME__, $__CODE__, $image, $local){
     $caminho = "../../../../imagens/responsaveis";
 
     if($image){
@@ -98,74 +98,8 @@ function salvarImg1($__CONEXAO__, $__TIME__, $__CODE__, $image, $local){
     }
 }
 
-function salvarImg2($__CONEXAO__, $__TIME__, $__CODE__, $image, $local){
-    $caminho = "../../../../imagens/responsaveis";
-
-    if($image){
-
-        if (!file_exists($caminho)) {
-            if (!mkdir($caminho, 0777, true)) {
-                endCode("Erro ao criar o diretório", false);
-                return;
-            }
-        }
-
-        $parts = explode(',', $image);
-        if (count($parts) !== 2) {
-            endCode("Código de imagem inválido", false);
-            return;
-        }
-
-        $formatPart = $parts[0];
-        $imageData = base64_decode($parts[1]);
-
-        if ($imageData === false) {
-            endCode("Decodificação de base64 falhou", false);
-            return;
-        }
-
-        $format = str_replace(['data:image/', ';base64'], '', $formatPart);
-        if (!in_array($format, ['jpeg', 'jpg', 'gif', 'png'])) {
-            endCode("Formato de imagem inválido", false);
-            return;
-        }
-
-        if ($format === 'jpeg') {
-            $format = 'jpg';
-        }
-
-        $novoNome   = "l$__TIME__$__CODE__.$format";
-        $completo = "$caminho/$novoNome";
-        $novoNomeEnc = encrypt($novoNome);
-
-        // Verifique se a imagem é PNG e processe-a de acordo
-        if ($format === 'png') {
-            $im = imagecreatefromstring($imageData);
-            imagesavealpha($im, true);
-            imagepng($im, $completo);
-            imagedestroy($im);
-        } else {
-            if (!file_put_contents($completo, $imageData)) {
-                endCode("Erro ao salvar imagem", false);
-            }
-        }
-    }
-    $rmimg = mysqli_query($__CONEXAO__, "select $local from configs where id='1'");
-    $assRmimg = mysqli_fetch_assoc($rmimg);
-    $oldimg = decrypt($assRmimg[$local]);
-    unlink("$caminho/$oldimg");
-
-    if(!$image){
-        mysqli_query($__CONEXAO__, "update configs set $local=''") or endCode("Erro ao salvar", false);
-    }
-
-    if (file_exists($completo)) {
-        mysqli_query($__CONEXAO__, "update configs set $local='$novoNomeEnc'") or endCode("Erro ao salvar", false);
-    }
-}
-
-salvarImg1($__CONEXAO__, $__TIME__, $__CODE__, $imageresp1, "resp1foto");
-salvarImg2($__CONEXAO__, $__TIME__, $__CODE__, $imageresp2, "resp2foto");
+salvarImg($__CONEXAO__, $__TIME__, $__CODE__, $imageresp1, "resp1foto");
+salvarImg($__CONEXAO__, $__TIME__, $__CODE__, $imageresp2, "resp2foto");
 
 $restoData1 = array(
     "nome"=>$nomeresp1,
