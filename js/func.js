@@ -328,6 +328,32 @@ async function newMsg(e){
     },2000)
 }
 
+async function changeResp(){
+    let resp1foto = imageResp1Add.files[0];
+    let resp2foto = imageResp2Add.files[0];
+    let base641 = false;
+    let base642 = false;
+
+    if(resp1foto){
+        base641 = await getBase64(resp1foto);
+    }
+
+    if(resp2foto){
+        base642 = await getBase64(resp2foto);
+    }
+
+    addNewData("extra/site/editresp", {
+        nomeresp1: nomeResp1Add.value,
+        nomeresp2: nomeResp2Add.value,
+        telresp1: telResp1Add.value,
+        telresp2: telResp2Add.value,
+        mailresp1: mailResp1Add.value,
+        mailresp2: mailResp2Add.value,
+        imageresp1: base641,
+        imageresp2: base642
+    })
+}
+
 function cleanInps(){
     let inpsAdd = document.querySelectorAll('#addNew input');
 

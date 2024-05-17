@@ -238,7 +238,7 @@ $descIndex = decrypt($assocBanner["descr"]);
                     </div>
                     <div class='out-bt-sv'>
                         <button class='btn-close' onclick='closeAdd()'>Fechar</button>
-                        <button onclick='convert64()' class='btn-add'>Salvar</button>
+                        <button onclick='changeResp()' class='btn-add'>Salvar</button>
                     </div>
                 </div>
             </div>
