@@ -33,7 +33,7 @@ $imgResp1 = "$__WEB__/imagens/responsaveis/$imgResp1";
 $imgResp2 = "$__WEB__/imagens/responsaveis/$imgResp2";
 
 $resp1Data = decrypt($assocBanner["resp1data"]);
-$resp1nome = decrypt($resp1Data->nome);
+$resp1nome = decrypt($resp1Data["nome"]);
 $resp1tel = decrypt($resp1Data->telefone);
 $resp1email = decrypt($resp1Data->email);
 
