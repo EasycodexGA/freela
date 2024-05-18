@@ -112,7 +112,7 @@ justLog($__EMAIL__, $__TYPE__, 3);
 
 
         function getRifaQt(){
-            let val = limiteNumRifa.checked == true ? -1 : qtAdd.value
+            let val = limiteNumRifa.checked == true ? -1 : Number(qtAdd.value)
             return val
         }
 
@@ -140,7 +140,7 @@ justLog($__EMAIL__, $__TYPE__, 3);
                 nome: nomeAdd.value,
                 desc: descAdd.value,
                 data: (dataAdd.valueAsNumber / 1000),
-                valor: valAdd.value,
+                valor: Number(valAdd.value),
                 qt: getRifaQt(), // retornar -> valor normal se tiver quantidade e -1 se limiteNumRifa estiver clickado
                 premios: premiosObj // retornar um objeto com com todos os premios e suas respectivas imagens
             })
