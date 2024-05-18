@@ -105,6 +105,10 @@ foreach($premios as $i){
     array_push($newPremio, array("nome"=>$nome, "img"=>$img));
 }
 
+$newPremio = json_encode($newPremio);
+$qt = decrypt($qt);
+$valor = decrypt($valor);
+
 mysqli_query($__CONEXAO__, "insert into rifas (nome, data, descricao, premios, qt, valor, created) values ('$nome','$data', '$descricao', '$newPremio', '$qt', '$valor', '$__TIME__')");
 
 endCode("Rifa criada com sucesso", true);
