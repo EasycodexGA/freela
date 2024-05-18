@@ -98,6 +98,7 @@ $newPremio = array();
 foreach($premios as $i){
     $img = $i->img;
     $nome = setNoXss($i->nome);
+    endCode($nome, false);
     checkMissing(array(
         $nome
     ));
