@@ -31,7 +31,7 @@ checkMissing(
     )
 );
 
-function salvarImg($__CONEXAO__, $__TIME__, $__CODE__, $image){
+function salvarImg($__CONEXAO__, $__TIME__, $__CODE__, $code, $image){
     $caminho = "../../../../imagens/rifas";
 
     if($image){
@@ -63,7 +63,7 @@ function salvarImg($__CONEXAO__, $__TIME__, $__CODE__, $image){
             $format = 'jpg';
         }
 
-        $novoNome   = "l$__TIME__$__CODE__.$format";
+        $novoNome   = "l$__TIME__$__CODE__$code.$format";
         $completo = "$caminho/$novoNome";
         $novoNomeEnc = encrypt($novoNome);
 
@@ -101,8 +101,8 @@ foreach($premios as $i){
     checkMissing(array(
         $nome
     ));
-    $path = salvarImg($__CONEXAO__, $__TIME__, $__CODE__, $img);
-    array_push($newPremio, array("nome"=>$nome, "img"=>$img));
+    $path = salvarImg($__CONEXAO__, $__TIME__, $__CODE__, bin2hex(random_bytes(3)), $img);
+    array_push($newPremio, array("nome"=>$nome, "img"=>$path));
 }
 
 $newPremio = json_encode($newPremio);
