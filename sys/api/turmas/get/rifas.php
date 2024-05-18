@@ -15,8 +15,7 @@ while($dados = mysqli_fetch_array($_query_)){
         "id"        => $dados["id"], 
         "nome"      => $nome,
         "img"       => $img,
-        "valor"     => $valor,
-        "_name"     => "rifas"
+        "valor"     => $valor
     );
     array_push($array, $arr);
 }

@@ -526,19 +526,35 @@ class Equipes extends File{
     }
 }
 
-// class Rifas extends File{
-//     constructor(id){
-//         super(id)
-//         this.name = 'equipes'
-//         this.linkGet = 'turmas/get/equipes'
-//         this.thContent = ['Nome', 'Alunos', 'Status']
-//         // this.jumpDetail.push()
-//         // this.numsDetail.push()
-//         this.arrayDetail.push('alunos')
-//         this.createTh()
-//         this.getData()
-//     }
-//     getData(){
-//        
-//     }
-// }
+class Rifas extends File{
+    constructor(id){
+        super(id)
+        this.name = 'rifas'
+        this.linkGet = 'turmas/get/rifas'
+        this.getData()
+    }
+    getData(){
+        let link = '../sys/api/' + this.linkGet
+        return fetch(`${link}`)
+        .then(e=>e.json())
+        .then(e=>{ 
+            this.allData = e.mensagem;
+            for(let i of e.mensagem){
+                console.log(i);
+            }
+        })
+    }
+    
+    getDetails(){
+        let link = '../sys/api/detalhes/' + this.name + '?id=' + this.idDetail
+        return fetch(link)
+        .then(e=>e.json())
+        .then(e=>{
+            if(!e.response){
+                newMsg(e);
+                return;
+            }
+            // criar detalhes
+        })
+    }
+}
