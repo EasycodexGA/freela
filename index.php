@@ -248,7 +248,7 @@ $descIndex = decrypt($assocBanner["descr"]);
                         </div>
                         <div class='inp-add-out'>
                             <h3>Email - Responsável 2</h3>
-                            <input id='mailResp2Add' type='text' value='<?php echo $resp2email; ?>'placeholder='email'/>
+                            <input id='mailResp2Add' type='text' value='<?php echo $resp2email; ?>' placeholder='email'/>
                         </div>
                         <div class='inp-add-out'>
                             <h3>Imagem - Responsável 2</h3>
@@ -317,6 +317,7 @@ $descIndex = decrypt($assocBanner["descr"]);
             </div>
         </div>
     </section>
+    <?php if(requireLevel($__TYPE__, 3)){ ?>
     <section class='container'>
         <div class='extra'>
             <div class='header-in' style='flex-wrap: wrap'>
@@ -324,6 +325,7 @@ $descIndex = decrypt($assocBanner["descr"]);
             </div>
         </div>
     </section>
+    <?php } ?>
     <section id='localizacao' class='container'>
         <div class='in-loc'>
             <h1>Localização</h1>
