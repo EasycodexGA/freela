@@ -140,7 +140,7 @@ justLog($__EMAIL__, $__TYPE__, 3);
                 nome: nomeAdd.value,
                 desc: descAdd.value,
                 data: (dataAdd.valueAsNumber / 1000),
-                valor: valAdd,
+                valor: valAdd.value,
                 qt: getRifaQt(), // retornar -> valor normal se tiver quantidade e -1 se limiteNumRifa estiver clickado
                 premios: premiosObj // retornar um objeto com com todos os premios e suas respectivas imagens
             })
