@@ -51,6 +51,10 @@ justLog($__EMAIL__, $__TYPE__, 3);
                         <input id='dataAdd' type='date'/>
                     </div>
                     <div class='inp-add-out'>
+                        <h3>Valor</h3>
+                        <input id='valAdd' type='number'/>
+                    </div>
+                    <div class='inp-add-out'>
                         <h3>Quantidade de números</h3>
                         <input id='qtAdd' type='number' placeholder='60'/>
                     </div>
@@ -89,6 +93,8 @@ justLog($__EMAIL__, $__TYPE__, 3);
                     <div class='image-rifa-out'>
                         <img class='image-rifa' src='#'>
                     </div>
+                    <p>R$2,50</p>
+                    <span>59 Restantes</span>
                     <button class='detalhes-rifa'>Ver detalhes</button>
                 </div>
             </div>
@@ -134,6 +140,7 @@ justLog($__EMAIL__, $__TYPE__, 3);
                 nome: nomeAdd.value,
                 desc: descAdd.value,
                 data: (dataAdd.valueAsNumber / 1000),
+                valor: valAdd,
                 qt: getRifaQt(), // retornar -> valor normal se tiver quantidade e -1 se limiteNumRifa estiver clickado
                 premios: premiosObj // retornar um objeto com com todos os premios e suas respectivas imagens
             })

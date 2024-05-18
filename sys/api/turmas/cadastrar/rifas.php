@@ -11,12 +11,14 @@ $json = json_decode($request);
 $qt         = scapeString($__CONEXAO__, $json->qt);
 $nome       = scapeString($__CONEXAO__, $json->nome);
 $data       = scapeString($__CONEXAO__, $json->data);
+$valor      = scapeString($__CONEXAO__, $json->valor);
 $premios    = scapeString($__CONEXAO__, $json->premios);
 $descricao  = scapeString($__CONEXAO__, $json->desc);
 
 $qt         = setNum($qt);
 $nome       = setNoXss($nome);
 $data       = setNum($data);
+$valor      = setNum($valor);
 $descricao  = setNoXss($descricao);
 
 checkMissing(
@@ -24,6 +26,7 @@ checkMissing(
         $qt,
         $nome,
         $data,
+        $valor,
         $descricao
     )
 );
@@ -103,6 +106,6 @@ foreach($premios as $i){
 }
 
 
-mysqli_query($__CONEXAO__, "insert into rifas (nome, data, descricao, premios, qt, created) values ('$nome','$data', '$descricao', '$newPremio', '$qt', '$__TIME__')");
+mysqli_query($__CONEXAO__, "insert into rifas (nome, data, descricao, premios, qt, valor, created) values ('$nome','$data', '$descricao', '$newPremio', '$qt', '$valor', '$__TIME__')");
 
 endCode("Rifa criada com sucesso", true);

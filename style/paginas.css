@@ -588,7 +588,7 @@ button{
     display: table-row !important;
 }
 .item-rifa{
-    width: calc(100% / 3 - 20px);
+    width: calc(100% / 3 - 30px);
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -596,6 +596,7 @@ button{
     background: white;
     box-shadow: 0 0 20px 0 #0000000d;
     border-radius: 5px;
+    max-width: 200px;
 }
 
 .itens-rifa-out{
@@ -605,13 +606,18 @@ button{
     margin-top: 20px;
 }
 
-.item-rifa h1{
+.item-rifa h1, .item-rifa p, .item-rifa span{
     text-align: center;
+    font-size: 16px;
+    color: gray;
+}
+
+.item-rifa h1{
     font-size: 18px;
 }
 
 .image-rifa-out{
     aspect-ratio: 1;
-    background: #ccc;
+    background: #eee;
     border-radius: 3px
 }

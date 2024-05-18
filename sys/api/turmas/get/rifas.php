@@ -9,11 +9,13 @@ while($dados = mysqli_fetch_array($_query_)){
     $nome       = decrypt($dados["nome"]);
     $premio     = $dados['premios'];
     $img        = $premio[0]->img;
+    $valor      = decrypt($dados['valor']);
 
     $arr = array(
         "id"        => $dados["id"], 
         "nome"      => $nome,
-        "img"      => $img,
+        "img"       => $img,
+        "valor"     => $valor,
         "_name"     => "rifas"
     );
     array_push($array, $arr);

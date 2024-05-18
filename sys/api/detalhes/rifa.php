@@ -12,7 +12,10 @@ $array = array();
 
 while($_dados_ = mysqli_fetch_array($_query_)){
     $nome   = decrypt($_dados_["nome"]);
-
+    $desc   = decrypt($_dados_["desc"]);
+    $valor   = decrypt($_dados_["valor"]);
+    $qt   = decrypt($_dados_["qt"]);
+    $premios   = $_dados_["premios"];
 
     $status = $status == '1' ? "active" : "inactive";
 
