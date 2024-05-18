@@ -166,10 +166,12 @@ justLog($__EMAIL__, $__TYPE__, 3);
             label.innerText = 'Imagem';
 
             let inputImg = document.createElement('input');
-            inputImg.classList.add('btn-add');
+            inputImg.classList.add('premio-add-img');
             inputImg.type = 'file';
             inputImg.style = 'display: none';
             inputImg.id = 'item' + indexFile;
+            inputImg.setAttribute('accept','image/jpg, image/png, image/jpeg');
+
 
             let button = document.createElement('button');
             button.onclick = () => {deletePremio(button)};
