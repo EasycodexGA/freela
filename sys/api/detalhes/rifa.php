@@ -11,13 +11,19 @@ $_query_ = mysqli_query($__CONEXAO__, "select * from rifas where id='$id'");
 $array = array();
 
 while($_dados_ = mysqli_fetch_array($_query_)){
-    $nome   = decrypt($_dados_["nome"]);
-    $desc   = decrypt($_dados_["desc"]);
-    $valor   = decrypt($_dados_["valor"]);
-    $qt   = decrypt($_dados_["qt"]);
-    $premios   = $_dados_["premios"];
+    $qt         = decrypt($_dados_["qt"]);
+    $nome       = decrypt($_dados_["nome"]);
+    $desc       = decrypt($_dados_["desc"]);
+    $valor      = decrypt($_dados_["valor"]);
+    $premios    = $_dados_["premios"];
 
-    $status = $status == '1' ? "active" : "inactive";
+    foreach($premios as &$i){
+        $i->nome = decrypt($i->nome);
+    }
+
+    $query = mysqli_query($__CONEXAO__, "select id from numerorifa where ref='$id'");
+    $selected = mysqli_num_rows($query);
+
 
     $arr = array(
         "id"        => $id,
