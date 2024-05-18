@@ -15,84 +15,84 @@ $valor      = scapeString($__CONEXAO__, $json->valor);
 $premios    = scapeString($__CONEXAO__, $json->premios);
 $descricao  = scapeString($__CONEXAO__, $json->desc);
 
-$qt         = setNum($qt);
-$nome       = setNoXss($nome);
-$data       = setNum($data);
-$valor      = setNum($valor);
-$descricao  = setNoXss($descricao);
+// $qt         = setNum($qt);
+// $nome       = setNoXss($nome);
+// $data       = setNum($data);
+// $valor      = setNum($valor);
+// $descricao  = setNoXss($descricao);
 
-checkMissing(
-    array(
-        $qt,
-        $nome,
-        $data,
-        $valor,
-        $descricao
-    )
-);
+// checkMissing(
+//     array(
+//         $qt,
+//         $nome,
+//         $data,
+//         $valor,
+//         $descricao
+//     )
+// );
 
-function salvarImg($__CONEXAO__, $__TIME__, $__CODE__, $image){
-    $caminho = "../../../../imagens/rifas";
+// function salvarImg($__CONEXAO__, $__TIME__, $__CODE__, $image){
+//     $caminho = "../../../../imagens/rifas";
 
-    if($image){
+//     if($image){
 
-        if (!file_exists($caminho)) {
-            if (!mkdir($caminho, 0777, true)) {
-                endCode("Erro ao criar o diretório", false);
-            }
-        }
+//         if (!file_exists($caminho)) {
+//             if (!mkdir($caminho, 0777, true)) {
+//                 endCode("Erro ao criar o diretório", false);
+//             }
+//         }
 
-        $parts = explode(',', $image);
-        if (count($parts) !== 2) {
-            endCode("Código de imagem inválido", false);
-        }
+//         $parts = explode(',', $image);
+//         if (count($parts) !== 2) {
+//             endCode("Código de imagem inválido", false);
+//         }
 
-        $formatPart = $parts[0];
-        $imageData = base64_decode($parts[1]);
+//         $formatPart = $parts[0];
+//         $imageData = base64_decode($parts[1]);
 
-        if ($imageData === false) {
-            endCode("Decodificação de base64 falhou", false);
-        }
+//         if ($imageData === false) {
+//             endCode("Decodificação de base64 falhou", false);
+//         }
 
-        $format = str_replace(['data:image/', ';base64'], '', $formatPart);
-        if (!in_array($format, ['jpeg', 'jpg', 'gif', 'png'])) {
-            endCode("Formato de imagem inválido", false);
-        }
+//         $format = str_replace(['data:image/', ';base64'], '', $formatPart);
+//         if (!in_array($format, ['jpeg', 'jpg', 'gif', 'png'])) {
+//             endCode("Formato de imagem inválido", false);
+//         }
 
-        if ($format === 'jpeg') {
-            $format = 'jpg';
-        }
+//         if ($format === 'jpeg') {
+//             $format = 'jpg';
+//         }
 
-        $novoNome   = "l$__TIME__$__CODE__.$format";
-        $completo = "$caminho/$novoNome";
-        $novoNomeEnc = encrypt($novoNome);
+//         $novoNome   = "l$__TIME__$__CODE__.$format";
+//         $completo = "$caminho/$novoNome";
+//         $novoNomeEnc = encrypt($novoNome);
 
-        // Verifique se a imagem é PNG e processe-a de acordo
-        if ($format === 'png') {
-            $im = imagecreatefromstring($imageData);
-            imagesavealpha($im, true);
-            imagepng($im, $completo);
-            imagedestroy($im);
-        } else {
-            if (!file_put_contents($completo, $imageData)) {
-                endCode("Erro ao salvar imagem", false);
-            }
-        }
-        return $novoNomeEnc;
-    }
-}
+//         // Verifique se a imagem é PNG e processe-a de acordo
+//         if ($format === 'png') {
+//             $im = imagecreatefromstring($imageData);
+//             imagesavealpha($im, true);
+//             imagepng($im, $completo);
+//             imagedestroy($im);
+//         } else {
+//             if (!file_put_contents($completo, $imageData)) {
+//                 endCode("Erro ao salvar imagem", false);
+//             }
+//         }
+//         return $novoNomeEnc;
+//     }
+// }
 
-$data = decrypt($data);
+// $data = decrypt($data);
 
-if($data < time() - (86400 * 2)){
-    endCode("Essa data já passou!", false);
-}
+// if($data < time() - (86400 * 2)){
+//     endCode("Essa data já passou!", false);
+// }
 
-$getRifa = mysqli_query($__CONEXAO__, "select id from rifas where nome='$nome' and data='$data'");
+// $getRifa = mysqli_query($__CONEXAO__, "select id from rifas where nome='$nome' and data='$data'");
 
-if(mysqli_num_rows($getRifa) > 0){
-    endCode("Já existe uma rifa com esses dados.", false);
-}
+// if(mysqli_num_rows($getRifa) > 0){
+//     endCode("Já existe uma rifa com esses dados.", false);
+// }
 
 $newPremio = array();
 foreach($premios as $i){
@@ -104,7 +104,7 @@ foreach($premios as $i){
     $path = salvarImg($__CONEXAO__, $__TIME__, $__CODE__, $img);
     array_push($newPremio, array("nome"=>$nome, "img"=>$img));
 }
-
+endCode($newPremio, false);
 $newPremio = json_encode($newPremio);
 $qt = decrypt($qt);
 $valor = decrypt($valor);
