@@ -3,15 +3,6 @@ include '../../../conexao.php';
 
 justLog($__EMAIL__, $__TYPE__, 1);
 
-$complemento = '';
-
-if($__TYPE__ == 3){
-    $_query_ = mysqli_query($__CONEXAO__, "select * from eventos");
-} else {
-    $table = $__TYPE__ == 2 ? 'professores' : 'alunos';
-    $_query_ = mysqli_query($__CONEXAO__, "select distinct eventos.* from eventos join $table on cast(eventos.turmas as char) like concat('%,',$table.turma,',%') or cast(eventos.equipes as char) like concat('%,',$table.equipe,',%') where $table.email='$__EMAIL__'");
-}
-
 $array = array();
 
 while($dados = mysqli_fetch_array($_query_)){

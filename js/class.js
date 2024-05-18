@@ -525,3 +525,20 @@ class Equipes extends File{
         this.getData()
     }
 }
+
+// class Rifas extends File{
+//     constructor(id){
+//         super(id)
+//         this.name = 'equipes'
+//         this.linkGet = 'turmas/get/equipes'
+//         this.thContent = ['Nome', 'Alunos', 'Status']
+//         // this.jumpDetail.push()
+//         // this.numsDetail.push()
+//         this.arrayDetail.push('alunos')
+//         this.createTh()
+//         this.getData()
+//     }
+//     getData(){
+//        
+//     }
+// }

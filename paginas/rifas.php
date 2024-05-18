@@ -80,13 +80,18 @@ justLog($__EMAIL__, $__TYPE__, 3);
 
         <div class="list">
             <div class="header-list-out">
-                <h1 class="title-header">Alunos</h1>
+                <h1 class="title-header">Rifas</h1>
                 <input id="searchBar" name="searchBar" placeholder="Pesquisar..">
             </div>
-            <table class="content-list">
-                <thead id='headList'></thead>
-                <tbody id='tabList'></tbody>
-            </table>
+            <div class="itens-rifa-out">
+                <div class='item-rifa'>
+                    <h1>Nome da Rifa</h1>
+                    <div class='image-rifa-out'>
+                        <img class='image-rifa' src='#'>
+                    </div>
+                    <button class='detalhes-rifa'>Ver detalhes</button>
+                </div>
+            </div>
         </div>
 
         <script>
@@ -106,7 +111,7 @@ justLog($__EMAIL__, $__TYPE__, 3);
         }
 
         async function getRifaPremio(){
-            let obj = {}
+            let arr = []
             let premioAddInput = document.querySelectorAll('.premio-add-input');
             let premioAddImg = document.querySelectorAll('.premio-add-img');
 
@@ -114,13 +119,13 @@ justLog($__EMAIL__, $__TYPE__, 3);
                 console.log(premioAddImg[i]);
                 if(premioAddInput[i].value != ''){
                     let imgPremios = await getBase64(premioAddImg[i].files[0]);
-                    obj[`premio${i}`] = {
+                    arr.push({
                         nome: premioAddInput[i].value,
                         img: imgPremios
-                    }
+                    })
                 }
             }
-            return obj
+            return arr
         }
 
         async function addRifass() {
@@ -147,21 +152,21 @@ justLog($__EMAIL__, $__TYPE__, 3);
 
             let input = document.createElement('input');
             input.classList.add('premio-add-input');
-            input.placeholder = 'Bicicleta';
+            input.placeholder = 'Novo item';
 
             let label = document.createElement('label');
             label.setAttribute('for','item' + indexFile);
             label.innerText = 'Imagem';
 
             let inputImg = document.createElement('input');
-            inputImg.classList.add('premio-add-img');
+            inputImg.classList.add('btn-add');
             inputImg.type = 'file';
             inputImg.style = 'display: none';
             inputImg.id = 'item' + indexFile;
 
             let button = document.createElement('button');
             button.onclick = () => {deletePremio(button)};
-            button.classList.add('removePremioBt');
+            button.classList.add('exit-bt');
             button.innerText = 'Remover item';
 
             div.append(input);
