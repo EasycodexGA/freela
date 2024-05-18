@@ -222,15 +222,15 @@ $descIndex = decrypt($assocBanner["descr"]);
                     <div class='inps-add'>
                         <div class='inp-add-out'>
                             <h3>Nome - Responsavel 1</h3>
-                            <input id='nomeResp1Add' type='text' placeholder='Nome'/>
+                            <input id='nomeResp1Add' type='text' value='<?php echo $resp1nome; ?>' placeholder='Nome'/>
                         </div>
                         <div class='inp-add-out'>
                             <h3>Telefone - Responsavel 1</h3>
-                            <input id='telResp1Add' type='text' placeholder='telefone'/>
+                            <input id='telResp1Add' type='text' value='<?php echo $resp1tel; ?>' placeholder='telefone'/>
                         </div>
                         <div class='inp-add-out'>
                             <h3>Email - Responsavel 1</h3>
-                            <input id='mailResp1Add' type='text' placeholder='email'/>
+                            <input id='mailResp1Add' type='text' value='<?php echo $resp1email; ?>'placeholder='email'/>
                         </div>
                         <div class='inp-add-out'>
                             <h3>Imagem - Responsável 1</h3>
@@ -240,15 +240,15 @@ $descIndex = decrypt($assocBanner["descr"]);
                     <div class='inps-add'>
                         <div class='inp-add-out'>
                             <h3>Nome - Responsável 2</h3>
-                            <input id='nomeResp2Add' type='text' placeholder='Nome'/>
+                            <input id='nomeResp2Add' type='text' value='<?php echo $resp2nome; ?>'placeholder='Nome'/>
                         </div>
                         <div class='inp-add-out'>
                             <h3>Telefone - Responsável 2</h3>
-                            <input id='telResp2Add' type='text' placeholder='telefone'/>
+                            <input id='telResp2Add' type='text' value='<?php echo $resp2tel; ?>' placeholder='telefone'/>
                         </div>
                         <div class='inp-add-out'>
                             <h3>Email - Responsável 2</h3>
-                            <input id='mailResp2Add' type='text' placeholder='email'/>
+                            <input id='mailResp2Add' type='text' value='<?php echo $resp2email; ?>'placeholder='email'/>
                         </div>
                         <div class='inp-add-out'>
                             <h3>Imagem - Responsável 2</h3>
