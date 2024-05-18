@@ -94,6 +94,7 @@ $descricao  = scapeString($__CONEXAO__, $json->desc);
 //     endCode("Já existe uma rifa com esses dados.", false);
 // }
 
+endCode($premios, false);
 $newPremio = array();
 foreach($premios as $i){
     $img = $i->img;
