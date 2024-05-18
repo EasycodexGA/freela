@@ -109,6 +109,6 @@ $newPremio = json_encode($newPremio);
 $qt = decrypt($qt);
 $valor = decrypt($valor);
 
-mysqli_query($__CONEXAO__, "insert into rifas (nome, data, descricao, premios, qt, valor, created) values ('$nome','$data', '$descricao', '$newPremio', '$qt', '$valor', '$__TIME__')");
+mysqli_query($__CONEXAO__, "insert into rifas (nome, data, descricao, premios, qt, valor, created) values ('$nome','$data', '$descricao', '$newPremio', '$qt', '$valor', '$__TIME__')") or endCode('Erro ao cadastrar no banco de dados', false);
 
 endCode("Rifa criada com sucesso", true);
