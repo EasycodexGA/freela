@@ -21,8 +21,13 @@ while($_dados_ = mysqli_fetch_array($_query_)){
         $i->nome = decrypt($i->nome);
     }
 
-    $query = mysqli_query($__CONEXAO__, "select id from numerorifa where ref='$id'");
-    $selected = mysqli_num_rows($query);
+    $nums = array()
+
+    $query = mysqli_query($__CONEXAO__, "select num from numerorifa where ref='$id' order by asc");
+    while($dados = mysqli_fetch_array($query)){
+        $num = $dados['num'];
+        array_push($nums, $num);
+    }
 
 
     $arr = array(
@@ -32,7 +37,7 @@ while($_dados_ = mysqli_fetch_array($_query_)){
         "premios"   => $premios,
         "qt"        => $qt,
         "valor"     => $valor,
-        "selected"  => $selected
+        "selected"  => $nums
     );
     array_push($array, $arr);
 }
