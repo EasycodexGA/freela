@@ -54,7 +54,7 @@ function checkAllMissing($array){
     for($i = 0; $i < count($array); $i++){
         $item = decrypt($array[$i]);
         if($item and $item != "" and $item != " "){
-            return
+            return;
         }
     }
     endCode("Pelo menos algum dado tem que ser preenchido.", false);
