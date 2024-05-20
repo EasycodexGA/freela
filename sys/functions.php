@@ -50,6 +50,16 @@ function checkMissing($array){
     }
 }
 
+function checkAllMissing($array){
+    for($i = 0; $i < count($array); $i++){
+        $item = decrypt($array[$i]);
+        if($item and $item != "" and $item != " "){
+            return
+        }
+    }
+    endCode("Pelo menos algum dado tem que ser preenchido.", false);
+}
+
 
 function cantLog($__EMAIL__){
     if($__EMAIL__){
