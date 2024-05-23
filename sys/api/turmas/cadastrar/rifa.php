@@ -18,7 +18,7 @@ $descricao  = scapeString($__CONEXAO__, $json->desc);
 $qt         = setNum($qt);
 $nome       = setNoXss($nome);
 $data       = setNum($data);
-$valor      = setNum($valor);
+$valor      = setNoXss($valor);
 $descricao  = setNoXss($descricao);
 
 checkMissing(
