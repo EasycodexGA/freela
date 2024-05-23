@@ -187,7 +187,9 @@ justLog($__EMAIL__, $__TYPE__, 3);
             indexFile++;
         }
     </script>
-    
+    <script>
+        const file = new Rifas(<?php echo $__TYPE__; ?>);
+    </script>
 
     <div id="b2xcodeOut">
         <h1 id='b2xcodeIn'>
