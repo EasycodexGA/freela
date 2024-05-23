@@ -97,12 +97,12 @@ if(mysqli_num_rows($getRifa) > 0){
 $newPremio = array();
 foreach($premios as $i){
     $img = $i->img;
-    $nome = setNoXss($i->nome);
+    $nomeP = setNoXss($i->nome);
     checkMissing(array(
-        $nome
+        $nomeP
     ));
     $path = salvarImg($__CONEXAO__, $__TIME__, $__CODE__, bin2hex(random_bytes(3)), $img);
-    array_push($newPremio, array("nome"=>$nome, "img"=>$path));
+    array_push($newPremio, array("nome"=>$nomeP, "img"=>$path));
 }
 
 $newPremio = json_encode($newPremio);
