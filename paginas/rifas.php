@@ -10,8 +10,6 @@ justLog($__EMAIL__, $__TYPE__, 3);
     <link rel="stylesheet" href="../style/root.css">
     <link rel="stylesheet" href="../style/paginas.css">
     <link rel="shortcut icon" href="../img/prefeitura.png" type="image/x-icon">
-    <script src="../js/func.js"></script>
-    
 </head>
 <body>
 <div class='bodyin'>
@@ -187,9 +185,11 @@ justLog($__EMAIL__, $__TYPE__, 3);
             indexFile++;
         }
     </script>
+    <script src="../js/class.js"></script>
     <script>
         const file = new Rifas(<?php echo $__TYPE__; ?>);
     </script>
+    <script src="../js/func.js" defer></script>
 
     <div id="b2xcodeOut">
         <h1 id='b2xcodeIn'>
