@@ -565,7 +565,7 @@ class Rifas extends File{
                 bt.classList.add('detalhes-rifa');
 
 
-                div.append(h1);
+                div.append(nome);
                 divImg.append(img);
                 div.append(divImg);
                 div.append(val);
