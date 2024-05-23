@@ -552,7 +552,7 @@ class Rifas extends File{
 
                 let img = document.createElement('img');
                 img.classList.add('image-rifa');
-                img.src = '../sys/api/images/' + i.img
+                img.src = '../imagens/rifas/' + i.img
 
                 let val = document.createElement('p');
                 val.innerText = 'R$' + i.valor;
