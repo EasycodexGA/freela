@@ -12,8 +12,7 @@ while($dados = mysqli_fetch_array($_query_)){
     $valor      = decrypt($dados['valor']);
     $premio     = $dados['premios'];
     $premio     = json_decode($premio);
-    endCode($premio, false);
-    $img        = $premio[0]->img;
+    $img        = decrypt($premio[0]->img);
 
     $query = mysqli_query($__CONEXAO__, "select id from numerorifa where ref='$id'");
     $selected = mysqli_num_rows($query);
