@@ -11,7 +11,7 @@ while($dados = mysqli_fetch_array($_query_)){
     $nome       = decrypt($dados["nome"]);
     $valor      = decrypt($dados['valor']);
     $premio     = $dados['premios'];
-    // $premio     = json_encode($premio);
+    $premio     = json_decode($premio);
     endCode(array($premio), false);
     $img        = $premio[0]->img;
 
