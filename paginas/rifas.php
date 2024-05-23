@@ -98,98 +98,98 @@ justLog($__EMAIL__, $__TYPE__, 3);
             </div>
         </div>
 
-        <script>
-        limiteNumRifa.onclick = () => {
-            console.log('a')
-            if(limiteNumRifa.checked){
-                qtAdd.disabled = true;
-            } else {
-                qtAdd.disabled = false;
-            }
-        }
-
-
-        function getRifaQt(){
-            let val = limiteNumRifa.checked == true ? -1 : Number(qtAdd.value)
-            return val
-        }
-
-        async function getRifaPremio(){
-            let arr = []
-            let premioAddInput = document.querySelectorAll('.premio-add-input');
-            let premioAddImg = document.querySelectorAll('.premio-add-img');
-
-            for(i = 0; i < premioAddInput.length; i++){
-                console.log(premioAddImg[i]);
-                if(premioAddInput[i].value != ''){
-                    let imgPremios = await getBase64(premioAddImg[i].files[0]);
-                    arr.push({
-                        nome: premioAddInput[i].value,
-                        img: imgPremios
-                    })
-                }
-            }
-            return arr
-        }
-
-        async function addRifass() {
-            let premiosObj = await getRifaPremio()
-            addNewData("turmas/cadastrar/rifa", {
-                nome: nomeAdd.value,
-                desc: descAdd.value,
-                data: (dataAdd.valueAsNumber / 1000),
-                valor: Number(valAdd.value),
-                qt: getRifaQt(), // retornar -> valor normal se tiver quantidade e -1 se limiteNumRifa estiver clickado
-                premios: premiosObj // retornar um objeto com com todos os premios e suas respectivas imagens
-            })
-        }
-
-        function deletePremio(me){
-            console.log(me);
-            me.parentElement.remove()
-        }
-
-        let indexFile = 1
-
-        function createPremio(me){
-            let div = document.createElement('div');
-            div.classList.add('inp-add-in-premio');
-
-            let input = document.createElement('input');
-            input.classList.add('premio-add-input');
-            input.placeholder = 'Novo item';
-
-            let label = document.createElement('label');
-            label.setAttribute('for','item' + indexFile);
-            label.innerText = 'Imagem';
-
-            let inputImg = document.createElement('input');
-            inputImg.classList.add('premio-add-img');
-            inputImg.type = 'file';
-            inputImg.style = 'display: none';
-            inputImg.id = 'item' + indexFile;
-            inputImg.setAttribute('accept','image/jpg, image/png, image/jpeg');
-
-
-            let button = document.createElement('button');
-            button.onclick = () => {deletePremio(button)};
-            button.classList.add('exit-bt');
-            button.innerText = 'Remover item';
-
-            div.append(input);
-            div.append(label);
-            div.append(inputImg);
-            div.append(button);
-            
-            inpAddOutPremio.append(div);
-            indexFile++;
-        }
-    </script>
     <script src="../js/class.js"></script>
     <script>
         const file = new Rifas(<?php echo $__TYPE__; ?>);
-    </script>
+        </script>
     <script src="../js/func.js" defer></script>
+    <script>
+    limiteNumRifa.onclick = () => {
+        console.log('a')
+        if(limiteNumRifa.checked){
+            qtAdd.disabled = true;
+        } else {
+            qtAdd.disabled = false;
+        }
+    }
+
+
+    function getRifaQt(){
+        let val = limiteNumRifa.checked == true ? -1 : Number(qtAdd.value)
+        return val
+    }
+
+    async function getRifaPremio(){
+        let arr = []
+        let premioAddInput = document.querySelectorAll('.premio-add-input');
+        let premioAddImg = document.querySelectorAll('.premio-add-img');
+
+        for(i = 0; i < premioAddInput.length; i++){
+            console.log(premioAddImg[i]);
+            if(premioAddInput[i].value != ''){
+                let imgPremios = await getBase64(premioAddImg[i].files[0]);
+                arr.push({
+                    nome: premioAddInput[i].value,
+                    img: imgPremios
+                })
+            }
+        }
+        return arr
+    }
+
+    async function addRifass() {
+        let premiosObj = await getRifaPremio()
+        addNewData("turmas/cadastrar/rifa", {
+            nome: nomeAdd.value,
+            desc: descAdd.value,
+            data: (dataAdd.valueAsNumber / 1000),
+            valor: Number(valAdd.value),
+            qt: getRifaQt(), // retornar -> valor normal se tiver quantidade e -1 se limiteNumRifa estiver clickado
+            premios: premiosObj // retornar um objeto com com todos os premios e suas respectivas imagens
+        })
+    }
+
+    function deletePremio(me){
+        console.log(me);
+        me.parentElement.remove()
+    }
+
+    let indexFile = 1
+
+    function createPremio(me){
+        let div = document.createElement('div');
+        div.classList.add('inp-add-in-premio');
+
+        let input = document.createElement('input');
+        input.classList.add('premio-add-input');
+        input.placeholder = 'Novo item';
+
+        let label = document.createElement('label');
+        label.setAttribute('for','item' + indexFile);
+        label.innerText = 'Imagem';
+
+        let inputImg = document.createElement('input');
+        inputImg.classList.add('premio-add-img');
+        inputImg.type = 'file';
+        inputImg.style = 'display: none';
+        inputImg.id = 'item' + indexFile;
+        inputImg.setAttribute('accept','image/jpg, image/png, image/jpeg');
+
+
+        let button = document.createElement('button');
+        button.onclick = () => {deletePremio(button)};
+        button.classList.add('exit-bt');
+        button.innerText = 'Remover item';
+
+        div.append(input);
+        div.append(label);
+        div.append(inputImg);
+        div.append(button);
+        
+        inpAddOutPremio.append(div);
+        indexFile++;
+    }
+    </script>
 
     <div id="b2xcodeOut">
         <h1 id='b2xcodeIn'>
