@@ -550,7 +550,7 @@ class Rifas extends File{
                 let divImg = document.createElement('div');
                 divImg.classList.add('image-rifa-out');
 
-                let img = document.createElement('image-rifa');
+                let img = document.createElement('img');
                 img.classList.add('image-rifa');
                 img.src = i.img
 
