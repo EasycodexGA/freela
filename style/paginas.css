@@ -599,7 +599,7 @@ button{
     max-width: 200px;
 }
 
-.itens-rifa-out{
+#itensRifaOut{
     display: flex;
     flex-wrap: wrap;
     gap: 20px;

@@ -87,7 +87,7 @@ justLog($__EMAIL__, $__TYPE__, 3);
                 <h1 class="title-header">Rifas</h1>
                 <input id="searchBar" name="searchBar" placeholder="Pesquisar..">
             </div>
-            <div class="itens-rifa-out">
+            <div id="itensRifaOut">
                 <div class='item-rifa'>
                     <h1>Nome da Rifa</h1>
                     <div class='image-rifa-out'>

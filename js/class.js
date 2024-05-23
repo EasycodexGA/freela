@@ -572,6 +572,8 @@ class Rifas extends File{
                 div.append(qt);
                 div.append(bt);
 
+                itemRifaOut.append(div);
+
 
             }
         })
