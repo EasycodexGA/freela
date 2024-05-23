@@ -561,6 +561,7 @@ class Rifas extends File{
                 qt.innerText = i.sel + '/' + i.qt
 
                 let bt = document.createElement('button');
+                bt.innerText = 'Ver detalhes';
                 bt.onclick = ()=> {openDetail(i.id)}
                 bt.classList.add('detalhes-rifa');
 
