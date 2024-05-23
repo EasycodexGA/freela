@@ -541,6 +541,38 @@ class Rifas extends File{
             this.allData = e.mensagem;
             for(let i of e.mensagem){
                 console.log(i);
+                let div = document.createElement('div');
+                div.classList.add('item-rifa');
+
+                let nome = document.createElement('h1');
+                nome.innerText = i.nome;
+
+                let divImg = document.createElement('div');
+                divImg.classList.add('image-rifa-out');
+
+                let img = document.createElement('image-rifa');
+                img.classList.add('image-rifa');
+                img.src = i.img
+
+                let val = document.createElement('p');
+                val.innerText = 'R$' + i.valor;
+
+                let qt = document.createElement('span');
+                qt.innerText = i.sel + '/' + i.qt
+
+                let bt = document.createElement('button');
+                bt.onclick = ()=> {openDetail(i.id)}
+                bt.classList.add('detalhes-rifa');
+
+
+                div.append(h1);
+                divImg.append(img);
+                div.append(divImg);
+                div.append(val);
+                div.append(qt);
+                div.append(bt);
+
+
             }
         })
     }
