@@ -9,7 +9,7 @@ $array = array();
 
 while($dados = mysqli_fetch_array($_query_)){
     $nome       = decrypt($dados["nome"]);
-    $valor      = decrypt($dados['valor']);
+    $valor      = $dados['valor'];
     $premio     = $dados['premios'];
     $premio     = json_decode($premio);
     $img        = decrypt($premio[0]->img);
