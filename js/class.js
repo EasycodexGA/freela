@@ -610,6 +610,10 @@ class Rifas extends File{
             btClose.setAttribute("onclick", "closeAdd()");
             btClose.innerText = "Fechar";
             outBt.append(btClose);
+
+            detailContainer.append(h1);
+            detailContainer.append(inpsAdd);
+            detailContainer.append(outBt);
         })
     }
 }
