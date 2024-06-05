@@ -86,15 +86,6 @@ justLog($__EMAIL__, $__TYPE__, 3);
                 <input id="searchBar" name="searchBar" placeholder="Pesquisar..">
             </div>
             <div id="itensRifaOut">
-                <!-- <div class='item-rifa'>
-                    <h1>Nome da Rifa</h1>
-                    <div class='image-rifa-out'>
-                        <img class='image-rifa' src='#'>
-                    </div>
-                    <p>R$2,50</p>
-                    <span>59 Restantes</span>
-                    <button class='detalhes-rifa'>Ver detalhes</button>
-                </div> -->
             </div>
         </div>
 

@@ -1,7 +1,7 @@
 <?php
 include '../../conexao.php';
 
-justLog($__EMAIL__, $__TYPE__, 1);
+justLog($__EMAIL__, $__TYPE__, 2);
 
 $id     = scapeString($__CONEXAO__, $_GET['id']);
 $id     = setNum($id);
