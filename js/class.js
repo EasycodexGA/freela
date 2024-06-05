@@ -564,6 +564,7 @@ class Rifas extends File{
                 bt.innerText = 'Ver detalhes';
                 bt.onclick = ()=> {
                     openDetail(i.id);
+                    console.log(`detail: ${i.id}`);
                 }
                 bt.classList.add('detalhes-rifa');
 
@@ -591,7 +592,24 @@ class Rifas extends File{
                 newMsg(e);
                 return;
             }
-            // criar detalhes
+            details.classList.add("add-active");
+            detailContainer.innerHTML = '';
+
+            let h1 = document.createElement("h1");
+            h1.classList.add("title-add");
+            h1.innerText = "Detalhes";
+
+            let inpsAdd = document.createElement("div")
+            inpsAdd.classList.add("inps-add");
+
+            let outBt = document.createElement("div");
+            outBt.classList.add("out-bt-sv");
+
+            let btClose = document.createElement("button");
+            btClose.classList.add("btn-close");
+            btClose.setAttribute("onclick", "closeAdd()");
+            btClose.innerText = "Fechar";
+            outBt.append(btClose);
         })
     }
 }
