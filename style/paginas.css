@@ -619,5 +619,17 @@ button{
 .image-rifa-out{
     aspect-ratio: 1;
     background: #eee;
-    border-radius: 3px
+    border-radius: 3px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.image-rifa{
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    object-fit: cover;
 }
