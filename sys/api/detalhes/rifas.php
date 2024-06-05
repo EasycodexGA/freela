@@ -15,7 +15,7 @@ while($_dados_ = mysqli_fetch_array($_query_)){
     $nome       = decrypt($_dados_["nome"]);
     $desc       = decrypt($_dados_["desc"]);
     $valor      = decrypt($_dados_["valor"]);
-    $premios    = $_dados_["premios"];
+    $premios    = json_decode($_dados_["premios"]);
 
     foreach($premios as &$i){
         $i->nome = decrypt($i->nome);
