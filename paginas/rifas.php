@@ -80,10 +80,7 @@ justLog($__EMAIL__, $__TYPE__, 3);
             </div>
         </div>
 
-        <div id='details'>
-            <div class='add-container' id='detailContainer'></div>
-        </div>
-
+ 
         <div class="list">
             <div class="header-list-out">
                 <h1 class="title-header">Rifas</h1>
