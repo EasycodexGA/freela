@@ -57,14 +57,14 @@ justLog($__EMAIL__, $__TYPE__, 3);
                         <input id='qtAdd' type='number' placeholder='60'/>
                     </div>
                     <div class='inp-add-out2'>
-                        <h3>Limite de números?</h3>
+                        <h3>Deseja retirar o limite?</h3>
                         <input id='limiteNumRifa' type='checkbox'>
                     </div>
                     <div class='inp-add-out' style='width: 100%'>
                         <h3>Prêmios</h3>
                         <div id='inpAddOutPremio'>
                             <div class='inp-add-in-premio'>
-                                <input type='text' placeholder='Bicicleta' class='premio-add-input'/>
+                                <input type='text' placeholder='Prêmio principal' class='premio-add-input'/>
                                 <label for='item0'>Imagem</label>
                                 <input type="file" accept='image/jpg, image/png, image/jpeg' id='item0' style='display: none' class='premio-add-img'>
                             </div>
